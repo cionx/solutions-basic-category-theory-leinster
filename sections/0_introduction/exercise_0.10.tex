@@ -1,0 +1,20 @@
+\section{}
+
+For every topological space~$X$, every set-theoretic map from~$X$ to~$I(S)$ is continuous.
+This can also be formulated as follows:
+Let~$i$ be the set-theoretic map from~$S$ to~$I(S)$ given by~$i(s) \defined s$ for every~$s \in S$.
+There exists for any set-theoretic map~$f$ from~$X$ to~$S$ a unique continuous map~$\induced{f}$ from~$X$ to~$I(S)$ with~$\induced{f} = i \circ f$, i.e. such that the following diagram commutes.
+\[
+	\begin{tikzcd}[column sep = large, row sep = huge]
+		X
+		\arrow{d}[left]{f}
+		\arrow[dashed]{dr}[above right]{\induced{f}}
+		&
+		{}
+		\\
+		S
+		\arrow{r}[above]{i}
+		&
+		I(S)
+	\end{tikzcd}
+\]
