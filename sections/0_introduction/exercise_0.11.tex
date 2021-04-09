@@ -1,0 +1,31 @@
+\section{}
+
+Let~$G'$ be a group and let~$\varphi$ be a group homomorphism from~$G'$ to~$H$ such that the composite~$\theta \circ \varphi$ is the trivial group homomorphism.
+Then there exists a unique group homomorphism~$\psi$ from~$G'$ to~$\ker(\theta)$ with~$\varphi = \iota \circ \psi$, i.e. such that the following diagram commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		G'
+		\arrow{dr}[below left]{\varphi}
+		\arrow[bend left]{drr}[above right]{1}
+		\arrow[dashed]{dd}[left]{\psi}
+		&
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		G
+		\arrow{r}[above]{\theta}
+		&
+		H
+		\\
+		\ker(\theta)
+		\arrow{ur}[above]{\iota}
+		\arrow[bend right]{urr}[below right]{1}
+		&
+		{}
+		&
+		{}
+	\end{tikzcd}
+\]
