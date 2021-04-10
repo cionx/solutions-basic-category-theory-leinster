@@ -2,17 +2,17 @@
 
 This repository contains my personal solutions to the exercises in Tom Leinster’s *Basic Category Theory*.
 
-Current progress: 2/107 (≈1.9%).
+Current progress: 3/107 (≈ 2.8%).
 
 
 
 
 
-## 0. Introduction (2/5) ##
+## 0. Introduction (3/5) ##
 
 | 0.10 | 0.11 | 0.12 | 0.13 | 0.14 |
 | :-: | :-: | :-: | :-: | :-: |
-| ✅ | ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ❌ | ❌ |
 
 
 

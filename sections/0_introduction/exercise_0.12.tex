@@ -1,0 +1,85 @@
+\section{}
+
+We recall the following statement from topology:
+
+\begin{proposition}
+	\label{continuity via open cover}
+	Let~$X$ be a topological space and let~$U$ and~$V$ be two open subsets of~$X$ such that~$X = U \cup V$.
+	Let~$Y$ be another topological space and let~$f$ be a set-theoretic map from~$X$ to~$Y$.
+	The map~$f$ is continuous if and only if both restrictions~$\restrict{f}{U}$ and~$\restrict{f}{V}$ are continuous.
+\end{proposition}
+
+We also recall the following statement from naive set theory:
+
+\begin{proposition}
+	\label{glueing of maps}
+	Let~$X$ be a set and let~$U$ and~$V$ be two subsets of~$X$ with~$X = U \cup V$.
+	Let~$Y$ be another set and let
+	\[
+		f \colon U \to Y
+		\quad\text{and}\quad
+		g \colon V \to Y
+	\]
+	be two maps that agree on the intersection~$U \cap V$, i.e. such that~$\restrict{f}{U \cap V} = \restrict{g}{U \cap V}$.
+	There exists a unique map~$h$ from~$X$ to~$Y$ with~$\restrict{h}{U} = f$ and~$\restrict{h}{V} = g$.
+\end{proposition}
+
+We consider now the situation of the diagram~(0.3):
+The commutativity of the outer diagram
+\[
+	\begin{tikzcd}[row sep = large]
+		U \cap V
+		\arrow[hook]{r}[above]{i}
+		\arrow[hook]{d}[left]{j}
+		&
+		U
+		\arrow[bend left]{ddr}[above right]{f}
+		&
+		{}
+		\\
+		V
+		\arrow[bend right]{drr}[below left]{g}
+		&
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		{}
+		&
+		Y
+	\end{tikzcd}
+\]
+means precisely that the functions~$f$ and~$g$ agree on the intersection~$U \cap V$.
+It follows from \cref{glueing of maps} that there exists a unique set-theoretic map~$h$ from~$X$ to~$Y$ with~$\restrict{h}{U} = f$ and~$\restrict{h}{V} = g$.
+This means precisely that the map~$h$ makes the diagram
+\[
+	\begin{tikzcd}[row sep = large]
+		U \cap V
+		\arrow[hook]{r}[above]{i}
+		\arrow[hook]{d}[left]{j}
+		&
+		U
+		\arrow[bend left]{ddr}[above right]{f}
+		\arrow{d}[left]{j'}
+		&
+		{}
+		\\
+		V
+		\arrow[bend right]{drr}[below left]{g}
+		\arrow{r}[above]{i'}
+		&
+		X
+		\arrow[dashed]{dr}[above right]{h}
+		&
+		{}
+		\\
+		{}
+		&
+		{}
+		&
+		Y
+	\end{tikzcd}
+\]
+It follows from \cref{continuity via open cover} that this map~$h$ is continuous.

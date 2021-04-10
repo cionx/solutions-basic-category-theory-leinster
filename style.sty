@@ -1,11 +1,8 @@
 \usepackage{microtype}
-\frenchspacing
-
 
 \usepackage{mathtools}
-\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{tikz-cd}
-
 
 \usepackage[
 	% no space around equal sign!
@@ -17,11 +14,23 @@
 \setmathfont{Libertinus Math}
 \usepackage{tikz_style}
 
+\usepackage[capitalize]{cleveref}
+
+\frenchspacing
+\binoppenalty = \maxdimen         % breaking of binary operators
+\relpenalty   = \maxdimen         % breaking of relation symbols
+
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
+
+\theoremstyle{definition}
+\newtheorem{proposition}{Proposition}
 
 
 \newcommand{\defined}{\coloneqq}
 
 
 \newcommand{\induced}{\overline}
+
+
+\newcommand{\restrict}[2]{#1|_{#2}}
