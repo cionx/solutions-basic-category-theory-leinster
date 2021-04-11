@@ -20,6 +20,9 @@
 \binoppenalty = \maxdimen         % breaking of binary operators
 \relpenalty   = \maxdimen         % breaking of relation symbols
 
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+
 \setcounter{secnumdepth}{2}
 \setcounter{tocdepth}{2}
 
