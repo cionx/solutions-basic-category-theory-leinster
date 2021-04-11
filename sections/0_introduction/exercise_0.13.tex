@@ -1,0 +1,55 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$\phi$ be a ring homomorphism from~$\Integer[x]$ to~$R$.
+Let~$y \defined \phi(x)$.
+For any element~$p$ of~$\Integer[x]$, which is of the form~$p = \sum_{n >= 0} a_n x^n$ for suitable coefficients~$a_n \in \Integer$, we have
+\[
+	\phi(p)
+	=
+	\phi\Biggl( \sum_{n \geq 0} a_n x^n \Biggr)
+	=
+	\sum_{n \geq 0} a_n \phi(x)^n
+	=
+	\sum_{n \geq 0} a_n y^n \,.
+\]
+This shows that the homomorphism~$\phi$ is uniquely determined by its action on the element~$x$ of~$\Integer[x]$.
+
+Let now~$y$ be an element of~$R$.
+The map
+\[
+	\phi
+	\colon
+	\Integer[x]
+	\to
+	R \,,
+	\quad
+	\sum_{n \geq 0} a_n x^n
+	\mapsto
+	\sum_{n \geq 0} a_n y^n
+\]
+is a homomorphism of rings that maps the variable~$x$ onto the element~$y$.
+This shows the desired existence.
+
+
+
+\subsubsection{}
+
+There exists by the previous part of the exercise a unique homomorphism of rings~$\iota$ from~$\Integer[x]$ to~$A$ with~$\iota(x) = a$.
+There exists by assumption a unique homomorphism of rings~$\pi$ from~$A$ to~$\Integer[x]$ with~$\pi(a) = x$.
+
+There exists by the previous part of the exercise a unique homomorphism of rings from~$\Integer[x]$ to~$\Integer[x]$ that maps the element~$x$ onto itself.
+But both~$\id_{\Integer[x]}$ and the composite~$\pi \circ \iota$ are homomorphisms of rings that satisfy this condition.
+It follows that~$\pi \circ \iota = \id_{\Integer[x]}$.
+
+There exist by assumption a unique homomorphism of rings from~$A$ to~$A$ that maps the element~$a$ onto itself.
+But both~$\id_A$ and the composite~$\iota \circ \pi$ are homomorphisms of rings that satisfy this condition.
+It follows that~$\iota \circ \pi = \id_A$.
+
+We have now shown that the two homomorphisms of rings~$\iota$ and~$\pi$ are mutually inverse.
+This means that~$\iota$ is an isomorphism with inverse~$\pi$.
+
+

@@ -21,17 +21,20 @@
 \relpenalty   = \maxdimen         % breaking of relation symbols
 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
 
-\setcounter{secnumdepth}{2}
+\setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
 \theoremstyle{definition}
 \newtheorem{proposition}{Proposition}
 
+\newcommand{\Integer}{\mathbb{Z}}
 
 \newcommand{\defined}{\coloneqq}
 
+\newcommand{\id}{\mathrm{id}}
 
 \newcommand{\induced}{\overline}
 
