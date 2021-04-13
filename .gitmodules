@@ -1,0 +1,3 @@
+[submodule "customtex"]
+	path = customtex
+	url = https://gitlab.com/cionx/customtex.git

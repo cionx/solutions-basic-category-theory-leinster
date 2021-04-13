@@ -16,3 +16,6 @@ $xelatex = 'xelatex %O -synctex=1 -interaction=nonstopmode -file-line-error %S';
 # the list of files to be compiled
 # by default all tex-files in the current directory are compiled
 @default_files = ( 'main.tex' );
+
+# search for style files recursively in all subdirectories
+ensure_path('TEXINPUTS', './/');

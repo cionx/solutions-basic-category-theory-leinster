@@ -1,24 +1,4 @@
-\usepackage{microtype}
-
-\usepackage{mathtools}
-\usepackage{amsthm}
-\usepackage{tikz-cd}
-
-\usepackage[
-	% no space around equal sign!
-	warnings-off={mathtools-colon,mathtools-overbracket},
-	partial = upright
-]{unicode-math}
-\setmainfont{Libertinus Serif}
-\setsansfont{Libertinus Sans}
-\setmathfont{Libertinus Math}
-\usepackage{tikz_style}
-
-\usepackage[capitalize]{cleveref}
-
-\frenchspacing
-\binoppenalty = \maxdimen         % breaking of binary operators
-\relpenalty   = \maxdimen         % breaking of relation symbols
+\usepackage{customtex}
 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
 \renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
@@ -26,17 +6,3 @@
 
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-
-\theoremstyle{definition}
-\newtheorem{proposition}{Proposition}
-
-\newcommand{\Integer}{\mathbb{Z}}
-
-\newcommand{\defined}{\coloneqq}
-
-\newcommand{\id}{\mathrm{id}}
-
-\newcommand{\induced}{\overline}
-
-
-\newcommand{\restrict}[2]{#1|_{#2}}
