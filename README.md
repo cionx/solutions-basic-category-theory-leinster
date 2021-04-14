@@ -2,9 +2,9 @@
 
 This repository contains my personal solutions to the exercises in Tom Leinster’s *Basic Category Theory*.
 
-Current progress: 11/107 (≈ 10.28%).
 
 
+https://progress-bar.dev/11/?scale=107&title=current%20progress&width=500&suffix=/107
 
 
 
