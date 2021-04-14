@@ -1,0 +1,25 @@
+\subsection{}
+
+For every topological space~$X$ let~$\pi_0(X)$ be the set of path components of~$X$.
+For every two topological spaces~$X$ and~$Y$ and every continuous map~$f$ from~$X$ to~$Y$ let~$\pi_0(f)$ be the map from~$\pi_0(X)$ to~$\pi_0(Y)$ that assigns for every point~$x$ of~$X$ the path component of~$x$ to the path component of~$f(x)$.
+This construction defines a functor~$\pi_0$ from~$\pi_0(X)$ to~$\pi_0(Y)$.
+
+For every~\vectorspace{$\kf$}~$V$ let~$\Tensor(V)$ be the tensor algebra over~$V$.
+For every two~\vectorspaces{$\kf$}~$V$ and~$W$ and every linear map~$f$ from~$V$ to~$W$ let~$\Tensor(f)$ be the induced homomorphism of~\algebras{$\kf$} from~$\Tensor(V)$ to~$\Tensor(W)$ given by
+\[
+	\Tensor(f)( v_1 \tensor \dotsb \tensor v_n )
+	=
+	f(v_1) \tensor \dotsb \tensor f(v_n)
+\]
+for all~$n \geq 0$ and~$v_1, \dotsc, v_n \in V$.
+This construction defines a functor~$\Tensor$ from~$\Vect{\kf}$ to~$\Alg{\kf}$.
+
+For every group~$G$ let~$G^{\ab}$ be the abelianization of~$G$.
+For every two groups~$G$ and~$H$ end every homomorphism of groups~$f$ from~$G$ to~$H$ let~$f^{\ab}$ be the induced homomorism of groups from~$G^{\ab}$ to~$H^{\ab}$ given by
+\[
+	f^{\ab}( \class{x} )
+	=
+	\class{ f(x) }
+\]
+for every~$x \in G$.
+This construction defines a functor~$(\ph)^{\ab}$ from~$G^{\ab}$ to~$H^{\ab}$.

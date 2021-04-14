@@ -1,7 +1,14 @@
 \usepackage{customtex}
 
+\KOMAoptions{twoside = semi}
+\KOMAoptions{open = any}
+\KOMAoptions{numbers = noenddot}
+
+\addtokomafont{disposition}{\rmfamily}
+
 \hypersetup{
-	colorlinks = true
+	colorlinks = true,
+	linkcolor = black
 }
 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
@@ -13,22 +20,34 @@
 
 
 
-
-
 % words
 
+\newcommand{\algebras}[1]{#1\nobreakdash-algebras}
 \newcommand{\modules}[1]{#1\nobreakdash-modules}
+\newcommand{\vectorspace}[1]{#1\nobreakdash-vector space}
+\newcommand{\vectorspaces}[1]{#1\nobreakdash-vector spaces}
+
 
 
 % categories
 
 \newcommand{\catfont}{\mathbf}
 \newcommand{\Ab}{\catfont{Ab}}
+\newcommand{\Alg}[1]{#1\text{-}\catfont{Alg}}
 \newcommand{\Mod}[1]{#1\text{-}\catfont{Mod}}
 \newcommand{\Ord}{\catfont{Ord}}
 \newcommand{\Top}{\catfont{Top}}
 \newcommand{\Toph}{\catfont{Toph}}
+\newcommand{\Vect}[1]{#1\text{-}\catfont{Vect}}
 
 \newcommand{\genericCatfont}{\mathcal}
 \newcommand{\Acat}{\genericCatfont{A}}
 \newcommand{\Bcat}{\genericCatfont{B}}
+
+
+
+% functors
+
+\DeclareMathOperator{\Tensor}{T}
+
+
