@@ -1,0 +1,41 @@
+\subsection{}
+
+\begin{proposition}
+	\label{functors preserve isomorphisms}
+	Let~$F$ be a functor from a category~$\Acat$ to a category~$\Bcat$.
+	Let~$f$ be an isomorphism in~$\Acat$.
+	Then~$F(f)$ is an isomorphism in~$\Bcat$.
+\end{proposition}
+
+\begin{proof}
+	Let~$A$ be the domain of~$f$ and let~$A'$ be the codomain of~$f$.
+	There exists by assumption a morphism~$g$ in~$\Acat$ with
+	\[
+		g \circ f
+		=
+		\id_A
+		\quad\text{and}\quad
+		f \circ g
+		=
+		\id_B \,.
+	\]
+	By applying the functor~$F$ to these two equations (and using that~$F$ is a functor) we find that
+	\[
+		F(g) \circ F(f)
+		=
+		\id_{F(A)}
+		\quad\text{and}\quad
+		F(f) \circ F(g)
+		=
+		\id_{F(B)} \,.
+	\]
+	This shows that~$F(f)$ is again an isomorphism, with inverse given by~$F(g)$.%
+	\footnote{
+		In other words,~$F(f^{-1}) = F(f)^{-1}$.
+	}
+\end{proof}
+
+There exists by assumption an isomorphism~$f$ from~$A$ to~$A'$ in~$\Acat$.
+It follows from \cref{functors preserve isomorphisms} that~$F(f)$ is an isomorphism from~$F(A)$ to~$F(A')$ in~$\Bcat$.
+The existence of such an isomorphism shown that~$F(A)$ and~$F(A')$ are isomorphic.
+
