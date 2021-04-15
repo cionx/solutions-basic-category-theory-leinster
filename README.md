@@ -4,7 +4,7 @@ This repository contains my personal solutions to the exercises in [Tom Leinster
 
 
 
-![Progress: 16/107][2]
+![Progress: 17/107][2]
 
 
 
@@ -18,7 +18,7 @@ This repository contains my personal solutions to the exercises in [Tom Leinster
 
 
 
-## 1. Categories, functors and natural transformations (11/24) ##
+## 1. Categories, functors and natural transformations (12/24) ##
 
 | 1.1.12 | 1.1.13 | 1.1.14 | 1.1.15 |
 | :-: | :-: | :-: | :-: |
@@ -26,7 +26,7 @@ This repository contains my personal solutions to the exercises in [Tom Leinster
 
 | 1.2.20 | 1.2.21 | 1.2.22 | 1.2.23 | 1.2.24 | 1.2.25 | 1.2.26 | 1.2.27 | 1.2.28 | 1.2.29 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ | ❌ |
 
 | 1.3.25 | 1.3.26 | 1.3.27 | 1.3.28 | 1.3.29 | 1.3.30 | 1.3.31 | 1.3.32 | 1.3.33 | 1.3.34 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -137,4 +137,4 @@ This repository contains my personal solutions to the exercises in [Tom Leinster
 
 
 [1]: https://arxiv.org/abs/1612.09375
-[2]: https://progress-bar.dev/16/?scale=107&title=current%20progress&width=500&suffix=/107
+[2]: https://progress-bar.dev/17/?scale=107&title=current%20progress&width=500&suffix=/107
