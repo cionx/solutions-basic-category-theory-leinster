@@ -1,0 +1,79 @@
+\subsubsection{}
+
+For every topological space~$X$ let~$C(X)$ be the (commutative) ring of continuous, real-valued functions on~$X$.
+For any two topological spaces~$X$ and~$Y$ and every continuous map~$\varphi$ from~$X$ to~$Y$ let~$C(\varphi)$ be the induced map
+\[
+	C(\varphi)
+	\colon
+	C(Y)
+	\to
+	C(X) \,,
+	\quad
+	f
+	\mapsto
+	f \circ \varphi \,.
+\]
+This map is well-defined because the composite of two continuous maps is again continuous.
+
+The above map~$C(\varphi)$ is a homomorphism of rings:
+For every two elements~$f$ and~$g$ of~$C(Y)$ and every~$\star \in \{+, \cdot\}$ we have
+\begin{align*}
+	C(\varphi)(f \star g)(x)
+	&=
+	((f \star g) \circ \varphi)(x)
+	\\
+	&=
+	(f \star g)(\varphi(x))
+	\\
+	&=
+	f(\varphi(x)) \star g(\varphi(x))
+	\\
+	&=
+	(f \circ \varphi)(x) \star (g \circ \varphi)(x)
+	\\
+	&=
+	C(\varphi)(f)(x) \star C(\varphi)(g)(x)
+	\\
+	&=
+	(C(\varphi)(f) \star C(\varphi)(g))(x)
+\end{align*}
+for every element~$x$ of~$X$, and thus
+\[
+	C(\varphi)(f \star g)
+	=
+	C(\varphi)(f) \star C(\varphi)(g) \,.
+\]
+We also have
+\[
+	C(\varphi)(1_Y)
+	=
+	1_Y \circ \varphi
+	=
+	1_X \,,
+\]
+and this~$C(\varphi)(1) = 1$.
+These calculations show that~$C(\varphi)$ is indeed a homomorphism of rings from~$C(Y)$ to~$C(X)$.
+
+For every topological space~$X$ we have
+\[
+	C(\id_X)(f)
+	=
+	f \circ \id_X
+	=
+	f
+\]
+for every~$f \in C(X)$ and therefore~$C(\id_X) = \id_{C(X)}$.
+For every three topological spaces~$X$,~$Y$,~$Z$ and every two continuous maps~$\varphi$ from~$X$ to~$Y$ and~$\psi$ from~$Y$ to~$Z$ we have
+\[
+	C(\psi \circ \varphi)(f)
+	=
+	f \circ \psi \circ \varphi
+	=
+	C(\psi)(f) \circ \varphi
+	=
+	C(\varphi)( C(\psi)(f) )
+	=
+	( C(\varphi) \circ C(\psi) )(f)
+\]
+for every~$f \in C(Z)$, and therefore~$C(\psi \circ \varphi) = C(\varphi) \circ C(\psi)$.
+This shows altogether that~$C$ is a contravariant functor from~$\Top$ to~$\Ring$.
