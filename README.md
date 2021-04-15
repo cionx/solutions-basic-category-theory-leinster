@@ -1,10 +1,10 @@
-# Solutiont to Basic Category Theory
+# Solutions to Basic Category Theory
 
 This repository contains my personal solutions to the exercises in [Tom Leinster’s *Basic Category Theory*][1].
 
 
 
-https://progress-bar.dev/14/?scale=107&title=current%20progress&width=500&suffix=/107
+![Progress: 14/107][2]
 
 
 
@@ -36,7 +36,7 @@ https://progress-bar.dev/14/?scale=107&title=current%20progress&width=500&suffix
 
 
 
-## 2. Adjoint (0/16) ## 
+## 2. Adjoint (0/16) ##
 
 | 2.1.12 | 2.1.13 | 2.1.14 | 2.1.15 | 2.1.16 | 2.1.17 |
 | :-: | :-: | :-: | :-: | :-: | :-: |
@@ -137,4 +137,4 @@ https://progress-bar.dev/14/?scale=107&title=current%20progress&width=500&suffix
 
 
 [1]: https://arxiv.org/abs/1612.09375
-[2]: https://progress-bar.dev/11/?scale=107&title=current%20progress&width=500&suffix=/107
+[2]: https://progress-bar.dev/14/?scale=107&title=current%20progress&width=500&suffix=/107
