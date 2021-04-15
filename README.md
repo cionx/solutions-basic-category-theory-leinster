@@ -1,6 +1,6 @@
 # Solutiont to Basic Category Theory
 
-This repository contains my personal solutions to the exercises in Tom Leinster’s *Basic Category Theory*.
+This repository contains my personal solutions to the exercises in [Tom Leinster’s *Basic Category Theory*][1].
 
 
 
@@ -131,3 +131,10 @@ https://progress-bar.dev/14/?scale=107&title=current%20progress&width=500&suffix
 | A.3 | A.4 | A.5 |
 | :-: | :-: | :-: |
 | ❌ | ❌ | ❌ |
+
+
+
+
+
+[1]: https://arxiv.org/abs/1612.09375
+[2]: https://progress-bar.dev/11/?scale=107&title=current%20progress&width=500&suffix=/107
