@@ -4,7 +4,7 @@ This repository contains my personal solutions to the exercises in Tom Leinster�
 
 
 
-https://progress-bar.dev/12/?scale=107&title=current%20progress&width=500&suffix=/107
+https://progress-bar.dev/13/?scale=107&title=current%20progress&width=500&suffix=/107
 
 
 
@@ -26,7 +26,7 @@ https://progress-bar.dev/12/?scale=107&title=current%20progress&width=500&suffix
 
 | 1.2.20 | 1.2.21 | 1.2.22 | 1.2.23 | 1.2.24 | 1.2.25 | 1.2.26 | 1.2.27 | 1.2.28 | 1.2.29 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| ✅ | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ | ❌ |
 
 | 1.3.25 | 1.3.26 | 1.3.27 | 1.3.28 | 1.3.29 | 1.3.30 | 1.3.31 | 1.3.32 | 1.3.33 | 1.3.34 |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |

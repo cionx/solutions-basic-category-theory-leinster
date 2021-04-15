@@ -1,0 +1,85 @@
+\subsection{}
+
+
+
+
+
+\subsubsection{}
+
+The group~$G^{\op}$ is the opposite group of~$G$:
+to every element~$g$ of~$G$ there is associated an element~$g^{\op}$ of~$G^{\op}$ such that the map
+\[
+	G
+	\to
+	G^{\op} \,,
+	\quad
+	g
+	\mapsto
+	g^{\op}
+\]
+is a bijection, and the group structure on~$G^{\op}$ is given by
+\[
+	g^{\op} \cdot h^{\op}
+	=
+	(h \cdot g)^{\op}
+\]
+for all~$g, h \in G$.
+
+Every group~$G$ is isomorphic to its opposite group~$G^{\op}$ via the inversion map
+\[
+	i
+	\colon
+	G
+	\to
+	G^{\op} \,,
+	\quad
+	g
+	\mapsto
+	(g^{\op})^{-1} \,.
+\]
+Indeed, the map~$i$ bijective because it is the composite of the two bijections
+\begin{alignat*}{2}
+	G
+	&\to
+	G^{\op} \,,
+	&\quad
+	g
+	&\mapsto
+	g^{\op} \,
+\shortintertext{and}
+	G^{\op}
+	&\to
+	G^{\op} \,,
+	&\quad
+	x
+	&\mapsto
+	x^{-1} \,.
+\end{alignat*}
+It is a group homomorphism because
+\[
+	i(g h)
+	=
+	( (g h)^{\op} )^{-1}
+	=
+	( h^{\op} g^{\op} )^{-1}
+	=
+	( g^{\op} )^{-1} ( h^{\op} )^{-1}
+	=
+	i(g) i(h)
+\]
+for all~$g, h \in G$.
+
+
+
+
+
+\subsubsection{}
+
+Let~$X$ be a set that contains at least two elements and let~$M$ be the monoid of maps from~$X$ to itself, i.e.~$M \defined \End_{\Set}(X)$.
+Every constant map~$c$ from~$X$ to~$X$ is left-absorbing in~$M$, in the sense that~$cf = c$ for every~$f \in M$.
+It follows that the monoid~$M^{\op}$ contains right-absorbing elements.
+But~$M$ itself does not admit a right-absorbing element.
+Indeed, there exist for every element~$f$ of~$M$ two elements~$x$ and~$y$ of~$X$ with~$f(x) \neq y$ (because the set~$X$ contains at least two elements).
+Let~$s$ be the transposition on the set~$X$ that interchanges the two elements~$f(x)$ and~$y$.
+Then~$(s f)(x) = y \neq f(x)$ and therefore~$sf \neq f$.
+
