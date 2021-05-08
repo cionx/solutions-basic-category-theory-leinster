@@ -1,3 +1,6 @@
 [submodule "customtex"]
 	path = customtex
 	url = https://gitlab.com/cionx/customtex.git
+[submodule "bibliography"]
+	path = bibliography
+	url = https://gitlab.com/cionx/bibliography.git
