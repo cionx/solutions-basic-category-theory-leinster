@@ -5,10 +5,13 @@
 \KOMAoptions{numbers = noenddot}
 
 \addtokomafont{disposition}{\rmfamily}
+\addtokomafont{descriptionlabel}{\rmfamily}
 
 \hypersetup{
 	colorlinks = true,
-	linkcolor = black
+	linkcolor = black,
+	citecolor = black,
+	urlcolor = black
 }
 
 \renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
@@ -24,6 +27,7 @@
 
 \newcommand{\algebras}[1]{#1\nobreakdash-algebras}
 \newcommand{\modules}[1]{#1\nobreakdash-modules}
+\newcommand{\set}[1]{#1\nobreakdash-set}
 \newcommand{\vectorspace}[1]{#1\nobreakdash-vector space}
 \newcommand{\vectorspaces}[1]{#1\nobreakdash-vector spaces}
 
@@ -34,6 +38,7 @@
 \newcommand{\catfont}{\mathbf}
 \newcommand{\Ab}{\catfont{Ab}}
 \newcommand{\Alg}[1]{#1\text{-}\catfont{Alg}}
+\newcommand{\Grp}{\catfont{Grp}}
 \newcommand{\Mod}[1]{#1\text{-}\catfont{Mod}}
 \newcommand{\Ord}{\catfont{Ord}}
 \newcommand{\Ring}{\catfont{Ring}}
@@ -49,14 +54,9 @@
 
 
 
-% functors
-
-\DeclareMathOperator{\Tensor}{T}
-
-
-
 % spaces
 
+\newcommand{\Sphere}{\mathbb{S}}
 \DeclareMathOperator{\symm}{S}
 
 

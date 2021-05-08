@@ -1,6 +1,7 @@
 \documentclass{scrbook}
 
 \usepackage{style}
+\bibliography{bibliography/references.bib}
 
 
 
@@ -12,12 +13,16 @@
 
 \begin{document}
 
-\maketitle
+\frontmatter
+	\maketitle
+	\tableofcontents
 
-\tableofcontents
+\mainmatter
+	\setcounter{chapter}{-1}
+	\include{sections/0_introduction}
+	\include{sections/1_categories_functors_natural_transformations}
 
-\setcounter{chapter}{-1}
-\include{sections/0_introduction}
-\include{sections/1_categories_functors_natural_transformations}
+\backmatter
+	\printbibliography
 
 \end{document}

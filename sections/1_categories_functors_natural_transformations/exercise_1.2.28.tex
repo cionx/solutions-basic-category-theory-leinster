@@ -1,0 +1,206 @@
+\subsection{}
+
+
+
+
+
+\subsubsection{}
+
+\begin{description}
+	
+	\item[Example~1.2.3~(a)]
+		The functor~$U$ is faithful.
+		But it is not full:
+		Let~$G$ be the trivial group and let~$H$ be the two-element group~$\Integer/2$.
+		The map~$U(G) \to U(H)$ given by~$1 \mapsto \class{1}$ is not a homomorphism of groups and is therefore not contained in the image of~$U$.
+
+	\item[Example~1.2.3~(b)]
+		This functor, that we will denote by~$U$, is faithful.
+		But it is not full:
+		Let~$R$ be the zero ring and let~$S$ be the ring of integers~$\Integer$.
+		Let~$f$ be the map from~$U(R)$ to~$U(\Integer)$ given by~$0 \mapsto 0$.
+		This map is not a homomorphism of rings and is therefore not contained in the image of~$U$.
+
+	\item[Example~1.2.3~(c)]
+		This functor is faithful.
+		But it is not full:
+		this can be seen from the same counterexample as for the previous functor.
+
+	\item[Example~1.2.3~(d)]
+		This functor is both faithful and full since~$\Ab$ is a full subcategory of~$\Grp$.
+
+	\item[Example~1.2.4~(a)]
+		The functor~$F$ is faithful:
+		Let~$S$ and~$T$ be two groups and let~$f$ be a map from~$S$ to~$T$.
+		The induced homomorphism of groups~$F(f)$ satisfies the condition
+		\[
+			F(f)(s)
+			=
+			f(s)
+		\]
+		for ever~$s \in S$.
+		The original map~$f$ is therefore uniquely determined by its induced homomorphism of groups~$F(f)$.
+
+		But the functor~$F$ is not full:
+		Let~$S$ be a non-empty set and let~$T$ be the empty set.
+		There exist no map from~$S$ to~$T$, but there exist a homomorphism of groups from~$F(S)$ to~$F(T)$, namely the trivial homomorphism.
+
+	\item[Example~1.2.4~(b)]
+		This functor is faithful, but not full.
+		This can be argued as in the previous example.
+
+	\item[Example~1.2.4~(c)]
+		This functor is faithful, but not full.
+		This can be argued as in the previous example.
+
+	\item[Example~1.2.5~(a)]
+		The fucntor~$\pi_1$ is not faithful:
+		Let~$X, Y = (\Real, 0)$.
+		The group~$\pi_1(\Real, 0)$ is trivial, so there exists precisely one homomorphism of groups from~$\pi_1(\Real, 0)$ to~$\pi_1(\Real, 0)$, namely the trivial one.
+		But there exist many more continuous maps from~$(\Real, 0)$ to~$(\Real, 0)$.%
+		\footnote{
+			Namely~$2^{\aleph_0}$ many.
+		}
+		
+		The functor~$\pi_1$ as also not full.
+		The author doesn’t know a good (counter)example for this.
+		For now, we refer to \cite{stackexchange_pi_1_not_full}.
+
+	\item[Example~1.2.5~(b)]
+		These functors are neither faithful nor full.
+
+	\item[Example~1.2.7]
+		The functor~$F$ is faithful if and only if the corresponding homomorphism of groups is injective, and the functor~$F$ is full if and only if the corresponding homomorphism of groups is surjective.
+
+	\item[Example~1.2.8]
+		This fuctor is faithful if and only if the corresponding~\set{$G$}, resp. representation of~$G$ is faithful.
+
+	\item[Example~1.2.9]
+		The functor is faithful.
+		It is full if and only if it follows for any two elements~$a$ and~$a'$ of~$\Acat$ from~$f(a) \leq f(a')$ that also~$a \leq a'$.
+
+	\item[Example~1.2.11]
+		The functor~$C$ is not faithful.
+		To see this, let~$X = \{ x \}$ be the one-point topological space and let~$Y= \{ y_1, y_2 \}$ be the two-point codiscrete topology space.
+		Both~$C(X)$ and~$C(Y)$ consist only of constant functions, and the two continuous maps from~$X$ to~$Y$ induce the same homomorphism of rings from~$C(Y)$ to~$C(X)$.
+		
+		The functor~$C$ ought to be non-full, but the author doesn’t know a counterexample.
+
+	\item[Example~1.2.12]
+
+		The functor~$(\ph)^*$ is faithful.
+		To see this, let~$V$ und~$W$ be two~\vectorspaces{$\kf$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$
+		There exist by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 \defined f_1(v)$ and~$w_2 \defined f_2(v)$ in~$W$ are distinct.
+		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) \neq w^*(w_2)$.
+		This means that
+		\begin{align*}
+			f_1^*(w^*)(v)
+			=
+			(w^* \circ f_1)(v)
+			=
+			w^*( f_1(w) )
+			=
+			w^*(w_1)
+			\neq
+			w^*(w_2)
+			=
+			w^*( f_2(w) )
+			&=
+			(w^* \circ f_2)(v)
+			\\
+			&=
+			f_2^*(w^*)(v) \,.
+		\end{align*}
+		This shows that~$f_1^*(w^*) \neq f_2^*(w^*)$, and therefore that~$f_1^* \neq f_2^*$.
+		
+		The functor~$(\ph)^*$ is not full.
+		We note that for any two~\vectorspaces{$\kf$}~$V$ and~$W$ the map
+		\[
+			D
+			\colon
+			\Hom_{\kf}(V, W) \to \Hom_{\kf}(W^*, V^*) \,,
+			\quad
+			f \mapsto f^*
+		\]
+		is linear.
+		Let now~$V = \kf$.
+		Then~%
+		$
+			\Hom_{\kf}(V, W)
+			=
+			\Hom_{\kf}(\kf, W)
+			\cong
+			W \,,
+		$
+		but
+		\[
+			\Hom_{\kf}(W^*, V^*)
+			=
+			\Hom_{\kf}(W^*, \kf^*)
+			\cong
+			\Hom_{\kf}(W^*, \kf)
+			=
+			W^{**} \,.
+		\]
+		If we choose~$W$ to be infinite-dimensional, then it follows that~$D$ cannot be surjective.
+\end{description}
+
+
+
+
+
+\subsubsection{}
+
+Let~$I_1$ be the category given by two objects~$x$ and~$y$ and one non-identity morphism~$f$:
+\[
+	I_1
+	\colon
+	\begin{tikzcd}
+		x
+		\arrow{r}[above]{f}
+		&
+		y
+	\end{tikzcd}
+\]
+Let similarly~$I_2$ be the category given by two objects~$x$ and~$y$ and two parallel non-identity morphisms~$f$ and~$g$:
+\[
+	I_2
+	\colon
+	\begin{tikzcd}
+		x
+		\arrow[yshift= 0.5ex]{r}[above]{f}
+		\arrow[yshift=-0.5ex]{r}[below]{g}
+		&
+		y
+	\end{tikzcd}
+\]
+The identity functor of~$I_1$ is both full and faithful.
+The unique functor~$F$
+\[
+	F
+	\colon
+	I_1 \to I_2
+	\quad\text{with}\quad
+	F(x) = x \,,
+	\quad
+	F(y) = y \,,
+	\quad
+	F(f) = f
+\]
+is faithful but not full.
+The unique functor
+\[
+	G
+	\colon
+	I_2 \to I_1
+	\quad\text{with}\quad
+	F(x) = x \,,
+	\quad
+	F(y) = y \,,
+	\quad
+	F(f) = f
+	\quad
+	F(g) = g
+\]
+is full but not faithful.
+The composite~$F \circ G$ is neither full nor faithful.
