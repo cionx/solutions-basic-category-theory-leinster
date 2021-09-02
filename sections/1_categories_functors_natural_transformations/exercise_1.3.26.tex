@@ -1,0 +1,80 @@
+\subsection{}
+
+Suppose first that~$α$ is a natural isomorphism.
+This means that there exists a natural tranformation~$β$ from~$G$ to~$F$ such that both~$β ∘ α = 1_F$ and~$α ∘ β = 1_G$.
+This means that for every object~$A$ of~$\Acat$ we have the equality
+\[
+	β_A ∘ α_A
+	=
+	(β ∘ α)_A
+	=
+	(1_F)_A
+	=
+	1_{F(A)}
+\]
+and similarly the equality
+\[
+	α_A ∘ β_A
+	=
+	(α ∘ β)_A
+	=
+	(1_G)_A
+	=
+	1_{G(A)} \,.
+\]
+This shows that the morpism~$α_A$ is an isomorphism with inverse~$β_A$.
+
+Suppose now that for every object~$A$ of~$\Acat$ the morphism~$α_A$ is an isomorphism.
+For every object~$A$ of~$\Acat$ let~$β_A ≔ α_A^{-1}$.
+It follows for any two objects~$A_1$ and~$A_2$ of~$\Acat$ and every morphism~$f$ from~$A_1$ to~$A_2$ from the commutativity of the square diagram
+\[
+	\begin{tikzcd}
+		F(A_1)
+		\arrow{r}[above]{F(f)}
+		\arrow{d}[left]{α_{A_1}}
+		&
+		F(A_2)
+		\arrow{d}[right]{α_{A_2}}
+		\\
+		G(A_1)
+		\arrow{r}[above]{G(f)}
+		&
+		G(A_2)
+	\end{tikzcd}
+\]
+that
+\[
+	α_{A_2} ∘ F(f) = G(f) ∘ α_{A_1} \,,
+\]
+and therefore
+\[
+	F(f) ∘ α_{A_1}^{-1} = α_{A_2}^{-1} ∘ G(f) \,.
+\]
+In other words,
+\[
+	F(f) ∘ β_{A_1} = β_{A_2} ∘ G(f) \,,
+\]
+so that the following diagram commutes:
+\[
+	\begin{tikzcd}
+		F(A_1)
+		\arrow{r}[above]{F(f)}
+		&
+		F(A_2)
+		\\
+		G(A_1)
+		\arrow{r}[above]{G(f)}
+		\arrow{u}[left]{β_{A_1}}
+		&
+		G(A_2)
+		\arrow{u}[right]{β_{A_2}}
+	\end{tikzcd}
+\]
+This shows that~$β$ is a natural transformation from~$G$ to~$F$.
+We have~$α ∘ β = 1_G$ and~$β ∘ α = 1_F$ by choice of~$β$.
+This means that~$α$ is a natural isomorphism with inverse~$β$.
+
+
+
+
+
