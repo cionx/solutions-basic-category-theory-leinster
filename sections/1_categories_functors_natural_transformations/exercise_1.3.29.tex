@@ -1,0 +1,214 @@
+\subsection{}
+
+Suppose first that~$α$ is a natural tranformation from~$F$ to~$G$.
+
+Let~$B$ be any object of~$\Bcat$.
+We have for every morphism~$f \colon A_1 \to A_2$ the following commutative square diagram:
+\[
+	\begin{tikzcd}[column sep = large]
+		F(A_1, B)
+		\arrow{r}[above]{F(f, 1_B)}
+		\arrow{d}[left]{α_{A_1, B}}
+		&
+		F(A_2, B)
+		\arrow{d}[right]{α_{A_2, B}}
+		\\
+		G(A_1, B)
+		\arrow{r}[above]{G(f, 1_B)}
+		&
+		G(A_2, B)
+	\end{tikzcd}
+\]
+This diagram can equivalently be written as follows:
+\[
+	\begin{tikzcd}[column sep = large]
+		F_B(A_1)
+		\arrow{r}[above]{F_B(f)}
+		\arrow{d}[left]{α_{A_1, B}}
+		&
+		F_B(A_2)
+		\arrow{d}[right]{α_{A_2, B}}
+		\\
+		G_B(A_1)
+		\arrow{r}[above]{G_B(f)}
+		&
+		G_B(A_2)
+	\end{tikzcd}
+\]
+The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
+
+Let~$A$ be an object of~$\Acat$.
+We have for every morphism~$g \colon B_1 \to B_2$ in~$\Bcat$ the following commutative square diagram:
+\[
+	\begin{tikzcd}[column sep = large]
+		F(A, B_1)
+		\arrow{r}[above]{F(1_A, g)}
+		\arrow{d}[left]{α_{A, B_1}}
+		&
+		F(A, B_2)
+		\arrow{d}[right]{α_{A, B_2}}
+		\\
+		G(A, B_1)
+		\arrow{r}[above]{G(1_A, g)}
+		&
+		G(A, B_2)
+	\end{tikzcd}
+\]
+This diagram can equivalenty be written as follows:
+\[
+	\begin{tikzcd}[column sep = large]
+		F^A(B_1)
+		\arrow{r}[above]{F^A(g)}
+		\arrow{d}[left]{α_{A, B_1}}
+		&
+		F^A(B_2)
+		\arrow{d}[right]{α_{A, B_2}}
+		\\
+		G^A(B_1)
+		\arrow{r}[above]{G^A(g)}
+		&
+		G^A(B_2)
+	\end{tikzcd}
+\]
+The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$.
+
+Suppose now on the other hand that the for every object~$A$ of~$\Acat$ the family~$(α_{A,B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\Bcat$ the family~$(α_{A,B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
+Let
+\[
+	(f, g)
+	\colon
+	(A_1, B_1) \to (A_2, B_2)
+\]
+be a morphism in~$\Acat × \Bcat$.
+We have by assumption the following two commutative square diagrams:
+\[
+	\begin{tikzcd}[column sep = large]
+		F_{B_1}(A_1)
+		\arrow{r}[above]{F_{B_1}(f)}
+		\arrow{d}[left]{α_{A_1, B_1}}
+		&
+		F_{B_1}(A_2)
+		\arrow{d}[right]{α_{A_2, B_1}}
+		\\
+		G_{B_1}(A_1)
+		\arrow{r}[above]{G_{B_1}(f)}
+		&
+		G_{B_1}(A_2)
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[column sep = large]
+		F^{A_2}(B_1)
+		\arrow{r}[above]{F^{A_2}(g)}
+		\arrow{d}[left]{α_{A_2, B_1}}
+		&
+		F^{A_2}(B_2)
+		\arrow{d}[right]{α_{A_2, B_2}}
+		\\
+		G^{A_2}(B_1)
+		\arrow{r}[above]{G^{A_2}(g)}
+		&
+		G^{A_2}(B_2)
+	\end{tikzcd}
+\]
+We can equivalently write these diagrams as follows:
+\[
+	\begin{tikzcd}[column sep = large]
+		F(A_1, B_1)
+		\arrow{r}[above]{F(f, 1_{B_1})}
+		\arrow{d}[left]{α_{A_1, B_1}}
+		&
+		F(A_2, B_1)
+		\arrow{d}[right]{α_{A_2, B_1}}
+		\\
+		G(A_1, B_1)
+		\arrow{r}[above]{G(f, 1_{B_1})}
+		&
+		G(A_2, B_1)
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[column sep = large]
+		F(A_2, B_1)
+		\arrow{r}[above]{F(1_{A_2}, g)}
+		\arrow{d}[left]{α_{A_2, B_1}}
+		&
+		F(A_2, B_2)
+		\arrow{d}[right]{α_{A_2, B_2}}
+		\\
+		G(A_2, B_1)
+		\arrow{r}[above]{G(1_{A_2}, g)}
+		&
+		G(A_2, B_2)
+	\end{tikzcd}
+\]
+We can combine these two commutative square diagrams into the following commutative rectangular diagram:
+\[
+	\begin{tikzcd}[column sep = large]
+		F(A_1, B_1)
+		\arrow{r}[above]{F(f, 1_{B_1})}
+		\arrow{d}[left]{α_{A_1, B_1}}
+		&
+		F(A_2, B_1)
+		\arrow{r}[above]{F(1_{A_2}, g)}
+		\arrow{d}[left]{α_{A_2, B_1}}
+		&
+		F(A_2, B_2)
+		\arrow{d}[right]{α_{A_2, B_2}}
+		\\
+		G(A_1, B_1)
+		\arrow{r}[above]{G(f, 1_{B_1})}
+		&
+		G(A_2, B_1)
+		\arrow{r}[above]{G(1_{A_2}, g)}
+		&
+		G(A_2, B_2)
+	\end{tikzcd}
+\]
+By leaving out the middle column this diagram we arrive at the following commutative square diagram:
+\[
+	\begin{tikzcd}[column sep = 7em]
+		F(A_1, B_1)
+		\arrow{r}[above]{F(1_{A_2}, g) ∘ F(f, 1_{B_1})}
+		\arrow{d}[left]{α_{A_1, B_1}}
+		&
+		F(A_2, B_2)
+		\arrow{d}[right]{α_{A_2, B_2}}
+		\\
+		G(A_1, B_1)
+		\arrow{r}[above]{G(1_{A_2}, g) ∘ G(f, 1_{B_1})}
+		&
+		G(A_2, B_2)
+	\end{tikzcd}
+\]
+Thanks to the equalities
+\[
+	F(1_{A_2}, g) ∘ F(f, 1_{B_1})
+	=
+	F( (1_{A_2}, g) ∘ (f, 1_{B_1}) )
+	=
+	F(f, g)
+\]
+and similarly
+\[
+	G(1_{A_2}, g) ∘ G(f, 1_{B_1})
+	=
+	G( (1_{A_2}, g) ∘ (f, 1_{B_1}) )
+	=
+	G(f, g)
+\]
+we can further rewritte this commutative square as follows:
+\[
+	\begin{tikzcd}[column sep = large]
+		F(A_1, B_1)
+		\arrow{r}[above]{F(f, g)}
+		\arrow{d}[left]{α_{A_1, B_1}}
+		&
+		F(A_2, B_2)
+		\arrow{d}[right]{α_{A_2, B_2}}
+		\\
+		G(A_1, B_1)
+		\arrow{r}[above]{G(f, g)}
+		&
+		G(A_2, B_2)
+	\end{tikzcd}
+\]
+The commutativity of this square diagram shows that~$α$ is a natural transformation from~$F$ to~$G$.
