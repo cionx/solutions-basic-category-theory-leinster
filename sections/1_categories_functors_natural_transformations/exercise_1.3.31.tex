@@ -1,0 +1,159 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$ (i.e. a morphism in the given category~$\Bcat$).
+We let~$\Sym(f)$ be the resulting conjucation isomorphism of groups from~$\Sym(X)$ to~$\Sym(Y)$, i.e. the map
+\[
+	\Sym(f)
+	\colon
+	\Sym(X) \to \Sym(Y) \,,
+	\quad
+	s \mapsto f ∘ s ∘ f^{-1} \,.
+\]
+
+For every set~$X$ we have
+\[
+	\Sym(1_X)(s)
+	=
+	1_X ∘ s ∘ 1_X^{-1}
+	=
+	1_X ∘ s ∘ 1_X
+	=
+	s
+	=
+	1_{\Sym(X)}(s)
+\]
+for every~$s ∈ \Sym(X)$, and therefore~$\Sym_{1_X} = 1_{\Sym(X)}$.
+For every two composable morphisms~$f \colon X \to Y$ and~$g \colon Y \to Z$ in~$\Bcat$ we have
+\[
+	\Sym(g)( \Sym(f)(s) )
+	=
+	g ∘ f ∘ s ∘ f^{-1} ∘ g^{-1}
+	=
+	g ∘ f ∘ s ∘ (g ∘ f)^{-1}
+	=
+	\Sym(g ∘ f)(s)
+\]
+for every~$s ∈ \Sym(X)$, and therefore~$\Sym(g∘ f) = \Sym(g) ∘ \Sym(f)$.
+We have shown that~$\Sym$ is a functor from~$\Bcat$ to~$\Set$.
+(This functor factors through the forgetful functor from~$\Grp$ to~$\Set$.)
+
+Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$.
+Given a total order~$≤$ on~$X$ we get a total order~$≤_f$ on~$Y$ given by
+\[
+	f(x_1) ≤_f f(x_2)
+	\iff
+	x_1 ≤ x_2
+\]
+for all~$x_1, x_2 ∈ X$.
+We define~$\Ord(f)$ as the map
+\[
+	\Ord(f)
+	\colon
+	\Ord(X) \to \Ord(Y) \,,
+	\quad
+	{≤} \mapsto {≤_f} \,.
+\]
+
+Let~$X$ be a set.
+For every total order~$≤$ on~$X$, i.e. element of~$\Ord(X)$, we have
+\[
+	x_1 ≤_{1_X} x_2
+	\iff
+	1_X(x_1) ≤_{1_X} 1_X(x_2)
+	\iff
+	x_1 ≤ x_2
+\]
+for all~$x_1, x_2 ∈ X$, which shows that~$\Ord(f)(≤)$ is again~$≤$.
+This shows that~$\Ord(1_X) = 1_{\Ord(X)}$.
+
+Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two composable morphisms in~$\Bcat$.
+Given a total order~$≤$ on~$X$ we have
+\begin{align*}
+	\SwapAboveDisplaySkip
+	    {}& (g ∘ f)(x_1) \mathrel{(≤_f)_g} (g ∘ f)(x_2) \\
+	\iff{}& g(f(x_1)) \mathrel{(≤_f)_g} g(f(x_2)) \\
+	\iff{}& f(x_1) ≤_f f(x_2) \\
+	\iff{}& x_1 ≤ x_2 \\
+	\iff{}& (g ∘ f)(x_1) ≤_{g ∘ f} (g ∘ f)(x_2)
+\end{align*}
+for all~$x_1, x_2 \in X$, which shows that~$\Ord(g)(\Ord(f)(≤)) = \Ord(g ∘ f)(≤)$.
+We have thus shown that~$\Ord(g ∘ f) = \Ord(g) ∘ \Ord(f)$.
+
+We have overall shown that~$\Ord$ is a functor from~$\Bcat$ to~$\Set$.
+
+
+
+\subsubsection{}
+
+We have for every finite set~$X$ a distinguished elements of~$\Sym(X)$, namely the identity function,~$1_X$.
+For every morphism~$f \colon X \to Y$ in~$\Bcat$ we have
+\[
+	\Sym(f)(1_X)
+	=
+	f ∘ 1_X ∘ f^{-1}
+	=
+	f ∘ f^{-1}
+	=
+	1_Y \,.
+\]
+This shows that the map~$\Sym(f)$ carries the distinguished element of~$\Sym(X)$ to the distinguished element of~$\Sym(Y)$.
+In the following let~$s_X$ denote~$1_X$.
+
+Suppose that there would exist a natural transformation~$α$ from~$\Sym$ to~$\Ord$.
+For every finite set~$X$ we would then get the element~$t_X ≔ α_X(s_X)$ of~$\Ord(X)$.
+It would follow for every morphism~$f \colon X \to Y$ in~$\Bcat$ from the commutativity of the diagram
+\[
+	\begin{tikzcd}[column sep = large]
+		\Sym(X)
+		\arrow{r}[above]{\Sym(f)}
+		\arrow{d}[left]{α_X}
+		&
+		\Sym(Y)
+		\arrow{d}[right]{α_Y}
+		\\
+		\Ord(X)
+		\arrow{r}[above]{\Ord(f)}
+		&
+		\Ord(Y)
+	\end{tikzcd}
+\]
+that
+\[
+	\Ord(f)(t_X)
+	=
+	\Ord(f)( α_X( s_X ) )
+	=
+	α_Y( \Sym(f)( s_X ) )
+	=
+	α_Y( s_Y )
+	=
+	t_Y \,.
+\]
+This shows that the map~$\Ord(f)$ would carry the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
+
+However, such a distinguished choice of elemets~$(t_X)_{X \in \Ob(\Bcat)}$ cannot exist:
+If a finite set~$X$ with at least two distinct elements, then for every element~$≤$ of~$\Ord(X)$ and every non-identity automorphism~$f$ of~$X$ (of which there exist some because~$X$ has at least two swapable elements) we have~$\Ord(f)(≤) ≠ {≤}$.
+
+
+
+\subsubsection{}
+
+For a finite set~$X$ of cardinality~$n$ both~$\Ord(X)$ and~$\Sym(X)$ have~$n!$ elements.
+
+
+
+\subsubsection*{Conclusion}
+
+The sets~$\Sym(X)$ and~$\Ord(X)$ have the same cardinality for every finite set~$X$.
+They are therefore isomorphic in~$\Set$, i.e.~$\Sym(X) ≅ \Ord(X)$ in~$\Set$.
+This means that the two functors~$\Sym$ and~$\Ord$ are pointwise isomorphic.
+However, we have seen above that there exists no natural transformation from~$\Sym$ to~$\Ord$, and therefore also no natural isomorphism from~$\Sym$ to~$\Ord$.
+
+
+
+
+
