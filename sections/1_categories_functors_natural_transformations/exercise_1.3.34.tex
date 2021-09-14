@@ -1,0 +1,51 @@
+\subsection{}
+
+Every category is equivalent -- even isomorphic -- to itself via its identity functor.
+This shows that equivalence of categories is reflexive.
+
+The notion of an \enquote{equivalence of categories} is symmetric in the two categories in question.
+This shows that equivalence of categories is symmetric.
+
+Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories such that~$\Acat$ is equivalent to~$\Bcat$ and~$\Bcat$ is equivalent to~$\Ccat$.
+This means that there exist functors
+\[
+	F \colon \Acat \to \Bcat \,,
+	\quad
+	G \colon \Bcat \to \Acat \,,
+	\quad
+	F' \colon \Bcat \to \Ccat \,,
+	\quad
+	G' \colon \Ccat \to \Bcat
+\]
+such that
+\[
+	F' F ≅ 1_{\Acat} \,,
+	\quad
+	F F' ≅ 1_{\Bcat} \,,
+	\quad
+	G' G ≅ 1_{\Bcat} \,,
+	\quad
+	G G' ≅ 1_{\Ccat} \,.
+\]
+It follows that
+\[
+	GF F'G'
+	≅
+	G 1_{\Bcat} G'
+	=
+	G G'
+	≅
+	1_{\Ccat}
+\]
+and similarly that
+\[
+	F'G' GF
+	≅
+	F' 1_{\Bcat} F
+	=
+	F' F
+	≅
+	1_{\Acat} \,.
+\]
+This shows that the functor~$GF$ is an equivalence of categories with quasi-inverse~$F' G'$.
+We have thus shown that equivalence of categories is transitive.
