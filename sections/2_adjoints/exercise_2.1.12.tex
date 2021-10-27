@@ -1,0 +1,110 @@
+\subsection{}
+
+
+
+
+
+\subsubsection*{Adjoint functors}
+
+\begin{itemize}
+	\item
+		Let~$\kf$ be a field and let~$V$ be a~\vectorspace{$\kf$}.
+		The two functors
+		\[
+			(\ph) \tensor_{\kf} V
+			\colon
+			\Vect{\kf} \to \Vect{\kf}
+			\quad\text{and}\quad
+			\Hom_{\kf}(V, \ph)
+			\colon
+			\Vect{\kf} \to \Vect{\kf}
+		\]
+		are adjoint, with~$(\ph) \tensor_{\kf} V$ being left adjoint to~$\Hom_{\kf}(V, \ph)$.
+		(This example is in the vain of Example~2.1.16.)
+	\item
+		Let more generally~$R$ and~$S$ be two rings and let~$M$ be an~\bimodule{$R$}{$S$}.
+		The two functors
+		\[
+			(\ph) \tensor_R M
+			\colon
+			\Modr{R} \to \Modr{S}
+			\quad\text{and}\quad
+			\Hom_S(M, \ph)
+			\colon
+			\Modr{S} \to \Modr{R}
+		\]
+		are adjoint, with~$(\ph) \tensor_R M$ being left adjoint to~$\Hom_S(M, \ph)$.
+	\item
+		For every category~$\Acat$ let~$U(\Acat)$ be its underlying graph, and for every functor~$F$ from~$\Acat$ to~$\Bcat$ let~$U(F)$ be its induced homomorphism of graphs from~$U(\Acat)$ to~$U(\Bcat)$.
+		This assignment~$U$ is a functor from~$\Cat$ to~$\Graph$, the category of graphs.%
+		\footnote{
+			By a graph we mean an undirected graph, possibly with parallel edges as well as loops.
+		}
+
+		For every graph~$G$ let~$P(G)$ be the following category:
+		The objects of~$P(G)$ are the vertices of~$G$.
+		For any two vertices~$x$ and~$y$ of~$G$ the morphisms from~$x$ to~$y$ in~$C(G)$ are precisely the paths from~$x$ to~$y$ in~$P(G)$.%
+		\footnote{
+			By a path from~$x$ to~$y$ in~$G$ we mean a tupel of the form~$p = (x, α_1, \dotsc, α_n, y)$ where~$α_1, \dotsc, α_n$ are edges in~$G$ such that~$α_1$ starts in~$x$, the end vertex of~$α_i$ is the start vertex of~$α_{i+1}$ for all~$i = 1, \dotsc, n - 1$, and the end vertex of~$α_n$ is~$y$.
+			The vertex~$x$ is the start vertex of~$p$, the vertex~$y$ is the end vertex of~$p$, and the number~$n$ is the length of~$G$.
+
+			This entails in particular that there exists for every vertex~$x$ of~$G$ a unique path of length~$0$ from~$x$ to~$x$ in~$G$, given by the tuple~$(x, x)$.
+			For two distinct vertices~$x$ and~$y$ of~$G$ their associated paths of length~$0$ are also distinct.
+		}
+		The composition of morphisms of~$P(G)$ is the composition of paths in~$G$.%
+		\footnote{
+			The composite~$qp$ of two paths~$p$ and~$q$ given by~$p = (x, α_1, \dotsc, α_n, y)$ and~$q = (y, α_{n+1}, \dotsc, α_m, z)$ is given by~$q p = (x, α_1, \dotsc, α_n, α_{n+1}, \dotsc, α_m, z)$.
+		}
+		The category~$P(G)$ is the \defemph{path category} of~$G$.
+
+		Every homomorphism of graphs~$f$ from~$G$ to~$H$ induces a functor~$P(f)$ from~$P(G)$ to~$P(H)$ given on objects by~$P(f)(x) = f(x)$ for every vertex~$x$ of~$P$ and on morphisms by
+		\[
+			P(f)( (x, α_1, \dotsc, α_n, y) )
+			=
+			( f(x), f(α_1), \dotsc, f(α_n), f(y) )
+		\]
+		for every path~$(x, α_1, \dotsc, α_n, y)$ in~$G$.
+		We thus arrive at a functor~$P$ from~$\Graph$ to~$\Cat$.
+
+		The functors~$P$ and~$U$ are adjoint, with~$P$ being left adjoint to~$U$.
+		(We can think about~$U$ as a forgetful functor and about~$P(G)$ as the \enquote{free category on~$G$}.)
+\end{itemize}
+
+
+
+
+
+\subsubsection*{Initial objects}
+
+\begin{itemize}
+	\item
+		The empty category is initial in~$\CAT$.
+	\item
+		Let~$R$ be a ring.
+		The zero module is initial in~$\Mod{R}$.
+	\item
+		The initial objects in the category of pointed sets are precisely the one-element sets.
+	\item
+		Let~$P$ be a partially ordered set and let~$\Pcat$ be the corresponding category.
+		An initial object of~$\Pcat$ is the same as a lower bound of~$P$.
+\end{itemize}
+
+
+
+
+
+\subsubsection*{Terminal objects}
+
+\begin{itemize}
+	\item
+		Let~$R$ be a ring.
+		The zero module is terminal in~$\Mod{R}$.
+	\item
+		Let~$P$ be a partially ordered set and let~$\Pcat$ be the corresponding category.
+		An terminal object of~$\Pcat$ is the same as an upper bound of~$P$.
+	\item
+		The terminal objects in~$\Top$ are precisely the one-element topological spaces.
+\end{itemize}
+
+
+
