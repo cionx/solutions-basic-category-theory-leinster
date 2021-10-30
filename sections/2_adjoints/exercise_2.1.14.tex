@@ -1,0 +1,211 @@
+\subsection{}
+
+Let~$\Acat$ and~$\Bcat$ be two categories, let~$F$ be a functor from~$\Acat$ to~$\Bcat$ and let~$G$ be a functor from~$\Bcat$ to~$\Acat$.
+
+Suppose first that the two naturality equations~(2.2) and~(2.3) hold.
+For any three morphisms
+\[
+	A'
+	\xto{p}
+	A
+	\xto{f}
+	G(B)
+	\xto{G(q)}
+	G(B')
+\]
+in~$\Acat$ we have
+\begin{align*}
+	\adjtranspose{
+		\biggl(
+			A'
+			\xto{p}
+			A
+			\xto{f}
+			G(B)
+			\xto{G(q)}
+			G(B')
+		\biggr)
+	}
+	&=
+	\adjtranspose{
+		\biggl(
+			A'
+			\xto{f p}
+			G(B)
+			\xto{G(q)}
+			G(B')
+		\biggr)
+	}
+	\\[0.5em]
+	&=
+	\adjtranspose{
+		\left(
+			A'
+			\xto{\adjtranspose{\adjtranspose{f p}}}
+			G(B)
+			\xto{G(q)}
+			G(B')
+		\right)
+	}
+	\\
+	&=
+	\Biggl(
+		F(A')
+		\xto{\adjtranspose{f p}}
+		B
+		\xto{q}
+		B'
+	\Biggr)
+	\tag{by~(2.2)}
+	\\[0.5em]
+	&=
+	\left(
+		\adjtranspose{
+			\biggl(
+				A'
+				\xto{p}
+				A
+				\xto{f}
+				G(B)
+			\biggr)
+		}
+		\xto{q}
+		B'
+	\right)
+	\\
+	&=
+	\biggl(
+		F(A')
+		\xto{F(p)}
+		F(A)
+		\xto{\adjtranspose{f}}
+		B
+		\xto{q}
+		B'
+	\biggr)
+	\tag{by~(2.3)}
+\end{align*}
+This shows that the given naturality equation holds.
+
+Suppose now conversely that the given naturality equation holds.
+Then
+\begin{align*}
+	\adjtranspose{
+		\Biggl(
+			F(A)
+			\xto{g}
+			B
+			\xto{q}
+			B'
+		\Biggr)
+	}
+	&=
+	\adjtranspose{
+		\Biggl(
+			F(A)
+			\xto{1_{F(A)}}
+			F(A)
+			\xto{g}
+			B
+			\xto{q}
+			B'
+		\Biggr)
+	}
+	\\[0.5em]
+	&=
+	\adjtranspose{
+		\Biggl(
+			F(A)
+			\xto{F(1_A)}
+			F(A)
+			\xto{\adjtranspose{\adjtranspose{g}}}
+			B
+			\xto{q}
+			B'
+		\Biggr)
+	}
+	\\
+	&=
+	\biggl(
+		A
+		\xto{1_A}
+		A
+		\xto{\adjtranspose{g}}
+		B
+		\xto{G(q)}
+		B'
+	\biggr)
+	\\
+	&=
+	\biggl(
+		A
+		\xto{\adjtranspose{g}}
+		B
+		\xto{G(q)}
+		B'
+	\biggr) \,,
+\end{align*}
+which shows that the naturality equation~(2.2).
+We find similarly that
+\begin{align*}
+	\adjtranspose{
+		\Biggl(
+			A'
+			\xto{p}
+			A
+			\xto{f}
+			G(B)
+		\Biggr)
+	}
+	&=
+	\adjtranspose{
+		\Biggl(
+			A'
+			\xto{p}
+			A
+			\xto{f}
+			G(B)
+			\xto{1_{G(B)}}
+			G(B)
+		\Biggr)
+	}
+	\\[1em]
+	&=
+	\adjtranspose{
+		\Biggl(
+			A'
+			\xto{p}
+			A
+			\xto{f}
+			G(B)
+			\xto{G(1_B)}
+			G(B)
+		\Biggr)
+	}
+	\\
+	&=
+	\biggl(
+		F(A')
+		\xto{F(p)}
+		F(A)
+		\xto{\adjtranspose{f}}
+		B
+		\xto{1_B}
+		B
+	\biggr)
+	\\
+	&=
+	\biggl(
+		F(A')
+		\xto{F(p)}
+		F(A)
+		\xto{\adjtranspose{f}}
+		B
+	\biggr) \,,
+\end{align*}
+which shows the naturality equation~(2.3).
+
+
+
+
+
