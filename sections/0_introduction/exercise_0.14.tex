@@ -3,7 +3,7 @@
 
 \subsubsection{}
 
-Let~$P \defined X \times Y$, let~$p_1$ be the projection map from~$P$ to~$X$ into the first coordinate, and let~$p_2$ be the projection map from~$P$ to~$Y$ into the second coordinate.
+Let~$P ≔ X × Y$, let~$p_1$ be the projection map from~$P$ to~$X$ into the first coordinate, and let~$p_2$ be the projection map from~$P$ to~$Y$ into the second coordinate.
 
 For every pair~$(f_1, f_2)$ of set-theoretic maps
 \[
@@ -11,7 +11,7 @@ For every pair~$(f_1, f_2)$ of set-theoretic maps
 	\quad
 	f_2 \colon V \to Y
 \]
-there exists a unique set-theoretic map~$f$ from~$X \times Y$ such that~$f_1 = p_1 \circ f$ and~$f_2 = p_2 \circ f$, namely the map
+there exists a unique set-theoretic map~$f$ from~$X × Y$ such that~$f_1 = p_1 ∘ f$ and~$f_2 = p_2 ∘ f$, namely the map
 \[
 	f
 	\colon
@@ -27,29 +27,25 @@ If both~$f_1$ and~$f_2$ are linear, then it follows that~$f$ is also linear.
 
 
 
-
-
 \subsubsection{}
 
-There exists by a unique linear map~$i$ from~$P$ to~$P'$ such that~$p'_1 \circ i = p_1$ and~$p'_2 \circ i = p_2$, and a unique linear map~$j$ from~$P'$ to~$P$ such that~$p_1 \circ j = p'_1$ and~$p_2 \circ j = p'_2$.
+There exists by a unique linear map~$i$ from~$P$ to~$P'$ such that~$p'_1 ∘ i = p_1$ and~$p'_2 ∘ i = p_2$, and a unique linear map~$j$ from~$P'$ to~$P$ such that~$p_1 ∘ j = p'_1$ and~$p_2 ∘ j = p'_2$.
 
-There exists by assumption a unique linear map~$f$ from~$P$ to~$P$ such that~$p_1 \circ f = p_1$ and~$p_2 \circ f = p_2$.
-Both~$\id_P$ and~$j \circ i$ satisfy this condition.
-It therefore follows that~$j \circ i = \id_P$.
+There exists by assumption a unique linear map~$f$ from~$P$ to~$P$ such that~$p_1 ∘ f = p_1$ and~$p_2 ∘ f = p_2$.
+Both~$\id_P$ and~$j ∘ i$ satisfy this condition.
+It therefore follows that~$j ∘ i = \id_P$.
 
-There exists by assumption a unique linear map~$g$ from~$P'$ to~$P'$ such that~$p'_1 \circ g = p'_1$ and~$p'_2 \circ g = p'_2$.
-Both~$\id_{P'}$ and~$i \circ j$ satisfy this condition.
-It therefore follows that~$i \circ j = \id_{P'}$.
+There exists by assumption a unique linear map~$g$ from~$P'$ to~$P'$ such that~$p'_1 ∘ g = p'_1$ and~$p'_2 ∘ g = p'_2$.
+Both~$\id_{P'}$ and~$i ∘ j$ satisfy this condition.
+It therefore follows that~$i ∘ j = \id_{P'}$.
 
 This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms.
 
 
 
-
-
 \subsubsection{}
 
-Let~$Q = X \oplus Y$ and let~$q_1$ and~$q_2$ be the linear maps given by
+Let~$Q = X ⊕ Y$ and let~$q_1$ and~$q_2$ be the linear maps given by
 \begin{alignat*}{2}
 	q_1
 	\colon
@@ -72,7 +68,7 @@ Let~$Q = X \oplus Y$ and let~$q_1$ and~$q_2$ be the linear maps given by
 	(0, y) \,.
 \end{alignat*}
 
-Let~$f$ be a linear map from~$Q$ to~$V$ such that~$f \circ q_1 = f_1$ and~$f \circ q_2 = f_2$.
+Let~$f$ be a linear map from~$Q$ to~$V$ such that~$f ∘ q_1 = f_1$ and~$f ∘ q_2 = f_2$.
 Then
 \begin{align*}
 	f( (x,y) )
@@ -86,13 +82,13 @@ Then
 	f( q_1(x) ) + f( q_2(y) )
 	\\
 	&=
-	(f \circ q_1)(x) + (f \circ q_2)(y)
+	(f ∘ q_1)(x) + (f ∘ q_2)(y)
 	\\
 	&=
 	f_1(x) + f_2(y)
 \end{align*}
-for all~$x \in X$ and~$y \in Y$.
-This shows that that~$f$ in uniquely determined by~$f_1$ and~$f_2$.
+for all~$x ∈ X$ and~$y ∈ Y$.
+This shows that~$f$ is uniquely determined by~$f_1$ and~$f_2$.
 This shows the desired uniqueness of~$f$.
 
 Consider on the other hand the map
@@ -109,7 +105,7 @@ Consider on the other hand the map
 \]
 This map is linear, and it satisfies
 \[
-	(f \circ q_1)(x)
+	(f ∘ q_1)(x)
 	=
 	f( q_1(x) )
 	=
@@ -123,7 +119,7 @@ This map is linear, and it satisfies
 \]
 as well as
 \[
-	(f \circ q_2)(y)
+	(f ∘ q_2)(y)
 	=
 	f( q_2(y) )
 	=
@@ -136,8 +132,6 @@ as well as
 	f_2(y) \,.
 \]
 This shows the desired existence of the linear map~$f$.
-
-
 
 
 
@@ -157,23 +151,15 @@ Let~$(Q', q'_1, q'_2)$ be another cocone, such that for every vector space~$V$ a
 	\to
 	V
 \]
-there exists a unique linear map~$f$ from~$Q'$ to~$V$ such that~$f \circ q'_1 = f_1$ and~$f \circ q'_2 = f_2$.
+there exists a unique linear map~$f$ from~$Q'$ to~$V$ such that~$f ∘ q'_1 = f_1$ and~$f ∘ q'_2 = f_2$.
 
-It follows from the previous part of this exercise that there exists a uniqui linear map~$i$ from~$Q$ to~$Q'$ such that~$i \circ q_1 = q'_1$ and~$i \circ q_2 = q'_2$.
-It follows from the above assumption on~$(Q', q'_1, q'_2)$ that there exists a unique linear map~$j$ from~$Q'$ to~$Q$ such that~$j \circ q'_1 = q_1$ and~$j \circ q'_2 = q_2$.
+It follows from the previous part of this exercise that there exists a unique linear map~$i$ from~$Q$ to~$Q'$ such that~$i ∘ q_1 = q'_1$ and~$i ∘ q_2 = q'_2$.
+It follows from the above assumption on~$(Q', q'_1, q'_2)$ that there exists a unique linear map~$j$ from~$Q'$ to~$Q$ such that~$j ∘ q'_1 = q_1$ and~$j ∘ q'_2 = q_2$.
 
-There exists by the previous part of this exercise a unique linear map~$f$ from~$Q$ to~$Q$ such that~$f \circ q_1 = q_1$ and~$f \circ q_2 = q_2$.
-Both~$\id_Q$ end~$j \circ i$ satisfy this defining property of~$f$, which shows that~$j \circ i = \id_Q$.
+There exists by the previous part of this exercise a unique linear map~$f$ from~$Q$ to~$Q$ such that~$f ∘ q_1 = q_1$ and~$f ∘ q_2 = q_2$.
+Both~$\id_Q$ end~$j ∘ i$ satisfy this defining property of~$f$, which shows that~$j ∘ i = \id_Q$.
 
-There exists by assumption on the triple~$(Q', q'_1, q'_2)$ a unique linear map~$g$ from~$Q'$ to~$Q'$ such that~$g \circ q'_1 = q'_1$ and~$g \circ q'_2 = q'_2$.
-Both~$\id_{Q'}$ and~$i \circ j$ satisfy the defining property of~$g$, which shows that~$i \circ j = \id_{Q'}$.
+There exists by assumption on the triple~$(Q', q'_1, q'_2)$ a unique linear map~$g$ from~$Q'$ to~$Q'$ such that~$g ∘ q'_1 = q'_1$ and~$g ∘ q'_2 = q'_2$.
+Both~$\id_{Q'}$ and~$i ∘ j$ satisfy the defining property of~$g$, which shows that~$i ∘ j = \id_{Q'}$.
 
 This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms.
-
-
-
-
-
-
-
-

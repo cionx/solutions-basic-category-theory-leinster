@@ -4,8 +4,8 @@
 
 \subsubsection{}
 
-Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$ (i.e. a morphism in the given category~$\Bcat$).
-We let~$\Sym(f)$ be the resulting conjucation isomorphism of groups from~$\Sym(X)$ to~$\Sym(Y)$, i.e. the map
+Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$ (i.e., a morphism in the given category~$\Bcat$).
+We let~$\Sym(f)$ be the resulting conjugation isomorphism of groups from~$\Sym(X)$ to~$\Sym(Y)$, i.e., the map
 \[
 	\Sym(f)
 	\colon
@@ -59,7 +59,7 @@ We define~$\Ord(f)$ as the map
 \]
 
 Let~$X$ be a set.
-For every total order~$≤$ on~$X$, i.e. element of~$\Ord(X)$, we have
+For every total order~$≤$ on~$X$, i.e., element of~$\Ord(X)$, we have
 \[
 	x_1 ≤_{1_X} x_2
 	\iff
@@ -80,7 +80,7 @@ Given a total order~$≤$ on~$X$ we have
 	\iff{}& x_1 ≤ x_2 \\
 	\iff{}& (g ∘ f)(x_1) ≤_{g ∘ f} (g ∘ f)(x_2)
 \end{align*}
-for all~$x_1, x_2 \in X$, which shows that~$\Ord(g)(\Ord(f)(≤)) = \Ord(g ∘ f)(≤)$.
+for all~$x_1, x_2 ∈ X$, which shows that~$\Ord(g)(\Ord(f)(≤)) = \Ord(g ∘ f)(≤)$.
 We have thus shown that~$\Ord(g ∘ f) = \Ord(g) ∘ \Ord(f)$.
 
 We have overall shown that~$\Ord$ is a functor from~$\Bcat$ to~$\Set$.
@@ -89,7 +89,7 @@ We have overall shown that~$\Ord$ is a functor from~$\Bcat$ to~$\Set$.
 
 \subsubsection{}
 
-We have for every finite set~$X$ a distinguished elements of~$\Sym(X)$, namely the identity function,~$1_X$.
+We have for every finite set~$X$ a distinguished element of~$\Sym(X)$, namely the identity function,~$1_X$.
 For every morphism~$f \colon X \to Y$ in~$\Bcat$ we have
 \[
 	\Sym(f)(1_X)
@@ -135,8 +135,8 @@ that
 \]
 This shows that the map~$\Ord(f)$ would carry the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
 
-However, such a distinguished choice of elemets~$(t_X)_{X \in \Ob(\Bcat)}$ cannot exist:
-If a finite set~$X$ with at least two distinct elements, then for every element~$≤$ of~$\Ord(X)$ and every non-identity automorphism~$f$ of~$X$ (of which there exist some because~$X$ has at least two swapable elements) we have~$\Ord(f)(≤) ≠ {≤}$.
+However, such a choice of distinguished elements~$(t_X)_{X ∈ \Ob(\Bcat)}$ cannot exist:
+If a finite set~$X$ with at least two elements, then for every element~$≤$ of~$\Ord(X)$ and every non-identity automorphism~$f$ of~$X$ (which there exist some because~$X$ has at least two swappable elements) we have~$\Ord(f)(≤) ≠ {≤}$.
 
 
 
@@ -149,11 +149,6 @@ For a finite set~$X$ of cardinality~$n$ both~$\Ord(X)$ and~$\Sym(X)$ have~$n!$ e
 \subsubsection*{Conclusion}
 
 The sets~$\Sym(X)$ and~$\Ord(X)$ have the same cardinality for every finite set~$X$.
-They are therefore isomorphic in~$\Set$, i.e.~$\Sym(X) ≅ \Ord(X)$ in~$\Set$.
+They are therefore isomorphic in~$\Set$, i.e.,~$\Sym(X) ≅ \Ord(X)$ in~$\Set$.
 This means that the two functors~$\Sym$ and~$\Ord$ are pointwise isomorphic.
 However, we have seen above that there exists no natural transformation from~$\Sym$ to~$\Ord$, and therefore also no natural isomorphism from~$\Sym$ to~$\Ord$.
-
-
-
-
-

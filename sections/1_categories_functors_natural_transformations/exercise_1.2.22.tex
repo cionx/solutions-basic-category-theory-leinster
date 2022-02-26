@@ -12,15 +12,15 @@ A functor~$F$ from~$\Acat$ to~$\Bcat$ consists of the following data:
 				$F(\id_a) = \id_{f(a)}$ for every element~$a$ of~$\Acat$.
 			\item
 				\label{composite of composite}
-				$F(j \circ i) = F(j) \circ F(i)$ for every three elements~$a$,~$a'$,~$a''$ of~$A$ and morphisms~$i$ from~$a$ to~$a'$ and~$j$ from~$a'$ to~$a''$ in~$\Acat$.
+				$F(j ∘ i) = F(j) ∘ F(i)$ for every three elements~$a$,~$a'$,~$a''$ of~$A$ and morphisms~$i$ from~$a$ to~$a'$ and~$j$ from~$a'$ to~$a''$ in~$\Acat$.
 		\end{enumerate*}
 \end{itemize*}
 
-It the category~$\Bcat$ there exist at most one morphism between any two objects.
+In the category~$\Bcat$ there exist at most one morphism between any two objects.
 The two conditions~\ref{identity to identity} and~\ref{composite of composite} are therefore always satisfied.
-It also follows that for every morphism~$i$ in~$\Acat$ the morphism~$F(i)$ in uniquely determined by its domain and its codomain, and therefore already uniquely determined by the fuction~$f$.
+It also follows that for every morphism~$i$ in~$\Acat$ the morphism~$F(i)$ is uniquely determined by its domain and its codomain, and therefore already uniquely determined by the function~$f$.
 
-The data of a functor~$F$ from~$\Acat$ to~$\Bcat$ does therefore only consist of a function~$f$ from~$A$ to~$B$ such that there exist a morphism from~$f(a)$ to~$f(a')$ for every two elements~$a$ and~$a'$ of~$\Acat$ for which there exist a morphism from~$a$ in~$a'$ in~$\Acat$.
-In other words, the function~$f$ needs to satify the condition~$f(a) \leq f(a')$ for every two elements~$a$ and~$a'$ of~$A$ with~$a \leq a'$.
+The data of a functor~$F$ from~$\Acat$ to~$\Bcat$ does therefore only consist of a function~$f$ from~$A$ to~$B$ satisfying the following condition:
+there exist a morphism from~$f(a)$ to~$f(a')$ for every two elements~$a$ and~$a'$ of~$\Acat$ for which there exist a morphism from~$a$ in~$a'$ in~$\Acat$.
+In other words, the function~$f$ needs to satisfy the condition~$f(a) ≤ f(a')$ for every two elements~$a$ and~$a'$ of~$A$ with~$a ≤ a'$.
 But this is precisely what it means for~$f$ to be order-preserving.
-

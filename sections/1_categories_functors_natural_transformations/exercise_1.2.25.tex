@@ -2,11 +2,9 @@
 
 
 
-
-
 \subsubsection{}
 
-If~$g$ is a morphism from~$B$ to~$B'$ in~$\Bcat$ then the pair~$(\id_A, g)$ is a morphism from~$(A, B)$ to~$(A, B')$ in~$\Acat \times \Bcat$.
+If~$g$ is a morphism from~$B$ to~$B'$ in~$\Bcat$ then the pair~$(\id_A, g)$ is a morphism from~$(A, B)$ to~$(A, B')$ in~$\Acat × \Bcat$.
 It follows that~$F(\id_A, g)$ is a morphism from~$F(A, B) = F^A(B)$ to~$F(A, B') = F^A(B')$ in~$\Ccat$.
 We have
 \[
@@ -20,29 +18,29 @@ We have
 	=
 	\id_{F^A(B)}
 \]
-for ever object~$B$ of~$\Bcat$.
+for every object~$B$ of~$\Bcat$.
 For every three objects~$B$,~$B'$,~$B''$ of~$\Bcat$ and every two composable morphisms~$g$ from~$B$ to~$B'$ and~$g'$ from~$B'$ to~$B''$ in~$\Bcat$ we have
 \begin{align*}
-	F^A(g') \circ F^A(g)
+	F^A(g') ∘ F^A(g)
 	&=
-	F(\id_A, g') \circ F(\id_A, g)
+	F(\id_A, g') ∘ F(\id_A, g)
 	\\
 	&=
-	F( (\id_A, g') \circ (\id_A, g) )
+	F( (\id_A, g') ∘ (\id_A, g) )
 	\\
 	&=
-	F(\id_A \circ \id_A, g' \circ g)
+	F(\id_A ∘ \id_A, g' ∘ g)
 	\\
 	&=
-	F(\id_A, g' \circ g)
+	F(\id_A, g' ∘ g)
 	\\
 	&=
-	F^A(g' \circ g) \,.
+	F^A(g' ∘ g) \,.
 \end{align*}
 This shows that~$F^A$ is indeed a functor from~$\Bcat$ to~$\Ccat$.
 
 Let now~$B$ be a fixed object of the category~$\Bcat$.
-For every object~$A$ of~$\Acat$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\Acat \times \Bcat$, and for every morphism~$f$ from~$A$ to~$A'$ in~$\Acat$ let~$F_B(f)$ be the morphism~$F(f, \id_B)$ from~$(A, B) = F_B(A)$ to~$(A', B) = F_{B'}(A)$ in~$\Ccat$.
+For every object~$A$ of~$\Acat$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\Acat × \Bcat$, and for every morphism~$f$ from~$A$ to~$A'$ in~$\Acat$ let~$F_B(f)$ be the morphism~$F(f, \id_B)$ from~$(A, B) = F_B(A)$ to~$(A', B) = F_{B'}(A)$ in~$\Ccat$.
 
 We have
 \[
@@ -59,25 +57,23 @@ We have
 for every object~$A$ of~$\Acat$.
 For every three objects~$A$,~$A'$,~$A''$ of~$\Acat$ and every two morphisms~$f$ from~$A$ to~$A'$ and~$f'$ from~$A'$ to~$A''$ in~$\Acat$ we have
 \begin{align*}
-	F_B(f') \circ F_B(f)
+	F_B(f') ∘ F_B(f)
 	&=
-	F(f', \id_B) \circ F(f, \id_B)
+	F(f', \id_B) ∘ F(f, \id_B)
 	\\
 	&=
-	F( (f', \id_B) \circ (f, \id_B) )
+	F( (f', \id_B) ∘ (f, \id_B) )
 	\\
 	&=
-	F( f' \circ f, \id_B \circ \id_B )
+	F( f' ∘ f, \id_B ∘ \id_B )
 	\\
 	&=
-	F( f' \circ f, \id_B )
+	F( f' ∘ f, \id_B )
 	\\
 	&=
-	F_B( f' \circ f ) \,.
+	F_B( f' ∘ f ) \,.
 \end{align*}
 This shows that~$F_B$ is indeed a functor.
-
-
 
 
 
@@ -94,51 +90,49 @@ We have
 for every object~$A$ of~$\Acat$ and every object~$B$ of~$\Bcat$.
 We also have
 \begin{align*}
-	F^{A'}(g) \circ F_B(f)
+	F^{A'}(g) ∘ F_B(f)
 	&=
-	F(\id_{A'}, g) \circ F(f, \id_B)
+	F(\id_{A'}, g) ∘ F(f, \id_B)
 	\\
 	&=
-	F( (\id_{A'}, g) \circ (f, \id_B) )
+	F( (\id_{A'}, g) ∘ (f, \id_B) )
 	\\
 	&=
 	F(f, g)
 	\\
 	&=
-	F( (f, \id_{B'}) \circ (\id_A, g) )
+	F( (f, \id_{B'}) ∘ (\id_A, g) )
 	\\
 	&=
-	F(f, \id_{B'}) \circ F(\id_A, g)
+	F(f, \id_{B'}) ∘ F(\id_A, g)
 	\\
 	&=
-	F_{B'}(f) \circ F^A(g)
+	F_{B'}(f) ∘ F^A(g)
 \end{align*}
 for every two object~$A$ and~$A'$ in~$\Acat$, every two objects~$B$ and~$B'$ in~$\Bcat$, and every two morphisms~$f$ from~$A$ to~$A'$ in~$\Acat$ and~$g$ from~$B$ to~$B'$ in~$\Bcat$.
 
 
 
-
-
 \subsubsection{}
 
-Suppose first that such a fuctor~$F$ were to exist.
+Suppose first that such a functor~$F$ were to exist.
 Then
 \[
 	F(A, B)
 	=
 	F^A(B)
 \]
-for every object~$(A, B)$ of~$\Acat \times \Bcat$, and
+for every object~$(A, B)$ of~$\Acat × \Bcat$, and
 \[
 	F(f, g)
 	=
-	F( (\id_{A'}, g) \circ (f, \id_B) )
+	F( (\id_{A'}, g) ∘ (f, \id_B) )
 	=
-	F(\id_{A'}, g) \circ F(f, \id_B)
+	F(\id_{A'}, g) ∘ F(f, \id_B)
 	=
-	F^{A'}(g) \circ F_B(f)
+	F^{A'}(g) ∘ F_B(f)
 \]
-for every morphism~$(f, g)$ from~$(A, B)$ to~$(A', B')$ in~$\Acat \times \Bcat$.
+for every morphism~$(f, g)$ from~$(A, B)$ to~$(A', B')$ in~$\Acat × \Bcat$.
 
 This shows the uniqueness of~$F$.
 We will now show the existence of~$F$.
@@ -147,8 +141,8 @@ For every object~$A$ of~$\Acat$ and~$B$ of~$\Bcat$ let we denote the element~$F^
 We have equivalently~$F(A B) = F_B(A)$.
 
 Let~$f$ be a morphism from~$A$ to~$A'$ in~$\Acat$ and let~$g$ be a morphism from~$B$ to~$B'$ in~$\Bcat$.
-We denote the morphism~$F^{A'}(g) \circ F_B(f)$ in~$\Ccat$ by~$F(f, g)$.
-We have equivalently~$F(f, g) = F_{B'}(f) \circ F^{A}(g)$.
+We denote the morphism~$F^{A'}(g) ∘ F_B(f)$ in~$\Ccat$ by~$F(f, g)$.
+We have equivalently~$F(f, g) = F_{B'}(f) ∘ F^{A}(g)$.
 The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, and the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
 It follows that the morphism~$F(f, g)$ goes from~$F(A, B)$ to~$F(A', B')$.
 
@@ -159,43 +153,39 @@ The assignment~$F$ satisfies
 	F( \id_A, \id_B )
 	\\
 	&=
-	F^A(\id_B) \circ F_B(\id_A)
+	F^A(\id_B) ∘ F_B(\id_A)
 	\\
 	&=
-	\id_{F^A(B)} \circ \id_{F_B(A)}
+	\id_{F^A(B)} ∘ \id_{F_B(A)}
 	\\
 	&=
-	\id_{F(A, B)} \circ \id_{F(A, B)}
+	\id_{F(A, B)} ∘ \id_{F(A, B)}
 	\\
 	&=
 	\id_{F(A, B)} \,.
 \end{align*}
-For every three objects~$(A, B)$,~$(A', B')$,~$(A'', B'')$ of~$\Acat \times \Bcat$ and every two morphisms~$(f, g)$ from~$(A, B)$ and~$(f', g')$ from~$(A', B')$ to~$(A'', B'')$ in~$\Acat \times \Bcat$ we have
+For every three objects~$(A, B)$,~$(A', B')$,~$(A'', B'')$ of~$\Acat × \Bcat$ and every two morphisms~$(f, g)$ from~$(A, B)$ and~$(f', g')$ from~$(A', B')$ to~$(A'', B'')$ in~$\Acat × \Bcat$ we have
 \begin{align*}
-	F(f', g') \circ F(f, g)
+	F(f', g') ∘ F(f, g)
 	&=
-	F^{A''}(g') \circ F_{B'}(f') \circ F_{B'}(f) \circ F^A(g)
+	F^{A''}(g') ∘ F_{B'}(f') ∘ F_{B'}(f) ∘ F^A(g)
 	\\
 	&=
-	F^{A''}(g') \circ F_{B'}(f' \circ f) \circ F^A(g)
+	F^{A''}(g') ∘ F_{B'}(f' ∘ f) ∘ F^A(g)
 	\\
 	&=
-	F^{A''}(g') \circ F^{A''}(g) \circ F_B(f' \circ f)
+	F^{A''}(g') ∘ F^{A''}(g) ∘ F_B(f' ∘ f)
 	\\
 	&=
-	F^{A''}(g' \circ g) \circ F_B(f' \circ f)
+	F^{A''}(g' ∘ g) ∘ F_B(f' ∘ f)
 	\\
 	&=
-	F(g' \circ g, f' \circ f)
+	F(g' ∘ g, f' ∘ f)
 	\\
 	&=
-	F( (g', f') \circ (g, f) )
+	F( (g', f') ∘ (g, f) )
 	\\
 	&=
-	F(g', f') \circ F(g, f) \,.
+	F(g', f') ∘ F(g, f) \,.
 \end{align*}
 This shows altogether that the assignment~$F$ is indeed a functor.
-
-
-
-

@@ -12,7 +12,7 @@ This entails that
 for every object~$B$ of~$\Bcat$.
 This shows that the functor~$F$ is essentially surjective.
 
-Let~$A$ and~$A'$ be two object of~$\Acat$.
+Let~$A$ and~$A'$ be two objects of~$\Acat$.
 Let~$α$ be a natural isomorphism from the composite~$G ∘ F$ to~$1_{\Acat}$.
 The square diagram
 \[
@@ -129,7 +129,7 @@ For every object~$B$ of~$\Bcat$ we have
 	F(1_{G(B)})
 \]
 and therefore~$G(1_B) = 1_{G(B)}$.
-For any two composable morphismsm
+For any two composable morphisms
 \[
 	f \colon B \to B'
 	\quad\text{and}\quad
@@ -148,7 +148,7 @@ in~$\Bcat$ we have
 and therefore~$G(gf) = G(g) G(f)$.
 This shows that~$G$ is indeed a functor.
 
-The family~$β = (β_B)_{B \in \Ob(\Bcat)}$ is (by construction) a natural isomorphism from~$FG$ to~$1_{\Bcat}$.
+The family~$β = (β_B)_{B ∈ \Ob(\Bcat)}$ is (by construction) a natural isomorphism from~$FG$ to~$1_{\Bcat}$.
 For every object~$A$ of~$\Acat$ we have the morphism
 \[
 	β_{F(A)}
@@ -163,7 +163,7 @@ It follows that there exists a unique morphism
 \]
 such that~$β_{F(A)} = F(α_A)$ because~$F$ is both full and faithful.
 The morphism~$α_A$ is an isomorphism because~$F$ is fully faithful and therefore reflects isomorphisms.
-The family~$α = (α_A)_{A \in \Ob(\Acat)}$ is a natural isomorphism from~$GF$ to~$A$:
+The family~$α = (α_A)_{A ∈ \Ob(\Acat)}$ is a natural isomorphism from~$GF$ to~$A$:
 We need to show that for every morphism~$f \colon A \to A'$ in~$\Acat$ the following square diagram commutes:
 \[
 	\begin{tikzcd}
@@ -180,7 +180,7 @@ We need to show that for every morphism~$f \colon A \to A'$ in~$\Acat$ the follo
 		A'
 	\end{tikzcd}
 \]
-It sufficies to show that this diagram commutes after we apply the functor~$F$ to it because~$F$ is faithful.
+It suffices to show that this diagram commutes after we apply the functor~$F$ to it because~$F$ is faithful.
 We hence need to show that the following square diagram commutes:
 \[
 	\begin{tikzcd}[column sep = large]
@@ -198,8 +198,3 @@ We hence need to show that the following square diagram commutes:
 	\end{tikzcd}
 \]
 This desired commutativity follows from the naturality of~$β$.
-
-
-
-
-

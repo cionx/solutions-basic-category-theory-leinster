@@ -2,8 +2,6 @@
 
 
 
-
-
 \subsubsection*{Adjoint functors}
 
 \begin{itemize}
@@ -11,7 +9,7 @@
 		Let~$\kf$ be a field and let~$V$ be a~\vectorspace{$\kf$}.
 		The two functors
 		\[
-			(\ph) \tensor_{\kf} V
+			(\ph) ⊗_{\kf} V
 			\colon
 			\Vect{\kf} \to \Vect{\kf}
 			\quad\text{and}\quad
@@ -19,13 +17,13 @@
 			\colon
 			\Vect{\kf} \to \Vect{\kf}
 		\]
-		are adjoint, with~$(\ph) \tensor_{\kf} V$ being left adjoint to~$\Hom_{\kf}(V, \ph)$.
+		are adjoint, with~$(\ph) ⊗_{\kf} V$ being left adjoint to~$\Hom_{\kf}(V, \ph)$.
 		(This example is in the vain of Example~2.1.16.)
 	\item
 		Let more generally~$R$ and~$S$ be two rings and let~$M$ be an~\bimodule{$R$}{$S$}.
 		The two functors
 		\[
-			(\ph) \tensor_R M
+			(\ph) ⊗_R M
 			\colon
 			\Modr{R} \to \Modr{S}
 			\quad\text{and}\quad
@@ -33,7 +31,7 @@
 			\colon
 			\Modr{S} \to \Modr{R}
 		\]
-		are adjoint, with~$(\ph) \tensor_R M$ being left adjoint to~$\Hom_S(M, \ph)$.
+		are adjoint, with~$(\ph) ⊗_R M$ being left adjoint to~$\Hom_S(M, \ph)$.
 	\item
 		For every category~$\Acat$ let~$U(\Acat)$ be its underlying graph, and for every functor~$F$ from~$\Acat$ to~$\Bcat$ let~$U(F)$ be its induced homomorphism of graphs from~$U(\Acat)$ to~$U(\Bcat)$.
 		This assignment~$U$ is a functor from~$\Cat$ to~$\Graph$, the category of graphs.%
@@ -45,9 +43,9 @@
 		The objects of~$P(G)$ are the vertices of~$G$.
 		For any two vertices~$x$ and~$y$ of~$G$ the morphisms from~$x$ to~$y$ in~$C(G)$ are precisely the paths from~$x$ to~$y$ in~$P(G)$.%
 		\footnote{
-			By a path from~$x$ to~$y$ in~$G$ we mean a tupel of the form~$p = (x, α_1, \dotsc, α_n, y)$ where~$α_1, \dotsc, α_n$ are edges in~$G$ such that~$α_1$ starts in~$x$, the end vertex of~$α_i$ is the start vertex of~$α_{i+1}$ for all~$i = 1, \dotsc, n - 1$, and the end vertex of~$α_n$ is~$y$.
+			By a path from~$x$ to~$y$ in~$G$ we mean a tuple~$p = (x, α_1, \dotsc, α_n, y)$ of the following form:~%
+			$α_1, \dotsc, α_n$ are edges in~$G$ such that~$α_1$ starts in~$x$, the end vertex of~$α_i$ is the start vertex of~$α_{i+1}$ for all~$i = 1, \dotsc, n - 1$, and the end vertex of~$α_n$ is~$y$.
 			The vertex~$x$ is the start vertex of~$p$, the vertex~$y$ is the end vertex of~$p$, and the number~$n$ is the length of~$G$.
-
 			This entails in particular that there exists for every vertex~$x$ of~$G$ a unique path of length~$0$ from~$x$ to~$x$ in~$G$, given by the tuple~$(x, x)$.
 			For two distinct vertices~$x$ and~$y$ of~$G$ their associated paths of length~$0$ are also distinct.
 		}
@@ -72,8 +70,6 @@
 
 
 
-
-
 \subsubsection*{Initial objects}
 
 \begin{itemize}
@@ -91,8 +87,6 @@
 
 
 
-
-
 \subsubsection*{Terminal objects}
 
 \begin{itemize}
@@ -101,12 +95,7 @@
 		The zero module is terminal in~$\Mod{R}$.
 	\item
 		Let~$P$ be a partially ordered set and let~$\Pcat$ be the corresponding category.
-		An terminal object of~$\Pcat$ is the same as an upper bound of~$P$.
+		A terminal object of~$\Pcat$ is the same as an upper bound of~$P$.
 	\item
 		The terminal objects in~$\Top$ are precisely the one-element topological spaces.
 \end{itemize}
-
-
-
-
-

@@ -2,8 +2,6 @@
 
 
 
-
-
 \subsubsection{}
 
 \begin{description}
@@ -11,7 +9,7 @@
 	\item[Example~1.2.3~(a)]
 		The functor~$U$ is faithful.
 		But it is not full:
-		Let~$G$ be the trivial group and let~$H$ be the two-element group~$\Integer/2$.
+		Let~$G$ be the trivial group and let~$H$ be the two-element group~$\Integer / 2$.
 		The map~$U(G) \to U(H)$ given by~$1 \mapsto \class{1}$ is not a homomorphism of groups and is therefore not contained in the image of~$U$.
 
 	\item[Example~1.2.3~(b)]
@@ -38,7 +36,7 @@
 			=
 			f(s)
 		\]
-		for ever~$s \in S$.
+		for every~$s ∈ S$.
 		The original map~$f$ is therefore uniquely determined by its induced homomorphism of groups~$F(f)$.
 
 		But the functor~$F$ is not full:
@@ -54,15 +52,15 @@
 		This can be argued as in the previous example.
 
 	\item[Example~1.2.5~(a)]
-		The fucntor~$\pi_1$ is not faithful:
+		The functor~$\fgroup_1$ is not faithful:
 		Let~$X, Y = (\Real, 0)$.
-		The group~$\pi_1(\Real, 0)$ is trivial, so there exists precisely one homomorphism of groups from~$\pi_1(\Real, 0)$ to~$\pi_1(\Real, 0)$, namely the trivial one.
+		The group~$\fgroup_1(\Real, 0)$ is trivial, so there exists precisely one homomorphism of groups from~$\fgroup_1(\Real, 0)$ to~$\fgroup_1(\Real, 0)$, namely the trivial one.
 		But there exist many more continuous maps from~$(\Real, 0)$ to~$(\Real, 0)$.%
 		\footnote{
-			Namely~$2^{\aleph_0}$ many.
+			Namely,~$2^{\aleph_0}$ many.
 		}
 		
-		The functor~$\pi_1$ as also not full.
+		The functor~$\fgroup_1$ as also not full.
 		The author doesn’t know a good (counter)example for this.
 		For now, we refer to \cite{stackexchange_pi_1_not_full}.
 
@@ -73,11 +71,11 @@
 		The functor~$F$ is faithful if and only if the corresponding homomorphism of groups is injective, and the functor~$F$ is full if and only if the corresponding homomorphism of groups is surjective.
 
 	\item[Example~1.2.8]
-		This fuctor is faithful if and only if the corresponding~\set{$G$}, resp. representation of~$G$ is faithful.
+		This functor is faithful if and only if the corresponding~\set{$G$}, respectively representation, of~$G$ is faithful.
 
 	\item[Example~1.2.9]
 		The functor is faithful.
-		It is full if and only if it follows for any two elements~$a$ and~$a'$ of~$\Acat$ from~$f(a) \leq f(a')$ that also~$a \leq a'$.
+		It is full if and only if it follows for any two elements~$a$ and~$a'$ of~$\Acat$ from~$f(a) ≤ f(a')$ that also~$a ≤ a'$.
 
 	\item[Example~1.2.11]
 		The functor~$C$ is not faithful.
@@ -89,29 +87,29 @@
 	\item[Example~1.2.12]
 
 		The functor~$(\ph)^*$ is faithful.
-		To see this, let~$V$ und~$W$ be two~\vectorspaces{$\kf$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$
-		There exist by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 \defined f_1(v)$ and~$w_2 \defined f_2(v)$ in~$W$ are distinct.
-		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) \neq w^*(w_2)$.
+		To see this, let~$V$ and~$W$ be two~\vectorspaces{$\kf$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$.
+		There exist by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 ≔ f_1(v)$ and~$w_2 ≔ f_2(v)$ in~$W$ are distinct.
+		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
 		This means that
 		\begin{align*}
 			f_1^*(w^*)(v)
 			=
-			(w^* \circ f_1)(v)
+			(w^* ∘ f_1)(v)
 			=
 			w^*( f_1(w) )
 			=
 			w^*(w_1)
-			\neq
+			≠
 			w^*(w_2)
 			=
 			w^*( f_2(w) )
 			&=
-			(w^* \circ f_2)(v)
+			(w^* ∘ f_2)(v)
 			\\
 			&=
 			f_2^*(w^*)(v) \,.
 		\end{align*}
-		This shows that~$f_1^*(w^*) \neq f_2^*(w^*)$, and therefore that~$f_1^* \neq f_2^*$.
+		This shows that~$f_1^*(w^*) ≠ f_2^*(w^*)$, and therefore that~$f_1^* ≠ f_2^*$.
 		
 		The functor~$(\ph)^*$ is not full.
 		We note that for any two~\vectorspaces{$\kf$}~$V$ and~$W$ the map
@@ -129,7 +127,7 @@
 			\Hom_{\kf}(V, W)
 			=
 			\Hom_{\kf}(\kf, W)
-			\cong
+			≅
 			W \,,
 		$
 		but
@@ -137,15 +135,13 @@
 			\Hom_{\kf}(W^*, V^*)
 			=
 			\Hom_{\kf}(W^*, \kf^*)
-			\cong
+			≅
 			\Hom_{\kf}(W^*, \kf)
 			=
 			W^{**} \,.
 		\]
 		If we choose~$W$ to be infinite-dimensional, then it follows that~$D$ cannot be surjective.
 \end{description}
-
-
 
 
 
@@ -203,4 +199,4 @@ The unique functor
 	F(g) = g
 \]
 is full but not faithful.
-The composite~$F \circ G$ is neither full nor faithful.
+The composite~$F ∘ G$ is neither full nor faithful.
