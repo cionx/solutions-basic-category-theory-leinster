@@ -867,20 +867,26 @@ We have altogether constructed a functor~$∇$ from~$\Bcat$ to~$[\Acat^{\op}, \B
 
 \subsubsection*{The functors~$Π$ and~$Λ$}
 
-The functor~$Π$ can be constructed dually to the functor~$Γ$.
-It is given on objects by
+The functor~$Π$ can be constructed dually to the functor~$Γ$:
+it is given on objects by
 \[
-	Π(F) ≔ F(I_{\Acat}) \,.
+	Π(F) ≔ F(I_{\Acat})
 \]
-The functor~$Λ$ can be constructed dually to the functor~$∇$.
-It is given on objects by
+for every functor~$F$ from~$\Acat^{\op}$ to~$\Bcat$.
+The functor~$Λ$ can be constructed dually to the functor~$∇$:
+it is given on objects by
 \[
 	Λ(B)(A)
 	=
 	\begin{cases*}
 		B         & if~$A$ is initial in~$\Acat$, \\
-		I_{\Bcat} & otherwise \,.
+		I_{\Bcat} & otherwise,
 	\end{cases*}
 \]
+for every object~$B$ of~$\Bcat$ and every object~$A$ of~$\Acat$.
 
-I am not gonna check these because I won’t waste any more time on this exercise.
+I’m not gonna deal with these constructions in more detail because I won’t waste any more time on this exercise.%
+\footnote{
+	One ought to be able to conclude the existence, construction and adjointness of the functors~$Π$ and~$Λ$ from that of the functors~$Γ$ and~$∇$ by using the isomorphism~$[\Acat^{\op}, \Bcat]^{\op} ≅ [\Acat^{\op \op}, \Bcat^{\op}]$.
+	But this isomorphism hasn’t been introduced yet.
+}
