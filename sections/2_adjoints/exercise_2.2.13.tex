@@ -1,0 +1,185 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+The induced map~$f_* \colon \Power(K) \to \Power(L)$ that assigns to each subset of~$K$ its image under~$f$ is order-preserving, and so can be seen as a functor.
+The functor~$f_*$ is left adjoint to the functor~$f^*$ because
+\[
+	f(S) ⊆ T
+	\iff
+	\text{$f(s) ∈ T$ for every element~$s$ of~$S$}
+	\iff
+	S ⊆ f^{-1}(T)
+\]
+for every subset~$S$ of~$K$ and every subset~$T$ of~$L$.
+
+To figure out the right adjoint~$f_\#$ of~$f^*$ we observe that it needs to satisfy
+\[
+	t ∈ f_\#(U)
+	\iff
+	\{ t \} ⊆ f_\#(U)
+	\iff
+	f^{-1}(t) ⊆ U
+\]
+for every subset~$U$ of~$K$ and every element~$t$ of~$K$.
+We therefore set
+\[
+	f_\#(U) ≔ \{ t ∈ L \suchthat f^{-1}(t) ⊆ U \} \,.
+\]
+This defines a map~$f_\#$ from~$\Power(K)$ to~$\Power(L)$ that is order-preserving, and can therefore be regarded as a functor.
+We have
+\begin{align*}
+	T ⊆ f_\#(U)
+	&\iff
+	\text{$t ∈ f_\#(U)$ for every element~$t$ of~$T$}
+	\\
+	&\iff
+	\text{$f^{-1}(t) ⊆ U$ for every element~$t$ of~$T$}
+	\\
+	&\iff
+	f^{-1}(T) ⊆ U
+\end{align*}
+for every subset~$T$ of~$L$ and every subset~$U$ of~$L$.
+Therefore,~$f_\#$ is right adjoint to~$f^*$.
+
+
+
+\subsubsection{}
+
+The projection map~$p$ from~$X × Y$ to~$X$ induces a functor
+\[
+	p^*
+	\colon
+	\Power(X)
+	\to
+	\Power(X × Y) \,.
+\]
+Logically, this can be expressed as
+\begin{align*}
+	p^*(S)(x, y)
+	\iff
+	(x, y) ∈ p^*(S)
+	\iff
+	(x, y) ∈ p^{-1}(S)
+	\iff
+	p(x, y) ∈ S
+	&\iff
+	x ∈ S
+	\\
+	&\iff
+	S(x) \,.
+\end{align*}
+We have seen in the previous part of this exercise an explicit construction of the left adjoint~$p_*$ of~$p^*$ and the right adjoint~$p_\#$ of~$p^*$.
+The left adjoint~$p_*$ can be expressed as
+\begin{align*}
+	p_*(R)(x)
+	&\iff
+	x ∈ p(R)
+	\\
+	&\iff
+	\text{there exists an element~$y$ of~$Y$ with~$(x, y) ∈ R$}
+	\\
+	&\iff
+	\text{there exists an element~$y$ of~$Y$ with~$R(x, y)$}
+	\\
+	&\iff
+	\exists y ∈ Y : R(x, y) \,.
+\end{align*}
+The right adjoint~$p_\#$ can be expressed as
+\begin{align*}
+	p_\#(R)(x)
+	&\iff
+	x ∈ p_\#(R)
+	\\
+	&\iff
+	p^{-1}(x) ⊆ R
+	\\
+	&\iff
+	\text{$(x, y) ∈ R$ for every element~$y$ of~$Y$}
+	\\
+	&\iff
+	\text{$R(x, y)$ for every element~$y$ of~$Y$}
+	\\
+	&\iff
+	\forall y ∈ Y: R(x, y) \,.
+\end{align*}
+
+For two subsets~$S$ and~$T$ of a finite product~$X_1 × \dotsb × X_n$ we have
+\begin{align*}
+	{}&
+	S ⊆ T
+	\\
+	\iff{}&
+	\Bigl(
+		\text{$(x_1, \dotsc, x_n) ∈ S \implies (x_1, \dotsc, x_n) ∈ T$ for all~$(x_1, \dotsc, x_n) ∈ X_1 × \dotsb × X_n$}
+	\Bigr)
+	\\
+	\iff{}&
+	\Bigl(
+		\text{$S(x_1, \dotsc, x_n) \implies T(x_1, \dotsc, x_n)$ for all~$(x_1, \dotsc, x_n) ∈ X_1 × \dotsb × X_n$}
+	\Bigr)
+	\\
+	\iff{}&
+	( S \implies T ) \,.
+\end{align*}
+The unit~$η$ and counit~$ε$ of the adjunction~$p_* ⊣ p^*$, given by natural transformations
+\[
+	η \colon \Id_{\Power(X × Y)} \To p^* p_* \,,
+	\quad
+	ε \colon p_* p^* \To \Id_{\Power(X)} \,,
+\]
+can therefore be regarded as certain logical implications.
+The composite~$p^* p_*$ is given by
+\[
+	p^*( p_*(R) )(x, y)
+	\iff
+	p_*(R)(x)
+	\iff
+	\bigl( \exists y': R(x, y') \bigr) \,,
+\]
+whence the unit~$η$ of the adjunction~$f_* ⊣ f^*$ can be interpreted as the implication
+\[
+	R(x, y) \implies \bigl( \exists y' : R(x, y') \bigr) \,.
+\]
+The composite~$p_* p^*$ is given by
+\[
+	p_*(p^*(S))(x)
+	\iff
+	\bigl( \exists y: p^*(S)(x, y) \bigr)
+	\iff
+	\bigl( \exists y: S(x) \bigr) \,,
+\]
+whence the counit~$ε$ of the adjunction~$f^* ⊣ f_\#$ can be interpreted as the implication
+\[
+	\bigl( \exists y: S(x) \bigr) \implies S(x) \,.
+\]
+
+We can similarly regard the unit~$η'$ and counit~$ε'$ of the adjunction~$p^* ⊣ p_\#$ as logical implications.
+The composite~$p_\# p^*$ is given by
+\[
+	p_\#( p^*(S) )(x)
+	\iff
+	\bigl( \forall y ∈ Y: p^*(S)(x, y) \bigr)
+	\iff
+	\bigl( \forall y ∈ Y: S(x) \bigr) \,,
+\]
+whence the unit~$η'$ can be interpreted as the implication
+\[
+	S(x) \implies \bigl( \forall y ∈ Y: S(x) \bigr) \,.
+\]
+The composite~$p^* p_\#$ is given by
+\[
+	p^*( p_\#(R) )(x, y)
+	\iff
+	p_\#(R)(x)
+	\iff
+	\bigl( \forall y' ∈ Y : R(x, y') \bigr) \,,
+\]
+whence the counit~$ε'$ can be interpreted as the implication
+\[
+	\bigl( \forall y' ∈ Y : R(x, y') \bigr)
+	\implies
+	R(x, y) \,.
+\]
