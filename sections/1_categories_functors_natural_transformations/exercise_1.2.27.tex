@@ -35,5 +35,26 @@ More explicitly,
 	\quad
 	F(f_1), F(f_2) = f \,.
 \]
+The functor~$F$ may be depicted as follows:
+\[
+	\begin{tikzcd}
+		X_1
+		\arrow{r}[above]{f_1}
+		&
+		Y_1
+		\\
+		X_2
+		\arrow{r}[above]{f_2}
+		&
+		Y_2
+	\end{tikzcd}
+	\qquad\leadsto\qquad
+	\begin{tikzcd}
+		X
+		\arrow{r}[above]{f}
+		&
+		Y
+	\end{tikzcd}
+\]
 This functor is faithful because there exist at most one morphism between any two objects of~$\Acat$.
 But~$f_1$ and~$f_2$ are two distinct morphisms in~$\Acat$ with~$F(f_1) = F(f_2)$.

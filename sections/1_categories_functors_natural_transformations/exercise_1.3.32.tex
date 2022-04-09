@@ -16,7 +16,7 @@ Let~$A$ and~$A'$ be two objects of~$\Acat$.
 Let~$α$ be a natural isomorphism from the composite~$G ∘ F$ to~$1_{\Acat}$.
 The square diagram
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		GF(A)
 		\arrow{r}[above]{GF(f)}
 		\arrow{d}[left]{α_A}
@@ -75,7 +75,7 @@ the last map is a bijection, whence the middle map
 is surjective.
 The square diagram
 \[
-	\begin{tikzcd}[column sep = 7em]
+	\begin{tikzcd}[row sep = large, column sep = 7em]
 		\Bcat(F(A), F(A'))
 		\arrow{r}[above]{γ ∘ (\ph) ∘ β^{-1}}
 		\arrow{d}[left]{G}
@@ -110,7 +110,7 @@ There exists for every object~$B$ of~$\Bcat$ an object~$G(B)$ of~$\Acat$ for whi
 \[
 	β_B \colon FG(B) \to B \,.
 \]
-For every morphism~$f \colon B \to B'$ in~$\Bcat$ the conjugate~$β_{B'}^{-1} f β_B$ is contained in~$\Bcat(FG(B), FG(B'))$.
+For every morphism~$f \colon B \to B'$ in~$\Bcat$, the conjugate~$β_{B'}^{-1} f β_B$ is then contained in~$\Bcat(FG(B), FG(B'))$.
 It follows that there exists a unique morphism~$G(f)$ from~$G(B)$ to~$G(B')$ such that
 \[
 	FG(f) = β_{B'}^{-1} f β_B
@@ -166,7 +166,7 @@ The morphism~$α_A$ is an isomorphism because~$F$ is fully faithful and therefor
 The family~$α = (α_A)_{A ∈ \Ob(\Acat)}$ is a natural isomorphism from~$GF$ to~$A$:
 We need to show that for every morphism~$f \colon A \to A'$ in~$\Acat$ the following square diagram commutes:
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[sep = large]
 		GF(A)
 		\arrow{r}[above]{GF(f)}
 		\arrow{d}[left]{α_A}
@@ -183,7 +183,7 @@ We need to show that for every morphism~$f \colon A \to A'$ in~$\Acat$ the follo
 It suffices to show that this diagram commutes after we apply the functor~$F$ to it because~$F$ is faithful.
 We hence need to show that the following square diagram commutes:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		FGF(A)
 		\arrow{r}[above]{FGF(f)}
 		\arrow{d}[left]{β_{F(A)}}

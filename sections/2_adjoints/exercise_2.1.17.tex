@@ -64,7 +64,7 @@ for every object~$A$ of~$\Acat$, and therefore~$Δ(g' ∘ g) = Δ(g') ∘ Δ(g)$
 Let~$F$ be any functor from~$\Acat^{\op}$ to~$\Bcat$.
 A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(β_A)_{A ∈ \Ob(\Acat)}$ of morphisms~$β_A$ from~$Δ(B)(A) = B$ to~$F(A)$ such that for every morphism~$f \colon A \to A'$ in~$\Acat$ the resulting diagram
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[sep = large]
 		B
 		\arrow{r}[above]{β_{A'}}
 		\arrow{d}[left]{\id_B}
@@ -81,7 +81,7 @@ A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(
 in~$\Bcat$ commutes.
 We can also express this diagram in the following triangular form:
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[column sep = large]
 		{}
 		&
 		F(A')
@@ -112,7 +112,7 @@ For every object~$A$ of~$\Acat$ let~$t_A$ be the unique morphisms from~$A$ to th
 The resulting tuple~$β ≔ (β_A)_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$Δ$ to~$F$.
 Indeed, given any morphisms~$f$ in~$\Acat$ from an object~$A$ to an object~$A'$, we have in~$\Acat$ the commutative diagram
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[row sep = large]
 		{}
 		&
 		T_{\Acat}
@@ -160,7 +160,7 @@ It follows that the following diagram in~$\Bcat$ is again commutative:
 \]
 The commutativity of the outer diagram
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[row sep = large]
 		{}
 		&
 		B
@@ -361,7 +361,7 @@ To compute the action of~$∇(B)$ on the morphism~$\id_A$ we have two cases to c
 		If~$A$ is terminal in~$\Acat$, then~$∇(B)(A)$ is defined as~$B$ and~$∇(B)(\id_A)$ is defined as~$\id_B$ whence~$∇(B)(\id_A) = \id_{∇(B)(A)}$.
 
 	\item
-		If~$A$ is not terminal in~$\Acat$, then~$∇(B)(A)$ is defined as~$T_{\Bcat}$ and the morphisms~$∇(B)(\id_A)$ is defined as the unique morphism from~$T_{\Bcat}$ to~$T_{\Bcat}$, which is~$\id_{T_{\Bcat}}$.
+		If~$A$ is not terminal in~$\Acat$, then the object~$∇(B)(A)$ is defined as~$T_{\Bcat}$ and the morphisms~$∇(B)(\id_A)$ is defined as the unique morphism from~$T_{\Bcat}$ to~$T_{\Bcat}$, which is~$\id_{T_{\Bcat}}$.
 	
 \end{casedistinction}
 We have in either case that~$∇(B)(\id_A) = \id_{∇(B)(A)}$.
@@ -396,7 +396,8 @@ To compute the action of~$∇(B)$ on the composite~$f' ∘ f$ we have again two 
 	\item
 		Suppose that the object~$A$ is not terminal in~$\Acat$.
 		The object~$∇(B)(A)$ is then given by the terminal object~$T_{\Bcat}$ of~$\Bcat$.
-		Both~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ are morphisms from~$∇(B)(A'')$ to this terminal object, whence they must coincide.
+		The two morphisms~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ have she same domain, namely the object~$∇(B)(A'')$, and their codomain is the terminal object~$T_{\Bcat}$.
+		These two morphisms must therefore coincide.
 
 \end{casedistinction}
 We have in either case that~$∇(B)(f' ∘ f) = ∇(B)(f') ∘ ∇(B)(f)$.
@@ -506,11 +507,13 @@ For every two composable morphisms
 \]
 in~$\Bcat$ we find that
 \begin{align*}
+	{}&
 	( ∇(g') ∘ ∇(g) )_A
-	&=
+	\\
+	={}&
 	∇(g')_A ∘ ∇(g)_A
 	\\
-	&=
+	={}&
 	\left(
 		\begin{cases*}
 			g'              & if~$A$ is terminal in~$\Acat$, \\
@@ -525,13 +528,13 @@ in~$\Bcat$ we find that
 		\end{cases*}
 	\right)
 	\\
-	&=
+	={}&
 	\begin{cases*}
 		g' ∘ g          & if~$A$ is terminal in~$\Acat$, \\
 		\id_{T_{\Bcat}} & otherwise,
 	\end{cases*}
 	\\
-	&=
+	={}&
 	∇(g' ∘ g)_A
 \end{align*}
 for every object~$A$ of~$\Acat$, and therefore
@@ -597,7 +600,7 @@ Both~$A$ and~$T_{\Acat}$ are terminal objects in~$\Acat$, whence the unique morp
 		commutes.
 		This diagram simplifies as follows:
 		\[
-			\begin{tikzcd}
+			\begin{tikzcd}[sep = large]
 				F(A)
 				\arrow{r}[above]{β_A}
 				\arrow{d}[left]{F(h)}
@@ -667,7 +670,7 @@ We do so by case distinction.
 		these morphisms are isomorphisms and form, together with~$f$, the following commutative diagram:
 		\begin{equation}
 			\label{triagular_diagram}
-			\begin{tikzcd}
+			\begin{tikzcd}[row sep = large]
 				{}
 				&
 				T_{\Acat}
@@ -687,7 +690,7 @@ We do so by case distinction.
 		We can consider now the following diagram:
 		\begin{equation}
 			\label{large_diagram_for_naturality_of_beta}
-			\begin{tikzcd}
+			\begin{tikzcd}[sep = large]
 				{}
 				&
 				F(T_{\Acat})
@@ -697,7 +700,7 @@ We do so by case distinction.
 				\\
 				F(A')
 				\arrow{ur}[above left]{F(h')}
-				\arrow[crossing over]{rr}[below, near start]{F(f)}
+				\arrow[crossing over]{rr}[above, pos = 0.35]{F(f)}
 				\arrow{dd}[left]{β_{A'}}
 				&
 				{}
@@ -713,19 +716,19 @@ We do so by case distinction.
 				{}
 				\\
 				∇(B)(A')
-				\arrow{ur}[above left]{∇(B)(h')}
+				\arrow{ur}[above left, pos = 0.65]{∇(B)(h')}
 				\arrow{rr}[above]{∇(B)(f)}
 				&
 				{}
 				&
 				∇(B)(A)
-				\arrow{ul}[above right]{∇(B)(h)}
+				\arrow{ul}[above right, pos = 0.65]{∇(B)(h)}
 			\end{tikzcd}
 		\end{equation}
 		The two triangular sides of this diagram commute because the diagram~\eqref{triagular_diagram} commutes
 		The background part of this diagram looks as follows:
 		\[
-			\begin{tikzcd}[sep = large]
+			\begin{tikzcd}[sep = large, column sep = huge]
 				F(A')
 				\arrow{r}[above]{F(h')}
 				\arrow{d}[left]{β_{A'}}

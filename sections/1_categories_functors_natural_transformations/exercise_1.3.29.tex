@@ -5,7 +5,7 @@ Suppose first that~$α$ is a natural transformation from~$F$ to~$G$.
 Let~$B$ be any object of~$\Bcat$.
 We have for every morphism~$f \colon A_1 \to A_2$ the following commutative square diagram:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A_1, B)
 		\arrow{r}[above]{F(f, 1_B)}
 		\arrow{d}[left]{α_{A_1, B}}
@@ -21,7 +21,7 @@ We have for every morphism~$f \colon A_1 \to A_2$ the following commutative squa
 \]
 This diagram can equivalently be written as follows:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F_B(A_1)
 		\arrow{r}[above]{F_B(f)}
 		\arrow{d}[left]{α_{A_1, B}}
@@ -40,7 +40,7 @@ The commutativity of this square diagram shows that the family~$(α_{A, B})_{A �
 Let~$A$ be an object of~$\Acat$.
 We have for every morphism~$g \colon B_1 \to B_2$ in~$\Bcat$ the following commutative square diagram:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A, B_1)
 		\arrow{r}[above]{F(1_A, g)}
 		\arrow{d}[left]{α_{A, B_1}}
@@ -56,7 +56,7 @@ We have for every morphism~$g \colon B_1 \to B_2$ in~$\Bcat$ the following commu
 \]
 This diagram can equivalently be written as follows:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F^A(B_1)
 		\arrow{r}[above]{F^A(g)}
 		\arrow{d}[left]{α_{A, B_1}}
@@ -72,7 +72,7 @@ This diagram can equivalently be written as follows:
 \]
 The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$.
 
-Suppose now on the other hand that the for every object~$A$ of~$\Acat$ the family~$(α_{A,B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\Bcat$ the family~$(α_{A,B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
+Suppose now conversely that the for every object~$A$ of~$\Acat$ the family~$(α_{A,B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\Bcat$ the family~$(α_{A,B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
 Let
 \[
 	(f, g)
@@ -82,7 +82,7 @@ Let
 be a morphism in~$\Acat × \Bcat$.
 We have by assumption the following two commutative square diagrams:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F_{B_1}(A_1)
 		\arrow{r}[above]{F_{B_1}(f)}
 		\arrow{d}[left]{α_{A_1, B_1}}
@@ -96,7 +96,7 @@ We have by assumption the following two commutative square diagrams:
 		G_{B_1}(A_2)
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F^{A_2}(B_1)
 		\arrow{r}[above]{F^{A_2}(g)}
 		\arrow{d}[left]{α_{A_2, B_1}}
@@ -112,7 +112,7 @@ We have by assumption the following two commutative square diagrams:
 \]
 We can equivalently write these diagrams as follows:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A_1, B_1)
 		\arrow{r}[above]{F(f, 1_{B_1})}
 		\arrow{d}[left]{α_{A_1, B_1}}
@@ -126,7 +126,7 @@ We can equivalently write these diagrams as follows:
 		G(A_2, B_1)
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A_2, B_1)
 		\arrow{r}[above]{F(1_{A_2}, g)}
 		\arrow{d}[left]{α_{A_2, B_1}}
@@ -142,7 +142,7 @@ We can equivalently write these diagrams as follows:
 \]
 We can combine these two commutative square diagrams into the following commutative rectangular diagram:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A_1, B_1)
 		\arrow{r}[above]{F(f, 1_{B_1})}
 		\arrow{d}[left]{α_{A_1, B_1}}
@@ -165,7 +165,7 @@ We can combine these two commutative square diagrams into the following commutat
 \]
 By leaving out the middle column this diagram we arrive at the following commutative square diagram:
 \[
-	\begin{tikzcd}[column sep = 7em]
+	\begin{tikzcd}[row sep = large, column sep = 7em]
 		F(A_1, B_1)
 		\arrow{r}[above]{F(1_{A_2}, g) ∘ F(f, 1_{B_1})}
 		\arrow{d}[left]{α_{A_1, B_1}}
@@ -193,11 +193,11 @@ and similarly
 	=
 	G( (1_{A_2}, g) ∘ (f, 1_{B_1}) )
 	=
-	G(f, g)
+	G(f, g) \,,
 \]
 we can further rewrite this commutative square as follows:
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		F(A_1, B_1)
 		\arrow{r}[above]{F(f, g)}
 		\arrow{d}[left]{α_{A_1, B_1}}

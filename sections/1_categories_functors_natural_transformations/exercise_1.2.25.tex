@@ -143,28 +143,34 @@ We have equivalently~$F(A B) = F_B(A)$.
 Let~$f$ be a morphism from~$A$ to~$A'$ in~$\Acat$ and let~$g$ be a morphism from~$B$ to~$B'$ in~$\Bcat$.
 We denote the morphism~$F^{A'}(g) ∘ F_B(f)$ in~$\Ccat$ by~$F(f, g)$.
 We have equivalently~$F(f, g) = F_{B'}(f) ∘ F^{A}(g)$.
-The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, and the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
+The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, whereas the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
 It follows that the morphism~$F(f, g)$ goes from~$F(A, B)$ to~$F(A', B')$.
 
 The assignment~$F$ satisfies
 \begin{align*}
 	F( \id_{(A, B)} )
-	&=
+	=
 	F( \id_A, \id_B )
-	\\
-	&=
+	=
 	F^A(\id_B) ∘ F_B(\id_A)
-	\\
-	&=
+	=
 	\id_{F^A(B)} ∘ \id_{F_B(A)}
-	\\
 	&=
 	\id_{F(A, B)} ∘ \id_{F(A, B)}
 	\\
 	&=
-	\id_{F(A, B)} \,.
+	\id_{F(A, B)}
 \end{align*}
-For every three objects~$(A, B)$,~$(A', B')$,~$(A'', B'')$ of~$\Acat × \Bcat$ and every two morphisms~$(f, g)$ from~$(A, B)$ and~$(f', g')$ from~$(A', B')$ to~$(A'', B'')$ in~$\Acat × \Bcat$ we have
+for every object~$(A, B)$ of~$\Acat × \Bcat$.
+For every two composable morphisms
+\[
+	(f, g) \colon (A, B) \to (A', B') \,,
+	\quad
+	(f', g') \colon (A', B') \to (A'', B'')
+\]
+in~$\Acat × \Bcat$, we have
+\begingroup
+\allowdisplaybreaks
 \begin{align*}
 	F(f', g') ∘ F(f, g)
 	&=
@@ -188,4 +194,5 @@ For every three objects~$(A, B)$,~$(A', B')$,~$(A'', B'')$ of~$\Acat × \Bcat$ a
 	&=
 	F(g', f') ∘ F(g, f) \,.
 \end{align*}
+\endgroup
 This shows altogether that the assignment~$F$ is indeed a functor.

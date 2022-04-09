@@ -52,8 +52,8 @@
 		This can be argued as in the previous example.
 
 	\item[Example~1.2.5~(a)]
-		The functor~$\fgroup_1$ is not faithful:
-		Let~$X, Y = (\Real, 0)$.
+		The functor~$\fgroup_1$ is not faithful.
+		To see this, we consider the pointed topological space~$X ≔ (\Real, 0)$.
 		The group~$\fgroup_1(\Real, 0)$ is trivial, so there exists precisely one homomorphism of groups from~$\fgroup_1(\Real, 0)$ to~$\fgroup_1(\Real, 0)$, namely the trivial one.
 		But there exist many more continuous maps from~$(\Real, 0)$ to~$(\Real, 0)$.%
 		\footnote{
@@ -61,8 +61,7 @@
 		}
 		
 		The functor~$\fgroup_1$ as also not full.
-		The author doesn’t know a good (counter)example for this.
-		For now, we refer to \cite{stackexchange_pi_1_not_full}.
+		The author doesn’t know a good (counter)example for this, and refers to \cite{stackexchange_pi_1_not_full} until further notice.
 
 	\item[Example~1.2.5~(b)]
 		These functors are neither faithful nor full.
@@ -88,31 +87,36 @@
 
 		The functor~$(\ph)^*$ is faithful.
 		To see this, let~$V$ and~$W$ be two~\vectorspaces{$\kf$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$.
-		There exist by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 ≔ f_1(v)$ and~$w_2 ≔ f_2(v)$ in~$W$ are distinct.
-		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
-		This means that
+		There exists by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 ≔ f_1(v)$ and~$w_2 ≔ f_2(v)$ in~$W$ are distinct.
+		It further follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
+		It follows that
 		\begin{align*}
 			f_1^*(w^*)(v)
-			=
+			&=
 			(w^* ∘ f_1)(v)
-			=
+			\\
+			&=
 			w^*( f_1(w) )
-			=
+			\\
+			&=
 			w^*(w_1)
-			≠
+			\\
+			&≠
 			w^*(w_2)
-			=
+			\\
+			&=
 			w^*( f_2(w) )
+			\\
 			&=
 			(w^* ∘ f_2)(v)
 			\\
 			&=
 			f_2^*(w^*)(v) \,.
 		\end{align*}
-		This shows that~$f_1^*(w^*) ≠ f_2^*(w^*)$, and therefore that~$f_1^* ≠ f_2^*$.
+		This shows that~$f_1^*(w^*) ≠ f_2^*(w^*)$, and therefore~$f_1^* ≠ f_2^*$.
 		
 		The functor~$(\ph)^*$ is not full.
-		We note that for any two~\vectorspaces{$\kf$}~$V$ and~$W$ the map
+		We observe that for any two~\vectorspaces{$\kf$}~$V$ and~$W$ the map
 		\[
 			D
 			\colon
@@ -121,16 +125,7 @@
 			f \mapsto f^*
 		\]
 		is linear.
-		Let now~$V = \kf$.
-		Then~%
-		$
-			\Hom_{\kf}(V, W)
-			=
-			\Hom_{\kf}(\kf, W)
-			≅
-			W \,,
-		$
-		but
+		For~$V = \kf$ we have~$\Hom_{\kf}(V, W) = \Hom_{\kf}(\kf, W) ≅ W$ but
 		\[
 			\Hom_{\kf}(W^*, V^*)
 			=

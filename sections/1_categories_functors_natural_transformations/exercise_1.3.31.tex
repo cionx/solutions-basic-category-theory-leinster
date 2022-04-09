@@ -67,7 +67,7 @@ For every total order~$≤$ on~$X$, i.e., element of~$\Ord(X)$, we have
 	\iff
 	x_1 ≤ x_2
 \]
-for all~$x_1, x_2 ∈ X$, which shows that~$\Ord(f)(≤)$ is again~$≤$.
+for all~$x_1, x_2 ∈ X$, which means that the total order~$\Ord(1_X)(≤)$ coincides with the original order~$≤$.
 This shows that~$\Ord(1_X) = 1_{\Ord(X)}$.
 
 Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two composable morphisms in~$\Bcat$.
@@ -107,7 +107,7 @@ Suppose that there would exist a natural transformation~$α$ from~$\Sym$ to~$\Or
 For every finite set~$X$ we would then get the element~$t_X ≔ α_X(s_X)$ of~$\Ord(X)$.
 It would follow for every morphism~$f \colon X \to Y$ in~$\Bcat$ from the commutativity of the diagram
 \[
-	\begin{tikzcd}[column sep = large]
+	\begin{tikzcd}[sep = large]
 		\Sym(X)
 		\arrow{r}[above]{\Sym(f)}
 		\arrow{d}[left]{α_X}
@@ -136,7 +136,8 @@ that
 This shows that the map~$\Ord(f)$ would carry the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
 
 However, such a choice of distinguished elements~$(t_X)_{X ∈ \Ob(\Bcat)}$ cannot exist:
-If a finite set~$X$ with at least two elements, then for every element~$≤$ of~$\Ord(X)$ and every non-identity automorphism~$f$ of~$X$ (which there exist some because~$X$ has at least two swappable elements) we have~$\Ord(f)(≤) ≠ {≤}$.
+If~$X$ is a finite set with at least two distinct elements, then there exists an automorphism~$f$ of~$X$ swapping these two elements.
+It then follows for every element~$≤$ of~$\Ord(X)$ that~$\Ord(f)(≤)$ is different from~$≤$.
 
 
 
