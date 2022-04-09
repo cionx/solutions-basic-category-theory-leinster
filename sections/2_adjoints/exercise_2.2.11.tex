@@ -1,0 +1,150 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We denote the subcategories~$\Fix(GF)$ and~$\Fix(FG)$ of~$\Acat$ and~$\Bcat$ by~$\Acat'$ and~$\Bcat'$ respectively.
+
+We start off by showing that~$F$ restrict to a functor between~$\Acat'$ and~$\Bcat'$.
+Let~$A$ be an object of~$\Acat'$.
+The morphisms~$η_A$ from~$A$ to~$GF(A)$ is an isomorphism, whence its image under~$F$ is an isomorphism in~$\Bcat$ from~$F(A)$ to~$FGF(A)$.
+We know from the triangle identities that
+\[
+	\id_{F(A)} = ε_{F(A)} ∘ F(η_A) \,.
+\]
+It follows that the morphisms~$ε_{F(A)}$ is an isomorphism since both~$\id_{F(A)}$ and~$F(η_A)$ are isomorphisms.
+This shows that the object~$F(A)$ is contained in~$\Bcat'$.
+We therefore find that the functor~$F$ restricts to a functor~$F'$ from~$\Acat'$ to~$\Bcat'$.
+
+We find in the same way (using the other triangle identity) that the functor~$G$ restricts to functor~$G'$ from~$\Bcat'$ to~$\Acat'$.
+
+The natural transformation~$η$ from~$\Id_{\Acat}$ to~$GF$ restricts to a natural transformation from~$\Id_{\Acat'}$ to~$G' F'$, and the natural transformation~$ε$ from~$FG$ to~$\Id_{\Bcat}$ restricts to a natural transformation~$ε'$ from~$F' G'$ to~$\Id_{\Bcat'}$.
+We observe that the subcategories~$\Acat'$ and~$\Bcat'$ of~$\Acat$ and~$\Bcat$ are chosen precisely in such a way that the components of~$η'$ and~$ε'$ are isomorphisms.
+The natural transformations~$η'$ and~$ε'$ are therefore natural isomorphisms.
+
+We have now the two categories~$\Acat'$ and~$\Bcat'$, the two functors
+\[
+	F' \colon \Acat' \to \Bcat' \,,
+	\quad
+	G' \colon \Bcat' \to \Acat'
+\]
+and the two natural isomorphisms
+\[
+	η' \colon \Id_{\Acat'} \To G' F' \,,
+	\quad
+	ε' \colon F' G' \To \Id_{\Bcat'} \,.
+\]
+We have, in other words, an equivalence of categories~$(F', G', η', ε')$ between~$\Acat'$ and~$\Bcat'$.
+
+
+
+\subsubsection{}
+
+\paragraph{Example~2.1.3,~(a)}
+Given any set~$S$, the unit map~$η_S$ from~$S$ to~$UF(S)$ is not surjective because~$UF(S)$ contains the zero vector, which lies not in the image of~$η_S$.
+We therefore find that the subcategory~$\Fix(UF)$ of~$\Set$ is empty.
+It follows that the category~$\Fix(FU)$ is also empty, since it is equivalent to~$\Fix(UF)$.
+
+\paragraph{Example~2.1.3,~(b)}
+In the same way as in the previous example, we find that both~$\Fix(UF)$ and~$\Fix(FU)$ are empty.
+
+\paragraph{Example~2.1.3,~(c)}
+The composite~$UF$ assigns to each group~$G$ its abelianization~$G^{\ab}$, and the unit morphism~$η_G$ is the canonical homomorphism of groups from~$G$ into~$G^{\ab}$.
+This homomorphism is an isomorphism if and only if the group~$G$ is abelian.
+We hence find that the subcategory~$\Fix(UF)$ of~$\Grp$ is the category of abelian groups, i.e.,~$\Ab$.
+We find similarly that the subcategory~$\Fix(FU)$ of~$\Ab$ is all of~$\Ab$.
+The functor~$U$ restricts to the identity functor of~$\Ab$, while the restriction of the functor~$F$ to an endofunctor of~$\Ab$ assigns to each abelian group~$A$ its abelianization~$G^{\ab}$.
+
+\paragraph{Example~2.1.4,~(d),~$F$ and~$U$}
+The counit morphism~$ε_G$ is an isomorphism for every group~$G$, whence the category~$\Fix(FU)$ is all of~$\Grp$.
+Given a monoid~$M$, the unit morphism~$η_M$ from~$M$ to~$UF(M)$ can only be an isomorphism if~$M$ was already a group to begin with.
+Conversely, if~$M$ is a group, then~$η_M$ will be an isomorphism.
+We hence find that the category~$\Fix(UF)$ is~$\Grp$.
+The functor~$U$ restricts to the identity functor of~$\Grp$, whereas the restriction of the functor~$F$ will typically change the underlying set of a group, and is therefore not the identity functor.
+
+\paragraph{Example~2.1.4,~(d),~$U$ and~$R$}
+The composite~$RU$ as the identity functor, and the unit~$η$ is the identity natural transformation.
+The category~$\Fix(RU)$ is therefore all of~$\Grp$.
+The composite~$UR$ assigns to each monoid its submonoid~$M^×$ of units, and the counit morphism~$ε_M$ is for every monoid~$M$ given by the inclusion from~$M^×$ into~$M$;
+this inclusion is an isomorphism if and only if every element of~$M$ is invertible, i.e., if and only if the monoid~$M$ was already a group to begin with.
+The subcategory~$\Fix(UR)$ of~$\Mon$ is therefore given by~$\Grp$.
+Both~$U$ and~$R$ restrict to the identity functors of~$\Grp$, and the restrictions of~$η$ and~$ε$ are the identity natural transformation of this identity functor.
+
+\paragraph{Example~2.1.5,~$D$ and~$U$}
+The composite~$DU$ assigns to each topological space~$X$ the discrete topological space with the same underlying set as~$X$, and the unit morphism~$η_X$ is the identity map from this discrete space to~$X$.
+This map is an isomorphism if and only if the space~$X$ is discrete, whence the full subcategory~$\Fix(DU)$ consists precisely of the discrete topological spaces.
+The composite~$UD$ is the identity functor, and the counit~$ε$ of the adjunction is the identity natural transformation.
+The subcategory~$\Fix(UD)$ of~$\Set$ is therefore all of~$\Set$.
+The restriction of~$η$ is the identity natural transformation of the identity functor of the category of discrete topological spaces.
+
+\paragraph{Example~2.1.5,~$U$ and~$I$}
+The composite~$IU$ assigns to each topological space~$X$ the indiscrete topological space with the same underlying set as~$X$, and the counit morphism~$ε_X$ is the identity map from~$X$ to this indiscrete space.
+This map is an isomorphism if and only if the space~$X$ is indiscrete, whence the full subcategory~$\Fix(IU)$ consists precisely of the indiscrete topological spaces.
+The composite~$UI$ is the identity functor, and the unit~$η$ of the adjunction is the identity natural transformation.
+The subcategory~$\Fix(UI)$ of~$\Set$ is therefore all of~$\Set$.
+The restriction of~$ε$ is the identity natural transformation of the identity functor of the category of indiscrete topological spaces.
+
+\paragraph{Example~2.1.6}
+We denote the given functors by
+\[
+	F ≔ (\ph) × B \,,
+	\quad
+	G ≔ (\ph)^B \,.
+\]
+The composite~$GF$ is given on objects by
+\[
+	GF(A) = (A × B)^B
+\]
+for every set~$A$, and the unit natural transformation~$η$ is given by
+\[
+	η_A
+	\colon
+	A \to (A × B)^B \,,
+	\quad
+	a \mapsto [b \mapsto (a, b)]
+\]
+for every set~$A$.
+The composite~$FG$, on the other hand, is given on objects by
+\[
+	FG(A) = A^B × B \,,
+\]
+for every set~$A$, and the counit natural transformation~$ε$ is given by the evaluation map
+\[
+	ε_C
+	\colon
+	C^B × C \to C \,,
+	\quad
+	(f, b) \mapsto f(b)
+\]
+for every set~$C$.
+We distinguish in the following between three cases.
+\begin{casedistinction}
+
+	\item
+		Suppose that the set~$B$ is empty.
+
+		The set~$GF(A)$ is then a singleton for every set~$A$, whence the map~$η_A$ is an isomorphism if and only if the set~$A$ is a singleton.
+		The full subcategory~$\Fix(GF)$ of~$\Set$ consists therefore of all the singleton sets.
+		The restriction~$η'$ of the unit~$η$ has for every singleton set~$A$ as its component~$η_A$ the unique map from the singleton set~$A$ to the singleton set~$(A × B)^B$.
+
+		The set~$FG(C)$ is empty, whence the counit map~$ε_C$ is an isomorphism if and only if the set~$C$ is empty.
+		The subcategory~$\Fix(FG)$ of~$\Set$ therefore consists of a single object, namely the empty set.
+		The composite~$FG$ restricts to the identity functor on~$\Fix(FG)$, and the counit~$ε$ to the identity natural transformation of this identity functor.
+
+	\item
+		Suppose that the set~$B$ is a singleton.
+		Both~$η$ and~$ε$ are natural isomorphisms, whence both~$\Fix(GF)$ and~$\Fix(FG)$ are all of~$\Set$.
+
+	\item
+		Suppose that the set~$B$ consists of at least two distinct elements.
+
+		The unit map~$η_A$ is an isomorphism if and only if the set~$A$ is empty.
+		The subcategory~$\Fix(GF)$ of~$\Set$ therefore consists of only a single object, namely the empty set.
+
+		The counit map~$ε_C$ is an isomorphism if and only if the set~$C$ is empty.
+		The subcategory~$\Fix(FG)$ of~$\Set$ therefore consists of only a single object, namely the empty set.
+
+		The restrictions of~$F$ and~$G$ are the identity functors on the full subcategory of~$\Set$ whose single object is the empty set, and both~$η$ and~$ε$ restrict to the identity natural transformation of this identity functor.
+
+\end{casedistinction}
