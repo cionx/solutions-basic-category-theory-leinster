@@ -1,0 +1,321 @@
+\subsection{}
+
+Let~$\Scat$ be a category.
+\begin{enumerate}
+	
+
+	\item
+		Let~$\Acat$ and~$\Bcat$ be two categories and let~$F$ be a functor from~$\Bcat$ to~$\Acat$.
+		We make the following observations:
+		\begin{itemize}
+
+			\item
+				Let~$K$ be a functor from~$\Bcat$ to~$\Scat$.
+				The composite~$KF$ is a functor from~$\Acat$ to~$\Scat$.
+
+			\item
+				Let~$K$ and~$L$ be two functors from~$\Bcat$ to~$\Scat$ and let~$α$ be a natural transformation from~$K$ to~$L$.
+				We then have the induces natural transformation~$αF$ from~$KF$ to~$LF$.
+
+			\item
+				The above assignments define a functor~$F^*$ from the functor category~$[\Bcat, \Scat]$ to the functor category~$[\Acat, \Scat]$.
+				Indeed, for every functor~$K$ from~$\Bcat$ to~$\Acat$ we have the equalities
+				\[
+					F^*(\id_K)
+					=
+					\id_K F
+					=
+					\id_{K F}
+					=
+					\id_{F^*(K)} \,,
+				\]
+				and for any three functors~$K$,~$L$ and~$M$ from~$\Bcat$ to~$\Scat$ and every two natural transformations
+				\[
+					α \colon K \To L \,,
+					\quad
+					β \colon L \To M
+				\]
+				we have the equalities
+				\[
+					F^*(β) ∘ F^*(α)
+					=
+					βF ∘ αF
+					=
+					(β ∘ α)F
+					=
+					F^*(β ∘ α) \,.
+				\]
+		\end{itemize}
+		We have thus constructed an induced functor~$F^*$ from~$[\Bcat, \Scat]$ to~$[\Acat, \Scat]$.
+
+	\item
+		Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories, and let
+		\[
+			F \colon \Acat \to \Bcat \,,
+			\quad
+			G \colon \Bcat \to \Ccat
+		\]
+		be composable functors.
+		Then
+		\[
+			(G ∘ F)^* = F^* ∘ G^*
+		\]
+		for the induces functors from~$[\Ccat, \Scat]$ to~$[\Acat, \Scat]$.
+
+
+	\item
+		Let~$\Acat$ and~$\Bcat$ be two categories and let~$F$ and~$G$ be two functors from~$\Acat$ to~$\Bcat$, and let~$α$ be a natural transformation from~$F$ to~$G$.
+		For every object~$K$ of the functor category~$[\Bcat, \Scat]$, i.e., functor from~$\Bcat$ to~$\Scat$, we get an induces natural transformation~$K α$ from~$K F$ to~$K G$.
+		This induces natural transformation is a morphism from~$F^*(K)$ to~$G^*(K)$ in the functor category~$[\Acat, \Scat]$.
+		By setting
+		\[
+			(α^*)_K ≔ K α
+		\]
+		for every object~$K$ of~$[\Bcat, \Scat]$, we therefore arrive at a transformation~$α^*$ from~$F^*$ to~$G^*$.
+		
+		This transformation~$α^*$ is again natural:
+		Let
+		\[
+			β \colon K \to L
+		\]
+		be a morphism in~$[\Bcat, \Scat]$.
+		This means that~$K$ and~$L$ are functors from~$\Bcat$ to~$\Scat$ and that~$β$ is a natural transformation from~$K$ to~$L$.
+		We need to show that the diagram
+		\[
+			\begin{tikzcd}[sep = large]
+				F^*(K)
+				\arrow{r}[above]{F^*(β)}
+				\arrow{d}[left]{(α^*)_K}
+				&
+				F^*(L)
+				\arrow{d}[right]{(α^*)_L}
+				\\
+				G^*(K)
+				\arrow{r}[above]{G^*(β)}
+				&
+				G^*(L)
+			\end{tikzcd}
+		\]
+		commutes.
+		This diagram can be simplified as follows:
+		\[
+			\begin{tikzcd}[sep = large]
+				KF
+				\arrow{r}[above]{βF}
+				\arrow{d}[left]{Kα}
+				&
+				LF
+				\arrow{d}[right]{Lα}
+				\\
+				KG
+				\arrow{r}[above]{βG}
+				&
+				LG
+			\end{tikzcd}
+		\]
+		This diagram indeed commutes because, by the interchange law for horizontal and vertical composition, both composited are given by the horizontal composition~$β * α$.
+
+		We have thus extended the construction~$(\ph)^*$ to natural transformations.
+
+	\item
+		The induced natural transformation~$α^*$ depends covariantly~(!) on~$α$:
+		\begin{itemize}
+
+			\item
+				For every functor~$F$ from~$\Bcat$ to~$\Acat$, we have~$(\id_F)^* = \id_{F^*}$.
+				Indeed, we have for every object~$K$ of~$[\Acat, \Scat]$ the equalities of morphisms
+				\[
+					( (\id_F)^* )_K
+					=
+					K \id_F
+					=
+					\id_{K F}
+					=
+					\id_{F^*(K)}
+					=
+					(\id_{F^*})_K \,,
+				\]
+				and therefore the equality of natural transformations~$(\id_F)^* = \id_{F^*}$.
+
+			\item
+				Let now~$F$,~$G$ and~$H$ be three functors from~$\Bcat$ to~$\Acat$, and let
+				\[
+					α \colon F \To G \,,
+					\quad
+					β \colon G \To H
+				\]
+				be two composable natural transformations.
+				Then
+				\[
+					( (β ∘ α)^* )_K
+					=
+					K (β ∘ α)
+					=
+					(K β) ∘ (K α)
+					=
+					( β_* )_K ∘ ( α^* )_K
+					=
+					( β_* ∘ α_* )_K
+				\]
+				for every object~$K$ of~$[\Bcat, \Acat]$, and therefore
+				\[
+					(β ∘ α)^* = α^* ∘ β^* \,.
+				\]
+
+	\end{itemize}
+
+	\item
+		Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories.
+		Let
+		\[
+			F, G \colon \Acat \to \Bcat \,,
+			\quad
+			H \colon \Bcat \to \Ccat
+		\]
+		be functors and let~$α$ be a natural transformation from~$F$ to~$G$.
+		We have two ways of obtaining a natural transformation from~$(H F)^* = F^* H^*$ to~$(H G)^* = G^* H^*$.
+		On the one hand, we can form the natural transformation~$H α$ from~$H F$ to~$H G$, which then induces the natural transformation~$(H α)^*$ from~$(H F)^*$ to~$(H G)^*$.
+		On the other hand, we can form the induces natural transformation~$α^*$ from~$F^*$ to~$G^*$, and then consider the resulting natural transformation~$α^* H^*$ from~$F^* H^*$ to~$G^* H^*$.
+		These natural transformations turn out to be the same, i.e.,
+		\[
+			(H α)^* = α^* H^* \,.
+		\]
+		Indeed, we have for every object~$K$ of~$[\Ccat, \Scat]$ the equalities of morphisms
+		\[
+			( (H α)^* )_K
+			=
+			K (H α)
+			=
+			(K H) α
+			=
+			(α^*)_{K H}
+			=
+			(α^*)_{H^*(K)}
+			=
+			(α^* H^*)_K \,,
+		\]
+		and therefore overall the equality of natural transformations~$(H α)^* = α^* H^*$.
+\end{enumerate}
+
+We are now well-prepared to prove the statement at hand.
+
+We consider an adjunction between two categories~$\Acat$ and~$\Bcat$ given by two functors
+\[
+	F \colon \Acat \to \Bcat \,,
+	\quad
+	G \colon \Bcat \to \Acat
+\]
+and two natural transformations
+\[
+	η \colon \Id_{\Acat} \To GF \,,
+	\quad
+	ε \colon FG \To \Id_{\Bcat}
+\]
+that serve as the unit and counit of the adjunction respectively.
+(The functor~$F$ is left adjoint to the functor~$G$.)
+We know that these data satisfy the triangle identities, i.e., that the following two diagrams commute:
+\begin{equation}
+	\label{triangle identities for adjunction before dualizing}
+	\begin{tikzcd}[sep = large]
+		F
+		\arrow{r}[above]{Fη}
+		\arrow{dr}[below left]{\id_F}
+		&
+		FGF
+		\arrow{d}[right]{εF}
+		\\
+		{}
+		&
+		F
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[sep = large]
+		G
+		\arrow{r}[above]{ηG}
+		\arrow{dr}[below left]{\id_G}
+		&
+		GFG
+		\arrow{d}[right]{Gε}
+		\\
+		{}
+		&
+		G
+	\end{tikzcd}
+\end{equation}
+We have seen in above discussions that the functors~$F$ and~$G$ induce functors
+\[
+	F^* \colon [\Bcat, \Scat] \to [\Acat, \Scat] \,,
+	\quad
+	G^* \colon [\Acat, \Scat] \to [\Bcat, \Scat] \,.
+\]
+We have also seen that the natural transformations~$η$ and~$ε$ induce natural transformations
+\[
+	η^* \colon (\Id_{\Acat})^* \To (GF)^* \,,
+	\quad
+	ε^* \colon (FG)^* \To (\Id_{\Bcat})^* \,,
+\]
+which are natural transformations
+\[
+	η^* \colon \Id_{[\Acat, \Scat]} \To F^* G^* \,,
+	\quad
+	ε^* \colon G^* F^* \To \Id_{[\Bcat, \Scat]} \,,
+\]
+We can dualize the diagrams~\eqref{triangle identities for adjunction before dualizing} to get the commutative diagrams
+\begin{equation}
+	\label{triangle identities for adjunction after dualizing}
+	\begin{tikzcd}[sep = large]
+		F^*
+		\arrow{r}[above]{(Fη)^*}
+		\arrow{dr}[below left]{(\id_F)^*}
+		&
+		(FGF)^*
+		\arrow{d}[right]{(εF)^*}
+		\\
+		{}
+		&
+		F^*
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[sep = large]
+		G^*
+		\arrow{r}[above]{(ηG)^*}
+		\arrow{dr}[below left]{(\id_G)^*}
+		&
+		(GFG)^*
+		\arrow{d}[right]{(Gε)^*}
+		\\
+		{}
+		&
+		G*
+	\end{tikzcd}
+\end{equation}
+These diagrams can be simplified as
+
+\begin{equation}
+	\begin{tikzcd}[sep = large]
+		F^*
+		\arrow{r}[above]{η^* F^*}
+		\arrow{dr}[below left]{\id_{F^*}}
+		&
+		F^* G^* F^*
+		\arrow{d}[right]{F^* ε^*}
+		\\
+		{}
+		&
+		F^*
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[sep = large]
+		G^*
+		\arrow{r}[above]{G^* η^*}
+		\arrow{dr}[below left]{\id_{G^*}}
+		&
+		G^* F^* G^*
+		\arrow{d}[right]{ε^* G^*}
+		\\
+		{}
+		&
+		G*
+	\end{tikzcd}
+\end{equation}
+The commutativity of these diagrams tells us that the natural transformations~$η^*$ and~$ε^*$ serve as the unit and counit of an adjunction between the categories~$[\Acat, \Scat]$ and~$[\Bcat, \Scat]$, with~$F^*$ right adjoint to~$G^*$.
