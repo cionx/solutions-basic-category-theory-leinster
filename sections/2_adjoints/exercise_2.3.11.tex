@@ -1,0 +1,23 @@
+\subsection{}
+
+There exists by assumption two elements~$a_1$ and~$a_2$ of~$U(A)$ that are distinct.
+
+Let~$S$ be some set and let~$s_1$ and~$s_2$ be any two distinct elements of~$S$.
+We consider the set-theoretic map
+\[
+	f \colon S \to U(A)
+\]
+given by~$f(s_1) ≔ a_1$ and~$f(s) ≔ a_2$ for every element~$s$ of~$S$ with~$s ≠ a_2$.
+This function corresponds to a morphism~$\adjtranspose{f}$ from~$F(S)$ to~$A$, and the function~$f$ can be retrieved from the morphism~$\adjtranspose{f}$ via
+\[
+	f = U(\adjtranspose{f}) ∘ η_S \,.
+\]
+It follows from the relation
+\[
+	f(s_1) = a_1 ≠ a_2 = f(s_2)
+\]
+that also~$η_S(s_1) ≠ η_S(s_2)$.
+We have thus shown that the map~$η_S$ is injective.
+
+There exists plenty of groups whose underlying set contains at least two elements.
+It follows from the above discussion that for every set~$S$ the canonical map from~$S$ into the free group of~$S$ is injective.
