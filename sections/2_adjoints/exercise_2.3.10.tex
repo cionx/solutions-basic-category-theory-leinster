@@ -1,0 +1,73 @@
+\subsection{}
+
+For every object~$A$ of~$\Acat$ and every object~$B$ of~$\Bcat$, let~$Φ_{A, B}$ be the composite
+\[
+	\Acat(A, G(B))
+	\xto{F}
+	\Bcat(F(A), FG(B))
+	\xto{(ε_B)_*}
+	\Bcat(F(A), B) \,.
+\]
+The functor~$F$ is fully faithful and the morphism~$ε_B$ is an isomorphism.
+The map~$Φ_{A, B}$ is therefore a composite of two bijections, and thus again a bijection.
+This bijection in natural in both~$A$ and~$B$.
+
+For the naturality of~$A$, we note that for every morphism
+\[
+	f \colon A \to A'
+\]
+in~$\Acat$, we have the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		\Acat(A, G(B))
+		\arrow{r}[above]{F}
+		&
+		\Bcat(F(A), FG(B))
+		\arrow{r}[above]{(ε_B)_*}
+		&
+		\Bcat(F(A), B)
+		\\
+		\Acat(A', G(B))
+		\arrow{u}[left]{f^*}
+		\arrow{r}[above]{F}
+		&
+		\Bcat(F(A'), FG(B))
+		\arrow{u}[right]{F(f)^*}
+		\arrow{r}[above]{(ε_B)_*}
+		&
+		\Bcat(F(A'), B)
+		\arrow{u}[right]{F(f)^*}
+	\end{tikzcd}
+\]
+For the naturality in~$B$, we note that for every morphism
+\[
+	g \colon B \to B'
+\]
+in~$\Bcat$, we have the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		\Acat(A, G(B))
+		\arrow{r}[above]{F}
+		\arrow{d}[left]{G(g)_*}
+		&
+		\Bcat(F(A), FG(B))
+		\arrow{r}[above]{(ε_B)_*}
+		\arrow{d}[right]{FG(g)_*}
+		&
+		\Bcat(F(A), B)
+		\arrow{d}[right]{g_*}
+		\\
+		\Acat(A, G(B'))
+		\arrow{r}[above]{F}
+		&
+		\Bcat(F(A), FG(B'))
+		\arrow{r}[above]{(ε_{B'})_*}
+		&
+		\Bcat(F(A), B')
+	\end{tikzcd}
+\]
+(The right-most sqare commutes by the naturality of~$ε$.)
+
+We have thus constructed an adjunction between~$F$ and~$G$, with~$F$ left-adjoint to~$G$.
+We have constructed the adjunction in precisely such a way that~$ε$ is its counit;
+we could have also constructed an adjunction for which~$η$ is its unit.
