@@ -1,0 +1,140 @@
+\subsection{}
+
+Let~$G$ and~$H$ be two groups, and let~$\Gcat$ and~$\Hcat$ be the corresponding one-object categories.
+We recall the following:
+\begin{itemize*}
+
+	\item
+		A functor from~$\Gcat$ to~$\Hcat$ is the same as a homomorphism of groups from~$G$ to~$H$.
+
+	\item
+		Given two functors~$F$ and~$F'$ from~$\Gcat$ to~$\Hcat$, every natural transformation from~$F$ to~$F'$ is already a natural isomorphism, since every morphism in~$\Hcat$ is an isomorphism.
+
+		Such a natural isomorphism from~$F$ to~$F'$ consists of a single component, which is an element~$k$ of~$H$ with~$k L k^{-1} = R$.
+		This means in particular that there exists a natural transformation between~$L$ and~$R$ if and only if~$L$ and~$R$ are conjugated as homomorphisms of groups.
+
+\end{itemize*}
+
+
+Suppose now that~$(L, R, η, ε)$ is an adjunction between the categories~$\Gcat$ and~$\Hcat$.
+This adjunction consists of two functors
+\[
+	L \colon \Gcat \to \Hcat \,,
+	\quad
+	R \colon \Hcat \to \Gcat \,,
+\]
+and two natural transformations
+\[
+	η \colon \Id_{\Gcat} \To R L \,,
+	\quad
+	ε \colon L R \To \Id_{\Hcat}
+\]
+that serve as the unit and the counit of the adjunction respectively.
+The functors~$L$ and~$R$ correspond to homomorphisms of groups
+\[
+	l \colon G \to H \,,
+	\quad
+	r \colon H \to G \,.
+\]
+
+Both~$η$ and~$ε$ are actually natural isomorphisms because all morphisms in~$\Gcat$ and all morphisms in~$\Hcat$ are isomorphisms.
+It follows from Exercise~2.2.11 that both~$L$ and~$R$ are equivalences of categories.
+This entails that these functors are fully faithful, which means that~$l$ and~$r$ are bijective, and therefore isomorphisms of groups.
+
+The natural transformation~$η$ consists of only a single component, which is an element~$g$ of~$G$.
+That~$η$ is a natural transformation from~$\Id_{\Gcat}$ to the composite~$R L$ means that the diagram
+\[
+	\begin{tikzcd}[sep = large]
+		\ast_{\Gcat}
+		\arrow{r}[above]{g'}
+		\arrow{d}[left]{g}
+		&
+		\ast_{\Gcat}
+		\arrow{d}[right]{g}
+		\\
+		\ast_{\Gcat}
+		\arrow{r}[above]{r(l(g'))}
+		&
+		\ast_{\Gcat}
+	\end{tikzcd}
+\]
+commutes for every element~$g'$ of~$G$.
+In other words, we have
+\[
+	(r ∘ l)(g) = g g'  g^{-1}
+\]
+for every element~$g'$ of~$G$, so that the composite~$r ∘ l$ is the inner automorphism of~$G$ given by conjugation with~$g'$.
+
+We find similarly that the natural transformation~$ε$ consists of only a single component, which an element~$h$ of~$H$, so that the composite~$l ∘ r$ is the inner automorphism of~$H$ given by conjugation with~$h^{-1}$.
+
+That~$η$ and~$ε$ define an adjunction between~$L$ and~$R$ is equivalent to the triangle identities, i.e., to the commutativity of the following two diagrams:
+\[
+	\begin{tikzcd}[sep = large]
+		L
+		\arrow{r}[above]{L η}
+		\arrow{dr}[below left]{\id_L}
+		&
+		LRL
+		\arrow{d}[right]{ε L}
+		\\
+		{}
+		&
+		L
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[sep = large]
+		R
+		\arrow{r}[above]{η R}
+		\arrow{dr}[below left]{\id_R}
+		&
+		RLR
+		\arrow{d}[right]{R ε}
+		\\
+		{}
+		&
+		R
+	\end{tikzcd}
+\]
+By evaluating these diagrams at the single objects of the categories~$\Gcat$ and~$\Hcat$, they can equivalently be expressed as follows:
+\[
+	\begin{tikzcd}[sep = large]
+		\ast_{\Hcat}
+		\arrow{r}[above]{l(g)}
+		\arrow{dr}[below left]{1_H}
+		&
+		\ast_{\Hcat}
+		\arrow{d}[right]{h}
+		\\
+		{}
+		&
+		\ast_{\Hcat}
+	\end{tikzcd}
+	\qquad
+	\begin{tikzcd}[sep = large]
+		\ast_{\Gcat}
+		\arrow{r}[above]{g}
+		\arrow{dr}[below left]{1_G}
+		&
+		\ast_{\Gcat}
+		\arrow{d}[right]{r(h)}
+		\\
+		{}
+		&
+		\ast_{\Gcat}
+	\end{tikzcd}
+\]
+The commutativity of these diagrams is equivalent two the two conditions
+\[
+	h = l(g)^{-1} \,,
+	\quad
+	g = r(h)^{-1} \,.
+\]
+
+We find overall that an adjunction between two groups~$G$ and~$H$, when regarded as one-object categories, consists of two isomorphisms of groups
+\[
+	l \colon G \to H \,,
+	\quad
+	r \colon H \to G \,,
+\]
+and elements~$g$ and~$h$ of~$G$ and~$H$ respectively, subject to the following conditions:
+the composite~$r ∘ l$ is given by conjugation with~$g$, the composite~$r ∘ l$ is given by composition with~$h^{-1}$, and the elements~$g$ and~$h$ are related via~$h = l(g)^{-1}$ and~$g = r(h)^{-1}$.%
