@@ -1,11 +1,11 @@
 \subsection{}
 
 The category~$\Open(X)$ of open subsets of~$X$ admits a unique initial object, namely the empty subset~$∅$, as well as a unique terminal object, namely the entire space~$X$.
-Instead of~$\Open(X)$ we will consider an arbitrary category~$\Acat$ that admits an initial object~$I_{\Acat}$ and a terminal object~$T_{\Acat}$, and which satisfies the following additional property:
+Instead of~$\Open(X)$ we will consider an arbitrary category~$\cat{A}$ that admits an initial object~$I_{\cat{A}}$ and a terminal object~$T_{\cat{A}}$, and which satisfies the following additional property:
 there exist no morphism from a terminal object to any non-terminal object, and there exists no morphism from any non-initial object to an initial object.
 
 The category~$\Set$ also admits a unique initial object, namely the empty set~$∅$, as well as terminal objects, namely the one-element sets.
-Instead of~$\Set$ we will consider an arbitrary category~$\Bcat$ that admit an initial object~$I_{\Bcat}$ and a terminal object~$T_{\Bcat}$.
+Instead of~$\Set$ we will consider an arbitrary category~$\cat{B}$ that admit an initial object~$I_{\cat{B}}$ and a terminal object~$T_{\cat{B}}$.
 
 
 
@@ -13,22 +13,22 @@ Instead of~$\Set$ we will consider an arbitrary category~$\Bcat$ that admit an i
 
 We start off with the functor
 \[
-	Δ \colon \Bcat \to [\Acat^{\op}, \Bcat]
+	Δ \colon \cat{B} \to [\cat{A}^{\op}, \cat{B}]
 \]
-that assigns to each object~$B$ of~$\Bcat$ the constant functor at~$B$.
+that assigns to each object~$B$ of~$\cat{B}$ the constant functor at~$B$.
 To each morphism
 \[
 	g \colon B \to B'
 \]
-in~$\Bcat$ it assigns the natural transformation~$Δ(g)$ from~$Δ(B)$ to~$Δ(B')$ given by the component
+in~$\cat{B}$ it assigns the natural transformation~$Δ(g)$ from~$Δ(B)$ to~$Δ(B')$ given by the component
 \[
 	Δ(g)_A
 	≔
 	g
 \]
-for every object~$A$ of~$\Acat$.
+for every object~$A$ of~$\cat{A}$.
 The assignment~$Δ$ is indeed functorial:
-We have for every object~$B$ of~$\Bcat$ the equalities
+We have for every object~$B$ of~$\cat{B}$ the equalities
 \[
 	Δ(\id_B)_A
 	=
@@ -38,14 +38,14 @@ We have for every object~$B$ of~$\Bcat$ the equalities
 	=
 	( \Id_{Δ(B)} )_A
 \]
-for every object~$A$ of~$\Acat$, and therefore~$Δ(\id_B) = \Id_{Δ(B)}$.
+for every object~$A$ of~$\cat{A}$, and therefore~$Δ(\id_B) = \Id_{Δ(B)}$.
 We also have for any two composable morphisms
 \[
 	g \colon B \to B' \,,
 	\quad
 	g' \colon B' \to B''
 \]
-in~$\Bcat$ the equalities
+in~$\cat{B}$ the equalities
 \[
 	Δ(g' ∘ g)_A
 	=
@@ -55,14 +55,14 @@ in~$\Bcat$ the equalities
 	=
 	( Δ(g') ∘ Δ(g) )_A
 \]
-for every object~$A$ of~$\Acat$, and therefore~$Δ(g' ∘ g) = Δ(g') ∘ Δ(g)$.
+for every object~$A$ of~$\cat{A}$, and therefore~$Δ(g' ∘ g) = Δ(g') ∘ Δ(g)$.
 
 
 
 \subsubsection*{The functor~$Γ$}
 
-Let~$F$ be any functor from~$\Acat^{\op}$ to~$\Bcat$.
-A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(β_A)_{A ∈ \Ob(\Acat)}$ of morphisms~$β_A$ from~$Δ(B)(A) = B$ to~$F(A)$ such that for every morphism~$f \colon A \to A'$ in~$\Acat$ the resulting diagram
+Let~$F$ be any functor from~$\cat{A}^{\op}$ to~$\cat{B}$.
+A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(β_A)_{A ∈ \Ob(\cat{A})}$ of morphisms~$β_A$ from~$Δ(B)(A) = B$ to~$F(A)$ such that for every morphism~$f \colon A \to A'$ in~$\cat{A}$ the resulting diagram
 \[
 	\begin{tikzcd}[sep = large]
 		B
@@ -78,7 +78,7 @@ A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(
 		F(A)
 	\end{tikzcd}
 \]
-in~$\Bcat$ commutes.
+in~$\cat{B}$ commutes.
 We can also express this diagram in the following triangular form:
 \[
 	\begin{tikzcd}[column sep = large]
@@ -98,24 +98,24 @@ We can also express this diagram in the following triangular form:
 		F(A)
 	\end{tikzcd}
 \]
-We may consider for the object~$A'$ the terminal object~$T_{\Acat}$ of~$\Acat$, and consequently for the morphism~$f$ the unique morphism from~$A$ to~$T_{\Acat}$.
-We then find from the above commutative diagram that the natural transformation~$β$ is uniquely determined by its component at~$T_{\Acat}$, i.e., by the morphism
+We may consider for the object~$A'$ the terminal object~$T_{\cat{A}}$ of~$\cat{A}$, and consequently for the morphism~$f$ the unique morphism from~$A$ to~$T_{\cat{A}}$.
+We then find from the above commutative diagram that the natural transformation~$β$ is uniquely determined by its component at~$T_{\cat{A}}$, i.e., by the morphism
 \[
-	β_{T_{\Acat}} \colon B \to F(T_{\Acat}) \,.
+	β_{T_{\cat{A}}} \colon B \to F(T_{\cat{A}}) \,.
 \]
 
-Let on the other hand~$g$ be an arbitrary morphism from~$B$ to~$F(T_{\Acat})$ in the category~$\Bcat$.
-For every object~$A$ of~$\Acat$ let~$t_A$ be the unique morphisms from~$A$ to the terminal object~$T_{\Acat}$ of~$\Acat$, and let~$β_A$ be the resulting morphisms in~$\Bcat$ given by the composite
+Let on the other hand~$g$ be an arbitrary morphism from~$B$ to~$F(T_{\cat{A}})$ in the category~$\cat{B}$.
+For every object~$A$ of~$\cat{A}$ let~$t_A$ be the unique morphisms from~$A$ to the terminal object~$T_{\cat{A}}$ of~$\cat{A}$, and let~$β_A$ be the resulting morphisms in~$\cat{B}$ given by the composite
 \[
 	β_A ≔ F(t_A) ∘ g \,.
 \]
-The resulting tuple~$β ≔ (β_A)_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$Δ$ to~$F$.
-Indeed, given any morphisms~$f$ in~$\Acat$ from an object~$A$ to an object~$A'$, we have in~$\Acat$ the commutative diagram
+The resulting tuple~$β ≔ (β_A)_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$Δ$ to~$F$.
+Indeed, given any morphisms~$f$ in~$\cat{A}$ from an object~$A$ to an object~$A'$, we have in~$\cat{A}$ the commutative diagram
 \[
 	\begin{tikzcd}[row sep = large]
 		{}
 		&
-		T_{\Acat}
+		T_{\cat{A}}
 		&
 		{}
 		\\
@@ -129,8 +129,8 @@ Indeed, given any morphisms~$f$ in~$\Acat$ from an object~$A$ to an object~$A'$,
 		\arrow{ul}[above right]{t_{A'}}
 	\end{tikzcd}
 \]
-because the object~$T_{\Acat}$ is terminal in~$\Acat$.
-It follows that the following diagram in~$\Bcat$ is again commutative:
+because the object~$T_{\cat{A}}$ is terminal in~$\cat{A}$.
+It follows that the following diagram in~$\cat{B}$ is again commutative:
 \[
 	\begin{tikzcd}[sep = large]
 		{}
@@ -144,7 +144,7 @@ It follows that the following diagram in~$\Bcat$ is again commutative:
 		\\[1em]
 		{}
 		&
-		F(T_{\Acat})
+		F(T_{\cat{A}})
 		\arrow{dl}[pos = 0.3, above left]{F(t_A)}
 		\arrow{dr}[pos = 0.3, above right]{F(t_{A'})}
 		&
@@ -178,11 +178,11 @@ The commutativity of the outer diagram
 	\end{tikzcd}
 \]
 shows the claimed naturality.
-We also note that~$t_{T_{\Acat}} = \id_{T_{\Acat}}$, and therefore
+We also note that~$t_{T_{\cat{A}}} = \id_{T_{\cat{A}}}$, and therefore
 \[
-	β_{T_{\Acat}}
+	β_{T_{\cat{A}}}
 	=
-	F(\id_{T_{\Acat}}) ∘ g
+	F(\id_{T_{\cat{A}}}) ∘ g
 	=
 	\id_{F(T)} ∘ g
 	=
@@ -190,21 +190,21 @@ We also note that~$t_{T_{\Acat}} = \id_{T_{\Acat}}$, and therefore
 \]
 
 Let us summarize our findings:
-every natural transformation from~$Δ(B)$ to~$F$ is uniquely determined by its component at the terminal object~$T_{\Acat}$, which is morphism from~$B$ to~$F(T_{\Acat})$; and conversely every such morphism extends to a natural transformation.
-We have there found a bijection between the natural transformations from~$Δ(B)$ to~$F$ and the morphisms from~$B$ to~$F(T_{\Acat})$ given by~$β \mapsto β_{T_{\Acat}}$.
+every natural transformation from~$Δ(B)$ to~$F$ is uniquely determined by its component at the terminal object~$T_{\cat{A}}$, which is morphism from~$B$ to~$F(T_{\cat{A}})$; and conversely every such morphism extends to a natural transformation.
+We have there found a bijection between the natural transformations from~$Δ(B)$ to~$F$ and the morphisms from~$B$ to~$F(T_{\cat{A}})$ given by~$β \mapsto β_{T_{\cat{A}}}$.
 
 Motivated by this observation we construct the right adjoint functor~$Γ$ as follows:
-For every functor~$F$ from~$\Acat^{\op}$ to~$\Bcat$ let~$Γ(F)$ be the value of~$Γ$ at~$T_{\Acat}$, i.e., the object~$Γ(T_{\Acat})$ of~$\Bcat$.
-For every two functors~$F$ and~$G$ from~$\Acat^{\op}$ to~$\Bcat$ and every natural transformation~$β$ from~$F$ to~$G$ let furthermore~$Γ(β)$ be the component of~$β$ at~$T_{\Acat}$, i.e., the morphism~$β_{T_{\Acat}}$ from~$F(T_{\Acat}) = Γ(F)$ to~$G(T_{\Acat}) = Γ(G)$.
+For every functor~$F$ from~$\cat{A}^{\op}$ to~$\cat{B}$ let~$Γ(F)$ be the value of~$Γ$ at~$T_{\cat{A}}$, i.e., the object~$Γ(T_{\cat{A}})$ of~$\cat{B}$.
+For every two functors~$F$ and~$G$ from~$\cat{A}^{\op}$ to~$\cat{B}$ and every natural transformation~$β$ from~$F$ to~$G$ let furthermore~$Γ(β)$ be the component of~$β$ at~$T_{\cat{A}}$, i.e., the morphism~$β_{T_{\cat{A}}}$ from~$F(T_{\cat{A}}) = Γ(F)$ to~$G(T_{\cat{A}}) = Γ(G)$.
 
-This mapping~$Γ$ is a functor from~$[\Acat^{\op}, \Bcat]$ to~$\Bcat$.
-Indeed, for every functor~$F$ from~$\Acat^{\op}$ to~$\Bcat$ we have
+This mapping~$Γ$ is a functor from~$[\cat{A}^{\op}, \cat{B}]$ to~$\cat{B}$.
+Indeed, for every functor~$F$ from~$\cat{A}^{\op}$ to~$\cat{B}$ we have
 \[
 	Γ(\id_F)
 	=
-	(\id_F)_{T_{\Acat}}
+	(\id_F)_{T_{\cat{A}}}
 	=
-	\id_{F(T_{\Acat})}
+	\id_{F(T_{\cat{A}})}
 	=
 	\id_{Γ(F)} \,,
 \]
@@ -214,32 +214,32 @@ and for every two natural transformations
 	\quad
 	β' \colon F' \To F'' \,,
 \]
-between functors~$F$,~$F'$ and~$F''$ from~$\Acat^{\op}$ to~$\Bcat$ we have
+between functors~$F$,~$F'$ and~$F''$ from~$\cat{A}^{\op}$ to~$\cat{B}$ we have
 \[
 	Γ(β' ∘ β)
 	=
-	(β' ∘ β)_{T_{\Acat}}
+	(β' ∘ β)_{T_{\cat{A}}}
 	=
-	β'_{T_{\Acat}} ∘ β_{T_{\Acat}}
+	β'_{T_{\cat{A}}} ∘ β_{T_{\cat{A}}}
 	=
 	Γ(β') ∘ Γ(β) \,.
 \]
 
 The functor~$Γ$ is right-adjoint to the functor~$Δ$.
-Indeed, let~$B$ be an arbitrary object on~$\Bcat$ and let~$F$ be a functor from~$\Acat^{\op}$ to~$\Bcat$.
+Indeed, let~$B$ be an arbitrary object on~$\cat{B}$ and let~$F$ be a functor from~$\cat{A}^{\op}$ to~$\cat{B}$.
 We have seen above that the map
 \[
 	\adjtranspose{(\ph)}
 	\colon
-	[\Acat^{\op}, \Bcat](Δ(B), F)
+	[\cat{A}^{\op}, \cat{B}](Δ(B), F)
 	\to
-	\Bcat(B, F(T_{\Acat}))
+	\cat{B}(B, F(T_{\cat{A}}))
 	=
-	\Bcat(B, Γ(F)) \,,
+	\cat{B}(B, Γ(F)) \,,
 	\quad
 	β
 	\mapsto
-	β_{T_{\Acat}}
+	β_{T_{\cat{A}}}
 \]
 is bijective.
 This bijection is natural in~$B$:
@@ -247,19 +247,19 @@ for every morphism
 \[
 	 g \colon B \to B'
 \]
-in~$\Bcat$, the resulting diagram
+in~$\cat{B}$, the resulting diagram
 \[
 	\begin{tikzcd}[sep = large]
-		[\Acat^{\op}, \Bcat](Δ(B), F)
+		[\cat{A}^{\op}, \cat{B}](Δ(B), F)
 		\arrow{r}[above]{\adjtranspose{(\ph)}}
 		&
-		\Bcat(B, Γ(F))
+		\cat{B}(B, Γ(F))
 		\\{}
-		[\Acat^{\op}, \Bcat](Δ(B'), F)
+		[\cat{A}^{\op}, \cat{B}](Δ(B'), F)
 		\arrow{u}[left]{Δ(g)^*}
 		\arrow{r}[above]{\adjtranspose{(\ph)}}
 		&
-		\Bcat(B', Γ(F))
+		\cat{B}(B', Γ(F))
 		\arrow{u}[right]{g^*}
 	\end{tikzcd}
 \]
@@ -269,35 +269,35 @@ commutes because for every natural transformation~$β$ from~$Δ(B)$ to~$F$ we ha
 	=
 	\adjtranspose{ β ∘ Δ(g) }
 	=
-	( β ∘ Δ(g) )_{T_{\Acat}}
+	( β ∘ Δ(g) )_{T_{\cat{A}}}
 	=
-	β_{T_{\Acat}} ∘ Δ(g)_{T_{\Acat}}
+	β_{T_{\cat{A}}} ∘ Δ(g)_{T_{\cat{A}}}
 	=
-	β_{T_{\Acat}} ∘ g
+	β_{T_{\cat{A}}} ∘ g
 	=
 	\adjtranspose{β} ∘ g
 	=
 	g^*( \adjtranspose{β} ) \,.
 \]
 The bijection $\adjtranspose{(\ph)}$ is also natural in~$F$:
-for every two functors~$F$ and~$F'$ from~$\Acat^{\op}$ to~$\Bcat$ and every natural transformation
+for every two functors~$F$ and~$F'$ from~$\cat{A}^{\op}$ to~$\cat{B}$ and every natural transformation
 \[
 	β \colon F \To F'
 \]
 the resulting diagram
 \[
 	\begin{tikzcd}[sep = large]
-		[\Acat^{\op}, \Bcat](Δ(B), F)
+		[\cat{A}^{\op}, \cat{B}](Δ(B), F)
 		\arrow{r}[above]{\adjtranspose{(\ph)}}
 		\arrow{d}[left]{β_*}
 		&
-		\Bcat(B, Γ(F))
+		\cat{B}(B, Γ(F))
 		\arrow{d}[right]{Γ(β)_*}
 		\\{}
-		[\Acat^{\op}, \Bcat](Δ(B), F')
+		[\cat{A}^{\op}, \cat{B}](Δ(B), F')
 		\arrow{r}[above]{\adjtranspose{(\ph)}}
 		&
-		\Bcat(B, Γ(F'))
+		\cat{B}(B, Γ(F'))
 	\end{tikzcd}
 \]
 commutes because for every natural transformation~$β'$ from~$Δ(B)$ to~$F$ we have
@@ -306,9 +306,9 @@ commutes because for every natural transformation~$β'$ from~$Δ(B)$ to~$F$ we h
 	=
 	\adjtranspose{ β ∘ β' }
 	=
-	(β ∘ β')_{T_{\Acat}}
+	(β ∘ β')_{T_{\cat{A}}}
 	=
-	β_{T_{\Acat}} ∘ β'_{T_{\Acat}}
+	β_{T_{\cat{A}}} ∘ β'_{T_{\cat{A}}}
 	=
 	Γ(β) ∘ \adjtranspose{β'}
 	=
@@ -321,65 +321,65 @@ We have thus altogether constructed a functor~$Γ$ that is right adjoint to the 
 
 \subsubsection*{The functor~$∇$}
 
-Let~$F$ be a functor from~$\Acat^{\op}$ to~$\Bcat$, and let~$B$ be an object of~$\Bcat$.
-To construct the desired right adjoint~$∇$ of~$Γ$ we need to \enquote{extend} this object~$B$ to a functor~$∇(B)$ from~$\Acat^{\op}$ to~$\Bcat$.
-This needs to be done in such a way that natural transformations from~$F$ to~$∇(B)$ are \enquote{the same} as morphisms from~$Γ(F) = F(T_{\Acat})$ to~$B$.
-For any such a natural transformation~$β$, its component~$β_{T_{\Acat}}$ is a morphism from~$F(T_{\Acat})$ to~$∇(B)(T_{\Acat})$.
-We would therefore like to choose~$∇(B)(T_{\Acat})$ as~$B$, so that we get a map
+Let~$F$ be a functor from~$\cat{A}^{\op}$ to~$\cat{B}$, and let~$B$ be an object of~$\cat{B}$.
+To construct the desired right adjoint~$∇$ of~$Γ$ we need to \enquote{extend} this object~$B$ to a functor~$∇(B)$ from~$\cat{A}^{\op}$ to~$\cat{B}$.
+This needs to be done in such a way that natural transformations from~$F$ to~$∇(B)$ are \enquote{the same} as morphisms from~$Γ(F) = F(T_{\cat{A}})$ to~$B$.
+For any such a natural transformation~$β$, its component~$β_{T_{\cat{A}}}$ is a morphism from~$F(T_{\cat{A}})$ to~$∇(B)(T_{\cat{A}})$.
+We would therefore like to choose~$∇(B)(T_{\cat{A}})$ as~$B$, so that we get a map
 \begin{align*}
 	\{ \text{natural transformations~$F \to ∇(B)$} \}
 	&\to
 	\{ \text{morphisms~$Γ(F) \to B$} \} \,,
 	\\
-	β &\mapsto β_{T_{\Acat}} \,.
+	β &\mapsto β_{T_{\cat{A}}} \,.
 \end{align*}
 To ensure that this map is a bijection, we then want all other components of~$β$ to be \enquote{trivial} (in a suitable sense).
-We will be able to achieve this by choosing~$∇(B)(A)$ as terminal in~$B$ whenever~$A$ is (essentially) distinct from~$T_{\Acat}$.
+We will be able to achieve this by choosing~$∇(B)(A)$ as terminal in~$B$ whenever~$A$ is (essentially) distinct from~$T_{\cat{A}}$.
 
 Motivated by the above discussion, we set
 \[
 	∇(B)(A)
 	≔
 	\begin{cases*}
-		B         & if~$A$ is terminal in~$\Acat$, \\
-		T_{\Bcat} & otherwise,
+		B         & if~$A$ is terminal in~$\cat{A}$, \\
+		T_{\cat{B}} & otherwise,
 	\end{cases*}
 \]
-for every object~$A$ of~$\Acat$.
-Let~$f$ be a morphism in~$\Acat$ from an object~$A$ to an object~$A'$.
-If~$A$ is terminal in~$\Acat$, then it follows from the existence of the morphism~$f$ that the object~$A'$ is again terminal in~$\Acat$ (by assumption on~$\Acat$) whence we can choose the morphism~$∇(B)(f)$ as~$\id_B$.
-If~$A$ is not terminal in~$\Acat$, then we have~$∇(B)(A) = T_{\Bcat}$;
-we then let~$∇(B)(f)$ be the unique morphism from~$∇(B)(A')$ to~$T_{\Bcat} = ∇(B)(A)$.
+for every object~$A$ of~$\cat{A}$.
+Let~$f$ be a morphism in~$\cat{A}$ from an object~$A$ to an object~$A'$.
+If~$A$ is terminal in~$\cat{A}$, then it follows from the existence of the morphism~$f$ that the object~$A'$ is again terminal in~$\cat{A}$ (by assumption on~$\cat{A}$) whence we can choose the morphism~$∇(B)(f)$ as~$\id_B$.
+If~$A$ is not terminal in~$\cat{A}$, then we have~$∇(B)(A) = T_{\cat{B}}$;
+we then let~$∇(B)(f)$ be the unique morphism from~$∇(B)(A')$ to~$T_{\cat{B}} = ∇(B)(A)$.
 
-Let us show that this assignment~$∇(B)$ is a functor from~$\Acat^{\op}$ to~$\Bcat$:
+Let us show that this assignment~$∇(B)$ is a functor from~$\cat{A}^{\op}$ to~$\cat{B}$:
 
-Let~$A$ be on object of~$\Acat$.
+Let~$A$ be on object of~$\cat{A}$.
 To compute the action of~$∇(B)$ on the morphism~$\id_A$ we have two cases to consider.
 \begin{casedistinction}
 
 	\item
-		If~$A$ is terminal in~$\Acat$, then~$∇(B)(A)$ is defined as~$B$ and~$∇(B)(\id_A)$ is defined as~$\id_B$ whence~$∇(B)(\id_A) = \id_{∇(B)(A)}$.
+		If~$A$ is terminal in~$\cat{A}$, then~$∇(B)(A)$ is defined as~$B$ and~$∇(B)(\id_A)$ is defined as~$\id_B$ whence~$∇(B)(\id_A) = \id_{∇(B)(A)}$.
 
 	\item
-		If~$A$ is not terminal in~$\Acat$, then the object~$∇(B)(A)$ is defined as~$T_{\Bcat}$ and the morphisms~$∇(B)(\id_A)$ is defined as the unique morphism from~$T_{\Bcat}$ to~$T_{\Bcat}$, which is~$\id_{T_{\Bcat}}$.
+		If~$A$ is not terminal in~$\cat{A}$, then the object~$∇(B)(A)$ is defined as~$T_{\cat{B}}$ and the morphisms~$∇(B)(\id_A)$ is defined as the unique morphism from~$T_{\cat{B}}$ to~$T_{\cat{B}}$, which is~$\id_{T_{\cat{B}}}$.
 	
 \end{casedistinction}
 We have in either case that~$∇(B)(\id_A) = \id_{∇(B)(A)}$.
 
-Let now~$f$ and~$f'$ be two composable morphisms in~$\Acat$, given by
+Let now~$f$ and~$f'$ be two composable morphisms in~$\cat{A}$, given by
 \[
 	f \colon A \to A' \,,
 	\quad
 	f' \colon A' \to A''
 \]
-for some objects~$A$,~$A'$ and~$A''$ of~$\Acat$.
+for some objects~$A$,~$A'$ and~$A''$ of~$\cat{A}$.
 To compute the action of~$∇(B)$ on the composite~$f' ∘ f$ we have again two cases to consider.
 \begin{casedistinction}
 
 	\item
-		Suppose that~$A$ is terminal in~$\Acat$.
-		It then follows from the existence of the morphism~$f$ that the object~$A'$ is also terminal in~$\Acat$ (by assumption on the category~$\Acat$);
-		in the same way, the object~$A''$ turns out to be terminal in~$\Acat$.
+		Suppose that~$A$ is terminal in~$\cat{A}$.
+		It then follows from the existence of the morphism~$f$ that the object~$A'$ is also terminal in~$\cat{A}$ (by assumption on the category~$\cat{A}$);
+		in the same way, the object~$A''$ turns out to be terminal in~$\cat{A}$.
 
 		It follows that the morphisms~$∇(B)(f)$,~$∇(B)(f')$ and~$∇(B)(f' ∘ f)$ are all three given by~$\id_B$.
 		Therefore,
@@ -394,25 +394,25 @@ To compute the action of~$∇(B)$ on the composite~$f' ∘ f$ we have again two 
 		\]
 
 	\item
-		Suppose that the object~$A$ is not terminal in~$\Acat$.
-		The object~$∇(B)(A)$ is then given by the terminal object~$T_{\Bcat}$ of~$\Bcat$.
-		The two morphisms~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ have she same domain, namely the object~$∇(B)(A'')$, and their codomain is the terminal object~$T_{\Bcat}$.
+		Suppose that the object~$A$ is not terminal in~$\cat{A}$.
+		The object~$∇(B)(A)$ is then given by the terminal object~$T_{\cat{B}}$ of~$\cat{B}$.
+		The two morphisms~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ have she same domain, namely the object~$∇(B)(A'')$, and their codomain is the terminal object~$T_{\cat{B}}$.
 		These two morphisms must therefore coincide.
 
 \end{casedistinction}
 We have in either case that~$∇(B)(f' ∘ f) = ∇(B)(f') ∘ ∇(B)(f)$.
 
-With this, we have shown that~$∇(B)$ is indeed a functor from~$\Acat^{\op}$ to~$\Bcat$.
+With this, we have shown that~$∇(B)$ is indeed a functor from~$\cat{A}^{\op}$ to~$\cat{B}$.
 We will now continue by explaining that the functor~$∇(B)$ depends functorially on~$B$.
 
-Let~$B$ and~$B'$ be two objects in~$\Bcat$ and let~$g$ be a morphism from~$B$ to~$B'$.
-We define a transformation~$∇(g) = (∇(g)_A)_{A ∈ \Ob(\Acat)}$ from~$∇(B)$ to~$∇(B')$ via the components
+Let~$B$ and~$B'$ be two objects in~$\cat{B}$ and let~$g$ be a morphism from~$B$ to~$B'$.
+We define a transformation~$∇(g) = (∇(g)_A)_{A ∈ \Ob(\cat{A})}$ from~$∇(B)$ to~$∇(B')$ via the components
 \[
 	∇(g)_A
 	≔
 	\begin{cases*}
-		g               & if~$A$ is terminal in~$\Acat$, \\
-		\id_{T_{\Bcat}} & otherwise.
+		g               & if~$A$ is terminal in~$\cat{A}$, \\
+		\id_{T_{\cat{B}}} & otherwise.
 	\end{cases*}
 \]
 This transformation is natural:
@@ -420,7 +420,7 @@ To see this, we consider a morphism
 \[
 	f \colon A \to A'
 \]
-in~$\Acat$, and need to show that the square diagram
+in~$\cat{A}$, and need to show that the square diagram
 \begin{equation}
 	\label{naturality_square_for_nabla}
 	\begin{tikzcd}[sep = large]
@@ -442,8 +442,8 @@ We distinguish between two cases:
 \begin{casedistinction}
 
 	\item
-		Suppose that the object~$A$ is terminal in~$\Acat$.
-		It then follows from the existence of the morphism~$f$ that the object~$A'$ as also terminal in~$\Acat$ (by assumption on the category~$\Acat$).
+		Suppose that the object~$A$ is terminal in~$\cat{A}$.
+		It then follows from the existence of the morphism~$f$ that the object~$A'$ as also terminal in~$\cat{A}$ (by assumption on the category~$\cat{A}$).
 		The square diagram~\eqref{naturality_square_for_nabla} is then given by the following diagram:
 		\[
 			\begin{tikzcd}[sep = large]
@@ -463,27 +463,27 @@ We distinguish between two cases:
 		This diagram commutes.
 
 	\item
-		Suppose that the object~$A$ is not terminal in~$\Acat$.
-		The object~$∇(B')(A)$ of~$\Bcat$ is then given by the terminal object~$T_{\Bcat}$.
-		It then follows that the diagram~\eqref{naturality_square_for_nabla} commutes because there exists precisely one morphism from~$∇(B)(A')$ to~$T_{\Bcat}$.
+		Suppose that the object~$A$ is not terminal in~$\cat{A}$.
+		The object~$∇(B')(A)$ of~$\cat{B}$ is then given by the terminal object~$T_{\cat{B}}$.
+		It then follows that the diagram~\eqref{naturality_square_for_nabla} commutes because there exists precisely one morphism from~$∇(B)(A')$ to~$T_{\cat{B}}$.
 
 \end{casedistinction}
 We find in both cases that the diagram~\eqref{naturality_square_for_nabla} commutes.
 This shows that~$∇(g)$ is indeed a natural transformation from~$∇(B)$ to~$∇(B')$.
 
 The assignment~$∇$ is itself functorial:
-For every object~$B$ of~$\Bcat$ we have
+For every object~$B$ of~$\cat{B}$ we have
 \begin{align*}
 	∇(\id_B)_A
 	&=
 	\begin{cases*}
-		\id_B           & if~$A$ is terminal in~$\Acat$, \\
-		\id_{T_{\Bcat}} & otherwise,
+		\id_B           & if~$A$ is terminal in~$\cat{A}$, \\
+		\id_{T_{\cat{B}}} & otherwise,
 	\end{cases*}
 	\\
 	&=
 	\begin{cases*}
-		\id_{∇(B)(A)} & if~$A$ is terminal in~$\Acat$, \\
+		\id_{∇(B)(A)} & if~$A$ is terminal in~$\cat{A}$, \\
 		\id_{∇(B)(A)} & otherwise,
 	\end{cases*}
 	\\
@@ -493,7 +493,7 @@ For every object~$B$ of~$\Bcat$ we have
 	&=
 	( \id_{∇(B)} )_A
 \end{align*}
-for every object~$A$ of~$\Acat$, and therefore
+for every object~$A$ of~$\cat{A}$, and therefore
 \[
 	∇(\id_B)
 	=
@@ -505,7 +505,7 @@ For every two composable morphisms
 	\quad
 	g' \colon B' \to B''
 \]
-in~$\Bcat$ we find that
+in~$\cat{B}$ we find that
 \begin{align*}
 	{}&
 	( ∇(g') ∘ ∇(g) )_A
@@ -516,69 +516,69 @@ in~$\Bcat$ we find that
 	={}&
 	\left(
 		\begin{cases*}
-			g'              & if~$A$ is terminal in~$\Acat$, \\
-			\id_{T_{\Bcat}} & otherwise,
+			g'              & if~$A$ is terminal in~$\cat{A}$, \\
+			\id_{T_{\cat{B}}} & otherwise,
 		\end{cases*}
 	\right)
 	∘
 	\left(
 		\begin{cases*}
-			g               & if~$A$ is terminal in~$\Acat$, \\
-			\id_{T_{\Bcat}} & otherwise,
+			g               & if~$A$ is terminal in~$\cat{A}$, \\
+			\id_{T_{\cat{B}}} & otherwise,
 		\end{cases*}
 	\right)
 	\\
 	={}&
 	\begin{cases*}
-		g' ∘ g          & if~$A$ is terminal in~$\Acat$, \\
-		\id_{T_{\Bcat}} & otherwise,
+		g' ∘ g          & if~$A$ is terminal in~$\cat{A}$, \\
+		\id_{T_{\cat{B}}} & otherwise,
 	\end{cases*}
 	\\
 	={}&
 	∇(g' ∘ g)_A
 \end{align*}
-for every object~$A$ of~$\Acat$, and therefore
+for every object~$A$ of~$\cat{A}$, and therefore
 \[
 	∇(g') ∘ ∇(g)
 	=
 	∇(g' ∘ g) \,.
 \]
 
-We have thus constructed a functor~$∇$ from the category~$\Bcat$ to the functor category~$[\Acat^{\op}, \Bcat]$.
+We have thus constructed a functor~$∇$ from the category~$\cat{B}$ to the functor category~$[\cat{A}^{\op}, \cat{B}]$.
 We will now show that the functor~$∇$ is right adjoint to the functor~$Γ$.
 
-Let~$F$ be a functor from~$\Acat^{\op}$ to~$\Bcat$ and let~$B$ be an object of~$\Bcat$.
-A natural transformation~$β$ from~$F$ to~$∇(B)$ has as its component at~$T_{\Acat}$ a morphism from~$F(T_{\Acat})$ to~$∇(B)(T_{\Acat})$.
-These two objects of~$\Bcat$ are given by~$F(T_{\Acat}) = Γ(F)$ and~$∇(B)(T_{\Acat}) = B$.
+Let~$F$ be a functor from~$\cat{A}^{\op}$ to~$\cat{B}$ and let~$B$ be an object of~$\cat{B}$.
+A natural transformation~$β$ from~$F$ to~$∇(B)$ has as its component at~$T_{\cat{A}}$ a morphism from~$F(T_{\cat{A}})$ to~$∇(B)(T_{\cat{A}})$.
+These two objects of~$\cat{B}$ are given by~$F(T_{\cat{A}}) = Γ(F)$ and~$∇(B)(T_{\cat{A}}) = B$.
 We have therefore a well-defined map
 \begin{equation}
 	\label{map_for_right_adjoint_of_global_sections}
 	\adjtranspose{(\ph)}
 	\colon
-	[\Acat^{\op}, \Bcat](F, ∇(B))
+	[\cat{A}^{\op}, \cat{B}](F, ∇(B))
 	\to
-	\Bcat(Γ(F), B) \,,
+	\cat{B}(Γ(F), B) \,,
 	\quad
-	β \mapsto β_{T_{\Acat}} \,.
+	β \mapsto β_{T_{\cat{A}}} \,.
 \end{equation}
 We will show in the following that this map is a well-defined bijection that is natural in both~$F$ and in~$B$.
 
 To show that the map~\eqref{map_for_right_adjoint_of_global_sections} is injective let~$β$ be a natural transformation from~$F$ to~$∇(B)$.
-We need to show that~$β$ is uniquely determined by its component~$β_{T_{\Acat}}$, which we will denote by~$g$.
-We show by case distinction that for every object~$A$ of~$\Acat$, the morphism~$β_A$ from~$F(A)$ to~$∇(B)(A)$ is uniquely determined by~$g$.
+We need to show that~$β$ is uniquely determined by its component~$β_{T_{\cat{A}}}$, which we will denote by~$g$.
+We show by case distinction that for every object~$A$ of~$\cat{A}$, the morphism~$β_A$ from~$F(A)$ to~$∇(B)(A)$ is uniquely determined by~$g$.
 \begin{casedistinction}
 
 	\item
-		Suppose the object~$A$ is non-terminal in~$\Acat$.
-		The object~$∇(B)(A)$ is then given by the terminal object~$T_{\Bcat}$ of~$\Bcat$.
-		There exists precisely one morphism from~$F(A)$ to~$T_{\Bcat}$, whence~$β_A$ must be this morphism.
+		Suppose the object~$A$ is non-terminal in~$\cat{A}$.
+		The object~$∇(B)(A)$ is then given by the terminal object~$T_{\cat{B}}$ of~$\cat{B}$.
+		There exists precisely one morphism from~$F(A)$ to~$T_{\cat{B}}$, whence~$β_A$ must be this morphism.
 
 	\item
-		Suppose that the object~$A$ is terminal in~$\Acat$.
+		Suppose that the object~$A$ is terminal in~$\cat{A}$.
 		The object~$∇(B)(A)$ is then given by~$B$.
-Both~$A$ and~$T_{\Acat}$ are terminal objects in~$\Acat$, whence the unique morphism
+Both~$A$ and~$T_{\cat{A}}$ are terminal objects in~$\cat{A}$, whence the unique morphism
 		\[
-			h \colon T_{\Acat} \to A \,,
+			h \colon T_{\cat{A}} \to A \,,
 		\]
 		is an isomorphism.
 		It follows from the naturality of~$β$ that the square diagram
@@ -591,10 +591,10 @@ Both~$A$ and~$T_{\Acat}$ are terminal objects in~$\Acat$, whence the unique morp
 				∇(B)(A)
 				\arrow{d}[right]{∇(B)(h)}
 				\\
-				F(T_{\Acat})
-				\arrow{r}[above]{β_{T_{\Acat}}}
+				F(T_{\cat{A}})
+				\arrow{r}[above]{β_{T_{\cat{A}}}}
 				&
-				∇(B)(T_{\Acat})
+				∇(B)(T_{\cat{A}})
 			\end{tikzcd}
 		\]
 		commutes.
@@ -620,19 +620,19 @@ Both~$A$ and~$T_{\Acat}$ are terminal objects in~$\Acat$, whence the unique morp
 \end{casedistinction}
 We have thus shown that the map~\eqref{map_for_right_adjoint_of_global_sections} is injective.
 
-To show that is it surjective we consider an arbitrary morphism~$g$ from~$Γ(F)$ to~$B$, i.e., a morphism from~$F(T_{\Acat})$ to~$B$.
-We need to define a natural transformation~$β$ from~$F$ to~$∇(B)$ with~$β_{T_{\Acat}} = g$.
+To show that is it surjective we consider an arbitrary morphism~$g$ from~$Γ(F)$ to~$B$, i.e., a morphism from~$F(T_{\cat{A}})$ to~$B$.
+We need to define a natural transformation~$β$ from~$F$ to~$∇(B)$ with~$β_{T_{\cat{A}}} = g$.
 
-If~$A$ is a non-terminal object of~$\Acat$, then~$∇(B)(A)$ is the terminal object~$T_{\Bcat}$ of~$\Bcat$, and we let~$β_A$ be the unique morphism from~$F(A)$ to~$∇(B)(A)$.
-If~$A$ is terminal in~$\Acat$, then there exists in~$\Acat$ a unique morphism~$h$ from~$T_{\Acat}$ to~$A$ (and this morphism is an isomorphism), and we let~$β_A$ be the composite~$g ∘ F(h)$.
-This means in particular for~$A = T_{\Acat}$ that~$h = \id_{T_{\Acat}}$, therefore~$F(h) = \id_{F(T_{\Acat})}$, and thus~$β_{T_{\Acat}} = g ∘ F(h) = g$.
+If~$A$ is a non-terminal object of~$\cat{A}$, then~$∇(B)(A)$ is the terminal object~$T_{\cat{B}}$ of~$\cat{B}$, and we let~$β_A$ be the unique morphism from~$F(A)$ to~$∇(B)(A)$.
+If~$A$ is terminal in~$\cat{A}$, then there exists in~$\cat{A}$ a unique morphism~$h$ from~$T_{\cat{A}}$ to~$A$ (and this morphism is an isomorphism), and we let~$β_A$ be the composite~$g ∘ F(h)$.
+This means in particular for~$A = T_{\cat{A}}$ that~$h = \id_{T_{\cat{A}}}$, therefore~$F(h) = \id_{F(T_{\cat{A}})}$, and thus~$β_{T_{\cat{A}}} = g ∘ F(h) = g$.
 
 For the surjectivity of~\eqref{map_for_right_adjoint_of_global_sections} it now remains to show that the transformation~$β$ defined in this way is natural.
 To prove this naturality let
 \[
 	f \colon A \to A'
 \]
-be an arbitrary morphism in~$\Acat$.
+be an arbitrary morphism in~$\cat{A}$.
 We need to show that the square diagram
 \[
 	\begin{tikzcd}[sep = large]
@@ -654,18 +654,18 @@ We do so by case distinction.
 \begin{casedistinction}
 
 	\item
-		Suppose that the object~$A$ is non-terminal in~$\Acat$.
-		Then~$∇(B)(A)$ is given by the terminal object~$T_{\Bcat}$ of~$\Bcat$.
-		It then follows that the above square diagram commutes because there exists precisely one morphisms from~$F(A')$ to~$T_{\Bcat}$ in~$\Bcat$.
+		Suppose that the object~$A$ is non-terminal in~$\cat{A}$.
+		Then~$∇(B)(A)$ is given by the terminal object~$T_{\cat{B}}$ of~$\cat{B}$.
+		It then follows that the above square diagram commutes because there exists precisely one morphisms from~$F(A')$ to~$T_{\cat{B}}$ in~$\cat{B}$.
 
 	\item
-		Suppose that the object~$A$ is terminal in~$\Acat$.
-		It then follows from the existence of the morphism~$f$ that the object~$A'$ is also terminal in~$A$ (by assumption on~$\Acat$).
+		Suppose that the object~$A$ is terminal in~$\cat{A}$.
+		It then follows from the existence of the morphism~$f$ that the object~$A'$ is also terminal in~$A$ (by assumption on~$\cat{A}$).
 		There exist unique morphisms~$h$ and~$h'$ of the forms
 		\[
-			h \colon T_{\Acat} \to A \,,
+			h \colon T_{\cat{A}} \to A \,,
 			\quad
-			h' \colon T_{\Acat} \to A' \,,
+			h' \colon T_{\cat{A}} \to A' \,,
 		\]
 		these morphisms are isomorphisms and form, together with~$f$, the following commutative diagram:
 		\begin{equation}
@@ -673,7 +673,7 @@ We do so by case distinction.
 			\begin{tikzcd}[row sep = large]
 				{}
 				&
-				T_{\Acat}
+				T_{\cat{A}}
 				\arrow{dl}[above left]{h'}
 				\arrow{dr}[above right]{h}
 				&
@@ -693,7 +693,7 @@ We do so by case distinction.
 			\begin{tikzcd}[sep = large]
 				{}
 				&
-				F(T_{\Acat})
+				F(T_{\cat{A}})
 				\arrow{dd}[right, near start]{g}
 				&
 				{}
@@ -711,7 +711,7 @@ We do so by case distinction.
 				\\
 				{}
 				&
-				∇(B)(T_{\Acat})
+				∇(B)(T_{\cat{A}})
 				&
 				{}
 				\\
@@ -733,7 +733,7 @@ We do so by case distinction.
 				\arrow{r}[above]{F(h')}
 				\arrow{d}[left]{β_{A'}}
 				&
-				F(T_{\Acat})
+				F(T_{\cat{A}})
 				\arrow{d}[right]{g}
 				&
 				F(A)
@@ -743,7 +743,7 @@ We do so by case distinction.
 				∇(B)(A')
 				\arrow{r}[above]{∇(B)(h')}
 				&
-				∇(B)(T_{\Acat})
+				∇(B)(T_{\cat{A}})
 				&
 				∇(B)(A)
 				\arrow{l}[above]{∇(B)(h)}
@@ -756,7 +756,7 @@ We do so by case distinction.
 				\arrow{r}[above]{F(h')}
 				\arrow{d}[left]{g ∘ F(h')}
 				&
-				F(T_{\Acat})
+				F(T_{\cat{A}})
 				\arrow{d}[right]{g}
 				&
 				F(A)
@@ -794,21 +794,21 @@ We do so by case distinction.
 \end{casedistinction}
 We have thus proven the naturality of the transformation~$β$, which in turn shows the surjectivity of the map~\eqref{map_for_right_adjoint_of_global_sections}.
 
-To show that the map~\eqref{map_for_right_adjoint_of_global_sections} is natural in~$F$, we consider two functors~$F$ and~$G$ from~$\Acat^{\op}$ to~$\Bcat$ and a natural transformation~$α$ from~$F$ to~$G$.
+To show that the map~\eqref{map_for_right_adjoint_of_global_sections} is natural in~$F$, we consider two functors~$F$ and~$G$ from~$\cat{A}^{\op}$ to~$\cat{B}$ and a natural transformation~$α$ from~$F$ to~$G$.
 We need to show that the diagram
 \[
 	\begin{tikzcd}[sep = large]
-		[\Acat^{\op}, \Bcat](F, ∇(B))
+		[\cat{A}^{\op}, \cat{B}](F, ∇(B))
 		\arrow{r}[above]{ \adjtranspose{(\ph)} }
 		&
-		\Bcat(Γ(F), B)
+		\cat{B}(Γ(F), B)
 		\\{}
-		[\Acat^{\op}, \Bcat](G, ∇(B))
+		[\cat{A}^{\op}, \cat{B}](G, ∇(B))
 		\arrow{r}[above]{ \adjtranspose{(\ph)} }
 		\arrow{u}[left]{ α^* }
 		&
-		\Bcat(Γ(G), B)
-		\arrow{u}[right]{ (α_{T_{\Acat}})^* }
+		\cat{B}(Γ(G), B)
+		\arrow{u}[right]{ (α_{T_{\cat{A}}})^* }
 	\end{tikzcd}
 \]
 commutes.
@@ -818,31 +818,31 @@ For every natural transformation~$β$ from~$G$ to~$∇(B)$ we have
 	=
 	\adjtranspose{ β ∘ α }
 	=
-	(β ∘ α)_{T_{\Acat}}
+	(β ∘ α)_{T_{\cat{A}}}
 	=
-	β_{T_{\Acat}} ∘ α_{T_{\Acat}}
+	β_{T_{\cat{A}}} ∘ α_{T_{\cat{A}}}
 	=
-	( α_{T_{\Acat}} )^*( β_{T_{\Acat}} )
+	( α_{T_{\cat{A}}} )^*( β_{T_{\cat{A}}} )
 	=
-	( α_{T_{\Acat}} )^*( \adjtranspose{α} ) \,,
+	( α_{T_{\cat{A}}} )^*( \adjtranspose{α} ) \,,
 \]
 which shows the desired commutativity.
 
-To show that the map~\eqref{map_for_right_adjoint_of_global_sections} is natural in~$B$, we consider two objects~$B$ and~$B'$ of~$\Bcat$ and a morphism~$g$ from~$B$ to~$B'$.
+To show that the map~\eqref{map_for_right_adjoint_of_global_sections} is natural in~$B$, we consider two objects~$B$ and~$B'$ of~$\cat{B}$ and a morphism~$g$ from~$B$ to~$B'$.
 We need to show that the diagram
 \[
 	\begin{tikzcd}[sep = large]
-		[\Acat^{\op}, \Bcat](F, ∇(B))
+		[\cat{A}^{\op}, \cat{B}](F, ∇(B))
 		\arrow{r}[above]{ \adjtranspose{(\ph)} }
 		\arrow{d}[left]{∇(g)_*}
 		&
-		\Bcat(Γ(F), B)
+		\cat{B}(Γ(F), B)
 		\arrow{d}[right]{g_*}
 		\\{}
-		[\Acat^{\op}, \Bcat](F, ∇(B'))
+		[\cat{A}^{\op}, \cat{B}](F, ∇(B'))
 		\arrow{r}[above]{ \adjtranspose{(\ph)} }
 		&
-		\Bcat(Γ(F), B')
+		\cat{B}(Γ(F), B')
 	\end{tikzcd}
 \]
 commutes.
@@ -852,11 +852,11 @@ For every natural transformation~$α$ from~$F$ to~$∇(B)$ we have
 	=
 	g ∘ \adjtranspose{α}
 	=
-	g ∘ α_{T_{\Acat}}
+	g ∘ α_{T_{\cat{A}}}
 	=
-	∇(g)_{T_{\Acat}} ∘ α_{T_{\Acat}}
+	∇(g)_{T_{\cat{A}}} ∘ α_{T_{\cat{A}}}
 	=
-	( ∇(g) ∘ α )_{T_{\Acat}}
+	( ∇(g) ∘ α )_{T_{\cat{A}}}
 	=
 	\adjtranspose{ ∇(g) ∘ α }
 	=
@@ -864,7 +864,7 @@ For every natural transformation~$α$ from~$F$ to~$∇(B)$ we have
 \]
 which shows the desired commutativity.
 
-We have altogether constructed a functor~$∇$ from~$\Bcat$ to~$[\Acat^{\op}, \Bcat]$ that is right adjoint to~$Γ$.
+We have altogether constructed a functor~$∇$ from~$\cat{B}$ to~$[\cat{A}^{\op}, \cat{B}]$ that is right adjoint to~$Γ$.
 
 
 
@@ -873,23 +873,23 @@ We have altogether constructed a functor~$∇$ from~$\Bcat$ to~$[\Acat^{\op}, \B
 The functor~$Π$ can be constructed dually to the functor~$Γ$:
 it is given on objects by
 \[
-	Π(F) ≔ F(I_{\Acat})
+	Π(F) ≔ F(I_{\cat{A}})
 \]
-for every functor~$F$ from~$\Acat^{\op}$ to~$\Bcat$.
+for every functor~$F$ from~$\cat{A}^{\op}$ to~$\cat{B}$.
 The functor~$Λ$ can be constructed dually to the functor~$∇$:
 it is given on objects by
 \[
 	Λ(B)(A)
 	=
 	\begin{cases*}
-		B         & if~$A$ is initial in~$\Acat$, \\
-		I_{\Bcat} & otherwise,
+		B         & if~$A$ is initial in~$\cat{A}$, \\
+		I_{\cat{B}} & otherwise,
 	\end{cases*}
 \]
-for every object~$B$ of~$\Bcat$ and every object~$A$ of~$\Acat$.
+for every object~$B$ of~$\cat{B}$ and every object~$A$ of~$\cat{A}$.
 
 I’m not gonna deal with these constructions in more detail because I won’t waste any more time on this exercise.%
 \footnote{
-	One ought to be able to conclude the existence, construction and adjointness of the functors~$Π$ and~$Λ$ from that of the functors~$Γ$ and~$∇$ by using the isomorphism~$[\Acat^{\op}, \Bcat]^{\op} ≅ [\Acat^{\op \op}, \Bcat^{\op}]$.
+	One ought to be able to conclude the existence, construction and adjointness of the functors~$Π$ and~$Λ$ from that of the functors~$Γ$ and~$∇$ by using the isomorphism~$[\cat{A}^{\op}, \cat{B}]^{\op} ≅ [\cat{A}^{\op \op}, \cat{B}^{\op}]$.
 	But this isomorphism hasn’t been introduced yet.
 }

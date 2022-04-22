@@ -1,25 +1,25 @@
 \subsection{}
 
-Let~$\Scat$ be a category.
+Let~$\cat{S}$ be a category.
 \begin{enumerate}
 	
 
 	\item
-		Let~$\Acat$ and~$\Bcat$ be two categories and let~$F$ be a functor from~$\Bcat$ to~$\Acat$.
+		Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ be a functor from~$\cat{B}$ to~$\cat{A}$.
 		We make the following observations:
 		\begin{itemize}
 
 			\item
-				Let~$K$ be a functor from~$\Bcat$ to~$\Scat$.
-				The composite~$KF$ is a functor from~$\Acat$ to~$\Scat$.
+				Let~$K$ be a functor from~$\cat{B}$ to~$\cat{S}$.
+				The composite~$KF$ is a functor from~$\cat{A}$ to~$\cat{S}$.
 
 			\item
-				Let~$K$ and~$L$ be two functors from~$\Bcat$ to~$\Scat$ and let~$α$ be a natural transformation from~$K$ to~$L$.
+				Let~$K$ and~$L$ be two functors from~$\cat{B}$ to~$\cat{S}$ and let~$α$ be a natural transformation from~$K$ to~$L$.
 				We then have the induces natural transformation~$αF$ from~$KF$ to~$LF$.
 
 			\item
-				The above assignments define a functor~$F^*$ from the functor category~$[\Bcat, \Scat]$ to the functor category~$[\Acat, \Scat]$.
-				Indeed, for every functor~$K$ from~$\Bcat$ to~$\Acat$ we have the equalities
+				The above assignments define a functor~$F^*$ from the functor category~$[\cat{B}, \cat{S}]$ to the functor category~$[\cat{A}, \cat{S}]$.
+				Indeed, for every functor~$K$ from~$\cat{B}$ to~$\cat{A}$ we have the equalities
 				\[
 					F^*(\id_K)
 					=
@@ -29,7 +29,7 @@ Let~$\Scat$ be a category.
 					=
 					\id_{F^*(K)} \,,
 				\]
-				and for any three functors~$K$,~$L$ and~$M$ from~$\Bcat$ to~$\Scat$ and every two natural transformations
+				and for any three functors~$K$,~$L$ and~$M$ from~$\cat{B}$ to~$\cat{S}$ and every two natural transformations
 				\[
 					α \colon K \To L \,,
 					\quad
@@ -46,40 +46,40 @@ Let~$\Scat$ be a category.
 					F^*(β ∘ α) \,.
 				\]
 		\end{itemize}
-		We have thus constructed an induced functor~$F^*$ from~$[\Bcat, \Scat]$ to~$[\Acat, \Scat]$.
+		We have thus constructed an induced functor~$F^*$ from~$[\cat{B}, \cat{S}]$ to~$[\cat{A}, \cat{S}]$.
 
 	\item
-		Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories, and let
+		Let~$\cat{A}$,~$\cat{B}$ and~$\cat{C}$ be three categories, and let
 		\[
-			F \colon \Acat \to \Bcat \,,
+			F \colon \cat{A} \to \cat{B} \,,
 			\quad
-			G \colon \Bcat \to \Ccat
+			G \colon \cat{B} \to \cat{C}
 		\]
 		be composable functors.
 		Then
 		\[
 			(G ∘ F)^* = F^* ∘ G^*
 		\]
-		for the induces functors from~$[\Ccat, \Scat]$ to~$[\Acat, \Scat]$.
+		for the induces functors from~$[\cat{C}, \cat{S}]$ to~$[\cat{A}, \cat{S}]$.
 
 
 	\item
-		Let~$\Acat$ and~$\Bcat$ be two categories and let~$F$ and~$G$ be two functors from~$\Acat$ to~$\Bcat$, and let~$α$ be a natural transformation from~$F$ to~$G$.
-		For every object~$K$ of the functor category~$[\Bcat, \Scat]$, i.e., functor from~$\Bcat$ to~$\Scat$, we get an induces natural transformation~$K α$ from~$K F$ to~$K G$.
-		This induces natural transformation is a morphism from~$F^*(K)$ to~$G^*(K)$ in the functor category~$[\Acat, \Scat]$.
+		Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ and~$G$ be two functors from~$\cat{A}$ to~$\cat{B}$, and let~$α$ be a natural transformation from~$F$ to~$G$.
+		For every object~$K$ of the functor category~$[\cat{B}, \cat{S}]$, i.e., functor from~$\cat{B}$ to~$\cat{S}$, we get an induces natural transformation~$K α$ from~$K F$ to~$K G$.
+		This induces natural transformation is a morphism from~$F^*(K)$ to~$G^*(K)$ in the functor category~$[\cat{A}, \cat{S}]$.
 		By setting
 		\[
 			(α^*)_K ≔ K α
 		\]
-		for every object~$K$ of~$[\Bcat, \Scat]$, we therefore arrive at a transformation~$α^*$ from~$F^*$ to~$G^*$.
+		for every object~$K$ of~$[\cat{B}, \cat{S}]$, we therefore arrive at a transformation~$α^*$ from~$F^*$ to~$G^*$.
 		
 		This transformation~$α^*$ is again natural:
 		Let
 		\[
 			β \colon K \to L
 		\]
-		be a morphism in~$[\Bcat, \Scat]$.
-		This means that~$K$ and~$L$ are functors from~$\Bcat$ to~$\Scat$ and that~$β$ is a natural transformation from~$K$ to~$L$.
+		be a morphism in~$[\cat{B}, \cat{S}]$.
+		This means that~$K$ and~$L$ are functors from~$\cat{B}$ to~$\cat{S}$ and that~$β$ is a natural transformation from~$K$ to~$L$.
 		We need to show that the diagram
 		\[
 			\begin{tikzcd}[sep = large]
@@ -122,8 +122,8 @@ Let~$\Scat$ be a category.
 		\begin{itemize}
 
 			\item
-				For every functor~$F$ from~$\Bcat$ to~$\Acat$, we have~$(\id_F)^* = \id_{F^*}$.
-				Indeed, we have for every object~$K$ of~$[\Acat, \Scat]$ the equalities of morphisms
+				For every functor~$F$ from~$\cat{B}$ to~$\cat{A}$, we have~$(\id_F)^* = \id_{F^*}$.
+				Indeed, we have for every object~$K$ of~$[\cat{A}, \cat{S}]$ the equalities of morphisms
 				\[
 					( (\id_F)^* )_K
 					=
@@ -138,7 +138,7 @@ Let~$\Scat$ be a category.
 				and therefore the equality of natural transformations~$(\id_F)^* = \id_{F^*}$.
 
 			\item
-				Let now~$F$,~$G$ and~$H$ be three functors from~$\Bcat$ to~$\Acat$, and let
+				Let now~$F$,~$G$ and~$H$ be three functors from~$\cat{B}$ to~$\cat{A}$, and let
 				\[
 					α \colon F \To G \,,
 					\quad
@@ -157,7 +157,7 @@ Let~$\Scat$ be a category.
 					=
 					( β_* ∘ α_* )_K
 				\]
-				for every object~$K$ of~$[\Bcat, \Acat]$, and therefore
+				for every object~$K$ of~$[\cat{B}, \cat{A}]$, and therefore
 				\[
 					(β ∘ α)^* = α^* ∘ β^* \,.
 				\]
@@ -165,12 +165,12 @@ Let~$\Scat$ be a category.
 	\end{itemize}
 
 	\item
-		Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories.
+		Let~$\cat{A}$,~$\cat{B}$ and~$\cat{C}$ be three categories.
 		Let
 		\[
-			F, G \colon \Acat \to \Bcat \,,
+			F, G \colon \cat{A} \to \cat{B} \,,
 			\quad
-			H \colon \Bcat \to \Ccat
+			H \colon \cat{B} \to \cat{C}
 		\]
 		be functors and let~$α$ be a natural transformation from~$F$ to~$G$.
 		We have two ways of obtaining a natural transformation from~$(H F)^* = F^* H^*$ to~$(H G)^* = G^* H^*$.
@@ -180,7 +180,7 @@ Let~$\Scat$ be a category.
 		\[
 			(H α)^* = α^* H^* \,.
 		\]
-		Indeed, we have for every object~$K$ of~$[\Ccat, \Scat]$ the equalities of morphisms
+		Indeed, we have for every object~$K$ of~$[\cat{C}, \cat{S}]$ the equalities of morphisms
 		\[
 			( (H α)^* )_K
 			=
@@ -199,17 +199,17 @@ Let~$\Scat$ be a category.
 
 We are now well-prepared to prove the statement at hand.
 
-We consider an adjunction between two categories~$\Acat$ and~$\Bcat$ given by two functors
+We consider an adjunction between two categories~$\cat{A}$ and~$\cat{B}$ given by two functors
 \[
-	F \colon \Acat \to \Bcat \,,
+	F \colon \cat{A} \to \cat{B} \,,
 	\quad
-	G \colon \Bcat \to \Acat
+	G \colon \cat{B} \to \cat{A}
 \]
 and two natural transformations
 \[
-	η \colon \Id_{\Acat} \To GF \,,
+	η \colon \Id_{\cat{A}} \To GF \,,
 	\quad
-	ε \colon FG \To \Id_{\Bcat}
+	ε \colon FG \To \Id_{\cat{B}}
 \]
 that serve as the unit and counit of the adjunction respectively.
 (The functor~$F$ is left adjoint to the functor~$G$.)
@@ -244,21 +244,21 @@ We know that these data satisfy the triangle identities, i.e., that the followin
 \end{equation}
 We have seen in above discussions that the functors~$F$ and~$G$ induce functors
 \[
-	F^* \colon [\Bcat, \Scat] \to [\Acat, \Scat] \,,
+	F^* \colon [\cat{B}, \cat{S}] \to [\cat{A}, \cat{S}] \,,
 	\quad
-	G^* \colon [\Acat, \Scat] \to [\Bcat, \Scat] \,.
+	G^* \colon [\cat{A}, \cat{S}] \to [\cat{B}, \cat{S}] \,.
 \]
 We have also seen that the natural transformations~$η$ and~$ε$ induce natural transformations
 \[
-	η^* \colon (\Id_{\Acat})^* \To (GF)^* \,,
+	η^* \colon (\Id_{\cat{A}})^* \To (GF)^* \,,
 	\quad
-	ε^* \colon (FG)^* \To (\Id_{\Bcat})^* \,,
+	ε^* \colon (FG)^* \To (\Id_{\cat{B}})^* \,,
 \]
 which are natural transformations
 \[
-	η^* \colon \Id_{[\Acat, \Scat]} \To F^* G^* \,,
+	η^* \colon \Id_{[\cat{A}, \cat{S}]} \To F^* G^* \,,
 	\quad
-	ε^* \colon G^* F^* \To \Id_{[\Bcat, \Scat]} \,,
+	ε^* \colon G^* F^* \To \Id_{[\cat{B}, \cat{S}]} \,,
 \]
 We can dualize the diagrams~\eqref{triangle identities for adjunction before dualizing} to get the commutative diagrams
 \begin{equation}
@@ -318,4 +318,4 @@ These diagrams can be simplified as
 		G*
 	\end{tikzcd}
 \end{equation}
-The commutativity of these diagrams tells us that the natural transformations~$η^*$ and~$ε^*$ serve as the unit and counit of an adjunction between the categories~$[\Acat, \Scat]$ and~$[\Bcat, \Scat]$, with~$F^*$ right adjoint to~$G^*$.
+The commutativity of these diagrams tells us that the natural transformations~$η^*$ and~$ε^*$ serve as the unit and counit of an adjunction between the categories~$[\cat{A}, \cat{S}]$ and~$[\cat{B}, \cat{S}]$, with~$F^*$ right adjoint to~$G^*$.

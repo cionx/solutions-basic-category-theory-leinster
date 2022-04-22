@@ -2,16 +2,16 @@
 
 The dual statement reads as follow:
 \begin{quote}
-	Let~$\Acat$ and~$\Bcat$ be two categories, and let~$F$ be a functor from~$\Acat$ to~$\Bcat$.
-	Then~$F$ has a right adjoint if and only if for every object~$B$ of~$\Bcat$, the category~$F \To B$ has a terminal object.
+	Let~$\cat{A}$ and~$\cat{B}$ be two categories, and let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$.
+	Then~$F$ has a right adjoint if and only if for every object~$B$ of~$\cat{B}$, the category~$F \To B$ has a terminal object.
 \end{quote}
 
-To prove, the statement, we regard~$F$ as a functor~$F'$ from~$\Acat^{\op}$ to~$\Bcat^{\op}$.
-A functor from~$\Bcat$ to~$\Acat$ is right adjoint to~$F$ if and only if, as a functor from~$\Bcat^{\op}$ to~$\Acat^{\op}$, it is left adjoint to~$F'$.
+To prove, the statement, we regard~$F$ as a functor~$F'$ from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$.
+A functor from~$\cat{B}$ to~$\cat{A}$ is right adjoint to~$F$ if and only if, as a functor from~$\cat{B}^{\op}$ to~$\cat{A}^{\op}$, it is left adjoint to~$F'$.
 It follows that the functor~$F$ admits a right adjoint if and only if the functor~$F'$ admits a left adjoint.
 
-According to Corollary~2.3.7, this is the case if and only if for every object~$A$ of~$\Acat$, the category~$A^{\op} \To F'$ admits an initial object.
+According to Corollary~2.3.7, this is the case if and only if for every object~$A$ of~$\cat{A}$, the category~$A^{\op} \To F'$ admits an initial object.
 The category~$A^{\op} \To F'$ is isomorphic to the category~$(F \To A)^{\op}$.
 Therefore,~$A^{\op} \To F'$ admits an initial object if and only if the category~$F \To A$ admits a terminal object.
 
-This shows altogether that the fuctor~$F$ admits a right adjoint if and only if for every object~$B$ of~$\Bcat$, the category~$F \To B$ admits a terminal object.
+This shows altogether that the fuctor~$F$ admits a right adjoint if and only if for every object~$B$ of~$\cat{B}$, the category~$F \To B$ admits a terminal object.

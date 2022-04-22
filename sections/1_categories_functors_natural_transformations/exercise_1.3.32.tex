@@ -4,16 +4,16 @@
 
 \subsubsection{}
 
-There exists by assumption a functor~$G$ from~$\Bcat$ to~$\Acat$ such that the composite~$G ∘ F$ is isomorphic to the identity functor of~$\Acat$ and the composite~$F ∘ G$ is isomorphic to the identity functor of~$\Bcat$.
+There exists by assumption a functor~$G$ from~$\cat{B}$ to~$\cat{A}$ such that the composite~$G ∘ F$ is isomorphic to the identity functor of~$\cat{A}$ and the composite~$F ∘ G$ is isomorphic to the identity functor of~$\cat{B}$.
 This entails that
 \[
 	F(G(B)) ≅ B
 \]
-for every object~$B$ of~$\Bcat$.
+for every object~$B$ of~$\cat{B}$.
 This shows that the functor~$F$ is essentially surjective.
 
-Let~$A$ and~$A'$ be two objects of~$\Acat$.
-Let~$α$ be a natural isomorphism from the composite~$G ∘ F$ to~$1_{\Acat}$.
+Let~$A$ and~$A'$ be two objects of~$\cat{A}$.
+Let~$α$ be a natural isomorphism from the composite~$G ∘ F$ to~$1_{\cat{A}}$.
 The square diagram
 \[
 	\begin{tikzcd}[sep = large]
@@ -30,36 +30,36 @@ The square diagram
 		A'
 	\end{tikzcd}
 \]
-commutes for every morphism~$f \colon A \to A'$ in~$\Acat$.
+commutes for every morphism~$f \colon A \to A'$ in~$\cat{A}$.
 We thus have
 \[
 	α_{A'} ∘ GF(f) ∘ α_A^{-1}
 	=
 	f
 \]
-for every morphism~$f \colon A \to A'$ in~$\Acat$.
+for every morphism~$f \colon A \to A'$ in~$\cat{A}$.
 In other words, the composite
 \begin{equation}
 	\label{composition_is_identity}
-	\Acat(A, A')
+	\cat{A}(A, A')
 	\xto{F}
-	\Bcat(F(A), F(A'))
+	\cat{B}(F(A), F(A'))
 	\xto{G}
-	\Acat(GF(A), GF(A'))
+	\cat{A}(GF(A), GF(A'))
 	\xto{α_{A'} ∘ (\ph) ∘ α_A^{-1}}
-	\Acat(A, A')
+	\cat{A}(A, A')
 \end{equation}
 is the identity map.
 It follows that the map
 \[
-	\Acat(A, A')
+	\cat{A}(A, A')
 	\xto{F}
-	\Bcat(F(A), F(A'))
+	\cat{B}(F(A), F(A'))
 \]
 is injective, which shows that the functor~$F$ is faithful.
 
 The functor~$G$ is essentially surjective since it is also an equivalence.
-There hence exist for any two object~$A$ and~$A'$ of~$\Acat$ associated objects~$B$ and~$B'$ of~$\Bcat$ and isomorphisms
+There hence exist for any two object~$A$ and~$A'$ of~$\cat{A}$ associated objects~$B$ and~$B'$ of~$\cat{B}$ and isomorphisms
 \[
 	β \colon F(A) \to B \,,
 	\quad
@@ -68,33 +68,33 @@ There hence exist for any two object~$A$ and~$A'$ of~$\Acat$ associated objects~
 The composite~\eqref{composition_is_identity} that the identity map;
 the last map is a bijection, whence the middle map
 \[
-	\Bcat(F(A), F(A'))
+	\cat{B}(F(A), F(A'))
 	\xto{G}
-	\Acat(GF(A), GF(A'))
+	\cat{A}(GF(A), GF(A'))
 \]
 is surjective.
 The square diagram
 \[
 	\begin{tikzcd}[row sep = large, column sep = 7em]
-		\Bcat(F(A), F(A'))
+		\cat{B}(F(A), F(A'))
 		\arrow{r}[above]{γ ∘ (\ph) ∘ β^{-1}}
 		\arrow{d}[left]{G}
 		&
-		\Bcat(B, B')
+		\cat{B}(B, B')
 		\arrow{d}[right]{G}
 		\\
-		\Bcat(GF(A), GF(A'))
+		\cat{B}(GF(A), GF(A'))
 		\arrow{r}[above]{G(γ) ∘ (\ph) ∘ G(β)^{-1}}
 		&
-		\Bcat(G(B), G(B'))
+		\cat{B}(G(B), G(B'))
 	\end{tikzcd}
 \]
 commutes and the two horizontal maps are bijections.
 It follows that the map
 \[
-	\Bcat(B, B')
+	\cat{B}(B, B')
 	\xto{G}
-	\Bcat(G(B), G(B'))
+	\cat{B}(G(B), G(B'))
 \]
 is surjective.
 This shows that the functor~$G$ is full.
@@ -105,20 +105,20 @@ We have thus shown that every equivalence is faithful, full, and essentially sur
 
 \subsubsection{}
 
-Let~$F$ be a functor from~$\Acat$ to~$\Bcat$ that is faithful, full, and essentially surjective.
-There exists for every object~$B$ of~$\Bcat$ an object~$G(B)$ of~$\Acat$ for which there exists an isomorphism
+Let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$ that is faithful, full, and essentially surjective.
+There exists for every object~$B$ of~$\cat{B}$ an object~$G(B)$ of~$\cat{A}$ for which there exists an isomorphism
 \[
 	β_B \colon FG(B) \to B \,.
 \]
-For every morphism~$f \colon B \to B'$ in~$\Bcat$, the conjugate~$β_{B'}^{-1} f β_B$ is then contained in~$\Bcat(FG(B), FG(B'))$.
+For every morphism~$f \colon B \to B'$ in~$\cat{B}$, the conjugate~$β_{B'}^{-1} f β_B$ is then contained in~$\cat{B}(FG(B), FG(B'))$.
 It follows that there exists a unique morphism~$G(f)$ from~$G(B)$ to~$G(B')$ such that
 \[
 	FG(f) = β_{B'}^{-1} f β_B
 \]
 because~$F$ is both full and faithful.
 
-The assignment~$G$ is a functor from~$\Bcat$ to~$\Acat$:
-For every object~$B$ of~$\Bcat$ we have
+The assignment~$G$ is a functor from~$\cat{B}$ to~$\cat{A}$:
+For every object~$B$ of~$\cat{B}$ we have
 \[
 	β_B^{-1} 1_B β_B
 	=
@@ -135,7 +135,7 @@ For any two composable morphisms
 	\quad\text{and}\quad
 	g \colon B' \to B''
 \]
-in~$\Bcat$ we have
+in~$\cat{B}$ we have
 \[
 	β_{B''}^{-1} g f β_B
 	=
@@ -148,8 +148,8 @@ in~$\Bcat$ we have
 and therefore~$G(gf) = G(g) G(f)$.
 This shows that~$G$ is indeed a functor.
 
-The family~$β = (β_B)_{B ∈ \Ob(\Bcat)}$ is (by construction) a natural isomorphism from~$FG$ to~$1_{\Bcat}$.
-For every object~$A$ of~$\Acat$ we have the morphism
+The family~$β = (β_B)_{B ∈ \Ob(\cat{B})}$ is (by construction) a natural isomorphism from~$FG$ to~$1_{\cat{B}}$.
+For every object~$A$ of~$\cat{A}$ we have the morphism
 \[
 	β_{F(A)}
 	\colon
@@ -163,8 +163,8 @@ It follows that there exists a unique morphism
 \]
 such that~$β_{F(A)} = F(α_A)$ because~$F$ is both full and faithful.
 The morphism~$α_A$ is an isomorphism because~$F$ is fully faithful and therefore reflects isomorphisms.
-The family~$α = (α_A)_{A ∈ \Ob(\Acat)}$ is a natural isomorphism from~$GF$ to~$A$:
-We need to show that for every morphism~$f \colon A \to A'$ in~$\Acat$ the following square diagram commutes:
+The family~$α = (α_A)_{A ∈ \Ob(\cat{A})}$ is a natural isomorphism from~$GF$ to~$A$:
+We need to show that for every morphism~$f \colon A \to A'$ in~$\cat{A}$ the following square diagram commutes:
 \[
 	\begin{tikzcd}[sep = large]
 		GF(A)

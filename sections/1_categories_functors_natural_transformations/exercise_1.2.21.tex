@@ -2,14 +2,14 @@
 
 \begin{proposition}
 	\label{functors preserve isomorphisms}
-	Let~$F$ be a functor from a category~$\Acat$ to a category~$\Bcat$.
-	Let~$f$ be an isomorphism in~$\Acat$.
-	Then~$F(f)$ is an isomorphism in~$\Bcat$.
+	Let~$F$ be a functor from a category~$\cat{A}$ to a category~$\cat{B}$.
+	Let~$f$ be an isomorphism in~$\cat{A}$.
+	Then~$F(f)$ is an isomorphism in~$\cat{B}$.
 \end{proposition}
 
 \begin{proof}
 	Let~$A$ be the domain of~$f$ and let~$A'$ be the codomain of~$f$.
-	There exists by assumption a morphism~$g$ in~$\Acat$ with
+	There exists by assumption a morphism~$g$ in~$\cat{A}$ with
 	\[
 		g ∘ f
 		=
@@ -35,6 +35,6 @@
 	}
 \end{proof}
 
-There exists by assumption an isomorphism~$f$ from~$A$ to~$A'$ in~$\Acat$.
-It follows from \cref{functors preserve isomorphisms} that~$F(f)$ is an isomorphism from~$F(A)$ to~$F(A')$ in~$\Bcat$.
+There exists by assumption an isomorphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$.
+It follows from \cref{functors preserve isomorphisms} that~$F(f)$ is an isomorphism from~$F(A)$ to~$F(A')$ in~$\cat{B}$.
 The existence of such an isomorphism shown that~$F(A)$ and~$F(A')$ are isomorphic.

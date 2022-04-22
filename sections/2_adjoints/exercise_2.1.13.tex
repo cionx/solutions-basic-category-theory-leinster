@@ -1,12 +1,12 @@
 \subsection{}
 
-Let~$\Acat$ and~$\Bcat$ be two discrete categories with underlying classes of objects~$A$ and~$B$.
+Let~$\cat{A}$ and~$\cat{B}$ be two discrete categories with underlying classes of objects~$A$ and~$B$.
 
 We consider first two functors
 \begin{align*}
-	F \colon \Acat \to \Bcat
+	F \colon \cat{A} \to \cat{B}
 	\quad&\text{and}\quad
-	G \colon \Bcat \to \Acat
+	G \colon \cat{B} \to \cat{A}
 \intertext{
 such that~$F$ is left adjoint to~$G$.
 We may regard these two functors as functions
@@ -17,15 +17,15 @@ We may regard these two functors as functions
 \end{align*}
 For every element~$a$ of~$A$ we have
 \[
-	\Acat(a, g(f(a)))
+	\cat{A}(a, g(f(a)))
 	=
-	\Acat(a, GF(a))
+	\cat{A}(a, GF(a))
 	≅
-	\Bcat(F(a), F(a))
+	\cat{B}(F(a), F(a))
 	≠
 	∅ \,.
 \]
-This means that~$g(f(a)) = a$ because the category~$\Acat$ is discrete.
+This means that~$g(f(a)) = a$ because the category~$\cat{A}$ is discrete.
 We find in the same way that~$f(g(b)) = b$ for every element~$b$ of~$B$.
 The two functions~$f$ and~$g$ are therefore mutually inverse bijections.
 
@@ -38,20 +38,20 @@ Suppose on the other hand that
 	are two mutually inverse bijections.
 	We may regard these functions as mutually inverse isomorphisms of categories
 }
-	F \colon \Acat \to \Bcat
+	F \colon \cat{A} \to \cat{B}
 	\quad&\text{and}\quad
-	G \colon \Bcat \to \Acat \,.
+	G \colon \cat{B} \to \cat{A} \,.
 \end{align*}
 We then have
 \[
-	\Bcat(F(a), b)
+	\cat{B}(F(a), b)
 	=
-	\Bcat(F(a), F(G(b)))
+	\cat{B}(F(a), F(G(b)))
 	≅
-	\Bcat(a, G(b))
+	\cat{B}(a, G(b))
 \]
 for every element~$a$ of~$A$ and every element~$b$ of~$B$.
-This bijection is natural in both~$a$ and~$b$ because the only morphisms in~$\Acat$ and in~$\Bcat$ are the identity morphisms.
+This bijection is natural in both~$a$ and~$b$ because the only morphisms in~$\cat{A}$ and in~$\cat{B}$ are the identity morphisms.
 This shows that the functors~$F$ and~$G$ are adjoint, with~$F$ being left adjoint to~$G$.
 
-We have thus shown that an adjunction between two discrete categories~$\Acat$ and~$\Bcat$ is the same as a pair of mutually inverse bijections between their underlying classes of objects~$A$ and~$B$.
+We have thus shown that an adjunction between two discrete categories~$\cat{A}$ and~$\cat{B}$ is the same as a pair of mutually inverse bijections between their underlying classes of objects~$A$ and~$B$.

@@ -1,6 +1,6 @@
 \subsection{}
 
-Let~$\Bcat$ be the category with two objects, named~$X$ and~$Y$, and one non-identity morphism, named~$f$, which goes from~$X$ to~$Y$.
+Let~$\cat{B}$ be the category with two objects, named~$X$ and~$Y$, and one non-identity morphism, named~$f$, which goes from~$X$ to~$Y$.
 This category looks as follows:
 \[
 	\begin{tikzcd}
@@ -10,8 +10,8 @@ This category looks as follows:
 		Y
 	\end{tikzcd}
 \]
-Let~$\Acat$ be the category that consists of two copies of~$\Bcat$.
-More precisely, the category~$\Acat$ looks as follows:
+Let~$\cat{A}$ be the category that consists of two copies of~$\cat{B}$.
+More precisely, the category~$\cat{A}$ looks as follows:
 \[
 	\begin{tikzcd}
 		X_1
@@ -26,7 +26,7 @@ More precisely, the category~$\Acat$ looks as follows:
 	\end{tikzcd}
 \]
 
-Let~$F$ be the functor from~$\Acat$ to~$\Bcat$ that maps each of the two copies of~$\Bcat$ in~$\Acat$ back onto~$\Acat$.
+Let~$F$ be the functor from~$\cat{A}$ to~$\cat{B}$ that maps each of the two copies of~$\cat{B}$ in~$\cat{A}$ back onto~$\cat{A}$.
 More explicitly,
 \[
 	F(X_1), F(X_2) = X \,,
@@ -56,5 +56,5 @@ The functor~$F$ may be depicted as follows:
 		Y
 	\end{tikzcd}
 \]
-This functor is faithful because there exist at most one morphism between any two objects of~$\Acat$.
-But~$f_1$ and~$f_2$ are two distinct morphisms in~$\Acat$ with~$F(f_1) = F(f_2)$.
+This functor is faithful because there exist at most one morphism between any two objects of~$\cat{A}$.
+But~$f_1$ and~$f_2$ are two distinct morphisms in~$\cat{A}$ with~$F(f_1) = F(f_2)$.

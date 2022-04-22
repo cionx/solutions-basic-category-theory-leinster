@@ -4,7 +4,7 @@
 
 \subsubsection{}
 
-Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$ (i.e., a morphism in the given category~$\Bcat$).
+Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$ (i.e., a morphism in the given category~$\cat{B}$).
 We let~$\Sym(f)$ be the resulting conjugation isomorphism of groups from~$\Sym(X)$ to~$\Sym(Y)$, i.e., the map
 \[
 	\Sym(f)
@@ -27,7 +27,7 @@ For every set~$X$ we have
 	1_{\Sym(X)}(s)
 \]
 for every~$s ∈ \Sym(X)$, and therefore~$\Sym_{1_X} = 1_{\Sym(X)}$.
-For every two composable morphisms~$f \colon X \to Y$ and~$g \colon Y \to Z$ in~$\Bcat$ we have
+For every two composable morphisms~$f \colon X \to Y$ and~$g \colon Y \to Z$ in~$\cat{B}$ we have
 \[
 	\Sym(g)( \Sym(f)(s) )
 	=
@@ -38,7 +38,7 @@ For every two composable morphisms~$f \colon X \to Y$ and~$g \colon Y \to Z$ in~
 	\Sym(g ∘ f)(s)
 \]
 for every~$s ∈ \Sym(X)$, and therefore~$\Sym(g∘ f) = \Sym(g) ∘ \Sym(f)$.
-We have shown that~$\Sym$ is a functor from~$\Bcat$ to~$\Set$.
+We have shown that~$\Sym$ is a functor from~$\cat{B}$ to~$\Set$.
 (This functor factors through the forgetful functor from~$\Grp$ to~$\Set$.)
 
 Let~$X$ and~$Y$ be two finite sets and let~$f$ be a bijection from~$X$ to~$Y$.
@@ -70,7 +70,7 @@ For every total order~$≤$ on~$X$, i.e., element of~$\Ord(X)$, we have
 for all~$x_1, x_2 ∈ X$, which means that the total order~$\Ord(1_X)(≤)$ coincides with the original order~$≤$.
 This shows that~$\Ord(1_X) = 1_{\Ord(X)}$.
 
-Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two composable morphisms in~$\Bcat$.
+Let~$f \colon X \to Y$ and~$g \colon Y \to Z$ be two composable morphisms in~$\cat{B}$.
 Given a total order~$≤$ on~$X$ we have
 \begin{align*}
 	\SwapAboveDisplaySkip
@@ -83,14 +83,14 @@ Given a total order~$≤$ on~$X$ we have
 for all~$x_1, x_2 ∈ X$, which shows that~$\Ord(g)(\Ord(f)(≤)) = \Ord(g ∘ f)(≤)$.
 We have thus shown that~$\Ord(g ∘ f) = \Ord(g) ∘ \Ord(f)$.
 
-We have overall shown that~$\Ord$ is a functor from~$\Bcat$ to~$\Set$.
+We have overall shown that~$\Ord$ is a functor from~$\cat{B}$ to~$\Set$.
 
 
 
 \subsubsection{}
 
 We have for every finite set~$X$ a distinguished element of~$\Sym(X)$, namely the identity function,~$1_X$.
-For every morphism~$f \colon X \to Y$ in~$\Bcat$ we have
+For every morphism~$f \colon X \to Y$ in~$\cat{B}$ we have
 \[
 	\Sym(f)(1_X)
 	=
@@ -105,7 +105,7 @@ In the following let~$s_X$ denote~$1_X$.
 
 Suppose that there would exist a natural transformation~$α$ from~$\Sym$ to~$\Ord$.
 For every finite set~$X$ we would then get the element~$t_X ≔ α_X(s_X)$ of~$\Ord(X)$.
-It would follow for every morphism~$f \colon X \to Y$ in~$\Bcat$ from the commutativity of the diagram
+It would follow for every morphism~$f \colon X \to Y$ in~$\cat{B}$ from the commutativity of the diagram
 \[
 	\begin{tikzcd}[sep = large]
 		\Sym(X)
@@ -135,7 +135,7 @@ that
 \]
 This shows that the map~$\Ord(f)$ would carry the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
 
-However, such a choice of distinguished elements~$(t_X)_{X ∈ \Ob(\Bcat)}$ cannot exist:
+However, such a choice of distinguished elements~$(t_X)_{X ∈ \Ob(\cat{B})}$ cannot exist:
 If~$X$ is a finite set with at least two distinct elements, then there exists an automorphism~$f$ of~$X$ swapping these two elements.
 It then follows for every element~$≤$ of~$\Ord(X)$ that~$\Ord(f)(≤)$ is different from~$≤$.
 

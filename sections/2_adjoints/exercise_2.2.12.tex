@@ -8,7 +8,7 @@ It follows for every morphism
 \[
 	f \colon A \to A'
 \]
-in~$\Acat$ from the first formula in Lemma~2.2.4 and the naturality of~$η$ that
+in~$\cat{A}$ from the first formula in Lemma~2.2.4 and the naturality of~$η$ that
 \[
 	\adjtranspose{ F(f) }
 	=
@@ -20,21 +20,21 @@ We can therefore express the action of the functor~$F$ on morphisms as
 \[
 	F(f) = \adjtranspose{ η_{A'} ∘ f } \,.
 \]
-It follows that the functor~$F$ is faithful, respectively full, if and only if for every two objects~$A$ and~$A'$ of~$\Acat$ the map
+It follows that the functor~$F$ is faithful, respectively full, if and only if for every two objects~$A$ and~$A'$ of~$\cat{A}$ the map
 \[
 	( η_{A'} )_*
 	\colon
-	\Acat(A, A')
+	\cat{A}(A, A')
 	\to
-	\Acat(A, GF(A'))
+	\cat{A}(A, GF(A'))
 \]
 is injective, respectively surjective.
-Putting both of these observations together, we find that~$F$ is fully faithful if and only if the above map~$( η_{A'} )_*$ is bijective for any two objects~$A$ and~$A'$ of~$\Acat$.
+Putting both of these observations together, we find that~$F$ is fully faithful if and only if the above map~$( η_{A'} )_*$ is bijective for any two objects~$A$ and~$A'$ of~$\cat{A}$.
 This is equivalent to each morphism~$η_{A'}$ being an isomorphism by the upcoming \cref{isomorphism_iff_bijection_on_hom_sets}, and therefore equivalent to~$η$ being a natural isomorphism.
 
 \begin{lemma}
 	\label{isomorphism_iff_bijection_on_hom_sets}
-	Let~$\Acat$ be a category and let~$f$ be a morphism in~$\Acat$ of the form
+	Let~$\cat{A}$ be a category and let~$f$ be a morphism in~$\cat{A}$ of the form
 	\[
 		f \colon A' \to A'' \,.
 	\]
@@ -47,11 +47,11 @@ This is equivalent to each morphism~$η_{A'}$ being an isomorphism by the upcomi
 
 		\item
 			\label{induced_covariant_bijection}
-			The induced map~$f_* \colon \Acat(A, A') \to \Acat(A, A'')$ is a bijection for every object~$A$ of~$\Acat$.
+			The induced map~$f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'')$ is a bijection for every object~$A$ of~$\cat{A}$.
 
 		\item
 			\label{induced_contravariant_bijection}
-			The induced map~$f^* \colon \Acat(A'', A) \to \Acat(A', A)$ is a bijection for every object~$A$ of~$\Acat$.
+			The induced map~$f^* \colon \cat{A}(A'', A) \to \cat{A}(A', A)$ is a bijection for every object~$A$ of~$\cat{A}$.
 
 	\end{equivalenceslist}
 \end{lemma}
@@ -61,9 +61,9 @@ This is equivalent to each morphism~$η_{A'}$ being an isomorphism by the upcomi
 
 	If~$f$ is an isomorphism with inverse~$f^{-1}$ then the two resulting maps
 	\[
-		f_* \colon \Acat(A, A') \to \Acat(A, A'') \,,
+		f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'') \,,
 		\qquad
-		(f^{-1})_* \colon \Acat(A, A'') \to \Acat(A, A')
+		(f^{-1})_* \colon \cat{A}(A, A'') \to \cat{A}(A, A')
 	\]
 	are again mutually inverse.
 	This entails that the map~$f_*$ is bijective.
@@ -82,16 +82,16 @@ This is equivalent to each morphism~$η_{A'}$ being an isomorphism by the upcomi
 \end{proof}
 
 We find dually the following:
-The functor~$G$ is faithful, respectively full, if and only if for every two objects~$B$ and~$B$' of~$\Bcat$ the map
+The functor~$G$ is faithful, respectively full, if and only if for every two objects~$B$ and~$B$' of~$\cat{B}$ the map
 \[
 	(ε_B)^*
 	\colon
-	\Bcat(B, B')
+	\cat{B}(B, B')
 	\to
-	\Bcat(FG(B), B')
+	\cat{B}(FG(B), B')
 \]
 is injective, respectively surjective.
-Therefore,~$G$ is fully faithful if and only if the above map~$(ε_B)^*$ is bijective for any two objects~$B$ and~$B'$ of~$\Bcat$.
+Therefore,~$G$ is fully faithful if and only if the above map~$(ε_B)^*$ is bijective for any two objects~$B$ and~$B'$ of~$\cat{B}$.
 By \cref{isomorphism_iff_bijection_on_hom_sets} this is equivalent to~$ε$ being a natural isomorphism.
 
 \begin{remark}

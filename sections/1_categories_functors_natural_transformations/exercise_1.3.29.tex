@@ -2,7 +2,7 @@
 
 Suppose first that~$α$ is a natural transformation from~$F$ to~$G$.
 
-Let~$B$ be any object of~$\Bcat$.
+Let~$B$ be any object of~$\cat{B}$.
 We have for every morphism~$f \colon A_1 \to A_2$ the following commutative square diagram:
 \[
 	\begin{tikzcd}[sep = large]
@@ -35,10 +35,10 @@ This diagram can equivalently be written as follows:
 		G_B(A_2)
 	\end{tikzcd}
 \]
-The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
+The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
 
-Let~$A$ be an object of~$\Acat$.
-We have for every morphism~$g \colon B_1 \to B_2$ in~$\Bcat$ the following commutative square diagram:
+Let~$A$ be an object of~$\cat{A}$.
+We have for every morphism~$g \colon B_1 \to B_2$ in~$\cat{B}$ the following commutative square diagram:
 \[
 	\begin{tikzcd}[sep = large]
 		F(A, B_1)
@@ -70,16 +70,16 @@ This diagram can equivalently be written as follows:
 		G^A(B_2)
 	\end{tikzcd}
 \]
-The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$.
+The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$.
 
-Suppose now conversely that the for every object~$A$ of~$\Acat$ the family~$(α_{A,B})_{B ∈ \Ob(\Bcat)}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\Bcat$ the family~$(α_{A,B})_{A ∈ \Ob(\Acat)}$ is a natural transformation from~$F_B$ to~$G_B$.
+Suppose now conversely that the for every object~$A$ of~$\cat{A}$ the family~$(α_{A,B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\cat{B}$ the family~$(α_{A,B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
 Let
 \[
 	(f, g)
 	\colon
 	(A_1, B_1) \to (A_2, B_2)
 \]
-be a morphism in~$\Acat × \Bcat$.
+be a morphism in~$\cat{A} × \cat{B}$.
 We have by assumption the following two commutative square diagrams:
 \[
 	\begin{tikzcd}[sep = large]

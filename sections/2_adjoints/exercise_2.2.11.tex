@@ -4,38 +4,38 @@
 
 \subsubsection{}
 
-We denote the subcategories~$\Fix(GF)$ and~$\Fix(FG)$ of~$\Acat$ and~$\Bcat$ by~$\Acat'$ and~$\Bcat'$ respectively.
+We denote the subcategories~$\Fix(GF)$ and~$\Fix(FG)$ of~$\cat{A}$ and~$\cat{B}$ by~$\cat{A}'$ and~$\cat{B}'$ respectively.
 
-We start off by showing that~$F$ restrict to a functor between~$\Acat'$ and~$\Bcat'$.
-Let~$A$ be an object of~$\Acat'$.
-The morphisms~$η_A$ from~$A$ to~$GF(A)$ is an isomorphism, whence its image under~$F$ is an isomorphism in~$\Bcat$ from~$F(A)$ to~$FGF(A)$.
+We start off by showing that~$F$ restrict to a functor between~$\cat{A}'$ and~$\cat{B}'$.
+Let~$A$ be an object of~$\cat{A}'$.
+The morphisms~$η_A$ from~$A$ to~$GF(A)$ is an isomorphism, whence its image under~$F$ is an isomorphism in~$\cat{B}$ from~$F(A)$ to~$FGF(A)$.
 We know from the triangle identities that
 \[
 	\id_{F(A)} = ε_{F(A)} ∘ F(η_A) \,.
 \]
 It follows that the morphisms~$ε_{F(A)}$ is an isomorphism since both~$\id_{F(A)}$ and~$F(η_A)$ are isomorphisms.
-This shows that the object~$F(A)$ is contained in~$\Bcat'$.
-We therefore find that the functor~$F$ restricts to a functor~$F'$ from~$\Acat'$ to~$\Bcat'$.
+This shows that the object~$F(A)$ is contained in~$\cat{B}'$.
+We therefore find that the functor~$F$ restricts to a functor~$F'$ from~$\cat{A}'$ to~$\cat{B}'$.
 
-We find in the same way (using the other triangle identity) that the functor~$G$ restricts to functor~$G'$ from~$\Bcat'$ to~$\Acat'$.
+We find in the same way (using the other triangle identity) that the functor~$G$ restricts to functor~$G'$ from~$\cat{B}'$ to~$\cat{A}'$.
 
-The natural transformation~$η$ from~$\Id_{\Acat}$ to~$GF$ restricts to a natural transformation from~$\Id_{\Acat'}$ to~$G' F'$, and the natural transformation~$ε$ from~$FG$ to~$\Id_{\Bcat}$ restricts to a natural transformation~$ε'$ from~$F' G'$ to~$\Id_{\Bcat'}$.
-We observe that the subcategories~$\Acat'$ and~$\Bcat'$ of~$\Acat$ and~$\Bcat$ are chosen precisely in such a way that the components of~$η'$ and~$ε'$ are isomorphisms.
+The natural transformation~$η$ from~$\Id_{\cat{A}}$ to~$GF$ restricts to a natural transformation from~$\Id_{\cat{A}'}$ to~$G' F'$, and the natural transformation~$ε$ from~$FG$ to~$\Id_{\cat{B}}$ restricts to a natural transformation~$ε'$ from~$F' G'$ to~$\Id_{\cat{B}'}$.
+We observe that the subcategories~$\cat{A}'$ and~$\cat{B}'$ of~$\cat{A}$ and~$\cat{B}$ are chosen precisely in such a way that the components of~$η'$ and~$ε'$ are isomorphisms.
 The natural transformations~$η'$ and~$ε'$ are therefore natural isomorphisms.
 
-We have now the two categories~$\Acat'$ and~$\Bcat'$, the two functors
+We have now the two categories~$\cat{A}'$ and~$\cat{B}'$, the two functors
 \[
-	F' \colon \Acat' \to \Bcat' \,,
+	F' \colon \cat{A}' \to \cat{B}' \,,
 	\quad
-	G' \colon \Bcat' \to \Acat'
+	G' \colon \cat{B}' \to \cat{A}'
 \]
 and the two natural isomorphisms
 \[
-	η' \colon \Id_{\Acat'} \To G' F' \,,
+	η' \colon \Id_{\cat{A}'} \To G' F' \,,
 	\quad
-	ε' \colon F' G' \To \Id_{\Bcat'} \,.
+	ε' \colon F' G' \To \Id_{\cat{B}'} \,.
 \]
-We have, in other words, an equivalence of categories~$(F', G', η', ε')$ between~$\Acat'$ and~$\Bcat'$.
+We have, in other words, an equivalence of categories~$(F', G', η', ε')$ between~$\cat{A}'$ and~$\cat{B}'$.
 
 
 

@@ -1,14 +1,14 @@
 \subsection{}
 
-Let~$G$ and~$H$ be two groups, and let~$\Gcat$ and~$\Hcat$ be the corresponding one-object categories.
+Let~$G$ and~$H$ be two groups, and let~$\cat{G}$ and~$\cat{H}$ be the corresponding one-object categories.
 We recall the following:
 \begin{itemize*}
 
 	\item
-		A functor from~$\Gcat$ to~$\Hcat$ is the same as a homomorphism of groups from~$G$ to~$H$.
+		A functor from~$\cat{G}$ to~$\cat{H}$ is the same as a homomorphism of groups from~$G$ to~$H$.
 
 	\item
-		Given two functors~$F$ and~$F'$ from~$\Gcat$ to~$\Hcat$, every natural transformation from~$F$ to~$F'$ is already a natural isomorphism, since every morphism in~$\Hcat$ is an isomorphism.
+		Given two functors~$F$ and~$F'$ from~$\cat{G}$ to~$\cat{H}$, every natural transformation from~$F$ to~$F'$ is already a natural isomorphism, since every morphism in~$\cat{H}$ is an isomorphism.
 
 		Such a natural isomorphism from~$F$ to~$F'$ consists of a single component, which is an element~$k$ of~$H$ with~$k L k^{-1} = R$.
 		This means in particular that there exists a natural transformation between~$L$ and~$R$ if and only if~$L$ and~$R$ are conjugated as homomorphisms of groups.
@@ -16,18 +16,18 @@ We recall the following:
 \end{itemize*}
 
 
-Suppose now that~$(L, R, η, ε)$ is an adjunction between the categories~$\Gcat$ and~$\Hcat$.
+Suppose now that~$(L, R, η, ε)$ is an adjunction between the categories~$\cat{G}$ and~$\cat{H}$.
 This adjunction consists of two functors
 \[
-	L \colon \Gcat \to \Hcat \,,
+	L \colon \cat{G} \to \cat{H} \,,
 	\quad
-	R \colon \Hcat \to \Gcat \,,
+	R \colon \cat{H} \to \cat{G} \,,
 \]
 and two natural transformations
 \[
-	η \colon \Id_{\Gcat} \To R L \,,
+	η \colon \Id_{\cat{G}} \To R L \,,
 	\quad
-	ε \colon L R \To \Id_{\Hcat}
+	ε \colon L R \To \Id_{\cat{H}}
 \]
 that serve as the unit and the counit of the adjunction respectively.
 The functors~$L$ and~$R$ correspond to homomorphisms of groups
@@ -37,25 +37,25 @@ The functors~$L$ and~$R$ correspond to homomorphisms of groups
 	r \colon H \to G \,.
 \]
 
-Both~$η$ and~$ε$ are actually natural isomorphisms because all morphisms in~$\Gcat$ and all morphisms in~$\Hcat$ are isomorphisms.
+Both~$η$ and~$ε$ are actually natural isomorphisms because all morphisms in~$\cat{G}$ and all morphisms in~$\cat{H}$ are isomorphisms.
 It follows from Exercise~2.2.11 that both~$L$ and~$R$ are equivalences of categories.
 This entails that these functors are fully faithful, which means that~$l$ and~$r$ are bijective, and therefore isomorphisms of groups.
 
 The natural transformation~$η$ consists of only a single component, which is an element~$g$ of~$G$.
-That~$η$ is a natural transformation from~$\Id_{\Gcat}$ to the composite~$R L$ means that the diagram
+That~$η$ is a natural transformation from~$\Id_{\cat{G}}$ to the composite~$R L$ means that the diagram
 \[
 	\begin{tikzcd}[sep = large]
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 		\arrow{r}[above]{g'}
 		\arrow{d}[left]{g}
 		&
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 		\arrow{d}[right]{g}
 		\\
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 		\arrow{r}[above]{r(l(g'))}
 		&
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 	\end{tikzcd}
 \]
 commutes for every element~$g'$ of~$G$.
@@ -95,32 +95,32 @@ That~$η$ and~$ε$ define an adjunction between~$L$ and~$R$ is equivalent to the
 		R
 	\end{tikzcd}
 \]
-By evaluating these diagrams at the single objects of the categories~$\Gcat$ and~$\Hcat$, they can equivalently be expressed as follows:
+By evaluating these diagrams at the single objects of the categories~$\cat{G}$ and~$\cat{H}$, they can equivalently be expressed as follows:
 \[
 	\begin{tikzcd}[sep = large]
-		\ast_{\Hcat}
+		\ast_{\cat{H}}
 		\arrow{r}[above]{l(g)}
 		\arrow{dr}[below left]{1_H}
 		&
-		\ast_{\Hcat}
+		\ast_{\cat{H}}
 		\arrow{d}[right]{h}
 		\\
 		{}
 		&
-		\ast_{\Hcat}
+		\ast_{\cat{H}}
 	\end{tikzcd}
 	\qquad
 	\begin{tikzcd}[sep = large]
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 		\arrow{r}[above]{g}
 		\arrow{dr}[below left]{1_G}
 		&
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 		\arrow{d}[right]{r(h)}
 		\\
 		{}
 		&
-		\ast_{\Gcat}
+		\ast_{\cat{G}}
 	\end{tikzcd}
 \]
 The commutativity of these diagrams is equivalent two the two conditions

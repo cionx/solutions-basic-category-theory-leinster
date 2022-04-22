@@ -6,46 +6,46 @@ This shows that equivalence of categories is reflexive.
 The notion of an \enquote{equivalence of categories} is symmetric in the two categories in question.
 This shows that equivalence of categories is symmetric.
 
-Let~$\Acat$,~$\Bcat$ and~$\Ccat$ be three categories such that~$\Acat$ is equivalent to~$\Bcat$ and~$\Bcat$ is equivalent to~$\Ccat$.
+Let~$\cat{A}$,~$\cat{B}$ and~$\cat{C}$ be three categories such that~$\cat{A}$ is equivalent to~$\cat{B}$ and~$\cat{B}$ is equivalent to~$\cat{C}$.
 This means that there exist functors
 \[
-	F \colon \Acat \to \Bcat \,,
+	F \colon \cat{A} \to \cat{B} \,,
 	\quad
-	G \colon \Bcat \to \Acat \,,
+	G \colon \cat{B} \to \cat{A} \,,
 	\quad
-	F' \colon \Bcat \to \Ccat \,,
+	F' \colon \cat{B} \to \cat{C} \,,
 	\quad
-	G' \colon \Ccat \to \Bcat
+	G' \colon \cat{C} \to \cat{B}
 \]
 such that
 \[
-	F' F ≅ 1_{\Acat} \,,
+	F' F ≅ 1_{\cat{A}} \,,
 	\quad
-	F F' ≅ 1_{\Bcat} \,,
+	F F' ≅ 1_{\cat{B}} \,,
 	\quad
-	G' G ≅ 1_{\Bcat} \,,
+	G' G ≅ 1_{\cat{B}} \,,
 	\quad
-	G G' ≅ 1_{\Ccat} \,.
+	G G' ≅ 1_{\cat{C}} \,.
 \]
 It follows that
 \[
 	GF F'G'
 	≅
-	G 1_{\Bcat} G'
+	G 1_{\cat{B}} G'
 	=
 	G G'
 	≅
-	1_{\Ccat}
+	1_{\cat{C}}
 \]
 and similarly that
 \[
 	F'G' GF
 	≅
-	F' 1_{\Bcat} F
+	F' 1_{\cat{B}} F
 	=
 	F' F
 	≅
-	1_{\Acat} \,.
+	1_{\cat{A}} \,.
 \]
 This shows that the functor~$GF$ is again an equivalence of categories, with quasi-inverse given by~$F' G'$.
 We have thus shown that equivalence of categories is transitive.

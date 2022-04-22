@@ -1,11 +1,11 @@
 \subsection{}
 
-We consider an auxiliary category~$\Acat$ as follows:
-The objects of~$\Acat$ are pairs~$(V, B)$ consisting of a finite-dimensional~\vectorspace{$\kf$}~$V$ and a basis~$B$ of~$V$.
-For any two objects~$(V, B)$ and~$(W, C)$ of~$\Acat$ the respective set of morphism~$\Acat( (V, B), (W, C) )$ is the set of linear maps from~$V$ to~$W$.
-The composition in~$\Acat$ is the usual composition of linear maps.
+We consider an auxiliary category~$\cat{A}$ as follows:
+The objects of~$\cat{A}$ are pairs~$(V, B)$ consisting of a finite-dimensional~\vectorspace{$\kf$}~$V$ and a basis~$B$ of~$V$.
+For any two objects~$(V, B)$ and~$(W, C)$ of~$\cat{A}$ the respective set of morphism~$\cat{A}( (V, B), (W, C) )$ is the set of linear maps from~$V$ to~$W$.
+The composition in~$\cat{A}$ is the usual composition of linear maps.
 
-We have a forgetful functor~$F$ from~$\Acat$ to~$\FDVect$ that is given on objects by
+We have a forgetful functor~$F$ from~$\cat{A}$ to~$\FDVect$ that is given on objects by
 \[
 	F((V, B)) = V
 	\quad\text{and}\quad
@@ -14,7 +14,7 @@ We have a forgetful functor~$F$ from~$\Acat$ to~$\FDVect$ that is given on objec
 on objects and morphisms respectively.
 This functor is fully faithful and surjective, and hence an equivalence.
 
-We also have a functor~$G$ from~$\Acat$ to~$\Matcat$ as follows:
+We also have a functor~$G$ from~$\cat{A}$ to~$\Matcat$ as follows:
 It is given on objects by
 \[
 	G( (V, B) ) = \dim(V) \,.
@@ -23,10 +23,10 @@ It assigns to each morphism
 \[
 	f \colon (V, B) \to (W, C)
 \]
-in~$\Acat$ the matrix that represents the linear map~$f$ with respect to the bases~$B$ and~$C$.
+in~$\cat{A}$ the matrix that represents the linear map~$f$ with respect to the bases~$B$ and~$C$.
 This functor is fully faithful and surjective, and therefore an equivalence.
 
-The category~$\Acat$ is both equivalent to~$\FDVect$ and to~$\Matcat$.
+The category~$\cat{A}$ is both equivalent to~$\FDVect$ and to~$\Matcat$.
 It follows (from the upcoming Exercise~1.3.34) that~$\FDVect$ and~$\Matcat$ are also equivalent.
 
 A quasi-inverse~$G'$ for~$G$ is given on objects by~$G'(n) = (\kf^n, (e_1, \dotsc, e_n))$ for every natural number~$n$ and on morphisms by~$G'(A)(x) = Ax$ for every matrix~$A$ and column vector~$x$ (of suitable size).
