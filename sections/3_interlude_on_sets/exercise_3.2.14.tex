@@ -1,0 +1,60 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+The functor~$U$ is by assumption part of an adjunction~$(F, U, η, ε)$ between~$\cat{A}$ and~$\Set$.
+We know from Exercise~2.3.11 that under the given assumptions, for every set~$A$, the map
+\[
+	η_A \colon A \to UF(A)
+\]
+is injective.
+
+For any family~$(A_i)_{i ∈ I}$ of objects of~$\cat{A}$, we can now form the set
+\[
+	P ≔ \Power\Biggl( ∑_{j ∈ I} U(A_j) \Biggr) \,.
+\]
+and therefore the object~$A ≔ F(P)$ of~$\cat{A}$.
+The map~$η_P$ is injective, whence we have the inequality
+\[
+	\card{P} ≤ \card{ UF(P) } =  \card{ U(A) } \,.
+\]
+We also have the inequalities
+\[
+	\card{ U(A_i) }
+	≤
+	\card*{ \sum_{j ∈ J} U(A_j) }
+	<
+	\card*{ \Power\Biggl( \sum_{j ∈ J} U(A_j) \Biggr) }
+	=
+	\card{ P }
+\]
+for every index~$i ∈ I$.
+It follows that for every index~$i ∈ I$, the sets~$U(A_i)$ and~$U(A)$ cannot be isomorphic, since they have different cardinalities.
+This implies that the objects~$A_i$ and~$A$ of~$\cat{A}$ cannot be isomorphic either.
+
+
+
+\subsubsection{}
+
+Suppose that the category~$\cat{A}$ is essentially small.
+This means that there exists a small category~$\cat{B}$ equivalent to~$\cat{A}$.
+Such an equivalence between~$\cat{A}$ and~$\cat{B}$ induces a bijection between the class of isomorphism classes of objects of~$\cat{A}$ and the class of isomorphism classes of objects of~$\cat{B}$.
+It follows that the category~$\cat{B}$ again satisfies the assumption of part~(a) of this exercise.
+But the category~$\cat{B}$ is small, whence we can consider the family~$(B)_{B ∈ \Ob(\cat{B})}$, which contains all objects of~$\cat{B}$.
+The existence of this family contradicts the assumption of part~(a).
+
+
+
+\subsubsection{}
+
+We have for each of these categories a forgetful functor to~$\Set$, which then admits a left adjoint:
+
+The forgetful functor from~$\Set$ to~$\Set$ is the identity functor of~$\Set$, whose left adjoint is again the identity functor.
+For the algebraic categories~$\Vect{\kf}$,~$\Grp$,~$\Ab$,~$\Ring$, the left adjoint functor assigns to any set~$X$ the respective free algebraic structure on~$X$.
+To every set~$X$ we can assign the discrete topological space on~$X$, which results in a left adjoint to the forgetful functor from~$\Top$ to~$\Set$.
+
+Each of these categories contains an object whose underlying set has at least two elements.
+They hence satisfy the assumption of part~(a) of this exercise.
+It follows from part~(b) of this exercise that the categories in question are not essentially small.
