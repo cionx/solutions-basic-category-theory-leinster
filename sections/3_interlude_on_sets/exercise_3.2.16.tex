@@ -1,0 +1,48 @@
+\subsection{}
+
+
+
+\subsubsection*{The functor \texorpdfstring{$D$}{D}}
+
+We can regard every set~$A$ as a discrete category, which we then denote by~$D(A)$.
+Every set-theoretic function
+\[
+	f \colon A \to B
+\]
+can then be regarded as a functor~$D(f)$ from~$D(A)$ to~$D(B)$.
+We arrive in this way at a functor~$D$ from~$\Set$ to~$\Cat$.
+This functor is left adjoint to the given functor~$O$.
+
+
+
+\subsubsection*{The functor \texorpdfstring{$I$}{I}}
+
+We can similarly regard every set~$A$ is an indiscrete category, which we will then denote by~$I(A)$.
+The collection of objects of~$I(A)$ is the set~$A$, and there exists for any two elements~$a$ and~$a'$ of~$a$ precisely one morphism from~$a$ to~$a'$ in~$I(A)$.
+The composition of morphisms in~$I(A)$ is defined in the only possible way.
+(The category~$I(A)$ may also be constructed by endowing the set~$A$ with the preorder for which any two elements are comparable, and then take the category associated to this preordered set.)
+Every set-theoretic function
+\[
+	f \colon A \to B
+\]
+can be uniquely extended to a functor~$I(f)$ from~$I(A)$ to~$I(B)$.
+We arrive in this way at a functor~$I$ from~$\Set$ to~$\Cat$.
+This functor is right adjoint to the given functor~$O$.
+
+
+
+\subsubsection*{The functor \texorpdfstring{$C$}{C}}
+
+Every category~$\cat{A}$ has an underlying undirected graph, which in turn has a set of connected components. We will call these the \defemph{connected components} of~$\cat{A}$.
+If the category~$\cat{A}$ is small, then its collections of objects is a set, whence its collection of connected components is a set.
+We denote this set by~$C(\cat{A})$.
+Every functor
+\[
+	F \colon \cat{A} \to \cat{B}
+\]
+maps each connected components of~$\cat{A}$ into a connected component of~$\cat{B}$, and therefore induces a map
+\[
+	C(F) \colon C(\cat{A}) \to C(\cat{B}) \,.
+\]
+We arrive in this way at a functor~$C$ from~$\Cat$ to~$\Set$.
+This functor is left adjoint to the previous functor~$D$.
