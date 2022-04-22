@@ -1,0 +1,177 @@
+\subsection{}
+
+
+
+\subsubsection*{Left adjoint}
+
+Every pair~$(f, g)$ of maps
+\[
+	f \colon A \to A' \,,
+	\quad
+	g \colon B \to B'
+\]
+induces a map
+\[
+	f + g \colon A + B \to A' + B'
+\]
+given by
+\[
+	(f + g) ∘ i_A = f
+	\quad\text{and}\quad
+	(f + g) ∘ j_B = g \,,
+\]
+where~$i_A$ and~$j_B$ denote the inclusion maps from~$A$ and~$B$ to~$A + B$ respectively.%
+\footnote{
+	If one thinks about the sum~$A + B$ as the disjoint union of~$A$ and~$B$, then the function~$f + g$ is given for every element~$x$ of~$A + B$ by
+	\[
+		(f + g)(x)
+		=
+		\begin{cases*}
+			f(x) & if~$x ∈ A$, \\
+			g(x) & if~$x ∈ B$.
+		\end{cases*}
+	\]
+}
+We have for any two sets~$A$ and~$B$ the equality
+\[
+	\id_A + \id_B = \id_{A + B} \,,
+\]
+and for any maps of the form
+\begin{alignat*}{2}
+	f &\colon A \to A' \,,
+	&\quad
+	g &\colon B \to B' \,,
+	\\
+	f' &\colon A' \to A'' \,,
+	&\quad
+	g' &\colon B' \to B'' \,,
+\end{alignat*}
+the equality
+\[
+	(f' + g') ∘ (f ∘ g)
+	=
+	(f' ∘ f) + (g' ∘ g) \,.
+\]
+This means that we have a functor
+\[
+	S \colon \Set × \Set \to \Set
+\]
+that is given by
+\[
+	S(A, B) ≔ A + B
+	\quad\text{and}\quad
+	S(f, g) = f + g
+\]
+for every object~$(A, B)$ of~$\Set × \Set$ and every morphism~$(f, g)$ of~$\Set × \Set$.
+
+We have for every three sets~$A$,~$B$ and~$C$ a bijection
+\[
+	\Set(A + B, C)
+	\to
+	\Set(A, C) × \Set(B, C) \,,
+\]
+given by
+\[
+	h \mapsto (h ∘ i_A, h ∘ j_B) \,.
+\]
+The codomain of this bijection can be rewritten as
+\[
+	\Set(A, C) × \Set(B, C)
+	=
+	(\Set × \Set)( (A, B), (C, C) )
+	=
+	(\Set × \Set)( (A, B), Δ(C) ) \,,
+\]
+and its domain as
+\[
+	\Set( S(A, B), C ) \,.
+\]
+We have thus constructed a bijection
+\[
+	\Set( S(A, B), C ) \to (\Set × \Set)( (A, B), Δ(C) ) \,.
+\]
+It can be checked that this bijection is natural in both~$(A, B)$ and~$C$.
+The functor~$S$ is therefore left adjoint to the diagonal functor~$Δ$.
+
+
+
+\subsubsection*{Right adjoint}
+
+Every pair~$(f, g)$ of maps
+\[
+	f \colon A \to A' \,,
+	\quad
+	g \colon B \to B'
+\]
+induces a map
+\[
+	f × g \colon A × B \to A' × B'
+\]
+given by
+\[
+	(f × g)(a, b) ≔ ( f(a), g(b) )
+\]
+for every element~$(a, b)$ of~$A × B$.
+We have for any two sets~$A$ and~$B$ the equality
+\[
+	\id_A × \id_B = \id_{A × B} \,,
+\]
+and for any maps of the form
+\begin{alignat*}{2}
+	f &\colon A \to A' \,,
+	&\quad
+	g &\colon B \to B' \,,
+	\\
+	f' &\colon A' \to A'' \,,
+	&\quad
+	g' &\colon B' \to B'' \,,
+\end{alignat*}
+the equality
+\[
+	(f' × g') ∘ (f × g)
+	=
+	(f' ∘ f) × (g' ∘ g) \,.
+\]
+This means that we have a functor
+\[
+	P \colon \Set × \Set \to \Set
+\]
+that is given by
+\[
+	P(A, B) ≔ A × B \,,
+	\quad
+	P(f, g) = f × g
+\]
+for every object~$(A, B)$ of~$\Set × \Set$ and every morphism~$(f, g)$ of~$\Set × \Set$.
+
+We have for every three sets~$A$,~$B$ and~$C$ a bijection
+\[
+	\Set(A, B) × \Set(A, C) \,,
+	\to
+	\Set(A, B × C)
+\]
+given by
+\[
+	(f, g) \mapsto [ a \mapsto (f(a), g(a)) ]
+\]
+for every element~$(f, g)$ of~$\Set(A, B) × \Set(A, C)$.
+The domain of this bijection can be rewritten as
+\[
+	\Set(A, B) × \Set(A, C)
+	=
+	(\Set × \Set)( (A, A), (B, C) )
+	=
+	(\Set × \Set)( Δ(A), (B, C) ) \,,
+\]
+and its codomain as
+\[
+	\Set( A, P(B, C) ) \,.
+\]
+We have thus constructed a bijection
+\[
+	(\Set × \Set)( Δ(A), (B, C) )
+	\to
+	\Set( A, P(B, C) ) \,.
+\]
+It can be checked that this bijection is natural in both~$A$ and~$(B, C)$.
+The functor~$P$ is therefore right adjoint to the diagonal functor~$Δ$.
