@@ -1,0 +1,278 @@
+\subsection{}
+
+
+
+\subsubsection{Equivalence of categories}
+
+In the following, we will more generally denote a partially defined function on a set~$X$ as a pair~$(S, f)$ where~$f$ is a function defined on some subset~$S'$ of~$X$ with~$S ⊆ S'$.
+This is then to be understood as the partially defined function~$(S, \restrict{f}{S})$ as explained in the exercise.
+
+We define a functor~$F$ from~$\Par$ to~$\Set_*$ as follows.
+\begin{itemize}
+
+	\item
+		For every set~$X$, let~$F(X)$ be the pointed set that arises from~$X$ by adjoining a base point~$x_0$.
+		(More explicitly:
+		let~$x_0$ be an element not contained in~$X$, and then let~$F(X)$ be the pointed set~$(X ∪ \{ x_0 \}, x_0)$.
+		From a set-theoretic perspective, this element~$x_0$ may be choosen to be the set~$X$ itself, since no set can be an element of itself.)
+
+	\item
+		For every two sets~$X$ and~$Y$, and every partially defined function~$(S, f)$ from~$X$ to~$Y$, let~$F( (S, f) )$ be the pointed map from~$F(X)$ to~$F(Y)$ given by
+		\[
+			F( (S, f) )
+			\colon
+			x
+			\mapsto
+			\begin{cases*}
+				f(x) & if~$x ∈ S$, \\
+				y_0  & otherwise.\footnotemark
+			\end{cases*}
+		\]
+		\footnotetext{
+			One might think about the newly added base point~$y_0$ of~$Y$ as the value~\enquote{$\mathtt{undefined}$}.
+			The map~$F( (S, f) )$ is then an extension of the partially defined function~$(S, f)$ to a map
+			\[
+				X ∪ \{ \mathtt{undefined} \}
+				\to
+				Y ∪ \{ \mathtt{undefined} \}
+			\]
+			that maps all input values outside of~$S$ to~$\mathtt{undefined}$.
+		}
+
+\end{itemize}
+These assignments define a functor from~$\Par$ to~$\Set_*$:
+\begin{itemize}
+
+	\item
+		Let~$X$ be a set.
+		The identity morphism of~$x$ in the category~$\Par$ is the pair~$(X, \id_X)$, where~$\id_X$ denotes the identity map on the set~$X$.
+		The induced map~$F( (X, \id_X) )$ sends every element of~$X$ to itself, and also the basepoint~$x_0$ to itself.
+		We therefore have the equality~$F( (X, \id_X) ) = \id_{F(X)}$.
+
+	\item
+		Let~$X$,~$Y$ and~$Z$ be three sets, and let
+		\[
+			(S, f) \colon X \to Y \,,
+			\quad
+			(T, g) \colon Y \to Z
+		\]
+		be two partially defined functions.
+		The composite~$F( (T, g) ) ∘ F( (S, f) )$ is given on elements of~$X$ as follows:
+		\begin{itemize}
+
+			\item
+				The basepoint~$x_0$ of~$F(X)$ is mapped to the basepoint~$y_0$ by~$F( (S, f) )$, and then further to the basepoint~$z_0$ by~$F( (T, g) )$.
+
+			\item
+				Let~$x$ be an element of~$X$ not contained in~$S$.
+				The element~$x$ is first mapped to the basepoint~$y_0$ of~$Y$ by~$F( (S, f) )$, and then further mapped to the basepoint~$z_0$ of~$Z$ by~$F( (T, g) )$.
+
+			\item
+				Let~$x$ be an element of~$X$ that is contained in the domain~$S$ of~$f$, but not in the preimage~$f^{-1}(T)$.
+				This element~$x$ is first mapped to the point~$f(x)$ in~$Y$ by~$F( (S, f) )$.
+				This element~$f(x)$ lies outside of~$T$, whence it it then further mapped to the base point~$z_0$ of~$Z$ by~$F( (T, g) )$.
+
+			\item
+				Let~$x$ be an element of~$X$ that is not only contained in~$S$, but already in the preimage~$f^{-1}(T)$.
+				This element is first mapped to the point~$f(x)$ in~$T$ by~$F( (S, f) )$, and then further mapped to the point~$g(f(x) )$ in~$Z$ by~$F( (T, g) )$.
+
+		\end{itemize}
+		We find overall that the composite~$F( (T, g) ) ∘ F( (S, f) )$ coincides with the induced map~$F( (T, g) ∘ (S, f) )$.%
+		\footnote{
+			The composite~$(T, g) ∘ (S, f)$ is the partially defined function~$(f^{-1}(T), g ∘ f)$.
+		}
+\end{itemize}
+
+The required functor~$G$ from~$\Set_*$ to~$\Par$ is easier to construct:
+\begin{itemize}
+
+	\item
+		For every pointed set~$(X, x_0)$, its value under~$G$ is given by the set~$X ∖ \{ x_0 \}$.
+
+	\item
+		For every pointed map
+		\[
+			f \colon (X, x_0) \to (Y, y_0) \,,
+		\]
+		the value of~$f$ under~$G$ is given by the restriction of~$f$ to~$X ∖ f^{-1}(y_0)$.
+		This domain is a subset of~$X ∖ \{ x_0 \}$ because the basepoint~$x_0$ is contained in the preimage~$f^{-1}(y_0)$.
+		Therefore,~$G(f)$ is a well-defined partially defined map from~$G(X)$ to~$G(Y)$.
+
+\end{itemize}
+This assignment~$G$ is indeed a functor from~$\Set_*$ to~$\Par$:
+\begin{itemize*}
+
+	\item
+		Let~$(X, x_0)$ be a pointed set.
+		Its identity morphism in the category~$\Set_*$ is simply the identity map of the set~$X$, i.e.,~$\id_{(X, x_0)} = \id_X$.
+		The resulting map~$G(\id_{(X, x_0)})$ is the restriction of~$\id_X$ to the domain
+		\[
+			X ∖ \id_X^{-1}(x_0)
+			=
+			X ∖ \{ x_0 \} \,.
+		\]
+		Therefore,
+		\[
+			G( \id_{(X, x_0)} )
+			=
+			( X ∖ \{ x_0 \}, \id_X )
+			=
+			( X ∖ \{ x_0 \}, \id_{X ∖ \{ x_0 \}} )
+			=
+			\id_{G( (X, x_0) )} \,.
+		\]
+
+	\item
+		Let
+		\[
+			f \colon (X, x_0) \to (Y, y_0) \,,
+			\quad
+			g \colon (Y, y_0) \to (Z, z_0)
+		\]
+		be two composable maps of pointed sets.
+		We have
+		\[
+			(g ∘ f)^{-1}(z_0)
+			=
+			f^{-1}( g^{-1}(z_0) ) \,,
+		\]
+		and therefore
+		\begin{align*}
+			G(g) ∘ G(f)
+			&=
+			(Y ∖ g^{-1}(z_0), g) ∘ (X ∖ f^{-1}(y_0), f)
+			\\
+			&=
+			( f^{-1}(Y ∖ g^{-1}(z_0) ), g ∘ f )
+			\\
+			&=
+			( f^{-1}(Y) ∖ f^{-1}(g^{-1}(z_0) ), g ∘ f )
+			\\
+			&=
+			( X ∖ (g ∘ f)^{-1}(z_0), g ∘ f )
+			\\
+			&=
+			G(g ∘ f) \,.
+		\end{align*}
+
+\end{itemize*}
+
+In the following, we will show that the two functors~$F$ and~$G$ form an equivalence of categories between~$\Par$ and~$\Set_*$.
+We do so by constructing natural isomorphisms
+\[
+	α \colon \Id_{\Par} \To G F \,,
+	\quad
+	β \colon \Id_{\Set_*} \To F G \,.
+\]
+
+We observe first that~$G F = \Id_{\Par}$.
+We can therefore choose~$α$ as the identity natural transformation.
+
+To construct the natural isomorphism~$β$, let~$(X, x_0)$ be a pointed set.
+The pointed set~$FG( (X, x_0) )$ is given by
+\[
+	( X ∖ \{ x_0 \} ∪ \{ x_0' \}, \; x_0' )
+\]
+with~$x_0' \notin X ∖ \{ x_0 \}$.
+In other words: we first remove the base point~$x_0$ of~$X$, and then add a new basepoint~$x_0'$ in its place.
+(We can, however, not ensure that the newly added base point~$x_0'$ is set-theoretically equal to the previous base point~$x_0$.
+This is why the composite~$F G$ won’t be the identity functor of~$\Set_*$, but will only be isomorphic to it.)
+The map
+\[
+	β_{(X, x_0)}
+	\colon
+	(X, x_0)
+	\to
+	( X ∖ \{ x_0 \} ∪ \{ x_0' \}, \; x_0' )
+\]
+given by
+\[
+	x
+	\mapsto
+	\begin{cases*}
+		x_0' & if~$x = x_0$, \\
+		x    & otherwise,
+	\end{cases*}
+\]
+is therefore an isomorphism of pointed sets from~$(X, x_0)$ to~$FG( (X, x_0) )$.
+This isomorphism is natural:
+For every pointed map
+\[
+	f \colon (X, x_0) \to (Y, y_0) \,,
+\]
+the resulting pointed map value~$GF(f)$ is given by
+\[
+	GF(f)(x)
+	=
+	\begin{cases*}
+		y_0'  & if~$x = x_0'$, \\
+		f(x)  & otherwise,
+	\end{cases*}
+\]
+for every element~$x$ of~$GF( (X, x_0) )$.
+The diagram
+\[
+	\begin{tikzcd}[sep = large]
+		(X, x_0)
+		\arrow{r}[above]{f}
+		\arrow{d}[left]{β_{(X, x_0)}}
+		&
+		(Y, y_0)
+		\arrow{d}[right]{β_{(Y, y_0)}}
+		\\
+		GF( (X, x_0) )
+		\arrow{r}[above]{GF(f)}
+		&
+		GF( (Y, y_0) )
+	\end{tikzcd}
+\]
+therefore commutes, showing the naturality of~$β$.
+
+
+
+\subsubsection{Description of \texorpdfstring{$\Set_*$}{Set\_*} as a coslice category}
+
+We can describe the category~$\Set_*$ as the coslice category~$𝟙 / \Set$, where~$𝟙 ≔ \{ \ast \}$ is a one-element set.
+\begin{itemize}
+
+	\item
+		An object of the category~$𝟙$ is a pair~$(X, ξ)$ consisting of a set~$X$ and a map~$ξ$ from~$𝟙$ to~$X$.
+		This map~$ξ$ amounts to picking out an element~$x_0$ of~$X$, namely the element~$ξ(\ast)$.
+
+	\item
+		A morphism
+		\[
+			f \colon (X, ξ) \to (Y, γ)
+		\]
+		in~$\Set_*$ is a set-theoretic map~$f$ from~$X$ to~$Y$ that makes the diagram
+		\[
+			\begin{tikzcd}
+				{}
+				&
+				𝟙
+				\arrow{dl}[above left]{ξ}
+				\arrow{dr}[above right]{γ}
+				&
+				{}
+				\\
+				X
+				\arrow{rr}[above]{f}
+				&
+				{}
+				&
+				Y
+			\end{tikzcd}
+		\]
+		commute.
+		The commutativity of this diagram can be expressed in terms of the points~$x_0 ≔ ξ(\ast)$ and~$y_0 ≔ γ(\ast)$ as the equality
+		\[
+			f(x_0) = y_0 \,.
+		\]
+		That means that a morphism from~$(X, ξ)$ to~$(Y, γ)$ is the same as a pointed map from~$(X, x_0)$ to~$(Y, y_0)$.
+
+	\item
+		The composition of morphisms is~$\Set_*$ is the usual composition of functions, and the same goes for the coslice category~$𝟙 / \Set$.
+
+\end{itemize}
+
+We can see from these observations that the two categories~$\Set_*$ and~$𝟙 / \Set$ are isomorphic.
