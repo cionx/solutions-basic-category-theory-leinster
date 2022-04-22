@@ -1,0 +1,98 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+We replace~$\Power(A)$ by an complete lattice~$P$, i.e., by a partially ordered set in which every subsets admits a supremum in~$P$.
+Let~$R$ be the set of all elements~$r$ of~$P$ that are increased by~$θ$, i.e.,
+\[
+	R ≔ \{ r ∈ P \suchthat r ≤ θ(r) \} \,.
+\]
+Let~$s$ be the supremum of~$R$.
+We show in the following, that~$s$ is a fixed point of~$θ$.
+
+We note that
+\[
+	\sup θ(X) ≤ θ( \sup X )
+\]
+for every subset~$X$ of~$P$ because~$θ$ is order-preserving.
+This entails that
+\[
+	s
+	=
+	\sup R
+	=
+	\sup_{r ∈ R} r
+	≤
+	\sup_{r ∈ R} θ(r)
+	=
+	\sup θ(R)
+	≤
+	θ( \sup R )
+	=
+	θ(s) \,.
+\]
+We also note that~$R$ is closed under~$θ$:
+for every element~$r$ of~$R$ we have~$r ≤ θ(r)$, and then also~$θ(r) ≤ θ(θ(r))$ because~$θ$ is order-preserving.
+
+The already-proven inequality~$s ≤ θ(s)$ tells us that~$s$ is itself an element of~$R$.
+We now find that~$θ(s)$ is again contained in~$R$, because~$R$ is closed under~$θ$.
+It follows that also~$θ(s) ≤ \sup R = s$.
+
+
+
+\subsubsection{}
+
+We consider the map
+\[
+	θ
+	\colon
+	\Power(A) \to \Power(A) \,,
+	\quad
+	S \mapsto A ∖ g(B ∖ f(S)) \,.
+\]
+This map is order-preserving:
+it is the composite of the four maps
+\[
+	S \mapsto f(S) \,,
+	\quad
+	T \mapsto B ∖ T \,,
+	\quad
+	U \mapsto g(U) \,,
+	\quad
+	V \mapsto A ∖V \,,
+\]
+the first and third of which are order-preserving, and the second and fourth of which are order-reversing.
+It follows from part~(a) of this exercise that there exists an element~$S$ of~$\Power(A)$ that is a fixed point of~$θ$.
+In other words, there exists a subset~$S$ of~$A$ with
+\[
+	S = A ∖ g(B ∖ f(S)) \,,
+\]
+and therefore equivalently
+\[
+	g(B ∖ f(S)) = A ∖ S \,.
+\]
+
+
+
+\subsubsection{}
+
+Let~$A$ and~$B$ be two sets with~$\card{A} ≤ \card{B}$ and~$\card{B} ≤ \card{A}$.
+This means that there exist injective functions
+\[
+	f \colon A \to B \,,
+	\quad
+	g \colon B \to A \,.
+\]
+
+There exist by the previous part of this exercise a subset~$S$ of~$A$ with
+\begin{equation}
+	\label{formula for cantor bernstein schroeder}
+	g(B ∖ f(S)) = A ∖ S \,.
+\end{equation}
+Let~$T ≔ f(S)$.
+The injection~$f$ restricts to a bijection between the sets~$S$ and~$T$, and formula~\eqref{formula for cantor bernstein schroeder} tells us that the injection~$g$ restricts to a bijection between~$B ∖ T$ and~$A ∖ S$.
+By combining these two bijections, we get a bijection between~$A$ and~$B$.
+
+The existence of this bijection shows that~$\card{A} = \card{B}$.
