@@ -1,5 +1,8 @@
 \usepackage{customtex}
 
+
+
+% general layout options
 \KOMAoptions{
 	twoside = semi,
 	open    = any,
@@ -7,6 +10,9 @@
 	DIV     = 8
 }
 
+
+
+% color of hyperlinks
 \hypersetup{
 	colorlinks = true,
 	linkcolor  = black,
@@ -14,17 +20,23 @@
 	urlcolor   = black
 }
 
-\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
-\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
-\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
 
+
+% settings for numbering of sectioning commands
+% and for their inclusion in the table of contents
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
 
 
 
-% words
+% printing of counters
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{(\alph{subsubsection})}
 
+
+
+% words
 \newcommand{\algebras}[1]{#1\nobreakdash-algebras}
 \newcommand{\bimodule}[2]{#1\nobreakdash-#2\nobreakdash-bimodule}
 \newcommand{\module}[1]{#1\nobreakdash-module}
@@ -37,13 +49,11 @@
 
 
 
-% categories
-
+%%% categories
 % fonts
 \newcommand{\catfont}{\mathbf}
 \newcommand{\genericCatfont}{\mathscr}
-
-% fixes categories
+% fixed categories
 \newcommand{\Ab}{\catfont{Ab}}
 \newcommand{\CAT}{\catfont{CAT}}
 \newcommand{\Cat}{\catfont{Cat}}
@@ -60,10 +70,9 @@
 \newcommand{\Set}{\catfont{Set}}
 \newcommand{\Top}{\catfont{Top}}
 \newcommand{\Toph}{\catfont{Toph}}
-
+% further fixed categories
 \newcommand{\One}{\catfont{1}}
 \newcommand{\Two}{\catfont{2}}
-
 % categories associated to some structure
 \newcommand{\Alg}[1]{#1\text{-}\catfont{Alg}}
 \newcommand{\Fix}{\mathop{\catfont{Fix}}}
@@ -72,14 +81,12 @@
 \newcommand{\Modr}[1]{\catfont{Mod}\text{-}#1}
 \newcommand{\Open}{\mathop{\mathcal{O}}}
 \newcommand{\Vect}[1]{\catfont{Vect}_{#1}}
-
 % for use in the document
 \newcommand{\cat}{\genericCatfont}
 
 
 
 % functors
-
 \DeclareMathOperator{\Coind}{Coind}
 \DeclareMathOperator{\Ind}{Ind}
 \DeclareMathOperator{\Ord}{Ord}
@@ -90,7 +97,6 @@
 
 
 % spaces
-
 \DeclareMathOperator{\fgroup}{\pi}
 \newcommand{\Sphere}{\mathbb{S}}
 \DeclareMathOperator{\symm}{S}
@@ -98,12 +104,11 @@
 
 
 % operators
-
 \DeclareMathOperator{\Ob}{Ob}
 
 
 
-% special functions
+% special functions and elements
 \renewcommand{\id}{1}
 \renewcommand{\Id}{1}
 
@@ -114,5 +119,4 @@
 
 
 % decorations
-
 \newcommand{\adjtranspose}{\overline}
