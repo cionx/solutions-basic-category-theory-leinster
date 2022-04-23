@@ -1,0 +1,58 @@
+\subsection{}
+
+We know from Exercise~2.1.14 that an adjunction between~$F$ and~$G$ (with~$F$ left adjoint to~$G$) can be characterized as a choice of bijection
+\[
+	Φ_{A, B}
+	\colon
+	\cat{A}(A, G(B)) \to \cat{B}(F(A), B) \,,
+	\quad
+	f \mapsto \adjtranspose{f}
+\]
+for every object~$A$ of~$\cat{A}$ and every object~$B$ of~$\cat{B}$, in such a way that for all morphisms
+\[
+	p \colon A' \to A \,,
+	\quad
+	q \colon B \to B'
+\]
+in~$\cat{A}$ and~$\cat{B}$ respectively, we have the identity
+\[
+	\adjtranspose{ \biggl( A' \xto{p} A \xto{f} G(B) \xto{G(q)} G(B') \biggr) }
+	=
+	\biggl( F(A') \xto{F(p)} F(A) \xto{\adjtranspose{f}} B \xto{q} B' \biggr) \,.
+\]
+This identity can equivalently be expressed as the commutativity of the following square diagram:
+\[
+	\begin{tikzcd}[sep = huge]
+		\cat{A}(A, G(B))
+		\arrow{r}[above]{Φ_{A, B}}
+		\arrow{d}[left]{G(q) ∘ (\ph) ∘ p}
+		&
+		\cat{B}(F(A), B)
+		\arrow{d}[right]{q ∘ (\ph) ∘ F(p)}
+		\\
+		\cat{A}(A', G(B'))
+		\arrow{r}[above]{Φ_{A', B'}}
+		&
+		\cat{B}(F(A'), B')
+	\end{tikzcd}
+\]
+We can rewrite this diagram in terms of the two functors~$\cat{A}(\ph, G(\ph))$ and~$\cat{B}(F(\ph), \ph)$ as follows:
+\[
+	\begin{tikzcd}[sep = huge]
+		\cat{A}(\ph, G(\ph))(A, B)
+		\arrow{r}[above]{Φ_{A, B}}
+		\arrow{d}[left]{\cat{A}(\ph, G(\ph))(p, q)}
+		&
+		\cat{B}(F(\ph), \ph)(A, B)
+		\arrow{d}[right]{\cat{B}(F(\ph), \ph)(p, q)}
+		\\
+		\cat{A}(\ph, G(\ph))(A', B')
+		\arrow{r}[above]{Φ_{A', B'}}
+		&
+		\cat{B}(F(\ph), \ph)(A', B')
+	\end{tikzcd}
+\]
+That this diagram commutes for any two morphisms~$p$ and~$q$ as above means precisely that the family~$Φ_{A, B}$, where~$(A, B)$ ranges through the objects of the category~$\cat{A} × \cat{B}$, is a natural transformation from the functor~$\cat{A}(\ph, G(\ph))$ to the functor~$\cat{B}(F(\ph), \ph)$.
+
+We finde overall that an adjunction between~$F$ and~$G$, with~$F$ left adjoint to~$G$, may equivalently be expressed as a natural isomorphism of functors from$\cat{A}(\ph, G(\ph))$ to~$\cat{B}(F(\ph), \ph)$
+This entails that~$F$ is left adjoint to~$G$ if and only if such a natural isomorphism exists, i.e., if and only if these two functors are naturally isomorphic.
