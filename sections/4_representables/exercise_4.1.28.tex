@@ -1,0 +1,69 @@
+\subsection{}
+
+For every group~$G$, the set~$U_p(G)$ may more tactile be expressed at
+\[
+	U_p(G)
+	=
+	\{ g \in G \suchthat g^p = 1 \} \,.
+\]
+We see from this alternative description of~$U_p$ that every homomorphism of groups
+\[
+	φ \colon G \to H
+\]
+restricts to a map from~$U_p(G)$ to~$U_p(H)$.
+We denote this restriction by~$U_p(φ)$.
+This given us the desired functor~$U_p$ from~$\Grp$ to~$\Set$.
+
+Let~$G$ be a group.
+By the homomorphism theorem, any homomorphism of groups~$ψ$ from~$ℤ / pℤ$ to~$G$ corresponds uniquely to a homomorphism of groups~$φ$ from~$ℤ$ to~$G$ with~$pℤ ⊆ \ker(φ)$, via the formula
+\[
+	ψ( \class{n} ) = φ(n)
+	\qquad
+	\text{for all~$n ∈ ℤ$} \,.
+\]
+We already know that homomorphisms from~$ℤ$ to~$G$ correspond to elements of~$G$, with the homomorphism~$φ$ corresponding to the element~$φ(1)$ of~$G$.
+The condition~$pℤ ⊆ \ker(φ)$ is then equivalent to the condition~$φ(1)^p = 1$.
+This means altogether that we have a bijection
+\[
+	α_G
+	\colon
+	\Grp(ℤ / pℤ, G) \to U_p(G) \,,
+	\quad
+	ψ \mapsto ψ(\class{1}) \,.
+\]
+
+This bijection is natural in~$G$:
+the diagram
+\[
+	\begin{tikzcd}[sep = large]
+		\Grp(ℤ / pℤ, G)
+		\arrow{r}[above]{φ_*}
+		\arrow{d}[left]{α_G}
+		&
+		\Grp(ℤ / pℤ, H)
+		\arrow{d}[right]{α_H}
+		\\
+		U_p(G)
+		\arrow{r}[above]{U_p(φ)}
+		&
+		U_p(H)
+	\end{tikzcd}
+\]
+commutes for every homomorphims of groups~$φ$ from~$G$ to~$H$, because we have the chain equalities
+\[
+	α_H( φ_*( ψ ) )
+	=
+	α_H( φ ∘ ψ )
+	=
+	(φ ∘ ψ)( \class{1} )
+	=
+	φ( ψ( \class{1} ) )
+	=
+	φ( α_G( ψ ) )
+	=
+	U_p(φ)( α_G( ψ ) )
+\]
+for every element~$ψ$ of~$\Grp(ℤ / pℤ, G)$.
+
+We have overall constructed a natural isomorphism~$α$ from the represented functor~$\Grp(ℤ / pℤ, -)$ to the functor~$U_p$.
+The existence of such an isomorphism shows that the two functors are isomorphic.
