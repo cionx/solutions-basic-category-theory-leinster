@@ -1,0 +1,80 @@
+\subsection{}
+
+Let~$\Two$ be the category resulting from the partially ordered set~$\{ 0, 1 \}$ with~$0 ≤ 1$.
+We denote the unique non-identity morphism of~$\Two$ by~$i$.
+This category may be depicted as follows:
+\[
+	\begin{tikzcd}
+		0
+		\arrow{r}[above]{i}
+		&
+		1
+	\end{tikzcd}
+\]
+
+Let~$\cat{A}$ be an arbitrary category.
+There exists for every morphism
+\[
+	f \colon A \to A'
+\]
+a unique functor~$F$ from~$\Two$ to~$\cat{A}$ with~$F(i) = f$.
+This functor is given by
+\[
+	F(0) = A \,,
+	\quad
+	F(1) = A' \,,
+	\quad
+	F(\id_0) = \id_A \,,
+	\quad
+	F(\id_1) = \id_{A'} \,,
+	\quad
+	F(i) = f \,.
+\]
+If~$\cat{A}$ is small, then we have therefore a bijection of sets
+\[
+	ε_{\cat{A}}
+	\colon
+	\Cat(\Two, \cat{A}) \to M(\cat{A}) \,,
+	\quad
+	F \mapsto F(i) \,.
+\]
+This bijection is natural in~$\cat{A}$:
+for every functor
+\[
+	G \colon \cat{A} \to \cat{B}
+\]
+between small categories~$\cat{A}$ and~$\cat{B}$, the square diagram
+\[
+	\begin{tikzcd}[sep = large]
+		\Cat(\Two, \cat{A})
+		\arrow{r}[above]{ε_{\cat{A}}}
+		\arrow{d}[left]{G_*}
+		&
+		M(\cat{A})
+		\arrow{d}[right]{G_*}
+		\\
+		\Cat(\Two, \cat{B})
+		\arrow{r}[above]{ε_{\cat{B}}}
+		&
+		M(\cat{B})
+	\end{tikzcd}
+\]
+commutes, because for every element~$F$ of~$\Cat(\Two, \cat{A})$, the resulting diagram of elements commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		F
+		\arrow[mapsto]{r}[above]{ε_{\cat{A}}}
+		\arrow[mapsto]{d}[left]{G_*}
+		&
+		F(i)
+		\arrow[mapsto]{d}[right]{G_*}
+		\\
+		GF
+		\arrow[mapsto]{r}[above]{ε_{\cat{B}}}
+		&
+		GF(i)
+	\end{tikzcd}
+\]
+
+We therefore find that the bijections~$ε_{\cat{A}}$, where~$\cat{A}$ ranges through the class of small categories, assemble into a natural isomorphism~$ε$ from~$\Cat(\Two, \ph)$ to~$M$.
+The existence of such a natural isomorphism shows that the functor~$M$ is represented by the category~$\Two$.
