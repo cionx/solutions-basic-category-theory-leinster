@@ -1,0 +1,107 @@
+\subsection{}
+
+
+We denote the unique object of~$M$ by~$\star$.
+For every functor~$F$ from~$M^{\op}$ to~$\Set$, we denote by~$X(F)$ the resulting right~\set{$M$}.%
+\footnote{
+	In other words, we denote by~$X$ the isomorphism of categories from the functor category~$[M^{\op}, \Set]$ to the category of right~\sets{$M$}.
+}
+
+
+
+\subsubsection{}
+
+Let~$H$ be the unique represented functor from~$M^{\op}$ to~$\Set$.
+This functor is simply~$M(\ph, \star)$ because~$\star$ is the unique object of~$M$.
+
+The underlying set of~$X(H)$ is given by the set
+\[
+	H(\star)
+	=
+	M(\star, \star)
+	=
+	M \,.
+\]
+For every element~$m$ of~$M$, the action of~$m$ on~$X$ is given by the map~$H(m)$, whence
+\[
+	x ⋅ m
+	=
+	H(m)(x)
+	=
+	m^*(x)
+	=
+	x m
+\]
+for every element~$x$ of~$X(H)$.
+
+This shows overall that~$X(H)$ is the right regular~\set{$M$}.
+
+
+
+\subsubsection{}
+
+We denote the forgetful functor from the category of right~\sets{$M$} to the category~$\Set$ by~$U$.
+
+For every \set{$M$}~$Y$ and every element~$y$ of~$U(Y)$, there exists a unique homomorphism of right~\sets{$M$}~$f_y$ from~$M$ to~$Y$ with~$f_y(1) = y$.
+This homomorphism is more explicitly given by
+\[
+	f_y(m) = ym
+\]
+for every element~$m$ of~$M$.
+The map
+\[
+	\{ \text{homomorphisms of right~\sets{$M$}~$\textstyle M \to Y$} \} \to U(Y) \,,
+	\quad
+	g \mapsto g(1)
+\]
+is therefore a bijection.
+
+
+
+\subsubsection{}
+
+Let~$F$ be functor from~$M^{\op}$ to~$\Set$.
+We have on the one hand the bijection
+\begin{align*}
+	\left\{
+		\begin{tabular}{c}
+			natural transformations \\
+			$H \to F$
+		\end{tabular}
+	\right\}
+	&\to
+	\left\{
+		\begin{tabular}{c}
+			homomorphisms of right~\sets{$M$} \\
+			$X(H) \to X(F)$
+		\end{tabular}
+	\right\} \,,
+	\\
+	α &\mapsto α_\star \,.
+\end{align*}
+We have on the other hand the bijection
+\begin{align*}
+	\left\{
+		\begin{tabular}{c}
+			homomorphisms of right~\sets{$M$} \\
+			$X(H) \to X(F)$
+		\end{tabular}
+	\right\}
+	&\to
+	F(\star) \,,
+	\\
+	g &\mapsto g(1) \,,
+\end{align*}
+because~$X(H)$ is the right regular~\set{$M$} and because
+\[
+	U(X(F)) = F(\star) = F(\star) \,.
+\]
+By combining both of these bijections, we end up with the bijection
+\[
+	[M^{\op}, \Set](H, F) \to F(\star) \,,
+	\quad
+	α \mapsto α_\star(1) = α_\star(\id_\star) \,.
+\]
+
+The naturality of this bijection can be checked as in the general proof of the Yoneda~lemma.
+Alernatively, one can check that all of the above bijections were natural to begin with, and then conclude that the final bijection is also natural.
