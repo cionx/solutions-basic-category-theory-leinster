@@ -1,0 +1,247 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let
+\[
+	f \colon A \to A'
+\]
+be a morphism in~$\cat{A}$.
+The induces natural transformation
+\[
+	f_* \colon \HY_A \To \HY_{A'}
+\]
+satisfies
+\[
+	(f_*)_{A}(\id_A)
+	=
+	f ∘ \id_A
+	=
+	f \,.
+\]
+Therefore,~$f$ can be retrieved from its induced natural transformation~$f_*$.
+This tells us that the functor~$\HY_\bullet$ is faithful.
+
+
+
+\subsubsection{}
+
+Let~$A$ and~$A'$ be two objects of~$\cat{A}$, and let~$α$ be a natural transformation from~$\HY_A$ to~$\HY_{A'}$.
+Let~$f$ be the image of~$\id_A$ under the map~$α_A$, i.e., under the map
+\[
+	\cat{A}(A, A)
+	=
+	\HY_A(A)
+	\xto{α_A}
+	\HY_{A'}(A)
+	=
+	\cat{A}(A, A') \,.
+\]
+This entails that~$f$ is a morphism in~$\cat{A}$ from~$A$ to~$A$'.
+
+The naturality of~$α$ tells us that we have for every morphism
+\[
+	g \colon B \to B'
+\]
+in~$\cat{A}$ the following commutative sequare diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		\HY_A(B')
+		\arrow{r}[above]{\HY_A(g)}
+		\arrow{d}[left]{α_{B'}}
+		&
+		\HY_A(B)
+		\arrow{d}[right]{α_B}
+		\\
+		\HY_{A'}(B')
+		\arrow{r}[above]{\HY_{A'}(g)}
+		&
+		\HY_{A'}(B)
+	\end{tikzcd}
+\]
+This diagram may equivalently be written out as follows:
+\[
+	\begin{tikzcd}[sep = large]
+		\cat{A}(B', A)
+		\arrow{r}[above]{g^*}
+		\arrow{d}[left]{α_{B'}}
+		&
+		\cat{A}(B, A)
+		\arrow{d}[right]{α_B}
+		\\
+		\cat{A}(B', A')
+		\arrow{r}[above]{g^*}
+		&
+		\cat{A}(B, A')
+	\end{tikzcd}
+\]
+Let now~$B$ be any object~$\cat{B}$ and let~$g$ be an element of the set~$\HY_A(B)$.
+In light of the equality~$\HY_A(B) = \cat{A}(B, A)$, this means that~$g$ is a morphism from~$B$ to~$A$.
+We have therefore the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		\cat{A}(A, A)
+		\arrow{r}[above]{g^*}
+		\arrow{d}[left]{α_A}
+		&
+		\cat{A}(B, A)
+		\arrow{d}[right]{α_B}
+		\\
+		\cat{A}(A, A')
+		\arrow{r}[above]{g^*}
+		&
+		\cat{A}(B, A')
+	\end{tikzcd}
+\]
+The commutativity of this diagram tells us that
+\[
+	α_B( g )
+	=
+	α_B( g^*( \id_A ))
+	=
+	g^*( α_A( \id_A ) )
+	=
+	g^*( f )
+	=
+	f ∘ g
+	=
+	f_*( g ) \,.
+\]
+This shows that the map
+\[
+	α_B \colon \HY_A(B) \to \HY_{A'}(B)
+\]
+is given by~$f_*$.
+
+We have thus shown that the natural transformations~$α$ and~$f_*$ from~$\HY_A$ to~$\HY_{A'}$ coincide in each component, whence they are equal.
+This shows that each natural transformation from~$\HY_A$ to~$\HY_{A'}$ stems from a morphism from~$A$ to~$A'$, so that the functor~$\HY_{\bullet}$ is full.
+
+
+
+\subsubsection{}
+
+We denote the presheaf category of~$\cat{A}$, i.e., the functor category~$[\cat{A}^{\op}, \Set]$, by~$\cat{A}^+$.
+We refer to the given property of the pair~$(X, u)$ as its \emph{universal property}.
+We might think about it as a universal property \enquote{internal} to~$X$:
+it does not involve any other presheaf, and instead makes a statement about the internal structure of~$X$.
+
+We show in the following that the presheaf~$X$ satisfies the following \enquote{external} universal property:
+\begin{quote}
+	For every presheaf~$Y$ on~$\cat{A}$ and every element~$y$ of the set~$Y(A)$, there exists a unique natural transformation~$α$ from~$X$ to~$Y$ with~$α_A(u) = y$.
+\end{quote}
+
+Suppose first that~$α$ is a natural transformation from~$X$ to~$Y$ with~$α_A(u) = y$.
+For every object~$A'$ of~$\cat{A}$ and every element~$x$ of~$X(A')$, there exists a morphism~$f$ from~$A'$ to~$A$ with~$x = X(f)(u)$y by the universal property of~$(X, u)$.
+It follows from the naturality of~$α$ that
+\[
+	α_{A'}(x)
+	=
+	α_{A'}(X(f)(u))
+	=
+	Y(f)(α_A(u))
+	=
+	Y(f)(y) \,.
+\]
+This shows that the natural transformation~$α$ is already uniquely determined by its single value~$α_A(u)$.
+This proved the claimed uniqueness.
+
+Let now~$y$ be an arbitrary element of~$Y(A)$.
+According to the universal property of~$(X, u)$, every element of~$X(A')$, where~$A'$ is an arbitrary object of~$\cat{A}$, can uniquely be expressed in the form~$X(f)(u)$ for some morphism~$f$ from~$A'$ to~$A$, i.e., some element~$f$ on~$\cat{A}(A', A)$.
+This allows us to define the map
+\[
+	α_{A'}
+	\colon
+	X(A') \to Y(A') \,,
+\]
+via
+\[
+	α_{A'}( X(f)(u) ) ≔ Y(f)(y)
+\]
+for every object~$A'$ of~$\cat{A}$ and every element~$f$ of~$\cat{A}(A', A)$.
+These maps define a natural transformation~$α$ from~$X$ to~$Y$:
+for every morphism
+\[
+	g \colon A'' \to A'
+\]
+in~$\cat{A}$, we have the chain of equalities
+\begin{align*}
+	α_{A''}( X(g)( X(f)(u) ) )
+	&=
+	α_{A''}( X(f ∘ g)(u) )
+	\\
+	&=
+	Y(f ∘ g)(y)
+	\\
+	&=
+	Y(g)( Y(f)(y) )
+	\\
+	&=
+	Y(g)( α_{A'}( X(f)(u) ) )
+\end{align*}
+for every element~$f$ of~$\cat{A}(A', A)$, which shows the required commutativity of the following square diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		X(A')
+		\arrow{r}[above]{X(g)}
+		\arrow{d}[left]{α_{A'}}
+		&
+		X(A'')
+		\arrow{d}[right]{α_{A''}}
+		\\
+		Y(A')
+		\arrow{r}[above]{Y(g)}
+		&
+		Y(A'')
+	\end{tikzcd}
+\]
+
+We have thus proven that the functor~$X$ satisfies the universal property.
+We may rephrase this property by saying that the map
+\[
+	Φ_Y
+	\colon
+	\cat{A}^+(X, Y) \to Y(A) \,,
+	\quad
+	α \mapsto α_A(u)
+\]
+is bijective.
+This bijection is natural in~$Y$.
+Indeed, let~$Y$ and~$Z$ be two presheafes on~$\cat{A}$ and let~$β$ be a natural transformation from~$Y$ to~$Z$.
+The resulting diagram
+\[
+	\begin{tikzcd}[sep = large]
+		\cat{A}^+(X, Y)
+		\arrow{r}[above]{Φ_Y}
+		\arrow{d}[left]{β_*}
+		&
+		Y(A)
+		\arrow{d}[right]{β_A}
+		\\
+		\cat{A}^+(X, Z)
+		\arrow{r}[above]{Φ_Z}
+		&
+		Z(A)
+	\end{tikzcd}
+\]
+commutes because
+\[
+	Φ_Z( β_*( α ) )
+	=
+	Φ_Z( β ∘ α )
+	=
+	(β ∘ α)_A(u)
+	=
+	β_A( α_A( u ) )
+	=
+	β_A( Φ_Y( α ) )
+\]
+for every element~$α$ of~$\cat{A}(X, Y)$.
+
+We have overall seen that the internal universal property of~$X$ results in an external universal property, which in turn tells us that the functor~$\cat{A}^+(X, \ph)$ is naturally isomorphic to the evaluation functor at~$A$.
+
+We now observe that~$(\HY_A, \id_A)$ has the same internal universal property as~$(X, A)$.
+Therefore, the functor~$\cat{A}^+(\HY_A, \ph)$ as also naturally isomorphic to the evaluation functor at~$A$.
+It follows that that two functors~$\cat{A}^+(X, \ph)$ and~$\cat{A}^+(\HY_A, \ph)$ are naturally isomorphic.
+By Lemma~4.3.8, this implies that~$X$ and~$\HY_A$ are isomorphic in~$\cat{A}^+$.
