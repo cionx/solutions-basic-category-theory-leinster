@@ -1,0 +1,83 @@
+\subsection{}
+
+If~$(E, i)$ is an equalizer of~$f$ and~$g$, then the given square diagram is not necessarily a pullback diagram.
+To see this, we consider in the category~$\Set$ the two maps
+\[
+	\id_{ℤ}, s \colon ℤ \to ℤ
+\]
+given by
+\[
+	s(x) = -x
+	\qquad
+	\text{for every~$x ∈ ℤ$.}
+\]
+The equalizer of~$\id_{ℤ}$ and~$ℤ$ is given by the set~$\{ 0 \}$ together with the inclusion map~$i$ from~$\{ 0 \}$ to~$ℤ$.
+But the diagram
+\[
+	\begin{tikzcd}[sep = large]
+		\{ 0 \}
+		\arrow{r}[above]{i}
+		\arrow{d}[left]{i}
+		&
+		ℤ
+		\arrow{d}[right]{s}
+		\\
+		ℤ
+		\arrow{r}[below]{\id}
+		&
+		ℤ
+	\end{tikzcd}
+\]
+is not a pullback diagram:
+the diagram
+\[
+	\begin{tikzcd}[sep = large]
+		ℤ
+		\arrow[bend left = 20]{drr}[above right]{s}
+		\arrow[bend right = 30]{ddr}[below left]{\id_ℤ}
+		&
+		{}
+		&
+		{}
+		\\
+		{}
+		&
+		\{ 0 \}
+		\arrow{r}[above]{i}
+		\arrow{d}[left]{i}
+		&
+		ℤ
+		\arrow{d}[right]{g}
+		\\
+		{}
+		&
+		ℤ
+		\arrow{r}[below]{f}
+		&
+		ℤ
+	\end{tikzcd}
+\]
+commutes, but the unique morphism from~$ℤ$ to~$\{ 0 \}$ destroys this commutativity.
+
+Suppose now that the diagram
+\[
+	\begin{tikzcd}[sep = large]
+		E
+		\arrow{r}[above]{i}
+		\arrow{d}[left]{i}
+		&
+		X
+		\arrow{d}[right]{g}
+		\\
+		X
+		\arrow{r}[below]{f}
+		&
+		Y
+	\end{tikzcd}
+\]
+is a pullback diagram.
+We claim that~$(E, i)$ is an equivalizer of~$f$ and~$g$.
+Indeed, we have~$f ∘ i = g ∘ i$ by the commutativiy of the diagram.
+Let~$A$ be an object of~$\cat{A}$ and let~$j$ be a morphism from~$A$ to~$X$ with~$f ∘ j = g ∘ j$.
+Then there exists by the universal property of the pullback a unique morphism~$h$ from~$A$ to~$E$ with both~$i ∘ h = j$ and~$i ∘ h = j$, i.e., with~$i ∘ h = j$.
+This shows that~$(E, i)$ is indeed an equalizer of~$f$ and~$g$
