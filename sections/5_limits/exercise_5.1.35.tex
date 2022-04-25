@@ -1,0 +1,98 @@
+\subsection{}
+
+We denote the ambient category by~$\cat{A}$, and objects and morphisms in the given diagram as follows:
+\[
+	\begin{tikzcd}[sep = large]
+		E
+		\arrow{r}[above]{j}
+		\arrow{d}[left]{i}
+		&
+		\arrow{r}[above]{l}
+		\arrow{d}[right]{k}
+		F
+		&
+		Y
+		\arrow{d}[right]{h}
+		\\
+		W
+		\arrow{r}[above]{f}
+		&
+		X
+		\arrow{r}[above]{g}
+		&
+		Z
+	\end{tikzcd}
+\]
+We have the following chain of equivalences:
+\begin{align}
+	{}&
+	\text{the left-hand square is a pullback}
+	\notag
+	\\
+	\iff{}&
+	\left\lbrace
+	\begin{tabular}{l}
+		for every object~$A$ of~$\cat{A}$ and all morphisms \\
+		$r \colon A \to W$ and~$s \colon A \to F$ with~$f ∘ r = k ∘ s$, \\
+		there exists a unique morphism~$p$ from~$A$ to~$E$ \\
+		with~$i ∘ p = r$ and~$j ∘ p = s$
+	\end{tabular}
+	\right.
+	\notag
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+	\begin{tabular}{l}
+		for every object~$A$ of~$\cat{A}$ and all morphisms \\
+		$r \colon A \to W$,~$t \colon A \to X$ and~$u \colon A \to Y$ \\
+		with~$g ∘ t = h ∘ u$ and~$f ∘ r = t$, \\
+		there exists a unique morphism~$p$ from~$A$ to~$E$ \\
+		with~$i ∘ p = r$ and~$k ∘ j ∘ p = t$ and~$l ∘ j ∘ p = u$
+	\end{tabular}
+	\right.
+	\label{right hand square is a pullback}
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+	\begin{tabular}{l}
+		for every object~$A$ of~$\cat{A}$ and all morphisms \\
+		$r \colon A \to W$ and~$u \colon A \to Y$ with~$g ∘ f ∘ r = h ∘ u$, \\
+		there exists a unique morphism~$p$ from~$A$ to~$E$ \\
+		with~$i ∘ p = r$ and~$k ∘ j ∘ p = f ∘ r$ and~$l ∘ j ∘ p = u$
+	\end{tabular}
+	\right.
+	\label{eliminating t}
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+	\begin{tabular}{l}
+		for every object~$A$ of~$\cat{A}$ and all morphisms \\
+		$r \colon A \to W$ and~$u \colon A \to Y$ with~$g ∘ f ∘ r = h ∘ u$, \\
+		there exists a unique morphism~$p$ from~$A$ to~$E$ \\
+		with~$i ∘ p = r$ and~$f ∘ i ∘ p = f ∘ r$ and~$l ∘ j ∘ p = u$
+	\end{tabular}
+	\right.
+	\label{using commutativity}
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+	\begin{tabular}{l}
+		for every object~$A$ of~$\cat{A}$ and all morphisms \\
+		$r \colon A \to W$ and~$u \colon A \to Y$ with~$g ∘ f ∘ r = h ∘ u$, \\
+		there exists a unique morphism~$p$ from~$A$ to~$E$ \\
+		with~$i ∘ p = r$ and~$l ∘ j ∘ p = u$
+	\end{tabular}
+	\right.
+	\notag
+	\\
+	\iff{}&
+	\text{the outer rectangle is a pullback} \,.
+	\notag
+\end{align}
+
+We use for the equivalence~\eqref{right hand square is a pullback}, that the right-hand square is a pullback:
+instead of running through all morphisms~$s \colon A \to F$ we can run through all pairs of morphisms~$t \colon A \to X$ and~$u \colon A \to Y$ with~$g ∘ t = h ∘ u$.
+These morphisms~$s$,~$t$ and~$u$ are then related via~$t = k ∘ s$ and~$u = l ∘ s$.
+
+For the equivalence~\eqref{eliminating t} we eliminate~$t$, since it needs to be given by~$f ∘ r$.
+For the equivalence~\eqref{using commutativity} we use the commutativity of the left-hand square to replace~$k ∘ j$ by~$f ∘ i$ in the last of the four lines.
