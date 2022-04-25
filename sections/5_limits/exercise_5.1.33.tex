@@ -1,0 +1,48 @@
+\subsection{}
+
+Instead of the direct sum~$X_1 ⊕ X_2$, we use the product~$X_1 × X_2$.
+Let
+\[
+	p_1 \colon X_1 × X_2 \to X_1 \,,
+	\quad
+	p_2 \colon X_1 × X_2 \to X_2
+\]
+be the canonical projection maps.
+Let~$Y$ be another vector space.
+We know that~$p_1$ and~$p_2$ induce a bijection
+\begin{align*}
+	\{ \text{functions~$\textstyle Y \to X_1 × X_2$} \}
+	&\to
+	\{ \text{functions~$\textstyle Y \to X_1$} \}
+	×
+	\{ \text{functions~$\textstyle Y \to X_2$} \}
+	\\
+	f
+	&\mapsto
+	(p_1 ∘ f, p_2 ∘ f) \,,
+\end{align*}
+where by \enquote{function} we mean a set-theoretic map between the respective underlying sets.
+It therefore suffices to show that a map~$f$ from~$Y$ to~$X_1 × X_2$ is linear if and only if both~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
+
+The projection maps~$p_1$ and~$p_2$ are both linear.
+So if~$f$ is linear, then it follows that the composites~$p_1 ∘ f$ and~$p_2 ∘ f$ are again linear.
+Suppose on the other hand that both~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
+Then
+\begin{align*}
+	p_i(f(y + y'))
+	&=
+	(p_i ∘ f)(y + y')
+	\\
+	&=
+	(p_i ∘ f)(y) + (p_i ∘ f)(y')
+	\\
+	&=
+	p_i(f(y)) + p_i(f(y'))
+	\\
+	&=
+	p_i( f(y) + f(y') )
+\end{align*}
+for both~$i = 1, 2$, and therefore~$f(y + y') = f(y) + f(y')$.
+This shows that the map~$f$ is additive.
+We find similarly that~$f$ is homogeneous.
+This then shows that~$f$ is linear.
