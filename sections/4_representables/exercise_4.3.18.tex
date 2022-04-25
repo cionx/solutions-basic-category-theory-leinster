@@ -1,0 +1,190 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+An object~$G$ of the category~$[\cat{B}, \cat{C}]$ is a functor from~$\cat{B}$ to~$\cat{C}$.
+The functor~$J ∘ (\ph)$ assigns to it the composite functor~$J G$, which is an object of~$[\cat{B}, \cat{D}]$.
+Any morphism~$α$ in~$[\cat{B}, \cat{C}]$ is of the form
+\[
+	α \colon G \to H \,,
+\]
+for some objects~$G$ and~$H$ of~$[\cat{B}, \cat{C}]$.
+This then means that~$α$ is a natural transformation from~$G$ to~$H$.
+The functor~$J ∘ (\ph)$ assigns to it the natural transformation~$J α$ from~$J G$ to~$J H$.
+
+Suppose fist the functor~$J$ is faithful, and let~$α$ and~$β$ be two parallel morphisms in~$[\cat{B}, \cat{C}]$ that have the same image under~$J ∘ (\ph)$.
+In other words,~$α$ and~$β$ are two natural transformations of the form
+\[
+	α, β \colon G \To H
+\]
+for two functors~$G$ and~$H$ from~$\cat{B}$ to~$\cat{C}$, and we have~$J α = J β$.
+This means that for every object~$B$ of~$\cat{B}$, we have the equalities
+\[
+	J( α_B )
+	=
+	(J α)_B
+	=
+	(J β)_B
+	=
+	J( β_B ) \,.
+\]
+It follows that~$α_B = β_B$ for every object~$B$ of~$\cat{B}$ because the functor~$J$ is faithful, and therefore~$α = β$.
+This shows that the induced functor~$J ∘ (\ph)$ is again faithful.
+
+Suppose now that the functor~$J$ is fully faithful.
+Let~$G$ and~$H$ be two objects of~$[\cat{B}, \cat{C}]$, i.e., functors from~$\cat{B}$ to~$\cat{C}$, and let~$β$ be a natural transformation from the resulting functor~$J G$ to the resulting functer~$J H$.
+We claim that there exists a natural transformation~$α$ from~$G$ to~$H$ with~$β = J α$.
+(This natural transformation is then unique since~$J$ is faithful, as seen above.)
+
+For every object~$B$ of~$\cat{B}$, the component~$β_B$ is a morphism from~$J G(B)$ to~$J H(B)$.
+There exists a unique morphism~$α_B$ from~$G(B)$ to~$H(B)$ with~$β_B = J(α_B)$ because the functor~$J$ is fully faithful.
+These morphisms assemble into a transformation~$α$ from~$G$ to~$H$.
+We need to show that this transformation~$α$ is natural.
+We hence need to show that for every morhism
+\[
+	f \colon B \to B'
+\]
+in~$\cat{B}$ the following diagram commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		G(B)
+		\arrow{r}[above]{G(f)}
+		\arrow{d}[left]{α_B}
+		&
+		G(B')
+		\arrow{d}[right]{α_{B'}}
+		\\
+		H(B)
+		\arrow{r}[above]{H(f)}
+		&
+		H(B')
+	\end{tikzcd}
+\]
+By applying the functor~$J$ to this diagram, we get the following diagram
+\[
+	\begin{tikzcd}[sep = large]
+		J G(B)
+		\arrow{r}[above]{J G(f)}
+		\arrow{d}[left]{β_B}
+		&
+		J G(B')
+		\arrow{d}[right]{β_{B'}}
+		\\
+		J H(B)
+		\arrow{r}[above]{J H(f)}
+		&
+		J H(B')
+	\end{tikzcd}
+\]
+We know that this second diagram commutes by the naturality of~$β$.
+It follows that the first diagram also commutes because the functor~$J$ is faitful.
+More explicitly, the commutativity of the second diagram tells us that
+\begin{align*}
+	J( α_{B'} ∘ G(f) )
+	&=
+	J( α_{B'} ) ∘ J G(f)
+	\\
+	&=
+	β_{B'} ∘ J G(f)
+	\\
+	&=
+	J H(f) ∘ β_B
+	\\
+	&=
+	J H (f) ∘ J( α_B )
+	\\
+	&=
+	J( H(f) ∘ α_B ) \,,
+\end{align*}
+from which it follows that
+\[
+	α_{B'} ∘ G(f) = H(f) ∘ α_B
+\]
+because~$J$ is faithful.
+
+We have overall shows that the functor~$J$ is again fully faithful.
+
+%\begin{remark}
+%	The given assertian can also be proven in a less constructive way as follows.
+%
+%	We consider first the case that~$J$ is essentially surjective.
+%	It is then an equivalence of categories from~$\cat{C}$ to~$\cat{D}$.
+%	There hence exists a functor~$K$ from~$\cat{D}$ to~$\cat{C}$ with
+%	\[
+%		K J ≅ \Id_{\cat{C}} \,,
+%		\quad
+%		J K ≅ \Id_{\cat{D}} \,.
+%	\]
+%	It follows for the induced functors
+%	\[
+%		J_* \colon [\cat{B}, \cat{C}] \to [\cat{B}, \cat{D}] \,,
+%		\quad
+%		K_* \colon [\cat{B}, \cat{D}] \to [\cat{B}, \cat{C}]
+%	\]
+%	that again
+%	\[
+%		K_* ∘ J_*
+%		=
+%		(K ∘ (\ph)) ∘ (J ∘ (\ph))
+%		=
+%		(K J) ∘ (\ph)
+%		≅
+%		\Id_{\cat{C}} ∘ (\ph)
+%		=
+%		\Id_{[\cat{B}, \cat{C}]} \,,
+%	\]
+%	and similarly
+%	\[
+%		J_* ∘ K_* ≅ \Id_{[\cat{B}, \cat{D}]} \,.
+%	\]
+%	This shows that the functor~$J_*$ is again an equivalence of categories, and therefore in particular fully faithful.
+%
+%	We the general case, letet~$\cat{C}'$ be the essential image of~$J$.
+%	In other words, let~$\cat{C}'$ be the full subcategory of~$\cat{D}$ consisting of all those objects~$D$ of~$\cat{D}$ for which there exists an object~$C$ of~$\cat{C}$ with~$D ≅ J(C)$.
+%	The functor~$J$ factors as
+%	\[
+%		J = I ∘ J'
+%	\]
+%	where~$J'$ is the restriction of~$J$ to a functor from~$\cat{C}$ to~$\cat{C}'$, and~$I$ is the inclusion functor from~$\cat{C}'$ to~$\cat{C}$.
+%
+%	The functor~$J'$ is again fully faithful, and it is essentially surjective.
+%	It is therefore an equivalence of categories.
+%	We have seen above that the induces functor~$J' ∘ (\ph)$ is therefore again fully faithful.
+%
+%\end{remark}
+
+
+
+\subsubsection{}
+
+The induced functor~$J ∘ (\ph)$ from~$[\cat{B}, \cat{C}]$ to~$[\cat{B}, \cat{D}]$ is again fully faithful, whence the assertion follows from Lemma~4.3.8.
+
+
+
+\subsubsection{}
+
+We have the natural isomorphimsm
+\[
+	\cat{A}(\ph, G(\ph))
+	≅
+	\cat{B}(F(\ph), \ph)
+	≅
+	\cat{A}(\ph, G'(\ph))
+\]
+of functors from~$\cat{A}^{\op} × \cat{B}$ to~$\Set$.
+Let
+\[
+	H \colon \cat{A}^{\op} \to [\cat{A}, \Set]
+\]
+denote the contravariant Yoneda embedding of~$\cat{A}$.
+This functor~$H$ is fully faithful, and we might rephrase the natural isomorphism
+\[
+	\cat{A}(\ph, G(\ph)) ≅ \cat{A}(\ph, G'(\ph))
+\]
+as the isomorphism
+\[
+	H ∘ G ≅ H ∘ G' \,.
+\]
+It follows from part~(b) of this exercise that already~$G ≅ G'$ because~$H$ is fully faithful.
