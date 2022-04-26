@@ -1,0 +1,64 @@
+\subsection{}
+
+The set in question is given by
+\[
+	L
+	=
+	\Biggl\{
+		(x_I)_I
+		∈
+		∏_{I ∈ \Ob(\scat{I})} D(I)
+	\suchthat[\Bigg]
+		\begin{tabular}{@{}l@{}}
+			$D(u)(x_I) = x_J$ for every \\
+			morphism~$u \colon I \to J$ in~$\scat{I}$
+		\end{tabular}
+	\Biggr\}
+\]
+For every object~$I$ of~$\cat{A}$ let~$p_I$ be the projection onto the~\nth{$I$} component from~$L$ to~$D(I)$.
+The elements of~$L$ are choosen precisely in such a way that~$L$ together with the family of maps~$(p_I)_I$ is a cone over the diagram~$D$.
+
+Let~$(A, (f_I)_I)$ be another cone over~$D$.
+We need to show that there exists a unique map~$f$ from~$A$ to~$L$ with~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
+
+Given an element~$a$ of~$A$, the element~$f(a)$ needs to satisfy
+\[
+	p_I( f(a) )
+	=
+	(p_I ∘ f)(a)
+	=
+	f_I(a)
+\]
+for every object~$I$ of~$\scat{I}$.
+This shows that the components of~$f(a)$ are uniquely determined by the functions~$f_I$, whence the value~$f(a)$ is uniquely determined.
+This means overall, that the map~$f$ is unique.
+
+To construct the desired map~$f$, we start with the map
+\[
+	\tilde{f}
+	\colon
+	A \to ∏_{I ∈ \Ob(\scat{I})} D(I) \,,
+	\quad
+	a \mapsto ( f_I(a) )_I \,.
+\]
+For every element~$a$ of~$A$, we have the equalities
+\[
+	D(u)( p_I( \tilde{f}(a) ) )
+	=
+	D(u)( f_I(a) )
+	=
+	f_J(a)
+	=
+	p_J( \tilde{f}(a) )
+\]
+for every morphism
+\[
+	u \colon I \to J
+\]
+in~$\scat{I}$.
+This tells us that the image of~$\tilde{f}$ is already contained in~$L$.
+We can therefore corestrict the map~$\tilde{f}$ to a map
+\[
+	f \colon A \to L \,.
+\]
+This map~$f$ satisfies~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$, because the original map~$\tilde{f}$ satisfies~$p_I ∘ \tilde{f} = f_I$.
