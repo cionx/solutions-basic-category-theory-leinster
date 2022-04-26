@@ -1,0 +1,37 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+The inclusion homomorphism~$i$ from~$ℕ$ to~$ℤ$ is not surjective because the element~$-1$ of~$ℤ$ is not contained in its image.
+
+Let~$M$ be a monoid and let~$f$ be a homomorphism of monoids from~$(ℤ, +, 0)$ to~$M$.
+Every natural number~$n$ is invertible in~$(ℤ, +, 0)$ with inverse given by the negative integer~$-n$.
+It follows that the value~$f(n)$ is invertible in~$M$, with inverse given by~$f(-n)$.
+The value~$f(-n)$ as therefore uniquely determined by the value~$f(n)$.
+
+This shows that the homomorphism~$f$ is uniquely determined by its composite~$f ∘ i$.
+This in turn shows that~$i$ is an epimorphism in the category of monoids.
+
+
+
+\subsubsection{}
+
+The inclusion homomophism~$i$ from~$ℤ$ to~$ℚ$ is not surjective because the element~$1 / 2$ of~$ℚ$ is not contained in its image.
+
+Let~$R$ be a ring and let~$f$ be a homomorphism of rings from~$ℚ$ to~$R$.
+Every non-zero element~$n$ of~$ℤ$ is invertible in~$ℚ$, whence the element~$f(n)$ is invertible in~$R$.
+Every element~$x$ of~$ℚ$ is of the form~$x = p / q$ for some integers~$p$ and~$q$ with~$q$ non-zero.
+It follows that
+\[
+	f(x)
+	=
+	f\biggl( \frac{p}{q} \biggr)
+	=
+	f( p ⋅ q^{-1} )
+	=
+	f(p) f(q)^{-1} \,.
+\]
+This shows that~$f$ is uniquely determined by the values~$f(n)$ with~$n ∈ ℤ$, and is therefore uniquely determined by its composite~$f ∘ i$.
+This shows that~$i$ is an epimorphism.
