@@ -1,0 +1,77 @@
+\subsection{}
+
+We denote the ambient category by~$\cat{A}$.
+
+If~$s = t$, then~$X$ together with the morphism~$\id_X$ is an equalizer of~$s$ and~$t$, which shows in particular that an equalizer of~$s$ and~$t$ exists.
+We also have for every equalizer~$(E, i)$ of~$s$ and~$t$ the chain of equivalences
+\begin{align*}
+	{}&
+	s = t
+	\\
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$ and \\
+			every morphism~$f \colon A \to X$, \\
+			we have~$s ∘ f = t ∘ f$
+		\end{tabular}
+	\right.
+	\\[0.3em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$ and \\
+			every morphism~$f \colon A \to X$, \\
+			there exists a morphism~$g \colon A \to E$ \\
+			with~$f = i ∘ g$
+		\end{tabular}
+	\right.
+	\\[0.3em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$, \\
+			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is surjective
+		\end{tabular}
+	\right.
+	\\[0.3em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$, \\
+			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is bijective
+		\end{tabular}
+	\right.
+	\\[0.3em]
+	\iff{}&
+	\text{$i_* \colon \cat{A}(\ph, E) \to \cat{A}(\ph, X)$ is a natural isomorphism}
+	\\
+	\iff{}&
+	\text{$i$ is an isomorphism} \,.
+\end{align*}
+
+This shows the statement about equalizers.
+The statement about coequalizers follows from the following chain of equivalences:
+\begin{align*}
+	{}&
+	\text{$s = t$ in~$\cat{A}$}
+	\\
+	\iff{}&
+	\text{$s^{\op} = t^{\op}$ in~$\cat{A}^{\op}$}
+	\\
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			$s^{\op}$ and~$t^{\op}$ admit an equalizer in~$\cat{A}^{\op}$, \\
+			which is furthermore an isomorphism
+		\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			$s$ and~$t$ admit a coequalizer in~$\cat{A}$, \\
+			which is furthermore an isomorphism
+		\end{tabular}
+	\right.
+\end{align*}
