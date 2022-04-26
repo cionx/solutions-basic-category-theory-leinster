@@ -1,0 +1,40 @@
+\subsection{}
+
+We denote the ambient category by~$\cat{A}$.
+We have the following chain of equivalences:
+\begin{align*}
+	{}&
+	\text{the given diagram is a pullback diagram}
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$ and \\
+			all morphisms~$r, s \colon A \to X$ with~$f ∘ r = f ∘ s$, \\
+			there exists a unique morphism~$t \colon A \to X$ \\
+			with~$r = \id_A ∘ t$ and~$s = \id_A ∘ t$
+		\end{tabular}
+	\right.
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$ and \\
+			all morphisms~$r, s \colon A \to X$ with~$f ∘ r = f ∘ s$, \\
+			there exists a unique morphism~$t \colon A \to X$ \\
+			with~$r = t$ and~$s = t$
+		\end{tabular}
+	\right.
+	\\[0.5em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$ and \\
+			all morphisms~$r, s \colon A \to X$ with~$f ∘ r = f ∘ s$, \\
+			we have~$r = s$
+		\end{tabular}
+	\right.
+	\\
+	\iff{}&
+	\text{$f$ is monic}
+\end{align*}
