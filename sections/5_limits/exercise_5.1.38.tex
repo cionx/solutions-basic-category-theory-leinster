@@ -1,0 +1,81 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$A$ be an object of~$\cat{A}$.
+
+The object~$L$ together with the morphism~$p$ from~$∏_{I ∈ \Ob(\scat{I})} D(I)$ is an equalizer for the two morphisms~$s$ and~$t$.
+We have therefore a bijection given by
+\begin{equation}
+	\label{first step in general constructions of limits}
+	\cat{A}(A, L)
+	\to
+	\Biggl\{
+		g ∈ \cat{A}\Biggl(A, \prod_{I ∈ \Ob(\scat{I})} D(I)\Biggr)
+	\suchthat[\Bigg]
+		s ∘ g = t ∘ g
+	\Biggr\} \,,
+	\quad
+	f \mapsto p ∘ f \,.
+\end{equation}
+To better understand the right-hand side of this bijection, let~$g$ be a morphism from~$A$ to~$∏_{I ∈ \Ob(\scat{I})} D(I)$, with components~$g_I$ where~$I$ ranges through~$\Ob(\scat{I})$.
+For every morphism
+\[
+	u \colon J \to K
+\]
+in~$\scat{I}$, the~\nth{$u$} component of the composite~$s ∘ g$ is given by~$D(u) ∘ \pr_J ∘ g = D(u) ∘ g_J$, whereas the~\nth{$u$} component of the composite~$t ∘ g$ is given by~$\pr_K ∘ g = g_K$.
+We therefore find that~$s ∘ g = t ∘ g$ if and only if~$D(u) ∘ g_J = g_K$ for every morphism~$u \colon J \to K$ in~$\scat{I}$.
+It follows that the bijection
+\[
+	\cat{A}\Biggl( A, \prod_{I ∈ \Ob(\scat{I})} D(I) \Biggr)
+	\to
+	\prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I)) \,,
+	\quad
+	g \mapsto (\pr_I ∘ g)_I
+\]
+restricts to a bijection between the right-hand side of~\eqref{first step in general constructions of limits} and
+\[
+	\left\{
+		(g_I)_I ∈ \prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
+	\suchthat*
+		\begin{tabular}{@{}l@{}}
+			$D(u) ∘ g_J = g_K$ for every \\
+			morphism~$u \colon J \to K$ in~$\scat{I}$
+		\end{tabular}
+	\right\} \,.
+\]
+By combining these bijections, we arrive at a bijection
+\begin{align*}
+	\cat{A}(A, L)
+	&\to
+	\left\{
+		(g_I)_I ∈ \prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
+	\suchthat*
+		\begin{tabular}{@{}l@{}}
+			$D(u) ∘ g_J = g_K$ for every \\
+			morphism~$u \colon J \to K$ in~$\scat{I}$
+		\end{tabular}
+	\right\} \,,
+	\\
+	g
+	&\mapsto
+	(\pr_I ∘ p ∘ g)_I
+	=
+	(p_I ∘ g)_I \,.
+\end{align*}
+This bijection encapsulates that the object~$L$ together with the given family of morphisms~$(p_I)_I$ is indeed a limit for the given diagram~$D$.
+
+
+
+\subsubsection{}
+
+That~$\cat{A}$ admits both binary products and a terminal object means precisely that~$\cat{A}$ admits all finite products.
+We can therefore form for every finite category~$\scat{I}$ the products
+\[
+	\prod_{I ∈ \Ob(\scat{I})} D(I)
+	\quad\text{and}\quad
+	\prod_{\text{$u \colon J \to K$ in~$\scat{I}$}} D(K) \,.
+\]
+The general construction of limits from part~(a) can therefore be used without change.
