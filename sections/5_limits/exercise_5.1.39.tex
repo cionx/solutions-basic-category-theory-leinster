@@ -1,0 +1,99 @@
+\subsection{}
+
+Let~$\cat{A}$ be a category that admits both pullbacks and a terminal object, which we will denote by~$\ast$.
+
+We observe that~$\cat{A}$ admits binary products, since for any two objects~$X$ and~$Y$ of~$A$, a product of~$X$ and~$Y$ is the same as a pullback of the following diagram:
+\[
+	\begin{tikzcd}[row sep = large]
+		{}
+		&
+		X
+		\arrow{d}
+		\\
+		Y
+		\arrow{r}
+		&
+		\ast
+	\end{tikzcd}
+\]
+It follows that~$\cat{A}$ admits all finite products, since it admits binary products and a terminal object.
+
+\begin{proposition*}
+	\label{equalizers via pushouts}
+	Let~$\cat{A}$ be a category admitting binary products, and let
+	\[
+		f, g \colon X \to Y
+	\]
+	be two parallel morphisms in~$\cat{A}$.
+	An object~$E$ of~$\cat{A}$ together with a morphism~$i$ from~$E$ to~$X$ is an equalizer of~$f$ and~$g$ if and only if the following diagram is a pullback diagram:
+	\[
+		\begin{tikzcd}[sep = large]
+			E
+			\arrow{r}[above]{i}
+			\arrow{d}[left]{i}
+			&
+			X
+			\arrow{d}[right]{(\id_X, g)}
+			\\
+			X
+			\arrow{r}[below]{(\id_X, f)}
+			&
+			X × Y
+		\end{tikzcd}
+	\]
+\end{proposition*}
+
+\begin{proof}
+	We have the following chain of equivalences:
+	\begingroup
+	\allowdisplaybreaks
+	\begin{align*}
+		{}&
+		\text{the above diagram is a pushout diagram}
+		\\[0.5em]
+		\iff{}&
+		\left\lbrace
+			\begin{tabular}{l@{}}
+				for every object~$A$ of~$\cat{A}$ and all morphisms \\
+				$r, s \colon A \to X$ with~$(1_X, f) ∘ r = (1_X, g) ∘ s$, \\
+				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+			\end{tabular}
+		\right.
+		\\[0.5em]
+		\iff{}&
+		\left\lbrace
+			\begin{tabular}{l@{}}
+				for every object~$A$ of~$\cat{A}$ and all morphisms \\
+				$r, s \colon A \to X$ with~$(r, f ∘ r) = (s, g ∘ s)$, \\
+				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+			\end{tabular}
+		\right.
+		\\[0.5em]
+		\iff{}&
+		\left\lbrace
+			\begin{tabular}{l@{}}
+				for every object~$A$ of~$\cat{A}$ and all morphisms \\
+				$r, s \colon A \to X$ with~$r = s$ and~$f ∘ r = g ∘ s$, \\
+				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+			\end{tabular}
+		\right.
+		\\[0.5em]
+		\iff{}&
+		\left\lbrace
+			\begin{tabular}{l@{}}
+				for every object~$A$ of~$\cat{A}$ and every morphism \\
+				$t \colon A \to X$ with~$f ∘ t = g ∘ t$, \\
+				there exists a unique morphism~$h \colon A \to E$ with~$t = i ∘ h$
+			\end{tabular}
+		\right.
+		\\[0.5em]
+		\iff{}&
+		\text{$E$ together with~$i$ is an equalizer for~$f$ and~$g$} \,,
+	\end{align*}
+	\endgroup
+	This proves the assertion.
+\end{proof}
+
+It follows from the above proposition that the category~$\cat{A}$ admits equalizers, since it admits both binary products and pullbacks.
+We have overall seen that~$\cat{A}$ admits finite products and equalizers.
+It follows from Proposition 5.1.26,~(b) that~$\cat{A}$ admits all finite limits.
