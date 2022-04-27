@@ -1,0 +1,110 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+For every morphism in~$\Set$ of the form
+\[
+	e \colon A \to X \,,
+\]
+the equivalence relation~$∼$ on~$A$ induced by~$e$ is given by
+\[
+	a ∼ a'
+	\iff
+	e(a) = e(a') \,.
+\]
+
+Let~$(X, e)$ and~$(X', e')$ be two objects in~$\Epic(A)$, and suppose that there exists a morphism~$f$ from~$(X, e)$ to~$(X', e')$ in~$\Epic(A)$.
+This means that~$f$ is a morphism from~$X$ to~$X'$ in~$\Set$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}[row sep = large]
+		{}
+		&
+		A
+		\arrow{dl}[above left]{e}
+		\arrow{dr}[above right]{e'}
+		&
+		{}
+		\\
+		X
+		\arrow{rr}[above]{f}
+		&
+		{}
+		&
+		X'
+	\end{tikzcd}
+\]
+It follows for any two elements~$a$ and~$a'$ of~$A$, that
+\[
+	e(a) = e(a')
+	\implies
+	f(e(a)) = f(e(a'))
+	\implies
+	e'(a) = e'(a') \,.
+\]
+It follows that two isomorphic objects of~$\Epic(A)$ induce the same equivalence relation on~$X$.
+
+Let
+\[
+	e \colon A \to X
+\]
+be an epimorphism in~$\Set$.
+This means that~$e$ is a surjective map from~$A$ to~$X$.
+It follows for the equivalence relation~$∼$ induced by~$e$ that~$e$ factors through a bijection
+\[
+	\induced{e}
+	\colon
+	A / {∼} \to X \,,
+	\quad
+	\class{a} \mapsto e(a) \,.
+\]
+This induces bijection makes the diagram
+\[
+	\begin{tikzcd}[row sep = large]
+		{}
+		&
+		A
+		\arrow{dl}[above left]{p_{∼}}
+		\arrow{dr}[above right]{e}
+		&
+		{}
+		\\
+		A / {∼}
+		\arrow{rr}[above]{\induced{e}}
+		&
+		{}
+		&
+		X
+	\end{tikzcd}
+\]
+commute, where~$p_{∼}$ denotes the canonical quotient map from~$A$ to~$A / {∼}$.
+The commutativity of this diagram means that~$\induced{e}$ is a morphism from~$(A / {∼}, p_{∼})$ to~$(X, e)$ in~$\Epic(A)$.
+It follows that the inverse map to~$\induced{e}$ is a morphism from~$(X, e)$ to~$(A / {∼}, p_{∼})$ in~$\Epic(A)$, whence it further follows that~$\induced{e}$ is an isomorphism in~$\Epic(A)$.
+
+We have now seen that every object of~$\Epic(A)$ is isomorphic to an object of the form~$(A / {∼}, p_{∼})$ where~$∼$ is some equivalence relation on~$A$ and~$p_{∼}$ is the canonical quotient map from~$A$ to~$A / {∼}$.
+
+We have also seen that any two isomorphic objects of~$\Epic(A)$ induce the same equivalence relation.
+The equivalence relation induces by~$(A / {∼}, p_{∼})$ is just~$∼$ itself.
+We therefore find that the objects~$(A / {∼}, p_{∼})$, where~$∼$ ranges through the equivalence relations on~$A$, are pairwise non-isomorphic in~$\Epic(A)$.
+
+This shows altogether that these objects~$(A / {∼}, p_{∼})$ form a set of representatives for the isomorphism classes of objects of~$\Epic(A)$.
+
+
+
+\subsubsection{}
+
+For every homomorphism of groups
+\[
+	e \colon G \to H \,,
+\]
+its kernel is a normal subgroup of~$G$.
+Suppose that
+\[
+	e \colon G \to H \,,
+	\quad
+	e' \colon G \to H'
+\]
+are two epimorphisms of groups and that~$f$ is a morphism from~$(H, e)$ to~$(H', e')$.
+Then~$f ∘ e = e'$ and therefore~$\ker(e) ⊆ \ker(e')$.
+We can therefore proceed in the same way as in part~(a) to see that a class of representatives for the isomorphism classes of~$\Epic(A)$ is given by the objects~$(G / N, p_N)$, where~$N$ ranges through the normal subgroups of~$G$ and~$p_N$ denotes the canonical quotient map from~$G$ to~$G / N$.
