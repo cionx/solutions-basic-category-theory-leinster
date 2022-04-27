@@ -1,0 +1,214 @@
+\subsection{}
+
+We denote the desired functor by~$P$.
+We need no explain the action of~$P$ on morphism and then check the functoriality of this action.
+
+Let
+\[
+	(f, g) \colon (X, Y) \to (X', Y')
+\]
+be a morphism in~$\cat{A} × \cat{A}$.
+There exists by the universal property of the product a unique morphism~$f × g$ from~$X × Y$ to~$X' × Y'$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}[sep = large]
+		{}
+		&
+		X × Y
+		\arrow[dashed]{dd}[right]{f × g}
+		\arrow{dl}[above left]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_1^{X, Y}}
+		&
+		{}
+		\\
+		X
+		\arrow{dd}[left]{f}
+		&
+		{}
+		&
+		Y
+		\arrow{dd}[right]{g}
+		\\
+		{}
+		&
+		X' × Y'
+		\arrow{dl}[near start, above left]{p_1^{X', Y'}}
+		\arrow{dr}[near start, above right]{p_2^{X', Y'}}
+		&
+		{}
+		\\
+		X'
+		&
+		{}
+		&
+		Y'
+	\end{tikzcd}
+\]
+We let~$P(f, g)$ be this morphism~$f × g$.
+
+We have for every object~$(X, Y)$ of~$\cat{A} × \cat{A}$ the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		{}
+		&
+		X × Y
+		\arrow{dd}[right]{\id_X × \id_Y}
+		\arrow{dl}[above left]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_1^{X, Y}}
+		&
+		{}
+		\\
+		X
+		\arrow{dd}[left]{\id_X}
+		&
+		{}
+		&
+		Y
+		\arrow{dd}[right]{\id_Y}
+		\\
+		{}
+		&
+		X × Y
+		\arrow{dl}[near start, above left]{p_1^{X, Y}}
+		\arrow{dr}[near start, above right]{p_2^{X, Y}}
+		&
+		{}
+		\\
+		X
+		&
+		{}
+		&
+		Y
+	\end{tikzcd}
+\]
+The commutativity of this diagram tells us that the morphism~$\id_{X × Y}$ satisfies the defining property of the morphism~$\id_X × \id_Y$, whence
+\[
+	\id_X × \id_Y = \id_{X × Y} \,.
+\]
+It follows that
+\[
+	P(\id_{(X, Y)})
+	=
+	P(\id_X, \id_Y)
+	=
+	\id_X × \id_Y
+	=
+	\id_{X × Y}
+	=
+	\id_{P(X, Y)} \,.
+\]
+
+Let now
+\[
+	(f, g) \colon (X, Y) \to (X', Y') \,,
+	\quad
+	(f', g') \colon (X', Y') \to (X'', Y'') \,.
+\]
+be two composable morphisms in~$\cat{A} × \cat{A}$.
+We have the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		{}
+		&
+		X × Y
+		\arrow{dd}[right]{f × g}
+		\arrow{dl}[above left]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_1^{X, Y}}
+		&
+		{}
+		\\
+		X
+		\arrow{dd}[left]{f}
+		&
+		{}
+		&
+		Y
+		\arrow{dd}[right]{g}
+		\\
+		{}
+		&
+		X' × Y'
+		\arrow{dl}[near start, above left]{p_1^{X', Y'}}
+		\arrow{dr}[near start, above right]{p_2^{X', Y'}}
+		\arrow{dd}[right]{f' × g'}
+		&
+		{}
+		\\
+		X'
+		\arrow{dd}[left]{f'}
+		&
+		{}
+		&
+		Y'
+		\arrow{dd}[right]{g'}
+		\\
+		{}
+		&
+		X'' × Y''
+		\arrow{dl}[near start, above left]{p_1^{X'', Y''}}
+		\arrow{dr}[near start, above right]{p_2^{X'', Y''}}
+		&
+		{}
+		\\
+		X''
+		&
+		{}
+		&
+		Y''
+	\end{tikzcd}
+\]
+By leaving out the middle part of this diagram, we get the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large, column sep = huge]
+		{}
+		&
+		X × Y
+		\arrow{dd}[pos = 0.65, right]{(f' × g') ∘ (f × g)}
+		\arrow{dl}[above left]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_1^{X, Y}}
+		&
+		{}
+		\\
+		X
+		\arrow{dd}[left]{f' ∘ f}
+		&
+		{}
+		&
+		Y
+		\arrow{dd}[right]{g' ∘ g}
+		\\
+		{}
+		&
+		X'' × Y''
+		\arrow{dl}[near start, above left]{p_1^{X'', Y''}}
+		\arrow{dr}[near start, above right]{p_2^{X'', Y''}}
+		&
+		{}
+		\\
+		X''
+		&
+		{}
+		&
+		Y''
+	\end{tikzcd}
+\]
+The commutativity of this diagram shows that the composite~$(f' × g') ∘ (f × g)$ satisfies the defining property of~$(f' ∘ f) × (g' ∘ g)$, whence
+\[
+	(f' × g') ∘ (f × g) = (f' ∘ f) × (g' ∘ g) \,.
+\]
+It follows that
+\begin{align*}
+	P(f', g') ∘ P(f, g)
+	&=
+	(f' × g') ∘ (f × g)
+	\\
+	&=
+	(f' ∘ f) × (g' ∘ g)
+	\\
+	&=
+	P(f' ∘ f, g' ∘ g)
+	\\
+	&=
+	P( (f', g') ∘ (f, g) ) \,.
+\end{align*}
+
+We have thus constructed a functor~$P$ from~$\cat{A} × \cat{A}$ given by~$P(X, Y) = X × Y$ for every object~$(X, Y)$ of~$\cat{A} × \cat{A}$ and~$P(f, g) = f × g$ for every morphism~$(f, g)$ in~$\cat{A} × \cat{A}$.
