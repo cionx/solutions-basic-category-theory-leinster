@@ -34,7 +34,7 @@ It follows that~$α_B = β_B$ for every object~$B$ of~$\cat{B}$ because the func
 This shows that the induced functor~$J ∘ (\ph)$ is again faithful.
 
 Suppose now that the functor~$J$ is fully faithful.
-Let~$G$ and~$H$ be two objects of~$[\cat{B}, \cat{C}]$, i.e., functors from~$\cat{B}$ to~$\cat{C}$, and let~$β$ be a natural transformation from the resulting functor~$J G$ to the resulting functer~$J H$.
+Let~$G$ and~$H$ be two objects of~$[\cat{B}, \cat{C}]$, i.e., functors from~$\cat{B}$ to~$\cat{C}$, and let~$β$ be a natural transformation from the resulting functor~$J G$ to the resulting functor~$J H$.
 We claim that there exists a natural transformation~$α$ from~$G$ to~$H$ with~$β = J α$.
 (This natural transformation is then unique since~$J$ is faithful, as seen above.)
 
@@ -42,7 +42,7 @@ For every object~$B$ of~$\cat{B}$, the component~$β_B$ is a morphism from~$J G(
 There exists a unique morphism~$α_B$ from~$G(B)$ to~$H(B)$ with~$β_B = J(α_B)$ because the functor~$J$ is fully faithful.
 These morphisms assemble into a transformation~$α$ from~$G$ to~$H$.
 We need to show that this transformation~$α$ is natural.
-We hence need to show that for every morhism
+We hence need to show that for every morphism
 \[
 	f \colon B \to B'
 \]
@@ -79,7 +79,7 @@ By applying the functor~$J$ to this diagram, we get the following diagram
 	\end{tikzcd}
 \]
 We know that this second diagram commutes by the naturality of~$β$.
-It follows that the first diagram also commutes because the functor~$J$ is faitful.
+It follows that the first diagram also commutes because the functor~$J$ is faithful.
 More explicitly, the commutativity of the second diagram tells us that
 \begin{align*}
 	J( α_{B'} ∘ G(f) )
@@ -165,7 +165,7 @@ The induced functor~$J ∘ (\ph)$ from~$[\cat{B}, \cat{C}]$ to~$[\cat{B}, \cat{D
 
 \subsubsection{}
 
-We have the natural isomorphimsm
+We have the natural isomorphism
 \[
 	\cat{A}(\ph, G(\ph))
 	≅

@@ -3,7 +3,7 @@
 Let~$\cat{A}$ be a discrete category.
 
 A presheaf on~$\cat{A}$ amounts to a family of sets, indexed by the objects of~$\cat{A}$.
-Given two presheafes~$X$ and~$Y$ on~$\cat{A}$ with corresponding families of sets~$(X_A)_A$ and~$(Y_A)_A$, a natural transformation~$α$ from~$X$ to~$Y$ is simply a family~$(α_A)_A$ consisting of functons~$α_A$ from~$X_A$ to~$Y_A$ for every object~$A$ of~$\cat{A}$.
+Given two presheaves~$X$ and~$Y$ on~$\cat{A}$ with corresponding families of sets~$(X_A)_A$ and~$(Y_A)_A$, a natural transformation~$α$ from~$X$ to~$Y$ is simply a family~$(α_A)_A$ consisting of functions~$α_A$ from~$X_A$ to~$Y_A$ for every object~$A$ of~$\cat{A}$.
 The preasheaf category~$[\cat{A}^{\op}, \Set]$ is thus isomorphic to the product category~$∏_{A ∈ \Ob(\cat{A})} \Set$.
 
 For every object~$A$ of~$\cat{A}$, the resulting represented presheaf~$\HY_A$ is corresponds to the family of sets~$(H_{A'})_{A'}$ for which each set~$H_{A'}$ with~$A' ≠ A$ is empty, and the set~$H_A$ is only a singleton.
@@ -50,7 +50,7 @@ This given us Yoneda’s lemma in the special case of discrete categories.
 
 Under the above isomorphism between~$[\cat{A}^{\op}, \Set]$ and~$∏_{A ∈ \Ob(\cat{A})} \Set$, the evaluation functor at an object~$A$ of~$\cat{A}$ corresponds to the projection onto the~\nth{$A$} coordinate.
 
-We see that for any two distinct objects~$A$ and~$A'$ of~$\cat{A}$, there exist no natural transformations beween the associated presheaves~$\HY_A$ and~$\HY_{A'}$, just as there exist no morphisms between~$A$ and~$A'$.
+We see that for any two distinct objects~$A$ and~$A'$ of~$\cat{A}$, there exist no natural transformations between the associated presheaves~$\HY_A$ and~$\HY_{A'}$, just as there exist no morphisms between~$A$ and~$A'$.
 If however~$A = A'$, then there exists precise one natural transformation from~$\HY_A$ to~$\HY_{A'}$, namely the identity natural transformation.
 Similarly, there exists precisely one morphism from~$A$ to~$A'$ in~$\cat{A}$, namely the identity morphism.
 We see from these observations that the Yoneda embedding of~$\cat{A}$ into~$[\cat{A}^{\op}, \Set]$ is fully faithful.

@@ -14,10 +14,10 @@ We define a functor~$F$ from~$\Par$ to~$\Set_*$ as follows.
 		For every set~$X$, let~$F(X)$ be the pointed set that arises from~$X$ by adjoining a base point~$x_0$.
 		(More explicitly:
 		let~$x_0$ be an element not contained in~$X$, and then let~$F(X)$ be the pointed set~$(X ∪ \{ x_0 \}, x_0)$.
-		From a set-theoretic perspective, this element~$x_0$ may be choosen to be the set~$X$ itself, since no set can be an element of itself.)
+		From a set-theoretic perspective, this element~$x_0$ may be chosen to be the set~$X$ itself, since no set can be an element of itself.)
 
 	\item
-		For every two sets~$X$ and~$Y$, and every partially defined function~$(S, f)$ from~$X$ to~$Y$, let~$F( (S, f) )$ be the pointed map from~$F(X)$ to~$F(Y)$ given by
+		For every two sets~$X$ and~$Y$ and every partially defined function~$(S, f)$ from~$X$ to~$Y$, let~$F( (S, f) )$ be the pointed map from~$F(X)$ to~$F(Y)$ given by
 		\[
 			F( (S, f) )
 			\colon
@@ -28,6 +28,7 @@ We define a functor~$F$ from~$\Par$ to~$\Set_*$ as follows.
 				y_0  & otherwise.\footnotemark
 			\end{cases*}
 		\]
+
 		\footnotetext{
 			One might think about the newly added base point~$y_0$ of~$Y$ as the value~\enquote{$\mathtt{undefined}$}.
 			The map~$F( (S, f) )$ is then an extension of the partially defined function~$(S, f)$ to a map
@@ -36,7 +37,7 @@ We define a functor~$F$ from~$\Par$ to~$\Set_*$ as follows.
 				\to
 				Y ∪ \{ \mathtt{undefined} \}
 			\]
-			that maps all input values outside of~$S$ to~$\mathtt{undefined}$.
+			that maps all input values outside~$S$ to~$\mathtt{undefined}$.
 		}
 
 \end{itemize}
@@ -70,7 +71,7 @@ These assignments define a functor from~$\Par$ to~$\Set_*$:
 			\item
 				Let~$x$ be an element of~$X$ that is contained in the domain~$S$ of~$f$, but not in the preimage~$f^{-1}(T)$.
 				This element~$x$ is first mapped to the point~$f(x)$ in~$Y$ by~$F( (S, f) )$.
-				This element~$f(x)$ lies outside of~$T$, whence it it then further mapped to the base point~$z_0$ of~$Z$ by~$F( (T, g) )$.
+				This element~$f(x)$ lies outside~$T$, whence it then further mapped to the base point~$z_0$ of~$Z$ by~$F( (T, g) )$.
 
 			\item
 				Let~$x$ be an element of~$X$ that is not only contained in~$S$, but already in the preimage~$f^{-1}(T)$.
@@ -166,7 +167,7 @@ We do so by constructing natural isomorphisms
 \]
 
 We observe first that~$G F = \Id_{\Par}$.
-We can therefore choose~$α$ as the identity natural transformation.
+This allows us to choose~$α$ as the identity natural transformation.
 
 To construct the natural isomorphism~$β$, let~$(X, x_0)$ be a pointed set.
 The pointed set~$FG( (X, x_0) )$ is given by
