@@ -1,0 +1,173 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$S$ be an arbitrary set.
+We have
+\[
+	\cat{B}(F(S), \ph)
+	≅
+	\Set(S, G(\ph))
+	≅
+	\Set(S, \ph) ∘ G \,.
+\]
+The functor~$G$ preserves epimorphisms by assumption, so it suffices to show that the functor~$\Set(S, \ph)$ epimorphisms.
+But the axiom of choice asserts that every epimorphism in~$\Set$ is a split epimorphism, and every functor preserves split epimorphisms.
+(The assertion that~$\Set(S, \ph)$ preserves epimorphisms for every set~$S$, i.e., that every object of~$\Set$ is projective, is in fact equivalent to the axiom of choice.)
+
+
+
+\subsubsection{}
+
+The epimorphisms in~$\Ab$ are precisely the surjective homomorphism.
+If~$P$ is a projective object of~$\Ab$, then it thus follows that for every surjective homomorphism of abelian groups
+\[
+	f \colon A \to B \,,
+\]
+the induced map
+\[
+	f_* \colon \Ab(P, A) \to \Ab(P, B)
+\]
+is again surjective.
+We consider now the group~$P = ℤ / 2$ and the surjective homomorphism of abelian groups
+\[
+	f
+	\colon
+	ℤ \to ℤ / 2 \,,
+	\quad
+	x \mapsto \class{x} \,.
+\]
+The induced map
+\[
+	f_* \colon \Ab(ℤ / 2, ℤ) \to \Ab(ℤ / 2, ℤ / 2)
+\]
+is not surjective because its domain contains only a single element (namely the zero homomorphism) while its codomain contains to elements (the zero homomorphism and the identity homomorphism).
+
+\begin{remark}
+	It is a well-know fact from algebra that in a module category~$\Mod{R}$, where~$R$ is some ring, the following conditions on an object~$P$ are equivalent:
+	\begin{equivalenceslist}
+
+		\item
+			$P$ is projective in~$\Mod{R}$.
+
+		\item
+			For every epimorphism of~\modules{$R$}
+			\[
+				p \colon A \to B
+			\]
+			and every homomorphism of~\modules{$R$}~$f$ from~$P$ to~$B$, there exists a homomorphism of~\modules{$R$}~$g$ from~$P$ to~$A$ with~$f = p ∘ g$, i.e., such that the following diagram commutes:
+			\[
+				\begin{tikzcd}[sep = large]
+					{}
+					&
+					P
+					\arrow{d}[right]{f}
+					\arrow[dashed]{dl}[above left]{g}
+					\\
+					A
+					\arrow{r}[above]{p}
+					&
+					B
+				\end{tikzcd}
+			\]
+
+		\item
+			Every epimorphism of~\modules{$R$} with codomain~$P$ splits.
+
+		\item
+			Every short exact sequence ending in~$P$ splits.
+
+		\item
+			$P$ is (isomorphic to) a direct summand of a free~\module{$R$}.
+
+	\end{equivalenceslist}
+\end{remark}
+
+
+
+\subsubsection{}
+
+More explicitly, an object~$I$ of a category~$\cat{B}$ is injective if and only if the contravariant functor~$\cat{B}(\ph, I)$ turns monomorphisms (in~$\cat{B}$) into epimorphisms (in~$\Set$).
+Even more explicitly:
+for every monomorphism
+\[
+	m \colon A \to A'
+\]
+in~$\cat{B}$, every morphism~$f$ from~$A$ to~$I$ extends to a morphism~$g$ from~$A'$ to~$I$, in the sense that~$g' ∘ m = f$, i.e., in the sense that the following diagram commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		{}
+		&
+		I
+		\\
+		A
+		\arrow{ur}[above left]{f}
+		\arrow{r}[above]{m}
+		&
+		A'
+		\arrow[dashed]{u}[right]{g}
+	\end{tikzcd}
+\]
+
+Let~$W$ be an arbitrary~\vectorspace{$𝕜$} and let
+\[
+	m \colon U \to V
+\]
+be a monomorphism of~\vectorspaces{$𝕜$}.
+This means that~$m$ is an injective,~\linear{$𝕜$} map from~$U$ to~$V$.
+Thanks to the axiom of choice, there exists a linear subspace~$V'$ of~$V$ with
+\[
+	V = \im(m) ⊕ V' \,.
+\]
+It follows that there exists a linear map~$e$ from~$V$ to~$U$ with~$e ∘ m = \id_U$:
+it is given by
+\[
+	e( m(u) + v' ) = u
+\]
+for all elements~$u$ and~$v'$ of~$U$ and~$V'$ respectively.
+It follows for every linear map~$f$ from~$U$ to~$W$ that the composite~$g ≔ f ∘ e$ is a linear map from~$V$ to~$W$ with
+\[
+	g ∘ m
+	=
+	f ∘ e ∘ m
+	=
+	f ∘ \id_U
+	=
+	f \,.
+\]
+We have thus proven that~$W$ is injective.
+
+Let now~$i$ be the inclusion map from~$2ℤ$ to~$ℤ$, and let
+\[
+	f
+	\colon
+	2ℤ \to ℤ \,,
+	\quad
+	ℤ \,,
+	\quad
+	n \mapsto \frac{n}{2} \,.
+\]
+There exists no homomorphism of groups~$g$ from~$ℤ$ to~$ℤ$ with~$g ∘ i = f$ because~$g(1)$ would need to be an element of~$ℤ$ with
+\[
+	2 g(1)
+	=
+	g(2)
+	=
+	g(i(2))
+	=
+	f(2)
+	=
+	\frac{2}{2}
+	=
+	1 \,,
+\]
+and such an element does not exist.
+Therefore,~$ℤ$ is not injective as an object of~$\Ab$.
+
+\begin{remark}
+	Baer’s criterion asserts that an~\module{$R$}~$I$ is injective if and only if for every ideal~$J$ of~$R$, every homomorphism of~\modules{$R$} from~$J$ to~$I$ extends to a homomorphism of~\modules{$R$} from~$R$ to~$I$.
+
+	If~$R$ is a principal ideal domain, then this means that an~\module{$R$} is injective if and only if it is divisible.
+\end{remark}
