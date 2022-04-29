@@ -1,0 +1,30 @@
+\subsection{}
+
+The category of diagrams of shape~$\scat{I}$ in~$\cat{A}$ -- i.e., the functor category~$[\scat{I}, \cat{A}]$ -- is isomorphic to the product category~$\cat{A} × \cat{A}$.
+For every object~$A$ of~$\cat{A}$, the object of~$\cat{A} × \cat{A}$ corresponding to the constant functor~$Δ(A)$ is the pair~$(A, A)$.
+
+A cone of an object~$(A, B)$ of~$\cat{A} × \cat{A}$ is an object~$Q$ of~$\cat{A}$ together with two morphisms
+\[
+	q_1 \colon Q \to A \,,
+	\quad
+	q_2 \colon Q \to B \,.
+\]
+A limit cone is thus an object~$P$ of~$\cat{A}$ together with two morphisms
+\[
+	p_1 \colon P \to A \,,
+	\quad
+	p_2 \colon P \to B
+\]
+such that for every other cone~$(Q, q_1, q_2)$ as above, there exists a unique morphism~$f$ from~$Q$ to~$P$ with~$p_1 ∘ f = q_1$ and~$p_2 ∘ f = q_2$.
+In other words,~$(P, p_1, p_2)$ is precisely a product of~$A$ and~$B$.
+
+Proposition~6.1.4 gives us the functoriality of the product~$(\ph) × (\ph)$ from Exercise~5.3.8
+It also tells us that this product functor
+\[
+	(\ph) × (\ph) \colon \cat{A} × \cat{A} \to \cat{A}
+\]
+is right adjoint to the diagonal functor
+\[
+	Δ \colon \cat{A} \to \cat{A} × \cat{A} \,.
+\]
+(We had already seen this for~$\cat{A} = \Set$ as part of Exercise~3.1.1.)
