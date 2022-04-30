@@ -1,0 +1,109 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+It follows from Corollary~6.2.6 that the functor category~$[\scat{A}, \cat{S}]$ also has pullbacks.
+We know from Lemma~5.1.32 that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ if and only if the diagram
+\begin{equation}
+	\label{pullback in functor category}
+	\begin{tikzcd}[sep = large]
+		X
+		\arrow{r}[above]{\id_X}
+		\arrow{d}[left]{\id_X}
+		&
+		X
+		\arrow{d}[right]{α}
+		\\
+		X
+		\arrow{r}[below]{α}
+		&
+		Y
+	\end{tikzcd}
+\end{equation}
+is a pullback diagram in~$[\scat{A}, \cat{S}]$.
+It follows from Corollary~6.2.6 that if the above diagram is a pullback diagram, then for every object~$A$ of~$\scat{A}$, the resulting diagram
+\begin{equation}
+	\label{pullback in target category}
+	\begin{tikzcd}[sep = large]
+		X(A)
+		\arrow{r}[above]{\id_{X(A)}}
+		\arrow{d}[left]{\id_{X(A)}}
+		&
+		X(A)
+		\arrow{d}[right]{α_A}
+		\\
+		X(A)
+		\arrow{r}[below]{α_A}
+		&
+		Y(A)
+	\end{tikzcd}
+\end{equation}
+is a pullback diagram in~$\cat{S}$.
+The converse is also true, by Theorem~6.2.5.
+Therefore, the diagram~\eqref{pullback in functor category} is a pullback diagram in~$[\scat{A}, \cat{S}]$ if and only if for every object~$A$ in~$\scat{A}$, the diagram~\eqref{pullback in target category} is a pullback diagram in~$\cat{S}$.
+This means by Lemma~5.1.32 that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ if and only if for each object~$A$ of~$\scat{A}$, its component~$α_A$ is a monomorphism in~$\cat{S}$.
+
+
+
+\subsubsection{}
+
+We know that the monomorphisms in~$\Set$ are precisely the injective functions.
+It follows from the previous part of this exercise that the monomorphisms in the functor category~$[\scat{A}^{\op}, \Set]$ are precisely those natural transformations that are injective in each component.
+
+We find similarly from the dual of part~(a) that the epimorphisms in~$[\scat{A}^{\op}, \Set]$ are precisely those natural transformations that are surjective in each component.
+
+
+
+\subsubsection{}
+
+
+\subsubsection*{Monomorphisms}
+
+Suppose first that for every object~$A$ of~$\scat{A}$, the morphism~$α_A$ is a monomorphism in~$\cat{S}$.
+Let
+\[
+	β, β' \colon W \to X
+\]
+be two morphisms in~$[\scat{A}, \cat{S}]$ with~$α ∘ β = α ∘ β'$.
+In other words,~$β$ and~$β'$ are two natural transformations with~$α ∘ β = α ∘ β'$.
+This means that for every object~$A$ of~$\scat{A}$, we have the chain of equalities
+\[
+	α_A ∘ β_A
+	=
+	(α ∘ β)_A
+	=
+	(α ∘ β')_A
+	=
+	α_A ∘ β'_A \,.
+\]
+It follows that~$β_A = β'_A$ for every object~$A$ of~$\scat{A}$ because the morphism~$α_A$ is a monomorphism.
+This shows that~$β = β'$, which in turn shows that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$.%
+
+Suppose on the other hand that~$α$ is a monomorphism, and that~$\cat{S} = \Set$.
+We know from Yoneda’s lemma that for every object~$A$ of~$\scat{A}$, the evaluation functor
+\[
+	\ev_{\!A} \colon [\scat{A}, \Set] \to \Set
+\]
+is representable by~$A$.
+The functor~$\HY_A$ preserves monomorphisms,%
+\footnote{
+	A morphism~$f \colon A' \to A''$ in a category~$\cat{A}$ is a monomorphism if and only if the induced map~$f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'')$ is injective for every object~$A$ of~$\cat{A}$.
+	(This is a direct reformulation of the definition of a monomorphism.)
+	The class of monomorphisms is therefore chosen in precisely such a way that each functor~$\HY_A = \cat{A}(A, \ph)$ preserves monomorphisms.
+}
+whence it follows that the isomorphic functor~$\ev_{\!A}$ also preserves monomorphisms.
+Therefore, the component~$α_A = \ev_{\!A}(α)$ is a monomorphism in~$\Set$ for every object~$A$ of~$\scat{A}$.
+
+\subsubsection*{Epimorphisms}
+
+By using the isomorphism
+\[
+	[\scat{A}^{\op}, \cat{S}]^{\op}
+	≅
+	[\scat{A}^{\op\op}, \cat{S}^{\op}]
+	=
+	[\scat{A}, \cat{S}^{\op}] \,,
+\]
+we can see that dually, a natural transformation is an epimorphism in~$[\scat{A}^{\op}, \cat{A}]$ if and only if it is an epimorphism in each component.
