@@ -1,0 +1,86 @@
+\subsection{}
+
+We denote the unique object of the category~$\One$ by~$1$.
+Let~$\{ \ast \}$ be a singleton set, and let~$I$ be the unique functor from~$\One$ to~$\Set$ with~$I(1) = \{ \ast \}$.
+For every functor~$X$ from~$\cat{A}$ to~$\Set$, we can consider the comma category~$I \comma X$.
+
+An object of~$I \comma X$ is a triple~$(1, e, A)$ consisting of the unique object~$1$ of~$\One$, an object~$A$ of~$\cat{A}$, and a map~$e$ from~$I(1)$ to~$X(A)$.
+We have~$I(1) = \{ \ast \}$.
+Maps~$e$ from~$F(1)$ to~$X(A)$ are therefore in one-to-one correspondence to elements of~$X(A)$ (which is a set) via
+\[
+	e \mapsto e(\ast) \,.
+\]
+The map
+\[
+	F
+	\colon
+	\Ob( I \comma X )
+	\to
+	\Ob( \Elements(X) ) \,,
+	\quad
+	(1, e, A)
+	\mapsto
+	(A, e(\ast))
+\]
+is therefore bijective.
+
+Morphism in the comma category~$I \comma X$ of the form
+\[
+	(1, e, A) \to (1, e', A')
+\]
+are pairs~$(i, f)$ consisting of morphisms
+\[
+	i \colon 1 \to 1 \,,
+	\quad
+	f \colon A \to A'
+\]
+such that the following diagram commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		I(1)
+		\arrow{r}[above]{e}
+		\arrow{d}[left]{I(i)}
+		&
+		X(A)
+		\arrow{d}[right]{X(f)}
+		\\
+		I(1)
+		\arrow{r}[above]{e'}
+		&
+		X(A')
+	\end{tikzcd}
+\]
+The morphism~$i$ is necessarily the identity morphism of the unique object~$1$ of~$\One$, and the above diagram can equivalently be written as follows:
+\[
+	\begin{tikzcd}[sep = large]
+		\ast
+		\arrow{r}[above]{e}
+		\arrow{d}[left]{\id}
+		&
+		X(A)
+		\arrow{d}[right]{X(f)}
+		\\
+		\ast
+		\arrow{r}[above]{e'}
+		&
+		X(A')
+	\end{tikzcd}
+\]
+The commutativity of this diagram is equivalent to the condition
+\[
+	X(f)( e(\ast) ) = e'(\ast) \,.
+\]
+We get therefore a bijection
+\[
+	F_{A, A'}
+	\colon
+	(I \comma G)( (1, e, A), (1, e', A') )
+	\to
+	\Elements(X)( F(A), F(A') ) \,,
+	\quad
+	(i, f)
+	\mapsto
+	f \,.
+\]
+The map~$F$ together with the maps~$F_{A, A}$, where~$A$ and~$A'$ both range through~$\cat{A}$, define a functor from the comma category~$I \comma X$ to the category of elements~$\Elements(X)$.
+This functor is both bijective on objects and fully faithful, and therefore an isomorphism of categories.
