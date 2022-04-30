@@ -1,0 +1,85 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$α$ be an isomorphism from~$X + Y$ to~$H_A$.
+Let
+\[
+	i \colon X \To X + Y \,,
+	\quad
+	j \colon Y \To X + Y
+\]
+be natural transformations that realize~$X + Y$ as a coproduct of~$X$ and~$Y$, and let
+\[
+	β ≔ α ∘ i \,,
+	\quad
+	γ ≔ α ∘ j \,.
+\]
+
+We know that colimits in~$[\cat{A}^{\op}, \Set]$ are computed pointwise.
+This tells us that for every object~$A$ of~$\cat{A}$, the two maps
+\[
+	i_A \colon X(A) \to (X + Y)(A) \,,
+	\quad
+	j_A \colon Y(A) \to (X + Y)(A)
+\]
+make the set~$(X + Y)(A)$ into a coproduct of the two sets~$X(A)$ and~$Y(A)$.
+We know that the coproduct of two sets is given by their disjoint union.
+The set~$(X + Y)(A)$ is therefore the disjoint union of the images of~$i_A$ and~$j_A$.
+We know that the map~$α_A$ is a bijection from~$(X + Y)(A)$ to~$\HY_A(A) = \cat{A}(A, A)$.
+The unique preimage of~$\id_A$ under~$α_A$ is a contained in either the image of~$i_A$ or in the image of~$j_A$, but not both.
+We may assume that it is contained in the image of~$i_A$.
+There hence exists a (unique) element~$x$ of~$X(A)$ with
+\[
+	\id_A = α_A( i_A(x) ) = β_A(x) \,.
+\]
+
+Let now~$A'$ be an arbitrary element of~$\cat{A}$ and let~$f$ be an element of~$\HY_A(A')$.
+This means that~$f$ is a morphism from~$A'$ to~$A$.
+Then
+\[
+	f
+	=
+	\id_A ∘ f
+	=
+	\HY_A(f)( \id_A )
+	=
+	\HY_A(f)( β_A(x)
+	=
+	β_{A'}( X(f)(x) )
+\]
+by the naturality of~$β$.
+We have
+\[
+	β_{A'}( X(f)(x) )
+	=
+	α_{A'}( i_{A'}( X(f)(x) ) \,,
+\]
+and the set~$(X + Y)(A')$ is the disjoint union of the images of~$i_{A'}$ and~$j_{A'}$.
+We hence find that the unique preimage of~$f$ under~$α_{A'}$ is contained in the image of~$i_{A'}$.
+
+This shows that under the bijection~$α_{A'}$, the image of~$i_{A'}$ is all of~$\HY_A(A')$.
+The image of~$j_{A'}$ under~$α_A$ must therefore be empty, which means that~$Y(A')$ must be empty.
+As this hold for every object~$A'$ of~$\cat{A}$, we find that~$Y$ is the constant functor at~$∅$.
+
+
+
+\subsubsection{}
+
+Let~$X$ and~$Y$ be two representable presheaves on~$\cat{A}$.
+This means that there exists objects~$A$ and~$A'$ of~$\cat{A}$ with
+\[
+	X ≅ \HY_A \,,
+	\quad
+	Y ≅ \HY_{A'} \,.
+\]
+This entails that the sets
+\[
+	X(A) ≅ \HY_A(A) = \cat{A}(A, A) \,,
+	\quad
+	Y(A) ≅ \HY_{A'}(A) = \cat{A}(A', A')
+\]
+are non-empty because they contain the elements~$\id_A$ and~$\id_{A'}$ respectively.
+It follows from part~(a) that the functor~$X + Y$ cannot be representable.
