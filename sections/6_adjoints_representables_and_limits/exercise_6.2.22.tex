@@ -1,5 +1,9 @@
 \subsection{}
 
+
+
+%\subsubsection*{First solution}
+
 We denote the unique object of the category~$\One$ by~$1$.
 Let~$\{ \ast \}$ be a singleton set, and let~$I$ be the unique functor from~$\One$ to~$\Set$ with~$I(1) = \{ \ast \}$.
 For every functor~$X$ from~$\cat{A}$ to~$\Set$, we can consider the comma category~$I \comma X$.
@@ -88,3 +92,77 @@ This functor is both bijective on objects and fully faithful, and therefore an i
 In the notation of Example~2.3.4, the comma category~$I \comma X$ can also be written as $\{ \ast \} \comma X$.
 If we denote the singleton set~$\{ \ast \}$ by~$1$, then we thus arrive at the notation~$1 \comma X$.
 So while the elements of a set~$S$ are given by maps~$1 \to X$, the (category of) elements of a presheaf~$X$ is given by~$1 \comma X$.
+
+
+
+%\subsubsection*{Second solution}
+%
+%We have for every object~$A$ of~$\cat{A}$ the bijection
+%\[
+%	[\cat{A}^{\op}, \Set](\HY_A, X) \to X(A) \,,
+%	\quad
+%	h \mapsto h_A(\id_A)
+%\]
+%by Yoneda’s lemma.
+%We get thus an induced one-to-one correspondence between element~$(A, x)$ of~$X$, and pairs~$(A, α)$ consisting of an object~$A$ of~$\cat{A}$ and a natural transformation~$α$ from~$\HY_A$ to~$X$.
+%This correspondence is given by the mapping
+%\[
+%	(A, α) \mapsto ( A, α_A(\id_A) ) \,.
+%\]
+%
+%Let~$(A, x)$ and~$(A', x')$ be two elements of~$X$ and let~$(A, α)$ and~$(A', α')$ be the corresponding pairs as before.
+%We know from the fully faithfulness of the Yoneda embedding that every natural transformation from~$\HY_{A'}$ to~$\HY_{A'}$ is of the form~$f_*$ for a unique morphism~$f$ from~$A$ to~$A'$.
+%The resulting diagram
+%\[
+%	\begin{tikzcd}[row sep = large]
+%		\HY_A
+%		\arrow{rr}[above]{\HY_f}
+%		\arrow{dr}[below left]{α}
+%		&
+%		{}
+%		&
+%		\HY_{A'}
+%		\arrow{dl}[below right]{α'}
+%		\\
+%		{}
+%		&
+%		X
+%		&
+%		{}
+%	\end{tikzcd}
+%\]
+%commutes if and only if
+%\[
+%	α = α' ∘ \HY_f \,,
+%\]
+%which is by Yoneda’s lemma equivalent to the equality
+%\[
+%	α_A(\id_A)
+%	=
+%	(α' ∘ \HY_f)_A(\id_A) \,.
+%\]
+%The left-hand side of this equation is~$x$, and its right-hand side can be rewritten as
+%\begin{align*}
+%	(α' ∘ \HY_f)_A(\id_A)
+%	&=
+%	(α'_A ∘ \HY_f )(\id_A)
+%	\\
+%	&=
+%	α'_A( \HY_f(\id_A) )
+%	\\
+%	&=
+%	α'_A( f )
+%	\\
+%	&=
+%	α'_A( \HY_{A'}(f)( \id_{A'} ) )
+%	\\
+%	&=
+%	X(f)( α_{A'}( \id_{A'} ) )
+%	\\
+%	&=
+%	X(f)(x') \,.
+%\end{align*}
+%The commutativity of the above diagram is therefore equivalent to the equality
+%\[
+%	x = X(f)(x') \,.
+%\]
