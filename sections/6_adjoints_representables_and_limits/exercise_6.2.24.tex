@@ -1,0 +1,1361 @@
+\subsection{}
+
+We build up to the case of an arbitrary small category~$\scat{A}$ by considering first some special cases.
+
+\begin{remark}
+	This exercise is a massive waste of time and the following solution is not proofread in the slightest.
+\end{remark}
+
+
+\subsubsection*{The category~$\scat{A}$ is the one-object category~$\One$}
+
+We consider first the special case that~$\scat{A}$ is the one-object category~$\One$, whose unique object we denote by~$\ast$.
+The category~$[\One^{\op}, \Set]$ is isomorphic to~$\Set$ via the evaluation functor at~$\ast$.
+A presheaf~$X$ on~$\One$ corresponds under this isomorphism to the set~$S ≔ X(\ast)$.
+This isomorphism between~$[\One^{\op}, \Set]$ and~$\Set$ induces an isomorphism
+\[
+	[\One^{\op}, \Set] / X ≅ \Set / S \,.
+\]
+We want to describe the category~$\Set / S$ as a category of presheaves a suitable small category.
+
+We consider first the case that~$S = \{ 0, 1 \}$.
+An object of~$\Set / S$ is a pair~$(A, σ)$ consisting of a set~$A$ and a function~$σ$ from~$A$ to~$S$.
+We know that maps from~$A$ to~$S$ can be identified with subsets of~$A$, with the function~$σ$ corresponding to the preimage~$σ^{-1}(1)$.
+A morphism from~$(A, σ)$ to~$(A', σ')$ in~$\Set / S$ is a map~$f$ from~$A$ to~$A'$ subject to the commutativity of the following diagram:
+\[
+	\begin{tikzcd}[row sep = large]
+		A
+		\arrow{rr}[above]{f}
+		\arrow{dr}[below left]{σ}
+		&
+		{}
+		&
+		A'
+		\arrow{dl}[below right]{σ'}
+		\\
+		{}
+		&
+		S
+		&
+		{}
+	\end{tikzcd}
+\]
+The commutativity of this diagram can equivalently be expressed via the sets~$σ^{-1}(1)$ and~$(σ')^{-1}(1)$ as
+\[
+	f^{-1}( (σ')^{-1}(1) ) = σ^{-1}(1) \,.
+\]
+We hence find that the category~$\Set / S$ is isomorphic to the following auxiliary category~$\cat{S}$:
+Objects of~$\cat{S}$ are pairs~$(A, A_1)$ consisting of a set~$A$ and a subset~$A_1$ of~$A$.
+A morphism from~$(A, A_1)$ to~$(A', A'_1)$ in~$\cat{S}$ is a map~$f$ from~$A$ to~$A'$ with~$f^{-1}(A'_1) = A_1$.
+
+We can generalize this description of~$\Set / S$ to the case that~$S$ is an arbitrary set.
+We find that~$\Set / S$ is isomorphic to the following auxiliary category~$\cat{P}_S$:
+\begin{itemize*}
+
+	\item
+		Objects of~$\cat{P}_S$ are pairs~$(A, (A_s)_s)$ consisting of a set~$A$ and a family~$(A_s)_s$ of subsets~$A_s$ of~$A$, indexed over the elements~$s$ of~$S$, such that~$A$ is the disjoint union of the sets~$A_s$.
+
+	\item
+		A morphism from~$(A, (A_s)_s)$ to~$(A', (A'_s)_s)$ in~$\cat{P}_S$ is a map~$f$ from~$A$ to~$A'$ such that
+		\[
+			A_s = f^{-1}(A'_s)
+			\qquad
+			\text{for every~$s ∈ S$} \,.
+		\]
+		The set~$A$ is the disjoint union of the sets~$A_s$ but at the same time also the disjoint union of the sets~$f^{-1}(A'_s)$.
+		Therefore,
+		\begin{align*}
+			{}&
+			\text{$A_s = f^{-1}(A'_s)$ for every~$s ∈ S$}
+			\\
+			\iff{}&
+			\text{$A_s ⊆ f^{-1}(A'_s)$ for every~$s ∈ S$}
+			\\
+			\iff{}&
+			\text{$f(A_s) ⊆ A'_s$ for every~$s ∈ S$} \,.
+		\end{align*}
+		This means that the morphisms from~$(A, (A_s)_s)$ to~$(A', (A'_s)_s)$ in~$\cat{P}_S$ are precisely those maps from~$A$ to~$A'$ that restrict for every index~$s$ to a map from~$A_s$ to~$A'_s$.
+
+\end{itemize*}
+
+We have a functor
+\[
+	\tilde{F} \colon \cat{P}_S \to \Set^S
+\]
+that splits apart an object~$(A, (A_s)_s)$ into its subsets~$A_s$.
+More explicitly, this functor is given on every object~$(A, (A_s)_s)$ of~$\cat{P}_S$ by
+\[
+	\tilde{F}\Bigl( (A, (A_s)_s) \Bigr) = (A_s)_s \,,
+\]
+and on every morphism~$f$ from~$(A, (A_s)_s)$ to~$(A', (A'_s)_s)$ by
+\[
+	\tilde{F}(f) = \left( f_s \right)_s
+	\qquad\text{with}\qquad
+	f_s = \restrict[\big]{f}{A_s}[B_s] \,.
+\]
+We have also a functor
+\[
+	\tilde{G} \colon \Set^S \to \cat{P}_S
+\]
+given by the disjoint union~$∐_{s ∈ S} (\ph)$.
+More explicitly, this functor is given on every object~$(A_s)_s$ of~$\Set^S$ by
+\[
+	\tilde{G}\Bigl( (A_s)_s \Bigr) = \Biggl( ∐_{s ∈ S} A_s, (\tilde{A}_s)_s \Biggr)
+\]
+where~$\tilde{A}_t$ is the image of~$A_t$ in~$∐_{s ∈ S} A_s$, and it is given on morphisms by
+\[
+	\tilde{G}\Bigl( (f_s)_s \Bigr) = ∐_{s ∈ S} f_s \,.
+\]
+These two functors~$\tilde{F}$ and~$\tilde{G}$ satisfy
+\[
+	\tilde{G} ∘ \tilde{F} ≅ \Id_{\cat{P}_S} \,,
+	\quad
+	\tilde{F} ∘ \tilde{G} ≅ \Id_{\Set^S} \,,
+\]
+and thus form an equivalence between the two categories~$\cat{P}_S$ and~$\Set^S$.
+
+Together with the isomorphism between~$\Set / S$ and~$\cat{P}_S$ we arrive at an equivalence of categories
+\[
+	\Set / S ≃ \Set^S \,.
+\]
+We can furthermore identify~$\Set^S$ with the functor category~$[S^{\op}, \Set]$ when considering the set~$S$ as a discrete category.
+In this way, we arrive overall at the chain of equivalences
+\[
+	[\One^{\op}, \Set] / X
+	≅
+	\Set / S
+	≅
+	\cat{P}_S
+	≃
+	\Set^S
+	≅
+	[S^{\op}, \Set] \,,
+\]
+where the set~$S$ corresponds to the presheaf~$X$ via~$S = X(\ast)$.
+
+Let~$F$ be the composite of the above equivalences.
+We can work out an explicit description of~$F$ as follows.
+\begin{enumerate*}
+
+	\item
+		An object of~$[\One^{\op}, \Set] / X$ is a pair~$(Y, α)$ consisting of a presheaf~$Y$ on~$\One$ and a natural transformation~$α$ from~$Y$ to~$X$.
+
+	\item
+		Under the isomorphism~$[\One^{\op}, \Set] / X ≅ \Set / S$, the pair~$(Y, α)$ corresponds to the pair~$(Y(\ast), α_\ast)$, consisting of the set~$Y(\ast)$ and the map~$α_\ast$ from~$Y(\ast)$ to~$X(\ast) = S$.
+
+	\item
+		Under the equivalence~$\Set / S ≃ \cat{P}_S$, this pair~$(Y(\ast), α_\ast)$ further corresponds to the pair~$(Y(\ast), (α_\ast^{-1}(s))_s)$.
+
+	\item
+		Under the equivalence~$\cat{P}_S ≃ \Set^S$ we arrive at the object~$(α_\ast^{-1}(s))_s$.
+
+	\item
+		Under the isomorphism~$\Set^S ≅ [S^{\op}, \Set]$ we arrive at the presheaf~$F(Y, α)$ on~$S$ (where we view~$S$ as a discrete category).%
+		\footnote{
+			We image of~$(Y, α)$ under~$F$ ought to be denoted by~$F( (Y, α) )$, but we will use the abbreviated notation~$F(Y, α)$ for better readability.
+		}
+		It is given by
+		\[
+			F(Y, α)(s) = α_\ast^{-1}(s)
+		\]
+		for every element~$s$ of~$S$.
+		(We don’t need to worry about the action of~$F(Y, α)$ on morphisms of~$S$ because the category~$S$ is discrete.)
+
+\end{enumerate*}
+
+We can similarly figure out how~$F$ acts on morphisms.
+A morphism in~$[\One^{\op}, \Set]$ from~$(Y, α)$ to~$(Y', α')$ is a natural transformation~$β$ from~$Y$ to~$Y'$ with~$α' ∘ β = α$, i.e., such that the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large]
+		Y
+		\arrow[Rightarrow]{rr}[above]{β}
+		\arrow[Rightarrow]{dr}[below left]{α}
+		&
+		{}
+		&
+		Y'
+		\arrow[Rightarrow]{dl}[below right]{α'}
+		\\
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\]
+The resulting natural transformation~$F(β)$ from~$F(Y, α)$ to~$F(Y', α')$ is given by
+\[
+	F(β) = ( F(β)_s )_s
+\]
+where for every index~$s$, the component~$F(β)_s$ is the restriction of the map~$β_\ast$ to a map from~$F(Y, α)(s) = α_\ast^{-1}(s)$ to~$F(Y', α')(s) = (α'_\ast)^{-1}(s)$.
+
+
+
+\subsubsection*{The category $\scat{A}$ is discrete}
+
+We consider now instead of an arbitrary small category~$\scat{A}$ a small category~$\scat{D}$ that is discrete.
+We may think about the category~$\scat{D}$ as the disjoint union of copies of~$\One$, with one copy for each object of~$\cat{D}$.
+A presheaf~$X$ on~$\scat{D}$ is then a sum of presheaves~$X_d$ on~$\One$, given by~$X_d(\ast) = X(d)$ for each object~$d$ of~$\scat{D}$.
+We can see through the power of abstract nonsense that
+\begingroup
+\allowdisplaybreaks
+\begin{align*}
+	[\scat{D}^{\op}, \Set] / X
+	&=
+	[\scat{D}, \Set] / X
+	\\[0.5em]
+	&≅
+	\left[ ∐_{d ∈ \Ob(\scat{D})} \One, \;\Set \right] / X
+	\\[0.5em]
+	&≅
+	\left( ∏_{d ∈ \Ob(\scat{D})} {} [\One, \Set] \right) / (X_d)_d
+	\\[0.5em]
+	&≅
+	∏_{d ∈ \Ob(\scat{D})} {} \Bigl( [\One, \Set] / X_d \Bigr)
+	\\[0.5em]
+	&=
+	∏_{d ∈ \Ob(\scat{D})} {} \Bigl( [\One^{\op}, \Set] / X_d \Bigr)
+	\\[0.5em]
+	&≃
+	∏_{d ∈ \Ob(\scat{D})} {} [(\scat{B}_d)^{\op}, \Set]
+	\\[0.5em]
+	&≃
+	\left[ ∐_{d ∈ \Ob(\scat{D})} (\scat{B}_d)^{\op}, \; \Set \right]
+	\\[0.5em]
+	&≅
+	\left[ \left( ∐_{d ∈ \Ob(\scat{D})} \scat{B}_d \right)^{\op}, \; \Set \right]
+\end{align*}
+\endgroup
+for some suitable small categories~$\scat{B}_d$.
+We have seen above that the categories~$\scat{B}_d$ can be chosen as~$\scat{B}_d = X(d)$, viewed as discrete categories.
+The desired small category~$\scat{B}$ with
+\[
+	[ \scat{D}^{\op}, \Set ] / X ≃ [\scat{B}^{\op}, \Set]
+\]
+should therefore be choosable as the set~$∐_{d ∈ \Ob(\scat{D})} X(d)$ viewed as a discrete category.
+
+Let us make this more explicit.
+We consider this set
+\[
+	B ≔ ∐_{d ∈ \Ob(\scat{D})} X(d)
+\]
+as a discrete category.
+Let~$(Y, α)$ be an object of the category~$[\scat{D}^{\op}, \Set] / X$.
+This means that~$Y$ is a presheaf on~$\scat{D}$ and that~$α$ is a natural transformation from~$Y$ to~$X$:
+\[
+	α \colon Y \To X \,.
+\]
+We can define a presheaf~$F(Y, α)$ on~$B$ via
+\[
+	F(Y, α)(d, x)
+	=
+	α_d^{-1}(x)
+\]
+for every element~$(d, x)$ of~$B$.%
+\footnote{
+	Recall that for a family of sets~$(S_i)_{i ∈ I}$, the elements of~$∐_{i ∈ I} S_i$ can be denoted as pairs~$(i, s)$ where~$i$ ranges through the index set~$I$ and~$s$ ranges through the associated set~$S_i$.
+}
+
+A morphism from~$(Y, α)$ to~$(Y', α')$ in~$[\scat{D}^{\op}, \Set] / X$ is a natural transformation~$β$ from~$Y$ to~$Y'$ with~$α' ∘ β = α$, i.e., such that the diagram
+\[
+	\begin{tikzcd}[row sep = large]
+		Y
+		\arrow[Rightarrow]{rr}[above]{β}
+		\arrow[Rightarrow]{dr}[below left]{α}
+		&
+		{}
+		&
+		Y'
+		\arrow[Rightarrow]{dl}[below right]{α'}
+		\\
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\]
+commutes.
+This means that we have the following commutative diagram for every object~$d$ of~$D$:
+\[
+	\begin{tikzcd}[row sep = large]
+		Y(d)
+		\arrow{rr}[above]{β_d}
+		\arrow{dr}[below left]{α_d}
+		&
+		{}
+		&
+		Y'(d)
+		\arrow{dl}[below right]{α'_d}
+		\\
+		{}
+		&
+		X(d)
+		&
+		{}
+	\end{tikzcd}
+\]
+The map~$β_d$ therefore restrict for every element~$x$ of~$X(d)$ to a map between fibres
+\[
+	F(β)_{(d, x)} \colon α_d^{-1}(x) \to (α'_d)^{-1}(x) \,.
+\]
+These maps, with~$(d, x)$ ranging through~$B$, define a natural transformation~$F(β)$ from~$F(Y, α)$ to~$F(Y', α')$.
+(We don’t need to worry about the naturality of~$F(β)$ because the category~$B$ is discrete.)
+
+Suppose on the other hand that we are given a presheaf~$Z$ of~$B$.
+We then construct a corresponding object~$G(B)$ of~$[\scat{D}^{\op}, \Set] / X$.
+This object~$G(Z)$ needs to be a pair~$(G_0(Z), G_1(Z))$ consisting of a presheaf~$G_0(Z)$ on~$\scat{D}$ and a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
+
+The presheaf~$G_0$ is constructed as
+\[
+	G_0(Z)(d) ≔ ∐_{x ∈ X(d)} Z(d, x)
+\]
+for every object~$d$ of~$\scat{D}$.
+We don’t need to worry about the action of~$G_0(Z)$ on morphisms because the category~$\scat{D}$ is discrete.
+
+We will define the natural transformation~$G_1(Z)$ via its components~$G_1(Z)_d$, where the index~$d$ ranges through the objects of~$\scat{D}$.
+The component~$G_1(Z)_d$ is the map from~$G_0(Z)(d) = ∐_{x ∈ X(d)} Z(d, x)$ to~$X(d)$ which maps all of~$Z(d, x)$ onto the value~$x$ of~$X(d)$.
+
+These two functors~$F$ and~$G$ satisfy
+\[
+	G ∘ F ≅ \Id_{[\scat{D}^{\op}, \Set] / X} \,,
+	\quad
+	F ∘ G ≅ \Id_{[B^{\op}, \Set]} \,.
+\]
+They hence give an equivalence of categories between~$[\scat{D}^{\op}, \Set] / X$ and~$[B^{\op}, \Set]$.
+
+
+
+\subsubsection*{The general case: start}
+
+Let now~$\scat{A}$ be a small category and let~$X$ be a presheaf on~$X$.
+To find the desired category~$\scat{B}$, we want a small category whose set of objects is given by~$∐_{A ∈ \Ob(\scat{A})} X(A)$, but who also keeps track of the morphisms in~$\scat{A}$.
+We consider for this the category of elements of~$X$, i.e., the category~$\Elements(X)$.
+
+We define first a functor~$F$ from~$[\scat{A}^{\op}, \Set] / X$ to~$[\Elements(X)^{\op}, \Set]$, then a functor~$G$ from~$[\Elements(X)^{\op}, \Set]$ to~$[\scat{A}^{\op}, \Set] / X$, and then we show that these two functors are mutually inverse up to isomorphism.
+
+\subsubsection*{The general case: construction of $F$}
+
+To construct the functor~$F$ on objects, let~$(Y, α)$ be an object of~$[\scat{A}^{\op}, \Set] / X$.
+This means that~$Y$ is a presheaf~$Y$ on~$\scat{A}$ and that~$α$ is a natural transformation~$α$ from~$Y$ to~$X$.
+The desired object~$F(Y, α)$ needs to be a presheaf on~$\Elements(X)$.
+\begin{itemize}
+
+	\item
+		An object of~$\Elements(X)$ is a pair~$(A, x)$ consisting of an object~$A$ of~$\scat{A}$ and an element~$x$ of the set~$X(A)$.
+		We define the set~$F(Y, α)(A, x)$ as
+		\[
+			F(Y, α)(A, x) ≔ α_A^{-1}(x) \,.
+		\]
+
+	\item
+		A morphism in~$\Elements(X)$ from an object~$(A, x)$ to an object~$(A', x')$ is a morphism~$f$ from~$A$ to~$A'$ in~$\scat{A}$ with~$X(f)(x') = x$.
+		We know from the naturality of~$α$ that the resulting diagram
+		\[
+			\begin{tikzcd}[sep = large]
+				Y(A')
+				\arrow{r}[above]{Y(f)}
+				\arrow{d}[left]{α_{A'}}
+				&
+				Y(A)
+				\arrow{d}[right]{α_A}
+				\\
+				X(A')
+				\arrow{r}[above]{X(f)}
+				&
+				X(A)
+			\end{tikzcd}
+		\]
+		commutes.
+		It follows from this commutativity and the identity~$X(f)(x') = x$ that the map~$Y(f)$ restricts to a map from the preimage~$α_{A'}^{-1}(x')$ to the preimage~$α_A^{-1}(x)$.
+		We denote this restriction by~$F(Y, α)(f)$, so that
+		\[
+			F(Y, α)(f) \colon F(Y, α)(A', x') \to F(Y, α)(A, x) \,.
+		\]
+
+\end{itemize}
+
+We have now constructed the action of~$F(Y, α)$ on objects of~$\Elements(X)$ and on morphisms of~$\Elements(X)$.
+We now check that~$F(Y, α)$ is a contravariant functor from~$\Elements(X)$ to~$\Set$.
+\begin{itemize}
+
+	\item
+		Let~$(A, x)$ be an object on~$\Elements(X)$.
+		The identity morphism of~$(A, x)$ is the identity morphism of~$A$, whence~$F(Y, α)(\id_{(A, x)})$ is the restriction of~$Y(\id_A)$ to a map from~$α_A^{-1}(x)$ to~$α_A^{-1}(x)$.
+		But~$Y(\id_A)$ is~$\id_{Y(A)}$, whence this restriction is the identity map of~$α_A^{-1}(x)$, and thus the identity map of~$F(Y, α)(A, x)$.
+		This shows that
+		\[
+			F(Y, α)(\id_{A, x})
+			=
+			\id_{F(Y, α)(A, x)} \,.
+		\]
+
+	\item
+		Let
+		\[
+			f \colon (A, x) \to (A', x') \,,
+			\quad
+			g \colon (A', x') \to (A'', x'')
+		\]
+		be two composable morphisms in~$\Elements(X)$.
+		The map~$F(Y, α)(f)$ is the restriction of~$Y(f)$ to a map from~$α_{A'}^{-1}(x')$ to~$α_A^{-1}(x)$, and the map~$F(Y, α)(g)$ is similarly the restriction of~$Y(g)$ to a map from~$α_{A''}^{-1}(x'')$ to~$α_{A'}^{-1}(x')$.
+		The composite
+		\[
+			F(Y, α)(f) ∘ F(Y, α)(g)
+		\]
+		is therefore the restriction of~$Y(f) ∘ Y(g)$ to a map from~$α_{A''}^{-1}(x'')$ to~$α_A^{-1}(x)$.
+		But
+		\[
+			Y(f) ∘ Y(g) = Y(g ∘ f)
+		\]
+		 by the contravariant functoriality of~$Y$, and the restriction of~$Y(g ∘ f)$ to a map from~$α_{A''}^{-1}(x'')$ to~$α_A^{-1}(x)$ is precisely~$F(Y, α)(g ∘ f)$.
+		We have thus shown that
+		\[
+			F(Y, α)(f) ∘ F(Y, α)(g)
+			=
+			F(Y, α)(g ∘ f) \,.
+		\]
+
+\end{itemize}
+This shows that~$F(Y, α)$ is indeed a contravariant functor from~$\Elements(A)$ to~$\Set$.
+
+We have thus constructed the desired functor~$F$ on the level of objects.
+
+We proceed by constructing the action of~$F$ on morphisms.
+We consider for this a morphism
+\[
+	β \colon (Y, α) \to (Y', α')
+\]
+in~$[\scat{A}^{\op}, \Set] / X$.
+This means that~$β$ is a natural transformation from~$Y$ to~$Y'$ that makes the diagram
+\[
+	\begin{tikzcd}[row sep = large]
+		Y
+		\arrow[Rightarrow]{rr}[above]{β}
+		\arrow[Rightarrow]{dr}[below left]{α}
+		&
+		{}
+		&
+		Y'
+		\arrow[Rightarrow]{dl}[below right]{α'}
+		\\
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\]
+commute.
+For every object~$(A, x)$ of~$\Elements(X)$ we get the following commutative diagram:
+\[
+	\begin{tikzcd}[row sep = large]
+		Y(A)
+		\arrow{rr}[above]{β_A}
+		\arrow{dr}[below left]{α_A}
+		&
+		{}
+		&
+		Y'(A)
+		\arrow{dl}[below right]{α'_A}
+		\\
+		{}
+		&
+		X(A)
+		&
+		{}
+	\end{tikzcd}
+\]
+It follows from the commutativity of this diagram that the map~$β_A$ restricts to a map from~$α_A^{-1}(x)$ to~$α_{A'}^{-1}(x')$.
+We denote this restriction by~$F(β)_{(A, α)}$.
+
+We note that~$F(β)$ is a natural transformation from~$F(Y, α)$ to~$F(Y', α')$.
+Indeed, let
+\[
+	f \colon (A, x) \to (A', x')
+\]
+be a morphism in~$\Elements(X)$.
+This means that~$f$ is a morphism from~$A$ to~$A'$ in~$\cat{A}$ with~$X(f)(x') = x$.
+%It follows that the following diagram commutes, because~$α$,~$α'$ and~$β$ are natural transformations:
+%\[
+%	\begin{tikzcd}[row sep = large]
+%		Y(A)
+%		\arrow{rr}[above]{β_A}
+%		\arrow{dr}[below left]{α_A}
+%		&
+%		{}
+%		&
+%		Y'(A)
+%		\arrow{dl}[below right]{α'_A}
+%		\\
+%		{}
+%		&
+%		X(A)
+%		&
+%		{}
+%		\\
+%		Y(A')
+%		\arrow{rr}[above, near start]{β_{A'}}
+%		\arrow{dr}[below left]{α_{A'}}
+%		\arrow{uu}[left]{Y(f)}
+%		&
+%		{}
+%		&
+%		Y'(A')
+%		\arrow{dl}[below right]{α'_{A'}}
+%		\arrow{uu}[right]{Y'(f)}
+%		\\
+%		{}
+%		&
+%		X(A')
+%		\arrow[crossing over]{uu}[right, near end]{X(f)}
+%		&
+%		{}
+%	\end{tikzcd}
+%\]
+It follows from the naturality of~$β$ that we have the following commutative diagram:
+\[
+	\begin{tikzcd}[sep = large]
+		Y(A)
+		\arrow{r}[above]{β_A}
+		&
+		Y'(A)
+		\\
+		Y(A')
+		\arrow{r}[above]{β_{A'}}
+		\arrow{u}[left]{Y(f)}
+		&
+		Y'(A')
+		\arrow{u}[right]{Y'(f)}
+	\end{tikzcd}
+\]
+This commutative diagram restricts to the following commutative diagram:
+\[
+	\begin{tikzcd}[row sep = large]
+		F(Y, α)(A, x)
+		\arrow[equal]{r}
+		&
+		α_A^{-1}(x)
+		\arrow{r}[above]{F(β)_{(A, x)}}
+		&[3em]
+		(α')_A^{-1}(x)
+		&
+		F(Y', α')(A, x)
+		\arrow[equal]{l}
+		\\
+		F(Y, α)(A', x')
+		\arrow[equal]{r}
+		&
+		α_{A'}^{-1}(x')
+		\arrow{r}[above]{F(β)_{(A', x')}}
+		\arrow{u}[left]{F(Y, α)(f)}
+		&
+		(α')_{A'}^{-1}(x')
+		\arrow{u}[right]{F(Y', α')(f)}
+		&
+		F(Y', α')(A', x')
+		\arrow[equal]{l}
+	\end{tikzcd}
+\]
+The commutativity of this diagram shows that~$F(β)$ is indeed a natural transformation from~$F(Y, α)$ to~$F(Y', α')$.
+
+We have now constructed the action of~$F$ on morphisms.
+We need to check that~$F$ is functorial.
+\begin{itemize}
+
+	\item
+		Let~$(Y, α)$ be an object of~$[\scat{A}^{\op}, \Set] / X$.
+		The identity morphism of this object is the identity natural transformation of~$Y$, i.e.,~$\id_Y$.
+		It follows for every object~$(A, x)$ of~$\Elements(X)$ that the map~$(\id_Y)_A$ is given by~$\id_{Y(A)}$.
+		The restriction of this map to a map from~$F(Y, α)(A, x)$ to~$F(Y, α)(A, x)$ is therefore~$\id_{F(Y, α)(A, x)}$.
+		This shows that
+		\[
+			F(\id_{(Y, α)})_{(A, x)}
+			=
+			\id_{F(Y, α)(A, x)}
+			=
+			( \id_{F(Y, α)} )_{(A, x)}
+		\]
+		for every object~$(A, x)$ of~$\Elements(X)$, and therefore~$F(\id_{(Y, α)}) = \id_{F(Y, α)}$.
+
+	\item
+		Let
+		\[
+			β \colon (Y, α) \to (Y', α') \,,
+			\quad
+			β' \colon (Y', α') \to (Y'', α'')
+		\]
+		be two composable morphisms in~$[\scat{A}^{\op}, \Set] / X$.
+		Let~$(A, x)$ be an object of~$\Elements(X)$.
+		The map
+		\[
+			F(β)_{(A, x)}
+			\colon
+			F(Y, α)(A, x)
+			\to
+			F(Y', α')(A, x)
+		\]
+		is a restriction of~$β_A$, and the map
+		\[
+			F(β')_{(A, x)}
+			\colon
+			F(Y', α')(A, x)
+			\to
+			F(Y'', α'')(A, x)
+		\]
+		is similarly a restriction of~$β'_A$.
+		The composite
+		\[
+			F(β')_{(A, x)} ∘ F(β)_{(A, x)}
+			\colon
+			F(Y, α)(A, x)
+			\to
+			F(Y'', α'')(A, x)
+		\]
+		is therefore the restriction of~$β'_A ∘ β_A$.
+		But we have~$β'_A ∘ β_A = (β' ∘ β)_A$, and the restriction of~$(β' ∘ β)_A$ to a map from~$F(Y, α)(A, x)$ to~$F(Y'', α'')(A, x)$ is precisely~$F(β' ∘ β)_{(A, x)}$.
+		We have therefore found that
+		\[
+			( F(β') ∘ F(β) )_{(A, x)}
+			=
+			F(β')_{(A, x)} ∘ F(β)_{(A, x)}
+			=
+			F(β' ∘ β)_{(A, x)}
+		\]
+		for every object~$(A, x)$ of~$\Elements(X)$, and thus altogether
+		\[
+			F(β') ∘ F(β)
+			=
+			F(β' ∘ β) \,.
+		\]
+\end{itemize}
+This shows the functoriality of~$G$.
+
+\subsubsection*{The general case: construction of $G$}
+
+Let~$Z$ be an object of~$[\Elements(X)^{\op}, \Set]$.
+We start by constructing an object~$(G_0(Z), G_1(Z))$ of~$[\scat{A}^{\op}, \Set] / X$.
+This objects needs to consist of an element~$G_0(Z)$ of~$[\scat{A}^{\op}, \Set]$ and a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
+
+We start by constructing~$G_0(Z)$, which needs to be a contravariant functor from~$\scat{A}$ to~$\Set$.
+\begin{itemize}
+
+	\item
+		Let~$A$ be an object of~$\scat{A}$.
+		We define the set~$G_0(Z)(A)$ as
+		\[
+			G_0(Z)(A) ≔ ∐_{x ∈ X(A)} Z(A, x) \,,
+		\]
+		and denote for every element~$x$ of~$X(A)$ by
+		\[
+			j_{A, x} \colon Z(A, x) \to G_0(Z)(A)
+		\]
+		the canonical inclusion map into the~\nth{$x$} summand.
+
+	\item
+		Let
+		\[
+			f \colon A \to A'
+		\]
+		be a morphism in~$\scat{A}$.
+		For every element~$x'$ of~$X(A')$, this morphism~$f$ is then also a morphism
+		\[
+			f^{[x']} \colon ( A, X(f)(x') ) \to ( A', x' )
+		\]
+		in~$\Elements(X)$, and induces therefore a map
+		\[
+			Z(f^{[x']}) \colon Z(A', x') \to Z(A, X(f)(x')) \,.
+		\]
+		We have hence for every element~$x'$ of~$X(A')$ the map
+		\[
+			j_{A, X(f)(x')} \circ Z(f^{[x']})
+			\colon
+			Z(A', x')
+			\to
+			G_0(Z)(A) \,.
+		\]
+		These maps can now be bundled together into a map
+		\[
+			G_0(Z)(f) \colon G_0(Z)(A') \to G_0(Z)(A)
+		\]
+		such that
+		\[
+			G_0(Z)(f) ∘ j_{A',\, x'} = j_{A,\, X(f)(x')} ∘ Z(f^{[x']})
+		\]
+		for every element~$x'$ of~$X(A')$.
+
+\end{itemize}
+These assignments are contravariantly functorial from~$\scat{A}$ to~$\Set$:
+\begin{itemize}
+
+	\item
+		Let~$A$ be an object of~$\scat{A}$.
+		We have
+		\[
+			X(\id_A)(x)
+			=
+			\id_{X(A)}(x)
+			=
+			x
+		\]
+		for every element~$x$ of~$X(A)$, and therefore~$(\id_A)^{[x]} = \id_{(A, x)}$ for every element~$x$ of~$X(A)$.
+		It follows that
+		\[
+			Z( (\id_A)^{[x]} )
+			=
+			Z( \id_{(A, x)} )
+			=
+			\id_{Z(A, x)}
+		\]
+		for every element~$x$ of~$X(A)$.
+
+	\item
+		Let
+		\[
+			f \colon A \to A' \,,
+			\quad
+			g \colon A' \to A''
+		\]
+		be two morphisms in~$\scat{A}$.
+		The two morphisms
+		\[
+			G_0(Z)(g ∘ f) \,,
+			\quad
+			G_0(Z)(f) ∘ G_0(Z)(g)
+		\]
+		have the same domain and the same codomain.
+		To show that they are the same, it suffices to show that for every element~$x''$ of~$X(A'')$, we have
+		\[
+			G_0(Z)(g ∘ f) ∘ j_{A'',\, x''}
+			=
+			G_0(Z)(f) ∘ G_0(Z)(g) ∘ j_{A'',\, x''} \,.
+		\]
+
+		The two morphisms
+		\[
+			g^{[x'']}
+			\colon
+			(A', X(g)(x'')) \to (A'', x'')
+		\]
+		and
+		\[
+			f^{[X(g)(x'')]}
+			\colon
+			(A, X(f)(X(g)(x''))) \to (A', X(g)(x''))
+		\]
+		compose into a morphism
+		\begin{equation}
+			\label{ugly composition for ugly exercise}
+			g^{[x'']} ∘ f^{[X(g)(x'')]}
+			\colon
+			(A, X(f)(X(g)(x''))) \to (A'', x'') \,.
+		\end{equation}
+		We have
+		\[
+			X(f)(X(g)(x''))
+			=
+			( X(f) ∘ X(g) )(x'')
+			=
+			X(g ∘ f)(x'')
+		\]
+		because~$X$ is contravariantly functorial.
+		The composite~\eqref{ugly composition for ugly exercise} is therefore the morphism~$g ∘ f$ in~$\scat{A}$ regarded as a morphism from~$(A, X(g ∘ f)(x''))$ to~$(A'', x'')$ in~$\Elements(X)$.
+		In other words, we have
+		\[
+			g^{[x'']} ∘ f^{[X(g)(x'')]}
+			=
+			(g ∘ f)^{[x'']} \,.
+		\]
+		
+		It follows that
+		\[
+			Z( (g ∘ f)^{[x'']} )
+			=
+			Z( g^{[x'']} ∘ f^{[X(g)(x'')]} )
+			=
+			Z( f^{[X(g)(x'')]} ) ∘ Z( g^{[x'']} )
+		\]
+		by the contravariant functoriality of~$Z$.
+		It now further follows that
+		\begin{align*}
+			{}&
+			G_0(Z)(f) ∘ G_0(Z)(g) ∘ j_{A'',\, x''}
+			\\
+			={}&
+			G_0(Z)(f) ∘ j_{A',\, X(g)(x'')} ∘ Z( g^{[x'']} )
+			\\
+			={}&
+			j_{A,\, X(f)(X(g)(x''))} ∘ Z( f^{[X(g)(x'')]} ) ∘ Z( g^{[x'']} )
+			\\
+			={}&
+			j_{A,\, X(g ∘ f)(x'')} ∘ Z( (g ∘ f)^{[x'']} )
+			\\
+			={}&
+			G(Z)(g ∘ f) ∘ j_{A'', x''} \,,
+		\end{align*}
+		which is the equality that we needed to prove.
+\end{itemize}
+We have thus proven that~$G_0(Z)$ is a contravariant functor from~$\Elements(X)$ to~$\Set$.
+
+We now have to construct a natural transformation from~$G_0(Z)$ to~$X$.
+For this, we need to construct for every object~$A$ of~$\scat{A}$ a map
+\[
+	G_1(Z)_A \colon G_0(Z)(A) \to X(A) \,,
+\]
+such that for every morphism
+\[
+	f \colon A \to A'
+\]
+in~$\scat{A}$, the following square diagram commutes:
+\begin{equation}
+	\label{required commutativity for naturality of ugly construction}
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		G_0(Z)(A')
+		\arrow{r}[above]{G_0(Z)(f)}
+		\arrow{d}[left]{G_1(Z)_{A'}}
+		&
+		G_0(Z)(A)
+		\arrow{d}[right]{G_1(Z)_A}
+		\\
+		X(A')
+		\arrow{r}[above]{X(f)}
+		&
+		X(A)
+	\end{tikzcd}
+\end{equation}
+We first construct the transformation~$G_1(Z)$, and then check its naturality.
+\begin{itemize}
+
+	\item
+		We have~$G_0(Z)(A) = ∐_{x ∈ X(A)} Z(A, x)$.
+		There hence exists a unique map~$G_1(Z)_A$ from~$G_0(Z)(A)$ to~$X(A)$ such that for element~$x$ of~$X(A)$ the composite~$G_1(Z)_A ∘ j_{A, x}$ is constant with value~$x$.
+
+	\item
+		The diagram~\eqref{required commutativity for naturality of ugly construction} commutes because
+		\begin{align*}
+			{}&
+			G_1(Z)_A ∘ G_0(Z)(f) ∘ j_{A',\, x'}
+			\\
+			={}&
+			G_1(Z)_A ∘ j_{A, X(f)(x')} ∘ Z(f^{[x']}) \,.
+			\\
+			={}&
+			(\text{constant map with value~$X(f)(x')$}) ∘ Z(f^{[x']})
+			\\
+			={}&
+			(\text{constant map with value~$X(f)(x')$})
+			\\
+			={}&
+			X(f) ∘ (\text{constant map with value~$x'$})
+			\\
+			={}&
+			X(f) ∘ G_1(Z)_{A'} ∘ j_{A',\, x'}
+		\end{align*}
+		for every element~$x'$ of~$X(A')$, and therefore
+		\[
+			G_1(Z)_A ∘ G_0(Z)(f) = X(f) ∘ G_1(Z)_{A'} \,.
+		\]
+
+\end{itemize}
+We have thus constructed a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
+
+We have overall constructed the action of~$G$ on objects.
+Next, we will construct the action of~$G$ on morphisms.
+Let
+\[
+	γ \colon Z \to Z'
+\]
+be a morphism in~$[\Elements(X)^{\op}, \Set]$.
+We need to construct a morphism
+\[
+	G(γ) \colon G(Z) \to G(Z')
+\]
+in~$[\scat{A}^{\op}, \Set] / X$.
+In other words~$G(γ)$ needs to be a natural transformation from~$G_0(Z)$ to~$G_0(Z')$ that makes the following diagram commute:
+\begin{equation}
+	\label{triangular diagram for naturality for ugly construction}
+	\begin{tikzcd}[row sep = large]
+		G_0(Z)
+		\arrow[Rightarrow]{rr}[above]{G(γ)}
+		\arrow[Rightarrow]{dr}[below left]{G_1(Z)}
+		&
+		{}
+		&
+		G_0(Z')
+		\arrow[Rightarrow]{dl}[below right]{G_1(Z')}
+		\\
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\end{equation}
+\begin{itemize}
+
+	\item
+		We have for every object~$A$ of~$\scat{A}$ that
+		\[
+			G_0(Z)(A) = ∐_{x ∈ X(A)} Z(A, x) \,,
+			\quad
+			G_0(Z')(A) = ∐_{x ∈ X(A)} Z'(A, x) \,.
+		\]
+		The morphism~$γ$ is a natural transformation from~$Z$ to~$Z'$, and therefore gives us for every object~$(A, x)$ of~$\Elements(X)$ a map~$γ_{(A, x)}$ from~$Z(A, x)$ to~$Z'(A, x)$.
+		This allows us to define the desired transformation~$G(γ)$ via
+		\[
+			G(γ)_A ≔ ∐_{x ∈ X(A)} γ_{(A, x)}
+		\]
+		for every object~$A$ of~$\scat{A}$.
+
+	\item
+		To check the commutativity of the diagram~\eqref{triangular diagram for naturality for ugly construction}, we need to check that for object~$A$ of~$\scat{A}$ the following diagram commutes:
+		\[
+			\begin{tikzcd}[row sep = large]
+				G_0(Z)(A)
+				\arrow{rr}[above]{G(γ)_A}
+				\arrow{dr}[below left]{G_1(Z)_A}
+				&
+				{}
+				&
+				G_0(Z')(A)
+				\arrow{dl}[below right]{G_1(Z')_A}
+				\\
+				{}
+				&
+				X(A)
+				&
+				{}
+			\end{tikzcd}
+		\]
+		For this, it suffices to check that for every element~$x$ of~$X(A)$, we have
+		\[
+			G_1(Z)_A ∘ G(γ)_A ∘ j^Z_{(A, x)}
+			=
+			G_1(Z)_A ∘ j^Z_{(A, x)} \,.
+		\]
+		This equality hold because
+		\begin{align*}
+			G_1(Z')_A ∘ G(γ)_A ∘ j^Z_{A, x}
+			&=
+			G_1(Z')_A ∘ j^{Z'}_{A, x} ∘ γ_{(A, x)}
+			\\
+			&=
+			(\text{constant map with value~$x$}) ∘ γ_{(A, x)}
+			\\
+			&=
+			(\text{constant map with value~$x$})
+			\\
+			&=
+			G_1(Z)_A ∘ j^Z_{A, x} \,.
+		\end{align*}
+\end{itemize}
+We have overall constructed an induced morphism~$G(γ)$ from~$G(Z)$ to~$G(Z')$.
+We have to check that this construction is functorial.
+\begin{itemize}
+
+	\item
+		Let~$Z$ be an object of~$[\Elements(X)^{\op}, \Set]$.
+		We have
+		\begin{align*}
+			G(\id_Z)_A
+			&=
+			∐_{x ∈ X(A)} {} (\id_Z)_{(A, x)}
+			\\
+			&=
+			∐_{x ∈ X(A)} \id_{Z(A, x)}
+			\\
+			&=
+			\id_{∐_{x ∈ X(A)} Z(A, x)}
+			\\
+			&=
+			\id_{G_0(Z)(A)}
+			\\
+			&=
+			( \id_{G_0(Z)} )_A
+		\end{align*}
+		for every object~$A$ of~$\scat{A}$, and therefore
+		\[
+			G(\id_Z)
+			=
+			\id_{G_0(Z)}
+			=
+			\id_{G(Z)} \,.
+		\]
+
+	\item
+		Let
+		\[
+			γ \colon G \to G' \,,
+			\quad
+			γ' \colon G' \to G''
+		\]
+		be two composable morphisms in~$[\Elements(X)^{\op}, \Set]$.
+		We have for every object~$A$ of~$\scat{A}$ the equalities
+		\begin{align*}
+			( G(γ') ∘ G(γ) )_A
+			&=
+			G(γ')_A ∘ G(γ)_A
+			\\
+			&=
+			\left( ∐_{x ∈ X(A)} γ'_{(A, x)} \right) ∘ \left( ∐_{x ∈ X(A)} γ_{(A, x)} \right)
+			\\
+			&=
+			∐_{x ∈ X(A)} {} ( γ'_{(A, x)} ∘ γ_{(A, x)} )
+			\\
+			&=
+			∐_{x ∈ X(A)} {} (γ' ∘ γ)_{(A, x)}
+			\\
+			&=
+			G(γ' ∘ γ) \,.
+		\end{align*}
+
+\end{itemize}
+We have thus proven the functoriality of~$G$.
+
+\subsubsection*{The general case: the isomorphism $G ∘ F ≅ \Id$}
+
+Let~$(Y, α)$ be an object of~$[\scat{A}^{\op}, \Set] / X$.
+We have
+\[
+	(G ∘ F)(Y, α)(A)
+	=
+	G(F(Y, α))(A)
+	=
+	∐_{x ∈ X(A)} F(Y, α)(A, x)
+	=
+	∐_{x ∈ X(A)} α_A^{-1}(x)
+\]
+for every object~$A$ of~$\scat{A}$, with~$α_A$ being a map from~$Y(A)$ to~$X(A)$.
+The set~$Y(A)$ is the disjoint union of the preimages~$α_A^{-1}(x)$ where~$x$ ranges trough~$X(A)$.
+We have therefore a bijection
+\[
+	ε_{(Y, α), A}
+	\colon
+	(G, ∘ F)(Y, α)(A)
+	\to
+	Y(A)
+\]
+that is given for every element~$x$ of~$X(A)$ on the~\nth{$x$} summand of~$(G ∘ F)(Y, α)(A)$ by the inclusion map from~$α_A^{-1}(x)$ to~$Y(A)$.
+We denote this inclusion map by
+\[
+	i_{(Y, α), A, x} \colon α_A^{-1}(x) \to Y(A) \,.
+\]
+
+These bijections~$ε_{(Y, α), A}$ assemble into a transformation~$ε_{(Y, α)}$ from~$G_0(F(Y, α))$ to~$Y$.
+This transformation is natural.
+To prove this, let
+\[
+	f \colon A \to A'
+\]
+be a morphism in~$\scat{A}$.
+We need to check the commutativity of the following square diagram:
+\[
+	\begin{tikzcd}[column sep = 6em, row sep = large]
+		G_0(F(Y, α))(A')
+		\arrow{r}[above]{G_0(F(Y, α))(f)}
+		\arrow{d}[left]{ε_{(Y, α), A'}}
+		&
+		G_0(F(Y,α))(A)
+		\arrow{d}[right]{ε_{(Y, α), A}}
+		\\
+		Y(A')
+		\arrow{r}[above]{Y(f)}
+		&
+		Y(A)
+	\end{tikzcd}
+\]
+This diagram may be rewritten as follows:
+\[
+	\begin{tikzcd}[column sep = 6em, row sep = large]
+		∐_{x' ∈ X(A')} α_{A'}^{-1}(x')
+		\arrow{r}[above]{G_0(F(Y, α))(f)}
+		\arrow{d}[left]{ε_{(Y, α), A'}}
+		&
+		∐_{x ∈ X(A)} α_A^{-1}(x)
+		\arrow{d}[right]{ε_{(Y, α), A}}
+		\\
+		Y(A')
+		\arrow{r}[above]{Y(f)}
+		&
+		Y(A)
+	\end{tikzcd}
+\]
+To check the commutativity of this square diagram, we need to check that
+\[
+	ε_{(Y, α), A} ∘ G_0(F(Y, α))(f) ∘ j_{A', x'}
+	=
+	Y(f) ∘ ε_{(Y, α), A'} ∘ j_{A', x'}
+\]
+for every element~$x'$ of~$X(A')$.
+This equality holds because
+\begin{align*}
+	{}&
+	ε_{(Y, α), A} ∘ G_0(F(Y, α))(f) ∘ j_{A', x'}
+	\\
+	={}&
+	ε_{(Y, α), A} ∘ j_{A, X(f)(x')} ∘  F(Y, α)(f^{[x']})
+	\\
+	={}&
+	i_{(Y, α), A, X(f)(x')} ∘ F(Y, α)( f^{[x']} )
+	\\
+	={}&
+	i_{(Y, α), A, X(f)(x')}
+	∘
+	\restrict[\Big]{ Y(f) }{ α_{A'}^{-1}(x') }[ α_A^{-1}(X(f)(x')) ]
+	\\
+	={}&
+	Y(f) ∘ i_{(Y, α), A', x'}
+	\\
+	={}&
+	Y(f) ∘ ε_{(Y, α), A'} ∘ j_{A', x'} \,.
+\end{align*}
+
+We have thus constructed a natural transformation~$ε_{(Y, α)}$ from~$G_0(F(Y, α))$ to~$Y$.
+Each component of~$ε_{(Y, α)}$ is bijective, whence~$ε_{(Y, α)}$ is a natural isomorphism.
+We claim that this natural isomorphism is a morphism from~$(Y, α)$ to~$G(F(Y, α))$.
+For this, we need to prove that the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = {5em,between origins}]
+		G_0(F(Y, α))
+		\arrow[Rightarrow]{rr}[above]{ε_{(Y, α)}}
+		\arrow[Rightarrow]{dr}[below left]{G_1(F(Y, α))}
+		&
+		{}
+		&
+		Y
+		\arrow[Rightarrow]{dl}[below right]{α}
+		\\
+		{}
+		&
+		X
+		&
+		{}
+	\end{tikzcd}
+\]
+We hence need to show that for every object~$A$ of~$\scat{A}$, the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = {5em,between origins}]
+		G_0(F(Y, α))(A)
+		\arrow{rr}[above]{ε_{(Y, α), A}}
+		\arrow{dr}[below left]{G_1(F(Y, α))_A}
+		&
+		{}
+		&
+		Y(A)
+		\arrow{dl}[below right]{α_A}
+		\\
+		{}
+		&
+		X(A)
+		&
+		{}
+	\end{tikzcd}
+\]
+It suffices to show that
+\[
+	α_A ∘ ε_{(Y, α), A} ∘ j_{(A, x)}
+	=
+	G_1(F(Y, α))_A ∘ j_{(A, x)}
+\]
+for every element~$x$ of~$X(A)$.
+This equality holds because
+\begin{align*}
+	{}&
+	α_A ∘ ε_{(Y, α), A} ∘ j_{(A, x)}
+	\\
+	={}&
+	α_A ∘ i_{(Y, α), A, x}
+	\\
+	={}&
+	\text{constant map with value~$x$}
+	\\
+	={}&
+	G_1(F(Y, α))_A ∘ j_{(A, x)} \,.
+\end{align*}
+
+We have thus constructed for every object~$(Y, α)$ a morphism~$ε_{(Y, α)}$ from~$G(F(Y, α))$ to~$(Y, α)$ in~$[\scat{A}^{\op}, \Set] / X$.
+We have also seen that this morphism is an isomorphism in~$[\scat{A}^{\op}, \Set]$;
+it is therefore also an isomorphism in~$[\scat{A}^{\op}, \Set] / X$.
+
+The isomorphism~$ε_{(Y, α)}$ is natural in~$(Y, α)$.
+To see this, we consider a morphism
+\[
+	β \colon (Y, α) \to (Y', α')
+\]
+in~$[\scat{A}^{\op}, \Set] / X$.
+We need to show that the following square diagram commutes:
+\[
+	\begin{tikzcd}[sep = large]
+		GF(Y, α)
+		\arrow{r}[above]{GF(β)}
+		\arrow{d}[left]{ε_{(Y, α)}}
+		&
+		GF(Y', α')
+		\arrow{d}[right]{ε_{(Y', α')}}
+		\\
+		(Y, α)
+		\arrow{r}[above]{β}
+		&
+		(Y', α')
+	\end{tikzcd}
+\]
+In other words, we need to prove the commutativity of the following square diagram of functors and natural transformations between them:
+\[
+	\begin{tikzcd}[sep = large]
+		G_0(F(Y, α))
+		\arrow[Rightarrow]{r}[above]{GF(β)}
+		\arrow[Rightarrow]{d}[left]{ε_{(Y, α)}}
+		&
+		G_0(F(Y', α'))
+		\arrow[Rightarrow]{d}[right]{ε_{(Y', α')}}
+		\\
+		Y
+		\arrow[Rightarrow]{r}[above]{β}
+		&
+		Y'
+	\end{tikzcd}
+\]
+This means that we need to prove for every object~$A$ of~$\scat{A}$ the commutativity of the following square diagram  in~$\Set$:
+\[
+	\begin{tikzcd}[sep = large]
+		G_0(F(Y, α))(A)
+		\arrow{r}[above]{G(F(β))_A}
+		\arrow{d}[left]{ε_{(Y, α), A}}
+		&
+		G_0(F(Y', α'))(A)
+		\arrow{d}[right]{ε_{(Y', α'), A}}
+		\\
+		Y(A)
+		\arrow{r}[above]{β_A}
+		&
+		Y'(A)
+	\end{tikzcd}
+\]
+This diagram may be rewritten as follows:
+\[
+	\begin{tikzcd}[row sep = large, column sep = 7em]
+		∐_{x ∈ X(A)} α_A^{-1}(x)
+		\arrow{r}[above]{∐_{x ∈ X(A)} F(β)_{(A, x)}}
+		\arrow{d}[left]{ε_{(Y, α), A}}
+		&
+		∐_{x ∈ X(A)} (α')_A^{-1}(x)
+		\arrow{d}[right]{ε_{(Y', α'), A}}
+		\\
+		Y(A)
+		\arrow{r}[above]{β_A}
+		&
+		Y'(A)
+	\end{tikzcd}
+\]
+The map~$F(β)_{(A, x)}$ is the restriction of~$F(β)$ to a map from~$α_A^{-1}(x)$ to~$(α')_A^{-1}(x)$, whence this diagram commutes.
+
+We have thus constructed a natural isomorphism~$ε$ from~$G ∘ F$ to~$\Id_{[\scat{A}^{\op}, \Set] / X}$.
+The existence of this isomorphism shows that
+\[
+	G ∘ F ≅ \id_{ [\scat{A}^{\op}, \Set] / X} \,.
+\]
+
+\subsubsection*{The general case: the isomorphism $F ∘ G ≅ \Id$}
+
+Let~$Z$ be an object of~$[\Elements(X)^{\op}, \Set]$.
+For every object~$(A, x)$ of~$\Elements(X)$, the set
+\[
+	F(G(Z))(A, x) = G_1(Z)_A^{-1}(x)
+\]
+is precisely the image of~$Z(A, x)$ in~$G_0(Z)(A) = ∐_{x' ∈ X(A)} Z(A, x')$.
+(Recall that the map ~$G_1(Z)_A$ has the constant value~$x$ on the summand~$Z(A, x)$ of~$G_0(Z)$.)
+In other words, we have
+\[
+	F(G(Z))(A, x) = \{ (x, z) \suchthat z ∈ Z(A, x) \} \,.
+\]
+We have therefore a bijection
+\[
+	η_{Z, (A, x)}
+	\colon
+	Z(A, x)
+	\to
+	F(G(Z))(A, x) \,,
+	\quad
+	z \mapsto (x, z) \,.
+\]
+
+The bijection~$η_{Z, (A, x)}$ is natural in~$(A, x)$.
+To see this, we consider a morphism
+\[
+	f \colon (A, x) \to (A', x')
+\]
+in~$\Elements(X)$, and need to show that the following square diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		Z(A', x')
+		\arrow{r}[above]{Z(f)}
+		\arrow{d}[left]{η_{Z, (A', x')}}
+		&
+		Z(A, x)
+		\arrow{d}[right]{η_{Z, (A, x)}}
+		\\
+		F(G(Z))(A', x')
+		\arrow{r}[above]{F(G(Z))(f)}
+		&
+		F(G(Z))(A, x)
+	\end{tikzcd}
+\]
+The map~$F(G(Z))(f)$ is the restriction of~$G_0(Z)(f)$, and~$G_0(Z)(f)$ maps the summand~$Z(A', x')$ of~$G_0(Z)(A')$ into the summand~$Z(A, x)$ of~$G_0(Z)(A)$ via~$Z(f)$.
+This means that the above diagram commutes.
+
+We have thus for every object~$Z$ of~$[\Elements(X)^{\op}, \Set]$ a natural transformation~$η_Z$ from~$Z$ to~$F(G(Z))$, i.e., a morphism from~$Z$ to~$(F ∘ G)(Z)$ in~$[\Elements(X)^{\op}, \Set]$.
+Each component of~$η_Z$ is bijective, whence~$η_Z$ is an isomorphism.
+
+We now check that~$η_Z$ is natural in~$Z$.
+For this, we need to show that for every morphism
+\[
+	γ \colon Z \to Z'
+\]
+in~$[\Elements(X)^{\op}, \Set]$ the following square diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		Z
+		\arrow{r}[above]{γ}
+		\arrow{d}[left]{η_Z}
+		&
+		Z'
+		\arrow{d}[right]{η_{Z'}}
+		\\
+		F(G(Z))
+		\arrow{r}[above]{F(G(γ))}
+		&
+		F(G(Z'))
+	\end{tikzcd}
+\]
+This is a diagram consisting of functors and natural transformations, whence we need to show that for every object~$(A, x)$ of~$\Elements(X)$ the following square diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		Z(A, x)
+		\arrow{r}[above]{γ_{(A, x)}}
+		\arrow{d}[left]{η_{Z, (A, x)}}
+		&
+		Z'(A, x)
+		\arrow{d}[right]{η_{Z', {(A, x)}}}
+		\\
+		F(G(Z))(A, x)
+		\arrow{r}[above]{F(G(γ))_{(A, x)}}
+		&
+		F(G(Z'))(A, x)
+	\end{tikzcd}
+\]
+We recall that
+\[
+	G_0(Z)(A)  = ∐_{x' ∈ X(A)} Z(A, x') \,,
+	\qquad
+	G_0(Z')(A) = ∐_{x' ∈ X(A)} Z'(A, x')
+\]
+and that the map~$G(γ)_A$ from~$G_0(Z)(A)$ to~$G_0(Z')(A)$ is given by~$∐_{x' ∈ X(A)} γ_{(A, x')}$.
+The map~$F(G(γ))_{(A, x)}$ results from~$G_0(Z)_A$ by restriction, from the copy of~$Z(A, x)$ in~$G_0(Z)(A)$ to the copy of~$Z'(A, x)$ in~$G_0(Z)(A')$.
+This means precisely that the above square diagram commutes.
+
+We have thus constructed a natural transformation~$η$ from~$\Id_{[\Elements(X)^{\op}, \Set]}$ to~$F ∘ G$.
+Each component of~$η$ is an isomorphism, whence~$η$ is a natural isomorphism.
+The existence of such an isomorphism shows that
+\[
+	\Id_{[\Elements(X)^{\op}, \Set]} ≅ F ∘ G \,.
+\]
