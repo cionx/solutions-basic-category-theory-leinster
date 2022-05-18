@@ -1,0 +1,707 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+\begin{proposition}
+	Let~$\cat{A}$ be a category.
+	Let~$\scat{I}$ and~$\scat{I'}$ be two small categories, and let~$D$ and~$D'$ be diagrams in~$\cat{A}$ of shapes~$\scat{I}$ and~$\scat{I}'$ respectively.
+	Suppose that these diagrams admit colimits~$(C, (q_I)_I)$ and~$(C', (q'_I)_I)$ respectively.
+	Let
+	\[
+		F \colon \scat{I} \to \scat{I}'
+	\]
+	be a functor and let
+	\[
+		α \colon D \To D' ∘ F
+	\]
+	be a natural transformation.
+	There exists a unique morphism~$f$ from~$C$ to~$C'$ with
+	\[
+		f ∘ q_I = q'_{F(I)} ∘ α_I
+	\]
+	for every object~$I$ of~$\scat{I}$.
+\end{proposition}
+
+\begin{proof}
+	We have for every morphism
+	\[
+		u \colon I \to J
+	\]
+	in~$\scat{I}$ the equalities
+	\[
+		q'_{F(J)} ∘ α_J ∘ D(u)
+		=
+		q'_{F(J)} ∘ (D' ∘ F)(u) ∘ α_I
+		=
+		q'_{F(J)} ∘ D'( F(u) ) ∘ α_I
+		=
+		q'_{F(I)} ∘ α_I \,.
+	\]
+	The assertion thus follows from the universal property of the colimit~$(C, (q_I)_I)$.
+\end{proof}
+
+\begin{corollary}
+	\label{induced morphism between colimits of diagrams of different shapes}
+	Let~$\cat{A}$ be a category.
+	Let~$\scat{I}$ and~$\scat{I'}$ be two small categories, and let~$D$ and~$D'$ be diagrams in~$\cat{A}$ of shapes~$\scat{I}$ and~$\scat{I}'$ respectively.
+	Suppose that these diagrams admit colimits~$(C, (q_I)_I)$ and~$(C', (q'_I)_I)$ respectively.
+	Let
+	\[
+		F \colon \scat{I} \to \scat{I}'
+	\]
+	be a functor with~$D' ∘ F = D$.
+	There exists a unique morphism~$f$ from~$C$ to~$C'$ with
+	\[
+		f ∘ q_I = q'_{F(I)}
+	\]
+	for every object~$I$ of~$\scat{I}$.
+	\qed
+\end{corollary}
+
+We have for every object~$B$ of~$\scat{B}$ the diagram~$X ∘ P_B$ of shape~$F \comma B$ in~$\cat{S}$.
+We choose for every object~$B$ of~$\scat{B}$ a colimit of the associated diagram~$X ∘ P_B$;
+we denote this colimit by~$\Lan_F(X)(B)$, and denote for every object~$M$ of~$F \comma B$ the canonical morphism from~$(X ∘ P_B)(M)$ to~$\Lan_F(X)(B)$ by~$i^B_M$.
+(Recall that the objects of~$F \comma B$ are pairs~$(A, h)$ consisting of an object~$A$ of~$\scat{A}$ and a morphism~$h$ in~$\scat{B}$ from~$F(A)$ to~$B$.)
+
+Let
+\[
+	g \colon B \to B'
+\]
+be a morphism in~$\scat{B}$.
+This morphism induces a functor
+\[
+	g_* \colon (F \comma B) \to (F \comma B') \,,
+\]
+given by
+\[
+	g_*( (A, h) ) = (A, g ∘ h) \,,
+	\quad
+	g_*( f ) = f
+\]
+on objects and morphisms respectively.
+The action of~$g_*$ may be depicted as follows:
+\[
+	\begin{tikzcd}[row sep = large]
+		F(A)
+		\arrow{rr}[above]{F(f)}
+		\arrow{dr}[below left]{h}
+		&
+		{}
+		&
+		F(A')
+		\arrow{dl}[below right]{h'}
+		\\
+		{}
+		&
+		B
+		&
+		{}
+	\end{tikzcd}
+	\quad\leadsto
+	\quad
+	\begin{tikzcd}[row sep = large]
+		F(A)
+		\arrow{rr}[above]{F(f)}
+		\arrow[dashed]{dr}[below left]{h}
+		\arrow[bend right]{ddr}[below left]{g ∘ h}
+		&
+		{}
+		&
+		F(A')
+		\arrow[dashed]{dl}[below right]{h'}
+		\arrow[bend left]{ddl}[below right]{g ∘ h'}
+		\\
+		{}
+		&
+		B
+		\arrow[dashed]{d}[right]{g}
+		&
+		{}
+		\\
+		{}
+		&
+		B'
+		&
+		{}
+	\end{tikzcd}
+\]
+We observe that~$P_{B'} ∘ g_* = P_B$, i.e., so that the following diagram commutes:
+\[
+	\begin{tikzcd}[column sep = large]
+		(F \comma B)
+		\arrow[bend left = 20]{drr}[above right]{X ∘ P_B}
+		\arrow{dr}[above right]{P_B}
+		\arrow{dd}[left]{g_*}
+		&
+		{}
+		&[1em]
+		{}
+		\\
+		{}
+		&
+		\scat{A}
+		\arrow{r}[above]{X}
+		&
+		\cat{S}
+		\\
+		(F \comma B')
+		\arrow{ur}[below right]{P_{B'}}
+		\arrow[bend right = 20]{urr}[below right]{X ∘ P_{B'}}
+		&
+		{}
+		&
+		{}
+	\end{tikzcd}
+\]
+It follows from \cref{induced morphism between colimits of diagrams of different shapes} that there exists a unique morphism
+\[
+	\Lan_F(X)(g) \colon \Lan_F(X)(B) \to \Lan_F(X)(B')
+\]
+such that
+\[
+	\Lan_F(X)(g) ∘ i^B_M = i^{B'}_{g_*(M)}
+\]
+for every object~$M$ of~$F \comma B$.
+
+The above assignments define a functor~$\Lan_F(X)$ from~$\scat{B}$ to~$\cat{S}$:
+\begin{itemize}
+
+	\item
+		Let~$B$ be an object of~$\scat{B}$.
+		The functor~$(\id_B)_*$ from~$F \comma B$ to~$F \comma B$ is the identity functor.
+		Therefore,
+		\[
+			\id_{\Lan_F(X)(\id_B)} ∘ i^B_M
+			=
+			i^B_M
+			=
+			i^B_{(\id_B)_*(M)}
+		\]
+		for every object~$M$ of~$F \comma B$.
+		This means that~$\id_{\Lan_F(X)(\id_B)}$ satisfies the defining property of~$\Lan_F(X)(\id_B)$, whence
+		\[
+			\Lan_F(X)(\id_B) = \id_{\Lan_F(X)(\id_B)} \,.
+		\]
+
+	\item
+		Let
+		\[
+			g \colon B \to B' \,,
+			\quad
+			g' \colon B' \to B''
+		\]
+		be two composable morphisms in~$\scat{B}$.
+		We have~$g'_* ∘ g_* = (g' ∘ g)_*$ and therefore
+		\begin{align*}
+			\Lan_F(X)(g') ∘ \Lan_F(X)(g) ∘ i^B_M
+			&=
+			\Lan_F(X)(g') ∘ i^{B'}_{g_*(M)}
+			\\
+			&=
+			i^{B''}_{g'_*(g_*(M))}
+			\\
+			&=
+			i^{B''}_{(g' ∘ g)_*(M)}
+		\end{align*}
+		for every object~$M$ of~$F \comma B$.
+		The composite~$\Lan_F(X)(g') ∘ \Lan_F(X)(g)$ hence satisfies the defining property of the morphism~$\Lan_F(X)(g' ∘ g)$, whence
+		\[
+			\Lan_F(X)(g' ∘ g) = \Lan_F(X)(g') ∘ \Lan_F(X)(g) \,.
+		\]
+
+\end{itemize}
+This shows that~$\Lan_F(X)$ is indeed a functor from~$\scat{B}$ to~$\cat{S}$.
+
+Any object~$A$ of~$\scat{A}$ results in an object~$F(A)$ of~$\scat{B}$, which furthermore results in the object~$(A, \id_{F(A)})$ of~$F \comma F(A)$.
+We have therefore for every object~$A$ of~$\scat{A}$ the morphism
+\[
+	i^{F(A)}_{(A, \id_{F(A)})}
+	\colon
+	X(A)
+	\to
+	\Lan_F(X)(F(A)) \,.
+\]
+We abbreviate this morphism by~$λ_A$, and claim that~$λ$ is a natural transformation from~$X$ to~$\Lan_F(X) ∘ F$.
+To prove this naturality, we have to show that for every morphism
+\[
+	f \colon A \to A'
+\]
+in~$\scat{A}$ the following square diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = 7em]
+		X(A)
+		\arrow{r}[above]{X(f)}
+		\arrow{d}[left]{λ_A}
+		&
+		X(A')
+		\arrow{d}[right]{λ_{A'}}
+		\\
+		\Lan_F(X)(F(A))
+		\arrow{r}[above]{\Lan_F(X)(F(f))}
+		&
+		\Lan_F(X)(F(A'))
+	\end{tikzcd}
+\]
+We note that~$M' ≔ (A', \id_{F(A')})$ and~$M ≔ (A, F(f))$ are two objects of~$F \comma F(A')$, and that the given morphism~$f$ is also a morphism from~$M$ to~$M'$ in~$F \comma F(A')$.
+It follows that
+\[
+	i^{F(A')}_{M'} ∘ (X ∘ P_{F(A')})(f)
+	=
+	i^{F(A')}_{M} \,.
+\]
+In other words, we have
+\[
+	λ_{A'} ∘ X(f) = i^{F(A')}_{M} \,,
+\]
+because~$i^{F(A')}_{M'} = λ_{A'}$.
+We now find that
+\begin{align*}
+	\Lan_F(X)(F(f)) ∘ λ_A
+	&=
+	\Lan_F(X)(F(f)) ∘ i^{F(A)}_{(A, \id_{F(A)})}
+	\\[0.3em]
+	&=
+	i^{F(A')}_{(A, F(f))}
+	\\[0.3em]
+	&=
+	i^{F(A')}_{M}
+	\\
+	&=
+	λ_{A'} ∘ X(f) \,.
+\end{align*}
+This shows the commutativity of the desired diagram.
+
+Let from now~$Y$ be any functor from~$\scat{B}$ to~$\cat{S}$.
+
+If~$β$ is a natural transformation from~$\Lan_F(X)$ to~$Y$, then~$β F$ is a natural transformation from~$\Lan_F(X) ∘ F$ to~$Y ∘ F$, whence
+\[
+	β F ∘ λ
+\]
+is a natural transformation from~$X$ to~$Y ∘ F$.
+
+Let on the other hand~$α$ be a natural transformation from~$X$ to~$Y ∘ F$.
+Let~$B$ be an object of~$\scat{B}$.
+For every object~$(A, h)$ of~$F \comma B$, we have the resulting morphism
+\[
+	\tilde{β}_{(A, h)} \colon X(A) \xto{α_A} Y(F(A)) \xto{Y(h)} Y(B) \,.
+\]
+This is a morphism from~$(X ∘ P_B)( (A, h) )$ to~$Y(B)$.
+For every morphism
+\[
+	f \colon (A, h) \to (A', h')
+\]
+in~$F \comma B$, we have
+\begin{align*}
+	\tilde{β}_{(A', h')} ∘ (X ∘ P_B)(f)
+	&=
+	Y(h') ∘ α_{A'} ∘ X(f)
+	\\
+	&=
+	Y(h') ∘ (Y ∘ F)(f) ∘ α_A
+	\\
+	&=
+	Y(h') ∘ Y(F(f)) ∘ α_A
+	\\
+	&=
+	Y(h' ∘ F(f)) ∘ α_A
+	\\
+	&=
+	Y(h) ∘ α_A
+	\\
+	&=
+	\tilde{β}_{(A, h)} \,.
+\end{align*}
+This shows that the object~$Y(B)$ together with the morphisms~$\tilde{β}_{(A, h)}$, where~$(A, h)$ ranges through the objects of~$F \comma B$, form a cocone of the diagram~$X ∘ P_B$.
+There hence exists a unique morphism~$β_B$ from~$\Lan_F(X)(B)$ to~$Y(B)$ with
+\[
+	β_B ∘ i^B_M = \tilde{β}_M
+\]
+for every object~$M$ of~$F \comma B$.
+
+The resulting transformation~$β$ from~$\Lan_F(X)$ to~$Y$ is natural.
+To see this, we need to show that for every morphism
+\[
+	g \colon B \to B'
+\]
+in~$\scat{B}$ the following square diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = 6em]
+		\Lan_F(X)(B)
+		\arrow{r}[above]{\Lan_F(X)(g)}
+		\arrow{d}[left]{β_B}
+		&
+		\Lan_F(X)(B')
+		\arrow{d}[right]{β_{B'}}
+		\\
+		Y(B)
+		\arrow{r}[above]{Y(g)}
+		&
+		Y(B')
+	\end{tikzcd}
+\]
+In other words, we need to prove the equality
+\[
+	β_{B'} ∘ \Lan_F(X)(g) = Y(g) ∘ β_B \,.
+\]
+For this, it suffices to show that for every object~$(A, h)$ of~$F \comma B$ we have
+\[
+	β_{B'} ∘ \Lan_F(X)(g) ∘ i^B_{(A, h)}
+	=
+	Y(g) ∘ β_B ∘ i^B_{(A, h)} \,.
+\]
+This equality holds because
+\begin{align*}
+	β_{B'} ∘ \Lan_F(X)(g) ∘ i^B_{(A, h)}
+	&=
+	β_{B'} ∘ i^{B'}_{g_*((A, h))}
+	\\
+	&=
+	β_{B'} ∘ i^{B'}_{(A, g ∘ h)}
+	\\
+	&=
+	\tilde{β}_{(A, g ∘ h)}
+	\\
+	&=
+	Y(g ∘ h) ∘ α_A
+	\\
+	&=
+	Y(g) ∘ Y(h) ∘ α_A
+	\\
+	&=
+	Y(g) ∘ \tilde{β}_{(A, h)}
+	\\
+	&=
+	Y(g) ∘ β_B ∘ i^B_{(A, h)} \,.
+\end{align*}
+We have thus constructed a natural transformation~$β$ from~$\Lan_F(X)$ to~$Y$.
+
+The above two constructions are mutually inverse.
+\begin{itemize}
+
+	\item
+		Let~$α$ be a natural transformation from~$X$ to~$Y ∘ F$.
+		Let~$β$ be the resulting natural transformation from~$\Lan_F(X)$ to~$Y$, which is uniquely determined by
+		\[
+			β_B ∘ i^B_{(A, h)} = Y(h) ∘ α_A
+		\]
+		for every object~$B$ of~$\scat{B}$ and every object~$(A, h)$ of~$F \comma B$.
+		Let~$α'$ be the natural transformation from~$X$ to~$Y ∘ F$ resulting from~$β$, given by
+		\[
+			α' = β F ∘ λ \,.
+		\]
+		For every object~$A$ of~$\scat{A}$ we have
+		\begin{align*}
+			α'_A
+			=
+			(β F ∘ λ)_A
+			=
+			β_{F(A)} ∘ λ_A
+			=
+			β_{F(A)} ∘ i^{F(A)}_{(A, \id_{F(A)})}
+			=
+			Y(\id_{F(A)}) ∘ α_A
+			&=
+			\id_{Y(F(A))} ∘ α_A
+			\\
+			&=
+			α_A \,,
+		\end{align*}
+		whence~$α' = α$.
+
+	\item
+		Let~$β$ be a natural transformation from~$\Lan_F(X)$ to~$Y$.
+		Let~$α$ be the resulting natural transformation from~$X$ to~$Y ∘ F$ given by
+		\[
+			α = β F ∘ λ \,.
+		\]
+		Let~$β'$ be the resulting natural transformation from~$\Lan_F(X)$ to~$Y$, which is uniquely determined by
+		\[
+			β'_B ∘ i^B_{(A, h)} = Y(h) ∘ α_A
+		\]
+		for every object~$B$ of~$\scat{B}$ and every object~$(A, h)$ of~$F \comma B$.
+		It follows that
+		\begin{align*}
+			β'_B ∘ i^B_{(A, h)}
+			&=
+			Y(h) ∘ α_A
+			\\
+			&=
+			Y(h) ∘ (β F ∘ λ)_A
+			\\
+			&=
+			Y(h) ∘ β_{F(A)} ∘ λ_A
+			\\
+			&=
+			Y(h) ∘ β_{F(A)} ∘ i^{F(A)}_{(A, \id_{F(A)})}
+			\\
+			&=
+			β_B ∘ \Lan_F(X)(h) ∘ i^{F(A)}_{(A, \id_{F(A)})}
+			\\
+			&=
+			β_B ∘ i^B_{(A, h ∘ \id_{F(A)})}
+			\\
+			&=
+			β_B ∘ i^B_{(A, h)}
+		\end{align*}
+		for every object~$B$ of~$\scat{B}$ and every object~$(A, h)$ of~$F \comma B$, therefore
+		\[
+			β'_B = β_B
+		\]
+		for every object~$B$ of~$\scat{B}$, and thus~$β' = β$.
+
+\end{itemize}
+This shows that the above two constructions are indeed mutually inverse.
+
+
+
+\subsubsection{}
+
+We start off by extending the assignment~$\Lan_F$ to a functor from~$[\scat{A}, \cat{S}]$ to~$[\scat{B}, \cat{S}]$.
+To do this, let~$X$ and~$X'$ be two functors from~$\scat{A}$ to~$\cat{S}$ and let
+\[
+	γ \colon X \To X'
+\]
+be a natural transformation.
+We have for every object~$B$ of~$\scat{B}$ the induced natural transformation
+\[
+	γ P_B \colon X ∘ P_B \To X' ∘ P_B \,.
+\]
+The two functors~$X ∘ P_B$ and~$X' ∘ P_B$ are diagrams of the same shape~$F \comma B$ in~$\cat{S}$.
+The natural transformation~$γ P_B$ therefore induces a morphism
+\[
+	\Lan_F(γ)_B \colon \Lan_F(X)(B) \to \Lan_F(X')(B)
+\]
+that is unique with the property
+\[
+	\Lan_F(γ)_B ∘ i^{X, B}_M
+	=
+	i^{X',\, B}_M ∘ (γ P_B)_M
+\]
+for every object~$M$ of~$F \comma B$.
+This equality can be slightly rewritten as
+\[
+	\Lan_F(γ)_B ∘ i^{X, B}_{(A, h)}
+	=
+	i^{X',\, B}_{(A, h)} ∘ γ_A
+\]
+for every object~$(A, h)$ of~$F \comma B$.
+
+The resulting transformation~$\Lan_F(γ)$ from~$\Lan_F(X)$ to~$\Lan_F(X')$ is again natural.
+To show this, we have to prove that for every morphism
+\[
+	g \colon X \to X'
+\]
+in~$\scat{B}$ the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		\Lan_F(X)(B)
+		\arrow{r}[above]{\Lan_F(X)(g)}
+		\arrow{d}[left]{\Lan_F(γ)_B}
+		&
+		\Lan_F(X)(B')
+		\arrow{d}[right]{\Lan_F(γ)_{B'}}
+		\\
+		\Lan_F(X')(B)
+		\arrow{r}[above]{\Lan_F(X')(g)}
+		&
+		\Lan_F(X')(B')
+	\end{tikzcd}
+\]
+We thus need to prove the equality
+\[
+	\Lan_F(γ)_{B'} ∘ \Lan_F(X)(g)
+	=
+	\Lan_F(X')(g) ∘ \Lan_F(γ)_B \,.
+\]
+For this, it suffices to show for every object~$(A, h)$ of~$F \comma B$ the equality
+\[
+	\Lan_F(γ)_{B'} ∘ \Lan_F(X)(g) ∘ i^{X, B}_{(A, h)}
+	=
+	\Lan_F(X')(g) ∘ \Lan_F(γ)_B ∘ i^{X, B}_{(A, h)} \,.
+\]
+This equality holds because
+\begin{align*}
+	{}&
+	\Lan_F(γ)_{B'} ∘ \Lan_F(X)(g) ∘ i^{X, B}_{(A, h)}
+	\\
+	={}&
+	\Lan_F(γ)_{B'} ∘ i^{X, B'}_{(A, g ∘ h)}
+	\\
+	={}&
+	i^{X',\, B'}_{(A, g ∘ h)} ∘ γ_A
+	\\
+	={}&
+	\Lan_F(X')(g) ∘ i^{X', B}_{(A, h)} ∘ γ_A
+	\\
+	={}&
+	\Lan_F(X')(g) ∘ \Lan_F(γ)_B ∘ i^{X, B}_{(A, h)} \,.
+\end{align*}
+
+We have thus constructed the action of~$\Lan_F$ on both objects and morphisms of~$[\scat{A}, \cat{S}]$.
+These actions define a functor from~$[\scat{A}, \cat{S}]$ to~$[\scat{B}, \cat{S}]$, as we will now check:
+\begin{itemize}
+
+	\item
+		Let~$X$ be a functor from~$\scat{A}$ to~$\cat{S}$.
+		We have
+		\[
+			( \id_{\Lan_F(X)} )_B ∘ i^{X, B}_{(A, h)}
+			=
+			\id_{\Lan_F(X)(B)} ∘ i^{X, B}_{(A, h)}
+			=
+			i^{X, B}_{(A, h)}
+			=
+			i^{X, B} ∘ \id_{X(A)}
+			=
+			i^{X, B} ∘ (\id_X)_A
+		\]
+		for every object~$B$ of~$\scat{B}$ and every object~$(A, h)$ of~$F \comma B$.
+		This shows that the natural transformation~$\id_{\Lan_F(X)}$ satisfies the defining property of~$\Lan_F(\id_X)$, whence
+		\[
+			\Lan_F(\id_X) = \id_{\Lan_F(X)} \,.
+		\]
+
+	\item
+		Let~$X$,~$X'$ and~$X''$ be functors from~$\scat{A}$ to~$\cat{S}$ and let
+		\[
+			γ \colon X \To X' \,,
+			\quad
+			γ' \colon X' \To X''
+		\]
+		be two composable natural transformations.
+		We have
+		\begin{align*}
+			( \Lan_F(γ') ∘ \Lan_F(γ) )_B ∘ i^{X, B}_{(A, h)}
+			&=
+			\Lan_F(γ')_B ∘ \Lan_F(γ)_B ∘ i^{X, B}_{(A, h)}
+			\\
+			&=
+			\Lan_F(γ)'_B ∘ i^{X',\, B}_{(A, h)} ∘ γ_A
+			\\
+			&=
+			i^{X'',\, B}_{(A, h)} ∘ γ'_A ∘ γ_A
+			\\
+			&=
+			i^{X'',\, B}_{(A, h)} ∘ (γ' ∘ γ)_A
+			\\
+			&=
+			\Lan_F(γ' ∘ γ)_B ∘ i^{X, B}_{(A, h)}
+		\end{align*}
+		for every object~$B$ of~$\scat{B}$ and every object~$(A, h)$ of~$F \comma B$.
+		This shows that the composite~$\Lan_F(γ') ∘ \Lan_F(γ)$ satisfies the defining property of the natural transformation~$\Lan_F(γ' ∘ γ)$, whence
+		\[
+			\Lan_F(γ' ∘ γ) = \Lan_F(γ') ∘ \Lan_F(γ) \,.
+		\]
+
+\end{itemize}
+We have thus overall constructed a functor~$\Lan_F$ from~$[\scat{A}, \cat{S}]$ to~$[\scat{B}, \cat{S}]$.
+
+We have seen in the previous part of this exercise that we have for every functor~$X$ from~$\scat{A}$ to~$\cat{S}$ a natural transformation
+\[
+	λ^X \colon X \To \Lan_F(X) ∘ F \,,
+\]
+so that for every functor~$Y$ from~$\scat{B}$ to~$\cat{S}$, the map
+\begin{equation}
+	\label{bijectivity for adjointness}
+	[\scat{B}, \cat{S}](\Lan_F(X), Y)
+	\to
+	[\scat{A}, \cat{S}](X, Y ∘ F) \,,
+	\quad
+	β
+	\mapsto
+	β F ∘ λ^X
+\end{equation}
+is bijective.
+We observe that~$λ^X$ is natural in~$X$.
+To see this, we have to check that for every two functors~$X$ and~$X'$ from~$\scat{A}$ to~$\cat{S}$ and every natural transformation
+\[
+	γ \colon X \to X'
+\]
+the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		X
+		\arrow[Rightarrow]{r}[above]{γ}
+		\arrow[Rightarrow]{d}[left]{λ^X}
+		&
+		X'
+		\arrow[Rightarrow]{d}[right]{λ^{X'}}
+		\\
+		\Lan_F(X) ∘ F
+		\arrow[Rightarrow]{r}[above]{\Lan_F(γ) F}
+		&
+		\Lan_F(X') ∘ F
+	\end{tikzcd}
+\]
+We thus have to show that for every object~$A$ of~$\scat{A}$ the following diagram commutes:
+\[
+	\begin{tikzcd}[row sep = large, column sep = 6em]
+		X(A)
+		\arrow{r}[above]{γ_A}
+		\arrow{d}[left]{(λ^X)_A}
+		&
+		X'(A)
+		\arrow{d}[right]{(λ^{X'})_A}
+		\\
+		\Lan_F(X)(F(A))
+		\arrow{r}[above]{(\Lan_F(γ) F)_A}
+		&
+		\Lan_F(X')(F(A))
+	\end{tikzcd}
+\]
+This commutativity hold because
+\[
+	(\Lan_F(γ) ∘ F)_A ∘ (λ^X)_A
+	=
+	\Lan_F(γ)_{F(A)} ∘ i^{X, F(X)}_{(A, \id_{F(X)})}
+	=
+	i^{X', F(X)}_{(A, \id_{F(X)})} ∘ γ_A
+	=
+	(λ^{X'})_A ∘ γ_A \,.
+\]
+
+Let~$η$ be the natural transformation with components~$λ^X$, i.e., the natural transformation from~$\Id_{[\scat{A}, \cat{S}]}$ to~$\Lan_F ∘ F^*$ with~$η_X = λ^X$ for every object~$X$ of~$[\scat{A}, \cat{S}]$.
+(We denote here by~$F^*$ the functor induced by~$F$ from~$[\scat{B}, \cat{S}]$ to~$[\scat{A}, \cat{S}]$.)
+The bijectivity of~\eqref{bijectivity for adjointness} tells us that for every object~$X$ of~$[\scat{A}, \cat{S}]$, the morphism~$η_X = λ^X$ is an initial object of~$X \comma F^*$.
+It follows from Theorem~2.3.6 and its proof, that~$\Lan_F$ is left adjoint to~$F^*$, and that~$η$ is the unit of one such adjunction.
+
+
+
+\subsubsection{}
+
+The category~$\Set$ admits both small limits and small colimits.
+It follows that for every small category~$\scat{A}$, the functor category~$[\scat{A}, \Set]$ also admits both small limits and small colimits.
+We find that for every other small category~$\scat{B}$ and every functor~$F$ from~$\scat{A}$ to~$\scat{B}$, the functor
+\[
+	F_* \colon [\scat{B}, \Set] \to [\scat{A}, \Set]
+\]
+admits both a left adjoint and a right adjoint.
+
+Given any two groups~$G$ and~$H$ and a homomorphism of groups~$φ$ from~$G$ to~$H$, we may regard~$G$ and~$H$ as small one-object categories, and the homomorphism~$φ$ as a functor~$Φ$ from~$G$ to~$H$.
+The functor categories~$[G, \Set,$ and~$[H, \Set]$ are isomorphic to the categories of~\sets{$G$} and~\sets{$H$} respectively, and the functor
+\[
+	Φ^*
+	\colon
+	[H, \Set] \to [G, \Set]
+\]
+corresponds to the pull-back functor
+\[
+	φ^* \colon \GSet{H} \to \GSet{G}
+\]
+induced by~$φ$.
+We have seen above that~$Φ^*$ admits both a left adjoint and a right adjoint.
+This means that~$φ^*$ admits both a left adjoint and a right adjoint.
+
+For the trivial group~$1$, the category~$\GSet{1}$ is in turn isomorphic to~$\Set$.
+By choosing the group~$H$ as trivial, we see that the functor
+\[
+	\Set \to \GSet{G}
+\]
+that regards every set as a trivial~\set{$G$} admits both a left adjoint and a right adjoint.
+Alternatively, by choosing~$G$ as trivial, we see that the forgetful functor
+\[
+	\GSet{H} \to \Set
+\]
+admits both a left adjoint and a right adjoint.
