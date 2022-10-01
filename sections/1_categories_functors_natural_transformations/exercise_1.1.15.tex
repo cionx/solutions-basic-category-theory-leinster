@@ -1,19 +1,28 @@
 \subsection{}
 
-For any two continuous maps~$f$ and~$g$ from a topological space~$X$ to a topological space~$Y$ we write~$f ≃ g$ to mean that~$f$ and~$g$ are homotopic.
+For any two continuous maps~$f$ and~$g$ from a topological space~$X$ to another topological space~$Y$ we write~$f ≃ g$ to mean that~$f$ and~$g$ are homotopic.
 
-The composition on~$\Top$ descends do a composition on~$\Toph$ thanks to the following two observations:
-\begin{itemize}
-	\item
+The composition of morphisms in~$\Top$ descends do a composition of morphisms in~$\Toph$ thanks to the following observation:
+\begin{quote}
+		\itshape
 		Let~$X$,~$Y$ and~$Z$ be topological spaces.
-		Let~$f_1$ and~$f_2$ be continuous maps from~$X$ and~$Y$ and let~$g$ be a continuous map from~$Y$ to~$Z$.
-		If~$f_1 ≃ f_2$ then also~$g ∘ f_1 ≃ g ∘ f_2$.
-	\item
-		Let~$X$,~$Y$ and~$Z$ be topological spaces.
-		Let~$f$ be a continuous map from~$X$ to~$Y$ and let~$g_1$ and~$g_2$ be continuous maps from~$Y$ to~$Z$.
-		If~$g_1 ≃ g_2$ then also~$g_1 ∘ f ≃ g_2 ∘ f$.
-\end{itemize}
+		Let
+		\[
+			f, f' \colon X \to Y \,,
+			\quad
+			g, g' \colon Y \to Z
+		\]
+		be continuous maps.
+		If both~$f ≃ f'$ and~$g ≃ g'$, then also~$g ∘ f ≃ g' ∘ f'$.
+\end{quote}
 
-For any topological space~$X$ the identity of~$X$ in~$\Toph$ is given by the homotopy class of~$\id_X$.
-It follows that two topological spaces~$X$ and~$Y$ are isomorphic in~$\Toph$ if and only if there exist a continuous map~$f$ from~$X$ to~$Y$ and a continuous map~$g$ from~$Y$ to~$X$ such that~$g ∘ f ≃ \id_X$ and~$f ∘ g ≃ \id_Y$.
-In other words, two topological spaces are isomorphic in~$\Toph$ if and only if they are homotopy equivalent.
+For any topological space~$X$, the identity morphism of~$X$ in~$\Toph$ is given by the homotopy class of the identity map on~$X$.
+It follows that two topological spaces~$X$ and~$Y$ are isomorphic in~$\Toph$ if and only if there exist continuous maps
+\[
+	f \colon X \to Y \,,
+	\quad
+	g \colon Y \to X
+\]
+such that both~$g ∘ f ≃ \id_X$ and~$f ∘ g ≃ \id_Y$.
+In other words, two topological spaces become isomorphic in~$\Toph$ if and only if they are homotopy equivalent.
+(More explicitly, a continuous map becomes an isomorphism in~$\Toph$ if and only if it is a homotopy equivalence.)
