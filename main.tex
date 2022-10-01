@@ -17,8 +17,12 @@
 	\tableofcontents
 
 \mainmatter
+	% A different counter format for the introduction chapter.
+	\renewcommand{\thesubsection}{Exercise~\arabic{chapter}.\arabic{subsection}}
 	\setcounter{chapter}{-1}
 	\include{sections/0_introduction.tex}
+	% Back to the default counter for all other chapters.
+	\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
 	\include{sections/1_categories_functors_natural_transformations.tex}
 	\include{sections/2_adjoints.tex}
 	\include{sections/3_interlude_on_sets.tex}
