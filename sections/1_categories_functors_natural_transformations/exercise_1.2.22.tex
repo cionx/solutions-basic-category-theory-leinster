@@ -3,7 +3,7 @@
 A functor~$F$ from~$\cat{A}$ to~$\cat{B}$ consists of the following data:
 \begin{itemize*}
 	\item
-		A map~$f$ from~$A$ to~$B$.
+		A map~$f$ from~$A$ to~$B$ that gives us the action of~$F$ on the objects on~$\cat{A}$.
 	\item
 		For every two elements~$a$ and~$a'$ of~$A$ and every morphism~$i$ from~$a$ to~$a'$ in~$\cat{A}$ a morphism~$F(i)$ from~$F(a)$ to~$F(a')$ in~$\cat{B}$, such that the following two properties hold:
 		\begin{enumerate*}
@@ -12,15 +12,31 @@ A functor~$F$ from~$\cat{A}$ to~$\cat{B}$ consists of the following data:
 				$F(\id_a) = \id_{f(a)}$ for every element~$a$ of~$\cat{A}$.
 			\item
 				\label{composite of composite}
-				$F(j ∘ i) = F(j) ∘ F(i)$ for every three elements~$a$,~$a'$,~$a''$ of~$A$ and morphisms~$i$ from~$a$ to~$a'$ and~$j$ from~$a'$ to~$a''$ in~$\cat{A}$.
+				For every two composable morphisms
+				\[
+					i \colon a \to a' \,,
+					\quad
+					j \colon a' \to a''
+				\]
+				in~$\cat{A}$, the equality~$F(j ∘ i) = F(j) ∘ F(i)$ holds.
 		\end{enumerate*}
 \end{itemize*}
 
-In the category~$\cat{B}$ there exist at most one morphism between any two objects.
-The two conditions~\ref{identity to identity} and~\ref{composite of composite} are therefore always satisfied.
-It also follows that for every morphism~$i$ in~$\cat{A}$ the morphism~$F(i)$ is uniquely determined by its domain and its codomain, and therefore already uniquely determined by the function~$f$.
+In the category~$\cat{B}$, any two morphisms with the same domain and the same co\-domain are automatically equal.
+This has the following two consequences:
+\begin{itemize*}
+
+	\item
+		The two conditions~\ref{identity to identity} and~\ref{composite of composite} are both automatically satisfied.
+
+	\item
+		The action of~$F$ on morphisms is uniquely determined by the action of~$F$ on objects, and thus by the map~$f$.
+
+\end{itemize*}
 
 The data of a functor~$F$ from~$\cat{A}$ to~$\cat{B}$ does therefore only consist of a function~$f$ from~$A$ to~$B$ satisfying the following condition:
-there exist a morphism from~$f(a)$ to~$f(a')$ for every two elements~$a$ and~$a'$ of~$\cat{A}$ for which there exist a morphism from~$a$ in~$a'$ in~$\cat{A}$.
+\begin{quote}
+	There exist a morphism from~$f(a)$ to~$f(a')$ in~$\cat{B}$ for every two elements~$a$ and~$a'$ of~$A$ for which there exist a morphism from~$a$ in~$a'$ in~$\cat{A}$.
+\end{quote}
 In other words, the function~$f$ needs to satisfy the condition~$f(a) ≤ f(a')$ for every two elements~$a$ and~$a'$ of~$A$ with~$a ≤ a'$.
 But this is precisely what it means for~$f$ to be order-preserving.
