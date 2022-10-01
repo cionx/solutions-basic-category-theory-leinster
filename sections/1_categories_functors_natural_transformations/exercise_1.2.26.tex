@@ -1,7 +1,7 @@
 \subsection{}
 
 For every topological space~$X$ let~$C(X)$ be the (commutative) ring of continuous, real-valued functions on~$X$.
-For any two topological spaces~$X$ and~$Y$ and every continuous map~$φ$ from~$X$ to~$Y$ let~$C(φ)$ be the induced map
+For any two topological spaces~$X$ and~$Y$ and every continuous map~$φ$ from~$X$ to~$Y$, let~$C(φ)$ be the induced map
 \[
 	C(φ)
 	\colon
@@ -15,65 +15,86 @@ For any two topological spaces~$X$ and~$Y$ and every continuous map~$φ$ from~$X
 \]
 This map is well-defined because the composite of two continuous maps is again continuous.
 
-The above map~$C(φ)$ is a homomorphism of rings:
-For every two elements~$f$ and~$g$ of~$C(Y)$ and every~$⋆ ∈ \{+, ·\}$ we have
-\begin{align*}
-	C(φ)(f ⋆ g)(x)
-	&=
-	((f ⋆ g) ∘ φ)(x)
-	\\
-	&=
-	(f ⋆ g)(φ(x))
-	\\
-	&=
-	f(φ(x)) ⋆ g(φ(x))
-	\\
-	&=
-	(f ∘ φ)(x) ⋆ (g ∘ φ)(x)
-	\\
-	&=
-	C(φ)(f)(x) ⋆ C(φ)(g)(x)
-	\\
-	&=
-	(C(φ)(f) ⋆ C(φ)(g))(x)
-\end{align*}
-for every element~$x$ of~$X$, and thus
-\[
-	C(φ)(f ⋆ g)
-	=
-	C(φ)(f) ⋆ C(φ)(g) \,.
-\]
-We also have
-\[
-	C(φ)(1_Y)
-	=
-	1_Y ∘ φ
-	=
-	1_X \,,
-\]
-and this~$C(φ)(1) = 1$.
-These calculations show that~$C(φ)$ is indeed a homomorphism of rings from~$C(Y)$ to~$C(X)$.
+The map~$C(φ)$ is a homomorphism of rings:
+\begin{itemize}
 
-For every topological space~$X$ we have
-\[
-	C(\id_X)(f)
-	=
-	f ∘ \id_X
-	=
-	f
-\]
-for every~$f ∈ C(X)$ and therefore~$C(\id_X) = \id_{C(X)}$.
-For every three topological spaces~$X$,~$Y$,~$Z$ and every two continuous maps~$φ$ from~$X$ to~$Y$ and~$ψ$ from~$Y$ to~$Z$ we have
-\[
-	C(ψ ∘ φ)(f)
-	=
-	f ∘ ψ ∘ φ
-	=
-	C(ψ)(f) ∘ φ
-	=
-	C(φ)( C(ψ)(f) )
-	=
-	( C(φ) ∘ C(ψ) )(f)
-\]
-for every~$f ∈ C(Z)$, and therefore~$C(ψ ∘ φ) = C(φ) ∘ C(ψ)$.
-This shows altogether that~$C$ is a contravariant functor from~$\Top$ to~$\Ring$.
+	\item
+		If we denote by~$⋆$ either addition or multiplication, then we have for every two elements~$f$ and~$g$ of~$C(Y)$ the equalities
+		\begin{align*}
+			C(φ)(f ⋆ g)(x)
+			&=
+			((f ⋆ g) ∘ φ)(x)
+			\\
+			&=
+			(f ⋆ g)(φ(x))
+			\\
+			&=
+			f(φ(x)) ⋆ g(φ(x))
+			\\
+			&=
+			(f ∘ φ)(x) ⋆ (g ∘ φ)(x)
+			\\
+			&=
+			C(φ)(f)(x) ⋆ C(φ)(g)(x)
+			\\
+			&=
+			(C(φ)(f) ⋆ C(φ)(g))(x)
+		\end{align*}
+		for every point~$x$ in~$X$, and thus the equality
+		\[
+			C(φ)(f ⋆ g) = C(φ)(f) ⋆ C(φ)(g) \,.
+		\]
+
+	\item
+		We also have
+		\[
+			C(φ)(1_Y)
+			=
+			1_Y ∘ φ
+			=
+			1_X \,,
+		\]
+		and thus~$C(φ)(1) = 1$.
+		(We denote here by~$1_X$ and~$1_Y$ the functions with constant value~$1$ on~$X$ and~$Y$ respectively.)
+
+\end{itemize}
+These calculations show that the map~$C(φ)$ is indeed a homomorphism of rings from~$C(Y)$ to~$C(X)$.
+
+We now check that the construction~$C$ is indeed a functor.
+\begin{itemize}
+
+	\item
+		For every topological space~$X$ we have
+		\[
+			C(\id_X)(f)
+			=
+			f ∘ \id_X
+			=
+			f
+		\]
+		for every~$f ∈ C(X)$, and therefore~$C(\id_X) = \id_{C(X)}$.
+		(Here we denote by~$\id_X$ the identity map on the space~$X$.)
+
+	\item
+		For every two composable continuous maps
+		\[
+			φ \colon X \to Y \,,
+			\quad
+			ψ \colon Y \to Z \,,
+		\]
+		we have the equalities
+		\[
+			C(ψ ∘ φ)(f)
+			=
+			f ∘ ψ ∘ φ
+			=
+			C(φ)(f ∘ ψ)
+			=
+			C(φ)( C(ψ)(f) )
+			=
+			( C(φ) ∘ C(ψ) )(f)
+		\]
+		for every~$f ∈ C(Z)$, and therefore~$C(ψ ∘ φ) = C(φ) ∘ C(ψ)$.
+
+\end{itemize}
+This shows that~$C$ is indeed a contravariant functor from~$\Top$ to~$\Ring$.
