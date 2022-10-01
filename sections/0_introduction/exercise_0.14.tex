@@ -3,14 +3,15 @@
 
 \subsubsection{}
 
-Let~$P ≔ X × Y$, let~$p_1$ be the projection map from~$P$ to~$X$ into the first coordinate, and let~$p_2$ be the projection map from~$P$ to~$Y$ into the second coordinate.
+Let~$P$ be the vector space~$X × Y$, let~$p_1$ be the projection map from~$P$ to~$X$ into the first coordinate, and let~$p_2$ be the projection map from~$P$ to~$Y$ into the second coordinate.
+
 For every pair~$(f_1, f_2)$ of set-theoretic maps
 \[
 	f_1 \colon V \to X \,,
 	\quad
 	f_2 \colon V \to Y
 \]
-there exists a unique set-theoretic map~$f$ from~$X × Y$ such that both~$f_1 = p_1 ∘ f$ and~$f_2 = p_2 ∘ f$, namely the map
+there exists a unique set-theoretic map~$f$ from~$V$ to~$X × Y$ such that both~$f_1 = p_1 ∘ f$ and~$f_2 = p_2 ∘ f$, namely the map
 \[
 	f
 	\colon
@@ -22,29 +23,27 @@ there exists a unique set-theoretic map~$f$ from~$X × Y$ such that both~$f_1 = 
 	\mapsto
 	( f_1(v), f_2(v) ) \,.
 \]
-If both~$f_1$ and~$f_2$ are linear, then it follows that~$f$ is also linear.
+The map~$f$ is linear if and only if it is linear in both coordinates, i.e., if and only if both~$f_1$ and~$f_2$ are linear.
+It follows that the cone~$(P, p_1, p_2)$ satisfies the desired universal property.
 
 
 
 \subsubsection{}
 
-There exists by a unique linear map~$i$ from~$P$ to~$P'$ such that~$p'_1 ∘ i = p_1$ and~$p'_2 ∘ i = p_2$, and a unique linear map~$j$ from~$P'$ to~$P$ such that~$p_1 ∘ j = p'_1$ and~$p_2 ∘ j = p'_2$.
+There exists by assumption a unique linear map~$i$ from~$P$ to~$P'$ such that~$p'_1 ∘ i = p_1$ and~$p'_2 ∘ i = p_2$, and similarly a unique linear map~$j$ from~$P'$ to~$P$ such that~$p_1 ∘ j = p'_1$ and~$p_2 ∘ j = p'_2$.
 
 There exists by assumption a unique linear map~$f$ from~$P$ to~$P$ such that~$p_1 ∘ f = p_1$ and~$p_2 ∘ f = p_2$.
 Both~$\id_P$ and~$j ∘ i$ satisfy this condition.
 It therefore follows that~$j ∘ i = \id_P$.
+We find in the same way that also~$i ∘ j = \id_{P'}$.
 
-There exists by assumption a unique linear map~$g$ from~$P'$ to~$P'$ such that~$p'_1 ∘ g = p'_1$ and~$p'_2 ∘ g = p'_2$.
-Both~$\id_{P'}$ and~$i ∘ j$ satisfy this condition.
-It therefore follows that~$i ∘ j = \id_{P'}$.
-
-This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms.
+This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms of vector spaces.
 
 
 
 \subsubsection{}
 
-Let~$Q = X ⊕ Y$ and let~$q_1$ and~$q_2$ be the linear maps given by
+Let~$Q$ be the vector space~$X ⊕ Y$, and let~$q_1$ and~$q_2$ be the linear maps given by
 \begin{alignat*}{2}
 	q_1
 	\colon
@@ -67,7 +66,10 @@ Let~$Q = X ⊕ Y$ and let~$q_1$ and~$q_2$ be the linear maps given by
 	(0, y) \,.
 \end{alignat*}
 
-Let~$f$ be a linear map from~$Q$ to~$V$ such that~$f ∘ q_1 = f_1$ and~$f ∘ q_2 = f_2$.
+Let~$(V, f_1, f_2)$ be a cocone.
+We how in the following that there exists a unique linear map~$f$ from~$Q$ to~$V$ with both~$f ∘ q_1 = f_1$ and~$f ∘ q_2 = f_2$.
+
+Let~$f$ be such a linear map.
 Then
 \begin{align*}
 	f( (x,y) )
@@ -86,11 +88,10 @@ Then
 	&=
 	f_1(x) + f_2(y)
 \end{align*}
-for all~$x ∈ X$ and~$y ∈ Y$.
-This shows that~$f$ is uniquely determined by~$f_1$ and~$f_2$.
-This shows the desired uniqueness of~$f$.
+for all~$x ∈ X$,~$y ∈ Y$.
+This shows that the linear map~$f$ is uniquely determined by the composites~$f_1$ and~$f_2$, which shows the desired uniqueness of~$f$.
 
-Consider on the other hand the map
+Consider now the map
 \[
 	f
 	\colon
@@ -136,29 +137,13 @@ This shows the desired existence of the linear map~$f$.
 
 \subsubsection{}
 
-Let~$(Q', q'_1, q'_2)$ be another cocone, such that for every vector space~$V$ and every two linear maps
-\[
-	f_1
-	\colon
-	X
-	\to
-	V \,,
-	\quad
-	f_2
-	\colon
-	Y
-	\to
-	V
-\]
-there exists a unique linear map~$f$ from~$Q'$ to~$V$ such that~$f ∘ q'_1 = f_1$ and~$f ∘ q'_2 = f_2$.
+Let~$(Q', q'_1, q'_2)$ be a cocone such that for every cocone~$(V, f_1, f_2)$ there exists a unique linear map~$f$ from~$Q'$ to~$V$ with~$f ∘ q'_1 = f_1$ and~$f ∘ q'_2 = f_2$.
 
 It follows from the previous part of this exercise that there exists a unique linear map~$i$ from~$Q$ to~$Q'$ such that~$i ∘ q_1 = q'_1$ and~$i ∘ q_2 = q'_2$.
 It follows from the above assumption on~$(Q', q'_1, q'_2)$ that there exists a unique linear map~$j$ from~$Q'$ to~$Q$ such that~$j ∘ q'_1 = q_1$ and~$j ∘ q'_2 = q_2$.
 
 There exists by the previous part of this exercise a unique linear map~$f$ from~$Q$ to~$Q$ such that~$f ∘ q_1 = q_1$ and~$f ∘ q_2 = q_2$.
 Both~$\id_Q$ end~$j ∘ i$ satisfy this defining property of~$f$, which shows that~$j ∘ i = \id_Q$.
+We find in the same way that also~$i ∘ j = \id_{Q'}$.
 
-There exists by assumption on the triple~$(Q', q'_1, q'_2)$ a unique linear map~$g$ from~$Q'$ to~$Q'$ such that~$g ∘ q'_1 = q'_1$ and~$g ∘ q'_2 = q'_2$.
-Both~$\id_{Q'}$ and~$i ∘ j$ satisfy the defining property of~$g$, which shows that~$i ∘ j = \id_{Q'}$.
-
-This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms.
+This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms of vector spaces.
