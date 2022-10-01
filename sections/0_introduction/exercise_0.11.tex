@@ -1,10 +1,10 @@
 \subsection{}
 
-Let~$G'$ be a group and let~$φ$ be a group homomorphism from~$G'$ to~$H$ such that the composite~$θ ∘ φ$ is the trivial group homomorphism.
-Then there exists a unique group homomorphism~$ψ$ from~$G'$ to~$\ker(θ)$ with~$φ = ι ∘ ψ$, i.e., such that the following diagram commutes:
+Let~$K$ be another group and let~$φ$ be a homomorphism of groups from~$K$ to~$H$ such that the composite~$θ ∘ φ$ is the trivial homomorphism of groups.
+Then there exists a unique homomorphism of groups~$ψ$ from~$K$ to~$\ker(θ)$ with~$φ = ι ∘ ψ$, i.e., such that the following diagram commutes:
 \[
-	\begin{tikzcd}
-		G'
+	\begin{tikzcd}[sep = normal]
+		K
 		\arrow{dr}[below left]{φ}
 		\arrow[bend left]{drr}[above right]{1}
 		\arrow[dashed]{dd}[left]{ψ}
@@ -21,7 +21,7 @@ Then there exists a unique group homomorphism~$ψ$ from~$G'$ to~$\ker(θ)$ with~
 		H
 		\\
 		\ker(θ)
-		\arrow{ur}[above]{ι}
+		\arrow{ur}[above left]{ι}
 		\arrow[bend right]{urr}[below right]{1}
 		&
 		{}
@@ -29,3 +29,4 @@ Then there exists a unique group homomorphism~$ψ$ from~$G'$ to~$\ker(θ)$ with~
 		{}
 	\end{tikzcd}
 \]
+(Here, we denote the trivial homomorphism of groups by~$1$.)
