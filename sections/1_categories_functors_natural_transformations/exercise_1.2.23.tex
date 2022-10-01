@@ -5,23 +5,18 @@
 \subsubsection{}
 
 The group~$G^{\op}$ is the opposite group of~$G$:
-to every element~$g$ of~$G$ there is associated an element~$g^{\op}$ of~$G^{\op}$ such that the map
+to every element~$g$ of~$G$ there is an associated element~$g^{\op}$ of~$G^{\op}$ such that the map
 \[
-	G
-	\to
-	G^{\op} \,,
+	G \to G^{\op} \,,
 	\quad
-	g
-	\mapsto
-	g^{\op}
+	g \mapsto g^{\op}
 \]
-is a bijection, and the group structure on~$G^{\op}$ is given by
+is bijective, and the group structure on~$G^{\op}$ is given by
 \[
-	g^{\op} · h^{\op}
-	=
-	(h · g)^{\op}
+	g^{\op} · h^{\op} = (h · g)^{\op}
+	\qquad
+	\text{for all~$g, h, ∈ G$.}
 \]
-for all~$g, h ∈ G$.
 
 Every group~$G$ is isomorphic to its opposite group~$G^{\op}$ via the inversion map
 \[
@@ -53,7 +48,7 @@ Indeed, the map~$i$ bijective because it is the composite of the two bijections
 	&\mapsto
 	x^{-1} \,.
 \end{alignat*}
-It is a group homomorphism because
+It is a homomorphism of groups because
 \[
 	i(g h)
 	=
@@ -71,10 +66,13 @@ for all~$g, h ∈ G$.
 
 \subsubsection{}
 
-Let~$X$ be a set that contains at least two elements and let~$M$ be the monoid of maps from~$X$ to itself, i.e.,~$M ≔ \End_{\Set}(X)$.
-Every constant map~$c$ from~$X$ to~$X$ is left-absorbing in~$M$, in the sense that~$cf = c$ for every~$f ∈ M$.
-It follows that the monoid~$M^{\op}$ contains right-absorbing elements.
-But~$M$ itself does not admit a right-absorbing element.
-Indeed, there exist for every element~$f$ of~$M$ two elements~$x$ and~$y$ of~$X$ with~$f(x) ≠ y$ (because the set~$X$ contains at least two elements).
+We follow the approach from \cite{stackexchange_monoid_isomorphic_to_its_opposite}.
+Let~$X$ be a set that contains at least two elements and let~$M$ be the monoid of maps from~$X$ to itself, i.e., let~$M$ be~$\End_{\Set}(X)$.
+
+Every constant map~$c$ from~$X$ to~$X$ is left-absorbing in~$M$, in the sense that~$cf = c$ for every element~$f$ of~$M$.
+It follows that the opposite monoid~$M^{\op}$ contains right-absorbing elements.
+
+But~$M$ itself does not admit any right-absorbing element.
+Indeed, there exist for every element~$f$ of~$M$ two elements~$x$ and~$y$ of~$X$ with~$f(x) ≠ y$ (because the set~$X$ contains two distinct elements).
 Let~$s$ be the transposition on the set~$X$ that interchanges the two elements~$f(x)$ and~$y$.
 Then~$(s f)(x) = y ≠ f(x)$ and therefore~$sf ≠ f$.
