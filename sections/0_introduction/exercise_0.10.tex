@@ -2,10 +2,11 @@
 
 For every topological space~$X$, every set-theoretic map from~$X$ to~$I(S)$ is continuous.
 This can also be formulated as follows:
-Let~$i$ be the set-theoretic map from~$S$ to~$I(S)$ given by~$i(s) ≔ s$ for every~$s ∈ S$.
+
+Let~$i$ be the set-theoretic map from~$S$ to~$I(S)$ given by~$i(s) ≔ s$ for every element~$s$ of~$S$.
 There exists for any set-theoretic map~$f$ from~$X$ to~$S$ a unique continuous map~$\induced{f}$ from~$X$ to~$I(S)$ with~$\induced{f} = i ∘ f$, i.e., such that the following diagram commutes.
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		X
 		\arrow{d}[left]{f}
 		\arrow[dashed]{dr}[above right]{\induced{f}}
@@ -13,7 +14,7 @@ There exists for any set-theoretic map~$f$ from~$X$ to~$S$ a unique continuous m
 		{}
 		\\
 		S
-		\arrow{r}[above]{i}
+		\arrow{r}[below]{i}
 		&
 		I(S)
 	\end{tikzcd}
