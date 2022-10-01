@@ -1,9 +1,18 @@
 \subsection{}
 
-Suppose that such a functor~$\Center$ would exist.
-Let~$H$ be the group with two elements and let~$\symm_3$ be the symmetric group on three letters.
-Every transposition in~$\symm_3$ results in a non-trivial group homomorphism~$f$ from~$H$ to~$\symm_3$, and there exist a non-trivial group homomorphism~$g$ from~$\symm_3$ to~$H$ that assigns each permutation its sign.
-The composite~$g ∘ f$ is the identity on~$H$, so that we have the following commutative diagram:
+Suppose that such a functor~$\Center$ were to exist.
+The symmetric group~$\symm_3$ contains a transposition, which corresponds to a non-trivial homomorphism of groups~$f$ from~$ℤ/2$ to~$\symm_3$.
+There also exists a non-trivial homomorphism of groups~$g$ from~$\symm_3$ to~$ℤ/2$, which is given by
+\[
+	g(σ)
+	=
+	\begin{cases*}
+		0 & \text{if~$σ$ is even}, \\
+		1 & \text{if~$σ$ is odd},
+	\end{cases*}
+\]
+for every permutation~$σ$ in~$\symm_3$.
+The composite~$g ∘ f$ is the identity on~$ℤ/2$, whence we have the following commutative diagram:
 \[
 	\begin{tikzcd}
 		{}
@@ -13,16 +22,16 @@ The composite~$g ∘ f$ is the identity on~$H$, so that we have the following co
 		&
 		{}
 		\\
-		H
+		ℤ/2
 		\arrow{ur}[above left]{f}
-		\arrow{rr}[above]{\id_H}
+		\arrow{rr}[above]{\id_{ℤ/2}}
 		&
 		{}
 		&
-		H
+		ℤ/2
 	\end{tikzcd}
 \]
-By applying the functor~$\Center$ we arrive at the following commutative diagram:
+By applying the functor~$\Center$ to this diagram, we arrive at the following commutative diagram:
 \[
 	\begin{tikzcd}
 		{}
@@ -32,17 +41,17 @@ By applying the functor~$\Center$ we arrive at the following commutative diagram
 		&
 		{}
 		\\
-		\Center(H)
+		\Center(ℤ/2)
 		\arrow{ur}[above left]{\Center(f)}
-		\arrow{rr}[above]{\id_{\Center(H)}}
+		\arrow{rr}[above]{\id_{\Center(ℤ/2)}}
 		&
 		{}
 		&
-		\Center(H)
+		\Center(ℤ/2)
 	\end{tikzcd}
 \]
-The group~$H$ is abelian and the center of the symmetric group~$\symm_3$ it trivial.
-The above commutative diagram can therefore be more explicitly be rewritten as
+The group~$ℤ/2$ is abelian and the center of the symmetric group~$\symm_3$ it trivial.
+The above commutative diagram can therefore be rewritten as follows:
 \[
 	\begin{tikzcd}
 		{}
@@ -52,14 +61,14 @@ The above commutative diagram can therefore be more explicitly be rewritten as
 		&
 		{}
 		\\
-		H
+		ℤ/2
 		\arrow{ur}
-		\arrow{rr}[above]{\id_H}
+		\arrow{rr}[above]{\id_{ℤ/2}}
 		&
 		{}
 		&
-		H
+		ℤ/2
 	\end{tikzcd}
 \]
-It follows from the commutativity of this last diagram that the identity of~$H$ is the trivial group homomorphism.
-But this is false because the group~$H$ is non-trivial.
+It follows from the commutativity of this last diagram that the identity of~$ℤ/2$ is the trivial homomorphism of groups.
+But this is false because the group~$ℤ/2$ is non-trivial.
