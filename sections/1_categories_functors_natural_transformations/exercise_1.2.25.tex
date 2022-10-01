@@ -4,112 +4,150 @@
 
 \subsubsection{}
 
-If~$g$ is a morphism from~$B$ to~$B'$ in~$\cat{B}$ then the pair~$(\id_A, g)$ is a morphism from~$(A, B)$ to~$(A, B')$ in~$\cat{A} × \cat{B}$.
-It follows that~$F(\id_A, g)$ is a morphism from~$F(A, B) = F^A(B)$ to~$F(A, B') = F^A(B')$ in~$\cat{C}$.
-We have
-\[
-	F^A(\id_B)
-	=
-	F(\id_A, \id_B)
-	=
-	F( \id_{(A, B)} )
-	=
-	\id_{F(A, B)}
-	=
-	\id_{F^A(B)}
-\]
-for every object~$B$ of~$\cat{B}$.
-For every three objects~$B$,~$B'$,~$B''$ of~$\cat{B}$ and every two composable morphisms~$g$ from~$B$ to~$B'$ and~$g'$ from~$B'$ to~$B''$ in~$\cat{B}$ we have
-\begin{align*}
-	F^A(g') ∘ F^A(g)
-	&=
-	F(\id_A, g') ∘ F(\id_A, g)
-	\\
-	&=
-	F( (\id_A, g') ∘ (\id_A, g) )
-	\\
-	&=
-	F(\id_A ∘ \id_A, g' ∘ g)
-	\\
-	&=
-	F(\id_A, g' ∘ g)
-	\\
-	&=
-	F^A(g' ∘ g) \,.
-\end{align*}
-This shows that~$F^A$ is indeed a functor from~$\cat{B}$ to~$\cat{C}$.
+We first check that for every object~$A$ of~$\cat{A}$, the assignment~$F^A$ is indeed a functor from~$\cat{B}$ to~$\cat{C}$.
+\begin{itemize}
+
+	\item
+		If~$g$ is a morphism from~$B$ to~$B'$ in~$\cat{B}$ then the pair~$(\id_A, g)$ is a morphism from~$(A, B)$ to~$(A, B')$ in~$\cat{A} × \cat{B}$.
+		It follows that~$F(\id_A, g)$ is a morphism from~$F(A, B) = F^A(B)$ to~$F(A, B') = F^A(B')$ in~$\cat{C}$.
+
+	\item
+		We have for every object~$B$ of~$\cat{B}$ the equalities
+		\[
+			F^A(\id_B)
+			=
+			F(\id_A, \id_B)
+			=
+			F( \id_{(A, B)} )
+			=
+			\id_{F(A, B)}
+			=
+			\id_{F^A(B)} \,.
+		\]
+
+	\item
+		Let
+		\[
+			g \colon B \to B' \,,
+			\quad
+			g' \colon B' \to B''
+		\]
+		be two composable morphisms in~$\cat{B}$.
+		We have
+		\begin{align*}
+			F^A(g') ∘ F^A(g)
+			&=
+			F(\id_A, g') ∘ F(\id_A, g)
+			\\
+			&=
+			F( (\id_A, g') ∘ (\id_A, g) )
+			\\
+			&=
+			F(\id_A ∘ \id_A, g' ∘ g)
+			\\
+			&=
+			F(\id_A, g' ∘ g)
+			\\
+			&=
+			F^A(g' ∘ g) \,.
+		\end{align*}
+
+\end{itemize}
+This shows that the assignment~$F^A$ is indeed a functor from~$\cat{B}$ to~$\cat{C}$.
 
 Let now~$B$ be a fixed object of the category~$\cat{B}$.
 For every object~$A$ of~$\cat{A}$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\cat{A} × \cat{B}$, and for every morphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$ let~$F_B(f)$ be the morphism~$F(f, \id_B)$ from~$(A, B) = F_B(A)$ to~$(A', B) = F_{B'}(A)$ in~$\cat{C}$.
+\begin{itemize}
 
-We have
-\[
-	F_B(\id_A)
-	=
-	F(\id_A, \id_B)
-	=
-	F( \id_{(A, B)} )
-	=
-	\id_{F(A, B)}
-	=
-	\id_{F_B(A)}
-\]
-for every object~$A$ of~$\cat{A}$.
-For every three objects~$A$,~$A'$,~$A''$ of~$\cat{A}$ and every two morphisms~$f$ from~$A$ to~$A'$ and~$f'$ from~$A'$ to~$A''$ in~$\cat{A}$ we have
-\begin{align*}
-	F_B(f') ∘ F_B(f)
-	&=
-	F(f', \id_B) ∘ F(f, \id_B)
-	\\
-	&=
-	F( (f', \id_B) ∘ (f, \id_B) )
-	\\
-	&=
-	F( f' ∘ f, \id_B ∘ \id_B )
-	\\
-	&=
-	F( f' ∘ f, \id_B )
-	\\
-	&=
-	F_B( f' ∘ f ) \,.
-\end{align*}
-This shows that~$F_B$ is indeed a functor.
+	\item
+		We have for every object~$A$ of~$\cat{A}$ the equalities
+		\[
+			F_B(\id_A)
+			=
+			F(\id_A, \id_B)
+			=
+			F( \id_{(A, B)} )
+			=
+			\id_{F(A, B)}
+			=
+			\id_{F_B(A)} \,.
+		\]
+
+	\item
+		For every two composable morphisms
+		\[
+			f \colon A \to A' \,,
+			\quad
+			f' \colon A' \to A''
+		\]
+		in~$\cat{A}$ we have the equalities
+		\begin{align*}
+			F_B(f') ∘ F_B(f)
+			&=
+			F(f', \id_B) ∘ F(f, \id_B)
+			\\
+			&=
+			F( (f', \id_B) ∘ (f, \id_B) )
+			\\
+			&=
+			F( f' ∘ f, \id_B ∘ \id_B )
+			\\
+			&=
+			F( f' ∘ f, \id_B )
+			\\
+			&=
+			F_B( f' ∘ f ) \,.
+		\end{align*}
+
+\end{itemize}
+This shows that~$F_B$ is a functor from~$\cat{A}$ to~$\cat{C}$.
 
 
 
 \subsubsection{}
 
-We have
+We have for every object~$A$ of~$\cat{A}$ and every object~$B$ of~$\cat{B}$ the equalities
 \[
 	F^A(B)
 	=
 	(A, B)
 	=
-	F_B(A)
+	F_B(A) \,.
 \]
-for every object~$A$ of~$\cat{A}$ and every object~$B$ of~$\cat{B}$.
-We also have
-\begin{align*}
+We also have for all morphisms
+\[
+	f \colon A \to A' \,,
+	\quad
+	g \colon B \to B'
+\]
+in~$\cat{A}$ and~$\cat{B}$ respectively the equalities
+\[
 	F^{A'}(g) ∘ F_B(f)
-	&=
+	=
 	F(\id_{A'}, g) ∘ F(f, \id_B)
-	\\
-	&=
+	=
 	F( (\id_{A'}, g) ∘ (f, \id_B) )
-	\\
-	&=
+	=
 	F(f, g)
-	\\
-	&=
-	F( (f, \id_{B'}) ∘ (\id_A, g) )
-	\\
-	&=
+\]
+and
+\[
+	F_{B'}(f) ∘ F^A(g) \,.
+	=
 	F(f, \id_{B'}) ∘ F(\id_A, g)
-	\\
-	&=
-	F_{B'}(f) ∘ F^A(g)
-\end{align*}
-for every two object~$A$ and~$A'$ in~$\cat{A}$, every two objects~$B$ and~$B'$ in~$\cat{B}$, and every two morphisms~$f$ from~$A$ to~$A'$ in~$\cat{A}$ and~$g$ from~$B$ to~$B'$ in~$\cat{B}$.
+	=
+	F( (f, \id_{B'}) ∘ (\id_A, g) )
+	=
+	F(f, g) \,,
+\]
+and therefore the equalities
+\[
+	F^{A'}(g) ∘ F_B(f)
+	=
+	F(f, g)
+	=
+	F_{B'}(f) ∘ F^A(g) \,.
+\]
 
 
 
@@ -133,66 +171,86 @@ for every object~$(A, B)$ of~$\cat{A} × \cat{B}$, and
 	F^{A'}(g) ∘ F_B(f)
 \]
 for every morphism~$(f, g)$ from~$(A, B)$ to~$(A', B')$ in~$\cat{A} × \cat{B}$.
-
 This shows the uniqueness of~$F$.
-We will now show the existence of~$F$.
+In the following, we will show the existence of~$F$.
 
-For every object~$A$ of~$\cat{A}$ and~$B$ of~$\cat{B}$ let we denote the element~$F^A(B)$ by~$F(A, B)$.
-We have equivalently~$F(A B) = F_B(A)$.
-
-Let~$f$ be a morphism from~$A$ to~$A'$ in~$\cat{A}$ and let~$g$ be a morphism from~$B$ to~$B'$ in~$\cat{B}$.
-We denote the morphism~$F^{A'}(g) ∘ F_B(f)$ in~$\cat{C}$ by~$F(f, g)$.
-We have equivalently~$F(f, g) = F_{B'}(f) ∘ F^{A}(g)$.
-The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, whereas the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
-It follows that the morphism~$F(f, g)$ goes from~$F(A, B)$ to~$F(A', B')$.
-
-The assignment~$F$ satisfies
-\begin{align*}
-	F( \id_{(A, B)} )
-	=
-	F( \id_A, \id_B )
-	=
-	F^A(\id_B) ∘ F_B(\id_A)
-	=
-	\id_{F^A(B)} ∘ \id_{F_B(A)}
-	&=
-	\id_{F(A, B)} ∘ \id_{F(A, B)}
-	\\
-	&=
-	\id_{F(A, B)}
-\end{align*}
-for every object~$(A, B)$ of~$\cat{A} × \cat{B}$.
-For every two composable morphisms
+For every object~$A$ of~$\cat{A}$ and~$B$ of~$\cat{B}$, we denote the element~$F^A(B)$ of~$\cat{C}$ by~$F(A, B)$.
+We have equivalently~$F(A, B) = F_B(A)$.
+For every morphism
 \[
-	(f, g) \colon (A, B) \to (A', B') \,,
-	\quad
-	(f', g') \colon (A', B') \to (A'', B'')
+	(f, g) \colon (A, B) \to (A', B')
 \]
-in~$\cat{A} × \cat{B}$, we have
-\begingroup
-\allowdisplaybreaks
-\begin{align*}
-	F(f', g') ∘ F(f, g)
-	&=
-	F^{A''}(g') ∘ F_{B'}(f') ∘ F_{B'}(f) ∘ F^A(g)
-	\\
-	&=
-	F^{A''}(g') ∘ F_{B'}(f' ∘ f) ∘ F^A(g)
-	\\
-	&=
-	F^{A''}(g') ∘ F^{A''}(g) ∘ F_B(f' ∘ f)
-	\\
-	&=
-	F^{A''}(g' ∘ g) ∘ F_B(f' ∘ f)
-	\\
-	&=
-	F(g' ∘ g, f' ∘ f)
-	\\
-	&=
-	F( (g', f') ∘ (g, f) )
-	\\
-	&=
-	F(g', f') ∘ F(g, f) \,.
-\end{align*}
-\endgroup
+in~$\cat{A} × \cat{B}$ we define
+\[
+	F(f, g) ≔ F^{A'}(g) ∘ F_B(f) \,.
+\]
+Equivalently,
+\[
+	F(f, g) = F_{B'}(f) ∘ F^{A}(g) \,.
+\]
+We have to check that~$F$ is indeed a functor.
+\begin{itemize}
+
+	\item
+		Let
+		\[
+			(f, g) \colon (A, B) \to (A', B')
+		\]
+		be a morphism in~$\cat{A} × \cat{B}$.
+		The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, while the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
+		It follows that the morphism~$F(f, g) = F^{A'}(g) ∘ F_B(f)$ goes from~$F(A, B)$ to~$F(A', B')$.
+
+	\item
+		We have for every object~$(A, B)$ of~$\cat{A} × \cat{B}$ the equalities
+		\begin{align*}
+			F( \id_{(A, B)} )
+			=
+			F( \id_A, \id_B )
+			=
+			F^A(\id_B) ∘ F_B(\id_A)
+			=
+			\id_{F^A(B)} ∘ \id_{F_B(A)}
+			&=
+			\id_{F(A, B)} ∘ \id_{F(A, B)}
+			\\
+			&=
+			\id_{F(A, B)} \,.
+		\end{align*}
+
+	\item
+		For every two composable morphisms
+		\[
+			(f, g) \colon (A, B) \to (A', B') \,,
+			\quad
+			(f', g') \colon (A', B') \to (A'', B'')
+		\]
+		in~$\cat{A} × \cat{B}$, we have the equalities
+		\begingroup
+		\allowdisplaybreaks
+		\begin{align*}
+			F(f', g') ∘ F(f, g)
+			&=
+			F^{A''}(g') ∘ F_{B'}(f') ∘ F_{B'}(f) ∘ F^A(g)
+			\\
+			&=
+			F^{A''}(g') ∘ F_{B'}(f' ∘ f) ∘ F^A(g)
+			\\
+			&=
+			F^{A''}(g') ∘ F^{A''}(g) ∘ F_B(f' ∘ f)
+			\\
+			&=
+			F^{A''}(g' ∘ g) ∘ F_B(f' ∘ f)
+			\\
+			&=
+			F(g' ∘ g, f' ∘ f)
+			\\
+			&=
+			F( (g', f') ∘ (g, f) )
+			\\
+			&=
+			F(g', f') ∘ F(g, f) \,.
+		\end{align*}
+		\endgroup
+
+\end{itemize}
 This shows altogether that the assignment~$F$ is indeed a functor.
