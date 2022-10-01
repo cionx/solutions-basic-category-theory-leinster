@@ -4,9 +4,9 @@
 
 \subsubsection{}
 
-Let~$ϕ$ be a ring homomorphism from~$\Integer[x]$ to~$R$.
-Let~$y ≔ ϕ(x)$.
-For any element~$p$ of~$\Integer[x]$, which is of the form~$p = ∑_{n ≥ 0} a_n x^n$ for suitable coefficients~$a_n ∈ \Integer$, we have
+Let~$ϕ$ be a homomorphism of rings from~$ℤ[x]$ to~$R$.
+Let~$y$ be~$ϕ(x)$.
+For any element~$p$ of~$ℤ[x]$, which is of the form~$p = ∑_{n ≥ 0} a_n x^n$ for suitable coefficients~$a_n$, we have
 \[
 	ϕ(p)
 	=
@@ -16,14 +16,15 @@ For any element~$p$ of~$\Integer[x]$, which is of the form~$p = ∑_{n ≥ 0} a_
 	=
 	∑_{n ≥ 0} a_n y^n \,.
 \]
-This shows that the homomorphism~$ϕ$ is uniquely determined by its action on the element~$x$ of~$\Integer[x]$.
+This shows that the homomorphism~$ϕ$ is uniquely determined by its action on the element~$x$ of~$ℤ[x]$.
+This in turn shows the desired uniqueness.
 
-Let now~$y$ be an element of~$R$.
+Let now~$y$ be an arbitrary element of~$R$.
 The map
 \[
 	ϕ
 	\colon
-	\Integer[x]
+	ℤ[x]
 	\to
 	R \,,
 	\quad
@@ -38,15 +39,12 @@ This shows the desired existence.
 
 \subsubsection{}
 
-There exists by the previous part of the exercise a unique homomorphism of rings~$ι$ from~$\Integer[x]$ to~$A$ with~$ι(x) = a$, and there exists by assumption a unique homomorphism of rings~$π$ from~$A$ to~$\Integer[x]$ with~$π(a) = x$.
+There exists by the previous part of the exercise a unique homomorphism of rings~$φ$ from~$ℤ[x]$ to~$A$ with~$φ(x) = a$, and there exists similarly a unique homomorphism of rings~$ψ$ from~$A$ to~$ℤ[x]$ with~$ψ(a) = x$.
 
-There exists by the previous part of the exercise a unique homomorphism of rings from~$\Integer[x]$ to~$\Integer[x]$ that maps the element~$x$ onto itself.
-But both~$\id_{\Integer[x]}$ and the composite~$π ∘ ι$ are homomorphisms of rings that satisfy this condition.
-It follows that~$π ∘ ι = \id_{\Integer[x]}$.
+There exists by the previous part of the exercise a unique homomorphism of rings from~$ℤ[x]$ to~$ℤ[x]$ that maps the element~$x$ onto itself.
+But both~$\id_{ℤ[x]}$ and the composite~$ψ ∘ φ$ are homomorphisms of rings that satisfy this condition.
+It follows that~$ψ ∘ φ = \id_{ℤ[x]}$.
+We find in the same way that also~$φ ∘ ψ = \id_A$.
 
-There exist by assumption a unique homomorphism of rings from~$A$ to~$A$ that maps the element~$a$ onto itself.
-But both~$\id_A$ and the composite~$ι ∘ π$ are homomorphisms of rings that satisfy this condition.
-It follows that~$ι ∘ π = \id_A$.
-
-We have now shown that the two homomorphisms of rings~$ι$ and~$π$ are mutually inverse.
-This means that~$ι$ is an isomorphism with inverse~$π$.
+We have shown that the two homomorphisms~$φ$ and~$ψ$ are mutually inverse.
+This means that~$φ$ is an isomorphism whose inverse is given by the homomorphism~$ψ$.
