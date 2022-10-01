@@ -1,25 +1,61 @@
 \subsection{}
 
-For every topological space~$X$ let~$\fgroup_0(X)$ be the set of path components of~$X$.
-For every two topological spaces~$X$ and~$Y$ and every continuous map~$f$ from~$X$ to~$Y$ let~$\fgroup_0(f)$ be the map from~$\fgroup_0(X)$ to~$\fgroup_0(Y)$ that assigns for every point~$x$ of~$X$ the path component of~$x$ to the path component of~$f(x)$.
-This construction defines a functor~$\fgroup_0$ from~$\fgroup_0(X)$ to~$\fgroup_0(Y)$.
+\begin{itemize}
 
-For every~\vectorspace{$\kf$}~$V$ let~$\Tensor(V)$ be the tensor algebra over~$V$.
-For every two~\vectorspaces{$\kf$}~$V$ and~$W$ and every linear map~$f$ from~$V$ to~$W$ let~$\Tensor(f)$ be the induced homomorphism of~\algebras{$\kf$} from~$\Tensor(V)$ to~$\Tensor(W)$ given by
-\[
-	\Tensor(f)( v_1 ⊗ \dotsb ⊗ v_n )
-	=
-	f(v_1) ⊗ \dotsb ⊗ f(v_n)
-\]
-for all~$n ≥ 0$ and~$v_1, \dotsc, v_n ∈ V$.
-This construction defines a functor~$\Tensor$ from~$\Vect{\kf}$ to~$\Alg{\kf}$.
+	\item
+		For every topological space~$X$ let~$\fgroup_0(X)$ be the set of path components of~$X$.
+		Every continuous map
+		\[
+			f \colon X \to Y
+		\]
+		induces a map
+		\[
+			\fgroup_0(f)
+			\colon
+			\fgroup_0(X) \to \fgroup_0(Y) \,,
+			\quad
+			\class{x} \mapsto \class{f(x)} \,.
+		\]
+		This construction defines a functor~$\fgroup_0$ from~$\Top$ to~$\Set$.
 
-For every group~$G$ let~$G^{\ab}$ be the abelianization of~$G$.
-For every two groups~$G$ and~$H$ end every homomorphism of groups~$f$ from~$G$ to~$H$ let~$f^{\ab}$ be the induced homomorphism of groups from~$G^{\ab}$ to~$H^{\ab}$ given by
-\[
-	f^{\ab}( \class{x} )
-	=
-	\class{ f(x) }
-\]
-for every~$x ∈ G$.
-This construction defines a functor~$(\ph)^{\ab}$ from~$G^{\ab}$ to~$H^{\ab}$.
+	\item
+		For every~\vectorspace{$𝕜$}~$V$ let~$\Tensor(V)$ be the tensor algebra over~$V$.
+		For every two~\vectorspaces{$𝕜$}~$V$ and~$W$ and every linear map~$f$ from~$V$ to~$W$, let~$\Tensor(f)$ be the induced homomorphism of~\algebras{$𝕜$} from~$\Tensor(V)$ to~$\Tensor(W)$, which is given by
+		\[
+			\Tensor(f)( v_1 ⊗ \dotsb ⊗ v_n )
+			=
+			f(v_1) ⊗ \dotsb ⊗ f(v_n)
+		\]
+		for every~$n ≥ 0$ and all~$v_1, \dotsc, v_n ∈ V$.
+		This construction defines a functor~$\Tensor$ from~$\Vect{𝕜}$ to~$\Alg{𝕜}$.
+
+		We have similarly functors~$\Symm$ and~$\Exterior$ from~$\Vect{𝕜}$ to~$\Alg{𝕜}$ that assign to every vector space its symmetric algebra and its exterior algebra respectively.
+
+	\item
+		For every group~$G$ let~$G^{\ab}$ be the abelianization of~$G$.
+		For every two groups~$G$ and~$H$ and every homomorphism of groups~$φ$ from~$G$ to~$H$, let~$φ^{\ab}$ be the induced homomorphism of groups from~$G^{\ab}$ to~$H^{\ab}$ given by
+		\[
+			φ^{\ab}( \class{x} )
+			=
+			\class{ φ(x) }
+		\]
+		for every~$x ∈ G$.
+		This construction defines a functor~$(\ph)^{\ab}$ from~$\Grp$ to~$\Ab$.
+
+	\item
+		For every group~$G$ let~$C(G)$ be its set of conjugacy classes.
+		Every homomorphism of groups
+		\[
+			φ \colon G \to H
+		\]
+		induces a map
+		\[
+			C(φ)
+			\colon
+			C(G) \to C(H) \,,
+			\quad
+			\class{g} \mapsto \class{φ(g)} \,.
+		\]
+		This mapping~$C$ is a functor from~$\Grp$ to~$\Set$.
+
+\end{itemize}
