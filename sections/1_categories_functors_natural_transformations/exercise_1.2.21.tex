@@ -8,28 +8,20 @@
 \end{proposition}
 
 \begin{proof}
-	Let~$A$ be the domain of~$f$ and let~$A'$ be the codomain of~$f$.
-	There exists by assumption a morphism~$g$ in~$\cat{A}$ with
+	Let~$A$ be the domain of~$f$, and let~$A'$ be its codomain.
+	By applying the functor~$F$ to these equations
 	\[
-		g ∘ f
-		=
-		\id_A
-		\quad\text{and}\quad
-		f ∘ g
-		=
-		\id_B \,.
+		f ∘ f^{-1} = \id_{A'} \,,
+		\quad
+		f^{-1} ∘ f = \id_A \,,
 	\]
-	By applying the functor~$F$ to these two equations (and using that~$F$ is a functor) we find that
+	we arrive at the equations
 	\[
-		F(g) ∘ F(f)
-		=
-		\id_{F(A)}
-		\quad\text{and}\quad
-		F(f) ∘ F(g)
-		=
-		\id_{F(B)} \,.
+		F(f) ∘ F(f^{-1}) = \id_{F(A')}
+		\quad
+		F(f^{-1}) ∘ F(f) = \id_{F(A)} \,.
 	\]
-	This shows that~$F(f)$ is again an isomorphism, with inverse given by~$F(g)$.%
+	These equations show that the morphism~$F(f)$ is again an isomorphism, with inverse given by~$F(f^{-1})$.%
 	\footnote{
 		In other words,~$F(f^{-1}) = F(f)^{-1}$.
 	}
@@ -37,4 +29,4 @@
 
 There exists by assumption an isomorphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$.
 It follows from \cref{functors preserve isomorphisms} that~$F(f)$ is an isomorphism from~$F(A)$ to~$F(A')$ in~$\cat{B}$.
-The existence of such an isomorphism shown that~$F(A)$ and~$F(A')$ are isomorphic.
+The existence of such an isomorphism shown that the objects~$F(A)$ and~$F(A')$ are again isomorphic.
