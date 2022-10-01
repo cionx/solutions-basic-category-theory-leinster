@@ -13,7 +13,7 @@ This category looks as follows:
 Let~$\cat{A}$ be the category that consists of two copies of~$\cat{B}$.
 More precisely, the category~$\cat{A}$ looks as follows:
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[row sep = normal]
 		X_1
 		\arrow{r}[above]{f_1}
 		&
@@ -26,7 +26,7 @@ More precisely, the category~$\cat{A}$ looks as follows:
 	\end{tikzcd}
 \]
 
-Let~$F$ be the functor from~$\cat{A}$ to~$\cat{B}$ that maps each of the two copies of~$\cat{B}$ in~$\cat{A}$ back onto~$\cat{A}$.
+Let~$F$ be the functor from~$\cat{A}$ to~$\cat{B}$ that maps the two copies of~$\cat{B}$ in~$\cat{A}$ back onto~$\cat{B}$.
 More explicitly,
 \[
 	F(X_1), F(X_2) = X \,,
@@ -37,7 +37,7 @@ More explicitly,
 \]
 The functor~$F$ may be depicted as follows:
 \[
-	\begin{tikzcd}
+	\begin{tikzcd}[row sep = normal]
 		X_1
 		\arrow{r}[above]{f_1}
 		&
