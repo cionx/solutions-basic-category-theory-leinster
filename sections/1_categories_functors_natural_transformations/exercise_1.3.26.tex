@@ -1,16 +1,16 @@
 \subsection{}
 
 Suppose first that~$α$ is a natural isomorphism.
-This means that there exists a natural transformation~$β$ from~$G$ to~$F$ such that both~$β ∘ α = 1_F$ and~$α ∘ β = 1_G$.
-For every object~$A$ of~$\cat{A}$ we have therefore the equality
+This means that there exists a natural transformation~$β$ from~$G$ to~$F$ such that both~$β ∘ α = \id_F$ and~$α ∘ β = \id_G$.
+For every object~$A$ of~$\cat{A}$, we have therefore the equality
 \[
 	β_A ∘ α_A
 	=
 	(β ∘ α)_A
 	=
-	(1_F)_A
+	(\id_F)_A
 	=
-	1_{F(A)}
+	\id_{F(A)}
 \]
 and similarly the equality
 \[
@@ -18,58 +18,80 @@ and similarly the equality
 	=
 	(α ∘ β)_A
 	=
-	(1_G)_A
+	(\id_G)_A
 	=
-	1_{G(A)} \,.
+	\id_{G(A)} \,.
 \]
-This shows that the morphism~$α_A$ is an isomorphism with inverse~$β_A$.
+This shows that the morphism~$α_A$ is an isomorphism whose inverse is given by~$β_A$.
 
-Suppose now that for every object~$A$ of~$\cat{A}$ the morphism~$α_A$ is an isomorphism.
-For every object~$A$ of~$\cat{A}$ let~$β_A ≔ α_A^{-1}$.
-It follows for any two objects~$A_1$ and~$A_2$ of~$\cat{A}$ and every morphism~$f$ from~$A_1$ to~$A_2$ from the commutativity of the square diagram
+Suppose now that for every object~$A$ of~$\cat{A}$ the morphism~$α_A$ is an isomorphism, and let~$β_A$ be the inverse of~$α_A$, i.e.,~$β_A ≔ α_A^{-1}$.
+We have for every morphism
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1)
+	f \colon A \to A'
+\]
+in~$\cat{A}$ the commutative square diagram
+\[
+	\begin{tikzcd}
+		F(A)
 		\arrow{r}[above]{F(f)}
-		\arrow{d}[left]{α_{A_1}}
+		\arrow{d}[left]{α_A}
 		&
-		F(A_2)
-		\arrow{d}[right]{α_{A_2}}
+		F(A')
+		\arrow{d}[right]{α_{A'}}
 		\\
-		G(A_1)
+		G(A)
 		\arrow{r}[above]{G(f)}
 		&
-		G(A_2)
+		G(A')
 	\end{tikzcd}
 \]
-that
+by the naturality of~$α$.
+The commutativity of this diagram is equivalent to the equality
 \[
-	α_{A_2} ∘ F(f) = G(f) ∘ α_{A_1} \,,
+	α_{A'} ∘ F(f) = G(f) ∘ α_A \,,
 \]
-and therefore
+which in turn is equivalent to the equality
 \[
-	F(f) ∘ α_{A_1}^{-1} = α_{A_2}^{-1} ∘ G(f) \,.
+	F(f) ∘ α_A^{-1} = α_{A'}^{-1} ∘ G(f) \,.
 \]
 In other words,
 \[
-	F(f) ∘ β_{A_1} = β_{A_2} ∘ G(f) \,,
+	F(f) ∘ β_A = β_{A'} ∘ G(f) \,,
 \]
-so that the following diagram commutes:
+which tells us that the following square diagram commutes:
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1)
+	\begin{tikzcd}
+		F(A)
 		\arrow{r}[above]{F(f)}
 		&
-		F(A_2)
+		F(A')
 		\\
-		G(A_1)
+		G(A)
 		\arrow{r}[above]{G(f)}
-		\arrow{u}[left]{β_{A_1}}
+		\arrow{u}[left]{β_A}
 		&
-		G(A_2)
-		\arrow{u}[right]{β_{A_2}}
+		G(A')
+		\arrow{u}[right]{β_{A'}}
 	\end{tikzcd}
 \]
-This shows that~$β$ is a natural transformation from~$G$ to~$F$.
-We have~$α ∘ β = 1_G$ and~$β ∘ α = 1_F$ by choice of~$β$.
-This means that~$α$ is a natural isomorphism with inverse~$β$.
+This shows that~$β = (β_A)_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$G$ to~$F$.
+
+We have for every object~$A$ of~$\cat{A}$ the equalities
+\[
+	(β ∘ α)_A
+	=
+	β_A ∘ α_A
+	=
+	α_A^{-1} ∘ α_A
+	=
+	\id_{F(A)}
+	=
+	(\id_F)_A \,,
+\]
+which shows that~$β ∘ α = \id_F$.
+We find in the same way that also~$α ∘ β = \id_G$.
+This shows that~$α$ is a natural isomorphism whose inverse is given by~$β$.%
+\footnote{
+	In other words,~$(α^{-1})_A = (α_A)^{-1}$ for every object~$A$ of~$\cat{A}$.
+	This allows us to just write~$α_A^{-1}$ for this morphism.
+}
