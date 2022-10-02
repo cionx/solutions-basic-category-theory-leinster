@@ -4,14 +4,15 @@ The author suspects that the result will be conjugation.
 We check in the following that the author is correct.
 
 Let~$\cat{G}$ be the one-object category corresponding to~$G$.
-Let~$g$ and~$h$ be two elements of the group~$G$ and let~$φ$ and~$ψ$ be the corresponding homomorphism of groups from~$\Integer$ to~$G$, given by
+Let~$g$ and~$h$ be two elements of the group~$G$ and let~$φ$ and~$ψ$ be the corresponding homomorphism of groups from~$ℤ$ to~$G$, given by
 \[
 	φ(n) ≔ g^n
 	\quad\text{and}\quad
 	ψ(n) ≔ h^n
 \]
 for every integer~$n$.
-The corresponding functors~$Φ$ and~$Ψ$ are isomorphic if and only if there exists a natural transformation from~$Φ$ to~$Ψ$, since every morphism in~$\cat{G}$ is already an isomorphism, and every natural transformation from~$Φ$ to~$Ψ$ is therefore a natural isomorphism by Lemma~1.3.11.
+The corresponding functors~$Φ$ and~$Ψ$ are isomorphic if and only if there exists a natural transformation from~$Φ$ to~$Ψ$:
+every morphism in~$\cat{G}$ is already an isomorphism, and every natural transformation from~$Φ$ to~$Ψ$ is therefore already a natural isomorphism by Lemma~1.3.11.
 
 There exists a natural transformation from~$Φ$ to~$Ψ$ if and only if there exists a morphism~$k$ in~$\cat{G}$, i.e., an element of~$G$, such that the following square diagram commutes for every integer~$n$:
 \[
@@ -29,13 +30,13 @@ There exists a natural transformation from~$Φ$ to~$Ψ$ if and only if there exi
 		Ψ(*)
 	\end{tikzcd}
 \]
-We hence need that~$k ∘ Φ(n) = Ψ(n) ∘ k$;
-equivalently
+We hence need~$k ∘ Φ(n) = Ψ(n) ∘ k$, or equivalently~$k ∘ φ(n) = ψ(n) ∘ k$, or equivalently
 \[
-	k g^n = h^n k \,.
+	k g^n = h^n k
 \]
+for every integer~$n$.
 For~$n = 1$ this gives us the necessary condition~$k g k^{-1} = h$.
-This condition is also sufficient because the cases~$n ≠ 1$ follow from this.
+This condition is also sufficient because the cases~$n ≠ 1$ follow from it.
 
-We hence find that natural transformations from~$Φ$ to~$Ψ$ correspond bijectively to elements~$k$ of~$G$ such that~$k g k^{-1} = h$.
-In follows overall that the two group elements~$g$ and~$h$ define isomorphic functors if and only if they are conjugated.
+We hence find that natural transformations from~$Φ$ to~$Ψ$ correspond bijectively to elements~$k$ of~$G$ for which~$k g k^{-1} = h$.
+It follows that the two group elements~$g$ and~$h$ define isomorphic functors if and only if they are conjugated.
