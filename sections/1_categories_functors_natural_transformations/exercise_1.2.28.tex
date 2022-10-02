@@ -6,145 +6,157 @@
 
 \begin{description}
 	
-	\item[Example~1.2.3~(a)]
-		The functor~$U$ is faithful.
+	\item[Example~1.2.3,~(a)]
+		The forgetful functor~$U$ from~$\Grp$ to~$\Set$ is faithful.
 		But it is not full:
-		Let~$G$ be the trivial group and let~$H$ be the two-element group~$\Integer / 2$.
-		The map~$U(G) \to U(H)$ given by~$1 \mapsto \class{1}$ is not a homomorphism of groups and is therefore not contained in the image of~$U$.
+		Let~$G$ be the trivial group, let~$H$ be a non-trivial group and let~$h$ be a non-identity element of~$H$.
+		The map~$U(G) \to U(H)$ given by~$1 \mapsto h$ is not a homomorphism of groups, and is therefore not contained in the image of~$U$.
 
-	\item[Example~1.2.3~(b)]
-		This functor, that we will denote by~$U$, is faithful.
+	\item[Example~1.2.3,~(b)]
+		The forgetful functor~$U$ from~$\Ring$ to~$\Set$ is faithful.
 		But it is not full:
-		Let~$R$ be the zero ring and let~$S$ be the ring of integers~$\Integer$.
-		Let~$f$ be the map from~$U(R)$ to~$U(\Integer)$ given by~$0 \mapsto 0$.
-		This map is not a homomorphism of rings and is therefore not contained in the image of~$U$.
+		Let both~$R$ and~$S$ be the ring of integers, i.e., the ring~$ℤ$.
+		The map
+		\[
+			f
+			\colon
+			ℤ \to ℤ \,,
+			\quad
+			n \mapsto 2n
+		\]
+		is not a homomorphism of rings (but it is additive).
+		It is therefore not contained in the image of~$U$.
 
-	\item[Example~1.2.3~(c)]
-		This functor is faithful.
+	\item[Example~1.2.3,~(c)]
+		The forgetful functor from~$\Ring$ to~$\Ab$ is faithful.
 		But it is not full:
 		this can be seen from the same counterexample as for the previous functor.
 
-	\item[Example~1.2.3~(d)]
-		This functor is both faithful and full since~$\Ab$ is a full subcategory of~$\Grp$.
+		The forgetful functor~$U$ from~$\Ring$ to~$\Mon$ is faithful.
+		But it is not full:
+		Let both~$R$ and~$S$ be the ring of integers, i.e., the ring~$ℤ$, and let~$f$ be the trivial homomorphism of monoids from~$U(R)$ to~$U(S)$.
+		The map~$f$ is not a homomorphism of rings from~$R$ to~$S$, and therefore not contained in the image of~$U$.
 
-	\item[Example~1.2.4~(a)]
-		The functor~$F$ is faithful:
-		Let~$S$ and~$T$ be two groups and let~$f$ be a map from~$S$ to~$T$.
-		The induced homomorphism of groups~$F(f)$ satisfies the condition
+	\item[Example~1.2.3,~(d)]
+		The inclusion functor from~$\Ab$ to~$\Grp$ is both faithful and full since~$\Ab$ is a full subcategory of~$\Grp$.
+
+	\item[Example~1.2.4,~(a)]
+		The free functor~$F$ from~$\Set$ to~$\Grp$ is faithful:
+		Let~$S$ and~$T$ be two sets and let~$f$ be a map from~$S$ to~$T$.
+		The induced homomorphism of groups~$F(f)$ from~$F(S)$ to~$F(T)$ satisfies the condition
 		\[
 			F(f)(s)
 			=
 			f(s)
 		\]
-		for every~$s ∈ S$.
+		for every element~$s$ of~$S$.
 		The original map~$f$ is therefore uniquely determined by its induced homomorphism of groups~$F(f)$.
 
 		But the functor~$F$ is not full:
 		Let~$S$ be a non-empty set and let~$T$ be the empty set.
-		There exist no map from~$S$ to~$T$, but there exist a homomorphism of groups from~$F(S)$ to~$F(T)$, namely the trivial homomorphism.
+		There exists no map from~$S$ to~$T$, but there exist a homomorphism of groups from~$F(S)$ to~$F(T)$ (namely the trivial homomorphism).
 
-	\item[Example~1.2.4~(b)]
-		This functor is faithful, but not full.
-		This can be argued as in the previous example.
+	\item[Example~1.2.4,~(b)]
+		The free functor from~$\Set$ to~$\CRing$ is faithful, but not full.
+		This can be seen as in the previous example.
 
-	\item[Example~1.2.4~(c)]
-		This functor is faithful, but not full.
-		This can be argued as in the previous example.
+	\item[Example~1.2.4,~(c)]
+		The free functor from~$\Set$ to~$\Vect{𝕜}$ is faithful, but not full.
+		This can be seen as in the previous example.
 
-	\item[Example~1.2.5~(a)]
-		The functor~$\fgroup_1$ is not faithful.
-		To see this, we consider the pointed topological space~$X ≔ (\Real, 0)$.
-		The group~$\fgroup_1(\Real, 0)$ is trivial, so there exists precisely one homomorphism of groups from~$\fgroup_1(\Real, 0)$ to~$\fgroup_1(\Real, 0)$, namely the trivial one.
-		But there exist many more continuous maps from~$(\Real, 0)$ to~$(\Real, 0)$.%
+	\item[Example~1.2.5,~(a)]
+		The functor~$\fgroup_1$ from~$\Top_*$ to~$\Grp$ is not faithful.
+		To see this, we consider the pointed topological space~$(ℝ, 0)$.
+		The group~$\fgroup_1(ℝ, 0)$ is trivial, whence there exists precisely one homomorphism of groups from~$\fgroup_1(ℝ, 0)$ to~$\fgroup_1(ℝ, 0)$.
+		But there exist many more continuous maps from~$(ℝ, 0)$ to~$(ℝ, 0)$.%
 		\footnote{
-			Namely,~$2^{\aleph_0}$ many.
+			Namely,~$2^{ℵ_0}$ many.
 		}
-		
-		The functor~$\fgroup_1$ as also not full.
-		The author doesn’t know a good (counter)example for this, and refers to \cite{stackexchange_pi_1_not_full} until further notice.
 
-	\item[Example~1.2.5~(b)]
-		These functors are neither faithful nor full.
+		The functor~$\fgroup_1$ is also not full.
+		The author doesn’t know a good (counter)example for this, and refers to \cite{stackexchange_pi_1_not_full}.
+
+	\item[Example~1.2.5,~(b)]
+		These functors are neither faithful nor full, but the author is not good enough at topology to give (counter)examples.
 
 	\item[Example~1.2.7]
-		The functor~$F$ is faithful if and only if the corresponding homomorphism of groups is injective, and the functor~$F$ is full if and only if the corresponding homomorphism of groups is surjective.
+		The functor~$F$ from~$\cat{G}$ to~$\cat{H}$ is faithful if and only if the corresponding homomorphism of groups from~$G$ to~$H$ is injective.
+		Similarly, the functor~$F$ is full if and only if the corresponding homomorphism of groups is surjective.
 
 	\item[Example~1.2.8]
-		This functor is faithful if and only if the corresponding~\set{$G$}, respectively representation, of~$G$ is faithful.
+		This functor is faithful if and only if the corresponding~\set{$G$}, respectively representation of~$G$, is faithful.
 
 	\item[Example~1.2.9]
-		The functor is faithful.
+		The functor is faithful, because there exists for any two elements~$a$ and~$a'$ of~$A$ at most one morphism from~$a$ to~$a'$.
 		It is full if and only if it follows for any two elements~$a$ and~$a'$ of~$\cat{A}$ from~$f(a) ≤ f(a')$ that also~$a ≤ a'$.
 
 	\item[Example~1.2.11]
-		The functor~$C$ is not faithful.
-		To see this, let~$X = \{ x \}$ be the one-point topological space and let~$Y= \{ y_1, y_2 \}$ be the two-point codiscrete topology space.
+		The given functor~$C$ from~$\Top$ to~$\Ring$ is not faithful.
+		To see this, let~$X ≔ \{ x \}$ be the one-point topological space and let~$Y ≔ \{ y_1, y_2 \}$ be the two-point indiscrete topology space.
 		Both~$C(X)$ and~$C(Y)$ consist only of constant functions, and the two continuous maps from~$X$ to~$Y$ induce the same homomorphism of rings from~$C(Y)$ to~$C(X)$.
-		
-		The functor~$C$ ought to be non-full, but the author doesn’t know a counterexample.
+
+		The functor~$C$ is also not full.
+		The author doesn’t have a (counter)example for this, and refers to \cite{stackexchange_continuous_functions_functor_not_full}.
 
 	\item[Example~1.2.12]
-
-		The functor~$(\ph)^*$ is faithful.
-		To see this, let~$V$ and~$W$ be two~\vectorspaces{$\kf$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$.
+		The functor~$(\ph)^*$ from~$\Vect{\kf}$ to~$\Vect{\kf}$ is faithful.
+		To see this, let~$V$ and~$W$ be two~\vectorspaces{$𝕜$} and let~$f_1$ and~$f_2$ be two distinct linear maps from~$V$ to~$W$.
 		There exists by assumption a vector~$v$ in~$V$ for which the two vectors~$w_1 ≔ f_1(v)$ and~$w_2 ≔ f_2(v)$ in~$W$ are distinct.
-		It further follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
-		It follows that
+		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
+		It further follows that
 		\begin{align*}
 			f_1^*(w^*)(v)
-			&=
+			=
 			(w^* ∘ f_1)(v)
-			\\
-			&=
+			=
 			w^*( f_1(w) )
-			\\
-			&=
+			=
 			w^*(w_1)
-			\\
-			&≠
+			≠
 			w^*(w_2)
-			\\
-			&=
-			w^*( f_2(w) )
-			\\
-			&=
-			(w^* ∘ f_2)(v)
-			\\
-			&=
+			=
+			\dotsb
+			=
 			f_2^*(w^*)(v) \,.
 		\end{align*}
 		This shows that~$f_1^*(w^*) ≠ f_2^*(w^*)$, and therefore~$f_1^* ≠ f_2^*$.
 		
-		The functor~$(\ph)^*$ is not full.
-		We observe that for any two~\vectorspaces{$\kf$}~$V$ and~$W$ the map
+		But the functor~$(\ph)^*$ is not full.
+		To see this, we observe that for any two~\vectorspaces{$𝕜$}~$V$ and~$W$ the map
 		\[
-			D
+			D_{V, W}
 			\colon
-			\Hom_{\kf}(V, W) \to \Hom_{\kf}(W^*, V^*) \,,
+			\Hom_{𝕜}(V, W) \to \Hom_{𝕜}(W^*, V^*) \,,
 			\quad
 			f \mapsto f^*
 		\]
 		is linear.
-		For~$V = \kf$ we have~$\Hom_{\kf}(V, W) = \Hom_{\kf}(\kf, W) ≅ W$ but
+		For~$V = 𝕜$, the domain of~$D_{V, W}$ is given by
 		\[
-			\Hom_{\kf}(W^*, V^*)
+			\Hom_{𝕜}(V, W) = \Hom_{𝕜}(𝕜, W) ≅ W \,,
+		\]
+		while its codomain is given by
+		\[
+			\Hom_{𝕜}(W^*, V^*)
 			=
-			\Hom_{\kf}(W^*, \kf^*)
+			\Hom_{𝕜}(W^*, 𝕜^*)
 			≅
-			\Hom_{\kf}(W^*, \kf)
+			\Hom_{𝕜}(W^*, 𝕜)
 			=
 			W^{**} \,.
 		\]
-		If we choose~$W$ to be infinite-dimensional, then it follows that~$D$ cannot be surjective.
+		If we choose the vector space~$W$ to be infinite-dimensional, then it follows that the map~$D_{𝕜, W}$ cannot be surjective, since~$W^{**}$ is of strictly larger dimension than~$W$.
+
 \end{description}
 
 
 
 \subsubsection{}
 
-Let~$I_1$ be the category given by two objects~$x$ and~$y$ and one non-identity morphism~$f$:
+Let~$I$ be the category given by two objects~$x$ and~$y$ and one non-identity morphism~$f$, going from~$x$ to~$y$.
+This category may be depicted as follows:
 \[
-	I_1
+	I
 	\colon
 	\begin{tikzcd}
 		x
@@ -153,9 +165,10 @@ Let~$I_1$ be the category given by two objects~$x$ and~$y$ and one non-identity 
 		y
 	\end{tikzcd}
 \]
-Let similarly~$I_2$ be the category given by two objects~$x$ and~$y$ and two parallel non-identity morphisms~$f$ and~$g$:
+Let similarly~$J$ be the category given by two objects~$x$ and~$y$ and two parallel non-identity morphisms~$f$ and~$g$ from~$x$ to~$y$.
+This category may be depicted as follows:
 \[
-	I_2
+	J
 	\colon
 	\begin{tikzcd}
 		x
@@ -165,12 +178,12 @@ Let similarly~$I_2$ be the category given by two objects~$x$ and~$y$ and two par
 		y
 	\end{tikzcd}
 \]
-The identity functor of~$I_1$ is both full and faithful.
-The unique functor~$F$
+The identity functor of~$I$ is both full and faithful.
+The functor
 \[
 	F
 	\colon
-	I_1 \to I_2
+	I \to J
 	\quad\text{with}\quad
 	F(x) = x \,,
 	\quad
@@ -179,11 +192,11 @@ The unique functor~$F$
 	F(f) = f
 \]
 is faithful but not full.
-The unique functor
+The functor
 \[
 	G
 	\colon
-	I_2 \to I_1
+	J \to I
 	\quad\text{with}\quad
 	F(x) = x \,,
 	\quad
@@ -191,7 +204,7 @@ The unique functor
 	\quad
 	F(f) = f
 	\quad
-	F(g) = g
+	F(g) = f
 \]
 is full but not faithful.
 The composite~$F ∘ G$ is neither full nor faithful.
