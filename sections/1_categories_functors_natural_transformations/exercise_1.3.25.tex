@@ -1,15 +1,15 @@
 \subsection{}
 
-\begin{enumerate}
+\begin{itemize}
 
 	\item
-		We have two functors
+		We have the two functors
 		\[
 			T_1, T_2
 			\colon
-			\Vect{\kf} × \Vect{\kf}
+			\Vect{𝕜} × \Vect{𝕜}
 			\to
-			\Vect{\kf}
+			\Vect{𝕜}
 		\]
 		given by
 		\begin{alignat*}{2}
@@ -21,15 +21,15 @@
 			&\quad
 			T_2(f, g) &= g ⊗ f \,.
 		\end{alignat*}
-		We have for every two~\vectorspaces{$\kf$}~$V$ and~$W$ the isomorphism of vector spaces
+		We have for every two~\vectorspaces{$𝕜$}~$V$ and~$W$ the isomorphism of vector spaces
 		\[
-			α_{(V, W)}
+			σ_{(V, W)}
 			\colon
 			V ⊗ W \to W ⊗ V \,,
 			\quad
 			v ⊗ w \mapsto w ⊗ v \,.
 		\]
-		This isomorphism is natural in~$(V, W)$, in the sense that these isomorphisms assemble into a natural isomorphism from~$T_1$ to~$T_2$.
+		This isomorphism is natural in~$(V, W)$, in the sense that these isomorphisms assemble into a natural isomorphism~$σ$ from~$T_1$ to~$T_2$.
 
 	\item
 		We have a functor
@@ -44,22 +44,22 @@
 		\]
 		We have for every group~$G$ an isomorphism of groups given by
 		\[
-			β_G
+			α_G
 			\colon
 			G \to G^{\op} \,,
 			\quad
 			g \mapsto g^{\op} \,.
 		\]
-		This isomorphism is natural in~$G$, in the sense that they assemble in a natural isomorphism from~$1_{\Grp}$ to~$D$.
+		These isomorphisms are natural in~$G$, in the sense that they assemble in a natural isomorphism~$α$ from~$\Id_{\Grp}$ to~$D$.
 
 	\item
-		We have two contravariant functors
+		We have the two contravariant functors
 		\[
 			D_1, D_2
 			\colon
-			\Vect{\kf} × \Vect{\kf}
+			\Vect{𝕜} × \Vect{𝕜}
 			\to
-			\Vect{\kf}
+			\Vect{𝕜}
 		\]
 		given by
 		\begin{alignat*}{2}
@@ -73,14 +73,14 @@
 			&\quad
 			T_2(f, g) &= (f ⊗ g)^* \,.
 		\end{alignat*}
-		We have for every two~\vectorspaces{$\kf$}~$V$ and~$W$ a linear map
+		We have for every two~\vectorspaces{$𝕜$}~$V$ and~$W$ a linear map
 		\begin{align*}
-			γ_{(V,W)}
+			β_{(V,W)}
 			\colon
 			V^* ⊗ W^* &\to (V ⊗ W)^* \,,
 			\\
 			v^* ⊗ w^* &\mapsto [v ⊗ w \mapsto v^*(v) ⋅ w^*(w)] \,.
 		\end{align*}
-		This linear map is natural in~$(V, W)$, in the sense that these linear maps induce a natural transformation~$γ$ from~$T_1$ to~$T_2$.
+		This linear map is natural in~$(V, W)$, in the sense that these linear maps induce a natural transformation~$β$ from~$T_1$ to~$T_2$.
 
-\end{enumerate}
+\end{itemize}
