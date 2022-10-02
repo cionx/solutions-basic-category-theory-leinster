@@ -2,213 +2,228 @@
 
 Suppose first that~$α$ is a natural transformation from~$F$ to~$G$.
 
-Let~$B$ be any object of~$\cat{B}$.
-We have for every morphism~$f \colon A_1 \to A_2$ the following commutative square diagram:
-\[
-	\begin{tikzcd}[sep = large]
-		F(A_1, B)
-		\arrow{r}[above]{F(f, 1_B)}
-		\arrow{d}[left]{α_{A_1, B}}
-		&
-		F(A_2, B)
-		\arrow{d}[right]{α_{A_2, B}}
-		\\
-		G(A_1, B)
-		\arrow{r}[above]{G(f, 1_B)}
-		&
-		G(A_2, B)
-	\end{tikzcd}
-\]
-This diagram can equivalently be written as follows:
-\[
-	\begin{tikzcd}[sep = large]
-		F_B(A_1)
-		\arrow{r}[above]{F_B(f)}
-		\arrow{d}[left]{α_{A_1, B}}
-		&
-		F_B(A_2)
-		\arrow{d}[right]{α_{A_2, B}}
-		\\
-		G_B(A_1)
-		\arrow{r}[above]{G_B(f)}
-		&
-		G_B(A_2)
-	\end{tikzcd}
-\]
-The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
+\begin{itemize}
 
-Let~$A$ be an object of~$\cat{A}$.
-We have for every morphism~$g \colon B_1 \to B_2$ in~$\cat{B}$ the following commutative square diagram:
-\[
-	\begin{tikzcd}[sep = large]
-		F(A, B_1)
-		\arrow{r}[above]{F(1_A, g)}
-		\arrow{d}[left]{α_{A, B_1}}
-		&
-		F(A, B_2)
-		\arrow{d}[right]{α_{A, B_2}}
-		\\
-		G(A, B_1)
-		\arrow{r}[above]{G(1_A, g)}
-		&
-		G(A, B_2)
-	\end{tikzcd}
-\]
-This diagram can equivalently be written as follows:
-\[
-	\begin{tikzcd}[sep = large]
-		F^A(B_1)
-		\arrow{r}[above]{F^A(g)}
-		\arrow{d}[left]{α_{A, B_1}}
-		&
-		F^A(B_2)
-		\arrow{d}[right]{α_{A, B_2}}
-		\\
-		G^A(B_1)
-		\arrow{r}[above]{G^A(g)}
-		&
-		G^A(B_2)
-	\end{tikzcd}
-\]
-The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$.
+	\item
+		Let~$B$ be any object of~$\cat{B}$.
+		We have for every morphism
+		\[
+			f \colon A \to A'
+		\]
+		in~$\cat{A}$ the following commutative square diagram:
+		\[
+			\begin{tikzcd}[column sep = huge]
+				F(A, B)
+				\arrow{r}[above]{F(f, \id_B)}
+				\arrow{d}[left]{α_{A, B}}
+				&
+				F(A', B)
+				\arrow{d}[right]{α_{A', B}}
+				\\
+				G(A, B)
+				\arrow{r}[above]{G(f, \id_B)}
+				&
+				G(A', B)
+			\end{tikzcd}
+		\]
+		This diagram can equivalently be written as follows:
+		\[
+			\begin{tikzcd}[column sep = huge]
+				F_B(A)
+				\arrow{r}[above]{F_B(f)}
+				\arrow{d}[left]{α_{A, B}}
+				&
+				F_B(A')
+				\arrow{d}[right]{α_{A', B}}
+				\\
+				G_B(A)
+				\arrow{r}[above]{G_B(f)}
+				&
+				G_B(A')
+			\end{tikzcd}
+		\]
+		The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
 
-Suppose now conversely that the for every object~$A$ of~$\cat{A}$ the family~$(α_{A,B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$, and similarly that for every object~$B$ of~$\cat{B}$ the family~$(α_{A,B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
+	\item
+		Let~$A$ be an object of~$\cat{A}$.
+		We have for every morphism
+		\[
+			g \colon B \to B'
+		\]
+		in~$\cat{B}$ the following commutative square diagram:
+		\[
+			\begin{tikzcd}[column sep = huge]
+				F(A, B)
+				\arrow{r}[above]{F(\id_A, g)}
+				\arrow{d}[left]{α_{A, B}}
+				&
+				F(A, B')
+				\arrow{d}[right]{α_{A, B'}}
+				\\
+				G(A, B)
+				\arrow{r}[above]{G(\id_A, g)}
+				&
+				G(A, B')
+			\end{tikzcd}
+		\]
+		This diagram can equivalently be written as follows:
+		\[
+			\begin{tikzcd}[column sep = huge]
+				F^A(B)
+				\arrow{r}[above]{F^A(g)}
+				\arrow{d}[left]{α_{A, B}}
+				&
+				F^A(B')
+				\arrow{d}[right]{α_{A, B'}}
+				\\
+				G^A(B)
+				\arrow{r}[above]{G^A(g)}
+				&
+				G^A(B')
+			\end{tikzcd}
+		\]
+		The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$.
+
+\end{itemize}
+
+
+Suppose now conversely that for every object~$A$ of~$\cat{A}$ the family~$(α_{A,B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$, and that for every object~$B$ of~$\cat{B}$ the family~$(α_{A,B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
 Let
 \[
 	(f, g)
 	\colon
-	(A_1, B_1) \to (A_2, B_2)
+	(A, B) \to (A', B')
 \]
 be a morphism in~$\cat{A} × \cat{B}$.
 We have by assumption the following two commutative square diagrams:
 \[
-	\begin{tikzcd}[sep = large]
-		F_{B_1}(A_1)
-		\arrow{r}[above]{F_{B_1}(f)}
-		\arrow{d}[left]{α_{A_1, B_1}}
+	\begin{tikzcd}[column sep = huge]
+		F_B(A)
+		\arrow{r}[above]{F_B(f)}
+		\arrow{d}[left]{α_{A, B}}
 		&
-		F_{B_1}(A_2)
-		\arrow{d}[right]{α_{A_2, B_1}}
+		F_B(A')
+		\arrow{d}[right]{α_{A', B}}
 		\\
-		G_{B_1}(A_1)
-		\arrow{r}[above]{G_{B_1}(f)}
+		G_B(A)
+		\arrow{r}[above]{G_B(f)}
 		&
-		G_{B_1}(A_2)
+		G_B(A')
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
-		F^{A_2}(B_1)
-		\arrow{r}[above]{F^{A_2}(g)}
-		\arrow{d}[left]{α_{A_2, B_1}}
+	\begin{tikzcd}[column sep = huge]
+		F^{A'}(B)
+		\arrow{r}[above]{F^{A'}(g)}
+		\arrow{d}[left]{α_{A', B}}
 		&
-		F^{A_2}(B_2)
-		\arrow{d}[right]{α_{A_2, B_2}}
+		F^{A'}(B')
+		\arrow{d}[right]{α_{A', B'}}
 		\\
-		G^{A_2}(B_1)
-		\arrow{r}[above]{G^{A_2}(g)}
+		G^{A'}(B)
+		\arrow{r}[above]{G^{A'}(g)}
 		&
-		G^{A_2}(B_2)
+		G^{A'}(B')
 	\end{tikzcd}
 \]
 We can equivalently write these diagrams as follows:
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1, B_1)
-		\arrow{r}[above]{F(f, 1_{B_1})}
-		\arrow{d}[left]{α_{A_1, B_1}}
+	\begin{tikzcd}[column sep = huge]
+		F(A, B)
+		\arrow{r}[above]{F(f, \id_B)}
+		\arrow{d}[left]{α_{A, B}}
 		&
-		F(A_2, B_1)
-		\arrow{d}[right]{α_{A_2, B_1}}
+		F(A', B)
+		\arrow{d}[right]{α_{A', B}}
 		\\
-		G(A_1, B_1)
-		\arrow{r}[above]{G(f, 1_{B_1})}
+		G(A, B)
+		\arrow{r}[above]{G(f, \id_B)}
 		&
-		G(A_2, B_1)
+		G(A', B)
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
-		F(A_2, B_1)
-		\arrow{r}[above]{F(1_{A_2}, g)}
-		\arrow{d}[left]{α_{A_2, B_1}}
+	\begin{tikzcd}[column sep = huge]
+		F(A', B)
+		\arrow{r}[above]{F(\id_{A'}, g)}
+		\arrow{d}[left]{α_{A', B}}
 		&
-		F(A_2, B_2)
-		\arrow{d}[right]{α_{A_2, B_2}}
+		F(A', B')
+		\arrow{d}[right]{α_{A', B'}}
 		\\
-		G(A_2, B_1)
-		\arrow{r}[above]{G(1_{A_2}, g)}
+		G(A', B)
+		\arrow{r}[above]{G(\id_{A'}, g)}
 		&
-		G(A_2, B_2)
+		G(A', B')
 	\end{tikzcd}
 \]
 We can combine these two commutative square diagrams into the following commutative rectangular diagram:
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1, B_1)
-		\arrow{r}[above]{F(f, 1_{B_1})}
-		\arrow{d}[left]{α_{A_1, B_1}}
+	\begin{tikzcd}[column sep = huge]
+		F(A, B)
+		\arrow{r}[above]{F(f, \id_B)}
+		\arrow{d}[left]{α_{A, B}}
 		&
-		F(A_2, B_1)
-		\arrow{r}[above]{F(1_{A_2}, g)}
-		\arrow{d}[left]{α_{A_2, B_1}}
+		F(A', B)
+		\arrow{r}[above]{F(\id_{A'}, g)}
+		\arrow{d}[right]{α_{A', B}}
 		&
-		F(A_2, B_2)
-		\arrow{d}[right]{α_{A_2, B_2}}
+		F(A', B')
+		\arrow{d}[right]{α_{A', B'}}
 		\\
-		G(A_1, B_1)
-		\arrow{r}[above]{G(f, 1_{B_1})}
+		G(A, B)
+		\arrow{r}[above]{G(f, \id_B)}
 		&
-		G(A_2, B_1)
-		\arrow{r}[above]{G(1_{A_2}, g)}
+		G(A', B)
+		\arrow{r}[above]{G(\id_{A'}, g)}
 		&
-		G(A_2, B_2)
+		G(A', B')
 	\end{tikzcd}
 \]
 By leaving out the middle column this diagram we arrive at the following commutative square diagram:
 \[
-	\begin{tikzcd}[row sep = large, column sep = 7em]
-		F(A_1, B_1)
-		\arrow{r}[above]{F(1_{A_2}, g) ∘ F(f, 1_{B_1})}
-		\arrow{d}[left]{α_{A_1, B_1}}
+	\begin{tikzcd}[column sep = 8em]
+		F(A, B)
+		\arrow{r}[above]{F(\id_{A'}, g) ∘ F(f, \id_B)}
+		\arrow{d}[left]{α_{A, B}}
 		&
-		F(A_2, B_2)
-		\arrow{d}[right]{α_{A_2, B_2}}
+		F(A', B')
+		\arrow{d}[right]{α_{A', B'}}
 		\\
-		G(A_1, B_1)
-		\arrow{r}[above]{G(1_{A_2}, g) ∘ G(f, 1_{B_1})}
+		G(A, B)
+		\arrow{r}[above]{G(\id_{A'}, g) ∘ G(f, \id_B)}
 		&
-		G(A_2, B_2)
+		G(A', B')
 	\end{tikzcd}
 \]
 Thanks to the equalities
 \[
-	F(1_{A_2}, g) ∘ F(f, 1_{B_1})
+	F(\id_{A'}, g) ∘ F(f, \id_B)
 	=
-	F( (1_{A_2}, g) ∘ (f, 1_{B_1}) )
+	F( (\id_{A'}, g) ∘ (f, \id_B) )
 	=
 	F(f, g)
 \]
-and similarly
+and
 \[
-	G(1_{A_2}, g) ∘ G(f, 1_{B_1})
+	G(\id_{A'}, g) ∘ G(f, \id_B)
 	=
-	G( (1_{A_2}, g) ∘ (f, 1_{B_1}) )
+	G( (\id_{A'}, g) ∘ (f, \id_B) )
 	=
 	G(f, g) \,,
 \]
-we can further rewrite this commutative square as follows:
+we can further rewrite this commutative square diagram as follows:
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1, B_1)
+	\begin{tikzcd}[column sep = large]
+		F(A, B)
 		\arrow{r}[above]{F(f, g)}
-		\arrow{d}[left]{α_{A_1, B_1}}
+		\arrow{d}[left]{α_{A, B}}
 		&
-		F(A_2, B_2)
-		\arrow{d}[right]{α_{A_2, B_2}}
+		F(A', B')
+		\arrow{d}[right]{α_{A', B'}}
 		\\
-		G(A_1, B_1)
+		G(A, B)
 		\arrow{r}[above]{G(f, g)}
 		&
-		G(A_2, B_2)
+		G(A', B')
 	\end{tikzcd}
 \]
 The commutativity of this square diagram shows that~$α$ is a natural transformation from~$F$ to~$G$.
