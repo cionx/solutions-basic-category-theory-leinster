@@ -1,51 +1,61 @@
 \subsection{}
 
 Let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$.
-We can regard~$F$ as a functor from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$, denoted by~$F'$, given on objects by
+We can regard~$F$ as a functor from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$, which we shall denote by~$F'$ instead of~$F$ for clarity.
+This functor~$F'$ is given by
 \[
-	F'( A^{\op} )
-	=
-	F(A)^{\op}
+	F'( A^{\op} ) = F(A)^{\op}
+	\quad\text{and}\quad
+	F'( f^{\op} ) = F(f)^{\op}
 \]
-for every object~$A$ of~$\cat{A}$, and on morphisms by
-\[
-	F'( f^{\op} )
-	=
-	F(f)^{\op}
-\]
-for every morphism~$f$ in~$\cat{A}$.
-This is indeed a functor from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$ since we have
-\[
-	F'( 1_{A^{\op}} )
-	=
-	F'( 1_A^{\op} )
-	=
-	F(1_A)^{\op}
-	=
-	1_{F(A)}^{\op}
-	=
-	1_{F(A)^{\op}}
-\]
-for every object~$A$ of~$\cat{A}$.
-For every three objects~$A$,~$B$, and~$C$ in~$\cat{A}$, every morphism~$f$ from~$A$ to~$B$ and every morphism~$g$ from~$B$ to~$C$ we have
-\begin{align*}
-	F'( f^{\op} g^{\op} )
-	&=
-	F'( (gf)^{\op} )
-	\\
-	&=
-	F(gf)^{\op}
-	\\
-	&=
-	( F(g) F(f) )^{\op}
-	\\
-	&=
-	F(f)^{\op} F(g)^{\op}
-	\\
-	&=
-	F'(f^{\op}) F'(g^{\op}) \,.
-\end{align*}
-We get in this way a map
+for every object~$A$ of~$\cat{A}$ and every morphism~$f$ in~$\cat{A}$.
+This assignment~$F'$ is indeed a functor from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$:
+\begin{itemize}
+
+	\item
+		We have for every object~$A$ of~$\cat{A}$ the equalities
+		\[
+			F'( \id_{A^{\op}} )
+			=
+			F'( \id_A^{\op} )
+			=
+			F(\id_A)^{\op}
+			=
+			\id_{F(A)}^{\op}
+			=
+			\id_{F(A)^{\op}} \,.
+		\]
+
+	\item
+		We have for every two composable morphisms
+		\[
+			f \colon A \to A' \,,
+			\quad
+			g \colon A' \to A''
+		\]
+		in~$\cat{A}$ the equalities
+		\begin{align*}
+			\SwapAboveDisplaySkip
+			F'( f^{\op} g^{\op} )
+			&=
+			F'( (gf)^{\op} )
+			\\
+			&=
+			F(gf)^{\op}
+			\\
+			&=
+			( F(g) F(f) )^{\op}
+			\\
+			&=
+			F(f)^{\op} F(g)^{\op}
+			\\
+			&=
+			F'(f^{\op}) F'(g^{\op}) \,.
+		\end{align*}
+
+\end{itemize}
+This shows that~$F'$ is indeed a functor from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$.
+We have therefore the map
 \begin{equation}
 	\label{opposite_on_objects}
 	(\ph)'
@@ -56,183 +66,159 @@ We get in this way a map
 \end{equation}
 
 Let~$F$ and~$G$ be two functors from~$\cat{A}$ to~$\cat{B}$ and let~$α$ be a natural transformation from~$F$ to~$G$.
-We have for every two objects~$A_1$ and~$A_2$ of~$\cat{A}$ and every morphism~$f$ from~$A_1$ to~$A_2$ the following commutative square diagram in~$\cat{B}$:
+We have for every morphism
+\[
+	f \colon A \to A'
+\]
+in~$\cat{A}$ the following commutative square diagram in~$\cat{B}$:
 \[
 	\begin{tikzcd}[sep = large]
-		F(A_1)
+		F(A)
 		\arrow{r}[above]{F(f)}
-		\arrow{d}[left]{α_{A_1}}
+		\arrow{d}[left]{α_A}
 		&
-		F(A_2)
-		\arrow{d}[right]{α_{A_2}}
+		F(A')
+		\arrow{d}[right]{α_{A'}}
 		\\
-		G(A_1)
+		G(A)
 		\arrow{r}[above]{G(f)}
 		&
-		G(A_2)
+		G(A')
 	\end{tikzcd}
 \]
 It follows that we have the following commutative diagram in~$\cat{B}^{\op}$:
 \[
-	\begin{tikzcd}[sep = large]
-		F(A_1)^{\op}
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		F(A)^{\op}
 		&
-		F(A_2)^{\op}
+		F(A')^{\op}
 		\arrow{l}[above]{F(f)^{\op}}
 		\\
-		G(A_1)^{\op}
-		\arrow{u}[left]{α_{A_1}^{\op}}
+		G(A)^{\op}
+		\arrow{u}[left]{α_A^{\op}}
 		&
-		G(A_2)^{\op}
-		\arrow{u}[right]{α_{A_2}^{\op}}
+		G(A')^{\op}
+		\arrow{u}[right]{α_{A'}^{\op}}
 		\arrow{l}[above]{G(f)^{\op}}
 	\end{tikzcd}
 \]
 This diagram can also be written as follows:
 \[
-	\begin{tikzcd}[sep = large]
-		F'(A_1^{\op})
+	\begin{tikzcd}[row sep = large, column sep = huge]
+		F'(A^{\op})
 		&
-		F'(A_2^{\op})
+		F'(A'^{\op})
 		\arrow{l}[above]{F'(f^{\op})}
 		\\
-		G'(A_1^{\op})
-		\arrow{u}[left]{α_{A_1}^{\op}}
+		G'(A^{\op})
+		\arrow{u}[left]{α_A^{\op}}
 		&
-		G'(A_2^{\op})
-		\arrow{u}[right]{α_{A_2}^{\op}}
+		G'(A'^{\op})
+		\arrow{u}[right]{α_{A'}^{\op}}
 		\arrow{l}[above]{G'(f^{\op})}
 	\end{tikzcd}
 \]
-Let~$( α' )_{A^{\op}} ≔ α_A^{\op}$ for every object~$A$ of~$\cat{A}$.
-The commutativity of the above diagram shows that~$α'$ is a natural transformation from~$G'$ to~$F'$.
+The commutativity of the above diagram shows we have a natural transformation~$α'$ from~$G'$ to~$F'$ with components~$(α')_{A^{\op}} ≔ α_A^{\op}$ for every object~$A$ of~$\cat{A}$.
 
-Let~$F$ be a functor from~$\cat{A}$ from~$\cat{B}$.
-We have
-\[
-	( 1_F' )_{A^{\op}}
-	=
-	1_F(A)^{\op}
-	=
-	1_{F(A)}^{\op}
-	=
-	1_{F(A)^{\op}}
-	=
-	1_{F'(A^{\op})}
-	=
-	1_{F'}(A^{\op})
-\]
-for every object~$A$ of~$\cat{A}$.
-This shows that~$1_F' = 1_{F'}$.
+The natural transformation~$α'$ depends contravariantly functorial on~$α$:
+\begin{itemize}
 
-Let~$F$,~$G$ and~$H$ be three functors from~$\cat{A}$ to~$\cat{B}$, let~$α$ be a natural transformation from~$F$ to~$G$ and let~$β$ be a natural transformation from~$G$ to~$H$.
-Then~$α'$ is a natural transformation from~$G'$ to~$F'$ and~$β'$ is a natural transformation~$H'$ to~$G'$, and we have
-\[
-	(α' β')_{A^{\op}}
-	=
-	(α')_{A^{\op}} (β')_{A^{\op}}
-	=
-	α_A^{\op} β_A^{\op}
-	=
-	(β_A α_A)^{\op}
-	=
-	(β α)_A^{\op}
-	=
-	( (β α)' )_{A^{\op}} \,.
-\]
+	\item
+		Let~$F$ be a functor from~$\cat{A}$ from~$\cat{B}$.
+		We have
+		\[
+			( \id_F' )_{A^{\op}}
+			=
+			\id_F(A)^{\op}
+			=
+			\id_{F(A)}^{\op}
+			=
+			\id_{F(A)^{\op}}
+			=
+			\id_{F'(A^{\op})}
+			=
+			\id_{F'}(A^{\op})
+		\]
+		for every object~$A$ of~$\cat{A}$.
+		This shows that~$\id_F' = \id_{F'}$.
 
-We have altogether shown that the mapping~\eqref{opposite_on_objects} extends to a contravariant functor from the functor category~$[\cat{A}, \cat{B}]$ to~$[\cat{A}^{\op}, \cat{B}^{\op}]$.
-We may regard this contravariant functor as a covariant functor
+	\item
+		Let~$F$,~$G$ and~$H$ be functors from~$\cat{A}$ to~$\cat{B}$, and let
+		\[
+			α \colon F \To G \,,
+			\quad
+			β \colon G \To H
+		\]
+		be natural transformations.
+		We have the induces natural transformation
+		\[
+			α' \colon G' \To F' \,,
+			\quad
+			β' \colon H' \To G' \,,
+			\quad
+			(β α)' \colon H' \To F' \,.
+		\]
+		We have for every object~$A$ of~$\cat{A}$ the equalities
+		\[
+			(α' β')_{A^{\op}}
+			=
+			(α')_{A^{\op}} (β')_{A^{\op}}
+			=
+			α_A^{\op} β_A^{\op}
+			=
+			(β_A α_A)^{\op}
+			=
+			(β α)_A^{\op}
+			=
+			( (β α)' )_{A^{\op}} \,,
+		\]
+		and therefore altogether the equality
+		\[
+			α' β' = (β α)' \,.
+		\]
+
+\end{itemize}
+
+
+
+We have altogether shown that the mapping~\eqref{opposite_on_objects} extends to a contravariant functor
 \[
-	D_{\cat{A} \cat{B}}
+	D_{\cat{A}, \cat{B}}
 	\colon
-	[\cat{A}, \cat{B}]^{\op}
+	[\cat{A}, \cat{B}]
 	\to
 	[\cat{A}^{\op}, \cat{B}^{\op}] \,,
 \]
-given by~$D(F^{\op}) = F'$ for every functor~$F$ from~$\cat{A}$ to~$\cat{B}$ and similarly~$D(α^{\op}) = α'$ for every natural transformation between functors from~$\cat{A}$ to~$\cat{B}$.
+We claim that the two contravariant functors~$D_{\cat{A}, \cat{B}}$ and~$D_{\cat{A}^{\op}, \cat{B}^{\op}}$ are mutually inverse.
+This then shows that~$D_{\cat{A}, \cat{B}}$ is an isomorphism of categories from~$[\cat{A}, \cat{B}]^{\op}$ to~$[\cat{A}^{\op}, \cat{B}^{\op}]$.
 
-Apart from~$D$ we can also consider the composite functor
-\[
-	E_{\cat{A} \cat{B}}
-	\colon
-	[\cat{A}^{\op}, \cat{B}^{\op}]
-	=
-	[\cat{A}^{\op}, \cat{B}^{\op}]^{\op\op}
-	\xto{(D_{\cat{A}^{\op} \cat{B}^{\op}})'}
-	[\cat{A}^{\op\op}, \cat{B}^{\op\op}]^{\op}
-	=
-	[\cat{A}, \cat{B}]^{\op} \,.
-\]
-This functor is given by
-\[
-	E_{\cat{A} \cat{B}}(F)
-	=
-	E_{\cat{A} \cat{B}}(F^{\op \op})
-	=
-	( D_{\cat{A}^{\op} \cat{B}^{\op}} )'(F^{\op \op})
-	=
-	D_{\cat{A}^{\op} \cat{B}^{\op}}(F)^{\op}
-	=
-	(F')^{\op}
-\]
-for every object~$F$ of~$[\cat{A}^{\op}, \cat{B}^{\op}]$, and similarly
-\[
-	E_{\cat{A} \cat{B}}(α)
-	=
-	E_{\cat{A} \cat{B}}(α^{\op \op})
-	=
-	( D_{\cat{A}^{\op} \cat{B}^{\op}} )'(α^{\op \op})
-	=
-	D_{\cat{A}^{\op} \cat{B}^{\op}}(α)^{\op}
-	=
-	(α')^{\op}
-\]
-for every natural transformation~$α$ in~$[\cat{A}^{\op}, \cat{B}^{\op}]$.
-
-We claim that the two functors~$D_{\cat{A} \cat{B}}$ and~$E_{\cat{A} \cat{B}}$ are mutually inverse, and therefore in particular isomorphisms.
 Indeed, we have
 \[
-	E_{\cat{A} \cat{B}}( D_{\cat{A} \cat{B}}( F^{\op} ) )
+	D_{\cat{A}^{\op}, \cat{B}^{\op}}( D_{\cat{A}, \cat{B}}( F ) )
 	=
-	E_{\cat{A} \cat{B}}( F' )
+	D_{\cat{A}^{\op}, \cat{B}^{\op}}( F' )
 	=
-	(F'')^{\op}
+	F''
 	=
-	F^{\op}
+	F
 \]
-for every object~$F$ of~$[\cat{A}, \cat{B}]$ and similarly
+for every object~$F$ of~$[\cat{A}, \cat{B}]$, and similarly
 \[
-	E_{\cat{A} \cat{B}}( D_{\cat{A} \cat{B}}( α^{\op} ) )
+	D_{\cat{A}^{\op}, \cat{B}^{\op}}( D_{\cat{A}, \cat{B}}( α ) )
 	=
-	E_{\cat{A} \cat{B}}( α' )
+	D_{\cat{A}^{\op}, \cat{B}^{\op}}( α' )
 	=
-	(α'')^{\op}
+	α''
 	=
-	α^{\op}
+	α
 \]
-for every morphism~$α$ of~$[\cat{A}, \cat{B}]$.
-This shows that the composite~$E_{\cat{A} \cat{B}} ∘ D_{\cat{A} \cat{B}}$ is the identity functor of~$[\cat{A}, \cat{B}]^{\op}$.
-
-We find in the same way that
+for every morphism~$α$ in~$[\cat{A}, \cat{B}]$.
+This shows that the composite~$D_{\cat{A}^{\op}, \cat{B}^{\op}} ∘ D_{\cat{A}, \cat{B}}$ is the identity functor of~$[\cat{A}, \cat{B}]$.
+It follows that also
 \[
-	D_{\cat{A} \cat{B}}( E_{\cat{A} \cat{B}}( G ) )
+	D_{\cat{A}, \cat{B}} ∘ D_{\cat{A}^{\op}, \cat{B}^{\op}}
 	=
-	D_{\cat{A} \cat{B}}( (G')^{\op} )
+	D_{\cat{A}^{\op\op}, \cat{B}^{\op\op}} ∘ D_{\cat{A}^{\op}, \cat{B}^{\op}}
 	=
-	G''
-	=
-	G
+	\Id_{[\cat{A}^{\op}, \cat{B}^{\op}]} \,.
 \]
-for every object~$G$ of~$[\cat{A}^{\op}, \cat{B}^{\op}]$ and also
-\[
-	D_{\cat{A} \cat{B}}( E_{\cat{A} \cat{B}}( β ) )
-	=
-	D_{\cat{A} \cat{B}}( (β')^{\op} )
-	=
-	β''
-	=
-	β
-\]
-for every morphism~$β$ of~$[\cat{A}^{\op}, \cat{B}^{\op}]$.
-This shows that the composite~$D_{\cat{A} \cat{B}} ∘ E_{\cat{A} \cat{B}}$ is the identity functor of~$[\cat{A}^{\op}, \cat{B}^{\op}]$.
