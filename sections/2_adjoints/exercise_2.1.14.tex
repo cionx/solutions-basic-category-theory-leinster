@@ -1,9 +1,15 @@
 \subsection{}
 
-Let~$\cat{A}$ and~$\cat{B}$ be two categories, let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$ and let~$G$ be a functor from~$\cat{B}$ to~$\cat{A}$.
+Let~$\cat{A}$ and~$\cat{B}$ be two categories and let
+\[
+	F \colon \cat{A} \to \cat{B} \,,
+	\quad
+	G \colon \cat{B} \to \cat{A}
+\]
+be two functors.
 
-Suppose first that the two naturality equations~(2.2) and~(2.3) hold.
-For any three morphisms
+Suppose first that the two naturality equations~(2.2) and~(2.3) are satisfied.
+For all morphisms in~$\cat{A}$ of the form
 \[
 	A'
 	\xto{p}
@@ -11,14 +17,15 @@ For any three morphisms
 	\xto{f}
 	G(B)
 	\xto{G(q)}
-	G(B')
+	G(B') \,,
 \]
-in~$\cat{A}$ we have
+we then have
 \begingroup
 \allowdisplaybreaks
 \begin{align*}
+	{}&
 	\adjtranspose{
-		\biggl(
+		\Bigl(
 			A'
 			\xto{p}
 			A
@@ -26,57 +33,59 @@ in~$\cat{A}$ we have
 			G(B)
 			\xto{G(q)}
 			G(B')
-		\biggr)
+		\Bigr)
 	}
-	&=
+	\\[0.6em]
+	={}&
 	\adjtranspose{
-		\biggl(
+		\Bigl(
 			A'
 			\xto{f p}
 			G(B)
 			\xto{G(q)}
 			G(B')
-		\biggr)
+		\Bigr)
 	}
-	\\[0.5em]
-	&=
+	\\[0.7em]
+	={}&
 	\adjtranspose{
-		\left(
+		\Biggl(
 			A'
 			\xto{\adjtranspose{\adjtranspose{f p}}}
 			G(B)
 			\xto{G(q)}
 			G(B')
-		\right)
+		\Biggr)
 	}
 	\\
-	&=
-	\Biggl(
+	={}&
+	\Bigl(
 		F(A')
 		\xto{\adjtranspose{f p}}
 		B
 		\xto{q}
 		B'
-	\Biggr)
+	\Bigr)
 	\tag{by~(2.2)}
-	\\[0.5em]
-	&=
+	\\[0.7em]
+	={}&
 	\left(
+		\;
 		\adjtranspose{
-			\biggl(
+			\Bigl(
 				A'
 				\xto{p}
 				A
 				\xto{f}
 				G(B)
-			\biggr)
+			\Bigr)
 		}
 		\xto{q}
 		B'
 	\right)
 	\\
-	&=
-	\biggl(
+	={}&
+	\Bigl(
 		F(A')
 		\xto{F(p)}
 		F(A)
@@ -84,7 +93,7 @@ in~$\cat{A}$ we have
 		B
 		\xto{q}
 		B'
-	\biggr)
+	\Bigr) \,.
 	\tag{by~(2.3)}
 \end{align*}
 \endgroup
@@ -94,17 +103,17 @@ Suppose now conversely that the given naturality equation holds.
 Then
 \begin{align*}
 	\adjtranspose{
-		\Biggl(
+		\Bigl(
 			F(A)
 			\xto{g}
 			B
 			\xto{q}
 			B'
-		\Biggr)
+		\Bigr)
 	}
 	&=
 	\adjtranspose{
-		\Biggl(
+		\biggl(
 			F(A)
 			\xto{1_{F(A)}}
 			F(A)
@@ -112,12 +121,12 @@ Then
 			B
 			\xto{q}
 			B'
-		\Biggr)
+		\biggr)
 	}
 	\\[0.5em]
 	&=
 	\adjtranspose{
-		\Biggl(
+		\biggl(
 			F(A)
 			\xto{F(1_A)}
 			F(A)
@@ -125,11 +134,11 @@ Then
 			B
 			\xto{q}
 			B'
-		\Biggr)
+		\biggr)
 	}
 	\\
 	&=
-	\biggl(
+	\Bigl(
 		A
 		\xto{1_A}
 		A
@@ -137,16 +146,16 @@ Then
 		B
 		\xto{G(q)}
 		B'
-	\biggr)
+	\Bigr)
 	\\
 	&=
-	\biggl(
+	\Bigl(
 		A
 		\xto{\adjtranspose{g}}
 		B
 		\xto{G(q)}
 		B'
-	\biggr) \,,
+	\Bigr) \,,
 \end{align*}
 which shows that the naturality equation~(2.2).
 We find similarly that
@@ -154,17 +163,17 @@ We find similarly that
 \allowdisplaybreaks
 \begin{align*}
 	\adjtranspose{
-		\Biggl(
+		\Bigl(
 			A'
 			\xto{p}
 			A
 			\xto{f}
 			G(B)
-		\Biggr)
+		\Bigr)
 	}
 	&=
 	\adjtranspose{
-		\Biggl(
+		\biggl(
 			A'
 			\xto{p}
 			A
@@ -172,12 +181,12 @@ We find similarly that
 			G(B)
 			\xto{1_{G(B)}}
 			G(B)
-		\Biggr)
+		\biggr)
 	}
-	\\[1em]
+	\\
 	&=
 	\adjtranspose{
-		\Biggl(
+		\biggl(
 			A'
 			\xto{p}
 			A
@@ -185,11 +194,11 @@ We find similarly that
 			G(B)
 			\xto{G(1_B)}
 			G(B)
-		\Biggr)
+		\biggr)
 	}
 	\\
 	&=
-	\biggl(
+	\Bigl(
 		F(A')
 		\xto{F(p)}
 		F(A)
@@ -197,16 +206,16 @@ We find similarly that
 		B
 		\xto{1_B}
 		B
-	\biggr)
+	\Bigr)
 	\\
 	&=
-	\biggl(
+	\Bigl(
 		F(A')
 		\xto{F(p)}
 		F(A)
 		\xto{\adjtranspose{f}}
 		B
-	\biggr) \,,
+	\Bigr) \,,
 \end{align*}
 \endgroup
 which shows the naturality equation~(2.3).
