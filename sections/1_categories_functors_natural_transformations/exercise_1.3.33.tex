@@ -1,34 +1,43 @@
 \subsection{}
 
-We consider an auxiliary category~$\cat{A}$ as follows:
-The objects of~$\cat{A}$ are pairs~$(V, B)$ consisting of a finite-dimensional~\vectorspace{$\kf$}~$V$ and a basis~$B$ of~$V$.
-For any two objects~$(V, B)$ and~$(W, C)$ of~$\cat{A}$ the respective set of morphism~$\cat{A}( (V, B), (W, C) )$ is the set of linear maps from~$V$ to~$W$.
-The composition in~$\cat{A}$ is the usual composition of linear maps.
+The composition of morphisms in~$\Matcat$ is given by matrix multiplication.
 
-We have a forgetful functor~$F$ from~$\cat{A}$ to~$\FDVect$ that is given on objects by
+We consider an auxiliary category~$\cat{B}$ of \enquote{vector spaces together with bases}.
+This category is defined as follows:
+The objects of~$\cat{B}$ are pairs~$(V, B)$ consisting of a finite-dimensional~\vectorspace{$𝕜$}~$V$ and a basis~$B$ of~$V$.
+For any two objects~$(V, B)$ and~$(W, C)$ of~$\cat{B}$, the respective set of morphism~$\cat{B}( (V, B), (W, C) )$ is simply the set of linear maps from~$V$ to~$W$.
+The composition of morphisms in~$\cat{B}$ is the usual composition of linear maps.
+
+We have a forgetful functor~$U$ from~$\cat{B}$ to~$\FDVect$ given by
 \[
-	F((V, B)) = V
+	U((V, B)) ≔ V
 	\quad\text{and}\quad
-	F(f) = f
+	U(f) ≔ f
 \]
 on objects and morphisms respectively.
-This functor is fully faithful and surjective, and hence an equivalence.
+The functor~$U$ is full, faithful and surjective, and hence an equivalence of categories.
 
-We also have a functor~$G$ from~$\cat{A}$ to~$\Matcat$ as follows:
-It is given on objects by
+We also have a functor~$F$ from~$\cat{B}$ to~$\Matcat$ as follows:
+For every object~$(V, B)$ of~$\cat{B}$, the action of~$F$ on~$(V, B)$ is given by
 \[
-	G( (V, B) ) = \dim(V) \,.
+	F( (V, B) ) ≔ \dim(V) \,.
 \]
-It assigns to each morphism
+For every morphism
 \[
 	f \colon (V, B) \to (W, C)
 \]
-in~$\cat{A}$ the matrix that represents the linear map~$f$ with respect to the bases~$B$ and~$C$.
-This functor is fully faithful and surjective, and therefore an equivalence.
+in~$\cat{B}$, we choose~$F(f)$ as the matrix that represents the linear map~$f$ with respect to the bases~$B$ and~$C$ of~$V$ and~$W$.
+The functor~$F$ is full, faithful and surjective, and is therefore an equivalence of categories.
 
-The category~$\cat{A}$ is both equivalent to~$\FDVect$ and to~$\Matcat$.
+The category~$\cat{B}$ is both equivalent to~$\FDVect$ and to~$\Matcat$.
 It follows (from the upcoming Exercise~1.3.34) that~$\FDVect$ and~$\Matcat$ are also equivalent.
 
-A quasi-inverse~$G'$ for~$G$ is given on objects by~$G'(n) = (\kf^n, (e_1, \dotsc, e_n))$ for every natural number~$n$ and on morphisms by~$G'(A)(x) = Ax$ for every matrix~$A$ and column vector~$x$ (of suitable size).
+An essential inverse~$F'$ of~$F$ is given on objects by~$F'(n) = (𝕜^n, (e_1, \dotsc, e_n))$ for every natural number~$n$, and on morphisms by~$F'(A)(x) = Ax$ for every matrix~$A$ and column vector~$x$ (of suitable sizes).
 
-A quasi-inverse~$F'$ for~$F$ together with a natural isomorphism from~$F' F$ to~$1_{\FDVect}$ amounts to choosing a basis for every finite-dimensional~\vectorspace{$\kf$}.
+An essential inverse~$U'$ of~$U$ together with a natural isomorphism from~$U' ∘ U$ to~$\Id_{\FDVect}$ amounts to choosing a basis for every finite-dimensional~\vectorspace{$𝕜$}.
+
+The composite~$U ∘ F'$ is an equivalence of categories from~$\Matcat$ to~$\FDVect{𝕜}$.
+It assigns to each natural number~$n$ the vector space~$𝕜^n$, and regards every matrix of size~$m × n$ as a linear map from~$𝕜^n$ to~$𝕜^m$ via matrix-vector multiplication.
+
+We might regard the functor~$U ∘ F'$ as a \enquote{canonical} functor from~$\Matcat$ to~$\FDVect{𝕜}$.
+The functor~$F ∘ U'$, on the other hand, is not \enquote{canonical} since it depends on choosing bases.
