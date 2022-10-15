@@ -26,8 +26,9 @@ To figure out the right adjoint~$f_\#$ of~$f^*$ we observe that it needs to sati
 for every subset~$U$ of~$K$ and every element~$t$ of~$K$.
 We therefore set
 \[
-	f_\#(U) ≔ \{ t ∈ L \suchthat f^{-1}(t) ⊆ U \} \,.
+	f_\#(U) ≔ \{ t ∈ L \suchthat f^{-1}(t) ⊆ U \}
 \]
+for every subset~$U$ of~$L$.
 This defines a map~$f_\#$ from~$\Power(K)$ to~$\Power(L)$ that is order-preserving, and can therefore be regarded as a functor.
 We have
 \begin{align*}
@@ -41,7 +42,7 @@ We have
 	&\iff
 	f^{-1}(T) ⊆ U
 \end{align*}
-for every subset~$T$ of~$L$ and every subset~$U$ of~$L$.
+for every subset~$T$ of~$K$ and every subset~$U$ of~$L$.
 Therefore,~$f_\#$ is right adjoint to~$f^*$.
 
 
@@ -56,7 +57,7 @@ The projection map~$p$ from~$X × Y$ to~$X$ induces a functor
 	\to
 	\Power(X × Y) \,.
 \]
-Logically, this can be expressed as
+Logically, the action of~$p^*$ can be expressed as
 \begin{align*}
 	p^*(S)(x, y)
 	\iff
@@ -71,8 +72,8 @@ Logically, this can be expressed as
 	&\iff
 	S(x) \,.
 \end{align*}
-We have seen in the previous part of this exercise an explicit construction of the left adjoint~$p_*$ of~$p^*$ and the right adjoint~$p_\#$ of~$p^*$.
-The left adjoint~$p_*$ can be expressed as
+We have seen explicit constructions of the left adjoint functor~$p_*$ of~$p^*$ and the right adjoint functor~$p_\#$ of~$p^*$ in the previous part of this exercise.
+The action of the left adjoint functor~$p_*$ can be expressed as
 \begin{align*}
 	p_*(R)(x)
 	&\iff
@@ -87,7 +88,7 @@ The left adjoint~$p_*$ can be expressed as
 	&\iff
 	\exists y ∈ Y : R(x, y) \,.
 \end{align*}
-The right adjoint~$p_\#$ can be expressed as
+The action of the right adjoint functor~$p_\#$ can be expressed as
 \begin{align*}
 	p_\#(R)(x)
 	&\iff
@@ -112,74 +113,77 @@ For two subsets~$S$ and~$T$ of a finite product~$X_1 × \dotsb × X_n$ we have
 	S ⊆ T
 	\\
 	\iff{}&
-	\Bigl(
+	[
 		\text{$(x_1, \dotsc, x_n) ∈ S \implies (x_1, \dotsc, x_n) ∈ T$ for all~$(x_1, \dotsc, x_n) ∈ X_1 × \dotsb × X_n$}
-	\Bigr)
+	]
 	\\
 	\iff{}&
-	\Bigl(
+	[
 		\text{$S(x_1, \dotsc, x_n) \implies T(x_1, \dotsc, x_n)$ for all~$(x_1, \dotsc, x_n) ∈ X_1 × \dotsb × X_n$}
-	\Bigr)
+	]
 	\\
 	\iff{}&
-	( S \implies T ) \,.
+	[ S \implies T ] \,.
 \end{align*}
-The unit~$η$ and counit~$ε$ of the adjunction~$p_* ⊣ p^*$, given by natural transformations
+The unit~$η$ and counit~$ε$ of the adjunction~$p_* ⊣ p^*$ are natural transformations
 \[
 	η \colon \Id_{\Power(X × Y)} \To p^* p_* \,,
 	\quad
 	ε \colon p_* p^* \To \Id_{\Power(X)} \,,
 \]
-can therefore be regarded as certain logical implications.
-The composite~$p^* p_*$ is given by
+and can therefore be regarded as certain logical implications.
+The composite~$p^* p_*$ can be computed as
 \[
 	p^*( p_*(R) )(x, y)
 	\iff
 	p_*(R)(x)
 	\iff
-	\bigl( \exists y': R(x, y') \bigr) \,,
+	[ \exists y': R(x, y') ] \,,
 \]
 whence the unit~$η$ of the adjunction~$f_* ⊣ f^*$ can be interpreted as the implication
 \[
-	R(x, y) \implies \bigl( \exists y' : R(x, y') \bigr) \,.
+	R \implies ( \exists y : R(\ph, y) ) \,.
 \]
-The composite~$p_* p^*$ is given by
+The composite~$p_* p^*$ can be computed as
 \[
 	p_*(p^*(S))(x)
 	\iff
-	\bigl( \exists y: p^*(S)(x, y) \bigr)
+	[ \exists y: p^*(S)(x, y) ]
 	\iff
-	\bigl( \exists y: S(x) \bigr) \,,
+	[ \exists y: S(x) ] \,,
 \]
 whence the counit~$ε$ of the adjunction~$f^* ⊣ f_\#$ can be interpreted as the implication
 \[
-	\bigl( \exists y: S(x) \bigr) \implies S(x) \,.
+	[ \exists y: S ] \implies S \,.%
+	\footnote{
+		This implication makes sense because the statement~$S$ does not depend on the variable~$y$.
+	}
 \]
 
 We can similarly regard the unit~$η'$ and counit~$ε'$ of the adjunction~$p^* ⊣ p_\#$ as logical implications.
-The composite~$p_\# p^*$ is given by
+The composite~$p_\# p^*$ can be computed as
 \[
 	p_\#( p^*(S) )(x)
 	\iff
-	\bigl( \forall y ∈ Y: p^*(S)(x, y) \bigr)
+	[ \forall y ∈ Y: p^*(S)(x, y) ]
 	\iff
-	\bigl( \forall y ∈ Y: S(x) \bigr) \,,
+	[ \forall y ∈ Y: S(x) ] \,,
 \]
 whence the unit~$η'$ can be interpreted as the implication
 \[
-	S(x) \implies \bigl( \forall y ∈ Y: S(x) \bigr) \,.
+	S \implies [ \forall y ∈ Y: S ] \,.
 \]
-The composite~$p^* p_\#$ is given by
+The composite~$p^* p_\#$ can be computed as
 \[
 	p^*( p_\#(R) )(x, y)
 	\iff
 	p_\#(R)(x)
 	\iff
-	\bigl( \forall y' ∈ Y : R(x, y') \bigr) \,,
+	[ \forall y' ∈ Y : R(x, y') ] \,,
 \]
 whence the counit~$ε'$ can be interpreted as the implication
 \[
-	\bigl( \forall y' ∈ Y : R(x, y') \bigr)
+	[ \forall y ∈ Y : R(\ph, y) ]
 	\implies
-	R(x, y) \,.
+	R \,.
 \]
