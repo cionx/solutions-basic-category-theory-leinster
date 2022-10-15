@@ -4,23 +4,20 @@
 
 \subsubsection{}
 
-It follows for every morphism
-\[
-	f \colon A \to A'
-\]
-in~$\cat{A}$ from the first formula in Lemma~2.2.4 and the naturality of~$η$ that
+It follows from the first formula in Lemma~2.2.4 and the naturality of the unit~$η$ that
 \[
 	\adjtranspose{ F(f) }
 	=
 	GF(f) ∘ η_A
 	=
-	η_{A'} ∘ f \,.
+	η_{A'} ∘ f
 \]
-We can therefore express the action of the functor~$F$ on morphisms as
+for every morphism~$f \colon A \to A'$ in~$\cat{A}$.
+We can therefore express the action of the functor~$F$ on such a morphism~$f$ as
 \[
 	F(f) = \adjtranspose{ η_{A'} ∘ f } \,.
 \]
-It follows that the functor~$F$ is faithful, respectively full, if and only if for every two objects~$A$ and~$A'$ of~$\cat{A}$ the map
+It follows that the functor~$F$ is faithful or full if and only if for every two objects~$A$ and~$A'$ of~$\cat{A}$ the map
 \[
 	( η_{A'} )_*
 	\colon
@@ -29,56 +26,70 @@ It follows that the functor~$F$ is faithful, respectively full, if and only if f
 	\cat{A}(A, GF(A'))
 \]
 is injective, respectively surjective.
-Putting both of these observations together, we find that~$F$ is fully faithful if and only if the above map~$( η_{A'} )_*$ is bijective for any two objects~$A$ and~$A'$ of~$\cat{A}$.
+By putting both of these observations together we find that~$F$ is full and faithful if and only if the above map~$( η_{A'} )_*$ is bijective for any two objects~$A$ and~$A'$ of~$\cat{A}$.
 This is equivalent to each morphism~$η_{A'}$ being an isomorphism by the upcoming \cref{isomorphism_iff_bijection_on_hom_sets}, and therefore equivalent to~$η$ being a natural isomorphism.
 
 \begin{lemma}
 	\label{isomorphism_iff_bijection_on_hom_sets}
 	Let~$\cat{A}$ be a category and let~$f$ be a morphism in~$\cat{A}$ of the form
 	\[
-		f \colon A' \to A'' \,.
+		f \colon A \to A' \,.
 	\]
-	The following conditions on~$f$ are equivalent:
+	The following conditions on the morphism~$f$ are equivalent:
 	\begin{equivalenceslist}
 
 		\item
 			\label{is_isomorphism}
-			The morphism~$f$ is an isomorphism.
+			$f$ is an isomorphism.
 
 		\item
 			\label{induced_covariant_bijection}
-			The induced map~$f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'')$ is a bijection for every object~$A$ of~$\cat{A}$.
+			The map~$f_* \colon \cat{A}(A'', A) \to \cat{A}(A'', A')$ is bijective for every object~$A''$ of~$\cat{A}$.
 
 		\item
 			\label{induced_contravariant_bijection}
-			The induced map~$f^* \colon \cat{A}(A'', A) \to \cat{A}(A', A)$ is a bijection for every object~$A$ of~$\cat{A}$.
+			The map~$f^* \colon \cat{A}(A', A'') \to \cat{A}(A, A'')$ is bijective for every object~$A''$ of~$\cat{A}$.
 
 	\end{equivalenceslist}
 \end{lemma}
 
 \begin{proof}
-	It suffices to prove the equivalence of~\ref{is_isomorphism} and~\ref{induced_covariant_bijection}: the equivalence of~\ref{is_isomorphism} and~\ref{induced_contravariant_bijection} then follows by duality.
+	It suffices to prove the equivalence of the conditions~\ref{is_isomorphism} and~\ref{induced_covariant_bijection}.
+	The equivalence of the conditions~\ref{is_isomorphism} and~\ref{induced_contravariant_bijection} then follows by duality.
 
-	If~$f$ is an isomorphism with inverse~$f^{-1}$ then the two resulting maps
+	Suppose first that the morphism~$f$ is an isomorphism.
+	The morphisms~$f$ and~$f^{-1}$ are mutually inverse, whence the two induced maps
 	\[
-		f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'') \,,
+		f_* \colon \cat{A}(A'', A) \to \cat{A}(A'', A') \,,
 		\qquad
-		(f^{-1})_* \colon \cat{A}(A, A'') \to \cat{A}(A, A')
+		(f^{-1})_* \colon \cat{A}(A'', A') \to \cat{A}(A'', A)
 	\]
 	are again mutually inverse.
-	This entails that the map~$f_*$ is bijective.
+	This shows that the map~$f_*$ is bijective.
 	Thus,~\ref{induced_covariant_bijection} follows from~\ref{is_isomorphism}.
 
 	Suppose conversely that~\ref{induced_covariant_bijection} holds.
-	By choosing~$A$ as~$A''$ we see that there exists morphism~$g$ from~$A''$ to~$A'$ with~$\id_{A''} = f_*(g)$, and thus~$\id_{A''} = f ∘ g$.
-	It follows that
+	By choosing~$A''$ as~$A'$, we see that there exists a morphism~$g$ from~$A'$ to~$A$ with~$\id_{A'} = f_*(g)$.
+	This means that
 	\[
-		f_*(g ∘ f) = f ∘ g ∘ f = \id_{A''} ∘ f = f = f ∘ \id_{A'} = f_*(\id_{A'})
+		f ∘ g = \id_{A'} \,.
 	\]
-	and therefore also~$g ∘ f = \id_{A'}$.
-	This shows that the morphism~$g$ is a two-sided inverse to~$f$.
-	The existence of such a two-sided inverse means that~$f$ is an isomorphism.
-	We have thus shown that~\ref{is_isomorphism} follows from~\ref{induced_covariant_bijection}.
+	We claim that also~$g ∘ f = \id_A$.
+	To prove this, we note that both~$g ∘ f$ and~$\id_A$ are morphisms from~$A$ to~$A$ such that
+	\[
+		f_*(g ∘ f)
+		=
+		f ∘ g ∘ f
+		=
+		\id_{A'} ∘ f
+		=
+		f
+		=
+		f ∘ \id_A
+		=
+		f_*( \id_A ) \,.
+	\]
+	It follows from the injectivity of~$f_*$ (for the case~$A'' = A$) that indeed~$g ∘ f = \id_A$.
 \end{proof}
 
 We find dually the following:
@@ -91,27 +102,27 @@ The functor~$G$ is faithful, respectively full, if and only if for every two obj
 	\cat{B}(FG(B), B')
 \]
 is injective, respectively surjective.
-Therefore,~$G$ is fully faithful if and only if the above map~$(ε_B)^*$ is bijective for any two objects~$B$ and~$B'$ of~$\cat{B}$.
+Therefore,~$G$ is full and faithful if and only if the above map~$(ε_B)^*$ is bijective for any two objects~$B$ and~$B'$ of~$\cat{B}$.
 By \cref{isomorphism_iff_bijection_on_hom_sets} this is equivalent to~$ε$ being a natural isomorphism.
 
 \begin{remark}
-	We have actually shown the following stronger results:
+	We have actually shown the following stronger results for the left adjoint~$F$, the right adjoint~$G$, the unit~$η$, and the counit~$ε$.
 	\begin{enumerate}
 
 		\item
-			The left adjoint~$F$ is faithful if and only if the unit~$η$ of the adjunction is a monomorphism in each component.
+			$F$ is faithful if and only if~$η$ is a monomorphism in each component.
 
 		\item
-			The right adjoint~$G$ is faithful if and only if the counit~$ε$ of the adjunction is an epimorphism in each component.
+			$G$ is faithful if and only if~$ε$ is an epimorphism in each component.
 
 		\item
-			The left adjoint~$F$ is full if and only if the unit~$η$ of the adjunction is a split epimorphism in each component.
+			$F$ is full if and only if~$η$ is a split epimorphism in each component.
 
 		\item
-			The right adjoint~$G$ is full if and only if the counit~$ε$ of the adjunction is a split monomorphism in each component.
+			$G$ is full if and only if~$ε$ is a split monomorphism in each component.
 
 	\end{enumerate}
-	These results can also be found in \cite[IV.3,~Theorem~1]{maclane_working_mathematician}
+	These results can also be found in \cite[IV.3,~Theorem~1]{maclane_working_mathematician}.
 \end{remark}
 
 
@@ -127,26 +138,26 @@ The right adjoint functor~$U$ is not full.
 The given adjunction is therefore not a reflection.
 
 \paragraph{Example~2.1.3,~(c)}
-The right adjoint functor~$U$ is fully faithful.
+The right adjoint functor~$U$ is full and faithful.
 The given adjunction is therefore a reflection.
 
-\paragraph{Example~2.1.3,~(d),~$F$ and~$U$}
-The right adjoint functor~$U$ is fully faithful.
+\paragraph{Example~2.1.3,~(d), the functors~$F$ and~$U$}
+The right adjoint functor~$U$ is full and faithful.
 The given adjunction is therefore a reflection.
 
-\paragraph{Example~2.1.3,~(d),~$U$ and~$R$}
+\paragraph{Example~2.1.3,~(d), the functors~$U$ and~$R$}
 The counit~$ε$ of the given adjunction has for every monoid~$M$ as its component~$ε_M$ the inclusion map from~$M^×$ (the group of units of~$M$) to~$M$.
 This map is always injective, but only surjective if~$M$ is a group.
 The adjunction is therefore not a reflection.
 
-\paragraph{Example~2.1.5,~$D$ and~$U$}
+\paragraph{Example~2.1.5, the functors~$D$ and~$U$}
 The right adjoint functor~$U$ is not full.
 The given adjunction is therefore not a reflection.
 
-\paragraph{Example~2.1.5,~$U$ and~$I$}
-The right adjoint functor~$I$ is fully faithful.
+\paragraph{Example~2.1.5, the functors~$U$ and~$I$}
+The right adjoint functor~$I$ is full and faithful.
 The given the adjunction is therefore a reflection.
 
 \paragraph{Example~2.1.6}
 The right adjoint functor~$(\ph)^B$ is not faithful if~$B$ is empty, and it is not full if the set~$B$ contains at least two distinct elements.
-It is fully faithful if and only if the set~$B$ is a singleton, in which case both the left adjoint functor~$(\ph) × B$ and the right adjoint functor~$(\ph)^B$ are mutually inverse equivalences.
+It is full and faithful if and only if the set~$B$ is a singleton, in which case both the left adjoint functor~$(\ph) × B$ and the right adjoint functor~$(\ph)^B$ are essentially inverse equivalences of categories.
