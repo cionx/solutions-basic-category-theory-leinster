@@ -5,7 +5,7 @@ Let~$\cat{S}$ be a category.
 	
 
 	\item
-		Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ be a functor from~$\cat{B}$ to~$\cat{A}$.
+		Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$.
 		We make the following observations:
 		\begin{itemize}
 
@@ -15,36 +15,68 @@ Let~$\cat{S}$ be a category.
 
 			\item
 				Let~$K$ and~$L$ be two functors from~$\cat{B}$ to~$\cat{S}$ and let~$α$ be a natural transformation from~$K$ to~$L$.
-				We then have the induces natural transformation~$αF$ from~$KF$ to~$LF$.
+				We then have the induced natural transformation~$αF$ from~$KF$ to~$LF$.
 
 			\item
 				The above assignments define a functor~$F^*$ from the functor category~$[\cat{B}, \cat{S}]$ to the functor category~$[\cat{A}, \cat{S}]$.
-				Indeed, for every functor~$K$ from~$\cat{B}$ to~$\cat{A}$ we have the equalities
-				\[
-					F^*(\id_K)
-					=
-					\id_K F
-					=
-					\id_{K F}
-					=
-					\id_{F^*(K)} \,,
-				\]
-				and for any three functors~$K$,~$L$ and~$M$ from~$\cat{B}$ to~$\cat{S}$ and every two natural transformations
-				\[
-					α \colon K \To L \,,
-					\quad
-					β \colon L \To M
-				\]
-				we have the equalities
-				\[
-					F^*(β) ∘ F^*(α)
-					=
-					βF ∘ αF
-					=
-					(β ∘ α)F
-					=
-					F^*(β ∘ α) \,.
-				\]
+				Let us check the functoriality of~$F^*$:
+				\begin{itemize}
+
+					\item
+						For every functor~$K$ from~$\cat{B}$ to~$\cat{A}$ we have the equalities
+						\[
+							F^*(\id_K)_A
+							=
+							(\id_K F)_A
+							=
+							(\id_K)_{F(A)}
+							=
+							\id_{KF(A)}
+							=
+							( \id_{KF} )_A
+							=
+							( \id_{F^*(K)} )_A \,,
+						\]
+						for every object~$A$ of~$\cat{A}$, and therefore the equality of natural transformations
+						\[
+							F^*(\id_K) = \id_{F^*(K)} \,.
+						\]
+
+					\item
+						Let~$K$,~$L$ and~$M$ be functors from~$\cat{B}$ to~$\cat{S}$ and let
+						\[
+							α \colon K \To L \,,
+							\quad
+							β \colon L \To M
+						\]
+						be two natural transformations.
+						We have the equalities
+						\begin{align*}
+							( F^*(β) ∘ F^*(α) )_A
+							&=
+							F^*(β)_A ∘ F^*(α)_A
+							\\
+							&=
+							(βF)_A ∘ (αF)_A
+							\\
+							&=
+							β_{F(A)} ∘ α_{F(A)}
+							\\
+							&=
+							(β ∘ α)_{F(A)}
+							\\
+							&=
+							((β ∘ α)F)_A
+							\\
+							&=
+							F^*(β ∘ α)_A
+						\end{align*}
+						for every object~$A$ of~$\cat{A}$, and therefore the equality of natural transformations
+						\[
+							F^*(β) ∘ F^*(α) = F^*(β ∘ α) \,.
+						\]
+
+				\end{itemize}
 		\end{itemize}
 		We have thus constructed an induced functor~$F^*$ from~$[\cat{B}, \cat{S}]$ to~$[\cat{A}, \cat{S}]$.
 
@@ -56,33 +88,89 @@ Let~$\cat{S}$ be a category.
 			G \colon \cat{B} \to \cat{C}
 		\]
 		be composable functors.
-		Then
+		We then have the equality of functors
 		\[
-			(G ∘ F)^* = F^* ∘ G^*
+			(G ∘ F)^* = F^* ∘ G^* \,.
 		\]
-		for the induces functors from~$[\cat{C}, \cat{S}]$ to~$[\cat{A}, \cat{S}]$.
+		Let us check this claimed equality in more detail:
+		\begin{itemize}
+
+			\item
+				Let~$K$ be a functor from~$\cat{C}$ to~$\cat{S}$.
+				Then
+				\[
+					(G ∘ F)^*(K)
+					=
+					K ∘ G ∘ F
+					=
+					G^*(K) ∘ F
+					=
+					F^*( G^*( K ) )
+					=
+					(F^* ∘ G^*)(K) \,.
+				\]
+
+			\item
+				Let~$K$ and~$L$ be two functors from~$\cat{C}$ to~$\cat{S}$ and let
+				\[
+					α \colon K \To L
+				\]
+				be a natural transformation.
+				We have the chain of equalities
+				\begin{align*}
+					(G ∘ F)^*(α)_A
+					&=
+					( α (G ∘ F) )_A
+					\\
+					&=
+					α_{(G ∘ F)(A)}
+					\\
+					&=
+					α_{G(F(A))}
+					\\
+					&=
+					(α G)_{F(A)}
+					\\
+					&=
+					((α G) F)_A
+					\\
+					&=
+					(G^*(α) F)_A
+					\\
+					&=
+					F^*( G^*(α) )_A
+					\\
+					&=
+					(F^* ∘ G^*)(α)_A
+				\end{align*}
+				for every object~$A$ of~$\cat{A}$, and therefore the equality of natural transformations
+				\[
+					(G ∘ F)^*(α) = (F^* ∘ G^*)(α) \,.
+				\]
+
+		\end{itemize}
 
 
 	\item
 		Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ and~$G$ be two functors from~$\cat{A}$ to~$\cat{B}$, and let~$α$ be a natural transformation from~$F$ to~$G$.
-		For every object~$K$ of the functor category~$[\cat{B}, \cat{S}]$, i.e., functor from~$\cat{B}$ to~$\cat{S}$, we get an induces natural transformation~$K α$ from~$K F$ to~$K G$.
-		This induces natural transformation is a morphism from~$F^*(K)$ to~$G^*(K)$ in the functor category~$[\cat{A}, \cat{S}]$.
+		For every object~$K$ of the functor category~$[\cat{B}, \cat{S}]$, i.e., functor from~$\cat{B}$ to~$\cat{S}$, we get an induced natural transformation~$K α$ from~$K F$ to~$K G$.
+		This induced natural transformation is a morphism from~$F^*(K)$ to~$G^*(K)$ in the functor category~$[\cat{A}, \cat{S}]$.
 		By setting
 		\[
 			(α^*)_K ≔ K α
 		\]
-		for every object~$K$ of~$[\cat{B}, \cat{S}]$, we therefore arrive at a transformation~$α^*$ from~$F^*$ to~$G^*$.
-		
-		This transformation~$α^*$ is again natural:
-		Let
+		for every object~$K$ of~$[\cat{B}, \cat{S}]$, we therefore arrive at an induced transformation~$α^*$ from~$F^*$ to~$G^*$.
+
+		The transformation~$α^*$ is again natural.
+		To check this, let
 		\[
 			β \colon K \to L
 		\]
 		be a morphism in~$[\cat{B}, \cat{S}]$.
 		This means that~$K$ and~$L$ are functors from~$\cat{B}$ to~$\cat{S}$ and that~$β$ is a natural transformation from~$K$ to~$L$.
-		We need to show that the diagram
+		We need to check that the diagram
 		\[
-			\begin{tikzcd}[sep = large]
+			\begin{tikzcd}
 				F^*(K)
 				\arrow{r}[above]{F^*(β)}
 				\arrow{d}[left]{(α^*)_K}
@@ -99,7 +187,7 @@ Let~$\cat{S}$ be a category.
 		commutes.
 		This diagram can be simplified as follows:
 		\[
-			\begin{tikzcd}[sep = large]
+			\begin{tikzcd}
 				KF
 				\arrow{r}[above]{βF}
 				\arrow{d}[left]{Kα}
@@ -113,17 +201,41 @@ Let~$\cat{S}$ be a category.
 				LG
 			\end{tikzcd}
 		\]
-		This diagram indeed commutes because, by the interchange law for horizontal and vertical composition, both composited are given by the horizontal composition~$β * α$.
+		This diagram indeed commutes because, by the interchange law for horizontal and vertical composition, both~$Lα ∘ βF$ and~$βG ∘ Kα$ are given by the horizontal composition~$β * α$.
+		Indeed, we have the equalities
+		\[
+			Lα ∘ βF
+			=
+			(\id_L * α) ∘ (β * \id_F)
+			=
+			(\id_L ∘ β) * (α ∘ \id_F)
+			=
+			β * α
+		\]
+		and
+		\[
+			βG ∘ Kα
+			=
+			(β * \id_G) ∘ (\id_K * α)
+			=
+			(β ∘ \id_K) * (\id_G ∘ α)
+			=
+			β * α \,.
+		\]
 
 		We have thus extended the construction~$(\ph)^*$ to natural transformations.
 
 	\item
-		The induced natural transformation~$α^*$ depends covariantly~(!) on~$α$:
+		The induced natural transformation~$α^*$ depends covariantly on~$α$.%
+		\footnote{
+			Our notation of~$α^*$ is pretty bad in that regard, since it seems to suggest that~$α^*$ depends contravariantly on~$α$.
+		}
+		Let us check this claim:
 		\begin{itemize}
 
 			\item
-				For every functor~$F$ from~$\cat{B}$ to~$\cat{A}$, we have~$(\id_F)^* = \id_{F^*}$.
-				Indeed, we have for every object~$K$ of~$[\cat{A}, \cat{S}]$ the equalities of morphisms
+				Let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$.
+				We have for every object~$K$ of~$[\cat{B}, \cat{S}]$ the chain of equalities
 				\[
 					( (\id_F)^* )_K
 					=
@@ -138,7 +250,7 @@ Let~$\cat{S}$ be a category.
 				and therefore the equality of natural transformations~$(\id_F)^* = \id_{F^*}$.
 
 			\item
-				Let now~$F$,~$G$ and~$H$ be three functors from~$\cat{B}$ to~$\cat{A}$, and let
+				Let now~$F$,~$G$ and~$H$ be three functors from~$\cat{A}$ to~$\cat{B}$, and let
 				\[
 					α \colon F \To G \,,
 					\quad
@@ -159,7 +271,7 @@ Let~$\cat{S}$ be a category.
 				\]
 				for every object~$K$ of~$[\cat{B}, \cat{A}]$, and therefore
 				\[
-					(β ∘ α)^* = α^* ∘ β^* \,.
+					(β ∘ α)^* = β^* ∘ α^* \,.
 				\]
 
 	\end{itemize}
@@ -172,15 +284,21 @@ Let~$\cat{S}$ be a category.
 			\quad
 			H \colon \cat{B} \to \cat{C}
 		\]
-		be functors and let~$α$ be a natural transformation from~$F$ to~$G$.
-		We have two ways of obtaining a natural transformation from~$(H F)^* = F^* H^*$ to~$(H G)^* = G^* H^*$.
+		be functors, and let
+		\[
+			α \colon F \To G
+		\]
+		be a natural transformation.
+
+		We have two ways of obtaining from~$α$ and~$H$ an induced natural transformation from the functor~$(H F)^* = F^* H^*$ to the functor~$(H G)^* = G^* H^*$.
 		On the one hand, we can form the natural transformation~$H α$ from~$H F$ to~$H G$, which then induces the natural transformation~$(H α)^*$ from~$(H F)^*$ to~$(H G)^*$.
-		On the other hand, we can form the induces natural transformation~$α^*$ from~$F^*$ to~$G^*$, and then consider the resulting natural transformation~$α^* H^*$ from~$F^* H^*$ to~$G^* H^*$.
-		These natural transformations turn out to be the same, i.e.,
+		On the other hand, we can form the induced natural transformation~$α^*$ from~$F^*$ to~$G^*$, and then consider the resulting natural transformation~$α^* H^*$ from~$F^* H^*$ to~$G^* H^*$.
+
+		These natural transformations turn out to be the same, i.e., we have the equality of natural transformations
 		\[
 			(H α)^* = α^* H^* \,.
 		\]
-		Indeed, we have for every object~$K$ of~$[\cat{C}, \cat{S}]$ the equalities of morphisms
+		Indeed, we have for every object~$K$ of~$[\cat{C}, \cat{S}]$ the chain of equalities
 		\[
 			( (H α)^* )_K
 			=
@@ -194,11 +312,10 @@ Let~$\cat{S}$ be a category.
 			=
 			(α^* H^*)_K \,,
 		\]
-		and therefore overall the equality of natural transformations~$(H α)^* = α^* H^*$.
+		and therefore overall the equality~$(H α)^* = α^* H^*$.
 \end{enumerate}
 
 We are now well-prepared to prove the statement at hand.
-
 We consider an adjunction between two categories~$\cat{A}$ and~$\cat{B}$ given by two functors
 \[
 	F \colon \cat{A} \to \cat{B} \,,
@@ -216,7 +333,7 @@ that serve as the unit and counit of the adjunction respectively.
 We know that these data satisfy the triangle identities, i.e., that the following two diagrams commute:
 \begin{equation}
 	\label{triangle identities for adjunction before dualizing}
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		F
 		\arrow{r}[above]{Fη}
 		\arrow{dr}[below left]{\id_F}
@@ -229,7 +346,7 @@ We know that these data satisfy the triangle identities, i.e., that the followin
 		F
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		G
 		\arrow{r}[above]{ηG}
 		\arrow{dr}[below left]{\id_G}
@@ -252,13 +369,13 @@ We have also seen that the natural transformations~$η$ and~$ε$ induce natural 
 \[
 	η^* \colon (\Id_{\cat{A}})^* \To (GF)^* \,,
 	\quad
-	ε^* \colon (FG)^* \To (\Id_{\cat{B}})^* \,,
+	ε^* \colon (FG)^* \To (\Id_{\cat{B}})^* \,.
 \]
-which are natural transformations
+By rewriting the domain and codomain of both~$η^*$ and~$ε^*$, we see that these natural transformations are of the forms
 \[
 	η^* \colon \Id_{[\cat{A}, \cat{S}]} \To F^* G^* \,,
 	\quad
-	ε^* \colon G^* F^* \To \Id_{[\cat{B}, \cat{S}]} \,,
+	ε^* \colon G^* F^* \To \Id_{[\cat{B}, \cat{S}]} \,.
 \]
 We can dualize the diagrams~\eqref{triangle identities for adjunction before dualizing} to get the commutative diagrams
 \begin{equation}
