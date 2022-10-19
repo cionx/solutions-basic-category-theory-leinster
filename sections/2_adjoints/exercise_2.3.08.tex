@@ -1,17 +1,17 @@
 \subsection{}
 
 Let~$G$ and~$H$ be two groups, and let~$\cat{G}$ and~$\cat{H}$ be the corresponding one-object categories.
-We recall the following:
+We make the following observations:
 \begin{itemize*}
 
 	\item
 		A functor from~$\cat{G}$ to~$\cat{H}$ is the same as a homomorphism of groups from~$G$ to~$H$.
 
 	\item
-		Given two functors~$F$ and~$F'$ from~$\cat{G}$ to~$\cat{H}$, every natural transformation from~$F$ to~$F'$ is already a natural isomorphism, since every morphism in~$\cat{H}$ is an isomorphism.
+		Given two functors~$F$ and~$F'$ from~$\cat{G}$ to~$\cat{H}$, every natural transformation from~$F$ to~$F'$ is already a natural isomorphism since every morphism in~$\cat{H}$ is an isomorphism.
 
-		Such a natural isomorphism from~$F$ to~$F'$ consists of a single component, which is an element~$k$ of~$H$ with~$k L k^{-1} = R$.
-		This means in particular that there exists a natural transformation between~$L$ and~$R$ if and only if~$L$ and~$R$ are conjugated as homomorphisms of groups.
+		Such a natural isomorphism from~$F$ to~$F'$ consists of a single component, which is an element~$h$ of~$H$ with~$h F h^{-1} = F'$.
+		This means in particular that there exists a natural transformation between the functors~$F$ and~$F'$ if and only if~$F$ and~$F'$ are conjugated as homomorphisms of groups.
 
 \end{itemize*}
 
@@ -44,7 +44,7 @@ This entails that these functors are fully faithful, which means that~$l$ and~$r
 The natural transformation~$η$ consists of only a single component, which is an element~$g$ of~$G$.
 That~$η$ is a natural transformation from~$\Id_{\cat{G}}$ to the composite~$R L$ means that the diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\ast_{\cat{G}}
 		\arrow{r}[above]{g'}
 		\arrow{d}[left]{g}
@@ -63,13 +63,13 @@ In other words, we have
 \[
 	(r ∘ l)(g) = g g'  g^{-1}
 \]
-for every element~$g'$ of~$G$, so that the composite~$r ∘ l$ is the inner automorphism of~$G$ given by conjugation with~$g'$.
+for every element~$g'$ of~$G$, so that the composite~$r ∘ l$ is the inner automorphism of~$G$ given by conjugation with~$g$.
 
-We find similarly that the natural transformation~$ε$ consists of only a single component, which an element~$h$ of~$H$, so that the composite~$l ∘ r$ is the inner automorphism of~$H$ given by conjugation with~$h^{-1}$.
+We find similarly that the natural transformation~$ε$ consists of only a single component, which an element~$h$ of~$H$, and that the composite~$l ∘ r$ is the inner automorphism of~$H$ given by conjugation with~$h^{-1}$.
 
-That~$η$ and~$ε$ define an adjunction between~$L$ and~$R$ is equivalent to the triangle identities, i.e., to the commutativity of the following two diagrams:
+That the natural transformations~$η$ and~$ε$ define an adjunction between the functors~$L$ and~$R$ is equivalent to the triangle identities, i.e., to the commutativity of the following two diagrams:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		L
 		\arrow{r}[above]{L η}
 		\arrow{dr}[below left]{\id_L}
@@ -82,7 +82,7 @@ That~$η$ and~$ε$ define an adjunction between~$L$ and~$R$ is equivalent to the
 		L
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		R
 		\arrow{r}[above]{η R}
 		\arrow{dr}[below left]{\id_R}
@@ -97,7 +97,7 @@ That~$η$ and~$ε$ define an adjunction between~$L$ and~$R$ is equivalent to the
 \]
 By evaluating these diagrams at the single objects of the categories~$\cat{G}$ and~$\cat{H}$, they can equivalently be expressed as follows:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\ast_{\cat{H}}
 		\arrow{r}[above]{l(g)}
 		\arrow{dr}[below left]{1_H}
@@ -110,7 +110,7 @@ By evaluating these diagrams at the single objects of the categories~$\cat{G}$ a
 		\ast_{\cat{H}}
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\ast_{\cat{G}}
 		\arrow{r}[above]{g}
 		\arrow{dr}[below left]{1_G}
