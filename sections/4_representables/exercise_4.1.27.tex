@@ -1,18 +1,19 @@
 \subsection{}
 
 Let~$α$ be a natural isomorphism from~$H_A$ to~$H_{A'}$.
-This means that we have for every set~$B$ a bijection
+This means that we have for every object~$B$ a bijection
 \[
 	α_B \colon \cat{A}(B, A) \to \cat{A}(B, A') \,,
 \]
-and these bijections are compatible in the sense that for every morphism
+such that these bijections are compatible in the following sense:
+for every morphism
 \[
 	g \colon B \to B'
 \]
 in~$\cat{B}$, the following square diagram commutes:
 \begin{equation}
 	\label{naturality diagram for proving that yoneda reflects isomorphisms}
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(B', A)
 		\arrow{r}[above]{α_B}
 		\arrow{d}[left]{g^*}
@@ -36,16 +37,18 @@ Similarly, under the bijection
 	α_{A'} \colon \cat{A}(A', A) \to \cat{A}(A, A) \,,
 \]
 the identity morphism of~$A'$ has a unique preimage in~$\cat{A}(A', A)$, which we will denote by~$ψ$.
-
 We have thus found two morphisms
 \[
 	φ \colon A \to A' \,,
 	\quad
 	ψ \colon A' \to A \,.
 \]
-We consider now the commutative diagram~\eqref{naturality diagram for proving that yoneda reflects isomorphisms} in the special cases of~$φ$ and~$ψ$ in place of~$g$, i.e., the following two commutative diagrams:
+We will show in the following that these two morphisms are mutually inverse isomorphisms.
+
+We can consider the commutative diagram~\eqref{naturality diagram for proving that yoneda reflects isomorphisms} in the special cases of~$φ$ and~$ψ$ in place of~$g$.
+This gives us the following two commutative diagrams:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(A', A)
 		\arrow{r}[above]{α_A}
 		\arrow{d}[left]{φ^*}
@@ -59,7 +62,7 @@ We consider now the commutative diagram~\eqref{naturality diagram for proving th
 		\cat{A}(A, A')
 	\end{tikzcd}
 	\qquad
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(A, A)
 		\arrow{r}[above]{α_A}
 		\arrow{d}[left]{ψ^*}
@@ -106,4 +109,6 @@ We also get from the commutativity of the right-hand diagram that
 	=
 	\id_{A'} \,.
 \]
-These calculations show that the two morphisms~$φ$ and~$ψ$ are mutually inverse, and therefore in particular that~$A$ and~$A'$ are isomorphic.
+These calculations show that the two morphisms~$φ$ and~$ψ$ are indeed mutually inverse isomorphisms.
+
+The existence of the isomorphisms~$φ$ and~$ψ$ shows that the two objects~$A$ and~$A'$ are isomorphic.
