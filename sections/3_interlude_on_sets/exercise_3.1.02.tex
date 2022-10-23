@@ -1,13 +1,13 @@
 \subsection{}
 
 An object of~$\cat{C}$ is a triple~$(X, x_0, f)$ consisting of a set~$X$, an element~$x_0$ of~$X$, and a function~$f$ from~$X$ to~$X$.
-Given two such objects~$(X, x_0, f)$ and~$(Y, y_0, g)$, a morphism from~$(X, x_0, f)$ to~$(Y, y_0, g)$ in~$\cat{C}$ is a set-theoretic map~$φ$ from~$X$ to~$Y$ that satisfies
+Given two such objects~$(X, x_0, f)$ and~$(Y, y_0, g)$, a morphism from~$(X, x_0, f)$ to~$(Y, y_0, g)$ in~$\cat{C}$ is a set-theoretic map~$φ$ from~$X$ to~$Y$ that satisfies the condition
 \[
 	φ(x_0) = y_0
 \]
 and that makes the square diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		X
 		\arrow{r}[above]{f}
 		\arrow{d}[left]{φ}
