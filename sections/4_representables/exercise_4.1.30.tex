@@ -14,8 +14,9 @@ We know that we have a bijection
 	χ^{-1}(1) \,.
 \end{align*}
 A map~$χ$ from~$X$ to~$S$ is continuous if and only if for every open subset of~$S$, its preimage under~$χ$ is an open subset of~$X$.
-The preimages~$χ^{-1}(∅) = ∅$ and~$χ^{-1}(S) = X$ are open in~$X$, whence~$χ$ is continuous if and only if the preimage~$χ^{-1}(1)$ is open in~$X$.
-We therefore find that the above bijection restricts to a bijection
+The preimages~$χ^{-1}(∅) = ∅$ and~$χ^{-1}(S) = X$ are open in~$X$ independent of the choice of topology on~$X$.
+Therefore,~$χ$ is continuous if and only if the preimage~$χ^{-1}(1)$ is open in~$X$.
+We thus find that the above bijection restricts to a bijection
 \begin{align*}
 	\{ \text{continous maps from~$X$ to~$S$} \}
 	&\to
@@ -34,12 +35,13 @@ In other words, we have for every topological space~$X$ a bijection
 	χ \mapsto χ^{-1}(1) \,.
 \]
 
-This bijection is natural in~$X$:
-for every continuous map
+Let us check that the bijection~$α_X$ is natural in~$X$.
+For this, let
 \[
 	f \colon X \to Y \,
 \]
-the diagram
+be a continuous map between topological spaces.
+We need to check that the following diagram commutes:
 \[
 	\begin{tikzcd}[sep = large]
 		\Top(X, S)
@@ -55,7 +57,7 @@ the diagram
 		\arrow{u}[right]{\Open(f)}
 	\end{tikzcd}
 \]
-commutes, because for every element~$χ$ of~$\Top(Y, S)$, we have the chain of equalities
+To this end, we have for every element~$χ$ of~$\Top(Y, S)$ the chain of equalities
 \begin{align*}
 	α_X(f^*(χ))
 	&=
@@ -73,6 +75,6 @@ commutes, because for every element~$χ$ of~$\Top(Y, S)$, we have the chain of e
 	&=
 	\Open(f)( α_Y(χ) ) \,.
 \end{align*}
-The bijections~$α_X$, where~$X$ ranges through the class of topological spaces, therefore assembles into a natural isomorphism~$α$ from~$\Top(\ph, X)$ to~$\Open$.
+The bijections~$α_X$, where~$X$ ranges through the class of topological spaces, therefore assemble into a natural isomorphism~$α$ from~$\Top(\ph, X)$ to~$\Open$.
 
 The existence of such a natural isomorphism shows that the functor~$\Open$ is represented by the Sierpiński space~$S$.
