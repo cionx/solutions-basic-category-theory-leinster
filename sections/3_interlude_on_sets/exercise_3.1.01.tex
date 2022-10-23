@@ -4,51 +4,52 @@
 
 \subsubsection*{Left adjoint}
 
-Every pair~$(f, g)$ of maps
+For any two sets~$A$ and~$B$, let~$i_A$ and~$j_B$ denote the inclusion maps from~$A$ and~$B$ to~$A + B$ respectively.
+
+There exists for every pair~$(f, g)$ of maps
 \[
 	f \colon A \to A' \,,
 	\quad
 	g \colon B \to B'
 \]
-induces a map
+a unique induced map
 \[
-	f + g \colon A + B \to A' + B'
+	f + g \colon A + B \to A' + B' \,,
 \]
-given by
+such that
 \[
 	(f + g) ∘ i_A = f
 	\quad\text{and}\quad
-	(f + g) ∘ j_B = g \,,
+	(f + g) ∘ j_B = g \,.%
+	\footnote{
+		If one thinks about the sum~$A + B$ as the disjoint union of the sets~$A$ and~$B$, then the function~$f + g$ is given for every element~$x$ of~$A + B$ by
+		\[
+			(f + g)(x)
+			=
+			\begin{cases*}
+				f(x) & if~$x ∈ A$, \\
+				g(x) & if~$x ∈ B$.
+			\end{cases*}
+		\]
+	}
 \]
-where~$i_A$ and~$j_B$ denote the inclusion maps from~$A$ and~$B$ to~$A + B$ respectively.%
-\footnote{
-	If one thinks about the sum~$A + B$ as the disjoint union of~$A$ and~$B$, then the function~$f + g$ is given for every element~$x$ of~$A + B$ by
-	\[
-		(f + g)(x)
-		=
-		\begin{cases*}
-			f(x) & if~$x ∈ A$, \\
-			g(x) & if~$x ∈ B$.
-		\end{cases*}
-	\]
-}
-We have for any two sets~$A$ and~$B$ the equality
+We have for every two sets~$A$ and~$B$ the equality
 \[
 	\id_A + \id_B = \id_{A + B} \,,
 \]
-and for any maps of the form
-\begin{alignat*}{2}
-	f &\colon A \to A' \,,
-	&\quad
-	g &\colon B \to B' \,,
-	\\
-	f' &\colon A' \to A'' \,,
-	&\quad
-	g' &\colon B' \to B'' \,,
-\end{alignat*}
+and for all maps of the form
+\[
+	f \colon A \to A' \,,
+	\quad
+	f' \colon A' \to A'' \,,
+	\quad
+	g \colon B \to B' \,,
+	\quad
+	g' \colon B' \to B'' \,,
+\]
 the equality
 \[
-	(f' + g') ∘ (f ∘ g)
+	(f' + g') ∘ (f + g)
 	=
 	(f' ∘ f) + (g' ∘ g) \,.
 \]
@@ -112,20 +113,20 @@ given by
 	(f × g)(a, b) ≔ ( f(a), g(b) )
 \]
 for every element~$(a, b)$ of~$A × B$.
-We have for any two sets~$A$ and~$B$ the equality
+We have for every two sets~$A$ and~$B$ the equality
 \[
 	\id_A × \id_B = \id_{A × B} \,,
 \]
 and for any maps of the form
-\begin{alignat*}{2}
-	f &\colon A \to A' \,,
-	&\quad
-	g &\colon B \to B' \,,
-	\\
-	f' &\colon A' \to A'' \,,
-	&\quad
-	g' &\colon B' \to B'' \,,
-\end{alignat*}
+\[
+	f \colon A \to A' \,,
+	\quad
+	f' \colon A' \to A'' \,,
+	\quad
+	g \colon B \to B' \,,
+	\quad
+	g' \colon B' \to B'' \,,
+\]
 the equality
 \[
 	(f' × g') ∘ (f × g)
