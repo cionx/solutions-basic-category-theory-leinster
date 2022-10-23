@@ -13,14 +13,16 @@ This means that the map
 	\quad
 	ϕ \mapsto ϕ(x)
 \]
-is a bijection.
-For every homomorphism of rings
+is bijective.
+We claim that the bijection~$ε_R$ is natural in~$R$.
+
+To prove this naturality, we need to show that for every homomorphism of rings
 \[
 	f \colon R \to S \,,
 \]
 the square diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\Ring(ℤ[x], R)
 		\arrow{r}[above]{ε_R}
 		\arrow{d}[right]{f_*}
@@ -34,20 +36,18 @@ the square diagram
 		S
 	\end{tikzcd}
 \]
-commutes, because for every element~$ϕ$ of~$\Ring(ℤ[x], R)$, the resulting diagram of elements commutes:
+commutes.
+To this end, we have for every element~$ϕ$ of~$\Ring(ℤ[x], R)$ the chain of equalities
 \[
-	\begin{tikzcd}[sep = large]
-		ϕ
-		\arrow[mapsto]{r}[above]{ε_R}
-		\arrow[mapsto]{d}[left]{f_*}
-		&
-		ϕ(x)
-		\arrow[mapsto]{d}[right]{f}
-		\\
-		f ∘ ϕ
-		\arrow[mapsto]{r}[above]{ε_S}
-		&
-		f(ϕ(x))
-	\end{tikzcd}
+	f( ε_R( ϕ ) )
+	=
+	f( ϕ(x) )
+	=
+	(f ∘ ϕ)(x)
+	=
+	ε_R(f ∘ ϕ)
+	=
+	ε_R(f_*(ϕ)) \,.
 \]
-This shows that the bijections~$ε_R$, where~$R$ ranges through the class of rings, assemble into a natural isomorphism~$ε$ from~$\Ring(ℤ[x], \ph)$ to the forgetful functor from~$\CRing$ to~$\Set$.
+
+This shows that the bijections~$ε_R$, where~$R$ ranges through the class of rings, assemble into a natural isomorphism~$ε$ from the functor~$\Ring(ℤ[x], \ph)$ to the forgetful functor from~$\CRing$ to~$\Set$.
