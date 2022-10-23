@@ -4,22 +4,24 @@
 
 \subsubsection{}
 
-We can use Exercise~2.3.14 to see that~$\Mon$ is not essentially small, and therefore also not small.
+We can use the strategy developed in Exercise~2.3.14 to see that the category~$\Mon$ is not essentially small.
+It is therefore also not small.
+It is, however, locally small, since it admits a faithful functor to the locally small category~$\Set$.
 
 
 
 \subsubsection{}
 
-The resulting category is small because its collection of morphisms is the underlying set of~$ℤ$.
-This category is therefore also essentially small.
+The given category is small because its collection of morphisms is the underlying set of~$ℤ$.
+This entails that the given category is both essentially small and locally small.
 
 
 
 \subsubsection{}
 
-The given category is locally small, since there exists at most one morphism between any two objects.
+The given category is locally small because there exists at most one morphism between any two objects of its objects.
 Its class of objects is the underlying set of~$ℤ$, and therefore a set.
-It follows that the category is small, and therefore also essentially small.
+It follows that this category is small, and therefore also essentially small.
 
 
 
@@ -33,16 +35,26 @@ The inclusion from~$\Set$ and~$\Cat$ does therefore induce an injection
 	\Set / {≅} \to \Cat / {≅} \,.
 \]
 It follows that if~$\Cat$ were to be essentially small, then~$\Set$ would also be essentially small.
-But we know that this is not the case.
+But we know from Exercise~3.2.14 that this is not the case.
 
 We therefore find that~$\Cat$ is not essentially small, and hence also not small.
+
+The category~$\Cat$ is, however, locally small.
+To see this, let~$\cat{A}$ and~$\cat{B}$ be two objects of~$\Cat$.
+This means that both~$\cat{A}$ and~$\cat{B}$ are small categories.
+Every functor from~$\cat{A}$ to~$\cat{B}$ is uniquely determined by its action on the morphisms of~$\cat{A}$, whence the class~$\Cat(\cat{A}, \cat{B})$ can be identified with a subset of the set~$\Mor(\cat{B})^{\Mor(\cat{A})}$.%
+\footnote{
+	We denote here for every category~$\cat{B}$ the class of morphisms in~$\cat{C}$ by~$\Mor(\cat{C})$.
+}
+This entails that~$\Cat(\cat{A}, \cat{B})$ is again a set.
 
 
 
 \subsubsection{}
 
-There exists for every family of cardinal~$(κ_i)_{i ∈ I}$ a cardinal~$λ$ that is distinct to each~$κ_i$.
-(One may take for~$λ$ the cardinal associated to the power set of the sum~$∑_{i ∈ I} κ_i$.)
+There exists for every family of cardinals~$(κ_i)_{i ∈ I}$ a cardinal~$λ$ that is distinct to each~$κ_i$.
+(One may take for~$λ$ the cardinal associated to the power set of the sum~$∑_{i ∈ I} κ_i$.
+This cardinal is then of strictly larger cardinality than each~$κ_i$.)
 The collection of all cardinals is therefore a proper class, and not a set.
 It follows that the given category is not locally small.
 It is therefore not essentially small, and hence also not small.
