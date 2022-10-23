@@ -1,6 +1,6 @@
 \subsection{}
 
-For every group~$G$, the set~$U_p(G)$ may more tactile be expressed at
+For every group~$G$, the set~$U_p(G)$ may more tactically be expressed at
 \[
 	U_p(G)
 	=
@@ -12,17 +12,17 @@ We see from this alternative description of~$U_p$ that every homomorphism of gro
 \]
 restricts to a map from~$U_p(G)$ to~$U_p(H)$.
 We denote this restriction by~$U_p(φ)$.
-This given us the desired functor~$U_p$ from~$\Grp$ to~$\Set$.
+This action on morphisms gives us the desired functor~$U_p$ from~$\Grp$ to~$\Set$.
 
 Let~$G$ be a group.
-By the homomorphism theorem, any homomorphism of groups~$ψ$ from~$ℤ / pℤ$ to~$G$ corresponds uniquely to a homomorphism of groups~$φ$ from~$ℤ$ to~$G$ with~$pℤ ⊆ \ker(φ)$, via the formula
+By the homomorphism theorem, a homomorphism of groups~$ψ$ from~$ℤ / pℤ$ to~$G$ corresponds one-to-one to a homomorphism of groups~$φ$ from~$ℤ$ to~$G$ with~$pℤ ⊆ \ker(φ)$, via the formula
 \[
 	ψ( \class{n} ) = φ(n)
 	\qquad
 	\text{for all~$n ∈ ℤ$} \,.
 \]
 We already know that homomorphisms from~$ℤ$ to~$G$ correspond to elements of~$G$, with the homomorphism~$φ$ corresponding to the element~$φ(1)$ of~$G$.
-The condition~$pℤ ⊆ \ker(φ)$ is then equivalent to the condition~$φ(1)^p = 1$.
+The condition~$pℤ ⊆ \ker(φ)$ is then equivalent to the condition~$p ∈ \ker(φ)$, and thus equivalent to the condition~$φ(1)^p = 1$.
 This means altogether that we have a bijection
 \[
 	α_G
@@ -32,10 +32,14 @@ This means altogether that we have a bijection
 	ψ \mapsto ψ(\class{1}) \,.
 \]
 
-This bijection is natural in~$G$:
-the diagram
+Let us now show that the bijection~$α_G$ is natural in~$G$.
+For this, we need to show that for every homomorphism of groups
 \[
-	\begin{tikzcd}[sep = large]
+	φ \colon G \to H
+\]
+the following diagram commutes:
+\[
+	\begin{tikzcd}
 		\Grp(ℤ / pℤ, G)
 		\arrow{r}[above]{φ_*}
 		\arrow{d}[left]{α_G}
@@ -49,7 +53,7 @@ the diagram
 		U_p(H)
 	\end{tikzcd}
 \]
-commutes for every homomorphism of groups~$φ$ from~$G$ to~$H$, because we have the chain equalities
+To this end, we have the chain of equalities
 \[
 	α_H( φ_*( ψ ) )
 	=
