@@ -1,18 +1,25 @@
 \subsection{}
 
-We can assign to each topological space~$X$ its set of path-components~$\fgroup_0(X)$, resulting in a functor
-\[
-	\fgroup_0 \colon \hTop \to \Set \,.
-\]
-This functor is represented by the one-point topological space.
+\begin{itemize}
 
-We have a functor~$(\ph)^×$ that assigns to each ring its unit group, i.e., its multiplicative group of invertible elements.
-When this functor is composed with the forgetful functor from~$\Grp$ to~$\Set$, it becomes representable by the ring of integral Laurent series,~$ℤ[t, t^{-1}]$.
+	\item
+		We can assign to each topological space~$X$ its set of path-components~$\fgroup_0(X)$, resulting in a functor
+		\[
+			\fgroup_0 \colon \hTop \to \Set \,.
+		\]
+		This functor is represented by the one-point topological space.
 
-Let~$G$ be a group.
-To every~\set{$G$}~$X$ we can assign its set~$X^G$ of fixed points, i.e., the set
-\[
-	X^G = \{ x ∈ X \suchthat \text{$g ⋅ x = x$ for every~$g ∈ G$} \} \,.
-\]
-Every homomorphism of~\sets{$G$} restricts to a map between their sets of fixed points, whence~$(\ph)^G$ results in a functor from~$\GSet{G}$ to~$\Set$.
-This functor is represented by the one-point~\set{$G$}.
+	\item
+		We have a functor~$(\ph)^×$ that assigns to each ring its group of units, i.e., its multiplicative group of invertible elements.
+	When this functor is composed with the forgetful functor from~$\Grp$ to~$\Set$, it becomes representable by the ring of integral Laurent series~$ℤ[t, t^{-1}]$.
+
+	\item
+		Let~$G$ be a group.
+		To every~\set{$G$}~$X$ we can assign its set~$X^G$ of fixed points, i.e., the set
+		\[
+			X^G = \{ x ∈ X \suchthat \text{$g ⋅ x = x$ for every element~$g$ of~$G$} \} \,.
+		\]
+		Every homomorphism of~\sets{$G$} restricts to a map between fixed points, whence the construction~$(\ph)^G$ results in a functor from~$\GSet{G}$ to~$\Set$.
+		This functor is represented by the one-point~\set{$G$}.
+
+\end{itemize}
