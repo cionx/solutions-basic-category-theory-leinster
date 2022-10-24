@@ -1,7 +1,9 @@
 \subsection{}
 
-Let~$\Two$ be the category resulting from the partially ordered set~$\{ 0, 1 \}$ with~$0 ≤ 1$.
-We denote the unique non-identity morphism of~$\Two$ by~$i$.
+Let~$\Two$ be the category with two objects, denoted as~$0$ and~$1$, and precisely one non-identity morphism, which we denote by~$i$, and which goes from~$0$ to~$1$.%
+\footnote{
+	In other words, the category~$\Two$ corresponds to the partially ordered set~$\{0, 1\}$ with~$0 < 1$.
+}
 This category may be depicted as follows:
 \[
 	\begin{tikzcd}
@@ -17,7 +19,7 @@ There exists for every morphism
 \[
 	f \colon A \to A'
 \]
-a unique functor~$F$ from~$\Two$ to~$\cat{A}$ with~$F(i) = f$.
+in~$\cat{A}$ a unique functor~$F$ from~$\Two$ to~$\cat{A}$ with~$F(i) = f$.
 This functor is given by
 \[
 	F(0) = A \,,
@@ -38,12 +40,13 @@ If~$\cat{A}$ is small, then we have therefore a bijection of sets
 	\quad
 	F \mapsto F(i) \,.
 \]
-This bijection is natural in~$\cat{A}$:
-for every functor
+
+Let us check that this bijection is natural in~$\cat{A}$.
+For this, we need to check that for every functor
 \[
 	G \colon \cat{A} \to \cat{B}
 \]
-between small categories~$\cat{A}$ and~$\cat{B}$, the square diagram
+between small categories~$\cat{A}$ and~$\cat{B}$ the following square diagram commutes:
 \[
 	\begin{tikzcd}[sep = large]
 		\Cat(\Two, \cat{A})
@@ -51,7 +54,7 @@ between small categories~$\cat{A}$ and~$\cat{B}$, the square diagram
 		\arrow{d}[left]{G_*}
 		&
 		M(\cat{A})
-		\arrow{d}[right]{G_*}
+		\arrow{d}[right]{M(G)}
 		\\
 		\Cat(\Two, \cat{B})
 		\arrow{r}[above]{ε_{\cat{B}}}
@@ -59,22 +62,20 @@ between small categories~$\cat{A}$ and~$\cat{B}$, the square diagram
 		M(\cat{B})
 	\end{tikzcd}
 \]
-commutes, because for every element~$F$ of~$\Cat(\Two, \cat{A})$, the resulting diagram of elements commutes:
+To this end, we have for every element~$F$ of~$\Cat(\Two, \cat{A})$, the chain of equalities
 \[
-	\begin{tikzcd}[sep = large]
-		F
-		\arrow[mapsto]{r}[above]{ε_{\cat{A}}}
-		\arrow[mapsto]{d}[left]{G_*}
-		&
-		F(i)
-		\arrow[mapsto]{d}[right]{G_*}
-		\\
-		GF
-		\arrow[mapsto]{r}[above]{ε_{\cat{B}}}
-		&
-		GF(i)
-	\end{tikzcd}
+	M(G)( ε_{\cat{A}}( F ) )
+	=
+	G( ε_{\cat{A}}(F) )
+	=
+	G( F(i) )
+	=
+	(G ∘ F)(i)
+	=
+	ε_{\cat{B}}(G ∘ F)
+	=
+	ε_{\cat{B}}( G_*( F ) ) \,.
 \]
 
-We therefore find that the bijections~$ε_{\cat{A}}$, where~$\cat{A}$ ranges through the class of small categories, assemble into a natural isomorphism~$ε$ from~$\Cat(\Two, \ph)$ to~$M$.
+We have thus found that the bijections~$ε_{\cat{A}}$, where~$\cat{A}$ ranges through the class of small categories, assemble into a natural isomorphism~$ε$ from~$\Cat(\Two, \ph)$ to~$M$.
 The existence of such a natural isomorphism shows that the functor~$M$ is represented by the category~$\Two$.
