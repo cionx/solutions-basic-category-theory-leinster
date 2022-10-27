@@ -11,8 +11,8 @@ The morphism~$f$ is of the form
 \[
 	f \colon A \to A'
 \]
-for some objects~$A$ and~$A'$ of~$\cat{A}$.
-It follows that the morphism~$J(f)$ is of the form
+for objects~$A$ and~$A'$ of~$\cat{A}$.
+It follows that the isomorphism~$J(f)$ is of the form
 \[
 	J(f) \colon J(A) \to J(A') \,.
 \]
@@ -28,14 +28,14 @@ with both
 \]
 There exists a morphism
 \[
-	g \colon A' \to A
+	f' \colon A' \to A
 \]
-in~$\cat{A}$ with~$g' = J(g)$ because the functor~$J$ is full.
+in~$\cat{A}$ with~$g' = J(f')$ because the functor~$J$ is full.
 We find that
 \[
-	J(g ∘ f)
+	J(f' ∘ f)
 	=
-	J(g) ∘ J(f)
+	J(f') ∘ J(f)
 	=
 	g' ∘ J(f)
 	=
@@ -43,8 +43,8 @@ We find that
 	=
 	J( \id_A ) \,,
 \]
-and therefore~$g ∘ f = \id_A$ because the functor~$J$ is faithful.
-We find in the same way that also~$f ∘ g = \id_{A'}$.
+and therefore~$f' ∘ f = \id_A$ because the functor~$J$ is faithful.
+We find in the same way that also~$f ∘ f' = \id_{A'}$.
 This shows that the morphism~$f$ is an isomorphism.
 
 
@@ -55,15 +55,16 @@ There exists a unique morphism
 \[
 	f \colon A \to A'
 \]
-in~$\cat{A}$ with~$J(f) = g$ because the functor~$J$ is fully faithful.
-We see from part~(a) of this exercise that the morphism~$f$ is an isomorphism because~$J(f) = g$ is an isomorphism.
+in~$\cat{A}$ with~$J(f) = g$ because the functor~$J$ is full (showing the existence of~$f$) and faithful (showing the uniqueness of~$f$).
+We find from part~(a) of this exercise that the morphism~$f$ is an isomorphism because~$J(f) = g$ is an isomorphism.
 
 
 
 \subsubsection{}
 
-If the objects~$A$ and~$A'$ are isomorphic then so are the objects~$J(A)$ and~$J(A')$ by the functoriality of~$J$.
+If the objects~$A$ and~$A'$ are isomorphic, then so are the objects~$J(A)$ and~$J(A')$ by the functoriality of~$J$.
+
 Suppose on the other hand that the two objects~$J(A)$ and~$J(A')$ are isomorphic.
-This means that there exists an isomorphism from~$J(A)$ to~$J(A')$ in~$\cat{B}$.
-It follows from part~(b) of this exercise that this isomorphism stems from an isomorphism from~$A$ to~$A'$.
-The existence of this isomorphism entails that the objects~$A$ and~$A'$ are isomorphic.
+This means that there exists an isomorphism~$g$ between~$J(A)$ and~$J(A')$.
+It follows from part~(b) of this exercise that the isomorphism~$g$ stems from an isomorphism~$f$ between~$A$ and~$A'$.
+The existence of~$f$ entails that the objects~$A$ and~$A'$ are isomorphic.
