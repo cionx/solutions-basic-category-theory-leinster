@@ -16,11 +16,13 @@ for all morphisms
 	q \colon B \to B'
 \]
 in~$\cat{A}$ and~$\cat{B}$ respectively, we have the identity
-\[
+\begin{align*}
+	{}&
 	\adjtranspose{ \biggl( A' \xto{p} A \xto{f} G(B) \xto{G(q)} G(B') \biggr) }
-	=
+	\\
+	={}&
 	\biggl( F(A') \xto{F(p)} F(A) \xto{\adjtranspose{f}} B \xto{q} B' \biggr) \,.
-\]
+\end{align*}
 This identity can equivalently be expressed as the commutativity of the following square diagram:
 \[
 	\begin{tikzcd}[sep = huge]
@@ -37,7 +39,7 @@ This identity can equivalently be expressed as the commutativity of the followin
 		\cat{B}(F(A'), B')
 	\end{tikzcd}
 \]
-We can rewrite this diagram in terms of the two functors~$\cat{A}(\ph, G(\ph))$ and~$\cat{B}(F(\ph), \ph)$ as follows:
+We can now rewrite this commutative diagram in terms of the two functors~$\cat{A}(\ph, G(\ph))$ and~$\cat{B}(F(\ph), \ph)$ as follows:
 \[
 	\begin{tikzcd}[sep = huge]
 		\cat{A}(\ph, G(\ph))(A, B)
@@ -56,4 +58,4 @@ We can rewrite this diagram in terms of the two functors~$\cat{A}(\ph, G(\ph))$ 
 That this diagram commutes for any two morphisms~$p$ and~$q$ as above means precisely that the family~$Φ_{A, B}$, where~$(A, B)$ ranges through the objects of the category~$\cat{A} × \cat{B}$, is a natural transformation from~$\cat{A}(\ph, G(\ph))$ to~$\cat{B}(F(\ph), \ph)$.
 
 We find overall that an adjunction between~$F$ and~$G$, with~$F$ left adjoint to~$G$, may equivalently be expressed as a natural isomorphism of functors from~$\cat{A}(\ph, G(\ph))$ to~$\cat{B}(F(\ph), \ph)$.
-This entails that~$F$ is left adjoint to~$G$ if and only if such a natural isomorphism exists, i.e., if and only if these two functors are naturally isomorphic.
+This entails that~$F$ is left adjoint to~$G$ if and only if such a natural isomorphism exists, i.e., if and only if the two functors~$\cat{A}(\ph, G(\ph))$ and~$\cat{B}(F(\ph), \ph)$ are naturally isomorphic.
