@@ -56,11 +56,17 @@ We first check that for every object~$A$ of~$\cat{A}$, the assignment~$F^A$ is i
 This shows that the assignment~$F^A$ is indeed a functor from~$\cat{B}$ to~$\cat{C}$.
 
 Let now~$B$ be a fixed object of the category~$\cat{B}$.
-For every object~$A$ of~$\cat{A}$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\cat{A} × \cat{B}$, and for every morphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$ let~$F_B(f)$ be the morphism~$F(f, \id_B)$ from~$(A, B) = F_B(A)$ to~$(A', B) = F_{B'}(A)$ in~$\cat{C}$.
+For every object~$A$ of~$\cat{A}$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\cat{A} × \cat{B}$.
+For every morphism
+\[
+	f \colon A \to A'
+\]
+in~$\cat{A}$ let~$F_B(f)$ be the morphism~$F(f, \id_B)$ in~$\cat{C}$.
+The domain of this morphism is~$(A, B) = F_B(A)$, and its codomain is~$(A', B) = F_{B'}(A)$.
 \begin{itemize}
 
 	\item
-		We have for every object~$A$ of~$\cat{A}$ the equalities
+		We have for every object~$A$ of~$\cat{A}$ the chain of equalities
 		\[
 			F_B(\id_A)
 			=
@@ -80,7 +86,7 @@ For every object~$A$ of~$\cat{A}$ let~$F_B(A)$ be the object~$F(A, B)$ of~$\cat{
 			\quad
 			f' \colon A' \to A''
 		\]
-		in~$\cat{A}$ we have the equalities
+		in~$\cat{A}$, we have the chain of equalities
 		\begin{align*}
 			F_B(f') ∘ F_B(f)
 			&=
@@ -120,7 +126,7 @@ We also have for all morphisms
 	\quad
 	g \colon B \to B'
 \]
-in~$\cat{A}$ and~$\cat{B}$ respectively the equalities
+in~$\cat{A}$ and~$\cat{B}$ respectively the chains of equalities
 \[
 	F^{A'}(g) ∘ F_B(f)
 	=
@@ -132,7 +138,7 @@ in~$\cat{A}$ and~$\cat{B}$ respectively the equalities
 \]
 and
 \[
-	F_{B'}(f) ∘ F^A(g) \,.
+	F_{B'}(f) ∘ F^A(g)
 	=
 	F(f, \id_{B'}) ∘ F(\id_A, g)
 	=
@@ -197,11 +203,39 @@ We have to check that~$F$ is indeed a functor.
 			(f, g) \colon (A, B) \to (A', B')
 		\]
 		be a morphism in~$\cat{A} × \cat{B}$.
-		The morphism~$F_B(f)$ goes from~$F_B(A) = F(A, B)$ to~$F_B(A') = F(A', B)$, while the morphism~$F^{A'}(g)$ goes from~$F^{A'}(B) = F(A', B)$ to~$F^{A'}(B') = F(A', B')$.
-		It follows that the morphism~$F(f, g) = F^{A'}(g) ∘ F_B(f)$ goes from~$F(A, B)$ to~$F(A', B')$.
+		The morphism~$F(f, g) = F^{A'}(g) ∘ F_B(f)$ goes from~$F(A, B)$ to~$F(A', B')$, as we can from the following diagram:
+		\[
+			\begin{tikzcd}
+				F_B(A)
+				\arrow{r}[above]{F_B(f)}
+				\arrow[equal]{d}
+				&
+				F_B(A')
+				\arrow[equal]{r}
+				\arrow[equal]{d}
+				&
+				F^{A'}(B)
+				\arrow{r}[above]{F^{A'}(g)}
+				\arrow[equal]{d}
+				&
+				F^{A'}(B')
+				\arrow[equal]{d}
+				\\
+				F(A, B)
+				\arrow{r}
+				&
+				F(A', B)
+				\arrow[equal]{r}
+				&
+				F(A', B)
+				\arrow{r}
+				&
+				F(A', B')
+			\end{tikzcd}
+		\]
 
 	\item
-		We have for every object~$(A, B)$ of~$\cat{A} × \cat{B}$ the equalities
+		We have for every object~$(A, B)$ of~$\cat{A} × \cat{B}$ the chain of equalities
 		\begin{align*}
 			F( \id_{(A, B)} )
 			=
@@ -224,7 +258,7 @@ We have to check that~$F$ is indeed a functor.
 			\quad
 			(f', g') \colon (A', B') \to (A'', B'')
 		\]
-		in~$\cat{A} × \cat{B}$, we have the equalities
+		in~$\cat{A} × \cat{B}$, we have the chain of equalities
 		\begingroup
 		\allowdisplaybreaks
 		\begin{align*}

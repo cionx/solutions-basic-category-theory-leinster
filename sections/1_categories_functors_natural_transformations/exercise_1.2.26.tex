@@ -1,100 +1,101 @@
 \subsection{}
 
 For every topological space~$X$ let~$C(X)$ be the (commutative) ring of continuous, real-valued functions on~$X$.
-For any two topological spaces~$X$ and~$Y$ and every continuous map~$φ$ from~$X$ to~$Y$, let~$C(φ)$ be the induced map
+For any two topological spaces~$X$ and~$Y$ and every continuous map~$f$ from~$X$ to~$Y$, let~$C(f)$ be the induced map
 \[
-	C(φ)
+	C(f)
 	\colon
-	C(Y)
-	\to
-	C(X) \,,
+	C(Y) \to C(X) \,,
 	\quad
-	f
-	\mapsto
-	f ∘ φ \,.
+	φ \mapsto φ ∘ f \,.
 \]
 This map is well-defined because the composite of two continuous maps is again continuous.
 
-The map~$C(φ)$ is a homomorphism of rings:
+Let us check that map~$C(f)$ is a homomorphism of rings:
 \begin{itemize}
 
 	\item
-		If we denote by~$⋆$ either addition or multiplication, then we have for every two elements~$f$ and~$g$ of~$C(Y)$ the equalities
+		If we denote by~$⋆$ either addition or multiplication, then we have for every two elements~$φ$ and~$ψ$ of~$C(Y)$ the equalities
 		\begin{align*}
-			C(φ)(f ⋆ g)(x)
+			C(f)(φ ⋆ ψ)(x)
 			&=
-			((f ⋆ g) ∘ φ)(x)
+			((φ ⋆ ψ) ∘ f)(x)
 			\\
 			&=
-			(f ⋆ g)(φ(x))
+			(φ ⋆ ψ)(f(x))
 			\\
 			&=
-			f(φ(x)) ⋆ g(φ(x))
+			φ(f(x)) ⋆ ψ(φ(x))
 			\\
 			&=
-			(f ∘ φ)(x) ⋆ (g ∘ φ)(x)
+			(φ ∘ f)(x) ⋆ (ψ ∘ φ)(x)
 			\\
 			&=
-			C(φ)(f)(x) ⋆ C(φ)(g)(x)
+			C(f)(φ)(x) ⋆ C(φ)(ψ)(x)
 			\\
 			&=
-			(C(φ)(f) ⋆ C(φ)(g))(x)
+			(C(f)(φ) ⋆ C(φ)(ψ))(x)
 		\end{align*}
 		for every point~$x$ in~$X$, and thus the equality
 		\[
-			C(φ)(f ⋆ g) = C(φ)(f) ⋆ C(φ)(g) \,.
+			C(f)(φ ⋆ ψ) = C(f)(φ) ⋆ C(f)(ψ) \,.
 		\]
 
 	\item
-		We also have
+		Let us denote by~$1_X$ and~$1_Y$ the functions with constant value~$1$ on~$X$ and~$Y$ respectively.
+		We have
 		\[
-			C(φ)(1_Y)
+			C(f)(1_Y)
 			=
-			1_Y ∘ φ
+			1_Y ∘ f
 			=
 			1_X \,,
 		\]
-		and thus~$C(φ)(1) = 1$.
-		(We denote here by~$1_X$ and~$1_Y$ the functions with constant value~$1$ on~$X$ and~$Y$ respectively.)
+		and thus~$C(f)(1) = 1$.
 
 \end{itemize}
-These calculations show that the map~$C(φ)$ is indeed a homomorphism of rings from~$C(Y)$ to~$C(X)$.
+These calculations show that the map~$C(f)$ is indeed a homomorphism of rings from~$C(Y)$ to~$C(X)$.
 
-We now check that the construction~$C$ is indeed a functor.
+Let us now check the functoriality of the construction~$C$.
 \begin{itemize}
 
 	\item
 		For every topological space~$X$ we have
 		\[
-			C(\id_X)(f)
+			C(\id_X)(φ)
 			=
-			f ∘ \id_X
+			φ ∘ \id_X
 			=
-			f
+			φ
+			=
+			\id_{C(X)}(φ)
 		\]
-		for every~$f ∈ C(X)$, and therefore~$C(\id_X) = \id_{C(X)}$.
+		for every~$φ ∈ C(X)$, and therefore~$C(\id_X) = \id_{C(X)}$.
 		(Here we denote by~$\id_X$ the identity map on the space~$X$.)
 
 	\item
 		For every two composable continuous maps
 		\[
-			φ \colon X \to Y \,,
+			f \colon X \to Y \,,
 			\quad
-			ψ \colon Y \to Z \,,
+			g \colon Y \to Z \,,
 		\]
-		we have the equalities
-		\[
-			C(ψ ∘ φ)(f)
-			=
-			f ∘ ψ ∘ φ
-			=
-			C(φ)(f ∘ ψ)
-			=
-			C(φ)( C(ψ)(f) )
-			=
-			( C(φ) ∘ C(ψ) )(f)
-		\]
-		for every~$f ∈ C(Z)$, and therefore~$C(ψ ∘ φ) = C(φ) ∘ C(ψ)$.
+		we have the chain of equalities
+		\begin{align*}
+			C(g ∘ f)(φ)
+			&=
+			φ ∘ g ∘ f
+			\\
+			&=
+			C(f)(φ ∘ g)
+			\\
+			&=
+			C(f)( C(g)(φ) )
+			\\
+			&=
+			( C(f) ∘ C(g) )(φ)
+		\end{align*}
+		for every~$φ ∈ C(Z)$, and therefore~$C(g ∘ f) = C(g) ∘ C(f)$.
 
 \end{itemize}
 This shows that~$C$ is indeed a contravariant functor from~$\Top$ to~$\Ring$.

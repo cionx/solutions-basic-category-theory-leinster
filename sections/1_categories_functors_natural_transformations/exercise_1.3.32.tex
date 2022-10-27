@@ -48,13 +48,22 @@ for every such morphism~$f$.
 In other words, the composite
 \begin{equation}
 	\label{composition_is_identity}
-	\cat{A}(A, A')
-	\xto{F}
-	\cat{B}(F(A), F(A'))
-	\xto{G}
-	\cat{A}(GF(A), GF(A'))
-	\xto{α_{A'} ∘ (\ph) ∘ α_A^{-1}}
-	\cat{A}(A, A')
+	\begin{tikzcd}
+		\cat{A}(A, A')
+		\arrow{r}[above]{F}
+		&
+		\cat{B}(F(A), F(A'))
+		\arrow{r}[above]{G}
+		&
+		\cat{A}(GF(A), GF(A'))
+		\arrow{d}[right]{α_{A'} ∘ (\ph) ∘ α_A^{-1}}
+		\\
+		{}
+		&
+		{}
+		&
+		\cat{A}(A, A')
+	\end{tikzcd}
 \end{equation}
 is the identity map.
 The first step of this composite, i.e., the map
@@ -75,17 +84,18 @@ The last step of this composite, i.e., the conjugation map~$α_{A'} ∘ (\ph) �
 	\cat{A}(GF(A), GF(A'))
 \]
 is surjective.
-This tells us that~$G$ is \enquote{full on the image on~$F$}.
+This tells us that the functor~$G$ is full when restricted to the image on~$F$.
 But we need to show that the map
 \[
 	\cat{B}(B, B')
 	\xto{G}
 	\cat{A}(G(B), G(B'))
 \]
-is surjective for \emph{any} two objects~$B$ and~$B'$ of~$\cat{B}$.
+is surjective for \emph{any} two objects~$B$ and~$B'$ of~$\cat{B}$, and not just for those objects that lie in the image of~$F$.
 
 Thankfully, we already know that the functor~$F$ is essentially surjective.
-For the given two objects~$B$ and~$B'$ of~$\cat{B}$ there hence exist objects~$A$ and~$A'$ of~$\cat{A}$ for which there exists isomorphisms
+So every object of~$\cat{B}$ lies in the image of~$F$ up to isomorphism.
+For the given two objects~$B$ and~$B'$ of~$\cat{B}$ there hence exist two objects~$A$ and~$A'$ of~$\cat{A}$ for which there exists isomorphisms
 \[
 	g \colon F(A) \to B \,,
 	\quad
@@ -108,14 +118,14 @@ The square diagram
 	\end{tikzcd}
 \]
 commutes by the functoriality of~$G$.
-The two horizontal maps in this diagram are bijections because~$g$ and~$g'$ are isomorphisms.
+The two horizontal maps in this diagram are bijections because both~$g$ and~$g'$ are isomorphisms.
 We have seen above that the vertical map on the left-hand side is surjective.
-It follows that the vertical map on the right-hand side is again surjective, which shows the desired surjectivity.
+It follows that the vertical map on the right-hand side is again surjective, which shows the desired fullness.
 
 We have thus shown that the functor~$G$ is full.
 By swapping the roles of~$F$ and~$G$, we find that~$F$ is full.
 
-We have shown that equivalences are faithful, full, and essentially surjective.
+We have altogether shown that equivalences are faithful, full, and essentially surjective.
 
 
 
@@ -183,7 +193,7 @@ The assignment~$G$ is a functor from~$\cat{B}$ to~$\cat{A}$:
 \end{itemize}
 This shows that the assignment~$G$ is indeed a functor.
 
-The family~$ε = (ε_B)_{B ∈ \Ob(\cat{B})}$ is (by construction) a natural isomorphism from~$FG$ to~$\Id_{\cat{B}}$.
+The family~$ε = (ε_B)_{B ∈ \Ob(\cat{B})}$ is (by construction) a natural isomorphism from the functor~$FG$ to the functor~$\Id_{\cat{B}}$.
 In the following, we will construct a natural isomorphism~$α$ from~$GF$ to~$\Id_{\cat{A}}$.
 
 We have for every object~$A$ of~$\cat{A}$ the morphism

@@ -101,7 +101,7 @@ This defined a functor~$\Ord$ from~$\cat{B}$ to~$\Set$:
 			g \colon Y \to Z
 		\]
 		be two composable morphisms in~$\cat{B}$.
-		Given a total order~$≤$ on~$X$, we have
+		Given a total order~$≤$ on~$X$, we have the chain of equivalences
 		\begin{align*}
 			{}&
 			(g ∘ f)(x_1) \mathrel{(≤_f)_g} (g ∘ f)(x_2) \\
@@ -147,13 +147,13 @@ In the following, we denote the distinguished element~$\id_X$ of~$\Sym(X)$ by~$s
 
 Suppose that there exists a natural transformation~$α$ from~$\Sym$ to~$\Ord$.
 For every finite set~$X$ we can then consider the element~$t_X ≔ α_X(s_X)$ of~$\Ord(X)$.
-It follows for every morphism
+We have for every morphism
 \[
 	f \colon X \to Y
 \]
-in~$\cat{B}$ from the commutativity of the diagram
+in~$\cat{B}$ from the following commutative diagram:
 \[
-	\begin{tikzcd}[row sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		\Sym(X)
 		\arrow{r}[above]{\Sym(f)}
 		\arrow{d}[left]{α_X}
@@ -167,7 +167,7 @@ in~$\cat{B}$ from the commutativity of the diagram
 		\Ord(Y)
 	\end{tikzcd}
 \]
-that
+It follows from the commutativity of this diagram that
 \[
 	\Ord(f)(t_X)
 	=
@@ -179,7 +179,7 @@ that
 	=
 	t_Y \,.
 \]
-This shows that the map~$\Ord(f)$ carries the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
+This calculation tells us that the map~$\Ord(f)$ carries the distinguished element~$t_X$ of~$\Ord(X)$ to the distinguished element~$t_Y$ of~$\Ord(Y)$.
 
 However, such a choice of distinguished elements~$(t_X)_{X ∈ \Ob(\cat{B})}$ cannot exist:
 If~$X$ is a finite set with at least two elements, then there exists a bijection~$f$ of~$X$ to itself that swaps these two elements.

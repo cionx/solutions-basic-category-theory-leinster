@@ -42,7 +42,7 @@ Suppose first that~$α$ is a natural transformation from~$F$ to~$G$.
 				G_B(A')
 			\end{tikzcd}
 		\]
-		The commutativity of this square diagram shows that the family~$(α_{A, B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
+		The commutativity of this diagram tells us that the family~$(α_{A, B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
 
 	\item
 		Let~$A$ be an object of~$\cat{A}$.
@@ -82,12 +82,14 @@ Suppose first that~$α$ is a natural transformation from~$F$ to~$G$.
 				G^A(B')
 			\end{tikzcd}
 		\]
-		The commutativity of this square diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$.
+		The commutativity of this diagram shows that the family~$(α_{A, B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$.
 
 \end{itemize}
 
 
-Suppose now conversely that for every object~$A$ of~$\cat{A}$ the family~$(α_{A,B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$, and that for every object~$B$ of~$\cat{B}$ the family~$(α_{A,B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
+Suppose now conversely that the following two assertions hold:
+for every object~$A$ of~$\cat{A}$, the family~$(α_{A,B})_{B ∈ \Ob(\cat{B})}$ is a natural transformation from~$F^A$ to~$G^A$, and for every object~$B$ of~$\cat{B}$, the family~$(α_{A,B})_{A ∈ \Ob(\cat{A})}$ is a natural transformation from~$F_B$ to~$G_B$.
+We need to show that the family~$(α_{A, B})_{(A, B) ∈ \Ob(\cat{A} × \cat{B})}$ is a natural transformation from~$F$ to~$G$.
 Let
 \[
 	(f, g)
@@ -155,7 +157,7 @@ We can equivalently write these diagrams as follows:
 		G(A', B')
 	\end{tikzcd}
 \]
-We can combine these two commutative square diagrams into the following commutative rectangular diagram:
+This rewriting allows us combine both diagrams into the following commutative diagram:
 \[
 	\begin{tikzcd}[column sep = huge]
 		F(A, B)
@@ -178,7 +180,7 @@ We can combine these two commutative square diagrams into the following commutat
 		G(A', B')
 	\end{tikzcd}
 \]
-By leaving out the middle column this diagram we arrive at the following commutative square diagram:
+By leaving out the middle column this combined diagram, we arrive at the following commutative diagram:
 \[
 	\begin{tikzcd}[column sep = 8em]
 		F(A, B)
@@ -210,7 +212,7 @@ and
 	=
 	G(f, g) \,,
 \]
-we can further rewrite this commutative square diagram as follows:
+we can further rewrite this commutative diagram as follows:
 \[
 	\begin{tikzcd}[column sep = large]
 		F(A, B)
@@ -226,4 +228,4 @@ we can further rewrite this commutative square diagram as follows:
 		G(A', B')
 	\end{tikzcd}
 \]
-The commutativity of this square diagram shows that~$α$ is a natural transformation from~$F$ to~$G$.
+The commutativity of this final diagram shows that~$α$ is a natural transformation from~$F$ to~$G$.

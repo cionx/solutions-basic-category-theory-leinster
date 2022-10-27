@@ -11,15 +11,18 @@ We recall the following two statement from point-set topology and from naive set
 
 \begin{proposition}
 	\label{glueing of maps}
-	Let~$X$ be a set and let~$U$ and~$V$ be two subsets of~$X$ with~$X = U ∪ V$.
+	Let~$X$ be a set and let~$U$ and~$V$ be two subsets of~$X$ such that~$X = U ∪ V$.
 	Let~$Y$ be another set and let
 	\[
 		f \colon U \to Y
 		\quad\text{and}\quad
 		g \colon V \to Y
 	\]
-	be two maps that agree on the intersection~$U ∩ V$, i.e., such that~$\restrict{f}{U ∩ V} = \restrict{g}{U ∩ V}$.
-	Then there exists a unique map~$h$ from~$X$ to~$Y$ with~$\restrict{h}{U} = f$ and~$\restrict{h}{V} = g$.
+	be two maps that agree on the intersection~$U ∩ V$, i.e., such that
+	\[
+		\restrict{f}{U ∩ V} = \restrict{g}{U ∩ V} \,.
+	\]
+	Then there exists a unique map~$h$ from~$X$ to~$Y$ with both~$\restrict{h}{U} = f$ and~$\restrict{h}{V} = g$.
 \end{proposition}
 
 We consider now the situation of diagram~(0.3) from the book.

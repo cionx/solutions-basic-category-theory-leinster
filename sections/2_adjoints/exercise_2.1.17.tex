@@ -76,7 +76,7 @@ The assignment~$Δ$ is indeed functorial:
 \subsubsection*{The functor~$Γ$}
 
 Let~$F$ be a contravariant functor from~$\cat{A}$ to~$\cat{B}$.
-A natural transformation~$β$ from~$Δ(B)$ to~$F$ is, by definition, a family~$(β_A)_{A ∈ \Ob(\cat{A})}$ of morphisms~$β_A$ from~$Δ(B)(A)$ to~$F(A)$ such that for every morphism
+A natural transformation~$β$ from~$Δ(B)$ to~$F$ is a family~$(β_A)_{A ∈ \Ob(\cat{A})}$ of morphisms~$β_A$ from~$Δ(B)(A)$ to~$F(A)$ such that for every morphism
 \[
 	f \colon A \to A'
 \]
@@ -281,17 +281,21 @@ in~$\cat{B}$ the following diagram commutes:
 		\arrow{u}[right]{g^*}
 	\end{tikzcd}
 \]
-This diagram indeed commutes, because we have for every element~$β$ of the bottom-left corner the equalities
+This diagram indeed commutes, because we have for every element~$β$ of the bottom-left corner the chain of equalities
 \begin{align*}
 	\adjtranspose{ Δ(g)^*(β) }
-	=
+	&=
 	\adjtranspose{ β ∘ Δ(g) }
-	=
+	\\
+	&=
 	( β ∘ Δ(g) )_{T(\cat{A})}
-	=
+	\\
+	&=
 	β_{T(\cat{A})} ∘ Δ(g)_{T(\cat{A})}
-	=
+	\\
+	&=
 	β_{T(\cat{A})} ∘ g
+	\\
 	&=
 	\adjtranspose{β} ∘ g
 	\\
@@ -390,7 +394,7 @@ We define~$∇(B)(f)$ by case distinction.
 
 	\item
 		If~$A$ is not terminal in~$\cat{A}$, then we have~$∇(B)(A) = T(\cat{B})$.
-		We then let~$∇(B)(f)$ be the unique morphism from~$∇(B)(A')$ to~$T(\cat{B}) = ∇(B)(A)$.
+		We then let~$∇(B)(f)$ be the unique morphism from~$∇(B)(A')$ to~$T(\cat{B})$.
 
 \end{casedistinction}
 
@@ -443,14 +447,13 @@ For this, we need to check that~$∇(B)$ is compatible with identities and with 
 			\item
 				Suppose that the object~$A$ is not terminal in~$\cat{A}$.
 				The object~$∇(B)(A)$ is then given by the terminal object~$T(\cat{B})$.
-				The two morphisms~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ have she same domain, namely the object~$∇(B)(A'')$, and their codomain is the terminal object~$T(\cat{B})$.
-				These two morphisms must therefore coincide.
+				It follows that the two morphisms~$∇(B)(f' ∘ f)$ and~$∇(B)(f) ∘ ∇(B)(f')$ are equal, since they both go from~$∇(B)(A'')$ to~$T(\cat{B})$.
 
 		\end{casedistinction}
 		We have in either case that~$∇(B)(f' ∘ f) = ∇(B)(f) ∘ ∇(B)(f')$.
 
 \end{itemize}
-With this, we have shown that~$∇(B)$ is indeed a contravariant functor from~$\cat{A}$ to~$\cat{B}$.
+With this, we have shown that the assignment~$∇(B)$ is indeed a contravariant functor from~$\cat{A}$ to~$\cat{B}$.
 
 We will now explain how the functor~$∇(B)$ depends itself functorially on~$B$.
 For this, let
@@ -675,18 +678,20 @@ We show by case distinction that for every object~$A$ of~$\cat{A}$, the morphism
 \end{casedistinction}
 We have thus shown that the map~\eqref{map for right adjoint of global sections} is injective.
 
-To show that is it surjective, we consider an arbitrary morphism~$g$ from~$Γ(F)$ to~$B$, i.e., a morphism from~$F(T(\cat{A}))$ to~$B$.
+To show that is it surjective, let~$g$ be a morphism from~$Γ(F)$ to~$B$, i.e., a morphism from~$F(T(\cat{A}))$ to~$B$.
 We need to construct a natural transformation~$β$ from~$F$ to~$∇(B)$ with~$β_{T(\cat{A})} = g$.
 We define the components~$β_A$ via case distinction:
 \begin{casedistinction}
 
 	\item
-		If~$A$ is a non-terminal object of~$\cat{A}$, then~$∇(B)(A)$ is the terminal object~$T(\cat{B})$, and we let~$β_A$ be the unique morphism from~$F(A)$ to~$∇(B)(A)$.
+		If~$A$ is a non-terminal object of~$\cat{A}$, then~$∇(B)(A)$ is the terminal object~$T(\cat{B})$.
+		We then let~$β_A$ be the unique morphism from~$F(A)$ to~$∇(B)(A)$.
 
 	\item
-		If~$A$ is terminal in~$\cat{A}$, then there exists a unique morphism~$h$ from~$T(\cat{A})$ to~$A$ (and this morphism is an isomorphism), and we let~$β_A$ be the composite~$g ∘ F(h)$.
+		If~$A$ is terminal in~$\cat{A}$, then there exists a unique morphism~$h$ from the object~$T(\cat{A})$ to~$A$ (and this morphism is an isomorphism since~$T(\cat{A})$ is also terminal in~$\cat{A}$).
+		We then let~$β_A$ be the composite~$g ∘ F(h)$.
 
-		(We note that for~$A = T(\cat{A})$ we have~$h = \id_{T(\cat{A})}$, therefore~$F(h) = \id_{F(T(\cat{A}))}$, and thus~$β_{T(\cat{A})} = g ∘ F(h) = g$.)
+		(We note that in the case of~$A = T(\cat{A})$, we have~$h = \id_{T(\cat{A})}$, therefore~$F(h) = \id_{F(T(\cat{A}))}$, and thus~$β_{T(\cat{A})} = g ∘ F(h) = g$.)
 \end{casedistinction}
 
 To prove the naturality of~$β$ let
@@ -1051,15 +1056,15 @@ We have the chain of adjunctions
 	⊣
 	∇_{\cat{A}^{\op}, \cat{B}^{\op}}
 \]
-between the categories~$\cat{B}^{\op}$ and~$[\cat{A}^{\op\op}, \cat{B}^{\op}]$.
+between the two categories~$\cat{B}^{\op}$ and~$[\cat{A}^{\op\op}, \cat{B}^{\op}]$.
 Under the isomorphism
 \[
 	[\cat{A}^{\op\op}, \cat{B}^{\op}]
 	≅
 	[\cat{A}^{\op}, \cat{B}]^{\op}
 \]
-from Exercise~1.3.27, we have a chain of adjunctions between the categories~$\cat{B}^{\op}$ and~$[\cat{A}^{\op}, \cat{B}]^{\op}$.
-According to \cref{adjunctions between opposite categories} we get a chain of adjunctions
+from Exercise~1.3.27, we have thus a chain of adjunctions between the two categories~$\cat{B}^{\op}$ and~$[\cat{A}^{\op}, \cat{B}]^{\op}$.
+According to \cref{adjunctions between opposite categories}, we get an induced chain of adjunctions
 \[
 	∇'_{\cat{A}^{\op}, \cat{B}^{\op}}
 	⊣
@@ -1109,7 +1114,7 @@ Let us derive explicit descriptions of these three functors:
 		The functor~$Γ$, going from the category~$[\cat{A}^{\op\op}, \cat{B}^{\op}]$ to the category~$\cat{B}^{\op}$, is the evaluation functor at~$T(\cat{A}^{\op})$ if we regard~$[\cat{A}^{\op\op}, \cat{B}^{\op}]$ as the category of contravariant functors from~$\cat{A}^{\op}$ to~$\cat{B}^{\op}$.
 		As a functor from~$[\cat{A}^{\op}, \cat{B}]^{\op}$ to~$\cat{B}^{\op}$,~$Γ$ is thus given by evaluation at~$T(\cat{A}^{\op})$.
 
-		The functor~$Γ'$ is thus again given by evaluation at~$T(\cat{A}^{\op})$ if we view~$[\cat{A}^{\op}, \cat{B}]$ as the category of covariant functors from~$\cat{A}^{\op}$ to~$\cat{B}$.
+		The functor~$Γ'$ is thus again given by evaluation at~$T(\cat{A}^{\op})$ if we view the category~$[\cat{A}^{\op}, \cat{B}]$ as the category of covariant functors from~$\cat{A}^{\op}$ to~$\cat{B}$.
 		If we view~$[\cat{A}^{\op}, \cat{B}]$ as the category of contravariant functors from~$\cat{A}$ to~$\cat{B}$ instead, then~$Γ'$ is therefore given by evaluation at~$I(\cat{A})$.
 
 	\item

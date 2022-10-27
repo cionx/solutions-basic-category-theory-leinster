@@ -9,32 +9,45 @@ For every pair~$(f_1, f_2)$ of set-theoretic maps
 \[
 	f_1 \colon V \to X \,,
 	\quad
-	f_2 \colon V \to Y
+	f_2 \colon V \to Y \,,
 \]
-there exists a unique set-theoretic map~$f$ from~$V$ to~$X × Y$ such that both~$f_1 = p_1 ∘ f$ and~$f_2 = p_2 ∘ f$, namely the map
+there exists a unique set-theoretic map
+\[
+	f \colon V \to X × Y
+\]
+such that both~$f_1 = p_1 ∘ f$ and~$f_2 = p_2 ∘ f$, namely the map
 \[
 	f
 	\colon
-	V
-	\to
-	P \,,
+	V \to P \,,
 	\quad
-	v
-	\mapsto
-	( f_1(v), f_2(v) ) \,.
+	v \mapsto ( f_1(v), f_2(v) ) \,.
 \]
-The map~$f$ is linear if and only if it is linear in both coordinates, i.e., if and only if both~$f_1$ and~$f_2$ are linear.
+The map~$f$ is linear if and only if it is linear in both coordinates.
+In other words,~$f$ is linear if and only if both~$f_1$ and~$f_2$ are linear.
 It follows that the cone~$(P, p_1, p_2)$ satisfies the desired universal property.
 
 
 
 \subsubsection{}
 
-There exists by assumption a unique linear map~$i$ from~$P$ to~$P'$ such that~$p'_1 ∘ i = p_1$ and~$p'_2 ∘ i = p_2$, and similarly a unique linear map~$j$ from~$P'$ to~$P$ such that~$p_1 ∘ j = p'_1$ and~$p_2 ∘ j = p'_2$.
+By assumption on the cone~$(P', p'_1, p'_2)$, there exists a unique linear map~$i$ from~$P$ to~$P'$ such that both
+\[
+	p'_1 ∘ i = p_1
+	\quad\text{and}\quad
+	p'_2 ∘ i = p_2 \,.
+\]
+There exists similarly a unique linear map~$j$ from~$P'$ to~$P$ such that both
+\[
+	p_1 ∘ j = p'_1
+	\quad\text{and}\quad
+	p_2 ∘ j = p'_2 \,.
+\]
 
-There exists by assumption a unique linear map~$f$ from~$P$ to~$P$ such that~$p_1 ∘ f = p_1$ and~$p_2 ∘ f = p_2$.
-Both~$\id_P$ and~$j ∘ i$ satisfy this condition.
-It therefore follows that~$j ∘ i = \id_P$.
+By the universal property of the cone~$(P, p_1, p_2)$, there exists a unique linear map~$f$ from~$P$ to~$P$ such that both~$p_1 ∘ f = p_1$ and~$p_2 ∘ f = p_2$.
+However, both~$\id_P$ and~$j ∘ i$ satisfy this defining condition of the map~$f$.
+We have therefore both~$f = \id_P$ and~$f = j ∘ i$, and thus~$j ∘ i = \id_P$.
+
 We find in the same way that also~$i ∘ j = \id_{P'}$.
 
 This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms of vector spaces.
@@ -43,7 +56,7 @@ This shows that the linear maps~$i$ and~$j$ are mutually inverse isomorphisms of
 
 \subsubsection{}
 
-Let~$Q$ be the vector space~$X ⊕ Y$, and let~$q_1$ and~$q_2$ be the linear maps given by
+Let~$Q$ be the vector space~$X ⊕ Y$, and let~$q_1$ and~$q_2$ be the two linear maps
 \begin{alignat*}{2}
 	q_1
 	\colon
@@ -67,9 +80,9 @@ Let~$Q$ be the vector space~$X ⊕ Y$, and let~$q_1$ and~$q_2$ be the linear map
 \end{alignat*}
 
 Let~$(V, f_1, f_2)$ be a cocone.
-We how in the following that there exists a unique linear map~$f$ from~$Q$ to~$V$ with both~$f ∘ q_1 = f_1$ and~$f ∘ q_2 = f_2$.
+We show in the following that there exists a unique linear map~$f$ from~$Q$ to~$V$ with both~$f ∘ q_1 = f_1$ and~$f ∘ q_2 = f_2$.
 
-Let~$f$ be such a linear map.
+To show the required uniqueness, let~$f$ be such a linear map.
 Then
 \begin{align*}
 	f( (x,y) )
@@ -91,7 +104,7 @@ Then
 for all~$x ∈ X$,~$y ∈ Y$.
 This shows that the linear map~$f$ is uniquely determined by the composites~$f_1$ and~$f_2$, which shows the desired uniqueness of~$f$.
 
-Consider now the map
+To show the existence of the linear map~$f$, we define it as
 \[
 	f
 	\colon
@@ -103,7 +116,12 @@ Consider now the map
 	\mapsto
 	f_1(x) + f_2(y) \,.
 \]
-This map is linear, and it satisfies
+The map~$f$ is linear since it can be expressed as
+\[
+	f = f_1 ∘ p_1 + f_2 ∘ p_2 \,,
+\]
+with~$p_1$,~$p_2$,~$f_1$ and~$f_2$ being linear.
+The map~$f$ also satisfies both
 \[
 	(f ∘ q_1)(x)
 	=
@@ -117,7 +135,7 @@ This map is linear, and it satisfies
 	=
 	f_1(x)
 \]
-as well as
+and
 \[
 	(f ∘ q_2)(y)
 	=

@@ -24,7 +24,7 @@
 			\quad
 			n \mapsto 2n
 		\]
-		is not a homomorphism of rings (but it is additive).
+		is not a homomorphism of rings.
 		It is therefore not contained in the image of~$U$.
 
 	\item[Example~1.2.3,~(c)]
@@ -67,27 +67,27 @@
 	\item[Example~1.2.5,~(a)]
 		The functor~$\fgroup_1$ from~$\Top_*$ to~$\Grp$ is not faithful.
 		To see this, we consider the pointed topological space~$(ℝ, 0)$.
-		The group~$\fgroup_1(ℝ, 0)$ is trivial, whence there exists precisely one homomorphism of groups from~$\fgroup_1(ℝ, 0)$ to~$\fgroup_1(ℝ, 0)$.
+		The fundamental group~$\fgroup_1(ℝ, 0)$ is trivial, whence there exists precisely one homomorphism of groups from~$\fgroup_1(ℝ, 0)$ to~$\fgroup_1(ℝ, 0)$.
 		But there exist many more continuous maps from~$(ℝ, 0)$ to~$(ℝ, 0)$.%
 		\footnote{
 			Namely,~$2^{ℵ_0}$ many.
 		}
 
 		The functor~$\fgroup_1$ is also not full.
-		The author doesn’t know a good (counter)example for this, and refers to \cite{stackexchange_pi_1_not_full}.
+		The author doesn’t know a good example for this, and refers to \cite{stackexchange_pi_1_not_full}.
 
 	\item[Example~1.2.5,~(b)]
-		These functors are neither faithful nor full, but the author is not good enough at topology to give (counter)examples.
+		The author strongly suspects that these functors are neither faithful nor full, but isn’t good enough at topology to give examples that confirm these suspicions.
 
 	\item[Example~1.2.7]
-		The functor~$F$ from~$\cat{G}$ to~$\cat{H}$ is faithful if and only if the corresponding homomorphism of groups from~$G$ to~$H$ is injective.
-		Similarly, the functor~$F$ is full if and only if the corresponding homomorphism of groups is surjective.
+		The functor~$F$ from~$\cat{G}$ to~$\cat{H}$ is faithful if and only if the corresponding homomorphism of groups~$f$ from~$G$ to~$H$ is injective.
+		Similarly, the functor~$F$ is full if and only if the corresponding homomorphism~$f$ is surjective.
 
 	\item[Example~1.2.8]
 		This functor is faithful if and only if the corresponding~\set{$G$}, respectively representation of~$G$, is faithful.
 
 	\item[Example~1.2.9]
-		The functor is faithful, because there exists for any two elements~$a$ and~$a'$ of~$A$ at most one morphism from~$a$ to~$a'$.
+		This functor is faithful, because there exists for any two elements~$a$ and~$a'$ of~$A$ at most one morphism from~$a$ to~$a'$ in~$\cat{A}$.
 		It is full if and only if it follows for any two elements~$a$ and~$a'$ of~$\cat{A}$ from~$f(a) ≤ f(a')$ that also~$a ≤ a'$.
 
 	\item[Example~1.2.11]
@@ -105,24 +105,30 @@
 		It follows that there exists some linear functional~$w^*$ in~$W^*$ with~$w^*(w_1) ≠ w^*(w_2)$.
 		It further follows that
 		\begin{align*}
+			\SwapAboveDisplaySkip
 			f_1^*(w^*)(v)
-			=
+			&=
 			(w^* ∘ f_1)(v)
-			=
+			\\
+			&=
 			w^*( f_1(w) )
-			=
+			\\
+			&=
 			w^*(w_1)
-			≠
+			\\
+			&≠
 			w^*(w_2)
-			=
+			\\
+			&=
 			\dotsb
-			=
+			\\
+			&=
 			f_2^*(w^*)(v) \,.
 		\end{align*}
 		This shows that~$f_1^*(w^*) ≠ f_2^*(w^*)$, and therefore~$f_1^* ≠ f_2^*$.
-		
-		But the functor~$(\ph)^*$ is not full.
-		To see this, we observe that for any two~\vectorspaces{$𝕜$}~$V$ and~$W$ the map
+
+		However, the functor~$(\ph)^*$ is not full.
+		To see this, we observe that for any two~\vectorspaces{$𝕜$}~$V$ and~$W$, the map
 		\[
 			D_{V, W}
 			\colon
@@ -153,58 +159,58 @@
 
 \subsubsection{}
 
-Let~$I$ be the category given by two objects~$x$ and~$y$ and one non-identity morphism~$f$, going from~$x$ to~$y$.
+Let~$\Two$ be the category given by two objects~$0$ and~$1$ and one non-identity morphism~$i$, going from~$0$ to~$1$.
 This category may be depicted as follows:
+\[
+	\Two
+	\colon
+	\begin{tikzcd}
+		0
+		\arrow{r}[above]{i}
+		&
+		1
+	\end{tikzcd}
+\]
+Let similarly~$\Two'$ be the category given by two objects~$0$ and~$1$ and two parallel non-identity morphisms from~$0$ to~$1$, denoted by~$i$ and~$i'$.
+This category may be depicted as follows:
+\[
+	\Two'
+	\colon
+	\begin{tikzcd}
+		0
+		\arrow[yshift= 0.5ex]{r}[above]{i}
+		\arrow[yshift=-0.5ex]{r}[below]{i'}
+		&
+		1
+	\end{tikzcd}
+\]
+The inclusion functor
 \[
 	I
 	\colon
-	\begin{tikzcd}
-		x
-		\arrow{r}[above]{f}
-		&
-		y
-	\end{tikzcd}
-\]
-Let similarly~$J$ be the category given by two objects~$x$ and~$y$ and two parallel non-identity morphisms~$f$ and~$g$ from~$x$ to~$y$.
-This category may be depicted as follows:
-\[
-	J
-	\colon
-	\begin{tikzcd}
-		x
-		\arrow[yshift= 0.5ex]{r}[above]{f}
-		\arrow[yshift=-0.5ex]{r}[below]{g}
-		&
-		y
-	\end{tikzcd}
-\]
-The identity functor of~$I$ is both full and faithful.
-The functor
-\[
-	F
-	\colon
-	I \to J
+	\Two \to \Two'
 	\quad\text{with}\quad
-	F(x) = x \,,
+	F(0) = 0 \,,
 	\quad
-	F(y) = y \,,
+	F(1) = 1 \,,
 	\quad
-	F(f) = f
+	F(i) = i
 \]
 is faithful but not full.
-The functor
+The retraction functor
 \[
-	G
+	R
 	\colon
-	J \to I
+	\Two' \to \Two
 	\quad\text{with}\quad
-	F(x) = x \,,
+	F(0)  = 0 \,,
 	\quad
-	F(y) = y \,,
+	F(1)  = 1 \,,
 	\quad
-	F(f) = f
+	F(i)  = i
 	\quad
-	F(g) = f
+	F(i') = i
 \]
 is full but not faithful.
-The composite~$F ∘ G$ is neither full nor faithful.
+The composite~$R ∘ I$ is the identity functor on~$\Two$, which is both full and faithful.
+The composite~$I ∘ R$ is neither full nor faithful.
