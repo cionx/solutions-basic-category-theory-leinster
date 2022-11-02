@@ -21,15 +21,19 @@ satisfies
 	=
 	f \,.
 \]
-Therefore,~$f$ can be retrieved from its induced natural transformation~$f_*$.
+Therefore, the morphism~$f$ can be retrieved from its induced natural transformation~$f_*$.
 This tells us that the functor~$\HY_\bullet$ is faithful.
 
 
 
 \subsubsection{}
 
-Let~$A$ and~$A'$ be two objects of~$\cat{A}$, and let~$α$ be a natural transformation from~$\HY_A$ to~$\HY_{A'}$.
-Let~$f$ be the image of~$\id_A$ under the map~$α_A$, i.e., under the map
+Let~$A$ and~$A'$ be two objects of~$\cat{A}$, and let
+\[
+	α \colon \HY_A \To \HY_{A'}
+\]
+be a natural transformation.
+Let~$f$ be the image of the identity morphism~$\id_A$ under the map~$α_A$, i.e., under the map
 \[
 	\cat{A}(A, A)
 	=
@@ -39,7 +43,7 @@ Let~$f$ be the image of~$\id_A$ under the map~$α_A$, i.e., under the map
 	=
 	\cat{A}(A, A') \,.
 \]
-This entails that~$f$ is a morphism in~$\cat{A}$ from~$A$ to~$A$'.
+We note that~$f$ is a morphism from~$A$ to~$A'$ in~$\cat{A}$.
 
 The naturality of~$α$ tells us that we have for every morphism
 \[
@@ -47,7 +51,7 @@ The naturality of~$α$ tells us that we have for every morphism
 \]
 in~$\cat{A}$ the following commutative square diagram:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\HY_A(B')
 		\arrow{r}[above]{\HY_A(g)}
 		\arrow{d}[left]{α_{B'}}
@@ -63,7 +67,7 @@ in~$\cat{A}$ the following commutative square diagram:
 \]
 This diagram may equivalently be written out as follows:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(B', A)
 		\arrow{r}[above]{g^*}
 		\arrow{d}[left]{α_{B'}}
@@ -77,11 +81,11 @@ This diagram may equivalently be written out as follows:
 		\cat{A}(B, A')
 	\end{tikzcd}
 \]
-Let now~$B$ be any object~$\cat{B}$ and let~$g$ be an element of the set~$\HY_A(B)$.
+Let now~$B$ be any object of~$\cat{A}$ and let~$g$ be an element of the set~$\HY_A(B)$.
 In light of the equality~$\HY_A(B) = \cat{A}(B, A)$, this means that~$g$ is a morphism from~$B$ to~$A$.
 We have therefore the following commutative diagram:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(A, A)
 		\arrow{r}[above]{g^*}
 		\arrow{d}[left]{α_A}
@@ -115,133 +119,199 @@ This shows that the map
 \]
 is given by~$f_*$.
 
-We have thus shown that the natural transformations~$α$ and~$f_*$ from~$\HY_A$ to~$\HY_{A'}$ coincide in each component, whence they are equal.
-This shows that each natural transformation from~$\HY_A$ to~$\HY_{A'}$ stems from a morphism from~$A$ to~$A'$, so that the functor~$\HY_{\bullet}$ is full.
+We have shown that the natural transformations~$α$ and~$f_*$ from~$\HY_A$ to~$\HY_{A'}$ coincide in each component, whence they are equal.
+This shows that each natural transformation from~$\HY_A$ to~$\HY_{A'}$ stems from a morphism from~$A$ to~$A'$.
+In other words, the functor~$\HY_{\bullet}$ is full.
 
 
 
 \subsubsection{}
 
-We denote the presheaf category of~$\cat{A}$, i.e., the functor category~$[\cat{A}^{\op}, \Set]$, by~$\cat{A}^+$.
-We refer to the given property of the pair~$(X, u)$ as its \emph{universal property}.
-We might think about it as a universal property \enquote{internal} to~$X$:
-it does not involve any other presheaf, and instead makes a statement about the internal structure of~$X$.
-
-We show in the following that the presheaf~$X$ satisfies the following \enquote{external} universal property:
+Suppose that there exists an object~$A$ of~$\cat{A}$ and an element~$u$ of~$X(A)$ such that the provided universal property holds:
 \begin{quote}
-	For every presheaf~$Y$ on~$\cat{A}$ and every element~$y$ of the set~$Y(A)$, there exists a unique natural transformation~$α$ from~$X$ to~$Y$ with~$α_A(u) = y$.
+	\itshape
+	For every object~$B$ of~$\cat{A}$ and every element~$x$ of~$X(B)$, there exists a unique morphism~$f$ from~$B$ to~$A$ in~$\cat{A}$ such that~$x = X(f)(u)$.
 \end{quote}
-
-Suppose first that~$α$ is a natural transformation from~$X$ to~$Y$ with~$α_A(u) = y$.
-For every object~$A'$ of~$\cat{A}$ and every element~$x$ of~$X(A')$, there exists a morphism~$f$ from~$A'$ to~$A$ with~$x = X(f)(u)$y by the universal property of~$(X, u)$.
-It follows from the naturality of~$α$ that
+This universal property states that for every object~$B$ of~$\cat{A}$, the map
 \[
-	α_{A'}(x)
-	=
-	α_{A'}(X(f)(u))
-	=
-	Y(f)(α_A(u))
-	=
-	Y(f)(y) \,.
-\]
-This shows that the natural transformation~$α$ is already uniquely determined by its single value~$α_A(u)$.
-This proved the claimed uniqueness.
-
-Let now~$y$ be an arbitrary element of~$Y(A)$.
-According to the universal property of~$(X, u)$, every element of~$X(A')$, where~$A'$ is an arbitrary object of~$\cat{A}$, can uniquely be expressed in the form~$X(f)(u)$ for some morphism~$f$ from~$A'$ to~$A$.
-This allows us to define the map
-\[
-	α_{A'}
+	α_B
 	\colon
-	X(A') \to Y(A') \,,
-\]
-via
-\[
-	α_{A'}( X(f)(u) ) ≔ Y(f)(y)
-\]
-for every object~$A'$ of~$\cat{A}$ and every element~$f$ of~$\cat{A}(A', A)$.
-These maps define a natural transformation~$α$ from~$X$ to~$Y$:
-for every morphism
-\[
-	g \colon A'' \to A'
-\]
-in~$\cat{A}$, we have the chain of equalities
-\begin{align*}
-	α_{A''}( X(g)( X(f)(u) ) )
-	&=
-	α_{A''}( X(f ∘ g)(u) )
-	\\
-	&=
-	Y(f ∘ g)(y)
-	\\
-	&=
-	Y(g)( Y(f)(y) )
-	\\
-	&=
-	Y(g)( α_{A'}( X(f)(u) ) )
-\end{align*}
-for every element~$f$ of~$\cat{A}(A', A)$, which shows the required commutativity of the following square diagram:
-\[
-	\begin{tikzcd}[sep = large]
-		X(A')
-		\arrow{r}[above]{X(g)}
-		\arrow{d}[left]{α_{A'}}
-		&
-		X(A'')
-		\arrow{d}[right]{α_{A''}}
-		\\
-		Y(A')
-		\arrow{r}[above]{Y(g)}
-		&
-		Y(A'')
-	\end{tikzcd}
-\]
-
-We have thus proven that the functor~$X$ satisfies the universal property.
-We may rephrase this property by saying that the map
-\[
-	Φ_Y
-	\colon
-	\cat{A}^+(X, Y) \to Y(A) \,,
+	\cat{A}(B, A) \to X(B) \,,
 	\quad
-	α \mapsto α_A(u)
+	f \mapsto X(f)(u)
 \]
 is bijective.
-This bijection is natural in~$Y$.
-Indeed, let~$Y$ and~$Z$ be two presheaves on~$\cat{A}$ and let~$β$ be a natural transformation from~$Y$ to~$Z$.
+These bijections are natural.
+Indeed, let
+\[
+	g \colon B \to B'
+\]
+be a morphism in~$\cat{A}$.
 The resulting diagram
 \[
-	\begin{tikzcd}[sep = large]
-		\cat{A}^+(X, Y)
-		\arrow{r}[above]{Φ_Y}
-		\arrow{d}[left]{β_*}
+	\begin{tikzcd}
+		\cat{A}(B', A)
+		\arrow{r}[above]{g^*}
+		\arrow{d}[left]{α_{B'}}
 		&
-		Y(A)
-		\arrow{d}[right]{β_A}
+		\cat{A}(B, A)
+		\arrow{d}[right]{α_B}
 		\\
-		\cat{A}^+(X, Z)
-		\arrow{r}[above]{Φ_Z}
+		X(B')
+		\arrow{r}[above]{X(g)}
 		&
-		Z(A)
+		X(B)
 	\end{tikzcd}
 \]
-commutes because
-\[
-	Φ_Z( β_*( α ) )
-	=
-	Φ_Z( β ∘ α )
-	=
-	(β ∘ α)_A(u)
-	=
-	β_A( α_A( u ) )
-	=
-	β_A( Φ_Y( α ) )
-\]
-for every element~$α$ of~$\cat{A}(X, Y)$.
+commutes, because we have for every element~$f$ of its top-left corner the chain of equalities
+\begin{align*}
+	\SwapAboveDisplaySkip
+	α_B( g^*( f ) )
+	&=
+	α_B(f ∘ g)
+	\\
+	&=
+	X(f ∘ g)(u)
+	\\
+	&=
+	(X(g) ∘ X(f))(u)
+	\\
+	&=
+	X(g)( X(f)(u) )
+	\\
+	&=
+	X(g)( α_{B'}( u ) ) \,.
+\end{align*}
+We have thus constructed a natural isomorphism~$α$ the functor~$\HY_A$ to the functor~$X$, showing that these functors are isomorphic.
 
-We have overall seen that the internal universal property of~$X$ results in an external universal property, which in turn tells us that the functor~$\cat{A}^+(X, \ph)$ is naturally isomorphic to the evaluation functor at~$A$.
 
-We now observe that~$(\HY_A, \id_A)$ has the same internal universal property as~$(X, A)$.
-Therefore, the functor~$\cat{A}^+(\HY_A, \ph)$ as also naturally isomorphic to the evaluation functor at~$A$.
-It follows that two functors~$\cat{A}^+(X, \ph)$ and~$\cat{A}^+(\HY_A, \ph)$ are naturally isomorphic.
-By Lemma~4.3.8, this implies that~$X$ and~$\HY_A$ are isomorphic in~$\cat{A}^+$.
+
+%\subsubsection*{(c), second solution}
+%
+%We denote the presheaf category~$[\cat{A}^{\op}, \Set]$ by~$\cat{A}^+$.
+%
+%We refer to the given property of the presheaf~$X$ and the tuple~$(A, u)$ as its \emph{universal property}.
+%This universal property is \enquote{internal} to~$X$:
+%it does not involve any other presheaf, and instead makes a statement about the internal structure of~$X$.
+%
+%We show in the following that as a consequence of its internal universal property, the presheaf~$X$ also satisfies the following \enquote{external} universal property:
+%\begin{quote}
+%	\itshape
+%	For every presheaf~$Y$ on~$\cat{A}$ and every element~$y$ of the set~$Y(A)$, there exists a unique natural transformation~$α$ from~$X$ to~$Y$ such that~$α_A(u) = y$.
+%\end{quote}
+%
+%Suppose first that~$α$ is a natural transformation from~$X$ to~$Y$ with~$α_A(u) = y$.
+%For every object~$B$ of~$\cat{A}$ and every element~$x$ of~$X(B)$, there exists a morphism~$f$ from~$B$ to~$A$ in~$\cat{A}$ with~$x = X(f)(u)$ by the internal universal property of~$X$ and~$(A, u)$.
+%It follows from the naturality of~$α$ that
+%\[
+%	α_B(x)
+%	=
+%	α_B( X(f)(u) )
+%	=
+%	Y(f)( α_A(u) )
+%	=
+%	Y(f)(y) \,.
+%\]
+%This shows that the natural transformation~$α$ is already uniquely determined by its single value~$α_A(u)$.
+%This proves the claimed uniqueness.
+%
+%Let now~$y$ be an arbitrary element of~$Y(A)$.
+%We need to construct a natural transformation~$α$ from~$X$ to~$Y$ with~$α_A(u) = y$.
+%
+%Given an object~$B$ of~$\cat{B}$, every element of the set~$X(B)$ can be expressed as~$X(f)(u)$ for some morphism~$f$ from~$B$ to~$A$, by the internal universal property of~$X$ and~$(A, u)$.
+%We can therefore define a map
+%\[
+%	α_B
+%	\colon
+%	X(B) \to Y(B) \,,
+%\]
+%via
+%\[
+%	α_{B}( X(f)(u) ) ≔ Y(f)(y)
+%\]
+%for every object~$B$ of~$\cat{A}$ and every element~$f$ of~$\cat{A}(B, A)$.
+%These maps define a natural transformation~$α$ from~$X$ to~$Y$:
+%for every morphism
+%\[
+%	g \colon B' \to B
+%\]
+%in~$\cat{A}$, we have the chain of equalities
+%\begin{align*}
+%	α_{B'}( X(g)( X(f)(u) ) )
+%	&=
+%	α_{B'}( X(f ∘ g)(u) )
+%	\\
+%	&=
+%	Y(f ∘ g)(y)
+%	\\
+%	&=
+%	Y(g)( Y(f)(y) )
+%	\\
+%	&=
+%	Y(g)( α_{B}( X(f)(u) ) )
+%\end{align*}
+%for every element~$f$ of~$\cat{A}(B, A)$, which shows the required commutativity of the following square diagram:
+%\[
+%	\begin{tikzcd}
+%		X(B)
+%		\arrow{r}[above]{X(g)}
+%		\arrow{d}[left]{α_{B}}
+%		&
+%		X(B')
+%		\arrow{d}[right]{α_{B'}}
+%		\\
+%		Y(B)
+%		\arrow{r}[above]{Y(g)}
+%		&
+%		Y(B')
+%	\end{tikzcd}
+%\]
+%
+%We have thus proven that the functor~$X$ satisfies the universal property.
+%We may rephrase this property by saying that the map
+%\[
+%	Φ_Y
+%	\colon
+%	\cat{A}^+(X, Y) \to Y(A) \,,
+%	\quad
+%	α \mapsto α_A(u)
+%\]
+%is bijective.
+%This bijection is natural in~$Y$.
+%Indeed, let~$Y$ and~$Z$ be two presheaves on~$\cat{A}$ and let~$β$ be a natural transformation from~$Y$ to~$Z$.
+%The resulting diagram
+%\[
+%	\begin{tikzcd}
+%		\cat{A}^+(X, Y)
+%		\arrow{r}[above]{Φ_Y}
+%		\arrow{d}[left]{β_*}
+%		&
+%		Y(A)
+%		\arrow{d}[right]{β_A}
+%		\\
+%		\cat{A}^+(X, Z)
+%		\arrow{r}[above]{Φ_Z}
+%		&
+%		Z(A)
+%	\end{tikzcd}
+%\]
+%commutes because
+%\[
+%	Φ_Z( β_*( α ) )
+%	=
+%	Φ_Z( β ∘ α )
+%	=
+%	(β ∘ α)_A(u)
+%	=
+%	β_A( α_A( u ) )
+%	=
+%	β_A( Φ_Y( α ) )
+%\]
+%for every element~$α$ of~$\cat{A}(X, Y)$.
+%
+%We have overall seen that the internal universal property of~$X$ results in an external universal property, which in turn tells us that the functor~$\cat{A}^+(X, \ph)$ is naturally isomorphic to the evaluation functor at~$A$.
+%
+%We now observe that~$(\HY_A, \id_A)$ has the same internal universal property as~$(X, A)$.
+%Therefore, the functor~$\cat{A}^+(\HY_A, \ph)$ as also naturally isomorphic to the evaluation functor at~$A$.
+%It follows that two functors~$\cat{A}^+(X, \ph)$ and~$\cat{A}^+(\HY_A, \ph)$ are naturally isomorphic.
+%By Lemma~4.3.8, this implies that~$X$ and~$\HY_A$ are isomorphic in~$\cat{A}^+$.
