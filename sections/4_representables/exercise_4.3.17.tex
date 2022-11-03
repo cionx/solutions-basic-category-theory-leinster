@@ -1,66 +1,98 @@
 \subsection{}
 
 Let~$\cat{A}$ be a discrete category.
+We begin by describing the presheaf category of~$\cat{A}$, which we shall denote by~$\cat{A}^+$.
 
-A presheaf on~$\cat{A}$ amounts to a family of sets, indexed by the objects of~$\cat{A}$.
-Given two presheaves~$X$ and~$Y$ on~$\cat{A}$ with corresponding families of sets~$(X_A)_A$ and~$(Y_A)_A$, a natural transformation~$α$ from~$X$ to~$Y$ is simply a family~$(α_A)_A$ consisting of functions~$α_A$ from~$X_A$ to~$Y_A$ for every object~$A$ of~$\cat{A}$.
-The preasheaf category~$[\cat{A}^{\op}, \Set]$ is thus isomorphic to the product category~$∏_{A ∈ \Ob(\cat{A})} \Set$.
+\begin{itemize}
 
-For every object~$A$ of~$\cat{A}$, the resulting represented presheaf~$\HY_A$ is corresponds to the family of sets~$(H_{A'})_{A'}$ for which each set~$H_{A'}$ with~$A' ≠ A$ is empty, and the set~$H_A$ is only a singleton.
-In other words,
-\[
-	H_{A'}
-	\cong
-	\begin{cases*}
-		\{ \ast \}  & for~$A' = A$, \\
-		∅           & otherwise \,.
-	\end{cases*}
-\]
-It follows for every other presheaf~$X$ on~$\cat{A}$, that
-\begin{align*}
-	\cat{A}^+( \HY_A, X )
-	&≅
-	\Biggl( ∏_{A' ∈ \Ob(\cat{A})} \Set \Biggr)\Bigl( (H_{A'})_{A'}, \; ( X(A') )_{A'} \Bigr)
-	\\[0.5em]
-	&≅
-	∏_{A' ∈ \Ob(\cat{A})} \Set( H_{A'}, X(A') )
-	\\[0.5em]
-	&≅
-	\Set( H_A, X(A) )
-	×
-	∏_{\substack{A' ∈ \Ob(\cat{A}) \\ A' ≠ A}} \Set( H_{A'}, X(A') )
-	\\[0.5em]
-	&≅
-	\Set( \{ \ast \}, X(A) )
-	×
-	∏_{\substack{A' ∈ \Ob(\cat{A}) \\ A' ≠ A}}
-	\underbrace{
-		\Set( ∅, X(A') )
-	}_{
-		≅ \{ \ast \}
-	}{} % empty pair to avoid spacing issues
-	\\
-	&≅
-	\Set( \{ \ast \}, X(A) )
-	\\
-	&≅
-	X(A) \,.
-\end{align*}
-This given us Yoneda’s lemma in the special case of discrete categories.
+	\item
+		A presheaf on~$\cat{A}$ amounts to a family of sets, indexed by the objects of~$\cat{A}$.
 
-Under the above isomorphism between~$[\cat{A}^{\op}, \Set]$ and~$∏_{A ∈ \Ob(\cat{A})} \Set$, the evaluation functor at an object~$A$ of~$\cat{A}$ corresponds to the projection onto the~\nth{$A$} coordinate.
+	\item
+		Let~$X$ and~$Y$ be two presheaves on~$\cat{A}$, and let~$(X_A)_A$ and~$(Y_A)_A$ be the corresponding families of sets.
+		A natural transformation~$α$ from~$X$ to~$Y$ is simply a family~$(α_A)_A$ consisting of a function~$α_A$ from~$X_A$ to~$Y_A$ for every object~$A$ of~$\cat{A}$.
 
-We see that for any two distinct objects~$A$ and~$A'$ of~$\cat{A}$, there exist no natural transformations between the associated presheaves~$\HY_A$ and~$\HY_{A'}$, just as there exist no morphisms between~$A$ and~$A'$.
-If however~$A = A'$, then there exists precise one natural transformation from~$\HY_A$ to~$\HY_{A'}$, namely the identity natural transformation.
-Similarly, there exists precisely one morphism from~$A$ to~$A'$ in~$\cat{A}$, namely the identity morphism.
-We see from these observations that the Yoneda embedding of~$\cat{A}$ into~$[\cat{A}^{\op}, \Set]$ is fully faithful.
+\end{itemize}
 
-We also see from the explicit description of the representables~$\HY_A$ that
-\[
-	\HY_A ≅ \HY_{A'}
-	\iff
-	A = A'
-	\iff
-	A ≅ A'
-\]
-for any two objects~$A$ and~$A'$ of~$\cat{A}$.
+We have provided explicit descriptions of the objects of~$\cat{A}^+$ and the morphisms between these objects.
+We see from these explicit descriptions that~$\cat{A}^+$ is isomorphic to the product category~$∏_{A ∈ \Ob(\cat{A})} \Set$.
+Moreover, under this isomorphism, the evaluation functor at~$A$ corresponds to the projection onto the~\nth{$A$} coordinate.
+
+We now investigate represented presheaves on~$\cat{A}$ and the Yoneda embedding.
+
+\begin{itemize}
+
+	\item
+		For every object~$A$ of~$\cat{A}$, the resulting represented presheaf~$\HY_A$ is corresponds to the family of sets~$(H_{A'})_{A'}$ for which each set~$H_{A'}$ with~$A' ≠ A$ is empty and the set~$H_A$ is only a singleton.
+		In other words,
+		\[
+			H_{A'}
+			≅
+			\begin{cases*}
+				\{ \ast \}  & for~$A' = A$, \\
+				∅           & otherwise \,.
+			\end{cases*}
+		\]
+
+	\item
+		It follows for every other presheaf~$X$ on~$\cat{A}$, that
+		\begin{align*}
+			\cat{A}^+( \HY_A, X )
+			&≅
+			\Biggl(
+				∏_{A' ∈ \Ob(\cat{A})} \Set
+			\Biggr)\Bigl(
+				(H_{A'})_{A'}, \; ( X(A') )_{A'}
+			\Bigr)
+			\\[0.5em]
+			&≅
+			∏_{A' ∈ \Ob(\cat{A})}
+			\Set( H_{A'}, X(A') )
+			\\[0.5em]
+			&≅
+			\Set( H_A, X(A) )
+			×
+			∏_{\substack{A' ∈ \Ob(\cat{A}) \\ A' ≠ A}}
+			\Set( H_{A'}, X(A') )
+			\\[0.5em]
+			&≅
+			\Set( \{ \ast \}, X(A) )
+			×
+			∏_{\substack{A' ∈ \Ob(\cat{A}) \\ A' ≠ A}}
+			\underbrace{
+				\Set( ∅, X(A') )
+			}_{
+				≅ \{ \ast \}
+			}{} % empty pair to avoid spacing issues
+			\\
+			&≅
+			\Set( \{ \ast \}, X(A) )
+			\\
+			&≅
+			X(A) \,.
+		\end{align*}
+		This gives us Yoneda’s lemma for~$\cat{A}$.
+
+	\item
+		We see that for any two distinct objects~$A$ and~$A'$ of~$\cat{A}$, there exist no natural transformations between the associated presheaves~$\HY_A$ and~$\HY_{A'}$, just as there exist no morphisms between~$A$ and~$A'$.
+
+		If however~$A = A'$, then there exists precise one natural transformation from~$\HY_A$ to~$\HY_{A'}$, namely the identity natural transformation.
+		Similarly, there exists precisely one morphism from~$A$ to~$A'$ in~$\cat{A}$, namely the identity morphism.
+		We see from these observations that the Yoneda embedding of~$\cat{A}$ into~$\cat{A}^+$ is full and faithful.
+
+	\item
+		We see from the above explicit description of represented presheaves that
+		\[
+			\HY_A ≅ \HY_{A'}
+			\iff
+			A = A'
+			\iff
+			A ≅ A'
+		\]
+		for any two objects~$A$ and~$A'$ of~$\cat{A}$.
+
+\end{itemize}
+
+
+
+
