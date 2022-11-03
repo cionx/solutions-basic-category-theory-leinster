@@ -13,15 +13,17 @@ The set in question is given by
 			$D(u)(x_I) = x_J$ for every \\
 			morphism~$u \colon I \to J$ in~$\scat{I}$
 		\end{tabular}
-	\Biggr\}
+	\Biggr\} \,.
 \]
-For every object~$I$ of~$\cat{A}$ let~$p_I$ be the projection onto the~\nth{$I$} component from~$L$ to~$D(I)$.
+For every object~$I$ of~$\scat{I}$ let~$p_I$ be the projection onto the~\nth{$I$} component from~$L$ to~$D(I)$.
 The elements of~$L$ are chosen precisely in such a way that~$L$ together with the family of maps~$(p_I)_I$ is a cone over the diagram~$D$.
+It remains to show that the cone~$(L, (p_I)_I)$ is universal.
 
-Let~$(A, (f_I)_I)$ be another cone over~$D$.
-We need to show that there exists a unique map~$f$ from~$A$ to~$L$ with~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
+To this end, let~$(A, (f_I)_I)$ be another cone over~$D$.
+We need to show that there exists a unique map~$f$ from~$A$ to~$L$ satisfying the condition~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
 
-Given an element~$a$ of~$A$, the element~$f(a)$ needs to satisfy
+We start by showing the uniqueness of the map~$f$.
+Given an element~$a$ of~$A$, the element~$f(a)$ needs to satisfy the equalities
 \[
 	p_I( f(a) )
 	=
@@ -33,7 +35,8 @@ for every object~$I$ of~$\scat{I}$.
 This shows that the components of~$f(a)$ are uniquely determined by the functions~$f_I$, whence the value~$f(a)$ is uniquely determined.
 This means overall, that the map~$f$ is unique.
 
-To construct the desired map~$f$, we start with the map
+We now show the existence of the desired map~$f$.
+We start with the map
 \[
 	\tilde{f}
 	\colon
@@ -41,7 +44,7 @@ To construct the desired map~$f$, we start with the map
 	\quad
 	a \mapsto ( f_I(a) )_I \,.
 \]
-For every element~$a$ of~$A$, we have the equalities
+For every element~$a$ of~$A$, we have the chain of equalities
 \[
 	D(u)( p_I( \tilde{f}(a) ) )
 	=
@@ -51,14 +54,10 @@ For every element~$a$ of~$A$, we have the equalities
 	=
 	p_J( \tilde{f}(a) )
 \]
-for every morphism
-\[
-	u \colon I \to J
-\]
-in~$\scat{I}$.
-This tells us that the image of~$\tilde{f}$ is already contained in~$L$.
+for every morphism~$u \colon I \to J$ in~$\scat{I}$.
+This tells us that the image of the map~$\tilde{f}$ is contained in the subset~$L$ of~$∏_{I ∈ \Ob(\scat{I})} D(I)$.
 We can therefore corestrict the map~$\tilde{f}$ to a map
 \[
 	f \colon A \to L \,.
 \]
-This map~$f$ satisfies~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$, because the original map~$\tilde{f}$ satisfies~$p_I ∘ \tilde{f} = f_I$.
+The auxiliary map~$\tilde{f}$ satisfies the condition~$\pr_I ∘ \tilde{f} = f_I$ for every object~$I$ of~$\scat{I}$, whence the map~$f$ satisfies~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
