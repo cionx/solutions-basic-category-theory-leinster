@@ -6,39 +6,71 @@
 
 Let~$A$ be an object of~$\cat{A}$.
 
-The object~$L$ together with the morphism~$p$ from~$∏_{I ∈ \Ob(\scat{I})} D(I)$ is an equalizer for the two morphisms~$s$ and~$t$.
-We have therefore a bijection given by
-\begin{equation}
-	\label{first step in general constructions of limits}
+By definition, the object~$L$ together with the morphism~$p$ is an equalizer for the two morphisms~$s$ and~$t$.
+We have therefore the bijection
+\begin{align}
 	\cat{A}(A, L)
-	\to
+	&\to
 	\Biggl\{
-		g ∈ \cat{A}\Biggl(A, \prod_{I ∈ \Ob(\scat{I})} D(I)\Biggr)
+		g ∈ \cat{A}\Biggl(A, ∏_{I ∈ \Ob(\scat{I})} D(I)\Biggr)
 	\suchthat[\Bigg]
 		s ∘ g = t ∘ g
 	\Biggr\} \,,
-	\quad
-	f \mapsto p ∘ f \,.
+	\label{first step in general constructions of limits}
+	\\
+	f &\mapsto p ∘ f \,.
+	\notag
+\end{align}
+To better understand the right-hand side of this bijection, we use the bijection
+\begin{align}
+	\cat{A}\Biggl(A, ∏_{I ∈ \Ob(\scat{I})} D(I)\Biggr)
+	&\to
+	∏_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I)) \,,
+	\label{map into product for construction of limits}
+	\\
+	g
+	&\mapsto
+	(\pr_I ∘ g)_I \,.
+	\notag
+\end{align}
+How does the right-hand side of~\eqref{first step in general constructions of limits} look like under this bijection?
+To answer this question, we need to reformulate the condition~$s ∘ g = t ∘ g$ in terms of the components of~$g$.
+
+To this end, let~$g$ be a morphism from~$A$ to~$∏_{I ∈ \Ob(\scat{I})} D(I)$.
+For every object~$I$ of~$\scat{I}$ let~$g_I$ be the respective component of~$g$, i.e.,
+\[
+	g_I = \pr_I ∘ g \,.
+\]
+The two morphisms~$s ∘ g$ and~$t ∘ g$ both go from the object~$A$ to the product~$∏_{\text{$u \colon J \to K$ in~$\scat{I}$}} D(K)$.
+These two morphisms hence coincide if and only if they coincide in each component, i.e., if and only if
+\begin{equation}
+	\label{equality in each coordinate for construction of limits}
+	\pr_u ∘ s ∘ g = \pr_u ∘ t ∘ g
 \end{equation}
-To better understand the right-hand side of this bijection, let~$g$ be a morphism from~$A$ to~$∏_{I ∈ \Ob(\scat{I})} D(I)$, with components~$g_I$ where~$I$ ranges through~$\Ob(\scat{I})$.
-For every morphism
+for every morphism~$u$ in~$\scat{I}$.
+The morphisms~$s$ and~$t$ are defined via the formulae
 \[
-	u \colon J \to K
+	\pr_u ∘ s = D(u) ∘ \pr_J
+	\quad\text{and}\quad
+	\pr_u ∘ t = \pr_K
 \]
-in~$\scat{I}$, the~\nth{$u$} component of the composite~$s ∘ g$ is given by~$D(u) ∘ \pr_J ∘ g = D(u) ∘ g_J$, whereas the~\nth{$u$} component of the composite~$t ∘ g$ is given by~$\pr_K ∘ g = g_K$.
-We therefore find that~$s ∘ g = t ∘ g$ if and only if~$D(u) ∘ g_J = g_K$ for every morphism~$u \colon J \to K$ in~$\scat{I}$.
-It follows that the bijection
+for every morphism~$u \colon J \to K$ in~$\scat{I}$.
+It follows that~\eqref{equality in each coordinate for construction of limits} can be rewritten as
 \[
-	\cat{A}\Biggl( A, \prod_{I ∈ \Ob(\scat{I})} D(I) \Biggr)
-	\to
-	\prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I)) \,,
-	\quad
-	g \mapsto (\pr_I ∘ g)_I
+	D(u) ∘ \pr_J ∘ g = \pr_K ∘ g \,,
 \]
-restricts to a bijection between the right-hand side of~\eqref{first step in general constructions of limits} and
+and therefore as
+\[
+	D(u) ∘ g_J = g_K
+\]
+for every morphism~$u \colon J \to K$ in~$\scat{I}$.
+
+We find from our discussion that~$s ∘ g = t ∘ g$ if and only if~$D(u) ∘ g_J = g_K$ for every morphism~$u \colon J \to K$ in~$\scat{I}$.
+In other words:
+the bijection~\eqref{map into product for construction of limits} restricts to a bijection between the right-hand side of~\eqref{first step in general constructions of limits} and
 \[
 	\left\{
-		(g_I)_I ∈ \prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
+		(g_I)_I ∈ ∏_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
 	\suchthat*
 		\begin{tabular}{@{}l@{}}
 			$D(u) ∘ g_J = g_K$ for every \\
@@ -46,12 +78,12 @@ restricts to a bijection between the right-hand side of~\eqref{first step in gen
 		\end{tabular}
 	\right\} \,.
 \]
-By combining these bijections, we arrive at a bijection
+By combining these bijections, we arrive at the bijection
 \begin{align*}
 	\cat{A}(A, L)
 	&\to
 	\left\{
-		(g_I)_I ∈ \prod_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
+		(g_I)_I ∈ ∏_{I ∈ \Ob(\scat{I})} \cat{A}(A, D(I))
 	\suchthat*
 		\begin{tabular}{@{}l@{}}
 			$D(u) ∘ g_J = g_K$ for every \\
@@ -74,8 +106,8 @@ This bijection encapsulates that the object~$L$ together with the given family o
 That~$\cat{A}$ admits both binary products and a terminal object means precisely that~$\cat{A}$ admits all finite products.
 We can therefore form for every finite category~$\scat{I}$ the products
 \[
-	\prod_{I ∈ \Ob(\scat{I})} D(I)
+	∏_{I ∈ \Ob(\scat{I})} D(I)
 	\quad\text{and}\quad
-	\prod_{\text{$u \colon J \to K$ in~$\scat{I}$}} D(K) \,.
+	∏_{\text{$u \colon J \to K$ in~$\scat{I}$}} D(K) \,.
 \]
 The general construction of limits from part~(a) of this exercise can therefore be used without change.
