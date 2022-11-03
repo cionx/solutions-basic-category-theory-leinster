@@ -4,107 +4,102 @@
 
 \subsubsection{}
 
-An object~$G$ of the category~$[\cat{B}, \cat{C}]$ is a functor from~$\cat{B}$ to~$\cat{C}$.
-The functor~$J ∘ (\ph)$ assigns to it the composite functor~$J G$, which is an object of~$[\cat{B}, \cat{D}]$.
-Any morphism~$α$ in~$[\cat{B}, \cat{C}]$ is of the form
-\[
-	α \colon G \to H \,,
-\]
-for some objects~$G$ and~$H$ of~$[\cat{B}, \cat{C}]$.
-This then means that~$α$ is a natural transformation from~$G$ to~$H$.
-The functor~$J ∘ (\ph)$ assigns to it the natural transformation~$J α$ from~$J G$ to~$J H$.
+We first show that the functor~$J ∘ (\ph)$ is faithful if the original functor~$J$ is faithful.
+Afterwards, we show that~$J ∘ (\ph)$ is full and faithful if the original functor~$J$ is full and faithful.
 
-Suppose fist the functor~$J$ is faithful, and let~$α$ and~$β$ be two parallel morphisms in~$[\cat{B}, \cat{C}]$ that have the same image under~$J ∘ (\ph)$.
-In other words,~$α$ and~$β$ are two natural transformations of the form
+Suppose first the functor~$J$ is faithful, and let~$α$ and~$α'$ be two parallel morphisms in~$[\cat{B}, \cat{C}]$ that have the same image under~$J ∘ (\ph)$.
+In other words,~$α$ and~$α'$ are two natural transformations of the form
 \[
-	α, β \colon G \To H
+	α, α' \colon G \To H
 \]
-for two functors~$G$ and~$H$ from~$\cat{B}$ to~$\cat{C}$, and we have~$J α = J β$.
+for two functors~$G$ and~$H$ from~$\cat{B}$ to~$\cat{C}$, and we have~$J α = J α'$.
 This means that for every object~$B$ of~$\cat{B}$, we have the equalities
 \[
 	J( α_B )
 	=
 	(J α)_B
 	=
-	(J β)_B
+	(J α')_B
 	=
-	J( β_B ) \,.
+	J( α'_B ) \,.
 \]
-It follows that~$α_B = β_B$ for every object~$B$ of~$\cat{B}$ because the functor~$J$ is faithful, and therefore~$α = β$.
+It follows that~$α_B = α'_B$ for every object~$B$ of~$\cat{B}$ because the functor~$J$ is faithful.
+Therefore,~$α = α'$.
 This shows that the induced functor~$J ∘ (\ph)$ is again faithful.
 
-Suppose now that the functor~$J$ is fully faithful.
+Suppose now that the functor~$J$ is both full and faithful.
 Let~$G$ and~$H$ be two objects of~$[\cat{B}, \cat{C}]$, i.e., functors from~$\cat{B}$ to~$\cat{C}$, and let~$β$ be a natural transformation from the resulting functor~$J G$ to the resulting functor~$J H$.
 We claim that there exists a natural transformation~$α$ from~$G$ to~$H$ with~$β = J α$.
 (This natural transformation is then unique since~$J$ is faithful, as seen above.)
 
 For every object~$B$ of~$\cat{B}$, the component~$β_B$ is a morphism from~$J G(B)$ to~$J H(B)$.
-There exists a unique morphism~$α_B$ from~$G(B)$ to~$H(B)$ with~$β_B = J(α_B)$ because the functor~$J$ is fully faithful.
-These morphisms assemble into a transformation~$α$ from~$G$ to~$H$.
-We need to show that this transformation~$α$ is natural.
+There hence exists a unique morphism~$α_B$ from~$G(B)$ to~$H(B)$ with~$β_B = J(α_B)$ because the functor~$J$ is full and faithful.
+These morphisms~$α_B$, where~$B$ ranges through the objects of~$\cat{B}$, assemble into a transformation~$α$ from~$G$ to~$H$.
+
+We need to show that the transformation~$α$ is natural.
 We hence need to show that for every morphism
 \[
-	f \colon B \to B'
+	g \colon B \to B'
 \]
 in~$\cat{B}$ the following diagram commutes:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		G(B)
-		\arrow{r}[above]{G(f)}
+		\arrow{r}[above]{G(g)}
 		\arrow{d}[left]{α_B}
 		&
 		G(B')
 		\arrow{d}[right]{α_{B'}}
 		\\
 		H(B)
-		\arrow{r}[above]{H(f)}
+		\arrow{r}[above]{H(g)}
 		&
 		H(B')
 	\end{tikzcd}
 \]
-By applying the functor~$J$ to this diagram, we get the following diagram
+By applying the functor~$J$ to this diagram, we get the following diagram:
 \[
-	\begin{tikzcd}[sep = large]
-		J G(B)
-		\arrow{r}[above]{J G(f)}
+	\begin{tikzcd}
+		JG(B)
+		\arrow{r}[above]{JG(g)}
 		\arrow{d}[left]{β_B}
 		&
-		J G(B')
+		JG(B')
 		\arrow{d}[right]{β_{B'}}
 		\\
-		J H(B)
-		\arrow{r}[above]{J H(f)}
+		JH(B)
+		\arrow{r}[above]{JH(g)}
 		&
-		J H(B')
+		JH(B')
 	\end{tikzcd}
 \]
 We know that this second diagram commutes by the naturality of~$β$.
 It follows that the first diagram also commutes because the functor~$J$ is faithful.
 More explicitly, the commutativity of the second diagram tells us that
 \begin{align*}
-	J( α_{B'} ∘ G(f) )
+	J( α_{B'} ∘ G(g) )
 	&=
-	J( α_{B'} ) ∘ J G(f)
+	J( α_{B'} ) ∘ J G(g)
 	\\
 	&=
-	β_{B'} ∘ J G(f)
+	β_{B'} ∘ J G(g)
 	\\
 	&=
-	J H(f) ∘ β_B
+	J H(g) ∘ β_B
 	\\
 	&=
-	J H (f) ∘ J( α_B )
+	J H (g) ∘ J( α_B )
 	\\
 	&=
-	J( H(f) ∘ α_B ) \,,
+	J( H(g) ∘ α_B ) \,,
 \end{align*}
 from which it follows that
 \[
-	α_{B'} ∘ G(f) = H(f) ∘ α_B
+	α_{B'} ∘ G(g) = H(g) ∘ α_B
 \]
 because~$J$ is faithful.
 
-We have overall shows that the functor~$J$ is again fully faithful.
+We have overall shows that the functor~$J ∘ (\ph)$ is again full and faithful.
 
 %\begin{remark}
 %	The given assertian can also be proven in a less constructive way as follows.
@@ -139,7 +134,7 @@ We have overall shows that the functor~$J$ is again fully faithful.
 %	\[
 %		J_* ∘ K_* ≅ \Id_{[\cat{B}, \cat{D}]} \,.
 %	\]
-%	This shows that the functor~$J_*$ is again an equivalence of categories, and therefore in particular fully faithful.
+%	This shows that the functor~$J_*$ is again an equivalence of categories, and therefore in particular full and faithful.
 %
 %	We the general case, letet~$\cat{C}'$ be the essential image of~$J$.
 %	In other words, let~$\cat{C}'$ be the full subcategory of~$\cat{D}$ consisting of all those objects~$D$ of~$\cat{D}$ for which there exists an object~$C$ of~$\cat{C}$ with~$D ≅ J(C)$.
@@ -149,9 +144,9 @@ We have overall shows that the functor~$J$ is again fully faithful.
 %	\]
 %	where~$J'$ is the restriction of~$J$ to a functor from~$\cat{C}$ to~$\cat{C}'$, and~$I$ is the inclusion functor from~$\cat{C}'$ to~$\cat{C}$.
 %
-%	The functor~$J'$ is again fully faithful, and it is essentially surjective.
+%	The functor~$J'$ is again full and faithful, and it is essentially surjective.
 %	It is therefore an equivalence of categories.
-%	We have seen above that the induces functor~$J' ∘ (\ph)$ is therefore again fully faithful.
+%	We have seen above that the induces functor~$J' ∘ (\ph)$ is therefore again full and faithful.
 %
 %\end{remark}
 
@@ -159,7 +154,7 @@ We have overall shows that the functor~$J$ is again fully faithful.
 
 \subsubsection{}
 
-The induced functor~$J ∘ (\ph)$ from~$[\cat{B}, \cat{C}]$ to~$[\cat{B}, \cat{D}]$ is again fully faithful, whence the assertion follows from Lemma~4.3.8.
+The induced functor~$J ∘ (\ph)$ from~$[\cat{B}, \cat{C}]$ to~$[\cat{B}, \cat{D}]$ is again full and faithful, whence the assertion follows from Lemma~4.3.8.
 
 
 
@@ -179,7 +174,7 @@ Let
 	H \colon \cat{A}^{\op} \to [\cat{A}, \Set]
 \]
 denote the contravariant Yoneda embedding of~$\cat{A}$.
-This functor~$H$ is fully faithful, and we might rephrase the natural isomorphism
+This functor~$H$ is full and faithful, and we might rephrase the natural isomorphism
 \[
 	\cat{A}(\ph, G(\ph)) ≅ \cat{A}(\ph, G'(\ph))
 \]
@@ -187,4 +182,5 @@ as the isomorphism
 \[
 	H ∘ G ≅ H ∘ G' \,.
 \]
-It follows from part~(b) of this exercise that already~$G ≅ G'$ because~$H$ is fully faithful.
+
+It follows from part~(b) of this exercise that~$G ≅ G'$ because the Yoneda embedding~$H$ is full and faithful.
