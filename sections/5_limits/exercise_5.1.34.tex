@@ -1,20 +1,18 @@
 \subsection{}
 
 If~$(E, i)$ is an equalizer of~$f$ and~$g$, then the given square diagram is not necessarily a pullback diagram.
-To see this, we consider in the category~$\Set$ the two maps
+To see this, we consider in the category~$\Set$ the map~$\id_ℤ$ and the map
 \[
-	\id_{ℤ}, s \colon ℤ \to ℤ
+	s
+	\colon
+	ℤ \to ℤ \,,
+	\quad
+	x \mapsto -x \,.
 \]
-given by
-\[
-	s(x) = -x
-	\qquad
-	\text{for every~$x ∈ ℤ$.}
-\]
-The equalizer of~$\id_{ℤ}$ and~$ℤ$ is given by the set~$\{ 0 \}$ together with the inclusion map~$i$ from~$\{ 0 \}$ to~$ℤ$.
+The equalizer of the two maps~$\id_ℤ$ and~$s$ is given by the set~$\{ 0 \}$ together with the inclusion map~$i$ from~$\{ 0 \}$ to~$ℤ$.
 But the diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\{ 0 \}
 		\arrow{r}[above]{i}
 		\arrow{d}[left]{i}
@@ -28,10 +26,10 @@ But the diagram
 		ℤ
 	\end{tikzcd}
 \]
-is not a pullback diagram:
-the diagram
+is not a pullback diagram.
+To see this, we observe that the diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		ℤ
 		\arrow[bend left = 20]{drr}[above right]{s}
 		\arrow[bend right = 30]{ddr}[below left]{\id_ℤ}
@@ -57,11 +55,11 @@ the diagram
 		ℤ
 	\end{tikzcd}
 \]
-commutes, but the unique morphism from~$ℤ$ to~$\{ 0 \}$ destroys this commutativity.
+commutes, but that adding the unique morphism from~$ℤ$ to~$\{ 0 \}$ destroys this commutativity.
 
-Suppose now that the diagram
+Suppose conversely that the diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		E
 		\arrow{r}[above]{i}
 		\arrow{d}[left]{i}
