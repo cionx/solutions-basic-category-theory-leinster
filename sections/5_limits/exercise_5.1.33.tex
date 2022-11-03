@@ -1,6 +1,6 @@
 \subsection{}
 
-Instead of the direct sum~$X_1 ⊕ X_2$, we use the product~$X_1 × X_2$.
+Instead of the direct sum~$X_1 ⊕ X_2$ we are going use the product~$X_1 × X_2$.
 Let
 \[
 	p_1 \colon X_1 × X_2 \to X_1 \,,
@@ -9,40 +9,58 @@ Let
 \]
 be the canonical projection maps.
 Let~$Y$ be another vector space.
-We know that~$p_1$ and~$p_2$ induce a bijection
+We know that the two maps~$p_1$ and~$p_2$ induce a bijection
 \begin{align*}
 	\{ \text{functions~$\textstyle Y \to X_1 × X_2$} \}
 	&\to
 	\{ \text{functions~$\textstyle Y \to X_1$} \}
 	×
-	\{ \text{functions~$\textstyle Y \to X_2$} \}
+	\{ \text{functions~$\textstyle Y \to X_2$} \} \,,
 	\\
 	f
 	&\mapsto
-	(p_1 ∘ f, p_2 ∘ f) \,,
+	(p_1 ∘ f, p_2 ∘ f) \,.
 \end{align*}
-where by \enquote{function} we mean a set-theoretic map between the respective underlying sets.
-It therefore suffices to show that a map~$f$ from~$Y$ to~$X_1 × X_2$ is linear if and only if both~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
+(By a \enquote{function} we mean a set-theoretic map between the respective underlying sets.)
+Thanks to the above bijection, it now suffices to show the following statement:
+a map~$f$ from~$Y$ to~$X_1 × X_2$ is linear if and only if both its composites~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
 
-The projection maps~$p_1$ and~$p_2$ are both linear.
-So if~$f$ is linear, then it follows that the composites~$p_1 ∘ f$ and~$p_2 ∘ f$ are again linear.
-Suppose on the other hand that both~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
-Then
-\begin{align*}
-	p_i(f(y + y'))
-	&=
-	(p_i ∘ f)(y + y')
-	\\
-	&=
-	(p_i ∘ f)(y) + (p_i ∘ f)(y')
-	\\
-	&=
-	p_i(f(y)) + p_i(f(y'))
-	\\
-	&=
-	p_i( f(y) + f(y') )
-\end{align*}
-for both~$i = 1, 2$, and therefore~$f(y + y') = f(y) + f(y')$.
-This shows that the map~$f$ is additive.
-We find similarly that~$f$ is homogeneous.
-This then shows that~$f$ is linear.
+Suppose first that the map~$f$ is linear.
+We observe that the projection maps~$p_1$ and~$p_2$ are both linear.
+It follows that the composites~$p_1 ∘ f$ and~$p_2 ∘ f$ are again linear.
+
+Suppose conversely that both~$p_1 ∘ f$ and~$p_2 ∘ f$ are linear.
+To show that the map~$f$ is linear, we need to check that it is both additive and homogeneous.
+\begin{itemize}
+
+	\item
+		We have for every two elements~$y$ and~$y'$ of~$Y$ the chain of equalities
+		\begin{align*}
+			p_i(f(y + y'))
+			&=
+			(p_i ∘ f)(y + y')
+			\\
+			&=
+			(p_i ∘ f)(y) + (p_i ∘ f)(y')
+			\\
+			&=
+			p_i(f(y)) + p_i(f(y'))
+			\\
+			&=
+			p_i( f(y) + f(y') )
+		\end{align*}
+		for both~$i = 1$ and~$i = 2$.
+		This means that the two elements~$f(y + y')$ and~$f(y) + f(y')$ coincide in both components, and are therefore equal.
+		In other words, we find that
+		\[
+			f(y + y') = f(y) + f(y') \,.
+		\]
+		We have thus shown that the map~$f$ is additive.
+
+	\item
+		That~$f$ is homogeneous can be shown in the same way.%
+		\footnote{
+			That is, we can show that for every scalar~$λ$ and every element~$y$ of~$Y$ that~$p_i(f(λ y)) = p_i(λ f(y))$, and conclude that~$f(λ x) = λ f(y)$.
+		}
+
+\end{itemize}
