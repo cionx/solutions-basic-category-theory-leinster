@@ -9,7 +9,7 @@ We have for every morphism
 \[
 	u \colon I \to J
 \]
-in~$\scat{I}$ the equality
+in~$\scat{I}$ the equalities
 \[
 	D(u) ∘ f_I
 	=
@@ -20,17 +20,20 @@ in~$\scat{I}$ the equality
 	f_J \,.
 \]
 This means that the object~$A$ together with the family of morphisms~$(f_I)_{I ∈ \Ob(\scat{I})}$ is a cone for the diagram~$D$.
-It follows from the universal property of the limit~$L$, that there exists a unique~(!) morphism~$f$ from~$A$ to~$L$ with~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
-Both~$h$ and~$h'$ satisfy this property, whence they must be the same morphism.
+It follows from the universal property of the limit~$L$ that there exists a unique morphism~$f$ from~$A$ to~$L$ with~$p_I ∘ f = f_I$ for every object~$I$ of~$\scat{I}$.
+Both~$h$ and~$h'$ satisfy this defining property of~$f$, whence we must have~$f = h$ and~$f = h'$.
+Therefore,~$h = h'$.
 
 
 
 \subsubsection{}
 
-If~$\scat{I}$ is the discrete two-object category, then limits of shape~$\scat{I}$ are just products.
+Let now~$\scat{I}$ be the discrete two-object category.
+Limits of shape~$\scat{I}$ are just products.
 A morphism from~$A = 1$ to another set~$X$ is the same as an element of~$X$.
 We arrive therefore at the following result:
 \begin{quote}
+	\itshape
 	Let~$D_1$ and~$D_2$ be two sets, and let
 	\[
 		p_1 \colon D_1 × D_2 \to D_1 \,,
@@ -38,5 +41,11 @@ We arrive therefore at the following result:
 		p_2 \colon D_2 × D_2 \to D_2
 	\]
 	denote the canonical projections.
-	Two elements~$x$ and~$y$ of the product~$D_1 × D_2$ are equal if and only if~$p_1(x) = p_1(y)$ and~$p_2(x) = p_2(y)$, i.e., if and only if they have the same components.
+	Two elements~$x$ and~$y$ of the product~$D_1 × D_2$ are equal if and only if~
+	\[
+		p_1(x) = p_1(y)
+		\quad\text{and}\quad
+		p_2(x) = p_2(y) \,.
+	\]
+	In other words, two elements of~$D_1 × D_2$ are equal if and only if they are equal in both coordinates.
 \end{quote}
