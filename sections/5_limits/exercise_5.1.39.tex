@@ -1,10 +1,11 @@
 \subsection{}
 
-Let~$\cat{A}$ be a category that admits both pullbacks and a terminal object, which we will denote by~$\ast$.
+Let~$\cat{A}$ be a category that admits both pullbacks and a terminal object.
+We denote this terminal object by~$\ast$.
 
 We observe that~$\cat{A}$ admits binary products, since for any two objects~$X$ and~$Y$ of~$A$, a product of~$X$ and~$Y$ is the same as a pullback of the following diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}
 		{}
 		&
 		X
@@ -18,6 +19,9 @@ We observe that~$\cat{A}$ admits binary products, since for any two objects~$X$ 
 \]
 It follows that~$\cat{A}$ admits all finite products, since it admits binary products and a terminal object.
 
+Next, we will show that the category~$\cat{A}$ admits equalizers.
+To this end, we make the following observation:
+
 \begin{proposition*}
 	\label{equalizers via pushouts}
 	Let~$\cat{A}$ be a category admitting binary products, and let
@@ -27,7 +31,7 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 	be two parallel morphisms in~$\cat{A}$.
 	An object~$E$ of~$\cat{A}$ together with a morphism~$i$ from~$E$ to~$X$ is an equalizer of~$f$ and~$g$ if and only if the following diagram is a pullback diagram:
 	\[
-		\begin{tikzcd}[sep = large]
+		\begin{tikzcd}
 			E
 			\arrow{r}[above]{i}
 			\arrow{d}[left]{i}
@@ -56,7 +60,8 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and all morphisms \\
 				$r, s \colon A \to X$ with~$(1_X, f) ∘ r = (1_X, g) ∘ s$, \\
-				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+				there exists a unique morphism~$h \colon A \to E$ \\
+				with~$r = i ∘ h$ and~$s = i ∘ h$
 			\end{tabular}
 		\right.
 		\\[0.5em]
@@ -65,7 +70,8 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and all morphisms \\
 				$r, s \colon A \to X$ with~$(r, f ∘ r) = (s, g ∘ s)$, \\
-				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+				there exists a unique morphism~$h \colon A \to E$ \\
+				with~$r = i ∘ h$ and~$s = i ∘ h$
 			\end{tabular}
 		\right.
 		\\[0.5em]
@@ -74,7 +80,8 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and all morphisms \\
 				$r, s \colon A \to X$ with~$r = s$ and~$f ∘ r = g ∘ s$, \\
-				there exists a unique morphism~$h \colon A \to E$ with~$r = i ∘ h$ and~$s = i ∘ h$
+				there exists a unique morphism~$h \colon A \to E$ \\
+				with~$r = i ∘ h$ and~$s = i ∘ h$
 			\end{tabular}
 		\right.
 		\\[0.5em]
@@ -83,7 +90,8 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and every morphism \\
 				$t \colon A \to X$ with~$f ∘ t = g ∘ t$, \\
-				there exists a unique morphism~$h \colon A \to E$ with~$t = i ∘ h$
+				there exists a unique morphism~$h \colon A \to E$ \\
+				with~$t = i ∘ h$
 			\end{tabular}
 		\right.
 		\\[0.5em]
@@ -96,4 +104,4 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 
 It follows from the above proposition that the category~$\cat{A}$ admits equalizers, since it admits both binary products and pullbacks.
 We have overall seen that~$\cat{A}$ admits finite products and equalizers.
-It follows from Proposition 5.1.26,~(b) that~$\cat{A}$ admits all finite limits.
+It follows from Proposition~5.1.26, part~(b) that~$\cat{A}$ admits all finite limits.
