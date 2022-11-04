@@ -10,19 +10,30 @@ The coequalizer of~$f$ and~$\id_X$ is given by the quotient set~$X / {∼}$, whe
 	\qquad
 	\text{for every~$x ∈ X$} \,.
 \]
-This equivalence relation can also be described more explicitly:
-two elements~$x$ and~$y$ are equivalent with respect to~$∼$ if and only if they are contained in the same~$f$\nobreakdash-orbit, i.e., if and only if there exist natural exponents~$n$ and~$m$ with
+This equivalence relation can also be described more explicitly as follows:
+two elements~$x$ and~$y$ of~$X$ are equivalent with respect to~$∼$ if and only if they are contained in the same~$f$\nobreakdash-orbit, i.e., if and only if there exist natural exponents~$n$ and~$m$ with
 \[
 	f^n(x) = f^m(y) \,.
 \]
-We note that if~$f$ is bijective, then the elements of~$X$ that are equivalent to a given element~$x$ are precisely those of the form~$f^n(x)$ with~$n ∈ ℤ$.
+
+Alternatively, let~$Γ$ be the following directed graph:
+the vertices of~$Γ$ are the elements of~$X$, and there exists an edge from~$x$ to~$y$ in~$Γ$ if and only if~$y = f(x)$.
+Two elements of~$X$ are equivalent with respect to~$∼$ if and only if they lie in the same undirected connected component of~$Γ$.
+The set~$X / {∼}$ can be identified with the set of undirected connected components of~$Γ$.
+
+We want to give special attention to the case that~$f$ is bijective:
+in this case, the elements of~$X$ that are equivalent to a specific element~$x$ are precisely those of the form~$f^n(x)$ with~$n ∈ ℤ$.
 
 
 
 \subsubsection{}
 
-The description of the coequalizer stays the same in terms of the underlying sets;
-its topology is the quotient topology induces from~$X$.
+Let~$X$ be a topological space and let
+\[
+	f \colon X \to X
+\]
+be a continuous map.
+To construct the coequalizer of~$f$ we take the construction from part~(a) of this exercise and endow the quotient~$X / {∼}$ with the quotient topology induced from~$X$.
 
 For~$X = \Sphere^1$ we may consider the rotation map
 \[
@@ -33,5 +44,5 @@ For~$X = \Sphere^1$ we may consider the rotation map
 	x \mapsto \eul^{2 \pi \img α} x
 \]
 for some irrational number~$α$.
-The orbit of any element of~$X$ is a countable, dense subset of~$\Sphere^1$.
-The quotient space~$X / {∼}$ is therefore an uncountable indiscrete topological space.
+For every element of~$X$, its orbit under~$f$ is a countable, dense subset of~$\Sphere^1$.
+The quotient space~$X / {∼}$ is therefore an uncountable, indiscrete topological space.
