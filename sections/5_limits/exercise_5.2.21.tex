@@ -2,20 +2,47 @@
 
 We denote the ambient category by~$\cat{A}$.
 
+\begin{proposition}
+	Let~$\cat{A}$ be a category, let
+	\[
+		s, t \colon A \to B
+	\]
+	be two parallel morphisms in~$\cat{A}$ and let~$(E, i)$ be an equalizer of~$s$ and~$t$.
+	Then~$i$ is a monomorphism.
+\end{proposition}
+
+\begin{proof}
+	It follows from Exercise~5.1.36, part~(a) that a morphism~$f$ in~$\cat{A}$ with codomain~$A$ is uniquely determined by its composite~$i ∘ f$.
+\end{proof}
+
 If~$s = t$, then~$X$ together with the morphism~$\id_X$ is an equalizer of~$s$ and~$t$, which shows in particular that an equalizer of~$s$ and~$t$ exists.
 We also have for every equalizer~$(E, i)$ of~$s$ and~$t$ the chain of equivalences
-\begin{align*}
+\begin{align}
 	{}&
-	s = t
+	\text{$i$ is an isomorphism}
+	\notag
 	\\
+	\iff{}&
+	\text{$i_* \colon \cat{A}(\ph, E) \to \cat{A}(\ph, X)$ is a natural isomorphism}
+	\notag
+	\\[0.3em]
 	\iff{}&
 	\left\lbrace
 		\begin{tabular}{l@{}}
-			for every object~$A$ of~$\cat{A}$ and \\
-			every morphism~$f \colon A \to X$, \\
-			we have~$s ∘ f = t ∘ f$
+			for every object~$A$ of~$\cat{A}$, \\
+			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is bijective
 		\end{tabular}
 	\right.
+	\notag
+	\\[0.3em]
+	\iff{}&
+	\left\lbrace
+		\begin{tabular}{l@{}}
+			for every object~$A$ of~$\cat{A}$, \\
+			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is surjective
+		\end{tabular}
+	\right.
+	\label{bijective equivalent to surjective}
 	\\[0.3em]
 	\iff{}&
 	\left\lbrace
@@ -26,29 +53,24 @@ We also have for every equalizer~$(E, i)$ of~$s$ and~$t$ the chain of equivalenc
 			with~$f = i ∘ g$
 		\end{tabular}
 	\right.
+	\notag
 	\\[0.3em]
 	\iff{}&
 	\left\lbrace
 		\begin{tabular}{l@{}}
-			for every object~$A$ of~$\cat{A}$, \\
-			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is surjective
+			for every object~$A$ of~$\cat{A}$ and \\
+			every morphism~$f \colon A \to X$, \\
+			we have~$s ∘ f = t ∘ f$
 		\end{tabular}
 	\right.
-	\\[0.3em]
-	\iff{}&
-	\left\lbrace
-		\begin{tabular}{l@{}}
-			for every object~$A$ of~$\cat{A}$, \\
-			the map~$i_* \colon \cat{A}(A, E) \to \cat{A}(A, X)$ is bijective
-		\end{tabular}
-	\right.
-	\\[0.3em]
-	\iff{}&
-	\text{$i_* \colon \cat{A}(\ph, E) \to \cat{A}(\ph, X)$ is a natural isomorphism}
+	\label{technical step with bad label}
 	\\
 	\iff{}&
-	\text{$i$ is an isomorphism} \,.
-\end{align*}
+	s = t \,.
+	\notag
+\end{align}
+For the equivalence~\eqref{bijective equivalent to surjective} we use that the equalizer~$i$ is a monomorphism.
+For the equivalence~\eqref{technical step with bad label} we use that, according to the universal property of the equalizer~$i$, a morphism~$f$ factors through~$i$ if and only if~$s ∘ f = t ∘ f$.
 
 This shows the statement about equalizers.
 The statement about coequalizers follows from the following chain of equivalences:
