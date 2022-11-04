@@ -1,26 +1,34 @@
 \subsection{}
 
+We denote objects of~$\Monic(A)$ as pairs~$(X, m)$ consisting of an object~$X$ of~$\cat{A}$ and a morphism~$m$ from~$X$ to~$A$.
+We denote the class of subobjects of~$A$ by~$\Sub(A)$.
+
 
 
 \subsubsection{}
 
-We may regard the power set of~$A$ as a partially ordered set via inclusion of subsets, and therefore as a category.
-For every object~$m$ of~$\Monic(A)$, let $I(m)$ denote the image of~$m$ of~$A$.
+Every subset~$A'$ of~$A$ results in an object of~$\Monic(A)$, namely~$(A', i)$ where~$i$ denotes the inclusion map from~$A'$ to~$A'$.
+Conversely, we can consider for every object~$(X, m)$ of~$\Monic(A)$ the image of the map~$m$, which is a subset of~$A'$.
+We have thus found a surjective map
+\[
+	I
+	\colon
+	\Ob(\Monic(A)) \to \Power(A) \,,
+\]
+assigning to each object~$(X, m)$ of~$\Monic(A)$ the image of the map~$m$.
+We shall check in the following that the map~$I$ descends to a bijection between~$\Sub(A)$ and~$\Power(A)$.
+More explicitly, we need to show that two objects of~$\Monic(A)$ are isomorphic if and only if they have the same image under~$I$.
+
+Let us first show that isomorphic objects of~$\Monic(A)$ have the same image under~$I$.
 A morphism
 \[
-	i \colon m \to m'
+	f \colon (X, m) \to (X', m')
 \]
-in~$\Monic(A)$ between objects
+in~$\Monic(A)$ amounts to the following commutative diagram:
 \[
-	m \colon X \to A \,,
-	\quad
-	m' \colon X' \to A
-\]
-amounts to the following commutative diagram:
-\[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		X
-		\arrow{rr}[above]{i}
+		\arrow{rr}[above]{f}
 		\arrow{dr}[below left]{m}
 		&
 		{}
@@ -35,33 +43,29 @@ amounts to the following commutative diagram:
 		{}
 	\end{tikzcd}
 \]
-It follows from the commutativity of this diagram that the image of~$m$ is contained in the image of~$m'$, i.e., that~$I(m) ⊆ I(m')$.
-It further follows that the assignment~$I$ extends to a functor from~$\Monic(A)$ to~$\Power(A)$.
-This implies that isomorphic objects of~$\Monic(A)$ have the same image in~$A$.
+It follows from the commutativity of this diagram that the image of~$m$ is contained in the image of~$m'$, so that~$I((X, m)) ⊆ I((X', m'))$.
+If we view the partially ordered set~$\Power(A)$ as a category, then this means that the assignment~$I$ extends to a functor from~$\Monic(A)$ to~$\Power(A)$.
+This entails that isomorphic objects of~$\Monic(A)$ have the same image under~$I$.
 
-Let now conversely~$m$ and~$m'$ be two objects of~$\Monic(A)$ with~$I(m) = I(m')$.
-We denote this subset of~$A$ by~$A'$, and the inclusion map from~$A'$ to~$A$ by~$i$.
-The set~$A'$ is the image of both
-\[
-	m \colon X \to A
-	\quad\text{and}\quad
-	m' \colon X' \to A' \,,
-\]
-whence both of these maps factor through~$i$.
-There hence exist maps
+Let us now conversely show that objects of~$\Monic(A)$ are isomorphic if they have the same image under~$I$.
+
+Let~$(X, m)$ and~$(X', m')$ be two objects of~$\Monic(A)$ that have the same image under~$I$.
+This means that the two maps~$m$ and~$m'$ have the same image in~$A$.
+Let~$i$ be the inclusion map from~$A'$ to~$A$.
+Both~$m$ and~$m'$ factor through~$i$, in the sense that there exist maps
 \[
 	n \colon X \to A' \,,
 	\quad
 	n' \colon X \to A'
 \]
 with~$m = i ∘ n$ and~$m' = i ∘ n'$.
-These maps~$n$ and~$n'$ are again injective, but they are also surjective by choice of~$A'$.
-They are hence bijective, and therefore isomorphisms in~$\Set$.
+The maps~$n$ and~$n'$ are injective because~$m$ and~$m'$ are injective, but they are also surjective by choice of~$A'$.
+These maps are hence bijective, and thus invertible.
 
-Let~$f$ be the composite~$(n')^{-1} ∘ n$.
-This is a map from~$X$ to~$X'$ that makes the following diagram commute:
+Let~$f$ be the composite~$(n')^{-1} ∘ n$, which is a map from~$X$ to~$X'$.
+We have the following commutative diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		X
 		\arrow{rr}[above]{f}
 		\arrow{dr}[below left]{n}
@@ -87,30 +91,98 @@ This is a map from~$X$ to~$X'$ that makes the following diagram commute:
 		{}
 	\end{tikzcd}
 \]
-The commutativity of the outer triangle tells us that~$f$ is a morphism from~$m$ to~$m'$ in~$\Monic(A)$.
-The map~$f$ is a bijection since it is a composite of bijections, with its inverse given by~$f^{-1} = n^{-1} ∘ n'$.
-We find in the same way as for~$f$ that~$f^{-1}$ is a morphism from~$X'$ to~$X$ in~$\Monic(A)$.
-The maps~$f$ and~$f'$ mutually inverse as morphisms of~$\Set$, and therefore also mutually inverse as morphisms of~$\Monic(A)$.
-This shows that~$m$ and~$m'$ are isomorphic as objects of~$\Monic(A)$.
+The commutativity of the outer part of this diagram tells us that~$f$ is a morphism from~$(X, m)$ to~$(X', m')$ in~$\Monic(A)$.
+The map~$f$ is bijective since it is a composite of two bijections.
+In other words,~$f$ is an isomorphism in~$\Set$.
+Let us observe that~$f$ is therefore also an isomorphism in~$\Monic(A)$.
 
-We have now seen that the functor~$I$ results in an injective map from the class of subobjects of~$A$ to the power set of~$A$.
-Conversely, every subset~$A'$ of~$A$ stems from a subobjet of~$A$, namely from the inclusion map
-\[
-	A' \to A
-\]
-regarded as a subobject of~$A$.
+\begin{proposition}
+	Let~$\cat{A}$ be a category and let~$A$ be an object of~$\cat{A}$.
+	Let~$(X, m)$ and~$(X', m')$ be two objects of~$\Monic(A)$ and let~$f$ be a morphism from~$(X, m)$ to~$(X', m')$.
+	Suppose that~$f$ is an isomorphism in~$\cat{A}$ with inverse~$f^{-1}$.
+	\begin{enumerate}
+
+		\item
+			The inverse~$f^{-1}$ is a morphism from~$(X', m')$ to~$(X, m)$ in~$\Monic(A)$.
+
+		\item
+			\label{again mutually inverse in monic category}
+			The two morphisms~$f$ and~$f^{-1}$ are mutually inverse in~$\Monic(A)$.
+
+		\item
+			The morphism~$f$ is also an isomorphism in~$\Monic(A)$.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	That~$f$ is a morphism from~$(X, m)$ to~$(X', m')$ tells us that the following diagram commutes:
+	\[
+		\begin{tikzcd}[column sep = normal]
+			X
+			\arrow{rr}[above]{f}
+			\arrow{dr}[below left]{m}
+			&
+			{}
+			&
+			X'
+			\arrow{dl}[below right]{m'}
+			\\
+			{}
+			&
+			A
+			&
+			{}
+		\end{tikzcd}
+	\]
+	\begin{enumerate}
+
+		\item
+			The commutativity of the above diagram gives us the equality~$m = m' ∘ f$.
+			Rearranging this equality leads to~$m ∘ f^{-1} = m'$, which tells us that~$f^{-1}$ is a morphism from~$(X', m')$ to~$(X, m)$.
+
+		\item
+			We have in~$\cat{A}$ the identities
+			\begin{equation}
+				\label{inverse in the original category}
+				f ∘ f^{-1} = \id_{X'} \,,
+				\quad
+				f^{-1} ∘ f = \id_X \,.
+			\end{equation}
+			The composition of morphisms in~$\Monic(A)$ is given by the composition of morphisms in~$\cat{A}$, and we have~$\id_X = \id_{(X, m)}$ and~$\id_{X'} = \id_{(X', m')}$.
+			We can therefore express the identities~\eqref{inverse in the original category} in~$\cat{A}$ as the identities
+			\[
+				f ∘ f^{-1} = \id_{(X', m')} \,,
+				\quad
+				f^{-1} ∘ f = \id_{(X, m)}
+			\]
+			in~$\Monic(A)$.
+			This tells us that the morphisms~$f$ and~$f^{-1}$ are also mutually inverse in~$\Monic(A)$.
+
+		\item
+			This is a direct consequence of part~\ref{again mutually inverse in monic category}.
+		\qedhere
+
+	\end{enumerate}
+\end{proof}
+
+We have seen that the morphism~$f$ from~$(X, m)$ to~$(X', m')$ is an isomorphism in~$\cat{A}$, and therefore also a morphism in~$\Monic(A)$.
+The existence of this isomorphism shows that the objects~$(X, m)$ and~$(X', m')$ are isomorphic.
 
 
 
 \subsubsection{}
 
-Subobjects in~$\Grp$ are subgroups, subobjects in~$\Ring$ are subrings and subobjects in~$\Vect{\kf}$ are linear subspaces.
-(This can be proven with the same argumentation as for~$\Set$ in part~(a).)
+Subobjects in~$\Grp$ are subgroups, subobjects in~$\Ring$ are subrings and subobjects in~$\Vect{𝕜}$ are linear subspaces.
+(This can be proven with the same argumentation as for~$\Set$ in part~(a) of this exercise.)
 
 
 
 \subsubsection{}
 
-We know that the monics in~$\Top$ are precisely the injective continuous maps.
-A subobject of a topological space~$X$ in the categorical sense is therefore a subset~$Y$ of~$X$ together with a topology for which the inclusion map from~$Y$ to~$X$ is continuous.
+We know that the monomorphisms in~$\Top$ are precisely those continuous maps that are injective.
+% TODO: Give a reference to where this was proven.
+A subobject of a topological space~$X$ in the categorical sense is therefore a subset~$Y$ of~$X$ together with a topology on~$Y$ for which the inclusion map from~$Y$ to~$X$ is continuous.
 In other words, the topology on~$Y$ needs to be coarser than the subspace topology induced from~$X$.
+
+We find in particular that~$X$ typically admits more subobjects than just its subspaces.
