@@ -12,9 +12,14 @@ Let
 \[
 	m \colon A \to B
 \]
-be a split monomorphism.
-This means that there exists a morphism~$e$ from~$B$ to~$A$ with~$e ∘ m = \id_A$.
-The morphism~$m$ is a monomorphism:
+be a split monomorphism in~$\cat{A}$.
+This means that there exists a morphism
+\[
+	e \colon B \to A
+\]
+such that~$e ∘ m = \id_A$.
+
+We note that the morphism~$m$ is a monomorphism:
 for every object~$X$ of~$\cat{A}$ and any two parallel morphisms
 \[
 	f, g \colon X \to A
@@ -23,11 +28,12 @@ with~$m ∘ f = m ∘ g$, we have
 \[
 	f = e ∘ m ∘ f = e ∘ m ∘ g = g \,.
 \]
-We claim that~$m$ is an equalizer of the two morphisms
+
+We show now that~$m$ is an equalizer of the two morphisms
 \[
 	m ∘ e, \id_B \colon B \to B \,.
 \]
-Indeed, we have
+We have the equalities
 \[
 	(m ∘ e) ∘ m
 	=
@@ -53,28 +59,21 @@ which shows that the diagram
 	\end{tikzcd}
 \]
 is a fork.
-This fork is universal:
-Let~$X$ be an object of~$\cat{A}$ and let~$f$ be a morphism from~$X$ to~$B$ with
+To see that this fork is universal, let~$X$ be an object of~$\cat{A}$ and let~$f$ be a morphism from~$X$ to~$B$ such that
 \[
-	(m ∘ e) ∘ f = f ∘ \id_B \,.
+	(m ∘ e) ∘ f = \id_B ∘ f \,.
 \]
 This means that~$m ∘ e ∘ f = f$.
-It follows for the composite~$g ≔ e ∘ f$, which is a morphism from~$X$ to~$B$, that
+It follows for the composite~$f' ≔ e ∘ f$, which is a morphism from~$X$ to~$A$, that
 \[
-	m ∘ g
-	=
-	m ∘ e ∘ f
-	=
-	m ∘ e ∘ m ∘ e ∘ f
-	=
-	m ∘ \id_A ∘ e ∘ f
+	m ∘ f'
 	=
 	m ∘ e ∘ f
 	=
 	f \,.
 \]
-This shows that~$f$ factors through~$m$.
-We have already shows that~$m$ is a monomorphism, whence this factorization is unique.
+This shows that the morphism~$f$ factors through~$m$.
+We have already shown that~$m$ is a monomorphism, whence this factorization is unique.
 
 \subsubsection*{regular monomorphism $\implies$ monomorphism}
 
@@ -88,26 +87,26 @@ Let~$A$ be an object of~$\cat{A}$ and let
 	f, g \colon A \to E
 \]
 be two morphisms with~$i ∘ f = i ∘ g$.
-We denote these composite(s) by~$r$.
+We denote this common composite by~$r$.
 We have
 \[
 	s ∘ r
 	=
 	s ∘ i ∘ f
 	=
-	t ∘ i ∘ f
+	t ∘ i ∘ g
 	=
 	t ∘ r \,,
 \]
 whence there exists by the universal property of the equalizer~$(E, i)$ a unique morphism~$h$ from~$A$ to~$E$ with~$r = i ∘ h$.
-Both~$f$ and~$g$ satisfy the role of~$h$, whence~$f = h = g$ by the uniqueness of~$h$.
+Both~$f$ and~$g$ satisfy the role of~$h$, whence~$h = f$ and~$h = g$ by the uniqueness of~$h$, and thus~$f = g$.
 
 
 
 \subsubsection{}
 
 The inclusion homomorphism~$m$ from~$2ℤ$ to~$ℤ$ is injective, and therefore a monomorphism in~$\Ab$.
-But it is not a monomorphism in~$\Ab$.
+But it is not a split monomorphism in~$\Ab$.
 There would otherwise exist a homomorphism~$e$ from~$ℤ$ to~$2ℤ$ with~$e ∘ m = \id_{2ℤ}$.
 This would entail for the element~$x ≔ e(1)$ that
 \[
@@ -117,9 +116,9 @@ This would entail for the element~$x ≔ e(1)$ that
 	=
 	e(2)
 	=
-	e(m(1))
+	e(m(2))
 	=
-	1 \,.
+	2 \,.
 \]
 But no element~$x$ of~$2ℤ$ has this property.
 
@@ -145,11 +144,11 @@ We already know that~$i$ is a monomorphism, and therefore injective.
 We show in the following that~$E$ carries the subspace topology induced from~$X$.
 To prove this, we show that for every topological space~$A$ and every map~$f$ from~$A$ to~$E$, the map~$f$ is continuous if and only if the composite~$i ∘ f$ is continuous.
 
-The map~$i$ is continuous (since it is a morphism in~$\Top$), so if~$f$ is continuous, then so is the composite~$i ∘ f$.
+We know that the map~$i$ is continuous (since it is a morphism in~$\Top$), so if~$f$ is continuous, then so is the composite~$i ∘ f$.
 
-Suppose conversely that the composite~$g ≔ i ∘ f$ is continuous.
-This means that~$g$ is a morphism in~$\Top$ from~$A$ to~$X$.
-It satisfies
+Suppose conversely that the composite~$i ∘ f$ is continuous.
+Let us abbreviate this composite by~$g$.
+The map~$g$ is a morphism in~$\Top$ that satisfies
 \[
 	s ∘ g
 	=
@@ -157,20 +156,20 @@ It satisfies
 	=
 	t ∘ i ∘ f
 	=
-	t ∘ g \,,
+	t ∘ g \,.
 \]
-whence there exists in~$\Top$ a unique morphism~$f'$ from~$A$ to~$E$ with~$g = i ∘ f'$.
-The two maps~$f$ and~$f'$ satisfy
+It follows from the universal property of the equalizer~$(E, i)$ that there exists a unique continuous map~$f'$ from~$A$ to~$E$ with~$g = i ∘ f'$.
+The two maps~$f$ and~$f'$ satisfy the equalities
 \[
 	i ∘ f = g = i ∘ f' \,,
 \]
-and the map~$i$ is injective.
+and we already know that~$i$ is a monomorphism.
 It follows that~$f = f'$, which tells us in particular that the map~$f$ is continuous, since~$f'$ is continuous.
 
-We have not characterized monomorphisms and regular monomorphisms in~$\Top$:
+We have not characterized monomorphisms and regular monomorphisms in~$\Top$.
 A morphism in~$\Top$ is a monomorphism if and only if it is injective.
 A monomorphism is regular if and only if the topology of its domain is the subspace topology induces from its codomain.
 
-We can regard a set~$X$ as an indiscrete topological space~$I(X)$ or as a discrete topological space~$D(X)$.
+We can regard any set~$X$ either as an indiscrete topological space~$I(X)$ or as a discrete topological space~$D(X)$.
 The identity map from~$I(X)$ to~$D(X)$ is bijective, therefore injective, and thus a monomorphism.
-But it is not a regular monomorphism as long as~$X$ contains at least two distinct elements.
+But it is not a regular monomorphism as long as~$X$ contains at least two distinct elements, because~$I(X)$ does not carry the subspace topology induced from~$D(X)$.
