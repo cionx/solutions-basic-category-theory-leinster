@@ -4,21 +4,44 @@
 
 \subsubsection{}
 
-For every morphism in~$\Set$ of the form
+\begin{recall}
+	For every map of the form
+	\[
+		e \colon A \to X \,,
+	\]
+	the equivalence relation~$∼$ on~$A$ induced by~$e$ is given by
+	\[
+		a ∼ a'
+		\iff
+		e(a) = e(a')
+		\qquad
+		\text{for all~$a, a' ∈ A$} \,.
+	\]
+\end{recall}
+
+We denote the class of quotient objects of~$A$ by~$\Quot(A)$, and the set of equivalence relations on~$A$ by~$\Equiv(A)$.
+We denote the objects of~$\Epic(A)$ as pairs~$(X, e)$, consisting of an object~$X$ and an epimorphism~$e$ from~$A$ to~$X$.
+Given such an object, we refer to the equivalence relation induces by~$e$ on~$A$ as the equivalence relation induced by~$(X, e)$.
+
+We have a map
 \[
-	e \colon A \to X \,,
+	E \colon \Ob(\Epic(A)) \to \Equiv(A)
 \]
-the equivalence relation~$∼$ on~$A$ induced by~$e$ is given by
-\[
-	a ∼ a'
-	\iff
-	e(a) = e(a') \,.
-\]
+that assigns to each object~$(X, e)$ of~$\Epic(A)$ the equivalence relation induced by~$e$.
+We shall show in the following that the map~$E$ descends to a bijection from~$\Quot(A)$ to~$\Equiv(A)$.
+For this, we need to show that the map~$E$ is surjective, and that two objects of~$\Epic(A)$ induce the same equivalence relation on~$A$ if and only if they are isomorphic.
+
+We can consider for every equivalence relation~$∼$ on~$A$ the quotient set~$A / {∼}$ and the canonical quotient map~$p$ from~$A$ to~$A / {∼}$.
+The map~$p$ is surjective, whence~$(A / {∼}, p)$ is an object of~$\Epic(A)$.
+This object induces the equivalence relation~$∼$, and is therefore a preimage for~$∼$ with respect to~$E$.
+This shows that the map~$E$ is surjective.
+
+Let us now show that isomorphic objects of~$\Epic(A)$ have the same image under~$E$.
 
 Let~$(X, e)$ and~$(X', e')$ be two objects in~$\Epic(A)$, and suppose that there exists a morphism~$f$ from~$(X, e)$ to~$(X', e')$ in~$\Epic(A)$.
-This means that~$f$ is a morphism from~$X$ to~$X'$ in~$\Set$ that makes the following diagram commute:
+This means that~$f$ is a map from~$X$ to~$X'$ that makes the following diagram commute:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		{}
 		&
 		A
@@ -43,69 +66,82 @@ It follows for any two elements~$a$ and~$a'$ of~$A$, that
 	\implies
 	e'(a) = e'(a') \,.
 \]
-It follows that two isomorphic objects of~$\Epic(A)$ induce the same equivalence relation on~$X$.
+This means that the equivalence relation induced by~$e$ implies the equivalence relation induced by~$e'$.
 
-Let
+If~$(X, e)$ and~$(X', e')$ are isomorphic, then there exist morphisms between them in both directions.
+It then follows that both~$e$ and~$e'$ induce the same equivalence relation on~$A$.
+
+Let us now show that objects of~$\Epic(A)$ that induce the same equivalence relation are already isomorphic.
+To do so, let~$(X, e)$ be an object of~$\Epic(A)$ and let~$∼$ be the equivalence relation induced by~$(X, e)$.
+Let furthermore~$p$ be the canonical quotient map from~$A$ to~$A / {∼}$.
+We show in the following that
 \[
-	e \colon A \to X
+	(X, e) ≅ (A / {∼}, p) \,.
 \]
-be an epimorphism in~$\Set$.
-This means that~$e$ is a surjective map from~$A$ to~$X$.
-It follows for the equivalence relation~$∼$ induced by~$e$ that~$e$ factors through a bijection
+This then entails that the object~$(X, e)$ is determined by the equivalence relation~$∼$ up to isomorphism.
+
+That~$(X, e)$ is an object of~$\Epic(A)$ means that~$X$ is a set and~$e$ is an epimorphism from~$A$ to~$X$.
+More specifically,~$e$ is an epimorphism in~$\Set$, and thus a surjective map.
+It follows that the map~$e$ factors through a bijection
 \[
-	\induced{e}
+	f
 	\colon
 	A / {∼} \to X \,,
 	\quad
 	\class{a} \mapsto e(a) \,.
 \]
-This induces bijection makes the diagram
+This induced bijection makes the diagram
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		{}
 		&
 		A
-		\arrow{dl}[above left]{p_{∼}}
+		\arrow{dl}[above left]{p}
 		\arrow{dr}[above right]{e}
 		&
 		{}
 		\\
 		A / {∼}
-		\arrow{rr}[above]{\induced{e}}
+		\arrow{rr}[above]{f}
 		&
 		{}
 		&
 		X
 	\end{tikzcd}
 \]
-commute, where~$p_{∼}$ denotes the canonical quotient map from~$A$ to~$A / {∼}$.
-The commutativity of this diagram means that~$\induced{e}$ is a morphism from~$(A / {∼}, p_{∼})$ to~$(X, e)$ in~$\Epic(A)$.
-It follows that the inverse map to~$\induced{e}$ is a morphism from~$(X, e)$ to~$(A / {∼}, p_{∼})$ in~$\Epic(A)$, whence it further follows that~$\induced{e}$ is an isomorphism in~$\Epic(A)$.
+commute, which tells us that~$f$ is a morphism from~$(A / {∼}, p_{∼})$ to~$(X, e)$ in the category~$\Epic(A)$.
 
-We have now seen that every object of~$\Epic(A)$ is isomorphic to an object of the form~$(A / {∼}, p_{∼})$ where~$∼$ is some equivalence relation on~$A$ and~$p_{∼}$ is the canonical quotient map from~$A$ to~$A / {∼}$.
+We make the following observation:
 
-We have also seen that any two isomorphic objects of~$\Epic(A)$ induce the same equivalence relation.
-The equivalence relation induces by~$(A / {∼}, p_{∼})$ is just~$∼$ itself.
-We therefore find that the objects~$(A / {∼}, p_{∼})$, where~$∼$ ranges through the equivalence relations on~$A$, are pairwise non-isomorphic in~$\Epic(A)$.
+\begin{proposition}
+	\label{isomorphisms in epi categories}
+	Let~$\cat{A}$ be a category and let~$A$ be an object of~$\cat{A}$.
+	Let~$(X, e)$ and~$(X', e')$ be two objects of~$\Epic(A)$ and let~$f$ be a morphism from~$(X, e)$ to~$(X', e')$.
+	Suppose that~$f$ is an isomorphism in~$\cat{A}$ with inverse~$f^{-1}$.
+	\begin{enumerate}
 
-This shows altogether that these objects~$(A / {∼}, p_{∼})$ form a set of representatives for the isomorphism classes of objects of~$\Epic(A)$.
+		\item
+			The inverse~$f^{-1}$ is a morphism from~$(X', m')$ to~$(X, m)$ in~$\Epic(A)$.
+
+		\item
+			The two morphisms~$f$ and~$f^{-1}$ are mutually inverse in~$\Epic(A)$.
+
+		\item
+			The morphism~$f$ is also an isomorphism in~$\Epic(A)$.
+
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	The given \lcnamecref{isomorphisms in epi categories} is the dual of \cref{isomorphisms in mono categories}.
+\end{proof}
+
+It follows from the above \lcnamecref{isomorphisms in epi categories} that the morphism~$f$ from~$(A / {∼}, p)$ to~$(X, e)$ is an isomorphism.
+The two objects~$(A / {∼}, p)$ and~$(X, e)$ are therefore isomorphic.
 
 
 
 \subsubsection{}
 
-For every homomorphism of groups
-\[
-	e \colon G \to H \,,
-\]
-its kernel is a normal subgroup of~$G$.
-Suppose that
-\[
-	e \colon G \to H \,,
-	\quad
-	e' \colon G \to H'
-\]
-are two epimorphisms of groups and that~$f$ is a morphism from~$(H, e)$ to~$(H', e')$.
-Then~$f ∘ e = e'$ and therefore~$\ker(e) ⊆ \ker(e')$.
-We can therefore proceed in the same way as in part~(a):
-we see that a class of representatives for the isomorphism classes of~$\Epic(A)$ is given by the objects~$(G / N, p_N)$, where~$N$ ranges through the normal subgroups of~$G$ and~$p_N$ denotes the canonical quotient map from~$G$ to~$G / N$.
+Given a group~$G$ and object~$(X, e)$ of~$\Epic(G)$, the kernel of~$e$ is a normal subgroup of~$G$.
+We can adapt the argumentation from part~(a) of this exercise to show that this assignment yields a bijection between~$\Quot(G)$ and the set of normal subgroups of~$G$.
