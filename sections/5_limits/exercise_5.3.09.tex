@@ -1,16 +1,17 @@
 \subsection{}
 
 For every object~$A$ of~$\cat{A}$, the map
-\[
+\begin{align*}
 	π_{A, X, Y}
 	\colon
 	\cat{A}(A, X × Y)
-	\to
+	&\to
 	\cat{A}(A, X) × \cat{A}(A, Y) \,,
+	\\
 	h
-	\mapsto
-	(p_1^{X, Y} ∘ h, p_2^{X, Y} ∘ h)
-\]
+	&\mapsto
+	(p_1^{X, Y} ∘ h, \, p_2^{X, Y} ∘ h)
+\end{align*}
 is a bijection by the universal property of the product~$X × Y$.
 We need to show that this bijection is natural in~$A$,~$X$ and~$Y$.
 
@@ -20,7 +21,7 @@ For every morphism
 \]
 in~$\cat{A}$, the resulting diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(A, X × Y)
 		\arrow{r}[above]{π_{A, X, Y}}
 		\arrow{d}[left]{f^*}
@@ -38,13 +39,13 @@ commutes, because
 \begin{align*}
 	(f^* × f^*)( π_{A, X, Y}( h ) )
 	&=
-	(f^* × f^*)( p_1^{X, Y} ∘ h, p_2^{X, Y} ∘ h )
+	(f^* × f^*)( p_1^{X, Y} ∘ h, \; p_2^{X, Y} ∘ h )
 	\\
 	&=
-	( f^*(p_1^{X, Y} ∘ h), f^*(p_2^{X, Y} ∘ h) )
+	( f^*(p_1^{X, Y} ∘ h), \; f^*(p_2^{X, Y} ∘ h) )
 	\\
 	&=
-	( p_1^{X, Y} ∘ h ∘ f, p_2^{X, Y} ∘ h ∘ f )
+	( p_1^{X, Y} ∘ h ∘ f, \; p_2^{X, Y} ∘ h ∘ f )
 	\\
 	&=
 	π_{A', X, Y}( h ∘ f )
@@ -53,7 +54,7 @@ commutes, because
 	π_{A', X, Y}( f^*( h ) )
 \end{align*}
 for every element~$h$ of~$\cat{A}(A, X × Y)$.
-This shows the naturality of~$( π_{A, X, Y} )_{A, X, Y}$ in~$A$.
+This shows the naturality of the transformation~$( π_{A, X, Y} )_{A, X, Y}$ in~$A$.
 
 The naturality in both~$X$ and~$Y$ is equivalent to the naturality in~$(X, Y)$.
 Let therefore
@@ -63,7 +64,7 @@ Let therefore
 be a morphism in~$\cat{A} × \cat{B}$.
 The resulting diagram
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		\cat{A}(A, X × Y)
 		\arrow{r}[above]{π_{A, X, Y}}
 		\arrow{d}[left]{(f × g)_*}
@@ -81,13 +82,13 @@ commutes, because
 \begin{align*}
 	(f_* × g_*)( π_{A, X, Y}( h ) )
 	&=
-	(f_* × g_*)( p_1^{X, Y} ∘ h, p_2^{X, Y} ∘ h )
+	(f_* × g_*)( p_1^{X, Y} ∘ h, \; p_2^{X, Y} ∘ h )
 	\\
 	&=
-	( f ∘ p_1^{X, Y} ∘ h, g ∘ p_2^{X, Y} ∘ h )
+	( f ∘ p_1^{X, Y} ∘ h, \; g ∘ p_2^{X, Y} ∘ h )
 	\\
 	&=
-	( p_1^{X', Y'} ∘ (f × g) ∘ h, p_2^{X', Y'} × (f × g) ∘ h )
+	( p_1^{X', Y'} ∘ (f × g) ∘ h, \; p_2^{X', Y'} ∘ (f × g) ∘ h )
 	\\
 	&=
 	π_{A, X', Y'}( (f × g) ∘ h )
