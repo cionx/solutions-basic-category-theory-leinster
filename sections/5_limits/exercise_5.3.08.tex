@@ -1,22 +1,22 @@
 \subsection{}
 
 We denote the desired functor by~$P$.
-We need no explain the action of~$P$ on morphism and then check the functoriality of this action.
+We need no define the action of~$P$ on morphism and then check the functoriality of this action.
 
 Let
 \[
 	(f, g) \colon (X, Y) \to (X', Y')
 \]
 be a morphism in~$\cat{A} × \cat{A}$.
-There exists by the universal property of the product a unique morphism~$f × g$ from~$X × Y$ to~$X' × Y'$ that makes the following diagram commute:
+There exists by the universal property of the product~$X' × Y'$ a unique morphism~$f × g$ from~$X × Y$ to~$X' × Y'$ that makes the following diagram commute:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		{}
 		&
 		X × Y
 		\arrow[dashed]{dd}[right]{f × g}
 		\arrow{dl}[above left]{p_1^{X, Y}}
-		\arrow{dr}[above right]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_2^{X, Y}}
 		&
 		{}
 		\\
@@ -47,13 +47,13 @@ We let~$P(f, g)$ be this morphism~$f × g$.
 
 We have for every object~$(X, Y)$ of~$\cat{A} × \cat{A}$ the following commutative diagram:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		{}
 		&
 		X × Y
 		\arrow{dd}[right]{\id_X × \id_Y}
 		\arrow{dl}[above left]{p_1^{X, Y}}
-		\arrow{dr}[above right]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_2^{X, Y}}
 		&
 		{}
 		\\
@@ -84,7 +84,7 @@ The commutativity of this diagram tells us that the morphism~$\id_{X × Y}$ sati
 \[
 	\id_X × \id_Y = \id_{X × Y} \,.
 \]
-It follows that
+We have therefore the chain of equalities
 \[
 	P(\id_{(X, Y)})
 	=
@@ -106,13 +106,13 @@ Let now
 be two composable morphisms in~$\cat{A} × \cat{A}$.
 We have the following commutative diagram:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		{}
 		&
 		X × Y
 		\arrow{dd}[right]{f × g}
 		\arrow{dl}[above left]{p_1^{X, Y}}
-		\arrow{dr}[above right]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_2^{X, Y}}
 		&
 		{}
 		\\
@@ -158,13 +158,13 @@ We have the following commutative diagram:
 \]
 By leaving out the middle part of this diagram, we get the following commutative diagram:
 \[
-	\begin{tikzcd}[sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		{}
 		&
 		X × Y
 		\arrow{dd}[pos = 0.65, right]{(f' × g') ∘ (f × g)}
 		\arrow{dl}[above left]{p_1^{X, Y}}
-		\arrow{dr}[above right]{p_1^{X, Y}}
+		\arrow{dr}[above right]{p_2^{X, Y}}
 		&
 		{}
 		\\
@@ -195,7 +195,7 @@ The commutativity of this diagram shows that the composite~$(f' × g') ∘ (f ×
 \[
 	(f' × g') ∘ (f × g) = (f' ∘ f) × (g' ∘ g) \,.
 \]
-It follows that
+We have therefore the chain of equalities
 \begin{align*}
 	P(f', g') ∘ P(f, g)
 	&=
@@ -211,4 +211,4 @@ It follows that
 	P( (f', g') ∘ (f, g) ) \,.
 \end{align*}
 
-We have thus constructed a functor~$P$ from~$\cat{A} × \cat{A}$ given by~$P(X, Y) = X × Y$ for every object~$(X, Y)$ of~$\cat{A} × \cat{A}$ and~$P(f, g) = f × g$ for every morphism~$(f, g)$ in~$\cat{A} × \cat{A}$.
+We have thus constructed a functor~$P$ from~$\cat{A} × \cat{A}$ to~$\cat{A}$, given by on objects by~$P(X, Y) = X × Y$ and on morphisms by~$P(f, g) = f × g$.
