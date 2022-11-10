@@ -1,6 +1,6 @@
 \subsection{}
 
-We consider pullbacks, pushouts and composition.
+We consider pullbacks, pushouts, and composition.
 
 
 
@@ -13,14 +13,14 @@ We have seen in Exercise~5.1.42 that the class of monomorphisms is stable under 
 
 \subsubsection*{Monomorphisms, pushouts}
 
-The class of monomorphisms is not stable under pushouts.
+The class of monomorphisms is not necessarily stable under pushouts.
 
 To construct a counterexample we consider the category~$\CRing$ of commutative rings.
 The coproduct of two commutative rings~$R$ and~$S$ in~$\CRing$ is their tensor product~$R ⊗_ℤ S$, the canonical homomorphism from~$R$ and~$S$ into their coproduct are given by the mappings~$r \mapsto r ⊗ 1$ and~$s \mapsto 1 ⊗ s$.
 The initial object of~$\CRing$ is given by the ring of integers,~$ℤ$.
 The following diagram is therefore a pushout diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		ℤ
 		\arrow{r}
 		\arrow{d}
@@ -41,7 +41,7 @@ We have
 \]
 and therefore the following pushout diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}
 		ℤ
 		\arrow{r}
 		\arrow{d}
@@ -55,15 +55,15 @@ and therefore the following pushout diagram:
 		0
 	\end{tikzcd}
 \]
-The inclusion homomorphism from~$ℤ$ to~$ℚ$ is injective, and therefore a monomorphism.
-But the homomorphism from~$ℤ / 2$ to~$0$ is not injective, and therefore no monomorphism.
+The inclusion homomorphism from~$ℤ$ to~$ℚ$ is injective, and therefore a mono\-mor\-phism.
+But the homomorphism from~$ℤ / 2$ to~$0$ is not injective, and therefore not a monomorphism.
 
 
 
 \subsubsection*{Monomorphisms, composition}
 
-The class of monomorphisms is closed under composition:
-Let
+The class of monomorphisms is closed under composition.
+To see this, let
 \[
 	m \colon A \to B \,,
 	\quad
@@ -72,10 +72,10 @@ Let
 be two composable monomorphisms in some category~$\cat{A}$.
 Let
 \[
-	f, g \colon A' \to A
+	f, g \colon X \to A
 \]
 be two morphisms~$\cat{A}$ with~$m' ∘ m ∘ f = m' ∘ m ∘ g$.
-Then~$m ∘ f = m ∘ g$ because~$m'$ is a monomorphism, and then~$f = g$ because~$m$ is a monomorphism.
+Then~$m ∘ f = m ∘ g$ because~$m'$ is a monomorphism, and thus~$f = g$ because~$m$ is a monomorphism.
 This shows that~$m' ∘ m$ is again a monomorphism.
 
 
@@ -91,7 +91,7 @@ Let~$(E, i)$ be an equalizer of two morphisms
 is some category~$\cat{B}$.
 Suppose that~$i$ is part of a pullback diagram of the following form:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		E'
 		\arrow{r}[above]{g}
 		\arrow{d}[left]{i'}
@@ -113,7 +113,7 @@ Let~$s'$ and~$t'$ be the composites
 \]
 We may extend the above diagram as follows:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		E'
 		\arrow{r}[above]{g}
 		\arrow{d}[left]{i'}
@@ -143,9 +143,9 @@ To prove this, let
 \]
 be a morphism in~$\cat{A}$ with~$s' ∘ h = t' ∘ h$.
 We need to show that there exists a unique morphism~$k$ from~$C$ to~$E'$ with~$h = i' ∘ k$.
-We already know that~$i'$ is again a monomorphism, so only remains to show the existence of~$k$.
+We already know that~$i'$ is again a monomorphism, so it only remains to show the existence of~$k$.
 
-We have by assumption
+We have by assumption the equalities
 \[
 	s ∘ f ∘ h
 	=
@@ -155,23 +155,20 @@ We have by assumption
 	=
 	t ∘ f ∘ h \,.
 \]
-It follows from the universal property of the equalizer~$(E, i)$ that there exists a unique morphism~$k'$ from~$C$ to~$E$ with~$i ∘ k' = f ∘ h$.
-This means that the two morphisms
+It follows from the universal property of the equalizer~$(E, i)$ that there exists a unique morphism~$k'$ from~$C$ to~$E$ with
 \[
-	h \colon C \to A' \,,
-	\quad
-	k' \colon C \to E
+	i ∘ k' = f ∘ h \,.
 \]
-induce a morphism
+It further follows from the universal property of the pullback~$(E', g, i')$ that there exist a unique morphism
 \[
 	k \colon C \to E'
 \]
-with both~$g ∘ k' = k'$ and~$i' ∘ k = h$.
+with both~$g ∘ k = k'$ and~$i' ∘ k = h$.
 This proves the desired existence of~$k$.
 
 The above argument results in the following diagram:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		C
 		\arrow[bend right]{ddr}[left]{h}
 		\arrow[bend left]{drr}[above]{k'}
@@ -213,13 +210,13 @@ The above argument results in the following diagram:
 
 \subsubsection*{Regular monomorphisms, pushouts}
 
-???
+According to \cite{stackexchange_pushout_dont_preserve_regular_monos}, the class of regular monomorphisms is not necessarily closed under pushouts.
 
 
 
 \subsubsection*{Regular monomorphisms, composition}
 
-???
+According to \cite[Exercise~7J]{adamek_herrlich_strecker_joy_of_cats}, the class of regular monomorphisms is not necessarily closed under composition.
 
 
 
@@ -228,7 +225,7 @@ The above argument results in the following diagram:
 The class of split monomorphisms is not necessarily closed under pullbacks.
 
 To see this, we consider the category~$\Set$.
-We observe that monomorphism in~$\Set$ are split-monomorphisms, except for those whose domain is empty but codomain is non-empty.
+We observe that monomorphism in~$\Set$ are split-monomorphisms, except for those whose domain is empty, but codomain is non-empty.
 Let~$X$ be a set and let~$A$ and~$B$ be two subsets of~$X$.
 Then the diagram
 \[
@@ -278,14 +275,14 @@ be a split monomorphism, and suppose that
 is a pushout diagram.
 There exists by assumption a morphism
 \[
-	e \colon A \to B
+	e \colon B \to A
 \]
 with~$e ∘ m = \id_A$.
 The two morphisms
 \[
 	\id_{A'} \colon A' \to A' \,,
 	\quad
-	f ∘ e \colon A \to A'
+	f ∘ e \colon B \to A'
 \]
 satisfy
 \[
@@ -361,7 +358,8 @@ It follows by duality that the class of epimorphisms is again closed under compo
 
 \subsubsection*{Regular epimorphisms, pullbacks}
 
-???
+We have seen that the class of regular monomorphisms in not necessarily closed under pushouts.
+It follows by duality that the class of regular epimorphisms is not necessarily closed under pullbacks.
 
 
 
@@ -374,7 +372,8 @@ It follows by duality that the class of regular epimorphisms is closed under pus
 
 \subsubsection*{Regular epimorphisms, composition}
 
-???
+We have seen that the class of regular monomorphisms is not necessarily closed under composition.
+It follows by duality that the class of regular epimorphisms is not necessarily closed under composition.
 
 
 
