@@ -1,10 +1,13 @@
 \subsection{}
 
-Let~$\scat{I}$ be a small category, let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ be a functor from~$\cat{A}$ that creates limits of shape~$\scat{I}$.
+Let~$\cat{A}$ and~$\cat{B}$ be two categories and let~$F$ be a functor from~$\cat{A}$.
+Let~$\scat{I}$ be a small category and let~$D$ be a diagram of shape~$\scat{I}$ in~$\cat{A}$.
+For every cone~$C = (A, (p_I)_I)$ of the diagram~$D$, we denote the resulting cone~$(F(A), (F(p_I))_I)$ of the diagram~$F ∘ D$ by~$F(C)$.
 
-Let~$D$ be a diagram in~$\cat{A}$ of shape~$\scat{I}$, let~$C ≔ (L, (p_I)_I)$ be a cone of~$D$ and suppose that the resulting cone~$F(C) ≔ (F(L), (F(p_I))_I)$ of the diagram~$F ∘ D$ is a limit cone of~$F ∘ D$.
-We need to show that the cone~$C$ is already a limit cone of~$D$.
+Suppose now that the functor~$F$ creates limits.
+We need to show that the functor~$F$ also reflects limits.
+For this, let~$C$ be a cone of~$D$ such that~$F(C)$ is a limit cone of~$F ∘ D$.
+We need to show that~$C$ is a limit cone of~$D$.
 
-There exists by assumption a unique cone~$C' ≔ (L', (p'_I)_I)$ of the diagram~$D$ with~$F(C) = F(C')$, and this cone~$C'$ is a limit cone of~$D$.
-The cone~$C'$ must be given by~$C$ by its uniqueness.
-Therefore,~$C$ is a limit cone of~$D$.
+There exists by assumption a unique cone~$L$ of~$D$ with~$F(L) = F(C)$, and this cone~$L$ is a limit cone of~$D$.
+We have~$L = C$ by the uniqueness of~$L$, whence~$C$ is a limit cone of~$D$.
