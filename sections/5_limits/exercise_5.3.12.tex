@@ -1,65 +1,107 @@
 \subsection{}
 
-Let~$D$ be a diagram in~$\cat{A}$ of shape~$\scat{I}$.
+Let~$D$ be a diagram of shape~$\scat{I}$ in~$\cat{A}$.
 
 The induced diagram~$F ∘ D$ in~$\cat{B}$ is again of shape~$\scat{I}$, and therefore admits a limit cone~$(L', (p'_I)_I)$.
-There exists a unique cone~$(L, (p_I)_I)$ of~$D$ such that~$L' = F(L)$ and~$p_I = F(p'_I)$ for every object~$I$ of~$\scat{I}$, and this cone is a limit cone of~$D$.
+The functor~$F$ creates limits by assumption.
+There hence exists a unique cone~$(L, (p_I)_I)$ of~$D$ such that~$L' = F(L)$ and~$p'_I = F(p_I)$ for every object~$I$ of~$\scat{I}$, and this cone~$(L, (p_I)_I)$ is a limit cone of~$D$.
 This shows that the category~$\cat{A}$ has limits of shape~$\scat{I}$.
 
-Let~$(\tilde{L}, (\tilde{p}_I)_I)$ be any limit cone of~$D$.
-We need to show that the cone~$( F(\tilde{L}), (F(\tilde{p}_I))_I )$ of~$F ∘ D$ is again a limit cone.
+To show that~$F$ preserves limits, we make the following observations.
+\begin{itemize}
 
-Both~$(L, (p_I)_I)$ and~$(\tilde{L}, (\tilde{p}_I)_I)$ are limit cones of the same diagram~$D$.
-There hence exist unique morphisms
-\[
-	f \colon L \to \tilde{L} \,,
-	\quad
-	\tilde{f} \colon \tilde{L} \to L
-\]
-with~$\tilde{p}_I ∘ f = p_I$ and~$p_I ∘ \tilde{f} = \tilde{p}_I$ for every object~$I$ of~$\scat{I}$.
-We find for the composite~$\tilde{f} ∘ f$ that
-\[
-	p_I ∘ \tilde{f} ∘ f
-	=
-	\tilde{p}_I ∘ f
-	=
-	p_I
-	=
-	p_I ∘ \id_L
-\]
-for every object~$I$ of~$\scat{I}$, and therefore~$\tilde{f} ∘ f = \id_L$.
-We find similarly that~$f ∘ \tilde{f} = \id_{\tilde{L}}$.
-The two morphisms~$f$ and~$\tilde{f}$ are therefore mutually inverse isomorphisms.
-We have~$F(L) = L'$, and the induced morphisms
-\[
-	F(f)
-	\colon
-	L' \to F(\tilde{L}) \,,
-	\quad
-	F(\tilde{f})
-	\colon
-	F(\tilde{L}) \to L'
-\]
-are again mutually inverse isomorphisms.
-They satisfy
-\[
-	F(\tilde{p}_I) ∘ F(f)
-	=
-	F(\tilde{p}_I ∘ F)
-	=
-	F(p_I)
-	=
-	p'_I
-\]
-and similarly
-\[
-	p'_I ∘ F(\tilde{f}) = F(\tilde{p}_I)
-\]
-for every object~$I$ of~$\scat{I}$.
+	\item
+		For every category~$\cat{A}$ and every diagram~$D$ of shape~$\scat{I}$ in~$\cat{A}$, we can form the category~$\Cone(D)$ of cones over~$D$.
+		\begin{itemize}
 
-Let~$(L'', (p''_I)_I)$ be a cone of the diagram~$F ∘ D$.
-We know that there exists a unique morphism~$g$ from~$L''$ to~$L'$ with~$p'_I ∘ g = p''_I$ for every object~$I$ of~$\scat{I}$.
-It follows from the above observations that similarly there exists a unique morphism~$h$ from~$L''$ to~$F(\tilde{L})$ with~$F(\tilde{p}_I) ∘ h = p''_I$ for every object~$I$ of~$\scat{I}$, namely the morphism~$h = F(f) ∘ g$.
-This shows that the cone~$( F(\tilde{L}), (\tilde{p}_I)_I )$ of the diagram~$F ∘ D$ is already a limit cone.
+			\item
+				The objects of~$\Cone(D)$ are cones over~$D$.
 
-We have thus shown that the functor~$F$ preserves limits.
+			\item
+				A morphism from a cone~$(C, (p_I)_I)$ to a cone~$(C', (p'_I)_I)$ in~$\Cone(D)$ is a morphism~$f$ from~$C$ to~$C'$ in~$\cat{A}$ such that~$p'_I ∘ f = p_I$ for every object~$I$ of~$\scat{I}$.
+
+			\item
+				The composition of morphisms in~$\Cone(D)$ is the composition of morphisms in~$\cat{A}$.
+
+			\item
+				For every cone~$(C, (p_I)_I)$ over~$D$, its identity morphism in~$\Cone(D)$ is given by the identity morphism of~$C$ in~$\cat{A}$.
+
+		\end{itemize}
+		(We have thus a forgetful functor from~$\Cone(D)$ to~$\cat{A}$ that assigns to each cone its vertex.)
+
+	\item
+		A cone over a diagram~$D$ is a limit cone over~$D$ if and only if it is terminal in~$\Cone(D)$.
+
+	\item
+		Let~$\cat{A}$ and~$\cat{B}$ be two categories, let~$F$ be a functor from~$\cat{A}$ to~$\cat{B}$, and let~$D$ be a diagram of shape~$\scat{I}$ in~$\cat{A}$.
+		The functor~$F$ induces a functor~$\Cone(F)$ from~$\Cone(D)$ to~$\Cone(F ∘ D)$ as follows:
+		\begin{itemize}
+
+			\item
+				For every cone~$(C, (p_I)_I)$ over~$D$, its image under the functor~$\Cone(F)$ is the cone~$(F(C), (F(p_I))_I)$ over~$F ∘ D$.
+
+			\item
+				Let~$(C, (p_I)_I)$ and~$(C', (p'_I)_I)$ be two cones over~$D$ and let~$f$ be a morphism from~$(C, (p_I)_I)$ to~$(C', (p'_I)_I)$.
+				The image of~$f$ under the functor~$\Cone(F)$ is~$F(f)$.
+
+		\end{itemize}
+\end{itemize}
+
+Let now~$\tilde{C} ≔ (\tilde{L}, (\tilde{p}_I)_I)$ be a limit cone of the diagram~$D$.
+We know that the diagram~$C ≔ (L, (p_I)_I)$ is also a limit cone of~$D$.
+It follows that the cones~$\tilde{C}$ and~$C$ are both terminal in~$\Cone(D)$, and therefore isomorphic in~$\Cone(D)$.
+The resulting cones~$\Cone(F)(\tilde{C})$ and~$\Cone(F)(C)$ are therefore isomorphic in~$\Cone(F ∘ D)$.
+The cone~$\Cone(F)(C)$ is given by~$(L', (p'_I)_I)$, which is a limit cone of~$F ∘ D$.
+Therefore,~$\Cone(F)(C)$ is terminal in~$\Cone(F ∘ D)$.
+It follows that~$\Cone(F)(\tilde{C})$ is also terminal in~$\Cone(F ∘ D)$, because it is isomorphic to~$\Cone(F)(C)$.
+This means that the cone~$\Cone(F)(\tilde{C}) = (F(\tilde{L}), (\tilde{p}_I)_I)$ is a limit cone for the diagram~$F ∘ D$.
+
+This shows that the functor~$F$ preserves limits.
+
+%with~$\tilde{p}_I ∘ f = p_I$ and~$p_I ∘ \tilde{f} = \tilde{p}_I$ for every object~$I$ of~$\scat{I}$.
+%We find for the composite~$\tilde{f} ∘ f$ that
+%\[
+%	p_I ∘ \tilde{f} ∘ f
+%	=
+%	\tilde{p}_I ∘ f
+%	=
+%	p_I
+%	=
+%	p_I ∘ \id_L
+%\]
+%for every object~$I$ of~$\scat{I}$, and therefore~$\tilde{f} ∘ f = \id_L$.
+%We find similarly that~$f ∘ \tilde{f} = \id_{\tilde{L}}$.
+%The two morphisms~$f$ and~$\tilde{f}$ are therefore mutually inverse isomorphisms.
+%We have~$F(L) = L'$, and the induced morphisms
+%\[
+%	F(f)
+%	\colon
+%	L' \to F(\tilde{L}) \,,
+%	\quad
+%	F(\tilde{f})
+%	\colon
+%	F(\tilde{L}) \to L'
+%\]
+%are again mutually inverse isomorphisms.
+%They satisfy
+%\[
+%	F(\tilde{p}_I) ∘ F(f)
+%	=
+%	F(\tilde{p}_I ∘ F)
+%	=
+%	F(p_I)
+%	=
+%	p'_I
+%\]
+%and similarly
+%\[
+%	p'_I ∘ F(\tilde{f}) = F(\tilde{p}_I)
+%\]
+%for every object~$I$ of~$\scat{I}$.
+%
+%Let~$(L'', (p''_I)_I)$ be a cone of the diagram~$F ∘ D$.
+%We know that there exists a unique morphism~$g$ from~$L''$ to~$L'$ with~$p'_I ∘ g = p''_I$ for every object~$I$ of~$\scat{I}$.
+%It follows from the above observations that similarly there exists a unique morphism~$h$ from~$L''$ to~$F(\tilde{L})$ with~$F(\tilde{p}_I) ∘ h = p''_I$ for every object~$I$ of~$\scat{I}$, namely the morphism~$h = F(f) ∘ g$.
+%This shows that the cone~$( F(\tilde{L}), (\tilde{p}_I)_I )$ of the diagram~$F ∘ D$ is already a limit cone.
+%
+%We have thus shown that the functor~$F$ preserves limits.
