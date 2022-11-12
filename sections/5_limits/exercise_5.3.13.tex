@@ -5,7 +5,7 @@
 \subsubsection{}
 
 Let~$S$ be an arbitrary set.
-We have
+We have for every set~$S$ the chain of isomorphisms (of functors)
 \[
 	\cat{B}(F(S), \ph)
 	≅
@@ -13,15 +13,17 @@ We have
 	≅
 	\Set(S, \ph) ∘ G \,.
 \]
-The functor~$G$ preserves epimorphisms by assumption, so it suffices to show that the functor~$\Set(S, \ph)$ epimorphisms.
-But the axiom of choice asserts that every epimorphism in~$\Set$ is a split epimorphism, and every functor preserves split epimorphisms.
-(The assertion that~$\Set(S, \ph)$ preserves epimorphisms for every set~$S$, i.e., that every object of~$\Set$ is projective, is in fact equivalent to the axiom of choice.)
+The functor~$G$ preserves epimorphisms by assumption, so it suffices to show that the functor~$\Set(S, \ph)$ preserves epimorphisms.
+But the axiom of choice asserts that every epimorphism in~$\Set$ is a split epimorphism, and every functor preserves split epimorphisms.%
+\footnote{
+	The assertion that~$\Set(S, \ph)$ preserves epimorphisms for every set~$S$, i.e., that every object of~$\Set$ is projective, is in fact equivalent to the axiom of choice.
+}
 
 
 
 \subsubsection{}
 
-The epimorphisms in~$\Ab$ are precisely the surjective homomorphism.
+The epimorphisms in~$\Ab$ are precisely those homomorphisms of groups that are surjective.
 If~$P$ is a projective object of~$\Ab$, then it thus follows that for every surjective homomorphism of abelian groups
 \[
 	f \colon A \to B \,,
@@ -31,6 +33,7 @@ the induced map
 	f_* \colon \Ab(P, A) \to \Ab(P, B)
 \]
 is again surjective.
+
 We consider now the group~$P = ℤ / 2$ and the surjective homomorphism of abelian groups
 \[
 	f
@@ -43,7 +46,9 @@ The induced map
 \[
 	f_* \colon \Ab(ℤ / 2, ℤ) \to \Ab(ℤ / 2, ℤ / 2)
 \]
-is not surjective because its domain contains only a single element (namely the zero homomorphism) while its codomain contains to elements (the zero homomorphism and the identity homomorphism).
+is not surjective because its domain contains only a single element (namely the zero homomorphism) while its codomain contains two elements (the zero homomorphism and the identity homomorphism).
+
+This tells us that the abelian group~$ℤ / 2$ is not projective in~$\Ab$.
 
 \begin{remark}
 	It is a well-know fact from algebra that in a module category~$\Mod{R}$, where~$R$ is some ring, the following conditions on an object~$P$ are equivalent:
@@ -57,9 +62,14 @@ is not surjective because its domain contains only a single element (namely the 
 			\[
 				p \colon A \to B
 			\]
-			and every homomorphism of~\modules{$R$}~$f$ from~$P$ to~$B$, there exists a homomorphism of~\modules{$R$}~$g$ from~$P$ to~$A$ with~$f = p ∘ g$, i.e., such that the following diagram commutes:
+			and every homomorphism of~\modules{$R$}
 			\[
-				\begin{tikzcd}[sep = large]
+				f \colon P \to B \,,
+			\]
+			there exists a lift of~$f$ along~$p$.
+			More explicitly, there exists a homomorphism of~\modules{$R$}~$g$ from~$P$ to~$A$ with~$f = p ∘ g$, i.e., such that the following diagram commutes:
+			\[
+				\begin{tikzcd}
 					{}
 					&
 					P
@@ -77,12 +87,14 @@ is not surjective because its domain contains only a single element (namely the 
 			Every epimorphism of~\modules{$R$} with codomain~$P$ splits.
 
 		\item
-			Every short exact sequence ending in~$P$ splits.
+			Every short exact sequence of~\modules{$R$} that ends in~$P$ splits.
 
 		\item
 			$P$ is (isomorphic to) a direct summand of a free~\module{$R$}.
 
 	\end{equivalenceslist}
+
+	Our above (counter)example is based on the observation that~$ℤ / 2$ cannot be a direct summand of a free~\module{$ℤ$}, since~$ℤ / 2$ is a non-trivial torsion module but free~\modules{$ℤ$} have only trivial torsion (because~$ℤ$ is an integral domain).
 \end{remark}
 
 
@@ -93,40 +105,46 @@ More explicitly, an object~$I$ of a category~$\cat{B}$ is injective if and only 
 Even more explicitly:
 for every monomorphism
 \[
-	m \colon A \to A'
+	m \colon B \to B'
 \]
-in~$\cat{B}$, every morphism~$f$ from~$A$ to~$I$ extends to a morphism~$g$ from~$A'$ to~$I$, in the sense that~$g' ∘ m = f$, i.e., in the sense that the following diagram commutes:
+in~$\cat{B}$, every morphism
 \[
-	\begin{tikzcd}[sep = large]
+	f \colon B \to I
+\]
+extends to a morphism~$g$ from~$B'$ to~$I$, in the sense that~$g' ∘ m = f$, i.e., such that the following diagram commutes:
+\[
+	\begin{tikzcd}
 		{}
 		&
 		I
 		\\
 		A
 		\arrow{ur}[above left]{f}
-		\arrow{r}[above]{m}
+		\arrow{r}[above right]{m}
 		&
 		A'
 		\arrow[dashed]{u}[right]{g}
 	\end{tikzcd}
 \]
 
-Let~$W$ be an arbitrary~\vectorspace{$𝕜$} and let
+Let us show that every object on~$\Vect{𝕜}$ is injective.
+For this, let~$W$ be a~\vectorspace{$𝕜$} and let
 \[
 	m \colon U \to V
 \]
 be a monomorphism of~\vectorspaces{$𝕜$}.
-This means that~$m$ is an injective,~\linear{$𝕜$} map from~$U$ to~$V$.
-Thanks to the axiom of choice, there exists a linear subspace~$V'$ of~$V$ with
+This means that~$m$ is an injective and~\linear{$𝕜$} map from~$U$ to~$V$.
+Thanks to the axiom of choice, (or rather, Zorn’s lemma,) there exists a linear subspace~$V'$ of~$V$ with
 \[
 	V = \im(m) ⊕ V' \,.
 \]
-It follows that there exists a linear map~$e$ from~$V$ to~$U$ with~$e ∘ m = \id_U$:
-it is given by
+It follows that there exists a linear map~$e$ from~$V$ to~$U$ with~$e ∘ m = \id_U$;
+one such map is given by
 \[
 	e( m(u) + v' ) = u
 \]
 for all elements~$u$ and~$v'$ of~$U$ and~$V'$ respectively.
+
 It follows for every linear map~$f$ from~$U$ to~$W$ that the composite~$g ≔ f ∘ e$ is a linear map from~$V$ to~$W$ with
 \[
 	g ∘ m
@@ -137,9 +155,10 @@ It follows for every linear map~$f$ from~$U$ to~$W$ that the composite~$g ≔ f 
 	=
 	f \,.
 \]
-We have thus proven that~$W$ is injective.
+We have thus proven that~$W$ is injective in~$\Vect{𝕜}$.
 
-Let now~$i$ be the inclusion map from~$2ℤ$ to~$ℤ$, and let
+Let us now show that the abelian group~$ℤ$ is non-injective in~$\Ab$.
+To see this, we let~$i$ be the inclusion map from~$2ℤ$ to~$ℤ$, and consider the homomorphism of groups
 \[
 	f
 	\colon
@@ -149,25 +168,48 @@ Let now~$i$ be the inclusion map from~$2ℤ$ to~$ℤ$, and let
 	\quad
 	n \mapsto \frac{n}{2} \,.
 \]
-There exists no homomorphism of groups~$g$ from~$ℤ$ to~$ℤ$ with~$g ∘ i = f$ because~$g(1)$ would need to be an element of~$ℤ$ with
+There exists no homomorphism of groups~$g$ from~$ℤ$ to~$ℤ$ with~$g ∘ i = f$, i.e., such that the diagram
 \[
+	\begin{tikzcd}
+		{}
+		&
+		ℤ
+		\\
+		2ℤ
+		\arrow{ur}[above left]{f}
+		\arrow{r}[above right]{i}
+		&
+		2ℤ
+		\arrow[dashed]{u}[right]{g}
+	\end{tikzcd}
+\]
+commutes.
+Indeed, if such a homomorphism~$g$ were to exist, then the element~$x ≔ g(1)$ of~$ℤ$ would need to satisfy the equations
+\[
+	2 x
+	=
 	2 g(1)
 	=
 	g(2)
 	=
-	g(i(2))
+	f(i(2))
 	=
 	f(2)
 	=
 	\frac{2}{2}
 	=
-	1 \,,
+	1 \,.
 \]
-and such an element does not exist.
-Therefore,~$ℤ$ is not injective as an object of~$\Ab$.
+But no element~$x$ of~$ℤ$ satisfies the equation~$2x = 1$.
+
+We have thus shown that the abelian group~$ℤ$ is not injective in~$\Ab$.
 
 \begin{remark}
+	Let~$R$ be a ring.
+
 	Baer’s criterion asserts that an~\module{$R$}~$I$ is injective if and only if for every ideal~$J$ of~$R$, every homomorphism of~\modules{$R$} from~$J$ to~$I$ extends to a homomorphism of~\modules{$R$} from~$R$ to~$I$.
 
 	If~$R$ is a principal ideal domain, then this means that an~\module{$R$} is injective if and only if it is divisible.
+
+	Our above (counter)example is based on the observation that~$ℤ$ is not divisible as a~\module{$ℤ$}, since multiplication by~$2$ is not surjective.
 \end{remark}
