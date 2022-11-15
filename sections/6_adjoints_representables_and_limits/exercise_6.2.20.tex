@@ -5,10 +5,10 @@
 \subsubsection{}
 
 It follows from Corollary~6.2.6 that the functor category~$[\scat{A}, \cat{S}]$ also has pullbacks.
-We know from Lemma~5.1.32 that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ if and only if the diagram
+According to Lemma~5.1.32, the natural transformation~$α$ is a mono\-mor\-phism in~$[\scat{A}, \cat{S}]$ if and only if the diagram
 \begin{equation}
 	\label{pullback in functor category}
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		X
 		\arrow{r}[above]{\id_X}
 		\arrow{d}[left]{\id_X}
@@ -23,10 +23,11 @@ We know from Lemma~5.1.32 that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ i
 	\end{tikzcd}
 \end{equation}
 is a pullback diagram in~$[\scat{A}, \cat{S}]$.
+
 It follows from Corollary~6.2.6 that if the above diagram is a pullback diagram, then for every object~$A$ of~$\scat{A}$, the resulting diagram
 \begin{equation}
 	\label{pullback in target category}
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		X(A)
 		\arrow{r}[above]{\id_{X(A)}}
 		\arrow{d}[left]{\id_{X(A)}}
@@ -43,16 +44,39 @@ It follows from Corollary~6.2.6 that if the above diagram is a pullback diagram,
 is a pullback diagram in~$\cat{S}$.
 The converse is also true, by Theorem~6.2.5.
 Therefore, the diagram~\eqref{pullback in functor category} is a pullback diagram in~$[\scat{A}, \cat{S}]$ if and only if for every object~$A$ in~$\scat{A}$, the diagram~\eqref{pullback in target category} is a pullback diagram in~$\cat{S}$.
-This means by Lemma~5.1.32 that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ if and only if for each object~$A$ of~$\scat{A}$, its component~$α_A$ is a monomorphism in~$\cat{S}$.
+
+We hence have by Lemma~5.1.32 the following chain of equivalences:
+\begin{align*}
+	{}&
+	\text{$α$ is a natural transformation}
+	\\
+	\iff{}&
+	\text{the diagram~\eqref{pullback in functor category} is a pullback diagram in~$[\scat{A}, \cat{S}]$}
+	\\
+	\iff{}&
+	\text{the diagram~\eqref{pullback in target category} is a pullback diagram in~$\cat{S}$ for every object~$A$ of~$\scat{A}$}
+	\\
+	\iff{}&
+	\text{the morphism~$α_A$ is a monomorphism in~$\cat{S}$ for every object~$A$ of~$\scat{A}$} \,.
+\end{align*}
+Therefore, the natural transformation~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$ if and only if each of its components~$α_A$ is a monomorphism in~$\cat{S}$.
+
+We can similarly use the dual of Lemma~5.1.32 to show the following proposition:
+\begin{quote}
+	\itshape
+	Let~$\scat{A}$ be a small category and let~$\cat{S}$ be a locally small category with pushouts.
+	The epimorphisms in~$[\scat{A}, \cat{S}]$ are precisely those natural transformations that are an epimorphism in each component.
+\end{quote}
 
 
 
 \subsubsection{}
 
-We know that the monomorphisms in~$\Set$ are precisely the injective functions.
-It follows from the previous part of this exercise that the monomorphisms in the functor category~$[\scat{A}^{\op}, \Set]$ are precisely those natural transformations that are injective in each component.
+The category~$\Set$ admits both pullback and pushouts.
+The monomorphisms in~$\Set$ are precisely those maps that are injective, and the epimorphisms are precisely those maps that are surjective.
 
-We find similarly from the dual of part~(a) that the epimorphisms in~$[\scat{A}^{\op}, \Set]$ are precisely those natural transformations that are surjective in each component.
+It follows that the monomorphisms in~$[\scat{A}, \Set]$ are precisely those natural transformations whose every component is injective.
+Similarly, the epimorphisms in~$[\scat{A}, \Set]$ are precisely those natural transformations whose every component is surjective.
 
 
 
@@ -64,10 +88,9 @@ We find similarly from the dual of part~(a) that the epimorphisms in~$[\scat{A}^
 Suppose first that for every object~$A$ of~$\scat{A}$, the morphism~$α_A$ is a monomorphism in~$\cat{S}$.
 Let
 \[
-	β, β' \colon W \to X
+	β, β' \colon Z \to X
 \]
-be two morphisms in~$[\scat{A}, \cat{S}]$ with~$α ∘ β = α ∘ β'$.
-In other words,~$β$ and~$β'$ are two natural transformations with~$α ∘ β = α ∘ β'$.
+be two morphisms in~$[\scat{A}, \cat{S}]$ (i.e., natural transformations between the functors~$Z$ and~$X$) with~$α ∘ β = α ∘ β'$.
 This means that for every object~$A$ of~$\scat{A}$, we have the chain of equalities
 \[
 	α_A ∘ β_A
@@ -78,32 +101,75 @@ This means that for every object~$A$ of~$\scat{A}$, we have the chain of equalit
 	=
 	α_A ∘ β'_A \,.
 \]
-It follows that~$β_A = β'_A$ for every object~$A$ of~$\scat{A}$ because the morphism~$α_A$ is a monomorphism.
-This shows that~$β = β'$, which in turn shows that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$.%
+It follows for every object~$A$ of~$\scat{A}$ that~$β_A = β'_A$ because the morphism~$α_A$ is a monomorphism.
+This shows that~$β = β'$, which in turn shows that~$α$ is a monomorphism in~$[\scat{A}, \cat{S}]$.
 
-Suppose on the other hand that~$α$ is a monomorphism, and that~$\cat{S} = \Set$.
+Suppose conversely that~$α$ is a monomorphism.
+We restrict ourselves to the case that~$\cat{S} = \Set$.
 We know from Yoneda’s lemma that for every object~$A$ of~$\scat{A}$, the evaluation functor
 \[
 	\ev_{\!A} \colon [\scat{A}, \Set] \to \Set
 \]
-is representable by~$A$.
-The functor~$\HY_A$ preserves monomorphisms,%
+is representable by~$\HY_A$.
+But representable functors always preserve monomorphisms.%
 \footnote{
-	A morphism~$f \colon A' \to A''$ in a category~$\cat{A}$ is a monomorphism if and only if the induced map~$f_* \colon \cat{A}(A, A') \to \cat{A}(A, A'')$ is injective for every object~$A$ of~$\cat{A}$.
+	A morphism~$g \colon B' \to B''$ in a category~$\cat{B}$ is a monomorphism if and only if the induced map~$g_* \colon \cat{B}(B, B') \to \cat{B}(B, B'')$ is injective for every object~$B$ of~$\cat{B}$.
 	(This is a direct reformulation of the definition of a monomorphism.)
-	The class of monomorphisms is therefore chosen in precisely such a way that each functor~$\HY_A = \cat{A}(A, \ph)$ preserves monomorphisms.
+	The class of monomorphisms is therefore chosen in precisely such a way that each functor~$\HY_B = \cat{B}(B, \ph)$ preserves monomorphisms.
 }
-whence it follows that the isomorphic functor~$\ev_{\!A}$ also preserves monomorphisms.
+It hence follows that the isomorphic functor~$\ev_{\!A}$ also preserves monomorphisms.
 Therefore, the component~$α_A = \ev_{\!A}(α)$ is a monomorphism in~$\Set$ for every object~$A$ of~$\scat{A}$.
 
 \subsubsection*{Epimorphisms}
 
-By using the isomorphism
-\[
-	[\scat{A}^{\op}, \cat{S}]^{\op}
-	≅
-	[\scat{A}^{\op\op}, \cat{S}^{\op}]
-	=
-	[\scat{A}, \cat{S}^{\op}] \,,
-\]
-we can see that dually, a natural transformation is an epimorphism in~$[\scat{A}^{\op}, \cat{A}]$ if and only if it is an epimorphism in each component.
+If each component of~$α$ is an epimorphism in~$\cat{S}$, then we can proceed in the same way as above to see that~$α$ is an epimorphism in~$[\scat{A}, \cat{S}]$.
+
+It remains to show that for an epimorphism in~$[\scat{A}, \Set]$, all of its components are epimorphisms in~$\Set$.
+However, the author doesn’t know how to do this without using part~(a) of this exercise.
+
+\begin{remark}
+	For more information on the missing part of the above solution, we refer to \cite{stackexchange_epimorphisms_in_set_values_functor_categories}.
+%	The author wonders if Leinster himself knows a proof that doesn’t use part~(a).
+%
+%	Indeed, in \cite{mathoverflow_epimorphisms_pointwise_surjective}, Leinster gives only the argument from part~(a).
+%
+%	Going back further in time, in~2007, Leinster gave a course on Category Theory.
+%	The material of this course can still be found online \cite{leinster_category_theory_course_2007}, and part~(b) and part~(c) of this current exercise (i.e., Exercise~6.2.20) already appears in this course material.
+%	More explicitly, Problem~Sheet~9 (titled \enquote{Limits and colimits of presheaves}), Problem~1 reads as follows:
+%	\begin{quote}
+%		\itshape
+%		Let~$\mathbb{A}$ be a small category.
+%		\begin{enumerate}[label = (\alph*)]
+%
+%			\item
+%				What does it mean to say that limits and colimits are computed pointwise in~$[\mathbb{A}^{\mathrm{op}}, \mathbf{Set}]$?
+%				Prove that this is so.
+%
+%			\item
+%				Describe explicitly the monics and epics in~$[\mathbb{A}^{\mathrm{op}}, \mathbf{Set}]$.
+%				(Now see if you can do this without the aid of~(a).)
+%
+%		\end{enumerate}
+%	\end{quote}
+%
+%	In the hints accompanying these problem sheets, Leinster writes the following:
+%	\begin{quote}
+%		\itshape
+%		\begin{enumerate}[label = (\alph*)]
+%
+%			\item
+%				The meaning of ‘computed pointwise’ is the statement of Theorem~5.1.5 (with~$\mathbb{A}$ changed to~$\mathbb{A}^{\mathrm{op}}$ and~$\mathcal{S}$ to~$\mathbf{Set}$).
+%
+%			\item
+%				Applying Lemma~4.1.31, a map~$α$ in~$[\mathbb{A}^{\mathrm{op}}, \mathbf{Set}]$ is monic iff a certain square involving~$α$ is a pullback, iff for each~$A ∈ \mathbb{A}$ the analogous square involving~$α_A$ is a pullback (since pullbacks are computed pointwise), iff for each~$A ∈ \mathbb{A}$ the map~$α_A$ is monic.
+%				The monics in~$\mathbf{Set}$ are the injections, so~$α$ is monic iff each~$α_A$ is injective.
+%				Similarly, the epics are the pointwise surjections.
+%				Without using~(a), \textup[we\textup] can still figure out what the monics are:
+%				do a direct proof by considering maps out of representables.
+%				But I know of no way of proving the result on epics without~(a).
+%
+%		\end{enumerate}
+%	\end{quote}
+%	The notes of the 2007 course are no longer available on the course’s website.
+%	But the author assumes that Theorem~5.1.5 of the course notes is akin to Theorem~6.2.5 or Corollary~6.2.6 of the book, and that Lemma~4.1.31 of the course notes is akin to Lemma~5.1.32 of the book.
+\end{remark}
