@@ -4,16 +4,16 @@
 \begin{warning}
 	For a covariant functor
 	\[
-		F \colon \cat{A} \to \Set \,,
+		X \colon \cat{A} \to \Set \,,
 	\]
-	its category of elements, denoted by~$\Elements(F)$, is typically defined as follows.
+	its category of elements, denoted by~$\Elements(X)$, is typically defined as follows.
 	\begin{itemize}
 
 		\item
-			The objects of~$\Elements(F)$ are pairs~$(A, x)$ consisting of an object~$A$ of~$\cat{A}$ and an element~$x$ of~$F(A)$.
+			The objects of~$\Elements(X)$ are pairs~$(A, x)$ consisting of an object~$A$ of~$\cat{A}$ and an element~$x$ of~$X(A)$.
 
 		\item
-			A morphism in~$\Elements(F)$ from an object~$(A, x)$ to an object~$(A', x')$ is a morphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$ with~$F(f)(x) = x'$.
+			A morphism in~$\Elements(X)$ from an object~$(A, x)$ to an object~$(A', x')$ is a morphism~$f$ from~$A$ to~$A'$ in~$\cat{A}$ with~$X(f)(x) = x'$.
 
 	\end{itemize}
 	A presheaf~$X$ on a category~$\cat{A}$ is a contravariant functor from~$\cat{A}$ to~$\Set$, and thus a covariant functor from~$\cat{A}^{\op}$ to~$\Set$.
@@ -31,7 +31,7 @@
 	This definition of~$\Elements(X)$ does \emph{not} agree with Definition~6.2.16:
 	the two definitions result in opposite categories.%
 	\footnote{
-		The author of these solutions is really annoyed by this inconsistency.
+		The author is extremely annoyed by this inconsistency.
 	}
 
 	In the following, we will use Definition~6.2.16, as intended in the book.
@@ -39,89 +39,92 @@
 
 
 
-\subsubsection*{First solution}
+%\subsubsection*{First solution}
+%
+%We regard the contravariant functor~$X$ as a covariant functor~$X'$ from~$\cat{A}^{\op}$ to~$\Set$.
+%
+%We consider the singleton set~$\{ \ast \}$ and the comma category~$\{ \ast \} \comma X'$, in the sense of Example~2.3.4.
+%We show in the following that this comma category is contravariantly isomorphic to the category of elements of~$X$.
+%
+%An object of the category~$\{ \ast \} \comma X$ is a pair~$(A^{\op}, e)$ consisting of an object~$A^{\op}$ of~$\cat{A}^{\op}$, and a map~$e$ from the singleton set~$\{ \ast \}$ to the set~$X(A)$.
+%Such maps~$e$ from~$\{ \ast \}$ to~$X(A)$ are in one-to-one correspondence to elements of the set~$X(A)$ via the evaluation map
+%\[
+%	e \mapsto e(\ast) \,.
+%\]
+%We have therefore a bijection between the objects of~$\{ \ast \} \comma X$ and the objects of~$\Elements(X)$, given by
+%\begin{align*}
+%	F
+%	\colon
+%	\Ob( \{ \ast \} \comma X )
+%	&\to
+%	\Ob( \Elements(X) ) \,,
+%	\\
+%	(A^{\op}, e)
+%	&\mapsto
+%	(A, e(\ast)) \,.
+%\end{align*}
+%
+%Let us now describe morphisms in the comma category~$\{ \ast \} \comma X$.
+%Such a morphism
+%\[
+%	(A^{\op}, e) \to ((A')^{\op}, e')
+%\]
+%is a morphism
+%\[
+%	f^{\op} \colon A^{\op} \to (A')^{\op}
+%\]
+%in~$\cat{A}^{\op}$, such that the following diagram commutes:
+%\[
+%	\begin{tikzcd}[row sep = normal]
+%		{}
+%		&
+%		X(A)
+%		\arrow{dd}[right]{X(f)}
+%		\\
+%		\{ \ast \}
+%		\arrow{ur}[above left]{e}
+%		\arrow{dr}[below left]{e'}
+%		&
+%		{}
+%		\\
+%		{}
+%		&
+%		X(A')
+%	\end{tikzcd}
+%\]
+%The commutativity of this diagram is equivalent to the condition
+%\[
+%	X(f)( e(\ast) ) = e'(\ast) \,.
+%\]
+%We may also regard~$f$ is a morphism from~$A'$ to~$A$ in~$\cat{A}$.
+%The commutativity of this diagram thus means that~$f$ is a morphism from~$(A', e'(\ast))$ to~$(A, e(\ast))$ in~$\Elements(X)$.
+%We get therefore a bijection
+%\begin{align*}
+%	F_{A, A'}
+%	\colon
+%	(\{\ast\} \comma X)\bigl( (A, e), (A', e') \bigr)
+%	&\to
+%	\Elements(X)\bigl( F((A', e')), F((A, e)) \bigr) \,,
+%	\\
+%	(i, f)
+%	&\mapsto
+%	f \,.
+%\end{align*}
+%The map~$F$ together with the maps~$F_{A, A}$, where~$A$ and~$A'$ both range through~$\cat{A}$, define a contravariant~(!) functor from the comma category~$\{ \ast \} \comma X$ to the category of elements~$\Elements(X)$.
+%This functor is both bijective on objects and fully faithful, and therefore an isomorphism of categories from~$(\{ \ast \} \comma X)^{\op}$ to~$\Elements(X)$.
+%
+%
+%
+%\subsubsection*{Second solution}
 
-We consider the comma category~$\{ \ast \} \comma X$ in the sense of Example~2.3.4.
-
-An object of~$\{ \ast \} \comma X$ is a tuple~$(A, e)$ consisting of an object~$A$ of~$\cat{A}$, and a map~$e$ from~$\{ \ast \}$ to~$X(A)$.
-Such maps~$e$ from~$\{ \ast \}$ to~$X(A)$ are in one-to-one correspondence to elements of~$X(A)$ via
-\[
-	e \mapsto e(\ast) \,.
-\]
-The map
-\[
-	F
-	\colon
-	\Ob( \{ \ast \} \comma X )
-	\to
-	\Ob( \Elements(X) ) \,,
-	\quad
-	(A, e)
-	\mapsto
-	(A, e(\ast))
-\]
-is therefore bijective.
-
-A morphism in the comma category~$\{ \ast \} \comma X$ of the form
-\[
-	(A, e) \to (A', e')
-\]
-is a morphism
-\[
-	f \colon A^{\op} \to (A')^{\op}
-\]
-in~$\cat{A}^{\op}$, such that the following diagram commutes:
-\[
-	\begin{tikzcd}[column sep = large]
-		{}
-		&
-		X(A)
-		\arrow{dd}[right]{X(f)}
-		\\
-		\{ \ast \}
-		\arrow{ur}[above left]{e}
-		\arrow{dr}[below left]{e'}
-		&
-		{}
-		\\
-		{}
-		&
-		X(A')
-	\end{tikzcd}
-\]
-The commutativity of this diagram is equivalent to the condition
-\[
-	X(f)( e(\ast) ) = e'(\ast) \,,
-\]
-and~$f$ is a morphism from~$A'$ to~$A$ in~$\cat{A}$.
-The commutativity of this diagram thus means that~$f$ is a morphism from~$(A', e'(\ast))$ to~$(A, e(\ast))$ in~$\Elements(X)$.
-We get therefore a bijection
-\begin{align*}
-	F_{A, A'}
-	\colon
-	(\{\ast\} \comma X)\bigl( (A, e), (A', e') \bigr)
-	&\to
-	\Elements(X)\bigl( F((A', e')), F((A, e)) \bigr) \,,
-	\\
-	(i, f)
-	&\mapsto
-	f \,.
-\end{align*}
-The map~$F$ together with the maps~$F_{A, A}$, where~$A$ and~$A'$ both range through~$\cat{A}$, define a contravariant~(!) functor from the comma category~$\{ \ast \} \comma X$ to the category of elements~$\Elements(X)$.
-This functor is both bijective on objects and fully faithful, and therefore an isomorphism of categories from~$(\{ \ast \} \comma X)^{\op}$ to~$\Elements(X)$.
-
-
-
-\subsubsection*{Second solution}
-
-We have for every object~$A$ of~$\cat{A}$ the bijection
+In the following, let us refer to the objects of the category~$\Elements(X)$ as the elements of~$X$.
+By Yoneda’s lemma, we have for every object~$A$ of~$\cat{A}$ the bijection
 \[
 	[\cat{A}^{\op}, \Set](\HY_A, X) \to X(A) \,,
 	\quad
-	h \mapsto h_A(\id_A) \,,
+	h \mapsto h_A(\id_A) \,.
 \]
-by Yoneda’s lemma.
-We get therefore an induced one-to-one correspondence between elements~$(A, x)$ of~$X$ and pairs~$(A, α)$ consisting of an object~$A$ of~$\cat{A}$ and a natural transformation~$α$ from~$\HY_A$ to~$X$.
+We get from this bijection an induced one-to-one correspondence between elements of~$X$ and pairs~$(A, α)$ consisting of an object~$A$ of~$\cat{A}$ and a natural transformation~$α$ from~$\HY_A$ to~$X$.
 This correspondence is given by the mapping
 \[
 	(A, α) \mapsto ( A, α_A(\id_A) ) \,.
@@ -131,15 +134,15 @@ Let~$(A, x)$ and~$(A', x')$ be two elements of~$X$ and let~$(A, α)$ and~$(A', �
 Every natural transformation from~$\HY_{A'}$ to~$\HY_{A'}$ is of the form~$\HY_f$ for a unique morphism~$f$ from~$A$ to~$A'$ because the Yoneda embedding is fully faithful.
 The resulting diagram
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		\HY_A
-		\arrow{rr}[above]{\HY_f}
-		\arrow{dr}[below left]{α}
+		\arrow[Rightarrow]{rr}[above]{\HY_f}
+		\arrow[Rightarrow]{dr}[below left]{α}
 		&
 		{}
 		&
 		\HY_{A'}
-		\arrow{dl}[below right]{α'}
+		\arrow[Rightarrow]{dl}[below right]{α'}
 		\\
 		{}
 		&
@@ -158,7 +161,7 @@ By Yoneda’s lemma, this equality of natural transformations is equivalent to t
 	=
 	(α' ∘ \HY_f)_A(\id_A)
 \]
-The left-hand side of this equation is~$x$, and its right-hand side can be rewritten as
+The left-hand side of this equation is the element~$x$, and the right-hand side can be rewritten as
 \begin{align}
 	(α' ∘ \HY_f)_A(\id_A)
 	\notag
@@ -171,20 +174,8 @@ The left-hand side of this equation is~$x$, and its right-hand side can be rewri
 	\notag
 	\\
 	&=
-	α'_A( f ∘ \id_A)
-	\notag
-	\\
-	&=
-	α'_A( f )
-	\notag
-	\\
-	&=
-	α'_A( \id_{A'} ∘ f )
-	\notag
-	\\
-	&=
 	α'_A( \HY_{A'}(f)( \id_{A'} ) )
-	\notag
+	\label{shuffeling nonsense}
 	\\
 	&=
 	X(f)( α_{A'}( \id_{A'} ) )
@@ -194,22 +185,38 @@ The left-hand side of this equation is~$x$, and its right-hand side can be rewri
 	X(f)(x') \,.
 	\notag
 \end{align}
-(Equality~\eqref{naturality of alpha dash} hold because~$α$ is a natural transformation from~$\HY_{A'}$ to~$X$.)
+We use for \eqref{shuffeling nonsense} the chain of equalities
+\[
+	(\HY_f)_A(\id_A)
+	=
+	f_*( \id_A )
+	=
+	f ∘ \id_A
+	=
+	f
+	=
+	\id_{A'} ∘ f
+	=
+	f^*( \id_{A'} )
+	=
+	\HY_{A'}(f)( \id_{A'} ) \,,
+\]
+and~\eqref{naturality of alpha dash} holds because~$α$ is a natural transformation from~$\HY_{A'}$ to~$X$.
 The commutativity of the above diagram is therefore equivalent to the equality
 \[
 	x = X(f)(x') \,.
 \]
 This equality expresses precisely that~$f$ is a morphism from~$(A, x)$ to~$(A', x')$ in~$\Elements(X)$.
 
-We have therefore an isomorphism
+We have altogether an isomorphism
 \[
 	Y \comma X
 \]
 where~$Y$ is the Yoneda embedding from~$\cat{A}$ to~$[\cat{A}^{\op}, \Set]$, and where we use (the dual of) the notation from Example~2.3.4.%
 \footnote{
-	Somewhat more explicitly, we consider the comma category of the following situation:
+	More explicitly, we consider the comma category of the following situation:
 	\[
-		\begin{tikzcd}[sep = large, ampersand replacement = \&]
+		\begin{tikzcd}[ampersand replacement = \&]
 			{}
 			\&
 			\One
