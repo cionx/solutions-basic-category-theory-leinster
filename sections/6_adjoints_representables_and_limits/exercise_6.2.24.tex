@@ -1,10 +1,11 @@
 \subsection{}
 
-We build up to the case of an arbitrary small category~$\scat{A}$ by considering first some special cases.
-
 \begin{remark}
 	This exercise is a massive waste of time and the following solution is not proofread in the slightest.
 \end{remark}
+
+We build up to the case of an arbitrary small category~$\scat{A}$ by considering first some special cases.
+
 
 
 \subsubsection*{The category~$\scat{A}$ is the one-object category~$\One$}
@@ -141,7 +142,7 @@ We can work out an explicit description of~$F$ as follows.
 		An object of~$[\One^{\op}, \Set] / X$ is a pair~$(Y, α)$ consisting of a presheaf~$Y$ on~$\One$ and a natural transformation~$α$ from~$Y$ to~$X$.
 
 	\item
-		Under the isomorphism~$[\One^{\op}, \Set] / X ≅ \Set / S$, the pair~$(Y, α)$ corresponds to the pair~$(Y(\ast), α_\ast)$, consisting of the set~$Y(\ast)$ and the map~$α_\ast$ from~$Y(\ast)$ to~$X(\ast) = S$.
+		Under the isomorphism~$[\One^{\op}, \Set] / X ≅ \Set / S$, the pair~$(Y, α)$ now cor\-re\-sponds to the pair~$(Y(\ast), α_\ast)$, consisting of the set~$Y(\ast)$ and the map~$α_\ast$ from~$Y(\ast)$ to~$X(\ast) = S$.
 
 	\item
 		Under the equivalence~$\Set / S ≃ \cat{P}_S$, this pair~$(Y(\ast), α_\ast)$ further corresponds to the pair~$(Y(\ast), (α_\ast^{-1}(s))_s)$.
@@ -164,9 +165,9 @@ We can work out an explicit description of~$F$ as follows.
 \end{enumerate*}
 
 We can similarly figure out how~$F$ acts on morphisms.
-A morphism in~$[\One^{\op}, \Set]$ from~$(Y, α)$ to~$(Y', α')$ is a natural transformation~$β$ from~$Y$ to~$Y'$ with~$α' ∘ β = α$, i.e., such that the following diagram commutes:
+A morphism in the category~$[\One^{\op}, \Set]$ from~$(Y, α)$ to~$(Y', α')$ is a natural transformation~$β$ from~$Y$ to~$Y'$ with~$α' ∘ β = α$, i.e., such that the following diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		Y
 		\arrow[Rightarrow]{rr}[above]{β}
 		\arrow[Rightarrow]{dr}[below left]{α}
@@ -258,7 +259,7 @@ for every element~$(d, x)$ of~$B$.%
 
 A morphism from~$(Y, α)$ to~$(Y', α')$ in~$[\scat{D}^{\op}, \Set] / X$ is a natural transformation~$β$ from~$Y$ to~$Y'$ with~$α' ∘ β = α$, i.e., such that the diagram
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		Y
 		\arrow[Rightarrow]{rr}[above]{β}
 		\arrow[Rightarrow]{dr}[below left]{α}
@@ -278,7 +279,7 @@ A morphism from~$(Y, α)$ to~$(Y', α')$ in~$[\scat{D}^{\op}, \Set] / X$ is a na
 commutes.
 This means that we have the following commutative diagram for every object~$d$ of~$D$:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		Y(d)
 		\arrow{rr}[above]{β_d}
 		\arrow{dr}[below left]{α_d}
@@ -299,12 +300,12 @@ The map~$β_d$ therefore restrict for every element~$x$ of~$X(d)$ to a map betwe
 \[
 	F(β)_{(d, x)} \colon α_d^{-1}(x) \to (α'_d)^{-1}(x) \,.
 \]
-These maps, with~$(d, x)$ ranging through~$B$, define a natural transformation~$F(β)$ from~$F(Y, α)$ to~$F(Y', α')$.
+These maps, with the index~$(d, x)$ ranging through the set~$B$, define a natural transformation~$F(β)$ from~$F(Y, α)$ to~$F(Y', α')$.
 (We don’t need to worry about the naturality of~$F(β)$ because the category~$B$ is discrete.)
 
 Suppose on the other hand that we are given a presheaf~$Z$ of~$B$.
 We then construct a corresponding object~$G(B)$ of~$[\scat{D}^{\op}, \Set] / X$.
-This object~$G(Z)$ needs to be a pair~$(G_0(Z), G_1(Z))$ consisting of a presheaf~$G_0(Z)$ on~$\scat{D}$ and a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
+This to-be-con\-struc\-ted object~$G(Z)$ needs to be a pair~$(G_0(Z), G_1(Z))$ consisting of a presheaf~$G_0(Z)$ on~$\scat{D}$ and a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
 
 The presheaf~$G_0$ is constructed as
 \[
@@ -316,13 +317,13 @@ We don’t need to worry about the action of~$G_0(Z)$ on morphisms because the c
 We will define the natural transformation~$G_1(Z)$ via its components~$G_1(Z)_d$, where the index~$d$ ranges through the objects of~$\scat{D}$.
 The component~$G_1(Z)_d$ is the map from~$G_0(Z)(d) = ∐_{x ∈ X(d)} Z(d, x)$ to~$X(d)$ which maps all of~$Z(d, x)$ onto the value~$x$ of~$X(d)$.
 
-These two functors~$F$ and~$G$ satisfy
+These two functors~$F$ and~$G$ satisfy the isomorphisms
 \[
 	G ∘ F ≅ \Id_{[\scat{D}^{\op}, \Set] / X} \,,
 	\quad
 	F ∘ G ≅ \Id_{[B^{\op}, \Set]} \,.
 \]
-They hence give an equivalence of categories between~$[\scat{D}^{\op}, \Set] / X$ and~$[B^{\op}, \Set]$.
+The functors~$F$ and~$G$ hence give an equivalence of categories between the slice category~$[\scat{D}^{\op}, \Set] / X$ and the functor category~$[B^{\op}, \Set]$.
 
 
 
@@ -367,7 +368,7 @@ The desired object~$F(Y, α)$ needs to be a presheaf on~$\Elements(X)$.
 			\end{tikzcd}
 		\]
 		commutes.
-		It follows from this commutativity and the identity~$X(f)(x') = x$ that the map~$Y(f)$ restricts to a map from the preimage~$α_{A'}^{-1}(x')$ to the preimage~$α_A^{-1}(x)$.
+		It follows from the commutativity of this diagram and the equality~$X(f)(x') = x$ that the map~$Y(f)$ restricts to a map from the preimage~$α_{A'}^{-1}(x')$ to the preimage~$α_A^{-1}(x)$.
 		We denote this restriction by~$F(Y, α)(f)$, so that
 		\[
 			F(Y, α)(f) \colon F(Y, α)(A', x') \to F(Y, α)(A, x) \,.
@@ -429,7 +430,7 @@ We consider for this a morphism
 in~$[\scat{A}^{\op}, \Set] / X$.
 This means that~$β$ is a natural transformation from~$Y$ to~$Y'$ that makes the diagram
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		Y
 		\arrow[Rightarrow]{rr}[above]{β}
 		\arrow[Rightarrow]{dr}[below left]{α}
@@ -449,7 +450,7 @@ This means that~$β$ is a natural transformation from~$Y$ to~$Y'$ that makes the
 commute.
 For every object~$(A, x)$ of~$\Elements(X)$ we get the following commutative diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		Y(A)
 		\arrow{rr}[above]{β_A}
 		\arrow{dr}[below left]{α_A}
@@ -531,7 +532,7 @@ It follows from the naturality of~$β$ that we have the following commutative di
 \]
 This commutative diagram restricts to the following commutative diagram:
 \[
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = small]
 		F(Y, α)(A, x)
 		\arrow[equal]{r}
 		&
@@ -633,8 +634,8 @@ This shows the functoriality of~$G$.
 
 \subsubsection*{The general case: construction of $G$}
 
-Let~$Z$ be an object of~$[\Elements(X)^{\op}, \Set]$.
-We start by constructing an object~$(G_0(Z), G_1(Z))$ of~$[\scat{A}^{\op}, \Set] / X$.
+Let~$Z$ be an object of the presheaf category~$[\Elements(X)^{\op}, \Set]$.
+We start by constructing an object~$(G_0(Z), G_1(Z))$ of the slice category~$[\scat{A}^{\op}, \Set] / X$.
 This objects needs to consist of an element~$G_0(Z)$ of~$[\scat{A}^{\op}, \Set]$ and a natural transformation~$G_1(Z)$ from~$G_0(Z)$ to~$X$.
 
 We start by constructing~$G_0(Z)$, which needs to be a contravariant functor from~$\scat{A}$ to~$\Set$.
@@ -809,7 +810,7 @@ such that for every morphism
 in~$\scat{A}$, the following square diagram commutes:
 \begin{equation}
 	\label{required commutativity for naturality of ugly construction}
-	\begin{tikzcd}[row sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		G_0(Z)(A')
 		\arrow{r}[above]{G_0(Z)(f)}
 		\arrow{d}[left]{G_1(Z)_{A'}}
@@ -828,7 +829,7 @@ We first construct the transformation~$G_1(Z)$, and then check its naturality.
 
 	\item
 		We have~$G_0(Z)(A) = ∐_{x ∈ X(A)} Z(A, x)$.
-		There hence exists a unique map~$G_1(Z)_A$ from~$G_0(Z)(A)$ to~$X(A)$ such that for element~$x$ of~$X(A)$ the composite~$G_1(Z)_A ∘ j_{A, x}$ is constant with value~$x$.
+		There hence exists a unique set-theoretic map~$G_1(Z)_A$ from~$G_0(Z)(A)$ to~$X(A)$ such that for every element~$x$ of~$X(A)$ the composite~$G_1(Z)_A ∘ j_{A, x}$ is constant with value~$x$.
 
 	\item
 		The diagram~\eqref{required commutativity for naturality of ugly construction} commutes because
@@ -874,7 +875,7 @@ in~$[\scat{A}^{\op}, \Set] / X$.
 In other words~$G(γ)$ needs to be a natural transformation from~$G_0(Z)$ to~$G_0(Z')$ that makes the following diagram commute:
 \begin{equation}
 	\label{triangular diagram for naturality for ugly construction}
-	\begin{tikzcd}[row sep = large]
+	\begin{tikzcd}[column sep = normal]
 		G_0(Z)
 		\arrow[Rightarrow]{rr}[above]{G(γ)}
 		\arrow[Rightarrow]{dr}[below left]{G_1(Z)}
@@ -910,7 +911,7 @@ In other words~$G(γ)$ needs to be a natural transformation from~$G_0(Z)$ to~$G_
 	\item
 		To check the commutativity of the diagram~\eqref{triangular diagram for naturality for ugly construction}, we need to check that for object~$A$ of~$\scat{A}$ the following diagram commutes:
 		\[
-			\begin{tikzcd}[row sep = large]
+			\begin{tikzcd}[column sep = normal]
 				G_0(Z)(A)
 				\arrow{rr}[above]{G(γ)_A}
 				\arrow{dr}[below left]{G_1(Z)_A}
@@ -1016,7 +1017,8 @@ We have thus proven the functoriality of~$G$.
 
 Let~$(Y, α)$ be an object of~$[\scat{A}^{\op}, \Set] / X$.
 We have
-\[
+\begin{equation}
+	\label{decomposition into coproduct}
 	(G ∘ F)(Y, α)(A)
 	=
 	G(F(Y, α))(A)
@@ -1024,25 +1026,28 @@ We have
 	∐_{x ∈ X(A)} F(Y, α)(A, x)
 	=
 	∐_{x ∈ X(A)} α_A^{-1}(x)
-\]
+\end{equation}
 for every object~$A$ of~$\scat{A}$, with~$α_A$ being a map from~$Y(A)$ to~$X(A)$.
 The set~$Y(A)$ is the disjoint union of the preimages~$α_A^{-1}(x)$ where~$x$ ranges trough~$X(A)$.
 We have therefore a bijection
 \[
 	ε_{(Y, α), A}
 	\colon
-	(G, ∘ F)(Y, α)(A)
+	(G ∘ F)(Y, α)(A)
 	\to
 	Y(A)
 \]
-that is given for every element~$x$ of~$X(A)$ on the~\nth{$x$} summand of~$(G ∘ F)(Y, α)(A)$ by the inclusion map from~$α_A^{-1}(x)$ to~$Y(A)$.
+that is given for every element~$x$ of~$X(A)$ on the~\nth{$x$} summand of \eqref{decomposition into coproduct} by the inclusion map from~$α_A^{-1}(x)$ to~$Y(A)$.
 We denote this inclusion map by
 \[
 	i_{(Y, α), A, x} \colon α_A^{-1}(x) \to Y(A) \,.
 \]
 
-These bijections~$ε_{(Y, α), A}$ assemble into a transformation~$ε_{(Y, α)}$ from~$G_0(F(Y, α))$ to~$Y$.
-This transformation is natural.
+These bijections~$ε_{(Y, α), A}$ assemble altogether into a transformation
+\[
+	ε_{(Y, α)} \colon G_0(F(Y, α)) \to Y \,.
+\]
+Let us check that this transformation is natural.
 To prove this, let
 \[
 	f \colon A \to A'
@@ -1050,7 +1055,7 @@ To prove this, let
 be a morphism in~$\scat{A}$.
 We need to check the commutativity of the following square diagram:
 \[
-	\begin{tikzcd}[column sep = 6em, row sep = large]
+	\begin{tikzcd}[column sep = 6em]
 		G_0(F(Y, α))(A')
 		\arrow{r}[above]{G_0(F(Y, α))(f)}
 		\arrow{d}[left]{ε_{(Y, α), A'}}
@@ -1066,7 +1071,7 @@ We need to check the commutativity of the following square diagram:
 \]
 This diagram may be rewritten as follows:
 \[
-	\begin{tikzcd}[column sep = 6em, row sep = large]
+	\begin{tikzcd}[column sep = 6em]
 		∐_{x' ∈ X(A')} α_{A'}^{-1}(x')
 		\arrow{r}[above]{G_0(F(Y, α))(f)}
 		\arrow{d}[left]{ε_{(Y, α), A'}}
@@ -1115,7 +1120,7 @@ Each component of~$ε_{(Y, α)}$ is bijective, whence~$ε_{(Y, α)}$ is a natura
 We claim that this natural isomorphism is a morphism from~$(Y, α)$ to~$G(F(Y, α))$.
 For this, we need to prove that the following diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large, column sep = {5em,between origins}]
+	\begin{tikzcd}[column sep = {5em,between origins}]
 		G_0(F(Y, α))
 		\arrow[Rightarrow]{rr}[above]{ε_{(Y, α)}}
 		\arrow[Rightarrow]{dr}[below left]{G_1(F(Y, α))}
@@ -1134,7 +1139,7 @@ For this, we need to prove that the following diagram commutes:
 \]
 We hence need to show that for every object~$A$ of~$\scat{A}$, the following diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large, column sep = {5em,between origins}]
+	\begin{tikzcd}[column sep = {5em,between origins}]
 		G_0(F(Y, α))(A)
 		\arrow{rr}[above]{ε_{(Y, α), A}}
 		\arrow{dr}[below left]{G_1(F(Y, α))_A}
@@ -1173,7 +1178,11 @@ This equality holds because
 	G_1(F(Y, α))_A ∘ j_{(A, x)} \,.
 \end{align*}
 
-We have thus constructed for every object~$(Y, α)$ a morphism~$ε_{(Y, α)}$ from~$G(F(Y, α))$ to~$(Y, α)$ in~$[\scat{A}^{\op}, \Set] / X$.
+We have thus constructed for every object~$(Y, α)$ a morphism
+\[
+	ε_{(Y, α)} \colon G(F(Y, α)) \to (Y, α)
+\]
+in~$[\scat{A}^{\op}, \Set] / X$.
 We have also seen that this morphism is an isomorphism in~$[\scat{A}^{\op}, \Set]$;
 it is therefore also an isomorphism in~$[\scat{A}^{\op}, \Set] / X$.
 
@@ -1185,7 +1194,7 @@ To see this, we consider a morphism
 in~$[\scat{A}^{\op}, \Set] / X$.
 We need to show that the following square diagram commutes:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		GF(Y, α)
 		\arrow{r}[above]{GF(β)}
 		\arrow{d}[left]{ε_{(Y, α)}}
@@ -1201,7 +1210,7 @@ We need to show that the following square diagram commutes:
 \]
 In other words, we need to prove the commutativity of the following square diagram of functors and natural transformations between them:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		G_0(F(Y, α))
 		\arrow[Rightarrow]{r}[above]{GF(β)}
 		\arrow[Rightarrow]{d}[left]{ε_{(Y, α)}}
@@ -1217,7 +1226,7 @@ In other words, we need to prove the commutativity of the following square diagr
 \]
 This means that we need to prove for every object~$A$ of~$\scat{A}$ the commutativity of the following square diagram  in~$\Set$:
 \[
-	\begin{tikzcd}[sep = large]
+	\begin{tikzcd}
 		G_0(F(Y, α))(A)
 		\arrow{r}[above]{G(F(β))_A}
 		\arrow{d}[left]{ε_{(Y, α), A}}
@@ -1233,7 +1242,7 @@ This means that we need to prove for every object~$A$ of~$\scat{A}$ the commutat
 \]
 This diagram may be rewritten as follows:
 \[
-	\begin{tikzcd}[row sep = large, column sep = 7em]
+	\begin{tikzcd}[column sep = 7em]
 		∐_{x ∈ X(A)} α_A^{-1}(x)
 		\arrow{r}[above]{∐_{x ∈ X(A)} F(β)_{(A, x)}}
 		\arrow{d}[left]{ε_{(Y, α), A}}
@@ -1286,7 +1295,7 @@ To see this, we consider a morphism
 \]
 in~$\Elements(X)$, and need to show that the following square diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		Z(A', x')
 		\arrow{r}[above]{Z(f)}
 		\arrow{d}[left]{η_{Z, (A', x')}}
@@ -1300,8 +1309,8 @@ in~$\Elements(X)$, and need to show that the following square diagram commutes:
 		F(G(Z))(A, x)
 	\end{tikzcd}
 \]
-The map~$F(G(Z))(f)$ is the restriction of~$G_0(Z)(f)$, and~$G_0(Z)(f)$ maps the summand~$Z(A', x')$ of~$G_0(Z)(A')$ into the summand~$Z(A, x)$ of~$G_0(Z)(A)$ via~$Z(f)$.
-This means that the above diagram commutes.
+The map~$F(G(Z))(f)$ is the restriction of~$G_0(Z)(f)$, and~$G_0(Z)(f)$ maps the summand~$Z(A', x')$ of~$G_0(Z)(A')$ into the summand~$Z(A, x)$ of~$G_0(Z)(A)$ via the map~$Z(f)$.
+We thus find that the above diagram commutes.
 
 We have thus for every object~$Z$ of~$[\Elements(X)^{\op}, \Set]$ a natural transformation~$η_Z$ from~$Z$ to~$F(G(Z))$, i.e., a morphism from~$Z$ to~$(F ∘ G)(Z)$ in~$[\Elements(X)^{\op}, \Set]$.
 Each component of~$η_Z$ is bijective, whence~$η_Z$ is an isomorphism.
@@ -1313,7 +1322,7 @@ For this, we need to show that for every morphism
 \]
 in~$[\Elements(X)^{\op}, \Set]$ the following square diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		Z
 		\arrow{r}[above]{γ}
 		\arrow{d}[left]{η_Z}
@@ -1329,7 +1338,7 @@ in~$[\Elements(X)^{\op}, \Set]$ the following square diagram commutes:
 \]
 This is a diagram consisting of functors and natural transformations, whence we need to show that for every object~$(A, x)$ of~$\Elements(X)$ the following square diagram commutes:
 \[
-	\begin{tikzcd}[row sep = large, column sep = huge]
+	\begin{tikzcd}[column sep = huge]
 		Z(A, x)
 		\arrow{r}[above]{γ_{(A, x)}}
 		\arrow{d}[left]{η_{Z, (A, x)}}
@@ -1350,7 +1359,7 @@ We recall that
 	G_0(Z')(A) = ∐_{x' ∈ X(A)} Z'(A, x')
 \]
 and that the map~$G(γ)_A$ from~$G_0(Z)(A)$ to~$G_0(Z')(A)$ is given by~$∐_{x' ∈ X(A)} γ_{(A, x')}$.
-The map~$F(G(γ))_{(A, x)}$ results from~$G_0(Z)_A$ by restriction, from the copy of~$Z(A, x)$ in~$G_0(Z)(A)$ to the copy of~$Z'(A, x)$ in~$G_0(Z)(A')$.
+The map~$F(G(γ))_{(A, x)}$ results from~$G_0(Z)_A$ by restriction, and goes from the copy of~$Z(A, x)$ in~$G_0(Z)(A)$ to the copy of~$Z'(A, x)$ in~$G_0(Z)(A')$.
 This means precisely that the above square diagram commutes.
 
 We have thus constructed a natural transformation~$η$ from~$\Id_{[\Elements(X)^{\op}, \Set]}$ to~$F ∘ G$.
