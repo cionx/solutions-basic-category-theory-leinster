@@ -1,0 +1,218 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+\subsubsection*{The implication $\text{(A)} \implies \text{(R)}$}
+
+Suppose that the functor~$U$ admits a left adjoint~$F$.
+We have for every object~$A$ of~$\cat{A}$ the chain of isomorphisms
+\[
+	U(A)
+	≅
+	\Set( \{ \ast \}, U(A) )
+	≅
+	\cat{A}( F(\{ \ast \}), A ) \,,
+\]
+which is natural in~$A$.
+This tells us that the functor~$U$ is represented by the object~$F( \{ * \} )$ of~$\cat{A}$.
+
+\subsubsection*{The implication $\text{(R)} \implies \text{(L)}$}
+
+This follows from Proposition~6.2.2.
+
+
+
+\subsubsection{}
+
+Suppose that the functor~$U$ is represented by an object~$A$ of~$\cat{A}$.
+We may assume for simplicity that~$U = \cat{A}(A, \ph)$.
+
+The desired left adjoint~$F$ of~$U$ needs to preserve coproducts, and therefore need to satisfy
+\[
+	F(B)
+	≅
+	F\biggl( ∑_{b ∈ B} \{ b \} \biggr)
+	≅
+	∑_{b ∈ B} F(\{ b \})
+	≅
+	∑_{b ∈ B} F(\{ \ast \})
+\]
+for every set~$B$.
+We also find that
+\[
+	\cat{A}( F(\{ \ast \}), A' )
+	≅
+	\Set( \{ \ast \}, U(A') )
+	≅
+	U(A')
+	=
+	\cat{A}(A, A')
+\]
+for every object~$A'$ of~$\cat{A}$, natural in~$A'$, and therefore
+\[
+	F(\{ \ast \}) ≅ A
+\]
+by Yoneda’s lemma.
+
+Motivated by this thought experiment on the behaviour of~$F$, we define the functor~$F$ from~$\Set$ to~$\cat{A}$ as follows.
+\begin{itemize}
+
+	\item
+		For every set~$B$ let~$F(B)$ be the~\fold{$B$} sum of~$A$, i.e.,
+		\[
+			F(B) ≔ ∑_{b ∈ B} A \,.
+		\]
+		We further denote for every element~$b$ of~$B$ the canonical morphism belonging to the~\nth{$b$} summand of~$F(B)$ by~$i^B_b$.
+		This is a morphism from~$A$ to~$F(B)$.
+
+	\item
+		For every map
+		\[
+			g \colon B \to B' \,,
+		\]
+		let~$F(g)$ be the unique morphism from~$F(B)$ to~$F(B')$ given by
+		\[
+			F(g) ∘ i^B_b
+			=
+			i^{B'}_{g(b)}
+		\]
+		for every element~$b$ of~$B$.
+		(Intuitively speaking, the morphism~$F(g)$ maps the~\nth{$b$} summand of~$F(B)$ into the~\nth{$g(b)$} summand of~$F(B')$ -- both these summands are~$A$ -- via the identity morphism of~$A$.)
+
+\end{itemize}
+
+We have for every set~$B$ and every object~$A'$ of~$\cat{A}$ the chain of bijections
+\begin{align*}
+	\cat{A}(F(B), A')
+	&≅
+	\cat{A}\biggl( ∑_{b ∈ B} A, A' \biggr)
+	\\
+	&≅
+	∏_{b ∈ B} \cat{A}(A, A')
+	\\
+	&=
+	∏_{b ∈ B} U(A')
+	\\
+	&≅
+	\Set(B, U(A')) \,.
+\end{align*}
+The overall bijection is given by
+\[
+	α_{B, A'}
+	\colon
+	\cat{A}(F(B), A') \to \Set(B, U(A')) \,,
+	\quad
+	f \mapsto [b \mapsto f ∘ i^B_b] \,.%
+	\footnote{
+		If we only assume that~$U$ is isomorphic to~$\cat{A}(A, \ph)$, then this formula becomes slightly messier.
+		Indeed, we need to fix one such isomorphism, and then include its components in this formula.
+		The author doesn’t want to bother with this additional notational ballast, and therefore choose~$U$ to be~$\cat{A}(A, \ph)$.
+	}
+\]
+These bijections are natural in both~$B$ and~$A'$.
+Let us check this.
+\begin{itemize}
+
+	\item
+		Let
+		\[
+			g \colon B \to B'
+		\]
+		be a map of sets.
+		We need to show that the square diagram
+		\[
+			\begin{tikzcd}
+				\cat{A}(F(B'), A')
+				\arrow{r}[above]{α_{B', A'}}
+				\arrow{d}[left]{F(g)^*}
+				&
+				\Set(B', U(A'))
+				\arrow{d}[right]{g^*}
+				\\
+				\cat{A}(F(B), A')
+				\arrow{r}[above]{α_{B, A'}}
+				&
+				\Set(B, U(A'))
+			\end{tikzcd}
+		\]
+		commutes.
+		This commutativity holds because we have the chain of equalities
+		\begin{align*}
+			\SwapAboveDisplaySkip
+			g^*( α_{B', A'}( f ) )(b)
+			&=
+			(α_{B', A'}(f) ∘ g)(b)
+			\\
+			&=
+			α_{B', A'}(f)( g(b) )
+			\\
+			&=
+			f ∘ i^{B'}_{g(b)}
+			\\
+			&=
+			f ∘ F(g) ∘ i^B_b
+			\\
+			&=
+			α_{B, A'}(f ∘ F(g))(b)
+			\\
+			&=
+			α_{B, A'}( F(g)^*( f ) )(b)
+		\end{align*}
+		for every element~$f$ of~$\cat{A}(F(B'), A')$ and every element~$b$ of~$B$.
+
+		\item
+			Let
+			\[
+				h \colon A' \to A''
+			\]
+			be a morphism in~$\cat{A}$.
+			We need to show that the square diagram
+			\[
+				\begin{tikzcd}
+					\cat{A}(F(B), A')
+					\arrow{r}[above]{α_{B, A'}}
+					\arrow{d}[left]{h_*}
+					&
+					\Set(B, U(A'))
+					\arrow{d}[right]{U(h)_*}
+					\\
+					\cat{A}(F(B), A'')
+					\arrow{r}[above]{α_{B, A''}}
+					&
+					\Set(B, U(A''))
+				\end{tikzcd}
+			\]
+			commutes.
+			This commutativity holds because we have the chain of equalities
+			\begin{align*}
+				\SwapAboveDisplaySkip
+				U(h)_*( α_{B, A'}(f) )(b)
+				&=
+				( U(h) ∘ α_{B, A'}(f) )(b)
+				\\
+				&=
+				U(h)( α_{B, A'}(f)(b) )
+				\\
+				&=
+				U(h)( f ∘ i^B_b )
+				\\
+				&=
+				h_*( f ∘ i^B_b )
+				\\
+				&=
+				h ∘ f ∘ i^B_b
+				\\
+				&=
+				h_*(f) ∘ i^B_b
+				\\
+				&=
+				α_{B, A''}( h_*(f) )
+			\end{align*}
+			for every element~$f$ of~$\cat{A}(F(B), A')$ and every element~$b$ of~$B$.
+
+\end{itemize}
+
+We have overall shown that~$\cat{A}(F(B), A')$ is bijective to~$\Set(B, U(A'))$, natural in both~$B$ and~$A'$.
+This shows that the constructed functor~$F$ is left adjoint to the original functor~$U$.
