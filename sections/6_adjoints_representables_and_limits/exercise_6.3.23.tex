@@ -1,0 +1,128 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+Let~$P$ be a preordered set and let~$\cat{P}$ be the corresponding category.
+
+For every two elements~$x$ and~$y$ of~$P$, let~$x ∼ y$ if and only if both~$x ≤ y$ and~$y ≤ x$.
+The relation~$∼$ is an equivalence relation on~$P$.
+\begin{itemize}
+
+	\item
+		For every element~$x$ of~$P$ we have~$x ≤ x$, and therefore~$x ∼ x$.
+		This shows that the relation~$∼$ is transitive.
+
+	\item
+		Let~$x$ and~$y$ be two elements of~$P$.
+		Both~$x ∼ y$ and~$y ∼ x$ are defined via the same two conditions, whence~$x ∼ y$ if and only if~$y ∼ x$.
+		This shows that the relation~$∼$ is symmetric.
+
+	\item
+		Let~$x$,~$y$ and~$z$ be three elements of~$P$.
+		Suppose that both~$x ∼ y$ and~$y ∼ z$.
+		This means that
+		\[
+			x ≤ y \,,
+			\quad
+			y ≤ x \,,
+			\quad
+			y ≤ z \,,
+			\quad
+			z ≤ y \,.
+		\]
+		It follows from~$x ≤ y$ and~$y ≤ z$ that~$x ≤ z$, and it similarly follows from~$z ≤ y$ and~$y ≤ x$ that~$z ≤ x$.
+		We have thus both~$x ≤ z$ and~$z ≤ x$, which shows that~$x ∼ z$.
+		This shows that the relation~$∼$ is transitive.
+
+\end{itemize}
+
+Let~$x$,~$x'$ and~$y$,~$y'$ be elements of~$P$ with both~$x ∼ x'$ and~$y ∼ y'$.
+We claim that~$x ≤ y$ if and only if~$x' ≤ y'$.
+To prove this claim, it suffices to show that~$x ≤ y$ implies~$x' ≤ y'$, because~$∼$ is symmetric.
+So let’s suppose that~$x ≤ y$.
+We know from the assumptions~$x ∼ x'$ and~$y ∼ y'$ that~$x' ≤ x$ and~$y ≤ y'$.
+Together with~$x ≤ y$, this tells us that indeed~$x' ≤ y'$.
+
+Let~$Q$ be the quotient set~$P / {∼}$.
+We have thus seen that the preorder~$≤$ of~$P$ descends to a relation on~$Q$, which we shall again denote by~$≤$.
+This induced relation satisfies
+\begin{equation}
+	\label{induced preorder on quotient}
+	x ≤ y
+	\iff
+	\class{x} ≤ \class{y}
+\end{equation}
+for any two elements~$x$ and~$y$ of~$P$.
+
+The relation~$≤$ on~$Q$ is both reflexive and transitive, since the original preorder on~$P$ is reflexive and transitive.
+In other words,~$(Q, ≤)$ is again a preordered set.
+It is, in fact, already an ordered set.
+To see this, let~$\class{x}$ and~$\class{y}$ be two elements of~$Q$ with both~$\class{x} ≤ \class{y}$ and~$\class{y} ≤ \class{x}$.
+This means for the original two elements~$x$ and~$y$ of~$P$ that both~$x ≤ y$ and~$y ≤ x$.
+This tells us that~$x ∼ y$, and therefore that~$\class{x} = \class{y}$.
+
+Let~$\cat{Q}$ be the category corresponding to the ordered set~$(Q, ≤)$.
+The equivalence~\eqref{induced preorder on quotient} tells us that the quotient map from~$P$ to~$Q$ extends to functor~$F$ from~$\cat{P}$ to~$\cat{Q}$ that is both full and faithful.
+The functor~$F$ is also surjective on objects, and thus overall an equivalence of categories.
+(Choosing an essential inverse to~$F$ corresponds to choosing a representative for each equivalence class of~$∼$.)
+
+
+
+\subsubsection{}
+
+Let~$M$ be the class of morphisms of~$\cat{A}$.
+We have for every set~$I$ the chain of isomorphisms and inclusions
+\begin{equation}
+	\label{estimate for size of morphisms}
+	M
+	⊇
+	\cat{A}(A, B^I)
+	≅
+	\cat{A}(A, B)^I
+	⊇
+	\{ f, g \}^I
+	≅
+	\{ 0, 1 \}^I
+	≅
+	\Power(I)
+	⊇
+	\{ \{ i \} \suchthat i ∈ I \}
+	≅
+	I \,.
+\end{equation}
+We have thus constructed for every set~$I$ an inclusion from~$I$ to~$M$.
+(More explicitly, we assign to an element~$i$ of~$I$ the morphism from~$A$ to~$B^I$ whose~\nth{$i$} component is~$f$, and whose other components are~$g$.)
+This entails that~$M$ cannot be a set (since otherwise we could embed~$\Power(M)$ into~$M$, which is not possible for cardinality reasons).
+
+
+
+\subsubsection{}
+
+Let~$\cat{A}$ be a category that is both small and complete.
+We find from part~(b) of this exercise that for any two objects~$A$ and~$B$ of~$\cat{A}$ there exists at most one morphism from~$A$ to~$B$ in~$\cat{A}$.
+The category~$\cat{A}$ therefore corresponds to a preordered set~$P$.
+More explicitly, the elements of~$P$ are the objects of~$\cat{A}$, and for any two such objects~$A$ and~$B$, we have~$A ≤ B$ in~$P$ if and only if there exists a morphism from~$A$ to~$B$ in~$\cat{A}$.
+
+It follows from part~(a) of this exercise that~$\cat{A}$ is equivalent to an ordered set.
+This ordered set is complete since~$\cat{A}$ is complete (and equivalence of categories preserves completeness).
+
+
+
+\subsubsection{}
+
+Let~$\cat{A}$ be a category that admits all finite products.
+Suppose that there exist two objects~$A$ and~$B$ of~$\cat{A}$ for which there exist two distinct morphisms~$f$ and~$g$ from~$A$ to~$B$.
+We then find from~\eqref{estimate for size of morphisms} that for every finite set~$I$, the set of morphisms of~$\cat{A}$ is of larger cardinality than~$I$.
+This tells us that the category~$\cat{A}$ contains infinitely many morphisms, and is therefore infinite.
+
+Let now~$\cat{B}$ be a category that is finite and admits all finite products.
+We have just seen that there exists for every two objects~$A$ and~$B$ of~$\cat{B}$ at most one morphism from~$A$ to~$B$ in~$\cat{B}$.
+In other words, the category~$\cat{B}$ corresponds to a preordered set~$P$.
+This preordered set~$P$ is finite, since~$\cat{B}$ is finite.
+It follows from part~(a) of this exercise (and our solution to it) that~$\cat{B}$ is equivalent to an ordered set~$Q$ that is again finite.
+The ordered set~$Q$ admits finite products, because~$\cat{B}$ admits finite products.
+Since~$Q$ is finite, this means that~$Q$ admits all small products.
+As seen somewhere throughout the book, this means that~$Q$ admits all small limits.
+In other words,~$Q$ is complete.
