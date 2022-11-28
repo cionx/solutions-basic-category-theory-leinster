@@ -1,0 +1,533 @@
+\subsection{}
+
+The construction of subobjects from Exercise~5.1.40 allows us to generalize the notion of \enquote{subsets} to arbitrary categories.
+One important operation that we can do with subsets is taking preimages:
+given two sets~$A'$ and~$A$ and a map~$f$ from~$A'$ to~$A$, we can form for every subset~$S$ of~$A$ its preimage~$f^{-1}(S)$, which is a subset of~$A'$.
+The following \lcnamecref{preimages as pullbacks} allows us to express preimages in the language of category theory.
+
+\begin{proposition}
+	\label{preimages as pullbacks}
+	Let~$A$ be set, let~$S$ be a subset of~$A$ and let~$i$ be the inclusion map from~$S$ to~$A$.
+	Let~$A'$ be another set and let~$f$ a map from~$A'$ to~$A$.
+	Let~$i'$ the inclusion map from~$f^{-1}(S)$ to~$A'$ and let~$f'$ the restriction of~$f$ to a map from~$f^{-1}(S)$ to~$S$.
+	The following diagram is a pullback diagram:
+	\[
+		\begin{tikzcd}
+			f^{-1}(S)
+			\arrow{r}[above]{f'}
+			\arrow{d}[left]{i'}
+			&
+			S
+			\arrow{d}[right]{i}
+			\\
+			A'
+			\arrow{r}[above]{f}
+			&
+			A
+		\end{tikzcd}
+	\]
+\end{proposition}
+
+In the following, we will use this reformulation of preimages via pullbacks to generalize preimages to arbitrary categories.
+
+
+
+\subsubsection{}
+
+We can form for every object~$(X, m)$ of~$\Monic(A)$ the pullback diagram
+\begin{equation}
+	\label{preimages via pullback diagrams}
+	\begin{tikzcd}
+		X'
+		\arrow{r}
+		\arrow{d}[left]{m'}
+		&
+		X
+		\arrow{d}[right]{m}
+		\\
+		A'
+		\arrow{r}[above]{f}
+		&
+		A
+	\end{tikzcd}
+\end{equation}
+We know from Exercise~5.1.42 that the morphism~$m'$ is again a monomorphism, whence we have constructed an object~$(X', m')$ of~$\Monic(A')$.
+By choosing for every object~$(X, m)$ of~$\Monic(A)$ a pullback as above, we have thus constructed a map
+\[
+	\Monic(f)
+	\colon
+	\Ob(\Monic(A))
+	\to
+	\Ob(\Monic(A')) \,.
+\]
+We show in the following that the map~$\Monic(f)$ descends to a map
+\[
+	\Sub(f)
+	\colon
+	\Sub(A) \to \Sub(A') \,.
+\]
+This then shown that we can pull back subobjects of~$A$ to subobjects of~$A'$ via pullbacks.
+
+To show that the map~$\Monic(f)$ descends to a map~$\Sub(f)$ as desired, we need to show that isomorphic objects of~$\Monic(A)$ lead to isomorphic objects in~$\Monic(A')$.
+We will show more conceptually that~$\Monic(f)$ extends to a functor from~$\Monic(A)$ to~$\Monic(A')$.
+
+To construct the action of~$\Monic$ on morphisms, let
+\[
+	h \colon (X, m) \to (Y, n)
+\]
+be a morphism in~$\Monic(A)$.
+This means that we have the following commutative diagram:
+\[
+	\begin{tikzcd}[column sep = normal]
+		X
+		\arrow{rr}[above]{g}
+		\arrow{dr}[below left]{m}
+		&
+		{}
+		&
+		Y
+		\arrow{dl}[below right]{n}
+		\\
+		{}
+		&
+		A
+		&
+		{}
+	\end{tikzcd}
+\]
+Let~$(X', m')$ and~$(Y', n')$ be the images of~$(X, m)$ and~$(Y, n)$ under~$\Monic(f)$.
+There exists a unique morphism from~$X'$ to~$Y'$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}
+		X'
+		\arrow{rr}
+		\arrow{dd}[left]{m'}
+		\arrow[dashed]{dr}
+		&
+		{}
+		&
+		X
+		\arrow{dd}[left, near start]{m}
+		\arrow{dr}[above right]{g}
+		&
+		{}
+		\\
+		{}
+		&
+		Y'
+		\arrow[crossing over]{rr}
+		\arrow{dl}[below right]{n'}
+		&
+		{}
+		&
+		Y
+		\arrow{dl}[below right]{n}
+		\\[0.5em]
+		A'
+		\arrow{rr}[above, pos = 0.6]{f}
+		&
+		{}
+		&
+		A
+		&
+		{}
+	\end{tikzcd}
+\]
+We denote this induced morphism from~$X'$ to~$Y'$ by~$\Monic(f)(h)$, which is a morphism from~$(X', m')$ to~$(Y', n')$.
+This morphism is thus unique with making the following two-dimensional diagram commute:
+\[
+	\begin{tikzcd}
+		A'
+		\arrow[equal]{d}
+		&
+		X'
+		\arrow{l}[above]{m'}
+		\arrow{d}[right]{\Monic(f)(h)}
+		\arrow{r}
+		&
+		X
+		\arrow{d}[right]{h}
+		\\
+		A'
+		&
+		Y'
+		\arrow{l}[above]{n'}
+		\arrow{r}
+		&
+		Y
+	\end{tikzcd}
+\]
+Let us show that the assignment~$\Monic(f)$ from~$\Monic(A)$ to~$\Monic(A')$ is functorial.
+\begin{itemize}
+
+	\item
+		Let~$(X, m)$ be an object of~$\Monic(A)$, and let~$(X', m')$ be resulting object of~$\Monic(A')$.
+		The diagram
+		\[
+			\begin{tikzcd}
+				A'
+				\arrow[equal]{d}
+				&
+				X'
+				\arrow{l}[above]{m'}
+				\arrow{d}[right]{\id_{X'}}
+				\arrow{r}
+				&
+				X
+				\arrow{d}[right]{\id_X}
+				\\
+				A'
+				&
+				X'
+				\arrow{l}[above]{n'}
+				\arrow{r}
+				&
+				X
+			\end{tikzcd}
+		\]
+		commutes, whence the morphism~$\id_{X'} = \id_{(X', m')}$ satisfies the defining relationship of the morphism~$\Monic(f)(\id_{(X, n)})$.
+
+	\item
+		Let~$(X, m)$,~$(Y, n)$ and~$(Z, p)$ be objects of~$\Monic(A)$, and let~$(X', m')$,~$(Y', n')$ and~$(Z', p')$ be the resulting objects of~$\Monic(A')$.
+		Let
+		\[
+			h \colon (X, m) \to (Y, n) \,,
+			\quad
+			k \colon (Y, n) \to (Z, p)
+		\]
+		be two composable morphisms in~$\Monic(A)$.
+		We have the following commutative diagram:
+		\[
+			\begin{tikzcd}
+				A'
+				\arrow[equal]{d}
+				&
+				X'
+				\arrow{l}[above]{m'}
+				\arrow{d}[right]{\Monic(f)(h)}
+				\arrow{r}
+				&
+				X
+				\arrow{d}[right]{h}
+				\\
+				A'
+				\arrow[equal]{d}
+				&
+				Y'
+				\arrow{l}[above]{n'}
+				\arrow{d}[right]{\Monic(f)(k)}
+				\arrow{r}
+				&
+				Y
+				\arrow{d}[right]{k}
+				\\
+				A'
+				&
+				Z'
+				\arrow{l}[above]{p'}
+				\arrow{r}
+				&
+				Z
+			\end{tikzcd}
+		\]
+		By leaving out the middle row of this diagram, we end up with the following commutative diagram:
+		\[
+			\begin{tikzcd}
+				A'
+				\arrow[equal]{d}
+				&
+				X'
+				\arrow{l}[above]{m'}
+				\arrow{d}[right]{\Monic(f)(k) ∘ \Monic(f)(h)}
+				\arrow{r}
+				&[3.5em]
+				X
+				\arrow{d}[right]{k ∘ h}
+				\\
+				A'
+				&
+				Z'
+				\arrow{l}[above]{p'}
+				\arrow{r}
+				&
+				Z
+			\end{tikzcd}
+		\]
+		The composite~$\Monic(f)(k) ∘ \Monic(f)(h)$ thus satisfies the defining property of the morphism~$\Monic(f)(k ∘ h)$.
+		These morphisms are therefore the same.
+		
+\end{itemize}
+
+We have altogether constructed a functor
+\[
+	\Monic(f) \colon \Monic(A) \to \Monic(A') \,.
+\]
+This functor induces a map
+\[
+	\Sub(f) \colon \Sub(A) \to \Sub(A')
+\]
+as desired.
+This map~$\Sub(f)$ has the following explicit description:
+Given an element~$\class{(X, m)}$ of~$\Sub(A)$, we form the pullback diagram~\eqref{preimages via pullback diagrams}.
+The image of~$\class{(X, m)}$ under~$\Sub(f)$ is then the element~$\class{(X', m')}$.
+
+\begin{remark}
+	The functor~$\Monic(f)$ that we constructed above is somewhat evil, since it relies on choosing pullbacks.
+	However, pullbacks are unique up to isomorphism.
+	We can use this uniqueness up to isomorphism to show that the functor~$\Monic(f)$ is again unique up to isomorphism.
+	That is, different choices of pullbacks result in isomorphic functors.
+
+	As a consequence, the induced functor~$\Sub(f)$ from~$\Sub(A)$ to~$\Sub(A')$ does not depend on our original choice of pullbacks.
+\end{remark}
+
+
+
+\subsubsection{}
+
+The collection~$\Sub(A)$ is a set for every object~$A$ of~$\cat{A}$, since the category~$\cat{A}$ is assumed to be well-powered.
+We can therefore regard the construction~$\Sub$ as an assignment from~$\cat{A}$ to~$\Set$ (both on objects and on morphisms).
+Let us check that this assignment is contravariantly functorial.
+
+\begin{itemize}
+
+	\item
+		Let~$A$ be an object of~$\cat{A}$ and consider the identity morphism
+		\[
+			\id_A \colon A \to A \,.
+		\]
+		For every object~$(X, m)$ of~$\Monic(A)$, the diagram
+		\[
+			\begin{tikzcd}
+				X
+				\arrow{r}[above]{\id_X}
+				\arrow{d}[left]{m}
+				&
+				X
+				\arrow{d}[right]{m}
+				\\
+				A
+				\arrow{r}[above]{f}
+				&
+				A
+			\end{tikzcd}
+		\]
+		is a pullback diagram.
+		Therefore,
+		\[
+			\Sub(\id_A)( \class{(X, m)} ) = \class{(X, m)} \,.
+		\]
+		This shows that~$\Sub(\id_A) = \id_{\Sub(A)}$.
+
+	\item
+		Let
+		\[
+			f \colon A' \to A \,,
+			\quad
+			f' \colon A'' \to A'
+		\]
+		be two composable morphisms in~$\cat{A}$.
+		Let~$(X, m)$ be an object of~$\Monic(A)$, let~$(X', m')$ be the image of~$(X, m)$ under~$\Monic(f)$, and let~$(X'', m'')$ be the image of~$(X', m')$ under~$\Monic(f')$.
+		This means that in the following commutative diagram, both squares are are pullback diagrams:
+		\[
+			\begin{tikzcd}
+				X''
+				\arrow{r}
+				\arrow{d}[left]{m''}
+				&
+				X'
+				\arrow{r}
+				\arrow{d}[right]{m'}
+				&
+				X
+				\arrow{d}[right]{m}
+				\\
+				A''
+				\arrow{r}[above]{f'}
+				&
+				A'
+				\arrow{r}[above]{f}
+				&
+				A
+			\end{tikzcd}
+		\]
+		By leaving out the middle column of this diagram, we get the following commutative diagram:
+		\[
+			\begin{tikzcd}
+				X''
+				\arrow{r}
+				\arrow{d}[left]{m''}
+				&
+				X
+				\arrow{d}[right]{m}
+				\\
+				A''
+				\arrow{r}[above]{f ∘ f'}
+				&
+				A
+			\end{tikzcd}
+		\]
+		It follows from Exercise~5.1.35 that this diagram is again a pullback diagram.
+		We hence find that
+		\[
+			\Sub(f ∘ f')( \class{(X, m)} ) )
+			=
+			\class{(X'', m'')} \,.
+		\]
+		But we also have
+		\[
+			\class{(X'', m'')}
+			=
+			\Sub(f')( \class{(X', m')} )
+			=
+			\Sub(f')( \Sub(f)( \class{(X, m)} ) ) \,.
+		\]
+		We have therefore shown that~$\Sub(f ∘ f') = \Sub(f') ∘ \Sub(f)$.
+
+\end{itemize}
+We have shown that~$\Sub$ is a contravariant functor from~$\cat{A}$ to~$\Set$.
+
+\begin{remark}
+	We should actually be able to lift the identities
+	\[
+		\Sub(\id_A) = \id_{\Sub(A)} \,,
+		\quad
+		\Sub(f ∘ f') = \Sub(f') ∘ \Sub(A)
+	\]
+	to isomorphisms
+	\[
+		\Monic(\id_A) ≅ \id_{\Monic(A)} \,,
+		\quad
+		\Monic(f ∘ f') ≅ \Monic(f') ∘ \Monic(f) \,.
+	\]
+	But we cannot expect these isomorphisms to be equalities, since these action of~$\Monic$ on morphisms is only unique up to isomorphism.
+\end{remark}
+
+
+
+\subsubsection{}
+
+Subobjects in~$\Set$ are the same as subsets.
+More precisely, we have for every set~$A$ a bijection
+\[
+	α_A
+	\colon
+	\Power(A) \to \Sub(A) \,,
+	\quad
+	S \mapsto \class{(S, i_S)} \,,
+\]
+where for every subset~$S$ of~$A$ we denote the inclusion map from~$S$ to~$A$ as~$i_S$.
+The existence of these bijections also shows that the category~$\Set$ is well-powered.
+
+Let us check that the bijection~$α_A$ is natural in~$A$, so that~$α$ is a natural isomorphism from~$\Power$ to~$\Sub$.
+We need to check that for every map
+\[
+	f \colon A' \to A
+\]
+the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(A)
+		\arrow{r}[above]{α_A}
+		\arrow{d}[left]{\Power(f)}
+		&
+		\Sub(A)
+		\arrow{d}[right]{\Sub(f)}
+		\\
+		\Power(A')
+		\arrow{r}[above]{α_{A'}}
+		&
+		\Sub(A')
+	\end{tikzcd}
+\]
+In view of our explicit description of~$\Sub(f)$ via pullbacks, this commutativity follows from \cref{preimages as pullbacks}.
+
+Let now~$Ω$ be the set~$\{0, 1\}$.
+Given a subset~$S$ of a set~$A$, we can consider the characteristic function of~$S$ on~$A$.
+This is the map
+\[
+	χ_{A, S}
+	\colon
+	A
+	\to
+	Ω \,,
+	\quad
+	a
+	\mapsto
+	\begin{cases*}
+		1 & if~$a ∈ S$, \\
+		0 & otherwise.
+	\end{cases*}
+\]
+The resulting map
+\[
+	χ_A
+	\colon
+	\Power(A) \to \Set(A, Ω) \,,
+	\quad
+	S \mapsto χ_{A, S}
+\]
+is bijective for every set~$A$.
+It is also natural in~$A$.
+To see this, we need to convince ourselves that for every map
+\[
+	f \colon A' \to A
+\]
+between sets, the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(A)
+		\arrow{r}[above]{χ_A}
+		\arrow{d}[left]{\Power(f)}
+		&
+		\Set(A, Ω)
+		\arrow{d}[right]{f^*}
+		\\
+		\Power(A')
+		\arrow{r}[above]{χ_{A'}}
+		&
+		\Set(A', Ω)
+	\end{tikzcd}
+\]
+This diagram commutes because we have for every subset~$S$ of~$A$ and every element~$a'$ of~$A'$ the equalities
+\[
+	f^*( χ_A( S ) )(a')
+	=
+	f^*( χ_{A, S} )(a')
+	=
+	(χ_{A, S} ∘ f)(a')
+	=
+	χ_{A, S}( f(a') )
+\]
+and
+\[
+	χ_{A', f^{-1}(S)}(a')
+	=
+	χ_{A'}( f^{-1}(S) )(a')
+	=
+	χ_{A'}( \Power(f)(S) )(a') \,,
+\]
+therefore the chain of equivalences
+\begin{align*}
+	f^*( χ_A( S ) )(a') = 1
+	&\iff
+	χ_{A, S}( f(a') ) = 1
+	\\
+	&\iff
+	f(a') ∈ S
+	\\
+	&\iff
+	a' ∈ f^{-1}(S)
+	\\
+	&\iff
+	χ_{A', f^{-1}(S)}(a') = 1
+	\\
+	&\iff
+	χ_{A'}( \Power(f)(S) )(a') = 1 \,,
+\end{align*}
+and thus the equality~$f^*( χ_A(S) ) = χ_{A'}( \Power(f)(S) )$.
+
+We have overall constructed isomorphisms
+\[
+	\Sub ≅ \Power ≅ \Set(\ph, Ω) \,.
+\]
+The existence of the composite isomorphism~$\Sub ≅ \Set(\ph, Ω)$ shows that the functor~$\Sub$ is represented by the set~$Ω = \{ 0, 1 \}$.
