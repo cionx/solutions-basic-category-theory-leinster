@@ -340,6 +340,42 @@ This shows that the composite~$m' ∘ m$ is again a split monomorphism.
 We have seen that the class of monomorphisms is not necessarily closed under push\-outs.
 It follows by duality that the class of epimorphisms is not necessarily closed under pullbacks.
 
+Let us also give an explicit example:
+given a topological space $X$ and two subspaces $A$ and $B$ of $X$, we have the following pullback diagram, in which the arrows are the respective inclusion maps:
+\[
+	\begin{tikzcd}
+		A ∩ B
+		\arrow{r}
+		\arrow{d}
+		&
+		A
+		\arrow{d}
+		\\
+		B
+		\arrow{r}
+		&
+		X
+	\end{tikzcd}
+\]
+The same holds true if we don’t consider the entire category~$\Top$, but instead only the full subcategory of Hausdorff spaces.
+In this category, we have therefore the following pullback diagram:
+\[
+	\begin{tikzcd}
+		∅
+		\arrow{r}
+		\arrow{d}
+		&
+		ℚ
+		\arrow{d}
+		\\
+		ℝ ∖ ℚ
+		\arrow{r}
+		&
+		ℝ
+	\end{tikzcd}
+\]
+The inclusion map~$ℚ \to ℝ$ is an epimorphisms in this category, whereas the inclusion map~$∅ \to ℝ ∖ ℚ$ is not.
+
 
 
 \subsubsection*{Epimorphisms, pushouts}
