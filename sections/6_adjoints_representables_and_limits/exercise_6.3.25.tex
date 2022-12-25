@@ -1,3 +1,522 @@
 \subsection{}
 
-% TODO: Add a solution.
+We abbreviate~$[\scat{A}^{\op}, \Set]$ as~$\hat{\scat{A}}$, and denote the Yoneda embedding from~$\scat{A}$ to~$\hat{\scat{A}}$ by~$よ$.
+
+
+
+\subsubsection*{The Yoneda embedding preserves products}
+
+We know from Corollary~6.2.11 that the Yoneda embedding~$よ$ preserves limits, and therefore in particular products.
+
+
+
+\subsubsection*{What it means to preserve exponentials}
+
+The book doesn’t define what it means to preserve exponentials, so let us rectify this.
+
+Suppose that we have two cartesian closed categories~$\cat{A}$ and~$\cat{B}$ and a functor~$F$ from~$\cat{A}$ to~$\cat{B}$.
+For~$F$ to preserve exponentials, we surely need that~$F(C^B) ≅ F(C)^{F(B)}$ for any two objects~$B$ and~$C$ of~$\cat{A}$.
+
+However, this won’t be enough:
+constructions in category theory typically come with structure morphisms, and for a functor to preserve a certain kind of construction, we also want it to play nicely with these structure morphisms.
+(Recall, for example, what it means for~$F$ to preserve binary products:
+it is not only enough that~$F(A × B) ≅ F(A) × F(B)$ for any two objects~$A$ and~$B$, even if these isomorphisms are natural in~$A$ and~$B$.%
+\footnote{
+	To see this, let us consider the functor~$F ≔ (\ph) × ℕ$ from~$\Set$ to~$\Set$.
+	This functor satisfies~$F(B × C) ≅ F(B) × F(C)$ for any two sets~$B$ and~$C$ because~$ℕ × ℕ ≅ ℕ$ as sets.
+	By fixing one such bijection~$ℕ × ℕ \to ℕ$, we even get a natural isomorphism~$F(\ph) × F(\ph) ≅ F((\ph) × (\ph))$.
+	But the functor~$F$ does not preserve products, since for any two non-empty sets~$B$ and~$C$ with canonical projections~$p \colon B × C \to B$ and~$q \colon B × C \to C$, the induced map~$⟨p × \id_ℕ, q × \id_ℕ⟩ \colon B × C × ℕ \to (B × ℕ) × (C × ℕ)$ is not an isomorphism.
+}
+More strictly than that, we require the functor~$F$ to turn the canonical projects~$B × C \to B$ and~$B × C \to C$ into the canonical projections~$F(B) × F(C) \to F(B)$ and~$F(B) × F(C) \to F(C)$.)
+
+So to say what it means for~$F$ to preserve exponentials, we need to understand how the structure morphisms for exponentials look like.
+
+In the book, the exponential~$C^B$ has been defined as the value of~$(\ph)^B$ at~$C$, where~$(\ph)^B$ is a right-adjoint of~$(\ph) × B$.
+Part of the data of the adjoint~$(\ph)^B$ is a natural isomorphism
+\[
+	α \colon \cat{A}((\ph) × B, \ph) \to \cat{A}(\ph, (\ph)^B) \,.
+\]
+Part of the natural isomorphism~$α$ is a natural isomorphism
+\[
+	α_{(\ph), C} \colon \cat{A}((\ph) × B, C) \to \cat{A}(\ph, C^B) \,,
+\]
+for every object~$C$ of~$\cat{A}$, as explained in Exercise~1.3.29.
+The natural isomorphism~$α_{(\ph), C)}$ needs to be understood as being part of data of the exponential~$C^B$.
+
+In other words, the exponential~$C^B$ comes with a canonical natural isomorphism~$\cat{A}((\ph) × B, C) \To \cat{A}(\ph, C^B)$.
+This natural isomorphism can also be characterized in terms of its universal element, as explained in Section~3.1.
+This universal element is an element~$\ev$ of~$\cat{A}(C^B × B, C)$ such that for every object~$A$ of~$\cat{A}$ and every element~$f$ of~$\cat{A}(A × B, C)$, there exists a unique morphism~$f' \colon A \to C^B$ such that~$(f' × \id_B)^*(\ev) = f$.
+In other words:
+for every object~$A$ of~$\cat{A}$ and every morphism of the form~$f \colon A × B \to C$ there exists a unique morphism of the form~$f' \colon A \to C^B$ such that the following diagram commutes:
+\[
+	\begin{tikzcd}
+		A × B
+		\arrow{dr}[above right]{f}
+		\arrow{d}[left]{f' × \id_B}
+		&
+		{}
+		\\
+		C^B × B
+		\arrow{r}[below]{\ev}
+		&
+		C
+	\end{tikzcd}
+\]
+We call this morphism~$\ev$ the \defemph{canonical evaluation morphism}.
+This is the structure morphism belonging to the exponential~$C^B$.
+
+We can now say what it means for~$F$ to preserve exponentials.
+Suppose that~$F$ already preserves binary products.
+For every two objects~$B$ and~$C$ of~$\cat{A}$ let~$C^B$ be the exponential from~$B$ to~$C$ with canonical evaluation morphism~$\ev_{B, C} \colon C^B × B \to C$.
+In~$\cat{B}$, we have the induced morphism
+\[
+	\ev'_{F(B), F(C)} \colon F(C^B) × F(B) \to F(C^B × B) \xto{F(\ev_{B, C})} F(C) \,.
+\]
+(The morphism~$F(C^B) × F(B) \to F(C^B × B)$ is the isomorphism that comes from the fact that~$F$ preserves products.)
+We say that the functor~$F$ \defemph{preserves exponentials} if for any two objects~$B$ and~$C$ of~$\cat{A}$ the object~$F(C^B)$ together with the induced morphism~$\ev'_{F(B), F(C)}$ is an exponential from~$F(B)$ to~$F(C)$.
+
+
+
+\subsubsection*{Exponentials in presheaf categories}
+
+Let us revisit the construction of exponential objects in~$[\scat{A}^{\op}, \Set]$ in a way that emphasizes the canonical evaluation morphisms.
+By a \enquote{presheaf} we will always mean a presheaf on~$\scat{A}$.
+
+Given two presheaves~$Y$ and~$Z$, we once again define the presheaf~$Z^Y$ as
+\[
+	Z^Y ≔ \hat{\scat{A}}(よ(\ph) × Y, Z) \,.
+\]
+For every morphism
+\[
+	f \colon B \to A
+\]
+in~$\scat{A}$, the result of applying~$Z^Y$ to~$f$ is consequently the map
+\[
+	Z^Y(f)
+	\colon
+	\hat{\scat{A}}(よ(A) × Y, Z) \to \hat{\scat{A}}(よ(B) × Y, Z)
+\]
+given on elements by
+\[
+	Z^Y(f)(θ) = (よ(f) × \id_Y)^*(θ) = θ ∘ (よ(f) × \id_Y)
+\]
+for every~$θ ∈ \hat{\scat{A}}(よ(A) × Y, Z)$.
+The function value~$Z^Y(f)(θ)$ is a natural transformation from~$よ(B) × Y$ to~$Z$, whose components are given by the maps
+\[
+	Z^Y(f)(θ)_C \colon \scat{A}(C, B) × Y(C) \to Z(C) \,,
+\]
+with
+\begin{equation}
+	\label{action of exponential presheaf on morphisms}
+	\begin{aligned}
+		Z^Y(f)(θ)_C(h, y)
+		&=
+		\bigl( θ ∘ (よ(f) × \id_Y) \bigr)_C(h, y) \\
+		&=
+		\bigl( θ_C ∘ (よ(f) × \id_Y)_C \bigr)(h, y) \\
+		&=
+		\bigl( θ_C ∘ (f_* × \id_{Y(C)}) \bigr)(h, y) \\
+		&=
+		θ_C\bigl( (f_* × \id_{Y(C)})(h, y) \bigr) \\
+		&=
+		θ_C( f ∘ h, y )
+	\end{aligned}
+\end{equation}
+for every object~$C$ of~$\scat{A}$ and every element~$(h, y)$ of~$\scat{A}(C, B) × Y(C)$.
+
+
+To make the presheaf~$Z^Y$ into an exponential from~$Y$ to~$Z$, we need to construct an evaluation natural transformation
+\[
+	ε \colon Z^Y × Y \To Z \,.
+\]
+For every object~$A$ of~$\scat{A}$ we define the component~$ε_A$ as
+\[
+	ε_A
+	\colon
+	Z^Y(A) × Y(A) \to Z(A) \,,
+	\quad
+	(θ, y) \mapsto θ_A( \id_A, y ) \,.
+\]
+To check the naturality of the transformation~$ε$, we consider an arbitrary morphism
+\[
+	f \colon B \to A
+\]
+in~$\scat{A}$.
+The resulting diagram
+\[
+	\begin{tikzcd}[column sep = huge]
+		Z^Y(A) × Y(A)
+		\arrow{r}[above]{Z^Y(f) × Y(f)}
+		\arrow{d}[left]{ε_A}
+		&
+		Z^Y(B) × Y(B)
+		\arrow{d}[right]{ε_B}
+		\\
+		Z(A)
+		\arrow{r}[above]{Z(f)}
+		&
+		Z(B)
+	\end{tikzcd}
+\]
+commutes because for every element~$(θ, y)$ of the top-left corner, we have
+\begin{align*}
+	ε_B\bigl( (Z^Y(f) × Y(f))(θ, y) \bigr)
+	&=
+	ε_B\bigl( Z^Y(f)(θ), Y(f)(y) \bigr) \\
+	&=
+	Z^Y(f)(θ)_B\bigl( \id_B, Y(f)(y) \bigr) \\
+	&=
+	θ_B\bigl( f ∘ \id_B, Y(f)(y) \bigr) \\
+	&=
+	θ_B( f, Y(f)(y) ) \,,
+\end{align*}
+as well as
+\begin{align*}
+	\SwapAboveDisplaySkip
+	Z(f)( ε_A(θ, y) )
+	&=
+	Z(f)( θ_A( \id_A, y ) ) \\
+	&=
+	θ_B\bigl( (よ(A) × Y)(f)( \id_A, y ) \bigr) \\
+	&=
+	θ_B\bigl( (よ(A)(f) × Y(f))( \id_A, y ) \bigr) \\
+	&=
+	θ_B\bigl( (f^* × Y(f))( \id_A, y ) \bigr) \\
+	&=
+	θ_B( f, Y(f)(y) )
+\end{align*}
+because~$θ$ is a natural transformation from~$よ(A) × Y$ to~$Z$.
+
+We now need to show that for every presheaf~$X$ on~$\scat{A}$ and every natural transformation
+\[
+	β \colon X × Y \To Z
+\]
+there exists a unique natural transformation
+\[
+	α \colon X \To Z^Y
+\]
+that makes the diagram
+\begin{equation}
+	\label{required commutative diagram for exponential of presheaves}
+	\begin{tikzcd}
+		X × Y
+		\arrow[Rightarrow]{dr}[above right]{β}
+		\arrow[Rightarrow]{d}[left]{α × \id_Y}
+		&
+		{}
+		\\
+		Z^Y × Y
+		\arrow[Rightarrow]{r}[below]{ε}
+		&
+		Z
+	\end{tikzcd}
+\end{equation}
+commute.
+
+Let us start by showing the uniqueness of~$α$.
+The commutativity of the diagram~\eqref{required commutative diagram for exponential of presheaves} means that for every object~$A$ of~$\scat{A}$ the diagram
+\[
+	\begin{tikzcd}
+		X(A) × Y(A)
+		\arrow{dr}[above right]{β_A}
+		\arrow{d}[left]{α_A × \id_{Y(A)}}
+		&
+		{}
+		\\
+		Z^Y(A) × Y(A)
+		\arrow{r}[below]{ε_A}
+		&
+		Z(A)
+	\end{tikzcd}
+\]
+commutes.
+In terms of elements, this is equivalent to saying that
+\begin{equation}
+	\label{uniqueness of alpha on identity in the first coordinate}
+	β_A(x, y)
+	= ε_A( (α_A × \id_{Y(A)})( x, y ) )
+	= ε_A( α_A(x), y )
+	= α_A(x)_A(\id_A, y)
+\end{equation}
+for every object~$A$ of~$\scat{A}$ and all elements~$x ∈ X(A)$,~$y ∈ Y(A)$.
+
+We want to determine the natural transformation~$α \colon X \To Z^Y$ in question, which means that we need to determine for every object~$A$ of~$\scat{A}$ its component
+\[
+	α_A \colon X(A) \to Z^Y(A) = \hat{\scat{A}}(よ(A) × Y, Z) \,.
+\]
+This means that we need to determine for every element~$x$ of~$X(A)$ the element~$α_A(x)$ of~$\hat{\scat{A}}(よ(A) × Y, Z)$.
+This element is itself again a natural transformation, now from~$よ(A) × Y$ to~$Z$.
+We hence need to determine for every object~$B$ of~$\scat{A}$ the component
+\[
+	α_A(x)_B \colon \scat{A}(B, A) × Y(B) \to Z(B) \,.
+\]
+For this, we need to determine the value~$α_A(x)_B(f, y)$ for every element~$(f, y)$ of~$\scat{A}(B, A) × Y(B)$.
+The element~$f$ of~$\scat{A}(B, A)$ is a morphism from~$B$ to~$A$ in~$\scat{A}$, and therefore gives us the following commutative diagram:
+\[
+	\begin{tikzcd}
+		X(A)
+		\arrow{r}[above]{X(f)}
+		\arrow{d}[left]{α_A}
+		&
+		X(B)
+		\arrow{d}[right]{α_B}
+		\\
+		Z^Y(A)
+		\arrow{r}[above]{Z^Y(f)}
+		&
+		Z^Y(B)
+	\end{tikzcd}
+\]
+We find from the commutativity of this diagram that
+\begin{align}
+	α_A(x)_B(f, y)
+	&=
+	α_A(x)_B(f ∘ \id_B, y)
+	\notag \\
+	&=
+	Z^Y(f)( α_A(x) )_B(\id_B, y)
+	\label{using exponential presheaf formula} \\
+	&=
+	α_B( X(f)(x) )_B(\id_B, y)
+	\label{using implicit formulas for alpha} \\
+	&=
+	β_B( X(f)(x), y) \,,
+	\notag
+\end{align}
+where equality~\eqref{using exponential presheaf formula} follows from the description of~$Z^Y(f)$ from~\eqref{action of exponential presheaf on morphisms}, and equality~\eqref{using implicit formulas for alpha} follows from the property of~$α$ from~\eqref{uniqueness of alpha on identity in the first coordinate}.
+We have thus shown the uniqueness of~$α$.
+
+
+
+Let us now show the existence of the natural transformation~$α$.
+We set
+\begin{equation}
+	\label{definition for the induced natural transformation alpha}
+	α_A(x)_B(f, y) ≔ β_B( X(f)(x), y )
+\end{equation}
+for every two objects~$A$ and~$B$ of~$\scat{A}$ and all~$x ∈ X(A)$,~$(f, y) ∈ \scat{A}(B, A) × Y(B)$.
+This gives us a well-defined map
+\[
+	α_A(x)_B \colon \scat{A}(B, A) × Y(B) \to Z(B)
+\]
+for every two objects~$A$ and~$B$ of~$\scat{A}$ and every~$x ∈ X(A)$.
+
+Let us show that the resulting transformation~$α_A(x)$ from~$よ(A) × Y$ to~$Z$ is natural for every object~$A$ of~$\scat{A}$ and every~$x ∈ X(A)$.
+For this, we need to show that for every morphism~$g \colon C \to B$ in~$\scat{A}$ the diagram
+\[
+	\begin{tikzcd}
+		\scat{A}(B, A) × Y(B)
+		\arrow{r}[above]{g^* × Y(g)}
+		\arrow{d}[left]{α_A(x)_B}
+		&
+		\scat{A}(C, A) × Y(C)
+		\arrow{d}[right]{α_A(x)_C}
+		\\
+		Z(B)
+		\arrow{r}[above]{Z(g)}
+		&
+		Z(C)
+	\end{tikzcd}
+\]
+commutes.
+This holds because
+\begin{align*}
+	α_A(x)_C\bigl( (g^* × Y(g))(f, y) \bigr)
+	&=
+	α_A(x)_C\bigl( f ∘ g, Y(g)(y) \bigr) \\
+	&=
+	β_C\bigl( X(f ∘ g)(x), Y(g)(y) \bigr) \\
+	&=
+	β_C\bigl( X(g)(X(f)(x)), Y(g)(y) \bigr) \\
+	&=
+	β_C\bigl( (X(g) × Y(g))( X(f)(x), y ) \bigr) \\
+	&=
+	β_C\bigl( (X × Y)(g)( X(f)(x), y ) \bigr) \\
+	&=
+	Z(g)\bigl( β_B( X(f)(x), y ) \bigr) \\
+	&=
+	Z(g)\bigl(α_A(x)_B(f, y) \bigr)
+\end{align*}
+for every element~$(f, y)$ of the top-left corner of this diagram.
+
+We have thus constructed a well-defined map
+\[
+	α_A
+	\colon
+	X(A) \to \hat{\scat{A}}(よ(A) × Y, Z) = Z^Y(A)
+\]
+for every object~$A$ of~$\scat{A}$.
+Let us show that the resulting transformation~$α$ from~$X$ to~$Z^Y$ is natural.
+For this, we need to check that for every morphism~$g \colon B \to A$ in~$\scat{A}$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		X(A)
+		\arrow{r}[above]{X(g)}
+		\arrow{d}[left]{α_A}
+		&
+		X(B)
+		\arrow{d}[right]{α_B}
+		\\
+		Z^Y(A)
+		\arrow{r}[above]{Z^Y(g)}
+		&
+		Z^Y(B)
+	\end{tikzcd}
+\]
+We hence need to show that
+\[
+	α_B( X(g)(x) )_C(f, y) = Z^Y(g)( α_A(x) )_C(f, y)
+\]
+for every~$x ∈ X(A)$, every object~$C$ of~$\scat{A}$ and every~$(f, y) ∈ \scat{A}(C, B) × Y(C)$.
+This equality holds because
+\begin{align*}
+	α_B( X(g)(x) )_C(f, y)
+	&=
+	β_C\bigl( X(f)(X(g)(x)), y \bigr) \\
+	&=
+	β_C( X(g ∘ f)(x), y ) \\
+	&=
+	α_A(x)_C( g ∘ f, y ) \\
+	&=
+	Z^Y(g)( α_A(x) )_C(f, y) \,.
+\end{align*}
+We have thus shown that~$α$ is natural.
+
+It remains to show that the constructed natural transformation~$α$ makes the diagram~\eqref{required commutative diagram for exponential of presheaves} commute.
+We have already seen in~\eqref{uniqueness of alpha on identity in the first coordinate} that the commutativity of~\eqref{required commutative diagram for exponential of presheaves} is equivalent to the equations
+\[
+	β_A(x, y) = α_A(x)_A(\id_A, y)
+\]
+for every object~$A$ of~$\scat{A}$ and all~$x ∈ X(A)$, $y ∈ Y(A)$.
+The natural transformation~$α$ satisfies these equations because
+\[
+	α_A(x)_A(\id_A, y)
+	= β_A(X(\id_A)(x), y)
+	= β_A( \id_{X(A)}(x), y )
+	= β_A(x, y) \,.
+\]
+
+
+
+\subsubsection*{The Yoneda embedding preserves exponentials}
+
+Let us now show that the Yoneda embedding preserves exponentials.
+Let~$B$ and~$C$ be two objects of~$\scat{A}$ with exponential~$C^B$ and evaluation homomorphism
+\[
+	\ev \colon C^B × B \to C \,.
+\]
+We need to show that the object~$よ(C^B)$ together with the induced natural transformation
+\[
+	\ev' \colon よ(C^B) × よ(B) \to よ(C^B × B) \xto{\ev_*} よ(C)
+\]
+as an exponential from~$よ(B)$ to~$よ(C)$.
+We note that the components of~$\ev'$ are given by
+\[
+	\ev'_D
+	\colon
+	\scat{A}(D, C^B) × \scat{A}(D, B) \to \scat{A}(D, C) \,,
+	\quad
+	(f, g) \mapsto \ev ∘ ⟨f, g⟩
+\]
+for every object~$D$ of~$\scat{A}$.
+
+We consider the exponential~$よ(C)^{よ(B)}$ and its evaluation natural transformation
+\[
+	ε \colon よ(C)^{よ(B)} × よ(B) \To よ(C) \,.
+\]
+There exists a unique natural transformation
+\[
+	α \colon よ(C^B) \To よ(B)^{よ(C)}
+\]
+that makes the diagram
+\[
+	\begin{tikzcd}
+		よ(C^B) × よ(C)
+		\arrow[Rightarrow]{dr}[above right]{\ev'}
+		\arrow[Rightarrow]{d}[left]{α × \id_{よ(C)}}
+		&
+		{}
+		\\
+		よ(C)^{よ(B)} × よ(C)
+		\arrow[Rightarrow]{r}[below]{ε}
+		&
+		よ(B)
+	\end{tikzcd}
+\]
+commute.
+We show in the following that this natural transformation~$α$ is already an isomorphism.
+Since~$よ(C)^{よ(B)}$ together with~$ε$ is an exponential from~$よ(B)$ to~$よ(C)$, this then shows that~$よ(C^B)$ together with~$\ev'$ is also an exponential from~$よ(B)$ to~$よ(C)$.
+To show that~$α$ is an isomorphism, we will show that it is an isomorphism in each component.
+
+We can already see that the presheaves~$よ(C)^{よ(B)}$ and~$よ(C^B)$ are isomorphic in each component (in some way) because
+\begin{align*}
+	よ(C^B)(A)
+	&=
+	\scat{A}(A, C^B) \\
+	&≅
+	\scat{A}(A × B, C) \\
+	&≅
+	\hat{\scat{A}}(よ(A × B), よ(C)) \\
+	&≅
+	\hat{\scat{A}}(よ(A) × よ(B), よ(C)) \\
+	&=
+	よ(C)^{よ(B)}(A)
+\end{align*}
+for every object~$A$ of~$\scat{A}$.
+Let us denote this isomorphism from~$よ(C^B)(A)$ to~$よ(C)^{よ(B)}(A)$ by~$φ_A$.
+We can derive an explicit formula for~$φ_A$ as follows:
+\begin{itemize*}
+
+	\item
+		Let~$f$ be an element of~$よ(C^B)(A) = \cat{A}(A, C^B)$.
+
+	\item
+		The resulting element~$f'$ of~$\scat{A}(A × B, C)$ is given by~$f' = \ev ∘ (f × \id_B)$.
+
+	\item
+		The resulting element~$γ$ of~$\hat{\scat{A}}(よ(A × B), よ(C))$ is a natural transformation from~$よ(A × B)$ to~$よ(C)$, which is given in components by
+		\[
+			γ_D
+			\colon
+			\scat{A}(D, A × B) \to \scat{A}(D, C) \,,
+			\quad
+			g \mapsto f' ∘ g
+		\]
+		for every object~$D$ of~$\scat{A}$.
+		In other words,
+		\[
+			γ_D(g) = \ev ∘ (f × \id_B) ∘ g \,.
+		\]
+
+	\item
+		The resulting element~$γ'$ of~$\hat{\scat{A}}(よ(A) × よ(B), よ(C) = よ(C)^{よ(B)}(A)$ is a natural transformation from~$よ(A) × よ(B)$ to~$よ(C)$, which is given in components by
+		\[
+			γ'_D
+			\colon
+			\scat{A}(D, A) × \scat{A}(D, B) \to \scat{A}(D, C) \,,
+			\quad
+			(g, h) \mapsto γ_D( ⟨g, h⟩ )
+		\]
+		for every object~$D$ of~$\scat{A}$.
+		In other words,
+		\[
+			γ'_D(g, h)
+			= \ev ∘ (f × \id_B) ∘ ⟨g, h⟩
+			= \ev ∘ ⟨f ∘ g, h⟩ \,.
+		\]
+\end{itemize*}
+We see altogether that the isomorphism~$φ_A$ is given by
+\[
+	φ_A(f)_D(g, h) = \ev ∘ ⟨f ∘ g, h⟩
+\]
+for every object~$D$ of~$\scat{A}$.
+
+We have previously seen an explicit formula for~$α$ in~\eqref{definition for the induced natural transformation alpha}.
+Adapting this general formula to our special case, we see that for every object~$A$ of~$\scat{A}$, the component~$α_A$ is given by
+\[
+	α_A(f)_D(g, h)
+	= \ev'_D(よ(C^B)(g)(f), h)
+	= \ev'_D(f ∘ g, h)
+	= \ev ∘ ⟨f ∘ g, h⟩ \,.
+\]
+We hence see that the component~$α_A$ is precisely the isomorphism~$φ_A$, which entails that~$α_A$ is an isomorphism.
