@@ -22,7 +22,7 @@ It follows that~$\cat{A}$ admits all finite products, since it admits binary pro
 Next, we will show that the category~$\cat{A}$ admits equalizers.
 To this end, we make the following observation:
 
-\begin{proposition*}
+\begin{proposition}
 	\label{equalizers via pushouts}
 	Let~$\cat{A}$ be a category admitting binary products, and let
 	\[
@@ -37,15 +37,15 @@ To this end, we make the following observation:
 			\arrow{d}[left]{i}
 			&
 			X
-			\arrow{d}[right]{(\id_X, g)}
+			\arrow{d}[right]{⟨\id_X, g⟩}
 			\\
 			X
-			\arrow{r}[below]{(\id_X, f)}
+			\arrow{r}[below]{⟨\id_X, f⟩}
 			&
 			X × Y
 		\end{tikzcd}
 	\]
-\end{proposition*}
+\end{proposition}
 
 \begin{proof}
 	We have the following chain of equivalences:
@@ -59,7 +59,7 @@ To this end, we make the following observation:
 		\left\lbrace
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and all morphisms \\
-				$r, s \colon A \to X$ with~$(1_X, f) ∘ r = (1_X, g) ∘ s$, \\
+				$r, s \colon A \to X$ with~$⟨1_X, f⟩ ∘ r = ⟨1_X, g⟩ ∘ s$, \\
 				there exists a unique morphism~$h \colon A \to E$ \\
 				with~$r = i ∘ h$ and~$s = i ∘ h$
 			\end{tabular}
@@ -69,7 +69,7 @@ To this end, we make the following observation:
 		\left\lbrace
 			\begin{tabular}{l@{}}
 				for every object~$A$ of~$\cat{A}$ and all morphisms \\
-				$r, s \colon A \to X$ with~$(r, f ∘ r) = (s, g ∘ s)$, \\
+				$r, s \colon A \to X$ with~$⟨r, f ∘ r⟩ = ⟨s, g ∘ s⟩$, \\
 				there exists a unique morphism~$h \colon A \to E$ \\
 				with~$r = i ∘ h$ and~$s = i ∘ h$
 			\end{tabular}
