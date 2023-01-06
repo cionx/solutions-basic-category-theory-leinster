@@ -1,0 +1,1024 @@
+\subsection{}
+
+We denote the presheaf category~$[\scat{A}^{\op}, \Set]$ by~$\hat{\scat{A}}$.
+
+To give an explicit description of subobjects in $\hat{\scat{A}}$ we introduce the notion of a subfunctor:
+a subfunctor is to a functor what a subset is to a set.
+Just as subobjects in~$\Set$ correspond to subsets, we will show that subobjects in~$\hat{\scat{A}}$ correspond to subfunctors.
+
+\subsubsection*{Definition of subfunctors}
+
+Let~$\cat{A}$ be a category and let~$H$ be a functor from~$\cat{A}$ to~$\Set$.
+We say that another functor~$S$ from~$\cat{A}$ to~$\Set$ is a \defemph{subfunctor} of~$H$ if it satisfies the following two conditions.
+\begin{enumerate*}
+	\item
+		$S(A)$ is a subset of~$H(A)$ for every object~$A$ of~$\cat{A}$.
+	\item
+		$S(f)$ is the restriction of~$H(f)$ for every morphism~$f$ in~$\cat{A}$.
+\end{enumerate*}
+In other words, a subfunctor~$S$ of~$H$ consists of a subset~$S(A)$ of~$H(A)$ for every object~$A$ of~$\cat{A}$, such that~$H(f)( S(A) ) ⊆ S(B)$ for every morphism~$f \colon A \to B$ in~$\cat{A}$.
+
+We write~$S ⊆ H$ if~$S$ is a subfunctor of~$H$.
+The relation $⊆$ is a partial order on the class of functors from $\cat{A}$ to $\Set$.
+We denote the class of subfunctors of~$H$ by~$\Power(H)$.
+Given two subfunctors~$S$ and~$T$ of~$H$, we have~$S ⊆ T$ if and only if~$S(A) ⊆ T(A)$ for every object~$A$ of~$\cat{A}$.
+
+\subsubsection*{The image of a natural transformation}
+
+Given another functor~$H'$ from~$\cat{A}$ to~$\Set$ and a natural transformation~$α$ from~$H'$ to~$H$, we define a subfunctor~$\im(α)$ of~$H$ with
+\[
+	\im(α)(A) ≔ \im(α_A)
+\]
+for every object~$A$ of~$\cat{A}$.
+This is indeed a subfunctor of~$H$ because
+\begin{align*}
+	H(f)\bigl( \im(α)(A) \bigr)
+	&=
+	H(f)( \im(α_A) ) \\
+	&=
+	H(f)( α_A( F(A) ) ) \\
+	&=
+	α_B\bigl( F(f)( F(A) ) \bigr) \\
+	&⊆
+	α_B( F(B) ) \\
+	&=
+	\im(α_B) \\
+	&=
+	\im(α)(B)
+\end{align*}
+for every morphism~$f \colon A \to B$ in~$\cat{A}$.
+We refer to the subfunctor~$\im(α)$ of~$H$ as the \defemph{image} of~$α$.
+
+\subsubsection*{Correspondence between subobjects and subfunctors}
+
+Let us now restrict our attention to subobjects of~$H$.
+We claim that the map
+\begin{equation}
+	\label{image map from monics to subfunctors}
+	\Ob(\Monic(H)) \to \Power(H) \,,
+	\quad
+	(X, μ) \mapsto \im(μ) \,,
+\end{equation}
+descends to a well-defined bijection from~$\Sub(H)$ to~$\Power(H)$.
+To prove this claim we need to check the following subclaims:
+\begin{enumerate}
+
+	\item
+		Isomorphic objects of~$\Monic(H)$ have the same image.
+
+	\item
+		The map~\eqref{image map from monics to subfunctors} is surjective.
+
+	\item
+		If two objects of~$\Monic(H)$ have the same image, then they are already isomorphic in~$\Monic(A)$.
+
+\end{enumerate}
+
+To show the first subclaim, suppose that we have a commutative diagram of functors and natural transformations as follows:
+\[
+	\begin{tikzcd}[column sep = normal]
+		{}
+		&
+		H
+		&
+		\\
+		F
+		\arrow[Rightarrow]{ur}[above left]{α}
+		\arrow[Rightarrow]{rr}
+		&
+		{}
+		&
+		G
+		\arrow[Rightarrow]{ul}[above right]{β}
+	\end{tikzcd}
+\]
+We then have~$\im(α) ⊆ \im(β)$.
+For two isomorphic objects~$(X, μ)$ and~$(X, μ')$ of~$\Monic(H)$ we thus have both~$\im(μ) ⊆ \im(μ')$ and~$\im(μ') ⊆ \im(μ)$, and therefore~$\im(μ) = \im(μ')$.
+
+Now we show the second subclaim.
+For every subfunctor~$S$ of~$H$ we have a natural transformation~$ι \colon S \To H$ whose component~$ι_A$ is given by the inclusion map from~$S(A)$ to~$H(A)$ for every object~$A$ of~$\cat{A}$.
+Each component of~$ι$ is an injective map, whence~$ι$ is a monomorphism.
+The object~$(S, ι)$ of~$\Monic(H)$ serves as a preimage of~$S$ for the map~\eqref{image map from monics to subfunctors}, whence this map is surjective.
+
+To show the third subclaim, suppose that~$(X, μ)$ and~$(X', μ')$ are two objects of~$\Monic(H)$ with the same image in~$\Power(H)$, i.e., with~$\im(μ) = \im(μ')$.
+We know from Exercise~6.2.20 that the components of~$μ$ and~$μ'$ are injective.
+For every object~$A$ of~$\cat{A}$ we have thefore the two injective maps
+\[
+	μ_A \colon X(A) \to H(A) \,,
+	\quad
+	μ'_A \colon X'(A) \to H(A) \,.
+\]
+These two maps have the same image since
+\[
+	\im(μ_A)
+	=
+	\im(μ)(A)
+	=
+	\im(μ')(A)
+	=
+	\im(μ'_A) \,.
+\]
+As seen in the solution to Exercise~5.1.40, there exists a unique bijection~$α_A$ from~$X(A)$ to~$X'(A)$ that makes the following diagram commute:
+\[
+	\begin{tikzcd}[column sep = small]
+		X(A)
+		\arrow{rr}[above]{α_A}
+		\arrow{dr}[below left]{μ_A}
+		&
+		{}
+		&
+		X'(A)
+		\arrow{dl}[below right]{μ'_A}
+		\\
+		{}
+		&
+		H(A)
+		&
+		{}
+	\end{tikzcd}
+\]
+
+We claim that the resulting transformation~$α$ from~$X$ to~$X'$ is natural.
+To show this, we need to check that for every morphism~$f \colon A \to B$ in~$\cat{A}$ the diagram
+\[
+	\begin{tikzcd}
+		X(A)
+		\arrow{r}[above]{α_A}
+		\arrow{d}[left]{X(f)}
+		&
+		X'(A)
+		\arrow{d}[right]{X'(f)}
+		\\
+		X(B)
+		\arrow{r}[above]{α_B}
+		&
+		X'(B)
+	\end{tikzcd}
+\]
+commutes.
+To this end, we consider the following extended diagram:
+\[
+	\begin{tikzcd}
+		X(A)
+		\arrow{rr}[above]{α_A}
+		\arrow{dr}[below left]{μ_A}
+		\arrow{dd}[left]{X(f)}
+		&
+		{}
+		&
+		X'(A)
+		\arrow{dl}[below right]{μ'_A}
+		\arrow{dd}[right]{X'(f)}
+		\\
+		{}
+		&
+		H(A)
+		&
+		{}
+		\\
+		X(B)
+		\arrow{rr}[above, near start]{α_B}
+		\arrow{dr}[below left]{μ_B}
+		&
+		{}
+		&
+		X'(B)
+		\arrow{dl}[below right]{μ'_B}
+		\\
+		{}
+		&
+		H(B)
+		\arrow[crossing over, from=uu, right, near start, "H(f)"]
+		&
+		{}
+	\end{tikzcd}
+\]
+The top and bottom of this diagram commute by definition of~$α$, and the frontal two sides commute by the naturality of~$μ$ and~$μ'$.
+It follows that
+\begin{align*}
+	μ'_B ∘ X'(f) ∘ α_A
+	&=
+	H(f) ∘ μ'_A ∘ α_A \\
+	&=
+	H(f) ∘ μ_A \\
+	&=
+	μ_B ∘ X(f) \\
+	&=
+	μ'_B ∘ α_B ∘ X(f) \,.
+\end{align*}
+The map~$μ'_B$ is injective, so it follows that~$X'(f) ∘ α_A = α_B ∘ X(f)$, as desired.
+
+We have thus constructed a natural isomorphism~$α$ from~$X$ to~$X'$ that makes the diagram
+\[
+	\begin{tikzcd}[column sep = normal]
+		X
+		\arrow[Rightarrow]{rr}[above]{α}
+		\arrow[Rightarrow]{dr}[below left]{μ}
+		&
+		{}
+		&
+		X'
+		\arrow[Rightarrow]{dl}[below right]{μ'}
+		\\
+		{}
+		&
+		H
+		&
+		{}
+	\end{tikzcd}
+\]
+commute.
+It follows from \cref{isomorphisms in mono categories} that this natural isomorphism~$α$ is an isomorphism in~$\Mon(H)$ from~$(X, μ)$ to~$(X', μ')$.
+This shows the third subclaim.
+
+We have thus constructed a bijection from~$\Sub(H)$ to~$\Power(H)$.
+In this way, subobjects of~$H$ are the same as subfunctors of~$H$.
+
+\subsubsection*{The category $\hat{\scat{A}}$ is well-powered}
+
+We have for every functor~$H$ from~$\cat{A}$ to~$\Set$ an injective map from~$\Power(H)$ into the product~$∏_{A ∈ \Ob(\cat{A})} H(A)$.
+So if the category~$\cat{A}$ is small (or more generally if~$\Ob(\cat{A})$ is a set), then it follows that~$\Power(H)$ is a set, whence~$\Sub(H)$ is a set.
+This tells us that the category~$\hat{\scat{A}}$ is well-powered.
+
+\subsubsection*{Functoriality of the power set}
+
+Let~$H$ and~$H'$ be two functors from~$\cat{A}$ to~$\Set$.
+Suppose we have a subfunctor~$S'$ of~$H'$ and a natural transformation~$α$ from~$H$ to~$H'$.
+We can then consider for every object~$A$ of~$\cat{A}$ the subset~$S(A) ≔ α^{-1}( S'(A) )$ of~$H(A)$.
+These sets form a subfunctor~$S$ of~$H$ since for every morphism~$f \colon A \to B$ in~$\cat{A}$ we have
+\[
+	α_B\bigl( H(f)( S(A) ) \bigr)
+	=
+	H'(f)( α_A( S(A) ) )
+	⊆
+	H'(f)( S'(A) )
+	⊆
+	S'(B) \,,
+\]
+and thus~$H(f)( S(A) ) ⊆ α_B^{-1}( S'(B) ) = S(B)$.
+We refer to the subfunctor~$S$ of~$H$ as the \defemph{preimage} of~$S'$ under~$α$, and denote it by~$α^{-1}(S')$.
+We thus have
+\[
+	α^{-1}(S')(A) = α_A^{-1}( S'(A) )
+\]
+for every object~$A$ of~$\cat{A}$.
+We get in this way a map
+\[
+	α^{-1} \colon \Power(S') \to \Power(S) \,.
+\]
+This construction makes~$\Power$ functorial:
+\begin{enumerate}
+
+	\item
+		Let~$S$ be a subfunctor of~$H$.
+		We have the equalities
+		\[
+			(\id_H)^{-1}(S)(A) = \id_{H(A)}^{-1}( S(A) ) = S(A)
+		\]
+		for every object~$A$ of~$\cat{A}$, and therefore~$(\id_H)^{-1}(S) = S$.
+		Consequently,~$(\id_H)^{-1}$ is the identity map on~$\Power(H)$.
+
+	\item
+		Let~$H''$ be yet another functor from~$\cat{A}$ to~$\Set$.
+		Let~$S''$ be a subfunctor of~$H''$ and let
+		\[
+			α \colon H \To H' \,,
+			\quad
+			α' \colon H' \To H''
+		\]
+		be natural transformations.
+		We have the chain of equalities
+		\begin{align*}
+			(α' ∘ α)^{-1}(S'')(A)
+			&=
+			(α' ∘ α)_A^{-1}( S''(A) ) \\
+			&=
+			(α'_A ∘ α_A)^{-1}( S''(A) ) \\
+			&=
+			α_A^{-1}\bigl( (α'_A)^{-1}( S''(A) ) \bigr) \\
+			&=
+			α_A^{-1}\bigl( (α')^{-1}( S'' )(A) \bigr) \\
+			&=
+			α_A^{-1}( (α')^{-1}( S'' ) )(A)
+		\end{align*}
+		for every object~$A$ of~$\cat{A}$, and therefore the equality
+		\[
+			(α' ∘ α)^{-1}(S'') = α^{-1}( (α')^{-1}(S'') ) \,.
+		\]
+		Consequently,~$(α' ∘ α)^{-1} = α^{-1} ∘ (α')^{-1}$.
+
+\end{enumerate}
+These properties tell us that we have constructed a contravariant functor
+\[
+	\Power \colon [\cat{A}, \Set] \to \Set
+\]
+if the category~$\cat{A}$ is small.
+
+\subsubsection*{Naturality of the isomorphism $\Sub(H) ≅ \Power(H)$}
+
+We have previously constructed for every functor~$H$ from~$\cat{A}$ to~$\Set$ an isomorphism~$φ_H$ from~$\Power(H)$ to~$\Sub(H)$.
+We will now show that the isomorphism~$φ_H$ is natural in $H$.
+If the category~$\cat{A}$ is small, then this means that the two functors~$\Sub$ and~$\Power$ from~$\cat{A}$ to~$\Set$ are isomorphic.
+
+We need to check that for every two functors~$H$ and~$H'$ from~$\cat{A}$ to~$\Set$ and every natural transformation~$α$ from~$H$ to~$H'$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(H')
+		\arrow{r}[above]{φ_{H'}}
+		\arrow{d}[left]{α^{-1}}
+		&
+		\Sub(H')
+		\arrow{d}[right]{\Sub(α)}
+		\\
+		\Power(H)
+		\arrow{r}[above]{φ_H}
+		&
+		\Sub(H)
+	\end{tikzcd}
+\]
+Let~$S'$ be an element of the top-left corner of this diagram, i.e., a subfunctor of~$H'$.
+We give descriptions of the two resulting elements of~$\Sub(H)$ and then show that these two elements are equal.
+
+The subobject~$φ_{H'}(S')$ of~$H'$ (an element of the tow-right corner of the diagram) is represented by~$(S', ι')$ where~$ι'$ is the natural transformation from~$S'$ to~$H'$ that is the inclusion map in each component.
+Let us denote the resulting element~$\Sub(α)( [(S', ι')] )$ by $[(T, θ)]$.
+This is a subobject of~$H$, and it is uniquely determined by the fact that there exists a pullback diagram in~$[\cat{A}, \Set]$ of the following form:
+\[
+	\begin{tikzcd}
+		T
+		\arrow[Rightarrow]{r}
+		\arrow[Rightarrow]{d}[left]{θ}
+		&
+		S'
+		\arrow[Rightarrow]{d}[right]{ι'}
+		\\
+		H
+		\arrow[Rightarrow]{r}[above]{α}
+		&
+		H'
+	\end{tikzcd}
+\]
+
+The subfunctor~$S ≔ α^{-1}(S')$ of~$H$ (an element of the bottom-right corner of the diagram) is given by
+\[
+	S(A) = α_A^{-1}( S'(A) )
+\]
+for every object~$A$ of~$\scat{A}$.
+The subobject~$φ_H(S)$ of~$H$ (an element of the bottom-right corner of the diagram) is represented by~$(S, ι)$ where~$ι$ denotes the natural transformation from~$S$ to~$X$ that is the inclusion map in each component.
+
+To show the desired equality~$[(S, ι)] = [(T, θ)]$ we need to show that there exists a pullback diagram of the form
+\[
+	\begin{tikzcd}
+		S
+		\arrow[Rightarrow]{r}
+		\arrow[Rightarrow]{d}[left]{ι}
+		&
+		S'
+		\arrow[Rightarrow]{d}[right]{ι'}
+		\\
+		H
+		\arrow[Rightarrow]{r}[above]{α}
+		&
+		H'
+	\end{tikzcd}
+\]
+in~$[\cat{A}, \Set]$.
+We know that limits in functor categories can be computed pointwise.
+It therefore suffices to show that there exists for every object~$A$ of~$\cat{A}$ a pullback diagram of the form
+\[
+	\begin{tikzcd}
+		S(A)
+		\arrow{r}
+		\arrow{d}[left]{ι_A}
+		&
+		S'(A)
+		\arrow{d}[right]{ι'_A}
+		\\
+		H(A)
+		\arrow{r}[above]{α_A}
+		&
+		H'_A
+	\end{tikzcd}
+\]
+in~$\Set$.
+This desired diagram simplifies as follows:
+\[
+	\begin{tikzcd}
+		α_A^{-1}(S'(A))
+		\arrow{r}
+		\arrow{d}[left]{ι_A}
+		&
+		S'(A)
+		\arrow{d}[right]{ι'_A}
+		\\
+		H(A)
+		\arrow{r}[above]{α_A}
+		&
+		H'_A
+	\end{tikzcd}
+\]
+We get this desired pullback diagram by choosing the upper horizontal arrow as the restriction of~$α_A$.
+
+\subsubsection*{Special case: the category $\scat{A}$ has one object and is discrete}
+
+To better understand the problem at hand, let us first consider the special case that the category~$\scat{A}$ is the one-object discrete category.
+The presheaf category~$\hat{\scat{A}}$ is then just~$\Set$, and the functor~$\Power$ is just the usual contravariant power set functor.
+
+Let~$𝟙 = \{ 1 \}$ be a one-element set.
+For every set~$X$, elements of~$X$ are the same as maps from~$𝟙$ to~$X$.
+For the subobject classifier~$Ω$ of~$\Set$ we have therefore the isomorphisms
+\[
+	Ω ≅ \Set(𝟙, Ω) ≅ \Power(𝟙) \,.
+\]
+We turn this observation into motivation to define~$Ω$ as~$\Power(𝟙)$.
+
+We observe that~$Ω = \{ ∅, 𝟙 \}$, which agrees with the usual definition of the subobject classifier of~$\Set$.
+But we won’t need this explicit description of~$Ω$, and will deliberately avoid it.
+Instead, our argumentation will rely on the following two properties of the set~$𝟙$ and its element~$1$.
+\begin{enumerate*}
+
+	\item
+		For every set~$X$ and every element~$x$ of~$X$ there exists a unique map~$e_x$ from~$𝟙$ to~$X$ with~$e_x(1) = x$.
+
+	\item
+		The only subset of~$𝟙$ containing~$1$ is~$𝟙$.
+
+\end{enumerate*}
+In terms of intuition, the second property tells us that \enquote{the subset of~$𝟙$ generated by the element~$1$ is~$𝟙$}.
+
+In the following, let~$X$ be some set.
+We will describe how to abstractly construct the usual bijection between~$\Power(X)$ and~$\Set(X, Ω)$, and how to show that this bijection is natural in~$X$.
+
+Suppose first that~$S$ is a subset of~$X$.
+For every element~$x$ of~$X$ we can pull back the subset~$S$ of~$X$ along the map~$e_x$ a subset of~$𝟙$.
+We get in this way a map
+\[
+	χ_S \colon X \to Ω \,,
+	\quad
+	x \mapsto e_x^{-1}(S) \,.
+\]
+(We observe that~$χ_S(x) = 𝟙$ if~$x ∈ S$ and~$χ_S(x) = ∅$ otherwise, so our abstract construction of the characteristic function~$χ_S$ agrees with the usual explicit definition.)
+
+Suppose now that~$f$ is any map from~$X$ to~$Ω$.
+The set~$𝟙$ as a special subset, namely~$𝟙$ itself.
+The set~$U ≔ \{ 𝟙 \}$ is then a subset of~$Ω$, which we can pull back along~$f$ to the subset~$f^{-1}(U)$ of~$X$.
+
+We will now check that the above two constructions between subsets of~$X$ and maps from~$X$ to~$Ω$ are mutually inverse, and also natural in~$X$.
+
+Let~$S$ be a subset of~$X$.
+We have for every element~$x$ of~$X$ the chain of equivalences
+\begin{align}
+	\SwapAboveDisplaySkip
+	x ∈ S
+	&\iff
+	e_x(1) ∈ S \notag \\
+	&\iff
+	1 ∈ e_x^{-1}(S) = χ_S(x) \notag \\
+	&\iff
+	𝟙 = χ_S(x)
+	\label{subset containg 1 is already everything} \\
+	&\iff
+	x ∈ χ_S^{-1}(U) \notag \,,
+\end{align}
+and therefore the equality~$S = χ_S^{-1}(U)$.
+For the step~\eqref{subset containg 1 is already everything} we used that $χ_S(x)$ is a subset of~$𝟙$ containing~$1$, and that the only such subset is~$𝟙$.
+
+Let now~$f$ be a map from~$X$ to~$Ω$ and let~$S ≔ f^{-1}(U)$.
+To show the equality~$f = χ_S$ we need to show that~$f(x) = χ_S(x)$ for every element~$x$ of~$X$.
+Both~$f(x)$ and~$χ_S(x)$ are subsets of~$𝟙$, so we need to show that for every element~$p$ of~$𝟙$, we have~$p ∈ f(x)$ if and only if~$p ∈ χ_S(x)$.
+The only element of~$𝟙$ is~$1$, and we have the chain of equivalences
+\begin{align*}
+	\SwapAboveDisplaySkip
+	1 ∈ f(x)
+	&\iff
+	f(x) = 𝟙 \\
+	&\iff
+	x ∈ S \\
+	&\iff
+	χ_S(x) = 𝟙 \\
+	&\iff
+	1 ∈ χ_S(x) \,.
+\end{align*}
+We have thus shown that indeed~$f = χ_S$.
+
+To show the required naturality, we need to show that for every map
+\[
+	f \colon X \to Y
+\]
+the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(Y)
+		\arrow{r}[above]{χ_{(\ph)}}
+		\arrow{d}[left]{f^{-1}}
+		&
+		\Set(Y, Ω)
+		\arrow{d}[right]{f^*}
+		\\
+		\Power(X)
+		\arrow{r}[above]{χ_{(\ph)}}
+		&
+		\Set(X, Ω)
+	\end{tikzcd}
+\]
+Let~$S$ be a subset of~$Y$ and let~$x$ be an element of~$X$.
+Then~$f ∘ e_x = e_{f(x)}$ because
+\[
+	(f ∘ e_x)(1) = f( e_x(1) ) = f(x) = e_{f(x)}(1) \,,
+\]
+and consequently
+\begin{align*}
+	\SwapAboveDisplaySkip
+	f^*(χ_S)(x)
+	&=
+	(χ_S ∘ f)(x) \\
+	&=
+	χ_S( f(x) ) \\
+	&=
+	e_{f(x)}^{-1}(S) \\
+	&=
+	(f ∘ e_x)^{-1}(S) \\
+	&=
+	e_x^{-1}( f^{-1}(S) ) \\
+	&=
+	χ_{f^{-1}(S)}(x) \,.
+\end{align*}
+This shows that~$f^*(χ_S) = χ_{f^{-1}(S)}$, so that the diagram commutes.
+
+\subsubsection*{Special case: the category $\scat{A}$ has one object}
+
+Suppose now slightly more generally than before that the category~$\scat{A}$ consists of only a single object~$\ast$.
+For the monoid~$M ≔ \scat{A}(\ast, \ast)$, the presheaf category~$\hat{\scat{A}}$ is then isomorphic to the category~$\cat{M}$ of right~\sets{$M$}.
+For every right~\set{$M$}~$X$ the set~$\Power(X)$ consists of all~\subsets{$M$} of~$X$, and for every homomorphism of right~\sets{$M$}~$f \colon X \to Y$ the induced map~$f^{-1} \colon \Power(Y) \to \Power(X)$ is given by taking preimages in the usual sense.
+
+For every right~\set{$M$}~$X$, the elements of~$X$ correspond to homomorphisms from~$M$ to~$X$.
+For the subobject classifier~$Ω$ of~$\cat{M}$ we have therefore the isomorphisms
+\[
+	\{ \text{elements of~$Ω$} \}
+	≅
+	\cat{M}(M, Ω)
+	≅
+	\Power(M) \,.
+\]
+We therefore define~$Ω$ as follows:
+\begin{itemize*}
+
+	\item
+		The underlying set of~$Ω$ is~$\Power(M)$.
+
+	\item
+		For every element~$m$ of~$M$, left multiplication with~$m$ is a homomorphism~$λ_m \colon M \to M$, and therefore induces a map~$λ_m^{-1} \colon \Power(M) \to \Power(M)$.
+		This map is the action of~$m$ on~$Ω$.
+		More explicitly, we have
+		\begin{equation}
+			\label{action of monoids on its right ideals}
+			S m
+			=
+			λ_m^{-1}(S)
+			=
+			\{ n ∈ M \suchthat λ_m(n) ∈ S \}
+			=
+			\{ n ∈ N \suchthat m n ∈ S \} \,.
+		\end{equation}
+
+\end{itemize*}
+We denote the set~\eqref{action of monoids on its right ideals} as~$(S : m)$, in accordance to the notation for quotient ideals in ring theory.
+We note that~$m$ is contained in~$S$ if and only if~$1_M$ is contained in~$(S : m)$.
+
+More generally, if~$X$ is any right~\set{$M$},~$S$ is an~\subset{$M$} of~$X$, and~$x$ is an element of~$X$, then we will use the notation~$(S : x)$ for the set~$\{ m ∈ M \suchthat xm \subseteq S \}$, so that
+\[
+	(S : x) ∋ m \iff S ∋ xm \,.
+\]
+We note that~$x$ is contained in~$S$ if and only if~$1_M$ is contained in~$(S : x)$, if and only if~$(S : x) = M$.
+
+As in the previous special case, we will try not to work with the explicit elements of~$Ω$.
+Instead, we will rely on the following two observations:
+\begin{enumerate*}
+
+	\item
+		There exists for every right~\set{$M$}~$X$ and every element~$x$ of~$X$ a unique homomorphism~$e_x$ from~$M$ to~$X$ with~$e_x(1_M) = x$.
+
+	\item
+		The only~\subset{$M$} of~$M$ that contains~$1_M$ is~$M$ itself.
+
+\end{enumerate*}
+
+Let~$X$ be a right~\set{$M$} and let~$S$ be an~\subset{$M$} of~$X$.
+For every element~$x$ of~$X$ we can pull back~$S$ along the homomorphism~$e_x$ to an~\subset{$M$} of~$M$.
+We have in this way a set-theoretic map
+\[
+	χ_S
+	\colon
+	X \to Ω \,,
+	\quad
+	x \mapsto e_x^{-1}(S) \,.
+\]
+This map is more explicitly given by
+\[
+	χ_S(x)
+	=
+	e_x^{-1}(S)
+	=
+	\{ m ∈ M \mid e_x(m) ∈ S \}
+	=
+	\{ m ∈ M \mid xm ∈ S \}
+	=
+	(S : x)
+\]
+for every~$x ∈ X$.
+As a by-product of the construction of~$χ_S$, we see that~$(S : x)$ is an~\subset{$M$} of~$M$.
+
+We claim that the map~$χ_S$ is already a homomorphism.
+To see this, we observe that~$e_{xm} = e_x ∘ λ_m$, since both~$e_{xm}$ and~$e_x ∘ λ_m$ are homomorphisms and
+\[
+	e_{xm}(1_M)
+	= xm
+	= e_x(1_M) m
+	= e_x(m)
+	= e_x( λ_m(1_M) )
+	= (e_x ∘ λ_m)(1_M) \,.
+\]
+It follows that
+\[
+	χ_S(xm)
+	=
+	e_{xm}^{-1}(S)
+	=
+	(e_x ∘ λ_m)^{-1}(S)
+	=
+	λ_m^{-1}( e_x^{-1}(S) )
+	=
+	χ_S(x) m \,.
+\]
+
+Suppose conversely that~$f$ is any homomorphism from~$M$ to~$Ω$.
+We note that~$M$ contains a very special~\subset{$M$}, namely~$M$ itself.
+Every element~$m$ of~$M$ is contained in~$M$ (surprise!), whence~$Mm = (M : m) = M$.
+This tells us that~$M$ is a fixed point in~$Ω$.
+Equivalently,~$U ≔ \{ M \}$ is an~\subset{$M$} of~$Ω$.
+By pulling back~$U$ along~$f$, we arrive at the~\subset{$M$}~$f^{-1}(U)$ of~$X$.
+
+We will now show that the above two constructions between~\subsets{$M$} of~$X$ and homomorphism from~$X$ to~$Ω$ are mutually inverse and natural.
+
+Let~$S$ be an~\subset{$M$} of~$X$.
+We have for every element~$x$ of~$X$ the chain of equivalences
+\begin{align}
+	\SwapAboveDisplaySkip
+	x ∈ S
+	&\iff
+	e_x(1_M) ∈ S \notag \\
+	&\iff
+	1_M ∈ e_x^{-1}(S) = χ_S(x) \notag \\
+	&\iff
+	χ_S(x) = M
+	\label{subset containg identity is already everything} \\
+	&\iff
+	x ∈ χ_S^{-1}(U) \notag
+\end{align}
+and therefore the equality~$S = χ_S^{-1}(U)$.
+We have used in the step~\eqref{subset containg identity is already everything} that~$χ_S(x)$ is an~\subset{$M$} of~$X$ containing~$1_M$, and that the only such~subset is~$M$ itself.
+
+Let~$f$ be a homomorphism from~$X$ to~$Ω$.
+For the~\subset{$M$}~$S ≔ f^{-1}(U)$ of~$X$ we want to show that~$f = χ_S$.
+We need to show that~$f(x) = χ_S(x)$ for every element~$x$ of~$X$.
+Both~$f(x)$ and~$χ_S(x)$ are~\subsets{$M$} of~$M$, so we need to show that for every element~$m$ of~$M$ we have~$m ∈ f(x)$ if and only if~$m ∈ χ_S(x)$.
+We have
+\[
+	(f(x) : m) = f(x)m = f(xm) \,,
+\]
+and therefore the chain of equivalences
+\begin{align*}
+	m ∈ f(x)
+	&\iff
+	1_M ∈ (f(x) : m) \\
+	&\iff
+	1_M ∈ f(xm) \\
+	&\iff
+	f(xm) = M \\
+	&\iff
+	xm ∈ S \\
+	&\iff
+	m ∈ (S : x) \\
+	&\iff
+	m ∈ χ_S(x) \,.
+\end{align*}
+This shows that indeed~$f = χ_S$.
+
+It remains to show the naturality of the bijections~$χ_{(\ph)} \colon \Power(X) \to \cat{M}(X, Ω)$.
+For this, we need to show that for every homomorphism
+\[
+	f \colon X \to Y
+\]
+the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(Y)
+		\arrow{r}[above]{χ_{(-)}}
+		\arrow{d}[left]{f^{-1}}
+		&
+		\cat{M}(Y, Ω)
+		\arrow{d}[right]{f^*}
+		\\
+		\Power(X)
+		\arrow{r}[above]{χ_{(-)}}
+		&
+		\cat{M}(X, Ω)
+	\end{tikzcd}
+\]
+Let~$S$ be an~\subset{$M$} of~$Y$ and let~$x$ be an element of~$X$.
+Then~$f ∘ e_x = e_{f(x)}$ because
+\[
+	(f ∘ e_x)(1_M)
+	=
+	f( e_x(1_M) )
+	=
+	f(x)
+	=
+	e_{f(x)}(1_M) \,,
+\]
+and consequently
+\begin{align*}
+	\SwapAboveDisplaySkip
+	f^*(χ_S)(x)
+	&=
+	(χ_S ∘ f)(x) \\
+	&=
+	χ_S(f(x)) \\
+	&=
+	e_{f(x)}^{-1}(S) \\
+	&=
+	(f ∘ e_x)^{-1}(S) \\
+	&=
+	e_x^{-1}( f^{-1}(S) ) \\
+	&=
+	χ_{f^{-1}(S)}(x) \,.
+\end{align*}
+This shows that~$f^*(χ_S) = χ_{f^{-1}(S)}$, which shows the required commutativity.
+
+
+
+\subsubsection{}
+
+Suppose that~$Ω$ is a subobject classifier for~$\hat{\scat{A}}$.
+For every object~$A$ of~$\scat{A}$ we then have the isomorphisms
+\[
+	Ω(A)
+	≅
+	\hat{\scat{A}}( \HY_A, Ω )
+	≅
+	\Sub(\HY_A)
+	≅
+	\Power(\HY_A) \,.
+\]
+
+
+
+\subsubsection{}
+
+
+We define the desired subobject classifier~$Ω$ of~$\hat{\scat{A}}$ as the composite of the Yoneda embedding from~$\scat{A}$ to~$\hat{\scat{A}}$ (which is covariant) and the contravariant power set functor from~$\hat{\scat{A}}$ to~$\Set$.
+More explicitly, we have
+\[
+	Ω(A) = \Power(\HY_A)
+\]
+for every object~$A$ of~$\scat{A}$,
+and for every morphism~$f \colon B \to A$ in~$\scat{A}$ the map
+\[
+	Ω(f)
+	≔
+	\HY_f^{-1}
+	\colon
+	\Power(\HY_A) \to \Power(\HY_B) \,,
+	\quad
+	S \mapsto \HY_f^{-1}(S) \,.
+\]
+More explicitly, we have
+\begin{align}
+	Ω(f)(S)(C)
+	&=
+	\HY_f^{-1}(S)(C) \notag \\
+	&=
+	(\HY_f)_C^{-1}( S(C) ) \notag \\
+	&=
+	(f_*)^{-1}( S(C) ) \notag \\
+	&=
+	\{ \textstyle g \colon C \to B \suchthat f_*(g) ∈ S(C)  \} \notag \\
+	&=
+	\{ \textstyle g \colon C \to B \suchthat f ∘ g ∈ S(C)  \}
+	\label{explicit formula for action of Omega on morphisms} \,.
+\end{align}
+
+We will show in the following that the presheaf~$Ω$ is a subobject classifier for~$\hat{\scat{A}}$, i.e., that~$\hat{\scat{A}}(\ph, Ω) ≅ \Sub$.
+We have already seen that~$\Sub ≅ \Power$, so we will show in the following that~$\Power ≅ \hat{\scat{A}}(\ph, Ω)$.
+We will use the following two properties of the presheaves~$\HY_A$.
+\begin{enumerate*}
+
+	\item
+	For every object~$A$ of~$\scat{A}$ and every element~$x$ of~$X(A)$ there exists a unique natural transformation~$ε_x$ from~$\HY_A$ to~$X$ with~$ε_{x, A}(\id_A) = x$.
+
+	\item
+		For every object~$A$ of~$\scat{A}$, the only subfunctor of~$\HY_A$ containing~$\id_A$ is~$\HY_A$ itself.
+
+\end{enumerate*}
+
+Let~$X$ be a presheaf on~$\scat{A}$ and let~$S$ be a subfunctor of~$X$.
+Let~$A$ be an object of~$\scat{A}$ and let~$x$ be an element of~$X(A)$.
+We can use the natural transformation~$ε_x$ to pull back the subfunctor~$S$ of~$X$ to the subfunctor~$ε_x^{-1}(S)$ of~$\HY_A$.
+We get in this way a set-theoretic map
+\[
+	χ_{S, A}
+	\colon
+	X(A) \to \Power(\HY_A) = Ω(A) \,,
+	\quad
+	x \mapsto ε_x^{-1}(S) \,.
+\]
+More explicitly, we have
+\begin{align*}
+	χ_{S, A}(B)
+	&=
+	ε_x^{-1}(S)(B) \\
+	&=
+	ε_{x, B}^{-1}( S(B) ) \\
+	&=
+	\{ g ∈ \HY_A(B) \mid ε_{x, B}(g) ∈ S(B) \} \\
+	&=
+	\{ \textstyle g \colon B \to A \mid X(g)(x) ∈ S(B) \} \,.
+\end{align*}
+
+The resulting transformation~$χ_S$ from~$X$ to~$Ω$ is natural.
+To see this, we need to check that for every morphism
+\[
+	f \colon B \to A
+\]
+in~$\scat{A}$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		X(A)
+		\arrow{r}[above]{χ_{S, A}}
+		\arrow{d}[left]{X(f)}
+		&
+		Ω(A)
+		\arrow{d}[right]{Ω(f)}
+		\\
+		X(B)
+		\arrow{r}[above]{χ_{S, B}}
+		&
+		Ω(B)
+	\end{tikzcd}
+\]
+We observe for every element~$x$ of~$X(A)$ that
+\[
+	ε_{X(f)(x)} = ε_x ∘ \HY_f
+\]
+since both sides are functors from~$\HY_B$ to~$X$ with
+\begin{align*}
+	ε_{X(f)(x), B}(\id_B)
+	&=
+	X(f)(x) \\
+	&=
+	X(f)( ε_{x, A}(\id_A) ) \\
+	&=
+	ε_{x, B}\bigl( (\HY_A)(f)(\id_A) \bigr) \\
+	&=
+	ε_{x, B}( f ) \\
+	&=
+	ε_{x, B}\bigl( (\HY_f)_B( \id_B ) \bigr) \\
+	&=
+	\bigl( ε_{x, B} ∘ (\HY_f)_B \bigr)( \id_B ) \\
+	&=
+	(ε_{x, B} ∘ \HY_f)_B(\id_B) \,.
+\end{align*}
+It follows for every element~$x$ of~$X(A)$ that
+\begin{align*}
+	χ_{S, B}( X(f)(x) )
+	&=
+	ε_{X(f)(x)}^{-1}(S) \\
+	&=
+	(ε_x ∘ \HY_f)^{-1}(S) \\
+	&=
+	\HY_f^{-1}( ε_x^{-1}(S) ) \\
+	&=
+	Ω(f)( χ_S(x) ) \,.
+\end{align*}
+This shows the required commutativity.
+
+Suppose now that~$α$ is a natural transformation from~$X$ to~$Ω$.
+The functor~$\HY_A$ has itself as a subfunctor, and for every morphism~$f \colon B \to A$ in~$\scat{A}$ we have~$\HY_f^{-1}( \HY_A ) = \HY_B$ because
+\begin{align*}
+	\HY_f^{-1}( \HY_A )(C)
+	&=
+	(\HY_f)_C^{-1}( \HY_A(C) ) \\
+	&=
+	\{ g \in \HY_B(C) \mid (\HY_f)_B(g) ∈ \HY_A(C) \} \\
+	&=
+	\{ g \in \scat{A}(C, B) \mid f ∘ g ∈ \scat{A}(C, A) \} \\
+	&=
+	\scat{A}(C, B) \\
+	&=
+	\HY_B(C)
+\end{align*}
+for every object~$C$ of~$\scat{A}$.
+This tells us that the presheaf~$Ω$ has a subfunctor~$U$ given by~$U(A) = \{ \HY_A \}$ for every object~$A$ of~$\scat{A}$.
+We can pull back the subfunctor~$U$ of~$Ω$ along the natural transformation~$α$ to the subfunctor~$α^{-1}(U)$ of~$X$.
+
+We will now check that these two constructions between subfunctors of~$X$ and natural transformations from~$X$ to~$Ω$ are mutually inverse, as well as natural.
+
+Let~$S$ be a subfunctor of~$X$.
+We observe for every object~$A$ of~$\scat{A}$ and every element~$x$ of~$X(A)$ the chain of equivalences
+\begin{align}
+	{}&
+	x ∈ S(A) \notag \\
+	\iff{}&
+	ε_{x, A}(\id_A) ∈ S(A) \notag \\
+	\iff{}&
+	\id_A ∈ ε_{x, A}^{-1}(S(A)) = ε_x^{-1}(S)(A) = χ_{S, A}(x)(A) \notag \\
+	\iff{}&
+	χ_{S, A}(x) = \HY_A \label{subfunctor containing identity} \\
+	\iff{}&
+	x ∈ χ_{S, A}^{-1}( \{ \HY_A \} ) = χ_{S, A}^{-1}( U(A) ) = χ_S^{-1}(U)(A) \notag \,.
+\end{align}
+For the equivalence~\eqref{subfunctor containing identity} we use that~$χ_{S, A}(x)$ is a subfunctor of~$\HY_A$ containing~$\id_A$, and must therefore be all of~$\HY_A$.
+This shows that~$S(A) = χ_S^{-1}(U)(A)$ for every object~$A$ of~$\scat{A}$, and therefore~$S = χ_S^{-1}(U)$.
+
+Let now~$α$ be a natural transformation from~$X$ to~$Ω$ and let~$S = α^{-1}(U)$.
+We want to check that~$α = χ_S$.
+For this, we need to show that for every object~$A$ of~$\scat{A}$ and every element~$x$ of~$X(A)$ we have~$α_A(x) = χ_{S, A}(x)$.
+Both~$α_A(x)$ and~$χ_{S, A}(x)$ are elements of~$Ω(A) = \Power(\HY_A)$, and therefore subfunctors of~$\HY_A$.
+We hence need to show that~$α_A(x)(B) = χ_{S, A}(x)(B)$ for every object~$B$ of~$\scat{A}$.
+We have for every element~$f$ of~$\HY_A(B) = \scat{A}(B, A)$ the chain of equalities
+\begin{align}
+	{}&
+	f ∈ α_A(x)(B) \notag \\
+	\iff{}&
+	\id_B ∈ Ω(f)( α_A(x) )(B)
+	\label{use definition of Omega} \\
+	\iff{}&
+	Ω(f)( α_A(x) ) = \HY_B
+	\label{subfunctor that contains the identity} \\
+	\iff{}&
+	α_B( X(f)(x) ) = \HY_B
+	\label{using naturality of alpha} \\
+	\iff{}&
+	X(f)(x) ∈ α_B^{-1}(\{\HY_B\}) = α_B^{-1}(U(B)) = α^{-1}(U)(B) = S(B) \notag
+	\\
+	\iff{}&
+	ε_{x, B}(f) ∈ S(B)
+	\label{reinserting epsilon}
+	\\
+	\iff{}&
+	f ∈ ε_{x, B}^{-1}(S(B)) = ε_x^{-1}(S)(B) = χ_S(x)(B) \notag \,,
+\end{align}and thus~$α_A(x)(B) = χ_S(x)(B)$.
+For~\eqref{use definition of Omega} we use the formula~\eqref{explicit formula for action of Omega on morphisms}.
+The equality~\eqref{subfunctor containing identity} holds because~$Ω(f)( α_A(x) )$ is a subfunctor of~$\HY_B$ that contains~$\id_B$, and the only such subfunctor is~$\HY_B$ itself.
+For~\eqref{using naturality of alpha} we use the naturality of~$α$, and for~\eqref{reinserting epsilon} we use that~$X(f)(x)$ is precisely~$ε_{x, B}(f)$.
+
+To show the required naturality we need to check that for every natural transformation
+\[
+	α \colon X \to Y
+\]
+between presheaves on~$\scat{A}$ the following diagram commutes:
+\[
+	\begin{tikzcd}
+		\Power(Y)
+		\arrow{r}[above]{χ_{(\ph)}}
+		\arrow{d}[left]{α^{-1}}
+		&
+		\hat{\scat{A}}(Y, Ω)
+		\arrow{d}[right]{α^*}
+		\\
+		\Power(X)
+		\arrow{r}[above]{χ_{(\ph)}}
+		&
+		\hat{\scat{A}}(X, Ω)
+	\end{tikzcd}
+\]
+Let~$S$ be a subfunctor of~$Y$, let~$A$ be an object of~$\scat{A}$ and let~$x ∈ X(A)$, then
+\begin{align*}
+	α^*( χ_S )_A(x)
+	&=
+	(χ_S ∘ α)_A(x) \\
+	&=
+	(χ_{S, A} ∘ α_A)(x) \\
+	&=
+	χ_{S, A}( α_A(x) ) \\
+	&=
+	ε_{α_A(x)} ^{-1}(S) \\
+	&=
+	( α ∘ ε_x )^{-1}(S) \\
+	&=
+	ε_x^{-1}( α^{-1}(S) ) \\
+	&=
+	χ_{α^{-1}(S), A}(x) \,,
+\end{align*}
+therefore~$α^*(χ_S)_A = χ_{α^{-1}(S), A}$, and thus~$α^*( χ_S ) = χ_{α^{-1}(S)}$.
+This shows the required commutativity.
+
+
+
+\subsubsection{}
+
+We know from Corollary~6.2.11 that~$\hat{\scat{A}}$ has all small limits.
+This entails that~$\hat{\scat{A}}$ has finite limits.
+We have seen in Theorem~6.3.20 that~$\hat{\scat{A}}$ is cartesian closed.
+We have seen in this exercise that~$\hat{\scat{A}}$ is well-powered and has a subobject classifier.
+
+This shows altogether that~$\hat{\scat{A}}$ is a topos.
