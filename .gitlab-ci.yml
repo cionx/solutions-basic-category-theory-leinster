@@ -6,6 +6,9 @@ pages:
   - unzip "Libertinus-7.040.zip"
   - mkdir -p /usr/share/fonts/opentype/libertinus
   - cp Libertinus-7.040/static/OTF/*.otf /usr/share/fonts/opentype/libertinus
+    # Install IPA Mincho
+  - apt-get --yes install fonts-ipafont-mincho
+    # Refresh the font cache
   - fc-cache
   script:
     # load submodules
