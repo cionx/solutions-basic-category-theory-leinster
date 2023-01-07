@@ -1,0 +1,64 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+For every object~$B$ of~$\cat{B}$, let~$i_B$ be the unique morphism from~$0$ to~$B$.
+
+Let for a moment~$(C, (q_B)_B)$ be a cone on the identity functor~$\Id_{\cat{B}}$.
+We have for every morphism~$g \colon B \to B'$ in~$\cat{B}$ the equality~$g ∘ q_B = q_{B'}$.
+By choosing the morphism~$g$ as~$i_B$ we find that
+\[
+	i_B ∘ q_0 = q_B
+\]
+for every object~$B$ of~$\cat{B}$.
+This tells us that the entire cone~$(C, (q_B)_B)$ is already uniquely determined by the single morphism~$q_0 \colon C \to 0$.
+
+Conversely, given any morphism~$g \colon C \to 0$ in~$\cat{B}$, we can pull back the cone~$(0, (i_B)_B)$ along the morphism~$g$ to the cone~$(C, (i_B ∘ g)_B)$.
+We note that for~$B = 0$ we have~$i_B ∘ g = i_0 ∘ g = g$ since the morphism~$i_0$ is necessarily the identity morphism of~$0$.
+
+The above two constructions are mutually inverse.
+We thus find that a cone on the identity functor~$\Id_{\cat{B}}$ with vertex~$C$ is the same as a morphism from~$C$ to~$0$.
+
+Suppose now that~$(C, (q_B)_B)$ and~$(C', (q'_B)_B)$ are two cones on the identity functor~$\Id_{\cat{B}}$.
+We find for every morphism~$f$ from~$C$ to~$C'$ that
+\begin{align}
+	{}&
+	\text{$f$ is a morphism of cones from~$(C, (q_B)_B)$ to~$(C', (q'_B)_B)$}
+	\notag
+	\\
+	\iff{}&
+	\text{$q'_B ∘ f = q_B$ for every object~$B$ of~$\cat{B}$}
+	\notag
+	\\
+	\iff{}&
+	\text{$i_B ∘ q'_0 ∘ f = i_B ∘ q_0$ for every object~$B$ of~$\cat{B}$}
+	\notag
+	\\
+	\iff{}&
+	q'_0 ∘ f = q_0
+	\label{cancel the inclusions from the initial object} \,.
+\end{align}
+For the equivalence~\eqref{cancel the inclusions from the initial object} we use again that~$i_0$ is the identity morphism of~$0$.
+
+We have thus found an isomorphism between the cone category~$\Cone(\Id_{\cat{B}})$ and the slice category~$\cat{B} / 0$.
+This slice category has as a terminal object, namely~$(0, \id_0)$.
+The corresponding cone~$(0, (i_B ∘ \id_0)_B) = (0, (i_B)_B)$ is therefore terminal in~$\Cone(\Id_{\cat{B}})$.
+This means precisely that this cone is a limit cone.
+
+
+
+\subsubsection{}
+
+We have every morphism~$g \colon B \to B'$ in~$\cat{B}$ the equality
+\[
+	g ∘ p_B = p_{B'} \,.
+\]
+This entails that~$p_B ∘ p_L = p_B$ for every object~$B$ of~$\cat{B}$, whence~$p_B ∘ p_L = p_B ∘ \id_L$ for every object~$B$ of~$\cat{B}$.
+Consequently,~$p_L = \id_L$ by Exercise~5.1.36, part~(a).
+It further follows for every object~$B$ of~$\cat{B}$ that the morphism~$p_B$ is the only morphism from~$L$ to~$B$:
+for every morphism~$g$ from~$L$ to~$B$ we have the equalities
+\[
+	p_B = g ∘ p_L = g ∘ \id_L = g \,.
+\]

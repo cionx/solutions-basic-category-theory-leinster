@@ -19,10 +19,10 @@
 
 \mainmatter
 	% A different counter format for the introduction chapter.
-	\renewcommand{\thesubsection}{Exercise~\arabic{chapter}.\arabic{subsection}}
+	\renewcommand{\thesubsection}{Exercise~\thechapter.\arabic{subsection}}
 	\setcounter{chapter}{-1}
 	\include{sections/0_introduction.tex}
-	% Back to the default counter for all other chapters.
+	% Back to the default counter for all other chapters…
 	\renewcommand{\thesubsection}{Exercise~\thesection.\arabic{subsection}}
 	\include{sections/1_categories_functors_natural_transformations.tex}
 	\include{sections/2_adjoints.tex}
@@ -30,6 +30,10 @@
 	\include{sections/4_representables.tex}
 	\include{sections/5_limits.tex}
 	\include{sections/6_adjoints_representables_and_limits.tex}
+	\appendix
+	% … except for the appendix.
+	\renewcommand{\thesubsection}{Exercise~\thechapter.\arabic{subsection}}
+	\include{sections/A_proof_of_the_general_adjoint_functor_theorem.tex}
 
 \backmatter
 	\setlength{\emergencystretch}{1em}
