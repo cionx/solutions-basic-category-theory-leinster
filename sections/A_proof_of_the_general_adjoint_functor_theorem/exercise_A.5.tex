@@ -1,0 +1,203 @@
+\subsection{}
+
+
+
+\subsubsection{}
+
+For every object~$I$ of~$\scat{I}$, an object~$D(I)$ of~$(A \comma G)$ is the same as a pair~$(E(I), e_I)$ consisting of an object~$E(I)$ of~$\cat{B}$ and a morphism~$e_I$ from~$A$ to~$G(E(I))$.
+For every morphism~$u \colon I \to J$ in~$\scat{I}$, a morphism~$D(u)$ from~$D(I)$ to~$D(J)$ is then the same as a morphism~$E(u)$ from~$E(I)$ to~$E(J)$ such that~$G(E(u)) ∘ e_I = e_J$.
+
+The functoriality of the assignment~$D$ is precisely the functoriality of the assignment~$E$.
+If this functoriality is satisfied, then~$(A, (e_I)_)I$ is precisely a cone on~$G ∘ E$ with vertex~$A$.
+
+We hence find that a functor~$D$ from~$\scat{I}$ to~$(A \comma G)$ is the same as a functor~$E$ from~$\scat{I}$ to~$\cat{B}$ together with a cone~$(A, (e_I)_I)$ on~$G ∘ E$.
+The two functors~$D$ and~$E$ are related through the projection functor~$P_A$ from~$(A \comma G)$ to~$\cat{B}$ via
+\[
+	E = P_A ∘ D \,.
+\]
+
+
+
+\subsubsection{}
+
+Let~$\scat{I}$ be a small category and let~$D$ be a diagram in~$(A \comma G)$ of shape~$\scat{I}$.
+The resulting diagram~$E ≔ P_A ∘ D$ in~$\scat{B}$ admits a limit~$(L', (p'_I)_I)$ since the category~$\cat{B}$ is complete.
+We need to show the following two assertions:
+\begin{enumerate*}
+
+	\item
+		There exists a unique cone~$(L, (p_I)_I)$ on the original diagram~$D$ such that~$L' = P_A(L)$ and~$p'_I = P_A(p_I)$ for every object~$I$ of~$\scat{I}$.
+
+	\item
+		This cone~$(L, (p_I)_I)$ is a limit cone.
+
+\end{enumerate*}
+
+We know from part~(a) of this exercise that we may regard the diagram~$D$ in~$(A \comma G)$ as the diagram~$E$ together with a cone of the form~$(A, (e_I)_I )$ on~$G ∘ E$.
+To prove the first of the above two assertions, we make the following observations:
+\begin{itemize*}
+
+	\item
+		Lifting the object~$L'$ of~$\cat{B}$ to an object~$L$ of~$(A \comma G)$ means choosing a morphism~$ℓ$ from~$A$ to~$G(L')$ in~$\cat{A}$, so that then~$L = (L', ℓ)$.
+
+	\item
+		Let~$I$ be some object of~$\scat{I}$.
+		There can be at most one lift of the morphism~$p'_I \colon L' \to E(I)$ to a morphism~$p_I \colon L \to D(I)$ because the projection functor~$P_A$ is faithful.
+		More explicitly, the only possible lift is~$p'_I$ itself, but~$p'_I$ is a morphism from~$L = (L', ℓ)$ to~$D(I) = (E(I), e_I)$ if and only if the diagram
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				A
+				\arrow{dl}[above left]{ℓ}
+				\arrow{dr}[above right]{e_I}
+				&
+				{}
+				\\
+				G(L')
+				\arrow{rr}[above]{G(p'_I)}
+				&
+				{}
+				&
+				G(E(I))
+			\end{tikzcd}
+		\]
+		commutes, i.e., if and only if~$e_I = G(p'_I) ∘ ℓ$.
+
+	\item
+		Writing~$p_I = p'_I$, the object~$L$ of~$(A \comma G)$ together with the morphisms~$p_I$ is then automatically a cone for the diagram~$D$.
+		Indeed, we need for every morphism~$u \colon I \to J$ the commutativity of the following diagram:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				L
+				\arrow{dl}[above left]{p_I}
+				\arrow{dr}[above right]{p_J}
+				&
+				{}
+				\\
+				D(I)
+				\arrow{rr}[above]{D(u)}
+				&
+				{}
+				&
+				D(J)
+			\end{tikzcd}
+		\]
+		It suffices to check that this diagram commutes after applying the forgetful functor~$P_A$, resulting in the following diagram:
+		\[
+			\begin{tikzcd}[column sep = normal]
+				{}
+				&
+				L'
+				\arrow{dl}[above left]{p'_I}
+				\arrow{dr}[above right]{p'_J}
+				&
+				{}
+				\\
+				E(I)
+				\arrow{rr}[above]{E(u)}
+				&
+				{}
+				&
+				E(J)
+			\end{tikzcd}
+		\]
+		This diagram commutes because~$(L', (p'_I)_I)$ is a cone on~$E$.
+\end{itemize*}
+
+As a consequence of these observations, to prove the first assertion, we need to show that there exists a unique morphism~$ℓ$ from~$A$ to~$G(L')$ such that~$G(p'_I) ∘ ℓ = e_I$ for every object~$I$ of~$\scat{I}$.
+
+We note that the object~$G(L')$ of~$\cat{A}$ together with the morphisms~$G(p'_I)$ forms a cone on~$G ∘ E$ because~$(L', (p'_I)_I)$ is a cone on~$E$.
+We note that the cone~$(G(L'), (G(p'_I))_I)$ in question is already a limit cone because the original cone~$(L', (p'_I)_I)$ is a limit cone and the functor~$G$ is continuous.
+It follows that there exists a unique morphism~$ℓ$ from~$A$ to~$G(L')$ with
+\[
+	G(p'_I) ∘ ℓ = e_I
+\]
+for every object~$I$ of~$\scat{I}$.
+The overall situation is depicted in \cref{constructing ell}.
+\begin{figure}
+	\[
+		\begin{array}{ccc}
+			\begin{tikzcd}[column sep = normal]
+				A
+				\arrow[dashed]{rr}[above]{ℓ}
+				\arrow{dr}[below left]{e}
+				&
+				{}
+				&
+				G(L')
+				\arrow{dl}[below right]{G(p')}
+				\\
+				{}
+				&
+				G ∘ E
+				&
+				{}
+			\end{tikzcd}
+			& \displaystyle \leadsfrom &
+			\begin{tikzcd}
+				{}
+				&
+				L'
+				\arrow{dl}[below right]{p'}
+				\\
+				E
+				&
+				{}
+			\end{tikzcd}
+			\\[4em]
+			\text{in~$\cat{A}$} \hspace{1.5em} % dirty spacing hack
+			& {} &
+			\text{in~$\cat{B}$}
+		\end{array}
+	\]
+	\caption{Construction of~$ℓ$.}
+	\label{constructing ell}
+\end{figure}
+
+We have thus proven the first assertion by explicitly construction the required cone~$(L, (p_I)_I)$ on~$D$.
+
+Suppose now that~$(C, (q_I)_I)$ is another cone on~$D$.
+To prove the second assertion, we need to show that there exists a unique morphism~$f$ from~$C$ to~$L$ in~$(A \comma G)$ such that~$p_I ∘ f = q_I$ for every object~$I$ of~$\scat{I}$.
+
+The object~$c$ is of the form~$C = (C', c)$ for an object~$C'$ of~$\cat{B}$ and a morphism~$c \colon A \to G(C')$ in~$\cat{A}$, and each morphism~$q_I \colon C \to D(I)$ can we regarded as a morphism~$q'_I \colon C' \to E(I)$ with
+\begin{equation}
+	\label{property on q prime}
+	G(q'_I) ∘ c = e_I \,.
+\end{equation}
+
+We need to show that there exists a unique morphism~$f$ from~$C'$ to~$L'$ in~$\cat{B}$ such that the following two properties hold:
+\begin{enumerate*}
+
+	\item
+		$G(f) ∘ c = ℓ$, where both sides are morphisms from~$G(C')$ to~$G(L')$.
+
+	\item
+		$p'_I ∘ f = q'_I$ for every object~$I$ of~$\scat{I}$.
+
+\end{enumerate*}
+Indeed, the first property is what it means for the morphism~$f$ from~$C'$ to~$L'$ to also be a morphism from~$C = (C', c)$ to~$L = (L', ℓ)$, whereas the second property means precisely that~$p_I ∘ f = q_I$ for every object~$I$ of~$\scat{I}$.
+
+We know that~$(C, (q_I)_I)$ is a cone on~$D$, so by applying the projection functor~$P_A$ we find that~$(C', (q'_I)_I)$ is a cone on~$E$.
+It follows that there exists a unique morphism~$f$ from~$C'$ to~$L'$ satisfying the second property, as~$(L', (p'_I)_I)$ is a limit cone on~$E$.
+
+To show the required equality~$G(f) ∘ c = ℓ$, it suffices to show that
+\[
+	G(p'_I) ∘ G(f) ∘ c = G(p'_I) ∘ ℓ
+\]
+for every object~$I$ of~$\scat{I}$, thanks to Exercise~5.1.36, part~(a) and because the cone~$(G(C'), (G(p'_I))_I)$ is a limit cone.
+This required equality holds because
+\[
+	G(p'_I) ∘ G(f) ∘ c
+	=
+	G(p'_I ∘ f)
+	=
+	G(q'_I) ∘ c
+	=
+	e_I
+	=
+	G(p'_I) ∘ ℓ \,,
+\]
+where we use the functoriality of~$G$, the definition of~$f$, identity~\eqref{property on q prime}, and the definition of~$ℓ$.
